@@ -1,0 +1,9 @@
+{
+  "id": "lively-fishing-reply-giant",
+  "context": "fishing_reply_giant",
+  "lines": [
+    "哇！鱼后面的人快找不到了！",
+    "这已经是会游泳的小屋了吧！"
+  ],
+  "autonomy_output": false
+}

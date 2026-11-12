@@ -1,0 +1,164 @@
+{
+  "templates": [
+    "play-gazebo",
+    "play-swing",
+    "outdoor-chair",
+    "outdoor-path",
+    "outdoor-flowers",
+    "play-stage",
+    "produce-flowerhouse",
+    "produce-herbgarden",
+    "produce-fishrack",
+    "produce-stargarden"
+  ],
+  "presets": {
+    "codex": [
+      {
+        "template_id": "play-gazebo",
+        "name_key": "theirs.preset.0.0.name",
+        "reason_key": "theirs.preset.0.0.reason"
+      },
+      {
+        "template_id": "play-swing",
+        "name_key": "theirs.preset.0.1.name",
+        "reason_key": "theirs.preset.0.1.reason"
+      },
+      {
+        "template_id": "outdoor-chair",
+        "name_key": "theirs.preset.0.2.name",
+        "reason_key": "theirs.preset.0.2.reason"
+      },
+      {
+        "template_id": "outdoor-path",
+        "name_key": "theirs.preset.0.3.name",
+        "reason_key": "theirs.preset.0.3.reason"
+      },
+      {
+        "template_id": "outdoor-flowers",
+        "name_key": "theirs.preset.0.4.name",
+        "reason_key": "theirs.preset.0.4.reason"
+      },
+      {
+        "template_id": "play-stage",
+        "name_key": "theirs.preset.0.5.name",
+        "reason_key": "theirs.preset.0.5.reason"
+      },
+      {
+        "template_id": "produce-flowerhouse",
+        "name_key": "ingredients.facility.produce-flowerhouse",
+        "reason_key": "ingredients.facility.reason"
+      }
+    ],
+    "companion-2": [
+      {
+        "template_id": "play-gazebo",
+        "name_key": "theirs.preset.1.0.name",
+        "reason_key": "theirs.preset.1.0.reason"
+      },
+      {
+        "template_id": "play-swing",
+        "name_key": "theirs.preset.1.1.name",
+        "reason_key": "theirs.preset.1.1.reason"
+      },
+      {
+        "template_id": "outdoor-chair",
+        "name_key": "theirs.preset.1.2.name",
+        "reason_key": "theirs.preset.1.2.reason"
+      },
+      {
+        "template_id": "outdoor-path",
+        "name_key": "theirs.preset.1.3.name",
+        "reason_key": "theirs.preset.1.3.reason"
+      },
+      {
+        "template_id": "outdoor-flowers",
+        "name_key": "theirs.preset.1.4.name",
+        "reason_key": "theirs.preset.1.4.reason"
+      },
+      {
+        "template_id": "play-stage",
+        "name_key": "theirs.preset.1.5.name",
+        "reason_key": "theirs.preset.1.5.reason"
+      },
+      {
+        "template_id": "produce-fishrack",
+        "name_key": "ingredients.facility.produce-fishrack",
+        "reason_key": "ingredients.facility.reason"
+      }
+    ],
+    "npc.mira": [
+      {
+        "template_id": "play-gazebo",
+        "name_key": "theirs.preset.2.0.name",
+        "reason_key": "theirs.preset.2.0.reason"
+      },
+      {
+        "template_id": "play-swing",
+        "name_key": "theirs.preset.2.1.name",
+        "reason_key": "theirs.preset.2.1.reason"
+      },
+      {
+        "template_id": "outdoor-chair",
+        "name_key": "theirs.preset.2.2.name",
+        "reason_key": "theirs.preset.2.2.reason"
+      },
+      {
+        "template_id": "outdoor-path",
+        "name_key": "theirs.preset.2.3.name",
+        "reason_key": "theirs.preset.2.3.reason"
+      },
+      {
+        "template_id": "outdoor-flowers",
+        "name_key": "theirs.preset.2.4.name",
+        "reason_key": "theirs.preset.2.4.reason"
+      },
+      {
+        "template_id": "play-stage",
+        "name_key": "theirs.preset.2.5.name",
+        "reason_key": "theirs.preset.2.5.reason"
+      },
+      {
+        "template_id": "produce-herbgarden",
+        "name_key": "ingredients.facility.produce-herbgarden",
+        "reason_key": "ingredients.facility.reason"
+      }
+    ],
+    "npc.nora": [
+      {
+        "template_id": "play-gazebo",
+        "name_key": "theirs.preset.3.0.name",
+        "reason_key": "theirs.preset.3.0.reason"
+      },
+      {
+        "template_id": "play-swing",
+        "name_key": "theirs.preset.3.1.name",
+        "reason_key": "theirs.preset.3.1.reason"
+      },
+      {
+        "template_id": "outdoor-chair",
+        "name_key": "theirs.preset.3.2.name",
+        "reason_key": "theirs.preset.3.2.reason"
+      },
+      {
+        "template_id": "outdoor-path",
+        "name_key": "theirs.preset.3.3.name",
+        "reason_key": "theirs.preset.3.3.reason"
+      },
+      {
+        "template_id": "outdoor-flowers",
+        "name_key": "theirs.preset.3.4.name",
+        "reason_key": "theirs.preset.3.4.reason"
+      },
+      {
+        "template_id": "play-stage",
+        "name_key": "theirs.preset.3.5.name",
+        "reason_key": "theirs.preset.3.5.reason"
+      },
+      {
+        "template_id": "produce-stargarden",
+        "name_key": "ingredients.facility.produce-stargarden",
+        "reason_key": "ingredients.facility.reason"
+      }
+    ]
+  }
+}

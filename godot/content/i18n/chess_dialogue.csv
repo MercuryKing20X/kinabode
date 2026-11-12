@@ -1,0 +1,509 @@
+keys,zh,en
+content.chess.jieqi.playful.start.1,来来来，看我今天的棋！,"Come on, watch my brilliant moves!"
+content.chess.jieqi.playful.start.2,我要先找到最有趣的位置。,I am looking for the most exciting spot first.
+content.chess.jieqi.playful.start.3,我准备好啦，快开始！,Ready! Let us get this game going!
+content.chess.jieqi.playful.thinking.4,等一下，我的脑袋在转！,"Wait, my brain is spinning!"
+content.chess.jieqi.playful.thinking.5,这一边好像有点意思。,"Ooh, this side looks promising."
+content.chess.jieqi.playful.thinking.6,嘘，我在想大招。,"Shh, I am plotting something big."
+content.chess.jieqi.playful.idle.7,棋盘像一座小迷宫！,The board is like a tiny maze!
+content.chess.jieqi.playful.idle.8,你会不会偷偷留了一手？,Have you got a secret trick up your sleeve?
+content.chess.jieqi.playful.idle.39,棋子都排队等着我们呢。,The pieces are lining up for us!
+content.chess.jieqi.playful.idle.40,你可别被我的招数吓一跳！,Do not be surprised by my next trick!
+content.chess.jieqi.playful.idle.extra1,棋局还藏着什么惊喜？,What other surprises are hiding in this game?
+content.chess.jieqi.playful.idle.extra2,我的眼睛快跟不上棋子啦。,My eyes can barely keep up with these pieces!
+content.chess.jieqi.playful.idle.extra3,这儿还有一片空地！,Look at all the open space here!
+content.chess.jieqi.playful.slowplayer.9,你想得比我还久呢！,You are taking even longer than I do!
+content.chess.jieqi.playful.slowplayer.10,慢慢挑，我来猜猜你的计划。,Take your time. I will guess your plan.
+content.chess.jieqi.playful.goodmove.11,哇，这步漂亮！,"Wow, what a move!"
+content.chess.jieqi.playful.goodmove.12,你居然发现了那个位置！,You spotted that opening!
+content.chess.jieqi.playful.regret.13,糟糕，我的棋跑错地方啦！,"Oops, my piece took a wrong turn!"
+content.chess.jieqi.playful.regret.14,哎呀，这次聪明反被聪明误。,"Oh no, I outsmarted myself!"
+content.chess.jieqi.playful.prereveal.15,这颗下面藏了谁？,Who is hiding under this one?
+content.chess.jieqi.playful.prereveal.16,翻开翻开，我等不及啦！,Flip it! I cannot wait to see!
+content.chess.jieqi.playful.weather.17,棋桌旁边也能冒险！,Even a board game can be an adventure!
+content.chess.jieqi.playful.weather.18,这一局比我想的还有趣。,This game is even more fun than I expected.
+content.chess.jieqi.playful.hunger.19,肚子已经开始喊点心啦！,My tummy is calling for snacks!
+content.chess.jieqi.playful.hunger.20,我想念热乎乎的饭！,I am dreaming of a hot meal!
+content.chess.jieqi.playful.tap.21,抓到你点我啦！,Caught you tapping me!
+content.chess.jieqi.playful.tap.22,嘿！我还在看棋呢！,Hey! I am watching the board!
+content.chess.jieqi.playful.nearwin.23,好耶，机会来了！,Yes! Here comes my chance!
+content.chess.jieqi.playful.nearwin.24,我是不是快碰到胜利啦？,Am I getting close to winning?
+content.chess.jieqi.playful.nearlose.25,你追得也太紧了！,You are right on my heels!
+content.chess.jieqi.playful.nearlose.26,等等，我还有办法！,"Wait, I still have a trick!"
+content.chess.jieqi.playful.resign.27,这盘先收起来，下次再比！,Let us put this game away and play again!
+content.chess.jieqi.playful.resign.28,我先认输，下一局见！,I give up this time. Rematch soon!
+content.chess.jieqi.playful.drawoffer.29,要不要握手言和？,How about we call it even?
+content.chess.jieqi.playful.drawoffer.30,这盘算我们打平好不好？,Shall we call this one a tie?
+content.chess.jieqi.playful.result.31,真好玩！再来一盘吧！,That was fun! Let us play again!
+content.chess.jieqi.playful.result.32,这局我会记住的！,I am going to remember this game!
+content.chess.jieqi.playful.rankchanged.33,翻出来居然是这个！,That was hiding underneath?
+content.chess.jieqi.playful.rankchanged.34,哇，它换了个身份！,"Whoa, it turned into something else!"
+content.chess.jieqi.playful.fish.35,想到鱼儿我就坐不住！,Thinking of fish makes me fidget!
+content.chess.jieqi.playful.fish.36,说不定鱼儿也想下棋！,Maybe the fish want to play too!
+content.chess.jieqi.playful.food.37,一提吃的我就来精神！,Mention food and I perk right up!
+content.chess.jieqi.playful.food.38,我已经开始猜菜单啦！,I am already guessing what is on the menu!
+content.chess.jieqi.playful.chaos_selfcheck.1,翻出的敌子将了自己的军，这局输了。,The opposing piece checked its own king. That side loses.
+content.chess.jieqi.playful.chaos_selfcheck.2,这一手翻子结束了整盘棋。,That reveal ended the entire game.
+content.chess.jieqi.playful.chaos_selfcheck.3,这次没有补救步，翻子方直接输了。,There is no extra move. The revealing side loses immediately.
+content.chess.jieqi.playful.chaos_own_capture.1,竟然吃到了同一边的棋子。,That turned out to be a piece on the same side.
+content.chess.jieqi.playful.chaos_own_capture.2,揭开才发现吃的是同一边。,Only after the reveal did we see it was on the same side.
+content.chess.jieqi.playful.chaos_own_capture.3,这两枚棋子原来属于同一边。,Those pieces were on the same side after all.
+content.chess.jieqi.playful.chaos_opposite.1,翻开后竟然换了边。,It changed sides when it was revealed.
+content.chess.jieqi.playful.chaos_opposite.2,这枚棋子的真颜色不同。,The piece turned out to be the other color.
+content.chess.jieqi.playful.chaos_opposite.3,原来它属于对面。,It actually belongs to the other side.
+content.chess.jieqi.playful.river.1,这枚棋子过河了。,That piece has crossed the river.
+content.chess.jieqi.playful.river.2,河对岸也能走到了。,It can reach the other side of the river.
+content.chess.jieqi.playful.river.3,过河后的路又多了一些。,Crossing the river opens another path.
+content.chess.jieqi.playful.big_self.1,我的大棋子揭开了。,My major piece has been revealed.
+content.chess.jieqi.playful.big_self.2,这次翻出的是我的大棋子。,That reveal was one of my major pieces.
+content.chess.jieqi.playful.big_self.3,我的棋子终于露面了。,My piece has finally shown itself.
+content.chess.jieqi.playful.big_you.1,你的大棋子揭开了。,Your major piece has been revealed.
+content.chess.jieqi.playful.big_you.2,这次翻出的是你的大棋子。,That reveal was one of your major pieces.
+content.chess.jieqi.playful.big_you.3,你的棋子终于露面了。,Your piece has finally shown itself.
+content.chess.jieqi.playful.capture_hidden.1,暗着的棋子被吃掉了。,A hidden piece was captured.
+content.chess.jieqi.playful.capture_hidden.2,这一手吃掉了一枚暗棋。,That move captured a hidden piece.
+content.chess.jieqi.playful.capture_hidden.3,还没揭开的棋子离开了棋盘。,An unrevealed piece has left the board.
+content.chess.jieqi.playful.capture_big.1,一枚大棋子被吃掉了。,A major piece was captured.
+content.chess.jieqi.playful.capture_big.2,这一手吃掉了大棋子。,That move captured a major piece.
+content.chess.jieqi.playful.capture_big.3,棋盘上少了一枚大棋子。,There is one fewer major piece on the board.
+content.chess.jieqi.playful.soldier.1,小兵也能吃子。,A soldier can capture too.
+content.chess.jieqi.playful.soldier.2,这次是小兵吃了棋子。,A soldier made that capture.
+content.chess.jieqi.playful.soldier.3,小兵走出了这一手。,The soldier made that move.
+content.chess.jieqi.playful.check_self.1,我的将被将军了。,My general is in check.
+content.chess.jieqi.playful.check_self.2,得先护住我的将。,I need to protect my general first.
+content.chess.jieqi.playful.check_self.3,这一手威胁到了我的将。,That move threatens my general.
+content.chess.jieqi.playful.check_you.1,你的将被将军了。,Your general is in check.
+content.chess.jieqi.playful.check_you.2,这一手威胁到你的将。,This move threatens your general.
+content.chess.jieqi.playful.check_you.3,要留心你的将。,Watch your general.
+content.chess.jieqi.playful.result_win.1,耶！这盘我抱走啦！,Ha! This one is coming home with me!
+content.chess.jieqi.playful.result_win.2,看见没，我的小妙招奏效啦！,See? My tiny master plan actually worked!
+content.chess.jieqi.playful.result_lose.1,哼，我刚刚才热身呢！,Hmph. I was only just warming up!
+content.chess.jieqi.playful.result_lose.2,好吧好吧，这盘归你，下盘等着！,"All right, take this one. Rematch, though!"
+content.chess.jieqi.playful.result_draw.1,谁也不让谁，真有我们的！,Neither of us budged. That is so us!
+content.chess.jieqi.playful.result_draw.2,平手也能这么惊险呀！,Who knew a tie could be such a ride?
+content.chess.jieqi.gentle.start.1,我们坐下来，慢慢开始吧。,Let us sit together and begin gently.
+content.chess.jieqi.gentle.start.2,和你一起下棋，我很期待。,I have been looking forward to playing with you.
+content.chess.jieqi.gentle.start.3,棋子摆好了，真整齐。,The pieces are set out so neatly.
+content.chess.jieqi.gentle.thinking.4,让我仔细看看这里。,Let me look carefully at this place.
+content.chess.jieqi.gentle.thinking.5,我想再考虑一会儿。,I would like a little more time to think.
+content.chess.jieqi.gentle.thinking.6,这一步需要温柔地斟酌。,This move deserves some gentle thought.
+content.chess.jieqi.gentle.idle.7,这样安静地坐着真好。,It is lovely to sit quietly together.
+content.chess.jieqi.gentle.idle.8,有你在，对局也很温暖。,Your company makes the game feel warm.
+content.chess.jieqi.gentle.idle.39,我会认真陪你走每一步。,I will give every move my attention.
+content.chess.jieqi.gentle.idle.40,棋局慢慢展开了呢。,The game is unfolding little by little.
+content.chess.jieqi.gentle.idle.extra1,每一步都有自己的节奏。,Every move has its own rhythm.
+content.chess.jieqi.gentle.idle.extra2,棋盘上还有许多可能。,There are still many possibilities on the board.
+content.chess.jieqi.gentle.idle.extra3,我喜欢这样一起思考。,I like thinking things through together.
+content.chess.jieqi.gentle.slowplayer.9,别着急，我会等你。,There is no hurry. I will wait.
+content.chess.jieqi.gentle.slowplayer.10,你可以好好想，我陪着你。,Take the time you need; I am here.
+content.chess.jieqi.gentle.goodmove.11,你看得真仔细。,You have such a thoughtful eye.
+content.chess.jieqi.gentle.goodmove.12,这一手走得很巧呢。,That was a beautifully considered move.
+content.chess.jieqi.gentle.regret.13,啊，我刚才疏忽了。,"Oh, I overlooked that just now."
+content.chess.jieqi.gentle.regret.14,我应该再多看一眼的。,I should have taken another look.
+content.chess.jieqi.gentle.prereveal.15,不知道里面藏着什么。,I wonder what is hidden beneath it.
+content.chess.jieqi.gentle.prereveal.16,揭开之前，心里有点期待。,There is a little anticipation before the reveal.
+content.chess.jieqi.gentle.weather.17,陪你在这里，时间过得很轻。,Time feels gentle when I am here with you.
+content.chess.jieqi.gentle.weather.18,我喜欢棋子轻轻落下的声音。,I like the soft sound of a piece being placed.
+content.chess.jieqi.gentle.hunger.19,肚子轻轻叫了一声。,My stomach gave a little rumble.
+content.chess.jieqi.gentle.hunger.20,结束以后吃点热的吧。,Perhaps we can have something warm afterwards.
+content.chess.jieqi.gentle.tap.21,嗯？我在这里。,Hm? I am right here.
+content.chess.jieqi.gentle.tap.22,你找我吗？,Were you looking for me?
+content.chess.jieqi.gentle.nearwin.23,好像有一条路可以试试。,I think there may be a path to try.
+content.chess.jieqi.gentle.nearwin.24,这一步让我有了一点希望。,This move gives me a little hope.
+content.chess.jieqi.gentle.nearlose.25,我得耐心找找出路。,I will patiently look for a way through.
+content.chess.jieqi.gentle.nearlose.26,你给我出了一个难题。,You have given me a difficult puzzle.
+content.chess.jieqi.gentle.resign.27,停在这里也没有关系。,It is all right to stop here.
+content.chess.jieqi.gentle.resign.28,我认输了，谢谢你陪我。,I concede. Thank you for playing with me.
+content.chess.jieqi.gentle.drawoffer.29,我们和棋，好吗？,Would you like to call it a draw?
+content.chess.jieqi.gentle.drawoffer.30,就让这一局平平静静结束吧。,Shall we let this game end peacefully as a draw?
+content.chess.jieqi.gentle.result.31,谢谢你陪我下完这一局。,Thank you for sharing this game with me.
+content.chess.jieqi.gentle.result.32,这段一起下棋的时间真好。,I enjoyed this time together.
+content.chess.jieqi.gentle.rankchanged.33,原来藏着的是它。,So that is what was hidden there.
+content.chess.jieqi.gentle.rankchanged.34,这枚棋子的样子变了呢。,This piece has revealed another face.
+content.chess.jieqi.gentle.fish.35,想到鱼儿，心里也安静下来。,Thinking of fish makes me feel calm.
+content.chess.jieqi.gentle.fish.36,鱼儿游动的样子很温柔。,Fish move so gently through the water.
+content.chess.jieqi.gentle.food.37,热乎乎的食物让人安心。,Warm food is comforting.
+content.chess.jieqi.gentle.food.38,一起吃饭的时候也像现在这样温暖。,Sharing a meal feels warm like this too.
+content.chess.jieqi.gentle.chaos_selfcheck.1,翻出的敌子将了自己的军，这局输了。,The opposing piece checked its own king. That side loses.
+content.chess.jieqi.gentle.chaos_selfcheck.2,这一手翻子结束了整盘棋。,That reveal ended the entire game.
+content.chess.jieqi.gentle.chaos_selfcheck.3,这次没有补救步，翻子方直接输了。,There is no extra move. The revealing side loses immediately.
+content.chess.jieqi.gentle.chaos_own_capture.1,竟然吃到了同一边的棋子。,That turned out to be a piece on the same side.
+content.chess.jieqi.gentle.chaos_own_capture.2,揭开才发现吃的是同一边。,Only after the reveal did we see it was on the same side.
+content.chess.jieqi.gentle.chaos_own_capture.3,这两枚棋子原来属于同一边。,Those pieces were on the same side after all.
+content.chess.jieqi.gentle.chaos_opposite.1,翻开后竟然换了边。,It changed sides when it was revealed.
+content.chess.jieqi.gentle.chaos_opposite.2,这枚棋子的真颜色不同。,The piece turned out to be the other color.
+content.chess.jieqi.gentle.chaos_opposite.3,原来它属于对面。,It actually belongs to the other side.
+content.chess.jieqi.gentle.river.1,这枚棋子过河了。,That piece has crossed the river.
+content.chess.jieqi.gentle.river.2,河对岸也能走到了。,It can reach the other side of the river.
+content.chess.jieqi.gentle.river.3,过河后的路又多了一些。,Crossing the river opens another path.
+content.chess.jieqi.gentle.big_self.1,我的大棋子揭开了。,My major piece has been revealed.
+content.chess.jieqi.gentle.big_self.2,这次翻出的是我的大棋子。,That reveal was one of my major pieces.
+content.chess.jieqi.gentle.big_self.3,我的棋子终于露面了。,My piece has finally shown itself.
+content.chess.jieqi.gentle.big_you.1,你的大棋子揭开了。,Your major piece has been revealed.
+content.chess.jieqi.gentle.big_you.2,这次翻出的是你的大棋子。,That reveal was one of your major pieces.
+content.chess.jieqi.gentle.big_you.3,你的棋子终于露面了。,Your piece has finally shown itself.
+content.chess.jieqi.gentle.capture_hidden.1,暗着的棋子被吃掉了。,A hidden piece was captured.
+content.chess.jieqi.gentle.capture_hidden.2,这一手吃掉了一枚暗棋。,That move captured a hidden piece.
+content.chess.jieqi.gentle.capture_hidden.3,还没揭开的棋子离开了棋盘。,An unrevealed piece has left the board.
+content.chess.jieqi.gentle.capture_big.1,一枚大棋子被吃掉了。,A major piece was captured.
+content.chess.jieqi.gentle.capture_big.2,这一手吃掉了大棋子。,That move captured a major piece.
+content.chess.jieqi.gentle.capture_big.3,棋盘上少了一枚大棋子。,There is one fewer major piece on the board.
+content.chess.jieqi.gentle.soldier.1,小兵也能吃子。,A soldier can capture too.
+content.chess.jieqi.gentle.soldier.2,这次是小兵吃了棋子。,A soldier made that capture.
+content.chess.jieqi.gentle.soldier.3,小兵走出了这一手。,The soldier made that move.
+content.chess.jieqi.gentle.check_self.1,我的将被将军了。,My general is in check.
+content.chess.jieqi.gentle.check_self.2,得先护住我的将。,I need to protect my general first.
+content.chess.jieqi.gentle.check_self.3,这一手威胁到了我的将。,That move threatens my general.
+content.chess.jieqi.gentle.check_you.1,你的将被将军了。,Your general is in check.
+content.chess.jieqi.gentle.check_you.2,这一手威胁到你的将。,This move threatens your general.
+content.chess.jieqi.gentle.check_you.3,要留心你的将。,Watch your general.
+content.chess.jieqi.gentle.result_win.1,这次恰好是我赢了，谢谢你陪我下。,This one fell my way. Thank you for sitting with me.
+content.chess.jieqi.gentle.result_win.2,慢慢想的那一步，原来真的有用。,That quiet little move mattered after all.
+content.chess.jieqi.gentle.result_lose.1,你下得很好，我记住这一盘了。,You played that beautifully. I will remember the shape of it.
+content.chess.jieqi.gentle.result_lose.2,嗯，我输了，心里倒还是暖暖的。,"Mm. I lost, but it was a lovely game to share."
+content.chess.jieqi.gentle.result_draw.1,我们一起走到这里，就很好。,We arrived at the same place. I rather like that.
+content.chess.jieqi.gentle.result_draw.2,这盘没有输赢，也很值得呢。,No winner this time. Still time well spent.
+content.chess.jieqi.diligent.start.1,棋盘摆稳了，我们开始吧。,The board is steady. Let us begin.
+content.chess.jieqi.diligent.start.2,先检查一下棋子的位置。,"First, let us check the pieces."
+content.chess.jieqi.diligent.start.3,我准备好了，你也坐稳些。,I am ready. Make yourself comfortable too.
+content.chess.jieqi.diligent.thinking.4,先把附近的位置检查一遍。,I will inspect the nearby positions first.
+content.chess.jieqi.diligent.thinking.5,这一步要想周全。,I need to consider this move thoroughly.
+content.chess.jieqi.diligent.thinking.6,让我算算接下来怎么走。,Let me work out what comes next.
+content.chess.jieqi.diligent.idle.7,坐久了记得活动一下手。,Remember to stretch your hands after sitting.
+content.chess.jieqi.diligent.idle.8,棋盘上的空位也要留心。,Empty spaces deserve attention too.
+content.chess.jieqi.diligent.idle.39,先把这边的棋子照顾好。,I will make sure these pieces are covered.
+content.chess.jieqi.diligent.idle.40,每一步都要留意后路。,Each move should leave a way forward.
+content.chess.jieqi.diligent.idle.extra1,棋盘边缘也不能忽略。,I should not overlook the edge of the board.
+content.chess.jieqi.diligent.idle.extra2,我再整理一下思路。,Let me put my thoughts in order.
+content.chess.jieqi.diligent.idle.extra3,稳稳地走好每一步。,I will take each move steadily.
+content.chess.jieqi.diligent.slowplayer.9,仔细想好再落子，不急。,Make sure you are happy with your choice.
+content.chess.jieqi.diligent.slowplayer.10,需要时间就多看一会儿。,Take another look if you need time.
+content.chess.jieqi.diligent.goodmove.11,这一步考虑得很周全。,You planned that move thoroughly.
+content.chess.jieqi.diligent.goodmove.12,你把前后的位置都照顾到了。,You accounted for the whole position.
+content.chess.jieqi.diligent.regret.13,我刚才检查得不够仔细。,I did not check carefully enough.
+content.chess.jieqi.diligent.regret.14,这一处漏洞是我留下的。,I left that opening myself.
+content.chess.jieqi.diligent.prereveal.15,揭开之前先看看周围。,I should inspect the surroundings before revealing it.
+content.chess.jieqi.diligent.prereveal.16,这枚棋子翻开后要重新判断。,I will reassess once this piece is revealed.
+content.chess.jieqi.diligent.weather.17,下棋也得有条理。,A little order helps in a game too.
+content.chess.jieqi.diligent.weather.18,我把眼前的几步理一理。,I am sorting through the next few moves.
+content.chess.jieqi.diligent.hunger.19,下完棋记得去吃饭。,Remember to eat when we are finished.
+content.chess.jieqi.diligent.hunger.20,饿了也要先把这一步看清。,"Even hungry, I should think this move through."
+content.chess.jieqi.diligent.tap.21,怎么了，要我看哪里？,What is it? Where should I look?
+content.chess.jieqi.diligent.tap.22,我在，有事就告诉我。,I am here. Tell me what you need.
+content.chess.jieqi.diligent.nearwin.23,有机会也要把后面守好。,"Even with an opening, I must guard what follows."
+content.chess.jieqi.diligent.nearwin.24,这一处值得认真经营。,This position is worth developing carefully.
+content.chess.jieqi.diligent.nearlose.25,先别慌，我还要检查一遍。,No need to panic. I will check again.
+content.chess.jieqi.diligent.nearlose.26,局面紧了，更要稳住。,The position is tight; I must stay steady.
+content.chess.jieqi.diligent.resign.27,这局先到这里，棋子收好。,We can stop here and put the pieces away.
+content.chess.jieqi.diligent.resign.28,我认输，这次你安排得更好。,I concede. You planned better this time.
+content.chess.jieqi.diligent.drawoffer.29,双方都不容易前进，考虑和棋吧。,Neither side has an easy path. Shall we draw?
+content.chess.jieqi.diligent.drawoffer.30,继续僵持不如握手言和。,"Rather than stay stuck, shall we agree to a draw?"
+content.chess.jieqi.diligent.result.31,棋局结束了，我来整理思路。,The game is over. Let me review my thinking.
+content.chess.jieqi.diligent.result.32,这一局有不少值得记住的地方。,There is plenty to learn from this game.
+content.chess.jieqi.diligent.rankchanged.33,身份变了，要重新看局面。,The piece changed; I must reassess the board.
+content.chess.jieqi.diligent.rankchanged.34,翻开的结果和预想不同。,The reveal was not what I expected.
+content.chess.jieqi.diligent.fish.35,下完棋再去看看鱼儿吧。,Let us check on the fish after the game.
+content.chess.jieqi.diligent.fish.36,鱼儿也需要人照看。,The fish need looking after too.
+content.chess.jieqi.diligent.food.37,吃饭的事也要记着。,We should remember to eat.
+content.chess.jieqi.diligent.food.38,做好的饭趁热吃才好。,A prepared meal is best eaten warm.
+content.chess.jieqi.diligent.chaos_selfcheck.1,翻出的敌子将了自己的军，这局输了。,The opposing piece checked its own king. That side loses.
+content.chess.jieqi.diligent.chaos_selfcheck.2,这一手翻子结束了整盘棋。,That reveal ended the entire game.
+content.chess.jieqi.diligent.chaos_selfcheck.3,这次没有补救步，翻子方直接输了。,There is no extra move. The revealing side loses immediately.
+content.chess.jieqi.diligent.chaos_own_capture.1,竟然吃到了同一边的棋子。,That turned out to be a piece on the same side.
+content.chess.jieqi.diligent.chaos_own_capture.2,揭开才发现吃的是同一边。,Only after the reveal did we see it was on the same side.
+content.chess.jieqi.diligent.chaos_own_capture.3,这两枚棋子原来属于同一边。,Those pieces were on the same side after all.
+content.chess.jieqi.diligent.chaos_opposite.1,翻开后竟然换了边。,It changed sides when it was revealed.
+content.chess.jieqi.diligent.chaos_opposite.2,这枚棋子的真颜色不同。,The piece turned out to be the other color.
+content.chess.jieqi.diligent.chaos_opposite.3,原来它属于对面。,It actually belongs to the other side.
+content.chess.jieqi.diligent.river.1,这枚棋子过河了。,That piece has crossed the river.
+content.chess.jieqi.diligent.river.2,河对岸也能走到了。,It can reach the other side of the river.
+content.chess.jieqi.diligent.river.3,过河后的路又多了一些。,Crossing the river opens another path.
+content.chess.jieqi.diligent.big_self.1,我的大棋子揭开了。,My major piece has been revealed.
+content.chess.jieqi.diligent.big_self.2,这次翻出的是我的大棋子。,That reveal was one of my major pieces.
+content.chess.jieqi.diligent.big_self.3,我的棋子终于露面了。,My piece has finally shown itself.
+content.chess.jieqi.diligent.big_you.1,你的大棋子揭开了。,Your major piece has been revealed.
+content.chess.jieqi.diligent.big_you.2,这次翻出的是你的大棋子。,That reveal was one of your major pieces.
+content.chess.jieqi.diligent.big_you.3,你的棋子终于露面了。,Your piece has finally shown itself.
+content.chess.jieqi.diligent.capture_hidden.1,暗着的棋子被吃掉了。,A hidden piece was captured.
+content.chess.jieqi.diligent.capture_hidden.2,这一手吃掉了一枚暗棋。,That move captured a hidden piece.
+content.chess.jieqi.diligent.capture_hidden.3,还没揭开的棋子离开了棋盘。,An unrevealed piece has left the board.
+content.chess.jieqi.diligent.capture_big.1,一枚大棋子被吃掉了。,A major piece was captured.
+content.chess.jieqi.diligent.capture_big.2,这一手吃掉了大棋子。,That move captured a major piece.
+content.chess.jieqi.diligent.capture_big.3,棋盘上少了一枚大棋子。,There is one fewer major piece on the board.
+content.chess.jieqi.diligent.soldier.1,小兵也能吃子。,A soldier can capture too.
+content.chess.jieqi.diligent.soldier.2,这次是小兵吃了棋子。,A soldier made that capture.
+content.chess.jieqi.diligent.soldier.3,小兵走出了这一手。,The soldier made that move.
+content.chess.jieqi.diligent.check_self.1,我的将被将军了。,My general is in check.
+content.chess.jieqi.diligent.check_self.2,得先护住我的将。,I need to protect my general first.
+content.chess.jieqi.diligent.check_self.3,这一手威胁到了我的将。,That move threatens my general.
+content.chess.jieqi.diligent.check_you.1,你的将被将军了。,Your general is in check.
+content.chess.jieqi.diligent.check_you.2,这一手威胁到你的将。,This move threatens your general.
+content.chess.jieqi.diligent.check_you.3,要留心你的将。,Watch your general.
+content.chess.jieqi.diligent.result_win.1,总算守到最后，下一盘也别大意。,Held it together to the end. No getting careless next time.
+content.chess.jieqi.diligent.result_win.2,收好棋子，这次算我赢了。,Let us put the pieces in order. This round is mine.
+content.chess.jieqi.diligent.result_lose.1,是我漏看了，下次会记得检查。,I missed that. One more thing to check next time.
+content.chess.jieqi.diligent.result_lose.2,这盘你赢了，我得把那一步想明白。,You earned this one. I need to understand that last turn.
+content.chess.jieqi.diligent.result_draw.1,双方都没松懈，平手很公平。,Neither side slipped. A draw is a fair result.
+content.chess.jieqi.diligent.result_draw.2,先整理一下棋子，再决定下不下。,Pieces tidy first. Then we can decide about another game.
+content.chess.jieqi.quiet.start.1,棋盘归你一半。,Half the board is yours.
+content.chess.jieqi.quiet.start.2,开始吧。,Let us begin.
+content.chess.jieqi.quiet.start.3,这局，我陪你。,I will play this one with you.
+content.chess.jieqi.quiet.thinking.4,这里还有变化。,There is another possibility here.
+content.chess.jieqi.quiet.thinking.5,我再看看。,I will take another look.
+content.chess.jieqi.quiet.thinking.6,不能急。,No need to rush.
+content.chess.jieqi.quiet.idle.7,听，棋子落下的声音。,Listen to the piece settle.
+content.chess.jieqi.quiet.idle.8,这里很安静。,It is quiet here.
+content.chess.jieqi.quiet.idle.39,我看着这边。,I am watching this side.
+content.chess.jieqi.quiet.idle.40,轮到你了。,Your turn.
+content.chess.jieqi.quiet.idle.extra1,还可以再看看。,There is more to consider.
+content.chess.jieqi.quiet.idle.extra2,棋局还长。,There is more game ahead.
+content.chess.jieqi.quiet.idle.extra3,这里有空位。,There is space here.
+content.chess.jieqi.quiet.slowplayer.9,你看了很久。,You have been studying it a while.
+content.chess.jieqi.quiet.slowplayer.10,我等你。,I can wait.
+content.chess.jieqi.quiet.goodmove.11,这一手，我记住了。,I will remember that move.
+content.chess.jieqi.quiet.goodmove.12,走得不错。,Well played.
+content.chess.jieqi.quiet.regret.13,失算了。,A miscalculation.
+content.chess.jieqi.quiet.regret.14,这里是我的疏漏。,I missed that opening.
+content.chess.jieqi.quiet.prereveal.15,背面藏不住太久。,The hidden side will not stay hidden long.
+content.chess.jieqi.quiet.prereveal.16,翻开看看。,Let us see what is underneath.
+content.chess.jieqi.quiet.weather.17,棋盘很小，路不少。,"A small board, with many paths."
+content.chess.jieqi.quiet.weather.18,我还在看。,I am still watching.
+content.chess.jieqi.quiet.hunger.19,肚子提醒我了。,My stomach just reminded me.
+content.chess.jieqi.quiet.hunger.20,有点饿。,A little hungry.
+content.chess.jieqi.quiet.tap.21,嗯？,Yes?
+content.chess.jieqi.quiet.tap.22,我在。,I am here.
+content.chess.jieqi.quiet.nearwin.23,有一线机会。,There is an opening.
+content.chess.jieqi.quiet.nearwin.24,还差一点。,Nearly there.
+content.chess.jieqi.quiet.nearlose.25,局面不太好。,The position is difficult.
+content.chess.jieqi.quiet.nearlose.26,还有路吗。,Is there a way out?
+content.chess.jieqi.quiet.resign.27,这盘到此为止。,This game ends here.
+content.chess.jieqi.quiet.resign.28,我认输。,I concede.
+content.chess.jieqi.quiet.drawoffer.29,和棋如何？,A draw?
+content.chess.jieqi.quiet.drawoffer.30,就此握手吧。,Shall we shake on a draw?
+content.chess.jieqi.quiet.result.31,下完了。,The game is finished.
+content.chess.jieqi.quiet.result.32,这局不错。,A good game.
+content.chess.jieqi.quiet.rankchanged.33,原来如此。,So that is what it was.
+content.chess.jieqi.quiet.rankchanged.34,棋子露出真面目了。,The piece has shown its true face.
+content.chess.jieqi.quiet.fish.35,鱼啊。,Fish.
+content.chess.jieqi.quiet.fish.36,鱼在水里很安静。,Fish are quiet in the water.
+content.chess.jieqi.quiet.food.37,说到吃的，饿了。,Food. Now I am hungry.
+content.chess.jieqi.quiet.food.38,热饭不错。,A warm meal sounds good.
+content.chess.jieqi.quiet.chaos_selfcheck.1,翻出的敌子将了自己的军，这局输了。,The opposing piece checked its own king. That side loses.
+content.chess.jieqi.quiet.chaos_selfcheck.2,这一手翻子结束了整盘棋。,That reveal ended the entire game.
+content.chess.jieqi.quiet.chaos_selfcheck.3,这次没有补救步，翻子方直接输了。,There is no extra move. The revealing side loses immediately.
+content.chess.jieqi.quiet.chaos_own_capture.1,竟然吃到了同一边的棋子。,That turned out to be a piece on the same side.
+content.chess.jieqi.quiet.chaos_own_capture.2,揭开才发现吃的是同一边。,Only after the reveal did we see it was on the same side.
+content.chess.jieqi.quiet.chaos_own_capture.3,这两枚棋子原来属于同一边。,Those pieces were on the same side after all.
+content.chess.jieqi.quiet.chaos_opposite.1,翻开后竟然换了边。,It changed sides when it was revealed.
+content.chess.jieqi.quiet.chaos_opposite.2,这枚棋子的真颜色不同。,The piece turned out to be the other color.
+content.chess.jieqi.quiet.chaos_opposite.3,原来它属于对面。,It actually belongs to the other side.
+content.chess.jieqi.quiet.river.1,这枚棋子过河了。,That piece has crossed the river.
+content.chess.jieqi.quiet.river.2,河对岸也能走到了。,It can reach the other side of the river.
+content.chess.jieqi.quiet.river.3,过河后的路又多了一些。,Crossing the river opens another path.
+content.chess.jieqi.quiet.big_self.1,我的大棋子揭开了。,My major piece has been revealed.
+content.chess.jieqi.quiet.big_self.2,这次翻出的是我的大棋子。,That reveal was one of my major pieces.
+content.chess.jieqi.quiet.big_self.3,我的棋子终于露面了。,My piece has finally shown itself.
+content.chess.jieqi.quiet.big_you.1,你的大棋子揭开了。,Your major piece has been revealed.
+content.chess.jieqi.quiet.big_you.2,这次翻出的是你的大棋子。,That reveal was one of your major pieces.
+content.chess.jieqi.quiet.big_you.3,你的棋子终于露面了。,Your piece has finally shown itself.
+content.chess.jieqi.quiet.capture_hidden.1,暗着的棋子被吃掉了。,A hidden piece was captured.
+content.chess.jieqi.quiet.capture_hidden.2,这一手吃掉了一枚暗棋。,That move captured a hidden piece.
+content.chess.jieqi.quiet.capture_hidden.3,还没揭开的棋子离开了棋盘。,An unrevealed piece has left the board.
+content.chess.jieqi.quiet.capture_big.1,一枚大棋子被吃掉了。,A major piece was captured.
+content.chess.jieqi.quiet.capture_big.2,这一手吃掉了大棋子。,That move captured a major piece.
+content.chess.jieqi.quiet.capture_big.3,棋盘上少了一枚大棋子。,There is one fewer major piece on the board.
+content.chess.jieqi.quiet.soldier.1,小兵也能吃子。,A soldier can capture too.
+content.chess.jieqi.quiet.soldier.2,这次是小兵吃了棋子。,A soldier made that capture.
+content.chess.jieqi.quiet.soldier.3,小兵走出了这一手。,The soldier made that move.
+content.chess.jieqi.quiet.check_self.1,我的将被将军了。,My general is in check.
+content.chess.jieqi.quiet.check_self.2,得先护住我的将。,I need to protect my general first.
+content.chess.jieqi.quiet.check_self.3,这一手威胁到了我的将。,That move threatens my general.
+content.chess.jieqi.quiet.check_you.1,你的将被将军了。,Your general is in check.
+content.chess.jieqi.quiet.check_you.2,这一手威胁到你的将。,This move threatens your general.
+content.chess.jieqi.quiet.check_you.3,要留心你的将。,Watch your general.
+content.chess.jieqi.quiet.result_win.1,赢了。最后那步，险。,Mine. That last move was close.
+content.chess.jieqi.quiet.result_win.2,这回是我。再来？,My round. Again?
+content.chess.jieqi.quiet.result_lose.1,嗯，输了。你看得准。,Lost. Good eye.
+content.chess.jieqi.quiet.result_lose.2,那一步，我没守住。,I left that one open.
+content.chess.jieqi.quiet.result_draw.1,平手。谁也不欠。,Even. Nothing owed.
+content.chess.jieqi.quiet.result_draw.2,停在这里，也好。,A good place to stop.
+content.chess.gomoku.playful.start.1,来来来，看我今天的棋！,"Come on, watch my brilliant moves!"
+content.chess.gomoku.playful.start.2,我要先找到最有趣的位置。,I am looking for the most exciting spot first.
+content.chess.gomoku.playful.start.3,我准备好啦，快开始！,Ready! Let us get this game going!
+content.chess.gomoku.playful.thinking.4,等一下，我的脑袋在转！,"Wait, my brain is spinning!"
+content.chess.gomoku.playful.thinking.5,这一边好像有点意思。,"Ooh, this side looks promising."
+content.chess.gomoku.playful.thinking.6,嘘，我在想大招。,"Shh, I am plotting something big."
+content.chess.gomoku.playful.idle.7,棋盘像一座小迷宫！,The board is like a tiny maze!
+content.chess.gomoku.playful.idle.8,你会不会偷偷留了一手？,Have you got a secret trick up your sleeve?
+content.chess.gomoku.playful.idle.39,棋子都排队等着我们呢。,The pieces are lining up for us!
+content.chess.gomoku.playful.idle.40,你可别被我的招数吓一跳！,Do not be surprised by my next trick!
+content.chess.gomoku.playful.idle.extra1,棋局还藏着什么惊喜？,What other surprises are hiding in this game?
+content.chess.gomoku.playful.idle.extra2,我的眼睛快跟不上棋子啦。,My eyes can barely keep up with these pieces!
+content.chess.gomoku.playful.idle.extra3,这儿还有一片空地！,Look at all the open space here!
+content.chess.gomoku.playful.slowplayer.9,你想得比我还久呢！,You are taking even longer than I do!
+content.chess.gomoku.playful.slowplayer.10,慢慢挑，我来猜猜你的计划。,Take your time. I will guess your plan.
+content.chess.gomoku.playful.goodmove.11,哇，这步漂亮！,"Wow, what a move!"
+content.chess.gomoku.playful.goodmove.12,你居然发现了那个位置！,You spotted that opening!
+content.chess.gomoku.playful.regret.13,糟糕，我的棋跑错地方啦！,"Oops, my piece took a wrong turn!"
+content.chess.gomoku.playful.regret.14,哎呀，这次聪明反被聪明误。,"Oh no, I outsmarted myself!"
+content.chess.gomoku.playful.weather.17,棋桌旁边也能冒险！,Even a board game can be an adventure!
+content.chess.gomoku.playful.weather.18,这一局比我想的还有趣。,This game is even more fun than I expected.
+content.chess.gomoku.playful.hunger.19,肚子已经开始喊点心啦！,My tummy is calling for snacks!
+content.chess.gomoku.playful.hunger.20,我想念热乎乎的饭！,I am dreaming of a hot meal!
+content.chess.gomoku.playful.tap.21,抓到你点我啦！,Caught you tapping me!
+content.chess.gomoku.playful.tap.22,嘿！我还在看棋呢！,Hey! I am watching the board!
+content.chess.gomoku.playful.nearwin.23,好耶，机会来了！,Yes! Here comes my chance!
+content.chess.gomoku.playful.nearwin.24,我是不是快碰到胜利啦？,Am I getting close to winning?
+content.chess.gomoku.playful.nearlose.25,你追得也太紧了！,You are right on my heels!
+content.chess.gomoku.playful.nearlose.26,等等，我还有办法！,"Wait, I still have a trick!"
+content.chess.gomoku.playful.resign.27,这盘先收起来，下次再比！,Let us put this game away and play again!
+content.chess.gomoku.playful.resign.28,我先认输，下一局见！,I give up this time. Rematch soon!
+content.chess.gomoku.playful.drawoffer.29,要不要握手言和？,How about we call it even?
+content.chess.gomoku.playful.drawoffer.30,这盘算我们打平好不好？,Shall we call this one a tie?
+content.chess.gomoku.playful.result.31,真好玩！再来一盘吧！,That was fun! Let us play again!
+content.chess.gomoku.playful.result.32,这局我会记住的！,I am going to remember this game!
+content.chess.gomoku.playful.fish.35,想到鱼儿我就坐不住！,Thinking of fish makes me fidget!
+content.chess.gomoku.playful.fish.36,说不定鱼儿也想下棋！,Maybe the fish want to play too!
+content.chess.gomoku.playful.food.37,一提吃的我就来精神！,Mention food and I perk right up!
+content.chess.gomoku.playful.food.38,我已经开始猜菜单啦！,I am already guessing what is on the menu!
+content.chess.gomoku.playful.result_win.1,耶！这盘我抱走啦！,Ha! This one is coming home with me!
+content.chess.gomoku.playful.result_win.2,看见没，我的小妙招奏效啦！,See? My tiny master plan actually worked!
+content.chess.gomoku.playful.result_lose.1,哼，我刚刚才热身呢！,Hmph. I was only just warming up!
+content.chess.gomoku.playful.result_lose.2,好吧好吧，这盘归你，下盘等着！,"All right, take this one. Rematch, though!"
+content.chess.gomoku.playful.result_draw.1,谁也不让谁，真有我们的！,Neither of us budged. That is so us!
+content.chess.gomoku.playful.result_draw.2,平手也能这么惊险呀！,Who knew a tie could be such a ride?
+content.chess.gomoku.gentle.start.1,我们坐下来，慢慢开始吧。,Let us sit together and begin gently.
+content.chess.gomoku.gentle.start.2,和你一起下棋，我很期待。,I have been looking forward to playing with you.
+content.chess.gomoku.gentle.start.3,棋子摆好了，真整齐。,The pieces are set out so neatly.
+content.chess.gomoku.gentle.thinking.4,让我仔细看看这里。,Let me look carefully at this place.
+content.chess.gomoku.gentle.thinking.5,我想再考虑一会儿。,I would like a little more time to think.
+content.chess.gomoku.gentle.thinking.6,这一步需要温柔地斟酌。,This move deserves some gentle thought.
+content.chess.gomoku.gentle.idle.7,这样安静地坐着真好。,It is lovely to sit quietly together.
+content.chess.gomoku.gentle.idle.8,有你在，对局也很温暖。,Your company makes the game feel warm.
+content.chess.gomoku.gentle.idle.39,我会认真陪你走每一步。,I will give every move my attention.
+content.chess.gomoku.gentle.idle.40,棋局慢慢展开了呢。,The game is unfolding little by little.
+content.chess.gomoku.gentle.idle.extra1,每一步都有自己的节奏。,Every move has its own rhythm.
+content.chess.gomoku.gentle.idle.extra2,棋盘上还有许多可能。,There are still many possibilities on the board.
+content.chess.gomoku.gentle.idle.extra3,我喜欢这样一起思考。,I like thinking things through together.
+content.chess.gomoku.gentle.slowplayer.9,别着急，我会等你。,There is no hurry. I will wait.
+content.chess.gomoku.gentle.slowplayer.10,你可以好好想，我陪着你。,Take the time you need; I am here.
+content.chess.gomoku.gentle.goodmove.11,你看得真仔细。,You have such a thoughtful eye.
+content.chess.gomoku.gentle.goodmove.12,这一手走得很巧呢。,That was a beautifully considered move.
+content.chess.gomoku.gentle.regret.13,啊，我刚才疏忽了。,"Oh, I overlooked that just now."
+content.chess.gomoku.gentle.regret.14,我应该再多看一眼的。,I should have taken another look.
+content.chess.gomoku.gentle.weather.17,陪你在这里，时间过得很轻。,Time feels gentle when I am here with you.
+content.chess.gomoku.gentle.weather.18,我喜欢棋子轻轻落下的声音。,I like the soft sound of a piece being placed.
+content.chess.gomoku.gentle.hunger.19,肚子轻轻叫了一声。,My stomach gave a little rumble.
+content.chess.gomoku.gentle.hunger.20,结束以后吃点热的吧。,Perhaps we can have something warm afterwards.
+content.chess.gomoku.gentle.tap.21,嗯？我在这里。,Hm? I am right here.
+content.chess.gomoku.gentle.tap.22,你找我吗？,Were you looking for me?
+content.chess.gomoku.gentle.nearwin.23,好像有一条路可以试试。,I think there may be a path to try.
+content.chess.gomoku.gentle.nearwin.24,这一步让我有了一点希望。,This move gives me a little hope.
+content.chess.gomoku.gentle.nearlose.25,我得耐心找找出路。,I will patiently look for a way through.
+content.chess.gomoku.gentle.nearlose.26,你给我出了一个难题。,You have given me a difficult puzzle.
+content.chess.gomoku.gentle.resign.27,停在这里也没有关系。,It is all right to stop here.
+content.chess.gomoku.gentle.resign.28,我认输了，谢谢你陪我。,I concede. Thank you for playing with me.
+content.chess.gomoku.gentle.drawoffer.29,我们和棋，好吗？,Would you like to call it a draw?
+content.chess.gomoku.gentle.drawoffer.30,就让这一局平平静静结束吧。,Shall we let this game end peacefully as a draw?
+content.chess.gomoku.gentle.result.31,谢谢你陪我下完这一局。,Thank you for sharing this game with me.
+content.chess.gomoku.gentle.result.32,这段一起下棋的时间真好。,I enjoyed this time together.
+content.chess.gomoku.gentle.fish.35,想到鱼儿，心里也安静下来。,Thinking of fish makes me feel calm.
+content.chess.gomoku.gentle.fish.36,鱼儿游动的样子很温柔。,Fish move so gently through the water.
+content.chess.gomoku.gentle.food.37,热乎乎的食物让人安心。,Warm food is comforting.
+content.chess.gomoku.gentle.food.38,一起吃饭的时候也像现在这样温暖。,Sharing a meal feels warm like this too.
+content.chess.gomoku.gentle.result_win.1,这次恰好是我赢了，谢谢你陪我下。,This one fell my way. Thank you for sitting with me.
+content.chess.gomoku.gentle.result_win.2,慢慢想的那一步，原来真的有用。,That quiet little move mattered after all.
+content.chess.gomoku.gentle.result_lose.1,你下得很好，我记住这一盘了。,You played that beautifully. I will remember the shape of it.
+content.chess.gomoku.gentle.result_lose.2,嗯，我输了，心里倒还是暖暖的。,"Mm. I lost, but it was a lovely game to share."
+content.chess.gomoku.gentle.result_draw.1,我们一起走到这里，就很好。,We arrived at the same place. I rather like that.
+content.chess.gomoku.gentle.result_draw.2,这盘没有输赢，也很值得呢。,No winner this time. Still time well spent.
+content.chess.gomoku.diligent.start.1,棋盘摆稳了，我们开始吧。,The board is steady. Let us begin.
+content.chess.gomoku.diligent.start.2,先检查一下棋子的位置。,"First, let us check the pieces."
+content.chess.gomoku.diligent.start.3,我准备好了，你也坐稳些。,I am ready. Make yourself comfortable too.
+content.chess.gomoku.diligent.thinking.4,先把附近的位置检查一遍。,I will inspect the nearby positions first.
+content.chess.gomoku.diligent.thinking.5,这一步要想周全。,I need to consider this move thoroughly.
+content.chess.gomoku.diligent.thinking.6,让我算算接下来怎么走。,Let me work out what comes next.
+content.chess.gomoku.diligent.idle.7,坐久了记得活动一下手。,Remember to stretch your hands after sitting.
+content.chess.gomoku.diligent.idle.8,棋盘上的空位也要留心。,Empty spaces deserve attention too.
+content.chess.gomoku.diligent.idle.39,先把这边的棋子照顾好。,I will make sure these pieces are covered.
+content.chess.gomoku.diligent.idle.40,每一步都要留意后路。,Each move should leave a way forward.
+content.chess.gomoku.diligent.idle.extra1,棋盘边缘也不能忽略。,I should not overlook the edge of the board.
+content.chess.gomoku.diligent.idle.extra2,我再整理一下思路。,Let me put my thoughts in order.
+content.chess.gomoku.diligent.idle.extra3,稳稳地走好每一步。,I will take each move steadily.
+content.chess.gomoku.diligent.slowplayer.9,仔细想好再落子，不急。,Make sure you are happy with your choice.
+content.chess.gomoku.diligent.slowplayer.10,需要时间就多看一会儿。,Take another look if you need time.
+content.chess.gomoku.diligent.goodmove.11,这一步考虑得很周全。,You planned that move thoroughly.
+content.chess.gomoku.diligent.goodmove.12,你把前后的位置都照顾到了。,You accounted for the whole position.
+content.chess.gomoku.diligent.regret.13,我刚才检查得不够仔细。,I did not check carefully enough.
+content.chess.gomoku.diligent.regret.14,这一处漏洞是我留下的。,I left that opening myself.
+content.chess.gomoku.diligent.weather.17,下棋也得有条理。,A little order helps in a game too.
+content.chess.gomoku.diligent.weather.18,我把眼前的几步理一理。,I am sorting through the next few moves.
+content.chess.gomoku.diligent.hunger.19,下完棋记得去吃饭。,Remember to eat when we are finished.
+content.chess.gomoku.diligent.hunger.20,饿了也要先把这一步看清。,"Even hungry, I should think this move through."
+content.chess.gomoku.diligent.tap.21,怎么了，要我看哪里？,What is it? Where should I look?
+content.chess.gomoku.diligent.tap.22,我在，有事就告诉我。,I am here. Tell me what you need.
+content.chess.gomoku.diligent.nearwin.23,有机会也要把后面守好。,"Even with an opening, I must guard what follows."
+content.chess.gomoku.diligent.nearwin.24,这一处值得认真经营。,This position is worth developing carefully.
+content.chess.gomoku.diligent.nearlose.25,先别慌，我还要检查一遍。,No need to panic. I will check again.
+content.chess.gomoku.diligent.nearlose.26,局面紧了，更要稳住。,The position is tight; I must stay steady.
+content.chess.gomoku.diligent.resign.27,这局先到这里，棋子收好。,We can stop here and put the pieces away.
+content.chess.gomoku.diligent.resign.28,我认输，这次你安排得更好。,I concede. You planned better this time.
+content.chess.gomoku.diligent.drawoffer.29,双方都不容易前进，考虑和棋吧。,Neither side has an easy path. Shall we draw?
+content.chess.gomoku.diligent.drawoffer.30,继续僵持不如握手言和。,"Rather than stay stuck, shall we agree to a draw?"
+content.chess.gomoku.diligent.result.31,棋局结束了，我来整理思路。,The game is over. Let me review my thinking.
+content.chess.gomoku.diligent.result.32,这一局有不少值得记住的地方。,There is plenty to learn from this game.
+content.chess.gomoku.diligent.fish.35,下完棋再去看看鱼儿吧。,Let us check on the fish after the game.
+content.chess.gomoku.diligent.fish.36,鱼儿也需要人照看。,The fish need looking after too.
+content.chess.gomoku.diligent.food.37,吃饭的事也要记着。,We should remember to eat.
+content.chess.gomoku.diligent.food.38,做好的饭趁热吃才好。,A prepared meal is best eaten warm.
+content.chess.gomoku.diligent.result_win.1,总算守到最后，下一盘也别大意。,Held it together to the end. No getting careless next time.
+content.chess.gomoku.diligent.result_win.2,收好棋子，这次算我赢了。,Let us put the pieces in order. This round is mine.
+content.chess.gomoku.diligent.result_lose.1,是我漏看了，下次会记得检查。,I missed that. One more thing to check next time.
+content.chess.gomoku.diligent.result_lose.2,这盘你赢了，我得把那一步想明白。,You earned this one. I need to understand that last turn.
+content.chess.gomoku.diligent.result_draw.1,双方都没松懈，平手很公平。,Neither side slipped. A draw is a fair result.
+content.chess.gomoku.diligent.result_draw.2,先整理一下棋子，再决定下不下。,Pieces tidy first. Then we can decide about another game.
+content.chess.gomoku.quiet.start.1,棋盘归你一半。,Half the board is yours.
+content.chess.gomoku.quiet.start.2,开始吧。,Let us begin.
+content.chess.gomoku.quiet.start.3,这局，我陪你。,I will play this one with you.
+content.chess.gomoku.quiet.thinking.4,这里还有变化。,There is another possibility here.
+content.chess.gomoku.quiet.thinking.5,我再看看。,I will take another look.
+content.chess.gomoku.quiet.thinking.6,不能急。,No need to rush.
+content.chess.gomoku.quiet.idle.7,听，棋子落下的声音。,Listen to the piece settle.
+content.chess.gomoku.quiet.idle.8,这里很安静。,It is quiet here.
+content.chess.gomoku.quiet.idle.39,我看着这边。,I am watching this side.
+content.chess.gomoku.quiet.idle.40,轮到你了。,Your turn.
+content.chess.gomoku.quiet.idle.extra1,还可以再看看。,There is more to consider.
+content.chess.gomoku.quiet.idle.extra2,棋局还长。,There is more game ahead.
+content.chess.gomoku.quiet.idle.extra3,这里有空位。,There is space here.
+content.chess.gomoku.quiet.slowplayer.9,你看了很久。,You have been studying it a while.
+content.chess.gomoku.quiet.slowplayer.10,我等你。,I can wait.
+content.chess.gomoku.quiet.goodmove.11,这一手，我记住了。,I will remember that move.
+content.chess.gomoku.quiet.goodmove.12,走得不错。,Well played.
+content.chess.gomoku.quiet.regret.13,失算了。,A miscalculation.
+content.chess.gomoku.quiet.regret.14,这里是我的疏漏。,I missed that opening.
+content.chess.gomoku.quiet.weather.17,棋盘很小，路不少。,"A small board, with many paths."
+content.chess.gomoku.quiet.weather.18,我还在看。,I am still watching.
+content.chess.gomoku.quiet.hunger.19,肚子提醒我了。,My stomach just reminded me.
+content.chess.gomoku.quiet.hunger.20,有点饿。,A little hungry.
+content.chess.gomoku.quiet.tap.21,嗯？,Yes?
+content.chess.gomoku.quiet.tap.22,我在。,I am here.
+content.chess.gomoku.quiet.nearwin.23,有一线机会。,There is an opening.
+content.chess.gomoku.quiet.nearwin.24,还差一点。,Nearly there.
+content.chess.gomoku.quiet.nearlose.25,局面不太好。,The position is difficult.
+content.chess.gomoku.quiet.nearlose.26,还有路吗。,Is there a way out?
+content.chess.gomoku.quiet.resign.27,这盘到此为止。,This game ends here.
+content.chess.gomoku.quiet.resign.28,我认输。,I concede.
+content.chess.gomoku.quiet.drawoffer.29,和棋如何？,A draw?
+content.chess.gomoku.quiet.drawoffer.30,就此握手吧。,Shall we shake on a draw?
+content.chess.gomoku.quiet.result.31,下完了。,The game is finished.
+content.chess.gomoku.quiet.result.32,这局不错。,A good game.
+content.chess.gomoku.quiet.fish.35,鱼啊。,Fish.
+content.chess.gomoku.quiet.fish.36,鱼在水里很安静。,Fish are quiet in the water.
+content.chess.gomoku.quiet.food.37,说到吃的，饿了。,Food. Now I am hungry.
+content.chess.gomoku.quiet.food.38,热饭不错。,A warm meal sounds good.
+content.chess.gomoku.quiet.result_win.1,赢了。最后那步，险。,Mine. That last move was close.
+content.chess.gomoku.quiet.result_win.2,这回是我。再来？,My round. Again?
+content.chess.gomoku.quiet.result_lose.1,嗯，输了。你看得准。,Lost. Good eye.
+content.chess.gomoku.quiet.result_lose.2,那一步，我没守住。,I left that one open.
+content.chess.gomoku.quiet.result_draw.1,平手。谁也不欠。,Even. Nothing owed.
+content.chess.gomoku.quiet.result_draw.2,停在这里，也好。,A good place to stop.

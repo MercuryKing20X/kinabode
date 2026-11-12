@@ -1,0 +1,11 @@
+{
+  "id": "farm-cmd-glutton-busy",
+  "context": "farm_command_busy",
+  "lines": [
+    "等我忙完，就去收好吃的。",
+    "我手上还有事，等一下嘛。",
+    "再等等，马上就去。",
+    "先让我做完这个。"
+  ],
+  "autonomy_output": false
+}

@@ -1,0 +1,32 @@
+extends SceneTree
+const Presentation=preload("res://scripts/chess_presentation.gd")
+func _initialize() -> void:call_deferred("run")
+func run() -> void:
+	var directory:=OS.get_environment("HABITAT_DATA_DIR")
+	assert(directory.contains("youqi-test-"))
+	var world=preload("res://scripts/world_state.gd").new("res://content/home-v3/world.json")
+	world.residents.provision(world);world.library=preload("res://scripts/character_library.gd").new();world.library.configure(directory)
+	assert(preload("res://scripts/world_opening.gd").apply(world,world.library,"showcase").ok)
+	var ui=Presentation.new();root.add_child(ui);ui.setup(world,"jieqi");ui.set_process(false);ui.size=Vector2(960,640)
+	assert(ui.actor_views.size()==5)
+	var first: String=ui.companion_ids[0];var second: String=ui.companion_ids[1]
+	ui.set_opponent(first);ui.speak({"actor_id":first,"text":"one"});ui.speak({"actor_id":second,"text":"two"})
+	assert(ui.actor_views[first].speech.visible and ui.actor_views[second].speech.visible)
+	print("bubble rects ",ui.actor_views[first].speech.get_rect()," ",ui.actor_views[second].speech.get_rect())
+	assert(not ui.actor_views[first].speech.get_rect().intersects(ui.actor_views[second].speech.get_rect()))
+	assert(ui.actor_views[first].speech.get_rect().end.x<=ui.left.size.x)
+	assert(ui.actor_views[second].speech.get_rect().end.y<=ui.opponent_label.position.y)
+	ui.speak({"actor_id":"human","text":"invalid"});assert(not ui.actor_views.human.speech.visible)
+	ui._process(3.5);assert(ui.actor_views[first].speech.visible)
+	ui._process(0.2);assert(not ui.actor_views[first].speech.visible and not ui.actor_views[second].speech.visible)
+	ui.set_actor_pose(second,"happy");assert(ui.actor_views[second].pose_name=="happy")
+	ui.set_side_moves(3,4);assert(not ui.human_moves.visible)
+	assert(is_equal_approx(ui.center.size.x,480.0))
+	var island_view=preload("res://scripts/island_view.gd").new()
+	island_view.speech_by_actor={first:{"text":"retained world fact","until":100.0,"source":"local_rules"}}
+	var original:Dictionary=island_view.speech_by_actor.duplicate(true)
+	island_view.chess_overlay=true
+	assert(island_view.speech_layout().is_empty() and island_view.speech_by_actor==original)
+	island_view.free()
+	print("Chess scene presentation PASS")
+	ui.queue_free();await process_frame;quit(0)

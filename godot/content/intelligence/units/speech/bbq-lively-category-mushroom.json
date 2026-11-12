@@ -1,0 +1,11 @@
+{
+  "id": "bbq-lively-category-mushroom",
+  "context": "bbq_category_mushroom",
+  "lines": [
+    "蘑菇也来一串！",
+    "小蘑菇，吃掉你！",
+    "这一口蘑菇香，接住！",
+    "烤蘑菇也不会被我漏掉！"
+  ],
+  "autonomy_output": false
+}

@@ -1,0 +1,11 @@
+{
+  "id": "curious-gomoku-ahead",
+  "context": "gomoku_ahead",
+  "lines": [
+    "咦，现在我这边的机会多一些。",
+    "我注意到，我似乎更容易接出下一手。",
+    "让我瞧瞧，局面暂时偏向我一点。",
+    "有意思，这会儿我能主动些。"
+  ],
+  "autonomy_output": false
+}

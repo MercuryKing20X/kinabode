@@ -1,0 +1,18 @@
+keys,zh,en
+chess.choose,想下哪一种棋？,Which game shall we play?
+chess.choose_hint,先选玩法，再选一位伙伴。,Choose a game and then a companion.
+chess.choose_mode,选一种揭棋玩法,Choose a Jieqi mode
+chess.standard,标准,Standard
+chess.chaos,完全混乱,Total Chaos
+chess.standard_hint,双方各自打乱暗子，翻开后还是自己人。,Each side shuffles its own pieces. Reveals keep their color.
+chess.chaos_hint,红黑三十子一起打乱；翻开可能变成对方的子。,All thirty pieces are mixed. A reveal may belong to your opponent.
+chess.continue,继续上一局,Continue previous game
+chess.back,返回,Back
+chess.no_table,这里还没有棋桌，先在设施里建一张吧。,No chess table yet. Build one in Facilities first.
+chess.unbuilt,棋桌还没建好，去建一下吧。,The chess table is unfinished. Build it first.
+chess.other_island,棋桌在主岛，回到主岛再入座吧。,The chess table is on the main island. Return there to take a seat.
+chess.finish_previous,上一局还在，先继续或结束它吧。,A game is still here. Continue or finish it first.
+chess.busy,先停下手上的事、放好随身物品，再来入座吧。,Finish your task and put carried items away before taking a seat.
+chess.seats_busy,棋桌有人正在用，等她们下完吧。,The table is in use. Wait until their game finishes.
+chess.resume,继续,Continue
+chess.blocked,棋桌还没建好，周围被占用了；请在空地另摆一张棋桌。,This unfinished table is blocked. Place another chess table on open ground.

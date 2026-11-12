@@ -1,0 +1,8130 @@
+{
+  "schema_version": 1,
+  "id": "home-v3",
+  "version": 2,
+  "name": "初晴岛·v3",
+  "regions": [
+    {
+      "id": "home",
+      "template_id": "home-v3",
+      "name": "初晴岛·新家园",
+      "origin": [
+        4048,
+        4048
+      ],
+      "size": [
+        360,
+        330
+      ],
+      "land": [
+        [
+          16,
+          29
+        ],
+        [
+          30,
+          13
+        ],
+        [
+          57,
+          8
+        ],
+        [
+          92,
+          9
+        ],
+        [
+          125,
+          12
+        ],
+        [
+          143,
+          25
+        ],
+        [
+          150,
+          43
+        ],
+        [
+          151,
+          68
+        ],
+        [
+          146,
+          85
+        ],
+        [
+          133,
+          101
+        ],
+        [
+          109,
+          112
+        ],
+        [
+          84,
+          113
+        ],
+        [
+          82,
+          114
+        ],
+        [
+          74,
+          114
+        ],
+        [
+          73,
+          113
+        ],
+        [
+          47,
+          110
+        ],
+        [
+          25,
+          97
+        ],
+        [
+          17,
+          82
+        ],
+        [
+          17,
+          75
+        ],
+        [
+          31,
+          73
+        ],
+        [
+          31,
+          64
+        ],
+        [
+          17,
+          59
+        ],
+        [
+          13,
+          46
+        ]
+      ],
+      "content_version": 3,
+      "zones": [
+        {
+          "id": "home.residential.01",
+          "name": "你家",
+          "purpose": "housing",
+          "rect": [
+            37,
+            14,
+            10,
+            15
+          ],
+          "planned_actions": []
+        },
+        {
+          "id": "home.residential.02",
+          "name": "温柔小院",
+          "purpose": "housing",
+          "rect": [
+            54,
+            15,
+            8,
+            15
+          ],
+          "planned_actions": []
+        },
+        {
+          "id": "home.residential.03",
+          "name": "好奇小院",
+          "purpose": "housing",
+          "rect": [
+            69,
+            15,
+            8,
+            15
+          ],
+          "planned_actions": []
+        },
+        {
+          "id": "home.residential.04",
+          "name": "活泼小院",
+          "purpose": "housing",
+          "rect": [
+            84,
+            15,
+            8,
+            15
+          ],
+          "planned_actions": []
+        },
+        {
+          "id": "home.residential.05",
+          "name": "安静小院",
+          "purpose": "housing",
+          "rect": [
+            99,
+            15,
+            8,
+            15
+          ],
+          "planned_actions": []
+        },
+        {
+          "id": "home.residential.06",
+          "name": "待建宅地",
+          "purpose": "housing",
+          "rect": [
+            112.5,
+            15,
+            8,
+            15
+          ],
+          "planned_actions": []
+        },
+        {
+          "id": "home.plaza",
+          "name": "中心广场",
+          "purpose": "social",
+          "rect": [
+            55,
+            34,
+            40,
+            34
+          ],
+          "planned_actions": []
+        },
+        {
+          "id": "home.nw_pines",
+          "name": "西北小松林",
+          "purpose": "wood",
+          "rect": [
+            20,
+            38,
+            16,
+            16
+          ],
+          "planned_actions": []
+        },
+        {
+          "id": "home.forest",
+          "name": "东侧森林",
+          "purpose": "wood",
+          "rect": [
+            112,
+            36,
+            33,
+            49
+          ],
+          "planned_actions": []
+        },
+        {
+          "id": "home.storage",
+          "name": "伐木营地",
+          "purpose": "storage",
+          "rect": [
+            102,
+            60,
+            10,
+            10
+          ],
+          "planned_actions": []
+        },
+        {
+          "id": "home.toolshed",
+          "name": "农具棚",
+          "purpose": "storage",
+          "rect": [
+            70,
+            89,
+            14,
+            7
+          ],
+          "planned_actions": []
+        },
+        {
+          "id": "home.orchard_scenery",
+          "name": "西南果园花田",
+          "purpose": "scenery",
+          "rect": [
+            40,
+            95,
+            15,
+            9
+          ],
+          "planned_actions": []
+        },
+        {
+          "id": "home.lookout",
+          "name": "北坡观景台",
+          "purpose": "scenery",
+          "rect": [
+            24,
+            22,
+            9,
+            8
+          ],
+          "planned_actions": []
+        },
+        {
+          "id": "home.pond",
+          "name": "山泉池塘",
+          "purpose": "scenery",
+          "rect": [
+            122,
+            21,
+            13,
+            12
+          ],
+          "planned_actions": []
+        },
+        {
+          "id": "home.farm.home",
+          "name": "家园菜园",
+          "purpose": "farming",
+          "rect": [
+            42,
+            74,
+            12.4,
+            8.8
+          ],
+          "planned_actions": []
+        },
+        {
+          "id": "home.farm.hill",
+          "name": "阳光菜园",
+          "purpose": "farming",
+          "rect": [
+            59,
+            74,
+            12.4,
+            8.8
+          ],
+          "planned_actions": []
+        },
+        {
+          "id": "home.farm.lake",
+          "name": "花间菜园",
+          "purpose": "farming",
+          "rect": [
+            78,
+            74,
+            12.4,
+            8.8
+          ],
+          "planned_actions": []
+        },
+        {
+          "id": "home.farm.east",
+          "name": "东侧菜园",
+          "purpose": "farming",
+          "rect": [
+            93,
+            74,
+            12.4,
+            8.8
+          ],
+          "planned_actions": []
+        },
+        {
+          "id": "home.future.plaza.west.zone",
+          "name": "待建空地",
+          "purpose": "future",
+          "rect": [
+            35,
+            56,
+            12,
+            10
+          ],
+          "planned_actions": []
+        },
+        {
+          "id": "home.future.plaza.east.zone",
+          "name": "待建空地",
+          "purpose": "future",
+          "rect": [
+            100,
+            45,
+            12,
+            10
+          ],
+          "planned_actions": []
+        },
+        {
+          "id": "home.future.dock.zone",
+          "name": "待建空地",
+          "purpose": "future",
+          "rect": [
+            89,
+            102,
+            12,
+            10
+          ],
+          "planned_actions": []
+        },
+        {
+          "id": "home.future.forest.zone",
+          "name": "待建空地",
+          "purpose": "future",
+          "rect": [
+            121,
+            88,
+            12,
+            10
+          ],
+          "planned_actions": []
+        },
+        {
+          "id": "homelands.house.01.plot",
+          "name": "宅地 01",
+          "purpose": "housing",
+          "rect": [
+            27,
+            209,
+            12,
+            16
+          ],
+          "planned_actions": []
+        },
+        {
+          "id": "homelands.house.02.plot",
+          "name": "宅地 02",
+          "purpose": "housing",
+          "rect": [
+            51,
+            209,
+            12,
+            16
+          ],
+          "planned_actions": []
+        },
+        {
+          "id": "homelands.house.03.plot",
+          "name": "宅地 03",
+          "purpose": "housing",
+          "rect": [
+            75,
+            209,
+            12,
+            16
+          ],
+          "planned_actions": []
+        },
+        {
+          "id": "homelands.house.04.plot",
+          "name": "宅地 04",
+          "purpose": "housing",
+          "rect": [
+            99,
+            209,
+            12,
+            16
+          ],
+          "planned_actions": []
+        },
+        {
+          "id": "homelands.house.05.plot",
+          "name": "宅地 05",
+          "purpose": "housing",
+          "rect": [
+            123,
+            209,
+            12,
+            16
+          ],
+          "planned_actions": []
+        },
+        {
+          "id": "homelands.house.06.plot",
+          "name": "宅地 06",
+          "purpose": "housing",
+          "rect": [
+            27,
+            257,
+            12,
+            16
+          ],
+          "planned_actions": []
+        },
+        {
+          "id": "homelands.house.07.plot",
+          "name": "宅地 07",
+          "purpose": "housing",
+          "rect": [
+            51,
+            257,
+            12,
+            16
+          ],
+          "planned_actions": []
+        },
+        {
+          "id": "homelands.house.08.plot",
+          "name": "宅地 08",
+          "purpose": "housing",
+          "rect": [
+            75,
+            257,
+            12,
+            16
+          ],
+          "planned_actions": []
+        },
+        {
+          "id": "homelands.house.09.plot",
+          "name": "宅地 09",
+          "purpose": "housing",
+          "rect": [
+            99,
+            257,
+            12,
+            16
+          ],
+          "planned_actions": []
+        },
+        {
+          "id": "homelands.house.10.plot",
+          "name": "宅地 10",
+          "purpose": "housing",
+          "rect": [
+            123,
+            257,
+            12,
+            16
+          ],
+          "planned_actions": []
+        }
+      ],
+      "objects": [
+        {
+          "id": "home.house.01",
+          "kind": "construction_site",
+          "zone_id": "home.residential.01",
+          "position": [
+            42,
+            20
+          ],
+          "name": "你家",
+          "owner_id": "human",
+          "status": "planned",
+          "footprint": [
+            10,
+            9
+          ],
+          "stage": "foundation",
+          "stage_index": 0,
+          "invested": 0,
+          "delivered": {},
+          "required": {
+            "wood": 12
+          }
+        },
+        {
+          "id": "home.house.02",
+          "kind": "construction_site",
+          "zone_id": "home.residential.02",
+          "position": [
+            58,
+            21
+          ],
+          "name": "温柔小院",
+          "owner_id": "codex",
+          "status": "planned",
+          "footprint": [
+            8,
+            7
+          ],
+          "stage": "foundation",
+          "stage_index": 0,
+          "invested": 0,
+          "delivered": {},
+          "required": {
+            "wood": 12
+          }
+        },
+        {
+          "id": "home.house.03",
+          "kind": "construction_site",
+          "zone_id": "home.residential.03",
+          "position": [
+            73,
+            21
+          ],
+          "name": "好奇小院",
+          "owner_id": "companion-2",
+          "status": "planned",
+          "footprint": [
+            8,
+            7
+          ],
+          "stage": "foundation",
+          "stage_index": 0,
+          "invested": 0,
+          "delivered": {},
+          "required": {
+            "wood": 12
+          }
+        },
+        {
+          "id": "home.house.04",
+          "kind": "construction_site",
+          "zone_id": "home.residential.04",
+          "position": [
+            88,
+            21
+          ],
+          "name": "活泼小院",
+          "owner_id": "npc.mira",
+          "status": "planned",
+          "footprint": [
+            8,
+            7
+          ],
+          "stage": "foundation",
+          "stage_index": 0,
+          "invested": 0,
+          "delivered": {},
+          "required": {
+            "wood": 12
+          }
+        },
+        {
+          "id": "home.house.05",
+          "kind": "construction_site",
+          "zone_id": "home.residential.05",
+          "position": [
+            103,
+            21
+          ],
+          "name": "安静小院",
+          "owner_id": "npc.nora",
+          "status": "planned",
+          "footprint": [
+            8,
+            7
+          ],
+          "stage": "foundation",
+          "stage_index": 0,
+          "invested": 0,
+          "delivered": {},
+          "required": {
+            "wood": 12
+          }
+        },
+        {
+          "id": "home.house.06",
+          "kind": "construction_site",
+          "zone_id": "home.residential.06",
+          "position": [
+            116.5,
+            21
+          ],
+          "name": "待建宅地",
+          "owner_id": "",
+          "status": "planned",
+          "footprint": [
+            8,
+            7
+          ],
+          "stage": "foundation",
+          "stage_index": 0,
+          "invested": 0,
+          "delivered": {},
+          "required": {
+            "wood": 12
+          }
+        },
+        {
+          "id": "home.tree.01",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            122.89,
+            41.08
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.02",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            121.07,
+            44.46
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.03",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            116.9,
+            44.47
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.04",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            114.94,
+            41.01
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.05",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            116.95,
+            37.54
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.06",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            120.96,
+            37.52
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.07",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            142.6,
+            44.97
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.08",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            139.19,
+            47.61
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.09",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            135.57,
+            45.35
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.10",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            136.47,
+            41.27
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.11",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            140.89,
+            40.87
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.12",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            131.68,
+            56.65
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.13",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            128.38,
+            59.08
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.14",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            124.72,
+            57.09
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.15",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            124.49,
+            53.33
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.16",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            127.75,
+            51.11
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.17",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            131.44,
+            52.68
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.18",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            144.04,
+            65.11
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.19",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            142.0,
+            68.48
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.20",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            137.93,
+            68.58
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.21",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            135.95,
+            65.01
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.22",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            137.96,
+            61.65
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.23",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            141.93,
+            61.56
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.24",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            120.73,
+            68.79
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.25",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            117.3,
+            71.78
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.26",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            113.7,
+            69.39
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.27",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            114.5,
+            65.16
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.28",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            118.82,
+            64.71
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.29",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            130.49,
+            80.9
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.30",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            127.28,
+            82.92
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.31",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            123.57,
+            81.21
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.32",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            123.43,
+            77.2
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.33",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            126.7,
+            74.95
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.34",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            130.44,
+            76.88
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.35",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            144.06,
+            79.9
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.36",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            141.88,
+            83.36
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.37",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            138.02,
+            83.57
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.38",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            135.96,
+            80.06
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.39",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            138.13,
+            76.47
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.40",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            141.98,
+            76.45
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.41",
+          "kind": "tree",
+          "zone_id": "home.nw_pines",
+          "position": [
+            22,
+            40
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.42",
+          "kind": "tree",
+          "zone_id": "home.nw_pines",
+          "position": [
+            26,
+            39.5
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.43",
+          "kind": "tree",
+          "zone_id": "home.nw_pines",
+          "position": [
+            30,
+            40.2
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.44",
+          "kind": "tree",
+          "zone_id": "home.nw_pines",
+          "position": [
+            21.5,
+            44
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.45",
+          "kind": "tree",
+          "zone_id": "home.nw_pines",
+          "position": [
+            26,
+            44
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.46",
+          "kind": "tree",
+          "zone_id": "home.nw_pines",
+          "position": [
+            30.5,
+            44.4
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.47",
+          "kind": "tree",
+          "zone_id": "home.nw_pines",
+          "position": [
+            22,
+            48
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.48",
+          "kind": "tree",
+          "zone_id": "home.nw_pines",
+          "position": [
+            26.2,
+            48.5
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.tree.49",
+          "kind": "tree",
+          "zone_id": "home.nw_pines",
+          "position": [
+            30.2,
+            48.3
+          ],
+          "name": "东林树1",
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8
+        },
+        {
+          "id": "home.future.plaza.west",
+          "kind": "construction_site",
+          "zone_id": "home.future.plaza.west.zone",
+          "position": [
+            41,
+            61
+          ],
+          "name": "待建空地",
+          "owner_id": "",
+          "status": "planned",
+          "footprint": [
+            12,
+            10
+          ],
+          "stage": "foundation",
+          "stage_index": 0,
+          "invested": 0,
+          "delivered": {},
+          "required": {
+            "wood": 12
+          }
+        },
+        {
+          "id": "home.future.plaza.east",
+          "kind": "construction_site",
+          "zone_id": "home.future.plaza.east.zone",
+          "position": [
+            106,
+            50
+          ],
+          "name": "待建空地",
+          "owner_id": "",
+          "status": "planned",
+          "footprint": [
+            12,
+            10
+          ],
+          "stage": "foundation",
+          "stage_index": 0,
+          "invested": 0,
+          "delivered": {},
+          "required": {
+            "wood": 12
+          }
+        },
+        {
+          "id": "home.future.dock",
+          "kind": "construction_site",
+          "zone_id": "home.future.dock.zone",
+          "position": [
+            95,
+            107
+          ],
+          "name": "待建空地",
+          "owner_id": "",
+          "status": "planned",
+          "footprint": [
+            12,
+            10
+          ],
+          "stage": "foundation",
+          "stage_index": 0,
+          "invested": 0,
+          "delivered": {},
+          "required": {
+            "wood": 12
+          }
+        },
+        {
+          "id": "home.future.forest",
+          "kind": "construction_site",
+          "zone_id": "home.future.forest.zone",
+          "position": [
+            127,
+            93
+          ],
+          "name": "待建空地",
+          "owner_id": "",
+          "status": "planned",
+          "footprint": [
+            12,
+            10
+          ],
+          "stage": "foundation",
+          "stage_index": 0,
+          "invested": 0,
+          "delivered": {},
+          "required": {
+            "wood": 12
+          }
+        },
+        {
+          "id": "homelands.house.01",
+          "kind": "construction_site",
+          "zone_id": "homelands.house.01.plot",
+          "position": [
+            33,
+            215
+          ],
+          "name": "宅地 01",
+          "owner_id": "human",
+          "status": "planned",
+          "footprint": [
+            10,
+            9
+          ],
+          "stage": "foundation",
+          "stage_index": 0,
+          "invested": 0,
+          "delivered": {},
+          "required": {
+            "wood": 12
+          }
+        },
+        {
+          "id": "homelands.house.02",
+          "kind": "construction_site",
+          "zone_id": "homelands.house.02.plot",
+          "position": [
+            57,
+            215
+          ],
+          "name": "宅地 02",
+          "owner_id": "codex",
+          "status": "planned",
+          "footprint": [
+            10,
+            9
+          ],
+          "stage": "foundation",
+          "stage_index": 0,
+          "invested": 0,
+          "delivered": {},
+          "required": {
+            "wood": 12
+          }
+        },
+        {
+          "id": "homelands.house.03",
+          "kind": "construction_site",
+          "zone_id": "homelands.house.03.plot",
+          "position": [
+            81,
+            215
+          ],
+          "name": "宅地 03",
+          "owner_id": "companion-2",
+          "status": "planned",
+          "footprint": [
+            10,
+            9
+          ],
+          "stage": "foundation",
+          "stage_index": 0,
+          "invested": 0,
+          "delivered": {},
+          "required": {
+            "wood": 12
+          }
+        },
+        {
+          "id": "homelands.house.04",
+          "kind": "construction_site",
+          "zone_id": "homelands.house.04.plot",
+          "position": [
+            105,
+            215
+          ],
+          "name": "宅地 04",
+          "owner_id": "npc.mira",
+          "status": "planned",
+          "footprint": [
+            10,
+            9
+          ],
+          "stage": "foundation",
+          "stage_index": 0,
+          "invested": 0,
+          "delivered": {},
+          "required": {
+            "wood": 12
+          }
+        },
+        {
+          "id": "homelands.house.05",
+          "kind": "construction_site",
+          "zone_id": "homelands.house.05.plot",
+          "position": [
+            129,
+            215
+          ],
+          "name": "宅地 05",
+          "owner_id": "npc.nora",
+          "status": "planned",
+          "footprint": [
+            10,
+            9
+          ],
+          "stage": "foundation",
+          "stage_index": 0,
+          "invested": 0,
+          "delivered": {},
+          "required": {
+            "wood": 12
+          }
+        },
+        {
+          "id": "homelands.house.06",
+          "kind": "construction_site",
+          "zone_id": "homelands.house.06.plot",
+          "position": [
+            33,
+            263
+          ],
+          "name": "宅地 06",
+          "owner_id": "human",
+          "status": "planned",
+          "footprint": [
+            10,
+            9
+          ],
+          "stage": "foundation",
+          "stage_index": 0,
+          "invested": 0,
+          "delivered": {},
+          "required": {
+            "wood": 12
+          }
+        },
+        {
+          "id": "homelands.house.07",
+          "kind": "construction_site",
+          "zone_id": "homelands.house.07.plot",
+          "position": [
+            57,
+            263
+          ],
+          "name": "宅地 07",
+          "owner_id": "codex",
+          "status": "planned",
+          "footprint": [
+            10,
+            9
+          ],
+          "stage": "foundation",
+          "stage_index": 0,
+          "invested": 0,
+          "delivered": {},
+          "required": {
+            "wood": 12
+          }
+        },
+        {
+          "id": "homelands.house.08",
+          "kind": "construction_site",
+          "zone_id": "homelands.house.08.plot",
+          "position": [
+            81,
+            263
+          ],
+          "name": "宅地 08",
+          "owner_id": "companion-2",
+          "status": "planned",
+          "footprint": [
+            10,
+            9
+          ],
+          "stage": "foundation",
+          "stage_index": 0,
+          "invested": 0,
+          "delivered": {},
+          "required": {
+            "wood": 12
+          }
+        },
+        {
+          "id": "homelands.house.09",
+          "kind": "construction_site",
+          "zone_id": "homelands.house.09.plot",
+          "position": [
+            105,
+            263
+          ],
+          "name": "宅地 09",
+          "owner_id": "npc.mira",
+          "status": "planned",
+          "footprint": [
+            10,
+            9
+          ],
+          "stage": "foundation",
+          "stage_index": 0,
+          "invested": 0,
+          "delivered": {},
+          "required": {
+            "wood": 12
+          }
+        },
+        {
+          "id": "homelands.house.10",
+          "kind": "construction_site",
+          "zone_id": "homelands.house.10.plot",
+          "position": [
+            129,
+            263
+          ],
+          "name": "宅地 10",
+          "owner_id": "npc.nora",
+          "status": "planned",
+          "footprint": [
+            10,
+            9
+          ],
+          "stage": "foundation",
+          "stage_index": 0,
+          "invested": 0,
+          "delivered": {},
+          "required": {
+            "wood": 12
+          }
+        }
+      ],
+      "layout": {
+        "roads": [
+          {
+            "id": "main-ring-north",
+            "points": [
+              [
+                108,
+                31.2
+              ],
+              [
+                110,
+                58
+              ],
+              [
+                109,
+                87
+              ],
+              [
+                91,
+                96
+              ]
+            ],
+            "width": 2,
+            "material": "packed-earth",
+            "curb": true
+          },
+          {
+            "id": "main-ring-south",
+            "points": [
+              [
+                91,
+                96
+              ],
+              [
+                76,
+                103
+              ],
+              [
+                46,
+                97
+              ],
+              [
+                36,
+                83
+              ],
+              [
+                34,
+                54
+              ],
+              [
+                46,
+                31.2
+              ]
+            ],
+            "width": 2,
+            "material": "packed-earth",
+            "curb": true
+          },
+          {
+            "id": "north-street",
+            "points": [
+              [
+                37,
+                31.8
+              ],
+              [
+                46,
+                31.2
+              ],
+              [
+                56,
+                32.0
+              ],
+              [
+                66,
+                31.3
+              ],
+              [
+                76,
+                32.3
+              ],
+              [
+                86,
+                31.6
+              ],
+              [
+                97,
+                32.1
+              ],
+              [
+                108,
+                31.2
+              ],
+              [
+                119,
+                31.8
+              ]
+            ],
+            "width": 2,
+            "material": "packed-earth",
+            "curb": false,
+            "smooth": true
+          },
+          {
+            "id": "plaza-cross-north-south",
+            "points": [
+              [
+                75,
+                30.4
+              ],
+              [
+                75,
+                99
+              ]
+            ],
+            "width": 3,
+            "material": "packed-earth",
+            "curb": false
+          },
+          {
+            "id": "plaza-cross-west-east",
+            "points": [
+              [
+                55,
+                51
+              ],
+              [
+                95,
+                51
+              ]
+            ],
+            "width": 3,
+            "material": "packed-earth",
+            "curb": false
+          },
+          {
+            "id": "field-front",
+            "points": [
+              [
+                41,
+                72
+              ],
+              [
+                107,
+                72
+              ]
+            ],
+            "width": 1,
+            "material": "earth",
+            "curb": false
+          },
+          {
+            "id": "west-pier",
+            "points": [
+              [
+                75,
+                54
+              ],
+              [
+                46,
+                70
+              ]
+            ],
+            "width": 2,
+            "material": "earth",
+            "curb": false
+          },
+          {
+            "id": "east-work",
+            "points": [
+              [
+                95,
+                51
+              ],
+              [
+                101,
+                63
+              ],
+              [
+                107,
+                67
+              ]
+            ],
+            "width": 2,
+            "material": "earth",
+            "curb": false
+          },
+          {
+            "id": "lookout-trail",
+            "points": [
+              [
+                39,
+                29.5
+              ],
+              [
+                33,
+                28
+              ],
+              [
+                26,
+                25
+              ]
+            ],
+            "width": 0.6,
+            "material": "earth",
+            "curb": false
+          },
+          {
+            "id": "spring-trail",
+            "points": [
+              [
+                114,
+                29.5
+              ],
+              [
+                128,
+                30
+              ]
+            ],
+            "width": 0.6,
+            "material": "earth",
+            "curb": false
+          },
+          {
+            "id": "future-plaza.west",
+            "points": [
+              [
+                55,
+                61
+              ],
+              [
+                35,
+                61
+              ],
+              [
+                41,
+                61
+              ]
+            ],
+            "width": 1,
+            "material": "earth",
+            "curb": false
+          },
+          {
+            "id": "future-plaza.east",
+            "points": [
+              [
+                96,
+                50
+              ],
+              [
+                100,
+                50
+              ],
+              [
+                106,
+                50
+              ]
+            ],
+            "width": 1,
+            "material": "earth",
+            "curb": false
+          },
+          {
+            "id": "future-dock",
+            "points": [
+              [
+                75,
+                99
+              ],
+              [
+                88,
+                100
+              ],
+              [
+                95,
+                107
+              ]
+            ],
+            "width": 1,
+            "material": "earth",
+            "curb": false
+          },
+          {
+            "id": "future-forest",
+            "points": [
+              [
+                110,
+                86
+              ],
+              [
+                121,
+                93
+              ],
+              [
+                127,
+                93
+              ]
+            ],
+            "width": 1,
+            "material": "earth",
+            "curb": false
+          },
+          {
+            "id": "door-1",
+            "points": [
+              [
+                42,
+                26
+              ],
+              [
+                42,
+                27.8
+              ],
+              [
+                43.3,
+                29.7
+              ],
+              [
+                44,
+                31.3
+              ]
+            ],
+            "width": 1,
+            "material": "stone",
+            "curb": false
+          },
+          {
+            "id": "door-2",
+            "points": [
+              [
+                58,
+                26
+              ],
+              [
+                58,
+                28.4
+              ],
+              [
+                55.3,
+                30.4
+              ],
+              [
+                56,
+                32.0
+              ]
+            ],
+            "width": 0.6,
+            "material": "stone",
+            "curb": false
+          },
+          {
+            "id": "door-3",
+            "points": [
+              [
+                73,
+                26
+              ],
+              [
+                73,
+                28
+              ],
+              [
+                75,
+                28.8
+              ],
+              [
+                75.3,
+                30.7
+              ],
+              [
+                76,
+                32.3
+              ]
+            ],
+            "width": 1,
+            "material": "stone",
+            "curb": false
+          },
+          {
+            "id": "door-4",
+            "points": [
+              [
+                88,
+                26
+              ],
+              [
+                88,
+                27.2
+              ],
+              [
+                87,
+                28.5
+              ],
+              [
+                85.3,
+                30.0
+              ],
+              [
+                86,
+                31.6
+              ]
+            ],
+            "width": 0.6,
+            "material": "stone",
+            "curb": false
+          },
+          {
+            "id": "door-5",
+            "points": [
+              [
+                103,
+                26
+              ],
+              [
+                103,
+                28.3
+              ],
+              [
+                104.3,
+                29.8
+              ],
+              [
+                105,
+                31.400000000000002
+              ]
+            ],
+            "width": 1,
+            "material": "stone",
+            "curb": false
+          },
+          {
+            "id": "door-6",
+            "points": [
+              [
+                116.5,
+                26
+              ],
+              [
+                116.5,
+                28
+              ],
+              [
+                118.3,
+                30.2
+              ],
+              [
+                119,
+                31.8
+              ]
+            ],
+            "width": 0.6,
+            "material": "stone",
+            "curb": false
+          },
+          {
+            "id": "beach-path-0",
+            "points": [
+              [
+                65.5,
+                31.4
+              ],
+              [
+                65,
+                26
+              ],
+              [
+                65.4,
+                21
+              ],
+              [
+                66.3,
+                16
+              ],
+              [
+                66,
+                12
+              ]
+            ],
+            "width": 0.6,
+            "material": "earth",
+            "curb": false,
+            "smooth": true
+          },
+          {
+            "id": "beach-path-1",
+            "points": [
+              [
+                95.5,
+                31.8
+              ],
+              [
+                95.3,
+                26
+              ],
+              [
+                95.8,
+                21
+              ],
+              [
+                96.5,
+                17
+              ],
+              [
+                97,
+                13
+              ]
+            ],
+            "width": 0.6,
+            "material": "earth",
+            "curb": false,
+            "smooth": true
+          },
+          {
+            "id": "ui.forest.glade.1",
+            "points": [
+              [
+                112,
+                57
+              ],
+              [
+                120,
+                60
+              ],
+              [
+                133,
+                61
+              ],
+              [
+                145,
+                56
+              ]
+            ],
+            "width": 0.6,
+            "material": "earth",
+            "curb": false,
+            "smooth": true
+          },
+          {
+            "id": "ui.forest.glade.2",
+            "points": [
+              [
+                115,
+                77
+              ],
+              [
+                121,
+                74
+              ],
+              [
+                132,
+                72
+              ],
+              [
+                144,
+                75
+              ]
+            ],
+            "width": 0.6,
+            "material": "earth",
+            "curb": false,
+            "smooth": true
+          },
+          {
+            "id": "moon.connection",
+            "points": [
+              [
+                14,
+                45.5
+              ],
+              [
+                17,
+                34
+              ],
+              [
+                37,
+                34
+              ],
+              [
+                49,
+                37
+              ],
+              [
+                54,
+                45
+              ],
+              [
+                55,
+                51
+              ]
+            ],
+            "width": 2,
+            "curb": false
+          },
+          {
+            "id": "moon.path",
+            "points": [
+              [
+                -23,
+                45.5
+              ],
+              [
+                -34,
+                52
+              ],
+              [
+                -51,
+                56
+              ],
+              [
+                -59,
+                64
+              ],
+              [
+                -67,
+                65
+              ],
+              [
+                -59,
+                71
+              ],
+              [
+                -65,
+                78
+              ]
+            ],
+            "width": 0.6,
+            "smooth": true,
+            "curb": false
+          }
+        ],
+        "ponds": [
+          {
+            "id": "spring",
+            "center": [
+              128,
+              26
+            ],
+            "radius": [
+              4,
+              2.3
+            ],
+            "crossing_anchor": "spring.bridge",
+            "crossing_size": [
+              4,
+              1.2
+            ]
+          }
+        ],
+        "garden": {
+          "fences": []
+        },
+        "landmarks": [],
+        "anchors": {
+          "plaza.center": [
+            75,
+            54
+          ],
+          "plaza.north": [
+            75,
+            34
+          ],
+          "plaza.northeast": [
+            95,
+            34
+          ],
+          "plaza.south": [
+            75,
+            68
+          ],
+          "plaza.west": [
+            55,
+            51
+          ],
+          "plaza.east": [
+            95,
+            51
+          ],
+          "well": [
+            75,
+            51
+          ],
+          "notice": [
+            80,
+            38
+          ],
+          "camp.fire": {
+            "anchor": "camp.stove"
+          },
+          "camp.stove": [
+            61,
+            56
+          ],
+          "camp.crates": [
+            59,
+            50
+          ],
+          "camp.wood": [
+            61,
+            50
+          ],
+          "camp.bucket": [
+            63,
+            50
+          ],
+          "chess.first": [
+            87,
+            43.5
+          ],
+          "chess.second": [
+            87,
+            57.5
+          ],
+          "chess.bench": [
+            92,
+            55
+          ],
+          "gazebo": [
+            64,
+            39
+          ],
+          "swing": [
+            43,
+            43
+          ],
+          "stage": [
+            105,
+            38
+          ],
+          "homestead.entry": [
+            48,
+            54
+          ],
+          "lookout": [
+            26,
+            25
+          ],
+          "spring.bridge": [
+            128,
+            30
+          ],
+          "orchard": [
+            45,
+            99
+          ],
+          "dock.south.entry": [
+            75,
+            99
+          ],
+          "dock.south.end": [
+            75,
+            120
+          ],
+          "dock.south.bench": [
+            79,
+            100
+          ],
+          "dock.west.entry": [
+            46,
+            70
+          ],
+          "dock.west.end": [
+            21,
+            71
+          ],
+          "logging.entry": [
+            101,
+            63
+          ],
+          "logging.stump": [
+            109,
+            66
+          ],
+          "logging.axe": [
+            108,
+            69
+          ],
+          "tools.seed": [
+            73,
+            91
+          ],
+          "tools.harvest": [
+            77,
+            91
+          ],
+          "reserve.south": {
+            "anchor": "reserve.dock"
+          },
+          "reserve.north": {
+            "anchor": "reserve.plaza.east"
+          },
+          "spawn": {
+            "object_id": "home.house.01",
+            "offset": [
+              0,
+              6
+            ]
+          },
+          "camera": {
+            "anchor": "spawn"
+          },
+          "picnic": [
+            60,
+            61
+          ],
+          "plaza.northwest": [
+            55,
+            34
+          ],
+          "dock.west.bench": [
+            43,
+            74
+          ],
+          "gazebo.bench": [
+            64,
+            44
+          ],
+          "reserve.plaza.west": {
+            "object_id": "home.future.plaza.west",
+            "offset": [
+              0,
+              0
+            ]
+          },
+          "reserve.plaza.east": {
+            "object_id": "home.future.plaza.east",
+            "offset": [
+              0,
+              0
+            ]
+          },
+          "reserve.dock": {
+            "object_id": "home.future.dock",
+            "offset": [
+              0,
+              0
+            ]
+          },
+          "reserve.forest": {
+            "object_id": "home.future.forest",
+            "offset": [
+              0,
+              0
+            ]
+          },
+          "garden.meeting": [
+            75,
+            72
+          ],
+          "reserve.house": {
+            "object_id": "home.house.06",
+            "offset": [
+              0,
+              5
+            ]
+          },
+          "north.view": [
+            66,
+            12
+          ],
+          "plaza.planter.nw": [
+            59,
+            43.5
+          ],
+          "plaza.planter.ne": [
+            91,
+            46
+          ],
+          "plaza.planter.sw": [
+            57,
+            66
+          ],
+          "plaza.planter.se": [
+            91,
+            63.5
+          ],
+          "plaza.bench.nw": [
+            70,
+            47
+          ],
+          "plaza.bench.ne": [
+            80,
+            47
+          ],
+          "plaza.bench.sw": [
+            70,
+            57
+          ],
+          "plaza.bench.se": [
+            80,
+            57
+          ],
+          "plaza.lamp.0": [
+            72,
+            35
+          ],
+          "plaza.lamp.1": [
+            78,
+            35
+          ],
+          "plaza.lamp.2": [
+            72,
+            67
+          ],
+          "plaza.lamp.3": [
+            78,
+            67
+          ],
+          "plaza.lamp.6": [
+            94,
+            48
+          ],
+          "plaza.lamp.7": [
+            94,
+            54
+          ],
+          "plaza.lamp.12": [
+            65,
+            54
+          ],
+          "plaza.lamp.13": [
+            91.5,
+            51.8
+          ],
+          "yard.lamp.human": [
+            38,
+            25.8
+          ],
+          "plaza.market": [
+            66.5,
+            61
+          ],
+          "plaza.flowers": [
+            83,
+            39
+          ],
+          "moon.bridge.east": [
+            13,
+            45.5
+          ],
+          "moon.bridge.west": [
+            -23,
+            45.5
+          ],
+          "moon.lookout": [
+            -67,
+            65
+          ],
+          "moon.camp": [
+            -65,
+            78
+          ],
+          "moon.reflection": [
+            -95,
+            65
+          ],
+          "moon.camera": [
+            -102,
+            64
+          ],
+          "moon.overview": [
+            -15,
+            64
+          ],
+          "moon.bench.1": {
+            "anchor": "moon.lookout"
+          },
+          "moon.bench.2": [
+            -67,
+            58
+          ],
+          "moon.bench.3": [
+            -67,
+            72
+          ],
+          "moon.lamp.0": [
+            -72,
+            58.5
+          ],
+          "moon.lamp.1": [
+            -72,
+            72
+          ],
+          "moon.lamp.2": [
+            -61,
+            75
+          ],
+          "moon.lamp.3": [
+            -30,
+            44
+          ],
+          "moon.lamp.4": [
+            -20,
+            44
+          ],
+          "moon.lamp.5": [
+            0,
+            44
+          ],
+          "moon.lamp.6": [
+            12,
+            44
+          ],
+          "camp.mushroom.1": [
+            56,
+            56
+          ],
+          "camp.mushroom.2": [
+            66,
+            61
+          ]
+        },
+        "plaza": [
+          55,
+          34,
+          40,
+          34
+        ],
+        "residential": [
+          {
+            "site_id": "home.house.01",
+            "owner_id": "human",
+            "retrofit_id": "human",
+            "yard_rect": [
+              37,
+              24.5,
+              10,
+              4
+            ],
+            "artwork_path": "res://content/home-v3/works/houses/human.json"
+          },
+          {
+            "site_id": "home.house.02",
+            "owner_id": "codex",
+            "retrofit_id": "gentle",
+            "yard_rect": [
+              54,
+              24.5,
+              8,
+              4
+            ],
+            "artwork_path": "res://content/home-v3/works/houses/gentle.json"
+          },
+          {
+            "site_id": "home.house.03",
+            "owner_id": "companion-2",
+            "retrofit_id": "curious",
+            "yard_rect": [
+              69,
+              24.5,
+              8,
+              4
+            ],
+            "artwork_path": "res://content/home-v3/works/houses/curious.json"
+          },
+          {
+            "site_id": "home.house.04",
+            "owner_id": "npc.mira",
+            "retrofit_id": "lively",
+            "yard_rect": [
+              84,
+              24.5,
+              8,
+              4
+            ],
+            "artwork_path": "res://content/home-v3/works/houses/lively.json"
+          },
+          {
+            "site_id": "home.house.05",
+            "owner_id": "npc.nora",
+            "retrofit_id": "quiet",
+            "yard_rect": [
+              99,
+              24.5,
+              8,
+              4
+            ],
+            "artwork_path": "res://content/home-v3/works/houses/quiet.json"
+          },
+          {
+            "site_id": "home.house.06",
+            "owner_id": "",
+            "retrofit_id": "",
+            "yard_rect": [
+              112.5,
+              24.5,
+              8,
+              4
+            ]
+          }
+        ],
+        "farms": [
+          {
+            "id": "farm.home",
+            "zone_id": "home.farm.home",
+            "grid": [
+              4,
+              3
+            ],
+            "spacing": [
+              2.8,
+              2.4
+            ],
+            "bed_size": [
+              2.6,
+              2.2
+            ],
+            "manager_id": "codex",
+            "seed_storage": "home.tools.seed",
+            "harvest_storage": "home.tools.harvest",
+            "gate": {
+              "side": "north",
+              "offset": 10.7,
+              "width": 2.4
+            },
+            "geometry_from_zone": true,
+            "first_offset": [
+              2,
+              2
+            ],
+            "entrance_offset_y": -1.5,
+            "name": "菜田"
+          },
+          {
+            "id": "farm.hill",
+            "zone_id": "home.farm.hill",
+            "grid": [
+              4,
+              3
+            ],
+            "spacing": [
+              2.8,
+              2.4
+            ],
+            "bed_size": [
+              2.6,
+              2.2
+            ],
+            "manager_id": "",
+            "seed_storage": "home.tools.seed",
+            "harvest_storage": "home.tools.harvest",
+            "gate": {
+              "side": "north",
+              "offset": 6.2,
+              "width": 2.4
+            },
+            "geometry_from_zone": true,
+            "first_offset": [
+              2,
+              2
+            ],
+            "entrance_offset_y": -1.5,
+            "name": "浆果田"
+          },
+          {
+            "id": "farm.lake",
+            "zone_id": "home.farm.lake",
+            "grid": [
+              4,
+              3
+            ],
+            "spacing": [
+              2.8,
+              2.4
+            ],
+            "bed_size": [
+              2.6,
+              2.2
+            ],
+            "manager_id": "",
+            "seed_storage": "home.tools.seed",
+            "harvest_storage": "home.tools.harvest",
+            "gate": {
+              "side": "north",
+              "offset": 6.2,
+              "width": 2.4
+            },
+            "geometry_from_zone": true,
+            "first_offset": [
+              2,
+              2
+            ],
+            "entrance_offset_y": -1.5,
+            "name": "花田"
+          },
+          {
+            "id": "farm.east",
+            "zone_id": "home.farm.east",
+            "grid": [
+              4,
+              3
+            ],
+            "spacing": [
+              2.8,
+              2.4
+            ],
+            "bed_size": [
+              2.6,
+              2.2
+            ],
+            "manager_id": "",
+            "seed_storage": "home.tools.seed",
+            "harvest_storage": "home.tools.harvest",
+            "gate": {
+              "side": "north",
+              "offset": 1.2,
+              "width": 2.4
+            },
+            "geometry_from_zone": true,
+            "first_offset": [
+              2.0,
+              2
+            ],
+            "entrance_offset_y": -1.5,
+            "name": "混种田"
+          }
+        ],
+        "fisheries": [
+          {
+            "id": "home.fishery.south",
+            "name": "南码头渔场",
+            "rect": [
+              54,
+              116,
+              19,
+              12
+            ],
+            "capacity": 12,
+            "access": "dock.south.end"
+          },
+          {
+            "id": "home.fishery.west",
+            "name": "西岸渔场",
+            "rect": [
+              -14,
+              60,
+              32,
+              9
+            ],
+            "capacity": 12,
+            "access": "dock.west.end"
+          }
+        ],
+        "homestead": {
+          "id": "home.homestead.flowerbed",
+          "rect": [
+            40,
+            49,
+            7,
+            4
+          ],
+          "entry_anchor": "homestead.entry"
+        },
+        "dock_surfaces": [
+          {
+            "id": "south",
+            "polygon": [
+              [
+                73.5,
+                99
+              ],
+              [
+                76.5,
+                99
+              ],
+              [
+                76.5,
+                121
+              ],
+              [
+                73.5,
+                121
+              ]
+            ]
+          },
+          {
+            "id": "west",
+            "polygon": [
+              [
+                20,
+                69.5
+              ],
+              [
+                47,
+                69.5
+              ],
+              [
+                47,
+                72.5
+              ],
+              [
+                20,
+                72.5
+              ]
+            ]
+          },
+          {
+            "id": "moon.bridge",
+            "polygon": [
+              [
+                -29,
+                44
+              ],
+              [
+                15,
+                44
+              ],
+              [
+                15,
+                47
+              ],
+              [
+                -29,
+                47
+              ]
+            ]
+          },
+          {
+            "id": "moon.platform",
+            "polygon": [
+              [
+                -75,
+                55
+              ],
+              [
+                -59,
+                55
+              ],
+              [
+                -59,
+                75
+              ],
+              [
+                -75,
+                75
+              ]
+            ]
+          },
+          {
+            "id": "dark.walkway",
+            "polygon": [
+              [
+                126,
+                0
+              ],
+              [
+                132,
+                0
+              ],
+              [
+                132,
+                21
+              ],
+              [
+                126,
+                21
+              ]
+            ]
+          },
+          {
+            "id": "homelands.bridge",
+            "polygon": [
+              [
+                79.5,
+                108
+              ],
+              [
+                82.5,
+                108
+              ],
+              [
+                82.5,
+                183
+              ],
+              [
+                79.5,
+                183
+              ]
+            ]
+          }
+        ],
+        "lamps": [
+          "plaza.lamp.0",
+          "plaza.lamp.1",
+          "plaza.lamp.2",
+          "plaza.lamp.3",
+          "plaza.lamp.6",
+          "plaza.lamp.7",
+          "plaza.lamp.12",
+          "plaza.lamp.13",
+          "yard.lamp.human",
+          "moon.lamp.0",
+          "moon.lamp.1",
+          "moon.lamp.2",
+          "moon.lamp.3",
+          "moon.lamp.4",
+          "moon.lamp.5",
+          "moon.lamp.6"
+        ],
+        "wear_paths": [],
+        "scenery_groups": [
+          {
+            "anchor": "camp.fire",
+            "assets": [
+              "logs",
+              "barrel"
+            ]
+          },
+          {
+            "anchor": "lookout",
+            "assets": [
+              "bench",
+              "telescope"
+            ]
+          },
+          {
+            "anchor": "logging.entry",
+            "assets": [
+              "stump",
+              "axe"
+            ]
+          },
+          {
+            "anchor": "dock.south.bench",
+            "assets": [
+              "bench",
+              "fish_display"
+            ]
+          },
+          {
+            "anchor": "orchard",
+            "assets": [
+              "flowers",
+              "apple_tree",
+              "blueberry"
+            ]
+          }
+        ],
+        "cliffs": [
+          {
+            "id": "north-slope",
+            "polygon": [
+              [
+                24,
+                22
+              ],
+              [
+                33,
+                22
+              ],
+              [
+                33,
+                23
+              ],
+              [
+                24,
+                23
+              ]
+            ],
+            "stairs": [
+              [
+                26,
+                22
+              ],
+              [
+                28,
+                24
+              ]
+            ]
+          }
+        ],
+        "dunes": [
+          [
+            [
+              56,
+              107
+            ],
+            [
+              62,
+              108
+            ],
+            [
+              64,
+              112
+            ],
+            [
+              57,
+              111
+            ]
+          ]
+        ],
+        "reefs": [
+          {
+            "at": [
+              20,
+              84
+            ],
+            "asset": "rock"
+          },
+          {
+            "at": [
+              138,
+              99
+            ],
+            "asset": "rock"
+          }
+        ],
+        "facilities": [
+          {
+            "id": "play.swing",
+            "name": "双人秋千",
+            "template_id": "play-swing",
+            "anchor": "swing"
+          },
+          {
+            "id": "play.gazebo",
+            "name": "茶歇凉亭",
+            "template_id": "play-gazebo",
+            "anchor": "gazebo"
+          },
+          {
+            "id": "play.stage",
+            "name": "林间舞台",
+            "template_id": "play-stage",
+            "anchor": "stage"
+          },
+          {
+            "id": "play.gomoku",
+            "name": "海风棋角",
+            "template_id": "play-gomoku",
+            "anchor": "chess.first"
+          },
+          {
+            "id": "play.gomoku.2",
+            "name": "树荫棋桌二",
+            "template_id": "play-gomoku",
+            "anchor": "chess.second"
+          },
+          {
+            "id": "play.chess.bench",
+            "name": "树荫观战长椅",
+            "anchor": "chess.bench",
+            "template_id": "play-bench-left",
+            "facing": "left",
+            "look_at": "chess.second"
+          },
+          {
+            "id": "play.dock.bench.south",
+            "name": "南码头长椅",
+            "anchor": "dock.south.bench",
+            "template_id": "play-bench"
+          },
+          {
+            "id": "play.dock.bench.west",
+            "name": "西码头长椅",
+            "anchor": "dock.west.bench",
+            "template_id": "play-bench"
+          },
+          {
+            "id": "play.gazebo.bench",
+            "name": "凉亭长椅",
+            "anchor": "gazebo.bench",
+            "template_id": "play-bench-down",
+            "facing": "down",
+            "look_at": "plaza.center"
+          },
+          {
+            "id": "play.well.bench.nw",
+            "name": "井畔长椅",
+            "template_id": "play-bench-down",
+            "anchor": "plaza.bench.nw",
+            "facing": "down",
+            "look_at": "well"
+          },
+          {
+            "id": "play.well.bench.ne",
+            "name": "井畔长椅",
+            "template_id": "play-bench-down",
+            "anchor": "plaza.bench.ne",
+            "facing": "down",
+            "look_at": "well"
+          },
+          {
+            "id": "play.well.bench.sw",
+            "name": "井畔长椅",
+            "template_id": "play-bench-up",
+            "anchor": "plaza.bench.sw",
+            "facing": "up",
+            "look_at": "well"
+          },
+          {
+            "id": "play.well.bench.se",
+            "name": "井畔长椅",
+            "template_id": "play-bench-up",
+            "anchor": "plaza.bench.se",
+            "facing": "up",
+            "look_at": "well"
+          },
+          {
+            "id": "play.moon.bench.1",
+            "name": "月湾赏月长椅",
+            "anchor": "moon.bench.1",
+            "template_id": "play-bench-left",
+            "facing": "left"
+          },
+          {
+            "id": "play.moon.bench.2",
+            "name": "月湾赏月长椅",
+            "anchor": "moon.bench.2",
+            "template_id": "play-bench-left",
+            "facing": "left"
+          },
+          {
+            "id": "play.moon.bench.3",
+            "name": "月湾赏月长椅",
+            "anchor": "moon.bench.3",
+            "template_id": "play-bench-left",
+            "facing": "left"
+          }
+        ],
+        "forage": [
+          {
+            "id": "home.mushrooms.1",
+            "position": [
+              56,
+              56
+            ]
+          },
+          {
+            "id": "home.mushrooms.2",
+            "position": [
+              43,
+              101
+            ]
+          },
+          {
+            "id": "home.mushrooms.3",
+            "position": [
+              47,
+              51
+            ]
+          }
+        ],
+        "schedule_anchors": {
+          "sea": [
+            "dock.south.entry",
+            "lookout"
+          ],
+          "garden": [
+            "garden.meeting"
+          ],
+          "camp": [
+            "plaza.center"
+          ],
+          "shelter": [
+            "gazebo"
+          ]
+        },
+        "water_anchors": {
+          "north": [
+            80,
+            3
+          ],
+          "south": [
+            80,
+            126
+          ],
+          "west": [
+            3,
+            68
+          ],
+          "east": [
+            156,
+            65
+          ]
+        },
+        "camp_seat_offsets": [
+          [
+            -2,
+            1
+          ],
+          [
+            0,
+            1.5
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            -2,
+            3
+          ],
+          [
+            0,
+            3.5
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "schedule_phases": {
+          "night": [
+            {
+              "place": "shelter",
+              "weight": 8
+            }
+          ]
+        },
+        "profile_templates": [
+          "res://content/home-v3/works/play-bench.json",
+          "res://content/home-v3/works/play-bench-up.json",
+          "res://content/home-v3/works/play-bench-down.json",
+          "res://content/home-v3/works/play-bench-left.json"
+        ],
+        "solid_props": [
+          {
+            "anchor": "well",
+            "offset": [
+              -1.6,
+              -0.9
+            ],
+            "size": [
+              3.2,
+              1.6
+            ]
+          },
+          {
+            "anchor": "notice",
+            "offset": [
+              -1.2,
+              -0.3
+            ],
+            "size": [
+              2.4,
+              0.6
+            ]
+          },
+          {
+            "anchor": "plaza.planter.nw",
+            "offset": [
+              -1.5,
+              -1.5
+            ],
+            "size": [
+              3,
+              3
+            ]
+          },
+          {
+            "anchor": "plaza.planter.ne",
+            "offset": [
+              -1.5,
+              -1.5
+            ],
+            "size": [
+              3,
+              3
+            ]
+          },
+          {
+            "anchor": "plaza.planter.sw",
+            "offset": [
+              -1.5,
+              -1.5
+            ],
+            "size": [
+              3,
+              3
+            ]
+          },
+          {
+            "anchor": "plaza.planter.se",
+            "offset": [
+              -1.5,
+              -1.5
+            ],
+            "size": [
+              3,
+              3
+            ]
+          },
+          {
+            "anchor": "plaza.lamp.0",
+            "offset": [
+              -0.18,
+              -0.18
+            ],
+            "size": [
+              0.36,
+              0.36
+            ]
+          },
+          {
+            "anchor": "plaza.lamp.1",
+            "offset": [
+              -0.18,
+              -0.18
+            ],
+            "size": [
+              0.36,
+              0.36
+            ]
+          },
+          {
+            "anchor": "plaza.lamp.2",
+            "offset": [
+              -0.18,
+              -0.18
+            ],
+            "size": [
+              0.36,
+              0.36
+            ]
+          },
+          {
+            "anchor": "plaza.lamp.3",
+            "offset": [
+              -0.18,
+              -0.18
+            ],
+            "size": [
+              0.36,
+              0.36
+            ]
+          },
+          {
+            "anchor": "plaza.lamp.6",
+            "offset": [
+              -0.18,
+              -0.18
+            ],
+            "size": [
+              0.36,
+              0.36
+            ]
+          },
+          {
+            "anchor": "plaza.lamp.7",
+            "offset": [
+              -0.18,
+              -0.18
+            ],
+            "size": [
+              0.36,
+              0.36
+            ]
+          },
+          {
+            "anchor": "plaza.lamp.12",
+            "offset": [
+              -0.18,
+              -0.18
+            ],
+            "size": [
+              0.36,
+              0.36
+            ]
+          },
+          {
+            "anchor": "plaza.lamp.13",
+            "offset": [
+              -0.18,
+              -0.18
+            ],
+            "size": [
+              0.36,
+              0.36
+            ]
+          }
+        ],
+        "ground_art": {
+          "paving": [
+            [
+              69,
+              45
+            ],
+            [
+              80,
+              45
+            ],
+            [
+              81,
+              55
+            ],
+            [
+              77,
+              57
+            ],
+            [
+              69,
+              56
+            ]
+          ],
+          "variant_regions": [
+            [
+              29,
+              32
+            ],
+            [
+              42,
+              15
+            ],
+            [
+              75,
+              13
+            ],
+            [
+              111,
+              17
+            ],
+            [
+              131,
+              33
+            ],
+            [
+              40,
+              72
+            ],
+            [
+              84,
+              59
+            ],
+            [
+              116,
+              88
+            ],
+            [
+              46,
+              99
+            ],
+            [
+              77,
+              109
+            ],
+            [
+              104,
+              102
+            ],
+            [
+              23,
+              81
+            ]
+          ],
+          "formal_plaza": {
+            "material": "stone",
+            "variants": 3,
+            "center_anchor": "well",
+            "ring_radius": 4.2,
+            "curb": true,
+            "entrance_width": 3,
+            "entrance_extension": 2,
+            "ring_tint": "#797466",
+            "ring_width": 0.7,
+            "corner_radius": 2.0,
+            "ring_style": "blocks",
+            "ring_segments": 24
+          },
+          "plaza_from_bounds": true
+        },
+        "art_props": [
+          {
+            "id": "art.0",
+            "kind": "well",
+            "anchor": "well"
+          },
+          {
+            "id": "art.1",
+            "kind": "notice",
+            "anchor": "notice"
+          },
+          {
+            "id": "art.4",
+            "kind": "bucket",
+            "anchor": "camp.bucket"
+          },
+          {
+            "id": "art.5",
+            "kind": "asset",
+            "asset": "logs",
+            "anchor": "camp.wood"
+          },
+          {
+            "id": "art.13",
+            "kind": "mailbox",
+            "owner": "human",
+            "position": [
+              38.4,
+              25.6
+            ]
+          },
+          {
+            "id": "art.14",
+            "kind": "placard",
+            "owner": "human",
+            "position": [
+              40.7,
+              25.8
+            ]
+          },
+          {
+            "id": "art.18",
+            "kind": "mailbox",
+            "owner": "codex",
+            "position": [
+              54.4,
+              26.6
+            ]
+          },
+          {
+            "id": "art.19",
+            "kind": "placard",
+            "owner": "codex",
+            "position": [
+              56.7,
+              26.8
+            ]
+          },
+          {
+            "id": "art.24",
+            "kind": "mailbox",
+            "owner": "companion-2",
+            "position": [
+              69.4,
+              26.6
+            ]
+          },
+          {
+            "id": "art.25",
+            "kind": "placard",
+            "owner": "companion-2",
+            "position": [
+              71.7,
+              26.8
+            ]
+          },
+          {
+            "id": "art.29",
+            "kind": "mailbox",
+            "owner": "npc.mira",
+            "position": [
+              84.4,
+              26.6
+            ]
+          },
+          {
+            "id": "art.30",
+            "kind": "placard",
+            "owner": "npc.mira",
+            "position": [
+              86.7,
+              26.8
+            ]
+          },
+          {
+            "id": "art.34",
+            "kind": "mailbox",
+            "owner": "npc.nora",
+            "position": [
+              99.4,
+              26.6
+            ]
+          },
+          {
+            "id": "art.35",
+            "kind": "placard",
+            "owner": "npc.nora",
+            "position": [
+              101.7,
+              26.8
+            ]
+          },
+          {
+            "id": "art.39",
+            "kind": "asset",
+            "asset": "stump",
+            "anchor": "logging.stump"
+          },
+          {
+            "id": "art.40",
+            "kind": "asset",
+            "asset": "axe",
+            "anchor": "logging.axe"
+          },
+          {
+            "id": "art.41",
+            "kind": "asset",
+            "asset": "logs",
+            "anchor": "logging.entry",
+            "offset": [
+              3,
+              2
+            ]
+          },
+          {
+            "id": "art.42",
+            "kind": "telescope",
+            "anchor": "lookout",
+            "offset": [
+              -2,
+              0
+            ]
+          },
+          {
+            "id": "art.43",
+            "kind": "bench",
+            "anchor": "lookout",
+            "offset": [
+              2,
+              1
+            ]
+          },
+          {
+            "id": "art.44",
+            "kind": "placard",
+            "anchor": "lookout",
+            "offset": [
+              0,
+              1.5
+            ]
+          },
+          {
+            "id": "art.47",
+            "kind": "fish_display",
+            "anchor": "dock.south.entry",
+            "offset": [
+              3,
+              -1
+            ]
+          },
+          {
+            "id": "art.48",
+            "kind": "toolshed",
+            "position": [
+              75,
+              92
+            ]
+          },
+          {
+            "id": "art.52",
+            "kind": "plant",
+            "work": "crop-blueberry",
+            "frame": "mature",
+            "position": [
+              41.8,
+              99.5
+            ]
+          },
+          {
+            "id": "art.53",
+            "kind": "plant",
+            "work": "crop-blueberry",
+            "frame": "mature",
+            "position": [
+              46,
+              100.5
+            ]
+          },
+          {
+            "id": "art.54",
+            "kind": "plant",
+            "work": "crop-blueberry",
+            "frame": "mature",
+            "position": [
+              50,
+              100.8
+            ]
+          },
+          {
+            "id": "art.55",
+            "kind": "asset",
+            "asset": "flowers",
+            "position": [
+              56,
+              101
+            ]
+          },
+          {
+            "id": "art.56",
+            "kind": "asset",
+            "asset": "flowers",
+            "position": [
+              58.3,
+              102.5
+            ]
+          },
+          {
+            "id": "art.57",
+            "kind": "asset",
+            "asset": "flowers",
+            "position": [
+              61,
+              101.4
+            ]
+          },
+          {
+            "id": "art.58",
+            "kind": "asset",
+            "asset": "flowers",
+            "position": [
+              63,
+              104
+            ]
+          },
+          {
+            "id": "art.59",
+            "kind": "asset",
+            "asset": "flowers",
+            "position": [
+              56.4,
+              104.7
+            ]
+          },
+          {
+            "id": "art.64",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              31.25,
+              35.69
+            ]
+          },
+          {
+            "id": "art.65",
+            "kind": "grass",
+            "position": [
+              29.12,
+              36.31
+            ]
+          },
+          {
+            "id": "art.66",
+            "kind": "flowers",
+            "position": [
+              33.5,
+              36.92
+            ]
+          },
+          {
+            "id": "art.67",
+            "kind": "grass",
+            "position": [
+              31.88,
+              34.22
+            ]
+          },
+          {
+            "id": "art.80",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              117.5,
+              28.31
+            ]
+          },
+          {
+            "id": "art.81",
+            "kind": "grass",
+            "position": [
+              115.38,
+              28.92
+            ]
+          },
+          {
+            "id": "art.82",
+            "kind": "flowers",
+            "position": [
+              119.75,
+              29.54
+            ]
+          },
+          {
+            "id": "art.83",
+            "kind": "grass",
+            "position": [
+              118.12,
+              26.83
+            ]
+          },
+          {
+            "id": "art.84",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              132.5,
+              40.62
+            ]
+          },
+          {
+            "id": "art.85",
+            "kind": "grass",
+            "position": [
+              130.38,
+              41.23
+            ]
+          },
+          {
+            "id": "art.86",
+            "kind": "flowers",
+            "position": [
+              134.75,
+              41.85
+            ]
+          },
+          {
+            "id": "art.87",
+            "kind": "grass",
+            "position": [
+              133.12,
+              39.14
+            ]
+          },
+          {
+            "id": "art.88",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              137.5,
+              81.23
+            ]
+          },
+          {
+            "id": "art.89",
+            "kind": "grass",
+            "position": [
+              135.38,
+              81.85
+            ]
+          },
+          {
+            "id": "art.90",
+            "kind": "flowers",
+            "position": [
+              139.75,
+              82.46
+            ]
+          },
+          {
+            "id": "art.91",
+            "kind": "grass",
+            "position": [
+              138.12,
+              79.75
+            ]
+          },
+          {
+            "id": "art.96",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              105.0,
+              98.46
+            ]
+          },
+          {
+            "id": "art.97",
+            "kind": "grass",
+            "position": [
+              102.88,
+              99.08
+            ]
+          },
+          {
+            "id": "art.98",
+            "kind": "flowers",
+            "position": [
+              107.25,
+              99.69
+            ]
+          },
+          {
+            "id": "art.99",
+            "kind": "grass",
+            "position": [
+              105.62,
+              96.98
+            ]
+          },
+          {
+            "id": "art.100",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              85.0,
+              105.85
+            ]
+          },
+          {
+            "id": "art.101",
+            "kind": "grass",
+            "position": [
+              82.88,
+              106.46
+            ]
+          },
+          {
+            "id": "art.102",
+            "kind": "flowers",
+            "position": [
+              87.25,
+              107.08
+            ]
+          },
+          {
+            "id": "art.103",
+            "kind": "grass",
+            "position": [
+              85.62,
+              104.37
+            ]
+          },
+          {
+            "id": "art.104",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              60.0,
+              104.62
+            ]
+          },
+          {
+            "id": "art.105",
+            "kind": "grass",
+            "position": [
+              57.88,
+              105.23
+            ]
+          },
+          {
+            "id": "art.106",
+            "kind": "flowers",
+            "position": [
+              62.25,
+              105.85
+            ]
+          },
+          {
+            "id": "art.107",
+            "kind": "grass",
+            "position": [
+              60.62,
+              103.14
+            ]
+          },
+          {
+            "id": "art.108",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              36.25,
+              88.62
+            ]
+          },
+          {
+            "id": "art.109",
+            "kind": "grass",
+            "position": [
+              34.12,
+              89.23
+            ]
+          },
+          {
+            "id": "art.110",
+            "kind": "flowers",
+            "position": [
+              38.5,
+              89.85
+            ]
+          },
+          {
+            "id": "art.111",
+            "kind": "grass",
+            "position": [
+              36.88,
+              87.14
+            ]
+          },
+          {
+            "id": "art.112",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              27.5,
+              81.23
+            ]
+          },
+          {
+            "id": "art.113",
+            "kind": "grass",
+            "position": [
+              25.38,
+              81.85
+            ]
+          },
+          {
+            "id": "art.114",
+            "kind": "flowers",
+            "position": [
+              29.75,
+              82.46
+            ]
+          },
+          {
+            "id": "art.115",
+            "kind": "grass",
+            "position": [
+              28.12,
+              79.75
+            ]
+          },
+          {
+            "id": "art.117",
+            "kind": "grass",
+            "position": [
+              31.62,
+              56.0
+            ]
+          },
+          {
+            "id": "art.119",
+            "kind": "grass",
+            "position": [
+              34.38,
+              53.91
+            ]
+          },
+          {
+            "id": "art.120",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              38.75,
+              43.08
+            ]
+          },
+          {
+            "id": "art.121",
+            "kind": "grass",
+            "position": [
+              36.62,
+              43.69
+            ]
+          },
+          {
+            "id": "art.122",
+            "kind": "flowers",
+            "position": [
+              41.0,
+              44.31
+            ]
+          },
+          {
+            "id": "art.123",
+            "kind": "grass",
+            "position": [
+              39.38,
+              41.6
+            ]
+          },
+          {
+            "id": "art.124",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              46.25,
+              52.92
+            ]
+          },
+          {
+            "id": "art.125",
+            "kind": "grass",
+            "position": [
+              44.12,
+              53.54
+            ]
+          },
+          {
+            "id": "art.126",
+            "kind": "flowers",
+            "position": [
+              48.5,
+              54.15
+            ]
+          },
+          {
+            "id": "art.127",
+            "kind": "grass",
+            "position": [
+              46.88,
+              51.45
+            ]
+          },
+          {
+            "id": "art.128",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              52.5,
+              59.08
+            ]
+          },
+          {
+            "id": "art.129",
+            "kind": "grass",
+            "position": [
+              50.38,
+              59.69
+            ]
+          },
+          {
+            "id": "art.131",
+            "kind": "grass",
+            "position": [
+              53.12,
+              57.6
+            ]
+          },
+          {
+            "id": "art.134",
+            "kind": "flowers",
+            "position": [
+              97.25,
+              57.85
+            ]
+          },
+          {
+            "id": "art.136",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              102.5,
+              67.69
+            ]
+          },
+          {
+            "id": "art.137",
+            "kind": "grass",
+            "position": [
+              100.38,
+              68.31
+            ]
+          },
+          {
+            "id": "art.138",
+            "kind": "flowers",
+            "position": [
+              104.75,
+              68.92
+            ]
+          },
+          {
+            "id": "art.139",
+            "kind": "grass",
+            "position": [
+              103.12,
+              66.22
+            ]
+          },
+          {
+            "id": "art.142",
+            "kind": "flowers",
+            "position": [
+              107.25,
+              80.0
+            ]
+          },
+          {
+            "id": "art.144",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              38.75,
+              70.15
+            ]
+          },
+          {
+            "id": "art.145",
+            "kind": "grass",
+            "position": [
+              36.62,
+              70.77
+            ]
+          },
+          {
+            "id": "art.146",
+            "kind": "flowers",
+            "position": [
+              41.0,
+              71.38
+            ]
+          },
+          {
+            "id": "art.147",
+            "kind": "grass",
+            "position": [
+              39.38,
+              68.68
+            ]
+          },
+          {
+            "id": "art.148",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              91.25,
+              89.85
+            ]
+          },
+          {
+            "id": "art.149",
+            "kind": "grass",
+            "position": [
+              89.12,
+              90.46
+            ]
+          },
+          {
+            "id": "art.150",
+            "kind": "flowers",
+            "position": [
+              93.5,
+              91.08
+            ]
+          },
+          {
+            "id": "art.151",
+            "kind": "grass",
+            "position": [
+              91.88,
+              88.37
+            ]
+          },
+          {
+            "id": "art.152",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              126.25,
+              75.08
+            ]
+          },
+          {
+            "id": "art.153",
+            "kind": "grass",
+            "position": [
+              124.12,
+              75.69
+            ]
+          },
+          {
+            "id": "art.154",
+            "kind": "flowers",
+            "position": [
+              128.5,
+              76.31
+            ]
+          },
+          {
+            "id": "art.155",
+            "kind": "grass",
+            "position": [
+              126.88,
+              73.6
+            ]
+          },
+          {
+            "id": "art.160",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              120.0,
+              23.38
+            ]
+          },
+          {
+            "id": "art.161",
+            "kind": "grass",
+            "position": [
+              117.88,
+              24.0
+            ]
+          },
+          {
+            "id": "art.162",
+            "kind": "flowers",
+            "position": [
+              122.25,
+              24.62
+            ]
+          },
+          {
+            "id": "art.163",
+            "kind": "grass",
+            "position": [
+              120.62,
+              21.91
+            ]
+          },
+          {
+            "id": "art.164",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              127.5,
+              34.46
+            ]
+          },
+          {
+            "id": "art.165",
+            "kind": "grass",
+            "position": [
+              125.38,
+              35.08
+            ]
+          },
+          {
+            "id": "art.166",
+            "kind": "flowers",
+            "position": [
+              129.75,
+              35.69
+            ]
+          },
+          {
+            "id": "art.167",
+            "kind": "grass",
+            "position": [
+              128.12,
+              32.98
+            ]
+          },
+          {
+            "id": "art.168",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              23.75,
+              49.23
+            ]
+          },
+          {
+            "id": "art.169",
+            "kind": "grass",
+            "position": [
+              21.62,
+              49.85
+            ]
+          },
+          {
+            "id": "art.170",
+            "kind": "flowers",
+            "position": [
+              26.0,
+              50.46
+            ]
+          },
+          {
+            "id": "art.171",
+            "kind": "grass",
+            "position": [
+              24.38,
+              47.75
+            ]
+          },
+          {
+            "id": "art.172",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              22.5,
+              40.62
+            ]
+          },
+          {
+            "id": "art.173",
+            "kind": "grass",
+            "position": [
+              20.38,
+              41.23
+            ]
+          },
+          {
+            "id": "art.174",
+            "kind": "flowers",
+            "position": [
+              24.75,
+              41.85
+            ]
+          },
+          {
+            "id": "art.175",
+            "kind": "grass",
+            "position": [
+              23.12,
+              39.14
+            ]
+          },
+          {
+            "id": "art.176",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              31.25,
+              25.85
+            ]
+          },
+          {
+            "id": "art.177",
+            "kind": "grass",
+            "position": [
+              29.12,
+              26.46
+            ]
+          },
+          {
+            "id": "art.178",
+            "kind": "flowers",
+            "position": [
+              33.5,
+              27.08
+            ]
+          },
+          {
+            "id": "art.179",
+            "kind": "grass",
+            "position": [
+              31.88,
+              24.37
+            ]
+          },
+          {
+            "id": "art.180",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              112.5,
+              93.54
+            ]
+          },
+          {
+            "id": "art.181",
+            "kind": "grass",
+            "position": [
+              110.38,
+              94.15
+            ]
+          },
+          {
+            "id": "art.182",
+            "kind": "flowers",
+            "position": [
+              114.75,
+              94.77
+            ]
+          },
+          {
+            "id": "art.183",
+            "kind": "grass",
+            "position": [
+              113.12,
+              92.06
+            ]
+          },
+          {
+            "id": "art.184",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              127.5,
+              83.69
+            ]
+          },
+          {
+            "id": "art.185",
+            "kind": "grass",
+            "position": [
+              125.38,
+              84.31
+            ]
+          },
+          {
+            "id": "art.186",
+            "kind": "flowers",
+            "position": [
+              129.75,
+              84.92
+            ]
+          },
+          {
+            "id": "art.187",
+            "kind": "grass",
+            "position": [
+              128.12,
+              82.22
+            ]
+          },
+          {
+            "id": "art.192",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              62.5,
+              107.08
+            ]
+          },
+          {
+            "id": "art.193",
+            "kind": "grass",
+            "position": [
+              60.38,
+              107.69
+            ]
+          },
+          {
+            "id": "art.194",
+            "kind": "flowers",
+            "position": [
+              64.75,
+              108.31
+            ]
+          },
+          {
+            "id": "art.195",
+            "kind": "grass",
+            "position": [
+              63.12,
+              105.6
+            ]
+          },
+          {
+            "id": "art.196",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              46.25,
+              99.69
+            ]
+          },
+          {
+            "id": "art.197",
+            "kind": "grass",
+            "position": [
+              44.12,
+              100.31
+            ]
+          },
+          {
+            "id": "art.198",
+            "kind": "flowers",
+            "position": [
+              48.5,
+              100.92
+            ]
+          },
+          {
+            "id": "art.199",
+            "kind": "grass",
+            "position": [
+              46.88,
+              98.22
+            ]
+          },
+          {
+            "id": "art.200",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              35.0,
+              76.31
+            ]
+          },
+          {
+            "id": "art.201",
+            "kind": "grass",
+            "position": [
+              32.88,
+              76.92
+            ]
+          },
+          {
+            "id": "art.202",
+            "kind": "flowers",
+            "position": [
+              37.25,
+              77.54
+            ]
+          },
+          {
+            "id": "art.203",
+            "kind": "grass",
+            "position": [
+              35.62,
+              74.83
+            ]
+          },
+          {
+            "id": "art.208",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              103.75,
+              36.92
+            ]
+          },
+          {
+            "id": "art.209",
+            "kind": "grass",
+            "position": [
+              101.62,
+              37.54
+            ]
+          },
+          {
+            "id": "art.210",
+            "kind": "flowers",
+            "position": [
+              106.0,
+              38.15
+            ]
+          },
+          {
+            "id": "art.211",
+            "kind": "grass",
+            "position": [
+              104.38,
+              35.45
+            ]
+          },
+          {
+            "id": "art.221",
+            "kind": "grass",
+            "position": [
+              85.38,
+              84.31
+            ]
+          },
+          {
+            "id": "art.222",
+            "kind": "flowers",
+            "position": [
+              89.75,
+              84.92
+            ]
+          },
+          {
+            "id": "art.224",
+            "kind": "grass",
+            "position": [
+              121.38,
+              42.34
+            ]
+          },
+          {
+            "id": "art.225",
+            "kind": "flowers",
+            "position": [
+              123.88,
+              42.58
+            ]
+          },
+          {
+            "id": "art.226",
+            "kind": "grass",
+            "position": [
+              131.88,
+              42.34
+            ]
+          },
+          {
+            "id": "art.227",
+            "kind": "flowers",
+            "position": [
+              134.38,
+              42.58
+            ]
+          },
+          {
+            "id": "art.228",
+            "kind": "grass",
+            "position": [
+              114.38,
+              47.38
+            ]
+          },
+          {
+            "id": "art.229",
+            "kind": "flowers",
+            "position": [
+              116.88,
+              47.63
+            ]
+          },
+          {
+            "id": "art.230",
+            "kind": "grass",
+            "position": [
+              124.88,
+              47.38
+            ]
+          },
+          {
+            "id": "art.231",
+            "kind": "flowers",
+            "position": [
+              127.38,
+              47.63
+            ]
+          },
+          {
+            "id": "art.232",
+            "kind": "grass",
+            "position": [
+              135.38,
+              47.38
+            ]
+          },
+          {
+            "id": "art.233",
+            "kind": "flowers",
+            "position": [
+              137.88,
+              47.63
+            ]
+          },
+          {
+            "id": "art.234",
+            "kind": "grass",
+            "position": [
+              117.88,
+              52.43
+            ]
+          },
+          {
+            "id": "art.235",
+            "kind": "flowers",
+            "position": [
+              120.38,
+              52.68
+            ]
+          },
+          {
+            "id": "art.236",
+            "kind": "grass",
+            "position": [
+              128.38,
+              52.43
+            ]
+          },
+          {
+            "id": "art.237",
+            "kind": "flowers",
+            "position": [
+              130.88,
+              52.68
+            ]
+          },
+          {
+            "id": "art.238",
+            "kind": "grass",
+            "position": [
+              138.88,
+              52.43
+            ]
+          },
+          {
+            "id": "art.239",
+            "kind": "flowers",
+            "position": [
+              141.38,
+              52.68
+            ]
+          },
+          {
+            "id": "art.240",
+            "kind": "grass",
+            "position": [
+              121.38,
+              57.48
+            ]
+          },
+          {
+            "id": "art.241",
+            "kind": "flowers",
+            "position": [
+              123.88,
+              57.72
+            ]
+          },
+          {
+            "id": "art.242",
+            "kind": "grass",
+            "position": [
+              131.88,
+              57.48
+            ]
+          },
+          {
+            "id": "art.243",
+            "kind": "flowers",
+            "position": [
+              134.38,
+              57.72
+            ]
+          },
+          {
+            "id": "art.244",
+            "kind": "grass",
+            "position": [
+              114.38,
+              62.52
+            ]
+          },
+          {
+            "id": "art.245",
+            "kind": "flowers",
+            "position": [
+              116.88,
+              62.77
+            ]
+          },
+          {
+            "id": "art.246",
+            "kind": "grass",
+            "position": [
+              124.88,
+              62.52
+            ]
+          },
+          {
+            "id": "art.247",
+            "kind": "flowers",
+            "position": [
+              127.38,
+              62.77
+            ]
+          },
+          {
+            "id": "art.248",
+            "kind": "grass",
+            "position": [
+              135.38,
+              62.52
+            ]
+          },
+          {
+            "id": "art.249",
+            "kind": "flowers",
+            "position": [
+              137.88,
+              62.77
+            ]
+          },
+          {
+            "id": "art.250",
+            "kind": "grass",
+            "position": [
+              117.88,
+              67.57
+            ]
+          },
+          {
+            "id": "art.251",
+            "kind": "flowers",
+            "position": [
+              120.38,
+              67.82
+            ]
+          },
+          {
+            "id": "art.252",
+            "kind": "grass",
+            "position": [
+              128.38,
+              67.57
+            ]
+          },
+          {
+            "id": "art.253",
+            "kind": "flowers",
+            "position": [
+              130.88,
+              67.82
+            ]
+          },
+          {
+            "id": "art.254",
+            "kind": "grass",
+            "position": [
+              138.88,
+              67.57
+            ]
+          },
+          {
+            "id": "art.255",
+            "kind": "flowers",
+            "position": [
+              141.38,
+              67.82
+            ]
+          },
+          {
+            "id": "future.sign.plaza.west",
+            "kind": "placard",
+            "label": "待建",
+            "anchor": "reserve.plaza.west"
+          },
+          {
+            "id": "future.sign.plaza.east",
+            "kind": "placard",
+            "label": "待建",
+            "anchor": "reserve.plaza.east"
+          },
+          {
+            "id": "future.sign.dock",
+            "kind": "placard",
+            "label": "待建",
+            "anchor": "reserve.dock"
+          },
+          {
+            "id": "future.sign.forest",
+            "kind": "placard",
+            "label": "待建",
+            "anchor": "reserve.forest"
+          },
+          {
+            "id": "future.house.sign",
+            "kind": "placard",
+            "label": "待建",
+            "anchor": "reserve.house"
+          },
+          {
+            "id": "polish.lamp.0",
+            "kind": "lamp",
+            "anchor": "plaza.lamp.0"
+          },
+          {
+            "id": "polish.lamp.1",
+            "kind": "lamp",
+            "anchor": "plaza.lamp.1"
+          },
+          {
+            "id": "polish.lamp.2",
+            "kind": "lamp",
+            "anchor": "plaza.lamp.2"
+          },
+          {
+            "id": "polish.lamp.3",
+            "kind": "lamp",
+            "anchor": "plaza.lamp.3"
+          },
+          {
+            "id": "polish.lamp.6",
+            "kind": "lamp",
+            "anchor": "plaza.lamp.6"
+          },
+          {
+            "id": "polish.lamp.7",
+            "kind": "lamp",
+            "anchor": "plaza.lamp.7"
+          },
+          {
+            "id": "polish.lamp.12",
+            "kind": "lamp",
+            "anchor": "plaza.lamp.12"
+          },
+          {
+            "id": "polish.lamp.13",
+            "kind": "lamp",
+            "anchor": "plaza.lamp.13"
+          },
+          {
+            "id": "polish.lamp.14",
+            "kind": "lamp",
+            "anchor": "yard.lamp.human"
+          },
+          {
+            "id": "polish.north.bench",
+            "kind": "bench",
+            "anchor": "north.view"
+          },
+          {
+            "id": "polish.north.rail",
+            "kind": "asset",
+            "asset": "fence_h",
+            "anchor": "north.view",
+            "offset": [
+              0,
+              -1
+            ]
+          },
+          {
+            "id": "polish.forest.0.0",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              114,
+              41
+            ]
+          },
+          {
+            "id": "polish.forest.0.1",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              123.8,
+              45.5
+            ]
+          },
+          {
+            "id": "polish.forest.0.2",
+            "kind": "asset",
+            "asset": "mushrooms",
+            "position": [
+              114.2,
+              45.7
+            ]
+          },
+          {
+            "id": "polish.forest.1.0",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              134,
+              44
+            ]
+          },
+          {
+            "id": "polish.forest.1.1",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              143.8,
+              48.5
+            ]
+          },
+          {
+            "id": "polish.forest.1.2",
+            "kind": "asset",
+            "asset": "mushrooms",
+            "position": [
+              134.2,
+              48.7
+            ]
+          },
+          {
+            "id": "polish.forest.2.0",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              123,
+              55
+            ]
+          },
+          {
+            "id": "polish.forest.2.1",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              132.8,
+              59.5
+            ]
+          },
+          {
+            "id": "polish.forest.2.2",
+            "kind": "asset",
+            "asset": "mushrooms",
+            "position": [
+              123.2,
+              59.7
+            ]
+          },
+          {
+            "id": "polish.forest.3.0",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              135,
+              65
+            ]
+          },
+          {
+            "id": "polish.forest.3.1",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              144.8,
+              69.5
+            ]
+          },
+          {
+            "id": "polish.forest.3.2",
+            "kind": "asset",
+            "asset": "mushrooms",
+            "position": [
+              135.2,
+              69.7
+            ]
+          },
+          {
+            "id": "polish.forest.4.0",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              112,
+              68
+            ]
+          },
+          {
+            "id": "polish.forest.4.1",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              121.8,
+              72.5
+            ]
+          },
+          {
+            "id": "polish.forest.4.2",
+            "kind": "asset",
+            "asset": "mushrooms",
+            "position": [
+              112.2,
+              72.7
+            ]
+          },
+          {
+            "id": "polish.forest.5.0",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              122,
+              79
+            ]
+          },
+          {
+            "id": "polish.forest.5.1",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              131.8,
+              83.5
+            ]
+          },
+          {
+            "id": "polish.forest.5.2",
+            "kind": "asset",
+            "asset": "mushrooms",
+            "position": [
+              122.2,
+              83.7
+            ]
+          },
+          {
+            "id": "polish.forest.6.0",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              135,
+              80
+            ]
+          },
+          {
+            "id": "polish.forest.6.1",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              144.8,
+              84.5
+            ]
+          },
+          {
+            "id": "polish.forest.6.2",
+            "kind": "asset",
+            "asset": "mushrooms",
+            "position": [
+              135.2,
+              84.7
+            ]
+          },
+          {
+            "id": "polish.forest.7.0",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              114,
+              41
+            ]
+          },
+          {
+            "id": "polish.forest.7.1",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              123.8,
+              45.5
+            ]
+          },
+          {
+            "id": "polish.forest.7.2",
+            "kind": "asset",
+            "asset": "mushrooms",
+            "position": [
+              114.2,
+              45.7
+            ]
+          },
+          {
+            "id": "polish.forest.8.0",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              21,
+              44
+            ]
+          },
+          {
+            "id": "polish.forest.8.1",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              30.8,
+              48.5
+            ]
+          },
+          {
+            "id": "polish.forest.8.2",
+            "kind": "asset",
+            "asset": "mushrooms",
+            "position": [
+              21.2,
+              48.7
+            ]
+          },
+          {
+            "id": "polish.orchard.0",
+            "kind": "plant",
+            "work": "crop-apple",
+            "frame": "mature",
+            "position": [
+              43.0,
+              96
+            ]
+          },
+          {
+            "id": "polish.orchard.1",
+            "kind": "plant",
+            "work": "crop-apple",
+            "frame": "mature",
+            "position": [
+              46.2,
+              96
+            ]
+          },
+          {
+            "id": "polish.orchard.2",
+            "kind": "plant",
+            "work": "crop-apple",
+            "frame": "mature",
+            "position": [
+              49.4,
+              96
+            ]
+          },
+          {
+            "id": "polish.orchard.3",
+            "kind": "plant",
+            "work": "crop-apple",
+            "frame": "mature",
+            "position": [
+              52.6,
+              96
+            ]
+          },
+          {
+            "id": "polish.orchard.4",
+            "kind": "plant",
+            "work": "crop-apple",
+            "frame": "mature",
+            "position": [
+              43.0,
+              100
+            ]
+          },
+          {
+            "id": "polish.orchard.5",
+            "kind": "plant",
+            "work": "crop-apple",
+            "frame": "mature",
+            "position": [
+              46.2,
+              100
+            ]
+          },
+          {
+            "id": "polish.orchard.6",
+            "kind": "plant",
+            "work": "crop-apple",
+            "frame": "mature",
+            "position": [
+              49.4,
+              100
+            ]
+          },
+          {
+            "id": "polish.orchard.7",
+            "kind": "plant",
+            "work": "crop-apple",
+            "frame": "mature",
+            "position": [
+              52.6,
+              100
+            ]
+          },
+          {
+            "id": "polish.flowers.0",
+            "kind": "flowers",
+            "position": [
+              57.0,
+              98.0
+            ]
+          },
+          {
+            "id": "polish.flowers.1",
+            "kind": "flowers",
+            "position": [
+              58.4,
+              98.0
+            ]
+          },
+          {
+            "id": "polish.flowers.2",
+            "kind": "flowers",
+            "position": [
+              59.8,
+              98.0
+            ]
+          },
+          {
+            "id": "polish.flowers.3",
+            "kind": "flowers",
+            "position": [
+              61.2,
+              98.0
+            ]
+          },
+          {
+            "id": "polish.flowers.4",
+            "kind": "flowers",
+            "position": [
+              57.0,
+              99.5
+            ]
+          },
+          {
+            "id": "polish.flowers.5",
+            "kind": "flowers",
+            "position": [
+              58.4,
+              99.5
+            ]
+          },
+          {
+            "id": "polish.flowers.6",
+            "kind": "flowers",
+            "position": [
+              59.8,
+              99.5
+            ]
+          },
+          {
+            "id": "polish.flowers.7",
+            "kind": "flowers",
+            "position": [
+              61.2,
+              99.5
+            ]
+          },
+          {
+            "id": "polish.flowers.8",
+            "kind": "flowers",
+            "position": [
+              57.0,
+              101.0
+            ]
+          },
+          {
+            "id": "polish.flowers.9",
+            "kind": "flowers",
+            "position": [
+              58.4,
+              101.0
+            ]
+          },
+          {
+            "id": "polish.flowers.10",
+            "kind": "flowers",
+            "position": [
+              59.8,
+              101.0
+            ]
+          },
+          {
+            "id": "polish.flowers.11",
+            "kind": "flowers",
+            "position": [
+              61.2,
+              101.0
+            ]
+          },
+          {
+            "id": "polish.flowers.12",
+            "kind": "flowers",
+            "position": [
+              57.0,
+              102.5
+            ]
+          },
+          {
+            "id": "polish.flowers.13",
+            "kind": "flowers",
+            "position": [
+              58.4,
+              102.5
+            ]
+          },
+          {
+            "id": "polish.flowers.14",
+            "kind": "flowers",
+            "position": [
+              59.8,
+              102.5
+            ]
+          },
+          {
+            "id": "polish.flowers.15",
+            "kind": "flowers",
+            "position": [
+              61.2,
+              102.5
+            ]
+          },
+          {
+            "id": "polish.southeast.0.0",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              101,
+              99
+            ]
+          },
+          {
+            "id": "polish.southeast.0.1",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              102.5,
+              100
+            ]
+          },
+          {
+            "id": "polish.southeast.0.2",
+            "kind": "asset",
+            "asset": "grass_clump",
+            "position": [
+              100,
+              101
+            ]
+          },
+          {
+            "id": "polish.southeast.1.0",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              114,
+              102
+            ]
+          },
+          {
+            "id": "polish.southeast.1.1",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              115.5,
+              103
+            ]
+          },
+          {
+            "id": "polish.southeast.1.2",
+            "kind": "asset",
+            "asset": "grass_clump",
+            "position": [
+              113,
+              104
+            ]
+          },
+          {
+            "id": "polish.southeast.2.0",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              121,
+              105
+            ]
+          },
+          {
+            "id": "polish.southeast.2.1",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              122.5,
+              106
+            ]
+          },
+          {
+            "id": "polish.southeast.2.2",
+            "kind": "asset",
+            "asset": "grass_clump",
+            "position": [
+              120,
+              107
+            ]
+          },
+          {
+            "id": "polish.southeast.3.0",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              136,
+              96
+            ]
+          },
+          {
+            "id": "polish.southeast.3.1",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              137.5,
+              97
+            ]
+          },
+          {
+            "id": "polish.southeast.3.2",
+            "kind": "asset",
+            "asset": "grass_clump",
+            "position": [
+              135,
+              98
+            ]
+          },
+          {
+            "id": "polish.field.0.0",
+            "kind": "asset",
+            "asset": "flowers",
+            "position": [
+              42,
+              84
+            ]
+          },
+          {
+            "id": "polish.field.0.1",
+            "kind": "asset",
+            "asset": "grass_clump",
+            "position": [
+              45,
+              84
+            ]
+          },
+          {
+            "id": "polish.field.0.2",
+            "kind": "asset",
+            "asset": "flowers",
+            "position": [
+              48,
+              84
+            ]
+          },
+          {
+            "id": "polish.field.0.3",
+            "kind": "asset",
+            "asset": "grass_clump",
+            "position": [
+              51,
+              84
+            ]
+          },
+          {
+            "id": "polish.field.1.0",
+            "kind": "asset",
+            "asset": "flowers",
+            "position": [
+              59,
+              84
+            ]
+          },
+          {
+            "id": "polish.field.1.1",
+            "kind": "asset",
+            "asset": "grass_clump",
+            "position": [
+              62,
+              84
+            ]
+          },
+          {
+            "id": "polish.field.1.2",
+            "kind": "asset",
+            "asset": "flowers",
+            "position": [
+              65,
+              84
+            ]
+          },
+          {
+            "id": "polish.field.1.3",
+            "kind": "asset",
+            "asset": "grass_clump",
+            "position": [
+              68,
+              84
+            ]
+          },
+          {
+            "id": "polish.field.2.0",
+            "kind": "asset",
+            "asset": "flowers",
+            "position": [
+              78,
+              84
+            ]
+          },
+          {
+            "id": "polish.field.2.1",
+            "kind": "asset",
+            "asset": "grass_clump",
+            "position": [
+              81,
+              84
+            ]
+          },
+          {
+            "id": "polish.field.2.2",
+            "kind": "asset",
+            "asset": "flowers",
+            "position": [
+              84,
+              84
+            ]
+          },
+          {
+            "id": "polish.field.2.3",
+            "kind": "asset",
+            "asset": "grass_clump",
+            "position": [
+              87,
+              84
+            ]
+          },
+          {
+            "id": "polish.field.3.0",
+            "kind": "asset",
+            "asset": "flowers",
+            "position": [
+              93,
+              84
+            ]
+          },
+          {
+            "id": "polish.field.3.1",
+            "kind": "asset",
+            "asset": "grass_clump",
+            "position": [
+              96,
+              84
+            ]
+          },
+          {
+            "id": "polish.field.3.2",
+            "kind": "asset",
+            "asset": "flowers",
+            "position": [
+              99,
+              84
+            ]
+          },
+          {
+            "id": "polish.field.3.3",
+            "kind": "asset",
+            "asset": "grass_clump",
+            "position": [
+              102,
+              84
+            ]
+          },
+          {
+            "id": "stage3.yard.human.0",
+            "kind": "asset",
+            "position": [
+              39,
+              26.3
+            ],
+            "yard_owner": "human",
+            "asset": "logs"
+          },
+          {
+            "id": "stage3.yard.human.2",
+            "kind": "bucket",
+            "position": [
+              37.3,
+              24
+            ],
+            "yard_owner": "human"
+          },
+          {
+            "id": "stage3.yard.human.3",
+            "kind": "asset",
+            "position": [
+              46.8,
+              24.5
+            ],
+            "yard_owner": "human",
+            "asset": "barrel"
+          },
+          {
+            "id": "stage3.yard.human.4",
+            "kind": "asset",
+            "position": [
+              37.5,
+              27.5
+            ],
+            "yard_owner": "human",
+            "asset": "fence_h"
+          },
+          {
+            "id": "stage3.yard.codex.0",
+            "kind": "flower_arch",
+            "position": [
+              57.2,
+              27
+            ],
+            "yard_owner": "codex"
+          },
+          {
+            "id": "stage3.yard.codex.1",
+            "kind": "swing_chair",
+            "position": [
+              54.8,
+              26.5
+            ],
+            "yard_owner": "codex"
+          },
+          {
+            "id": "stage3.yard.codex.2",
+            "kind": "planter",
+            "position": [
+              62.7,
+              25
+            ],
+            "yard_owner": "codex"
+          },
+          {
+            "id": "stage3.yard.codex.3",
+            "kind": "flowers",
+            "position": [
+              53.2,
+              24
+            ],
+            "yard_owner": "codex",
+            "tint": "#d9c3e7"
+          },
+          {
+            "id": "stage3.yard.codex.4",
+            "kind": "asset",
+            "position": [
+              53.2,
+              26.8
+            ],
+            "yard_owner": "codex",
+            "asset": "fence_v"
+          },
+          {
+            "id": "stage3.yard.companion-2.0",
+            "kind": "telescope",
+            "position": [
+              77.5,
+              27
+            ],
+            "yard_owner": "companion-2"
+          },
+          {
+            "id": "stage3.yard.companion-2.1",
+            "kind": "note_table",
+            "position": [
+              68.5,
+              26.8
+            ],
+            "yard_owner": "companion-2"
+          },
+          {
+            "id": "stage3.yard.companion-2.2",
+            "kind": "asset",
+            "position": [
+              68.2,
+              24
+            ],
+            "yard_owner": "companion-2",
+            "asset": "rock"
+          },
+          {
+            "id": "stage3.yard.companion-2.3",
+            "kind": "placard",
+            "position": [
+              77.8,
+              24
+            ],
+            "yard_owner": "companion-2"
+          },
+          {
+            "id": "stage3.yard.companion-2.4",
+            "kind": "asset",
+            "position": [
+              68.6,
+              27.6
+            ],
+            "yard_owner": "companion-2",
+            "asset": "grass_clump"
+          },
+          {
+            "id": "stage3.yard.npc.mira.0",
+            "kind": "windchime",
+            "position": [
+              83.8,
+              25.5
+            ],
+            "yard_owner": "npc.mira"
+          },
+          {
+            "id": "stage3.yard.npc.mira.1",
+            "kind": "asset",
+            "position": [
+              92.8,
+              25
+            ],
+            "yard_owner": "npc.mira",
+            "asset": "barrel"
+          },
+          {
+            "id": "stage3.yard.npc.mira.2",
+            "kind": "flowers",
+            "position": [
+              89.3,
+              27.5
+            ],
+            "yard_owner": "npc.mira",
+            "tint": "#f2bfa4"
+          },
+          {
+            "id": "stage3.yard.npc.mira.3",
+            "kind": "asset",
+            "position": [
+              85,
+              26.9
+            ],
+            "yard_owner": "npc.mira",
+            "asset": "stool"
+          },
+          {
+            "id": "stage3.yard.npc.mira.4",
+            "kind": "asset",
+            "position": [
+              83.8,
+              27.6
+            ],
+            "yard_owner": "npc.mira",
+            "asset": "fence_h"
+          },
+          {
+            "id": "stage3.yard.npc.nora.0",
+            "kind": "bookshelf",
+            "position": [
+              107.6,
+              28
+            ],
+            "yard_owner": "npc.nora"
+          },
+          {
+            "id": "stage3.yard.npc.nora.1",
+            "kind": "bench",
+            "position": [
+              99.8,
+              27
+            ],
+            "yard_owner": "npc.nora"
+          },
+          {
+            "id": "stage3.yard.npc.nora.2",
+            "kind": "planter",
+            "position": [
+              107.7,
+              24.5
+            ],
+            "yard_owner": "npc.nora"
+          },
+          {
+            "id": "stage3.yard.npc.nora.3",
+            "kind": "asset",
+            "position": [
+              98.2,
+              25.4
+            ],
+            "yard_owner": "npc.nora",
+            "asset": "bush"
+          },
+          {
+            "id": "stage3.yard.npc.nora.4",
+            "kind": "asset",
+            "position": [
+              107.8,
+              26.9
+            ],
+            "yard_owner": "npc.nora",
+            "asset": "fence_v"
+          },
+          {
+            "id": "stage3.market.table",
+            "kind": "note_table",
+            "anchor": "plaza.market"
+          },
+          {
+            "id": "stage3.market.bucket",
+            "kind": "bucket",
+            "anchor": "plaza.market",
+            "offset": [
+              -1.2,
+              0.4
+            ]
+          },
+          {
+            "id": "stage3.flower.stand",
+            "kind": "planter",
+            "anchor": "plaza.flowers"
+          },
+          {
+            "id": "stage3.flower.pots",
+            "kind": "flowers",
+            "anchor": "plaza.flowers",
+            "offset": [
+              0.4,
+              -0.2
+            ],
+            "tint": "#e6b9cb"
+          },
+          {
+            "id": "stage3.south.focus.0",
+            "kind": "bench",
+            "position": [
+              31.83,
+              89.47
+            ]
+          },
+          {
+            "id": "stage3.south.detail.0.0",
+            "kind": "asset",
+            "asset": "grass_clump",
+            "position": [
+              32.93,
+              90.47
+            ]
+          },
+          {
+            "id": "stage3.south.detail.0.1",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              30.729999999999997,
+              90.07
+            ]
+          },
+          {
+            "id": "stage3.south.detail.0.2",
+            "kind": "asset",
+            "asset": "flowers",
+            "position": [
+              32.43,
+              90.97
+            ]
+          },
+          {
+            "id": "stage3.south.focus.1",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              31.6,
+              97.26
+            ]
+          },
+          {
+            "id": "stage3.south.detail.1.0",
+            "kind": "asset",
+            "asset": "grass_clump",
+            "position": [
+              32.7,
+              98.26
+            ]
+          },
+          {
+            "id": "stage3.south.detail.1.1",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              30.5,
+              97.86
+            ]
+          },
+          {
+            "id": "stage3.south.detail.1.2",
+            "kind": "asset",
+            "asset": "flowers",
+            "position": [
+              32.2,
+              98.76
+            ]
+          },
+          {
+            "id": "stage3.south.focus.2",
+            "kind": "asset",
+            "asset": "logs",
+            "position": [
+              38.84,
+              96.67
+            ]
+          },
+          {
+            "id": "stage3.south.detail.2.0",
+            "kind": "asset",
+            "asset": "grass_clump",
+            "position": [
+              39.940000000000005,
+              97.67
+            ]
+          },
+          {
+            "id": "stage3.south.detail.2.1",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              37.74,
+              97.27
+            ]
+          },
+          {
+            "id": "stage3.south.detail.2.2",
+            "kind": "asset",
+            "asset": "flowers",
+            "position": [
+              39.440000000000005,
+              98.17
+            ]
+          },
+          {
+            "id": "stage3.south.detail.3.0",
+            "kind": "asset",
+            "asset": "grass_clump",
+            "position": [
+              47.22,
+              90.32
+            ]
+          },
+          {
+            "id": "stage3.south.detail.3.1",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              45.019999999999996,
+              89.91999999999999
+            ]
+          },
+          {
+            "id": "stage3.south.detail.3.2",
+            "kind": "asset",
+            "asset": "flowers",
+            "position": [
+              46.72,
+              90.82
+            ]
+          },
+          {
+            "id": "stage3.south.focus.4",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              54.81,
+              89.09
+            ]
+          },
+          {
+            "id": "stage3.south.detail.4.0",
+            "kind": "asset",
+            "asset": "grass_clump",
+            "position": [
+              55.910000000000004,
+              90.09
+            ]
+          },
+          {
+            "id": "stage3.south.detail.4.1",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              53.71,
+              89.69
+            ]
+          },
+          {
+            "id": "stage3.south.detail.4.2",
+            "kind": "asset",
+            "asset": "flowers",
+            "position": [
+              55.410000000000004,
+              90.59
+            ]
+          },
+          {
+            "id": "stage3.south.focus.5",
+            "kind": "bench",
+            "position": [
+              63.94,
+              88.61
+            ]
+          },
+          {
+            "id": "stage3.south.detail.5.0",
+            "kind": "asset",
+            "asset": "grass_clump",
+            "position": [
+              65.03999999999999,
+              89.61
+            ]
+          },
+          {
+            "id": "stage3.south.detail.5.1",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              62.839999999999996,
+              89.21
+            ]
+          },
+          {
+            "id": "stage3.south.detail.5.2",
+            "kind": "asset",
+            "asset": "flowers",
+            "position": [
+              64.53999999999999,
+              90.11
+            ]
+          },
+          {
+            "id": "stage3.south.focus.6",
+            "kind": "asset",
+            "asset": "logs",
+            "position": [
+              71.26,
+              89.92
+            ]
+          },
+          {
+            "id": "stage3.south.detail.6.1",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              70.16000000000001,
+              90.52
+            ]
+          },
+          {
+            "id": "stage3.south.detail.6.2",
+            "kind": "asset",
+            "asset": "flowers",
+            "position": [
+              71.86,
+              91.42
+            ]
+          },
+          {
+            "id": "stage3.south.detail.7.0",
+            "kind": "asset",
+            "asset": "grass_clump",
+            "position": [
+              71.89,
+              98.28
+            ]
+          },
+          {
+            "id": "stage3.south.detail.7.1",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              69.69000000000001,
+              97.88
+            ]
+          },
+          {
+            "id": "stage3.south.detail.7.2",
+            "kind": "asset",
+            "asset": "flowers",
+            "position": [
+              71.39,
+              98.78
+            ]
+          },
+          {
+            "id": "stage3.south.focus.8",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              70.69,
+              105.31
+            ]
+          },
+          {
+            "id": "stage3.south.detail.8.0",
+            "kind": "asset",
+            "asset": "grass_clump",
+            "position": [
+              71.78999999999999,
+              106.31
+            ]
+          },
+          {
+            "id": "stage3.south.detail.8.1",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              69.59,
+              105.91
+            ]
+          },
+          {
+            "id": "stage3.south.detail.8.2",
+            "kind": "asset",
+            "asset": "flowers",
+            "position": [
+              71.28999999999999,
+              106.81
+            ]
+          },
+          {
+            "id": "stage3.south.focus.9",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              78.93,
+              89.07
+            ]
+          },
+          {
+            "id": "stage3.south.detail.9.0",
+            "kind": "asset",
+            "asset": "grass_clump",
+            "position": [
+              80.03,
+              90.07
+            ]
+          },
+          {
+            "id": "stage3.south.detail.9.2",
+            "kind": "asset",
+            "asset": "flowers",
+            "position": [
+              79.53,
+              90.57
+            ]
+          },
+          {
+            "id": "stage3.south.focus.10",
+            "kind": "bench",
+            "position": [
+              79.97,
+              105.16
+            ]
+          },
+          {
+            "id": "stage3.south.detail.10.0",
+            "kind": "asset",
+            "asset": "grass_clump",
+            "position": [
+              81.07,
+              106.16
+            ]
+          },
+          {
+            "id": "stage3.south.detail.10.1",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              78.87,
+              105.75999999999999
+            ]
+          },
+          {
+            "id": "stage3.south.detail.10.2",
+            "kind": "asset",
+            "asset": "flowers",
+            "position": [
+              80.57,
+              106.66
+            ]
+          },
+          {
+            "id": "stage3.south.focus.12",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              87.36,
+              88.93
+            ]
+          },
+          {
+            "id": "stage3.south.detail.12.0",
+            "kind": "asset",
+            "asset": "grass_clump",
+            "position": [
+              88.46,
+              89.93
+            ]
+          },
+          {
+            "id": "stage3.south.detail.12.1",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              86.26,
+              89.53
+            ]
+          },
+          {
+            "id": "stage3.south.detail.12.2",
+            "kind": "asset",
+            "asset": "flowers",
+            "position": [
+              87.96,
+              90.43
+            ]
+          },
+          {
+            "id": "stage3.south.focus.13",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              86.25,
+              112.69
+            ]
+          },
+          {
+            "id": "stage3.south.focus.14",
+            "kind": "asset",
+            "asset": "logs",
+            "position": [
+              94.35,
+              88.79
+            ]
+          },
+          {
+            "id": "stage3.south.detail.14.0",
+            "kind": "asset",
+            "asset": "grass_clump",
+            "position": [
+              95.44999999999999,
+              89.79
+            ]
+          },
+          {
+            "id": "stage3.south.detail.14.1",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              93.25,
+              89.39
+            ]
+          },
+          {
+            "id": "stage3.south.detail.14.2",
+            "kind": "asset",
+            "asset": "flowers",
+            "position": [
+              94.94999999999999,
+              90.29
+            ]
+          },
+          {
+            "id": "stage3.south.focus.15",
+            "kind": "bench",
+            "position": [
+              102.25,
+              96.71
+            ]
+          },
+          {
+            "id": "stage3.south.detail.15.0",
+            "kind": "asset",
+            "asset": "grass_clump",
+            "position": [
+              103.35,
+              97.71
+            ]
+          },
+          {
+            "id": "stage3.south.detail.15.1",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              101.15,
+              97.30999999999999
+            ]
+          },
+          {
+            "id": "stage3.south.detail.15.2",
+            "kind": "asset",
+            "asset": "flowers",
+            "position": [
+              102.85,
+              98.21
+            ]
+          },
+          {
+            "id": "stage3.south.focus.16",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              103.88,
+              105.55
+            ]
+          },
+          {
+            "id": "stage3.south.detail.16.0",
+            "kind": "asset",
+            "asset": "grass_clump",
+            "position": [
+              104.97999999999999,
+              106.55
+            ]
+          },
+          {
+            "id": "stage3.south.detail.16.2",
+            "kind": "asset",
+            "asset": "flowers",
+            "position": [
+              104.47999999999999,
+              107.05
+            ]
+          },
+          {
+            "id": "stage3.south.focus.17",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              110.55,
+              97.37
+            ]
+          },
+          {
+            "id": "stage3.south.detail.17.0",
+            "kind": "asset",
+            "asset": "grass_clump",
+            "position": [
+              111.64999999999999,
+              98.37
+            ]
+          },
+          {
+            "id": "stage3.south.detail.17.1",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              109.45,
+              97.97
+            ]
+          },
+          {
+            "id": "stage3.south.detail.17.2",
+            "kind": "asset",
+            "asset": "flowers",
+            "position": [
+              111.14999999999999,
+              98.87
+            ]
+          },
+          {
+            "id": "stage3.south.focus.18",
+            "kind": "asset",
+            "asset": "logs",
+            "position": [
+              111.35,
+              105.31
+            ]
+          },
+          {
+            "id": "stage3.south.detail.18.0",
+            "kind": "asset",
+            "asset": "grass_clump",
+            "position": [
+              112.44999999999999,
+              106.31
+            ]
+          },
+          {
+            "id": "stage3.south.detail.18.1",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              110.25,
+              105.91
+            ]
+          },
+          {
+            "id": "stage3.south.detail.18.2",
+            "kind": "asset",
+            "asset": "flowers",
+            "position": [
+              111.94999999999999,
+              106.81
+            ]
+          },
+          {
+            "id": "stage3.south.detail.19.1",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              117.52000000000001,
+              98.05999999999999
+            ]
+          },
+          {
+            "id": "stage3.south.focus.20",
+            "kind": "bench",
+            "position": [
+              118.53,
+              105.71
+            ]
+          },
+          {
+            "id": "stage3.south.detail.20.0",
+            "kind": "asset",
+            "asset": "grass_clump",
+            "position": [
+              119.63,
+              106.71
+            ]
+          },
+          {
+            "id": "stage3.south.detail.20.1",
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              117.43,
+              106.30999999999999
+            ]
+          },
+          {
+            "id": "stage3.south.detail.20.2",
+            "kind": "asset",
+            "asset": "flowers",
+            "position": [
+              119.13,
+              107.21
+            ]
+          },
+          {
+            "id": "stage3.yard.extra.codex",
+            "kind": "asset",
+            "asset": "picnic",
+            "position": [
+              59.6,
+              27.4
+            ],
+            "yard_owner": "codex"
+          },
+          {
+            "id": "stage3.yard.extra.npc.mira",
+            "kind": "asset",
+            "asset": "gate",
+            "position": [
+              92.8,
+              23
+            ],
+            "yard_owner": "npc.mira"
+          },
+          {
+            "id": "ui.yard.edge.0.0",
+            "kind": "asset",
+            "asset": "fence_v",
+            "position": [
+              36.7,
+              24.8
+            ]
+          },
+          {
+            "id": "ui.yard.edge.0.1",
+            "kind": "asset",
+            "asset": "fence_v",
+            "position": [
+              47.3,
+              24.8
+            ]
+          },
+          {
+            "id": "ui.yard.edge.0.2",
+            "kind": "asset",
+            "asset": "fence_h",
+            "position": [
+              38.5,
+              28
+            ]
+          },
+          {
+            "id": "ui.yard.edge.0.3",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              45.5,
+              28.1
+            ]
+          },
+          {
+            "id": "ui.yard.edge.0.4",
+            "kind": "asset",
+            "asset": "flowers",
+            "position": [
+              36.9,
+              27
+            ]
+          },
+          {
+            "id": "ui.yard.edge.1.0",
+            "kind": "asset",
+            "asset": "fence_v",
+            "position": [
+              52.7,
+              24.8
+            ]
+          },
+          {
+            "id": "ui.yard.edge.1.1",
+            "kind": "asset",
+            "asset": "fence_v",
+            "position": [
+              63.3,
+              24.8
+            ]
+          },
+          {
+            "id": "ui.yard.edge.1.2",
+            "kind": "asset",
+            "asset": "fence_h",
+            "position": [
+              54.5,
+              28
+            ]
+          },
+          {
+            "id": "ui.yard.edge.1.3",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              61.5,
+              28.1
+            ]
+          },
+          {
+            "id": "ui.yard.edge.1.4",
+            "kind": "asset",
+            "asset": "flowers",
+            "position": [
+              52.9,
+              27
+            ]
+          },
+          {
+            "id": "ui.yard.edge.2.0",
+            "kind": "asset",
+            "asset": "fence_v",
+            "position": [
+              67.7,
+              24.8
+            ]
+          },
+          {
+            "id": "ui.yard.edge.2.1",
+            "kind": "asset",
+            "asset": "fence_v",
+            "position": [
+              78.3,
+              24.8
+            ]
+          },
+          {
+            "id": "ui.yard.edge.2.2",
+            "kind": "asset",
+            "asset": "fence_h",
+            "position": [
+              69.5,
+              28
+            ]
+          },
+          {
+            "id": "ui.yard.edge.2.3",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              76.5,
+              28.1
+            ]
+          },
+          {
+            "id": "ui.yard.edge.2.4",
+            "kind": "asset",
+            "asset": "flowers",
+            "position": [
+              67.9,
+              27
+            ]
+          },
+          {
+            "id": "ui.yard.edge.3.0",
+            "kind": "asset",
+            "asset": "fence_v",
+            "position": [
+              82.7,
+              24.8
+            ]
+          },
+          {
+            "id": "ui.yard.edge.3.1",
+            "kind": "asset",
+            "asset": "fence_v",
+            "position": [
+              93.3,
+              24.8
+            ]
+          },
+          {
+            "id": "ui.yard.edge.3.2",
+            "kind": "asset",
+            "asset": "fence_h",
+            "position": [
+              84.5,
+              28
+            ]
+          },
+          {
+            "id": "ui.yard.edge.3.3",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              91.5,
+              28.1
+            ]
+          },
+          {
+            "id": "ui.yard.edge.3.4",
+            "kind": "asset",
+            "asset": "flowers",
+            "position": [
+              82.9,
+              27
+            ]
+          },
+          {
+            "id": "ui.yard.edge.4.0",
+            "kind": "asset",
+            "asset": "fence_v",
+            "position": [
+              97.7,
+              24.8
+            ]
+          },
+          {
+            "id": "ui.yard.edge.4.1",
+            "kind": "asset",
+            "asset": "fence_v",
+            "position": [
+              108.3,
+              24.8
+            ]
+          },
+          {
+            "id": "ui.yard.edge.4.2",
+            "kind": "asset",
+            "asset": "fence_h",
+            "position": [
+              99.5,
+              28
+            ]
+          },
+          {
+            "id": "ui.yard.edge.4.3",
+            "kind": "asset",
+            "asset": "bush",
+            "position": [
+              106.5,
+              28.1
+            ]
+          },
+          {
+            "id": "ui.yard.edge.4.4",
+            "kind": "asset",
+            "asset": "flowers",
+            "position": [
+              97.9,
+              27
+            ]
+          },
+          {
+            "id": "ui.field.motif.0",
+            "kind": "scarecrow",
+            "position": [
+              48.2,
+              84.2
+            ]
+          },
+          {
+            "id": "ui.field.rack",
+            "kind": "asset",
+            "asset": "fence_h",
+            "position": [
+              65.60000000000001,
+              84.4
+            ]
+          },
+          {
+            "id": "ui.field.motif.1",
+            "kind": "asset",
+            "position": [
+              65.2,
+              84.2
+            ],
+            "asset": "axe"
+          },
+          {
+            "id": "ui.field.motif.2",
+            "kind": "bucket",
+            "position": [
+              84.2,
+              84.2
+            ]
+          },
+          {
+            "id": "ui.field.motif.3",
+            "kind": "placard",
+            "position": [
+              99.2,
+              84.2
+            ]
+          },
+          {
+            "kind": "asset",
+            "asset": "birch",
+            "position": [
+              -51,
+              25
+            ],
+            "id": "moon.scenery.409"
+          },
+          {
+            "kind": "asset",
+            "asset": "oak_small",
+            "position": [
+              -64,
+              22
+            ],
+            "id": "moon.scenery.410"
+          },
+          {
+            "kind": "asset",
+            "asset": "birch",
+            "position": [
+              -78,
+              20
+            ],
+            "id": "moon.scenery.411"
+          },
+          {
+            "kind": "asset",
+            "asset": "oak_small",
+            "position": [
+              -40,
+              39
+            ],
+            "id": "moon.scenery.412"
+          },
+          {
+            "kind": "asset",
+            "asset": "birch",
+            "position": [
+              -35,
+              48
+            ],
+            "id": "moon.scenery.413"
+          },
+          {
+            "kind": "asset",
+            "asset": "oak_small",
+            "position": [
+              -42,
+              93
+            ],
+            "id": "moon.scenery.414"
+          },
+          {
+            "kind": "asset",
+            "asset": "birch",
+            "position": [
+              -54,
+              104
+            ],
+            "id": "moon.scenery.415"
+          },
+          {
+            "kind": "asset",
+            "asset": "oak_small",
+            "position": [
+              -72,
+              109
+            ],
+            "id": "moon.scenery.416"
+          },
+          {
+            "kind": "asset",
+            "asset": "birch",
+            "position": [
+              -91,
+              112
+            ],
+            "id": "moon.scenery.417"
+          },
+          {
+            "kind": "asset",
+            "asset": "oak_small",
+            "position": [
+              -124,
+              105
+            ],
+            "id": "moon.scenery.418"
+          },
+          {
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              -149,
+              28
+            ],
+            "id": "moon.scenery.419"
+          },
+          {
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              -156,
+              97
+            ],
+            "id": "moon.scenery.420"
+          },
+          {
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              -29,
+              52
+            ],
+            "id": "moon.scenery.421"
+          },
+          {
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              -31,
+              87
+            ],
+            "id": "moon.scenery.422"
+          },
+          {
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              -64,
+              114
+            ],
+            "id": "moon.scenery.423"
+          },
+          {
+            "kind": "asset",
+            "asset": "rock",
+            "position": [
+              -95,
+              118
+            ],
+            "id": "moon.scenery.424"
+          },
+          {
+            "kind": "lamp",
+            "anchor": "moon.lamp.0",
+            "id": "moon.scenery.425"
+          },
+          {
+            "kind": "lamp",
+            "anchor": "moon.lamp.1",
+            "id": "moon.scenery.426"
+          },
+          {
+            "kind": "lamp",
+            "anchor": "moon.lamp.2",
+            "id": "moon.scenery.427"
+          },
+          {
+            "kind": "lamp",
+            "anchor": "moon.lamp.3",
+            "id": "moon.scenery.428"
+          },
+          {
+            "kind": "lamp",
+            "anchor": "moon.lamp.4",
+            "id": "moon.scenery.429"
+          },
+          {
+            "kind": "lamp",
+            "anchor": "moon.lamp.5",
+            "id": "moon.scenery.430"
+          },
+          {
+            "kind": "lamp",
+            "anchor": "moon.lamp.6",
+            "id": "moon.scenery.431"
+          },
+          {
+            "id": "moon.camp.prop.1",
+            "kind": "asset",
+            "position": [
+              -59,
+              79
+            ],
+            "asset": "logs"
+          },
+          {
+            "id": "moon.camp.prop.2",
+            "kind": "bucket",
+            "position": [
+              -60,
+              81
+            ]
+          }
+        ],
+        "art_cameras": {
+          "island": [
+            80,
+            64
+          ],
+          "plaza": [
+            75,
+            50
+          ],
+          "street": [
+            77.75,
+            22
+          ],
+          "farm": [
+            76,
+            78
+          ],
+          "dock": [
+            75,
+            117
+          ],
+          "logging": [
+            126,
+            67
+          ],
+          "lookout": [
+            26,
+            25
+          ]
+        },
+        "residential_front_y": 24.5,
+        "reserved_sites": [
+          "home.future.plaza.west",
+          "home.future.plaza.east",
+          "home.future.dock",
+          "home.future.forest"
+        ],
+        "plaza_approaches": {
+          "north": [
+            75,
+            47.5
+          ],
+          "south": [
+            75,
+            54
+          ],
+          "west": [
+            71.5,
+            51
+          ],
+          "east": [
+            78.5,
+            51
+          ]
+        },
+        "plaza_planters": [
+          {
+            "anchor": "plaza.planter.nw",
+            "size": [
+              3,
+              3
+            ],
+            "tree_asset": "oak_small"
+          },
+          {
+            "anchor": "plaza.planter.ne",
+            "size": [
+              3,
+              3
+            ],
+            "tree_asset": "birch"
+          },
+          {
+            "anchor": "plaza.planter.sw",
+            "size": [
+              3,
+              3
+            ],
+            "tree_asset": "birch"
+          },
+          {
+            "anchor": "plaza.planter.se",
+            "size": [
+              3,
+              3
+            ],
+            "tree_asset": "oak_small"
+          }
+        ],
+        "plaza_lamps": [
+          {
+            "role": "entrance",
+            "anchor": "plaza.lamp.0"
+          },
+          {
+            "role": "entrance",
+            "anchor": "plaza.lamp.1"
+          },
+          {
+            "role": "entrance",
+            "anchor": "plaza.lamp.2"
+          },
+          {
+            "role": "entrance",
+            "anchor": "plaza.lamp.3"
+          },
+          {
+            "role": "entrance",
+            "anchor": "plaza.lamp.6"
+          },
+          {
+            "role": "entrance",
+            "anchor": "plaza.lamp.7"
+          },
+          {
+            "role": "functional",
+            "anchor": "plaza.lamp.12"
+          },
+          {
+            "role": "functional",
+            "anchor": "plaza.lamp.13"
+          }
+        ],
+        "forest_clusters": [
+          {
+            "id": "grove.1",
+            "tree_ids": [
+              "home.tree.01",
+              "home.tree.02",
+              "home.tree.03",
+              "home.tree.04",
+              "home.tree.05",
+              "home.tree.06"
+            ]
+          },
+          {
+            "id": "grove.2",
+            "tree_ids": [
+              "home.tree.07",
+              "home.tree.08",
+              "home.tree.09",
+              "home.tree.10",
+              "home.tree.11"
+            ]
+          },
+          {
+            "id": "grove.3",
+            "tree_ids": [
+              "home.tree.12",
+              "home.tree.13",
+              "home.tree.14",
+              "home.tree.15",
+              "home.tree.16",
+              "home.tree.17"
+            ]
+          },
+          {
+            "id": "grove.4",
+            "tree_ids": [
+              "home.tree.18",
+              "home.tree.19",
+              "home.tree.20",
+              "home.tree.21",
+              "home.tree.22",
+              "home.tree.23"
+            ]
+          },
+          {
+            "id": "grove.5",
+            "tree_ids": [
+              "home.tree.24",
+              "home.tree.25",
+              "home.tree.26",
+              "home.tree.27",
+              "home.tree.28"
+            ]
+          },
+          {
+            "id": "grove.6",
+            "tree_ids": [
+              "home.tree.29",
+              "home.tree.30",
+              "home.tree.31",
+              "home.tree.32",
+              "home.tree.33",
+              "home.tree.34"
+            ]
+          },
+          {
+            "id": "grove.7",
+            "tree_ids": [
+              "home.tree.35",
+              "home.tree.36",
+              "home.tree.37",
+              "home.tree.38",
+              "home.tree.39",
+              "home.tree.40"
+            ]
+          },
+          {
+            "id": "grove.9",
+            "tree_ids": [
+              "home.tree.41",
+              "home.tree.42",
+              "home.tree.43",
+              "home.tree.44",
+              "home.tree.45",
+              "home.tree.46",
+              "home.tree.47",
+              "home.tree.48",
+              "home.tree.49"
+            ]
+          }
+        ],
+        "field_ditches": [
+          {
+            "rect": [
+              42,
+              85.5,
+              63,
+              0.45
+            ],
+            "visual_only": true
+          }
+        ],
+        "yard_motifs": [
+          {
+            "owner_id": "human",
+            "prop_ids": [
+              "stage3.yard.human.0",
+              "stage3.yard.human.1",
+              "stage3.yard.human.2",
+              "stage3.yard.human.3",
+              "stage3.yard.human.4"
+            ]
+          },
+          {
+            "owner_id": "codex",
+            "prop_ids": [
+              "stage3.yard.codex.0",
+              "stage3.yard.codex.1",
+              "stage3.yard.codex.2",
+              "stage3.yard.codex.3",
+              "stage3.yard.codex.4",
+              "stage3.yard.extra.codex"
+            ]
+          },
+          {
+            "owner_id": "companion-2",
+            "prop_ids": [
+              "stage3.yard.companion-2.0",
+              "stage3.yard.companion-2.1",
+              "stage3.yard.companion-2.2",
+              "stage3.yard.companion-2.3",
+              "stage3.yard.companion-2.4"
+            ]
+          },
+          {
+            "owner_id": "npc.mira",
+            "prop_ids": [
+              "stage3.yard.npc.mira.0",
+              "stage3.yard.npc.mira.1",
+              "stage3.yard.npc.mira.2",
+              "stage3.yard.npc.mira.3",
+              "stage3.yard.npc.mira.4",
+              "stage3.yard.extra.npc.mira"
+            ]
+          },
+          {
+            "owner_id": "npc.nora",
+            "prop_ids": [
+              "stage3.yard.npc.nora.0",
+              "stage3.yard.npc.nora.1",
+              "stage3.yard.npc.nora.2",
+              "stage3.yard.npc.nora.3",
+              "stage3.yard.npc.nora.4"
+            ]
+          }
+        ],
+        "plaza_used_props": [
+          {
+            "anchor": "plaza.market",
+            "size": [
+              3,
+              2
+            ]
+          },
+          {
+            "anchor": "plaza.flowers",
+            "size": [
+              2,
+              2
+            ]
+          }
+        ],
+        "southern_focus_clusters": [
+          [
+            31.83,
+            89.47
+          ],
+          [
+            31.6,
+            97.26
+          ],
+          [
+            38.84,
+            96.67
+          ],
+          [
+            46.12,
+            89.32
+          ],
+          [
+            54.81,
+            89.09
+          ],
+          [
+            63.94,
+            88.61
+          ],
+          [
+            71.26,
+            89.92
+          ],
+          [
+            70.79,
+            97.28
+          ],
+          [
+            70.69,
+            105.31
+          ],
+          [
+            78.93,
+            89.07
+          ],
+          [
+            79.97,
+            105.16
+          ],
+          [
+            79.43,
+            113.49
+          ],
+          [
+            87.36,
+            88.93
+          ],
+          [
+            86.25,
+            112.69
+          ],
+          [
+            94.35,
+            88.79
+          ],
+          [
+            102.25,
+            96.71
+          ],
+          [
+            103.88,
+            105.55
+          ],
+          [
+            110.55,
+            97.37
+          ],
+          [
+            111.35,
+            105.31
+          ],
+          [
+            118.62,
+            97.46
+          ],
+          [
+            118.53,
+            105.71
+          ]
+        ],
+        "mainland_size": [
+          160,
+          128
+        ],
+        "moon": {
+          "id": "home.moon",
+          "name": "月牙岛",
+          "bounds": [
+            -190,
+            0,
+            190,
+            128
+          ],
+          "land_index": 0,
+          "bridge": {
+            "id": "moon.bridge",
+            "start_anchor": "moon.bridge.west",
+            "end_anchor": "moon.bridge.east",
+            "surface_id": "moon.bridge"
+          },
+          "phase_days": 8,
+          "platform_id": "play.moon.bench.1",
+          "barbecue_id": "moon.barbecue",
+          "platform_sites": [
+            "play.moon.bench.1",
+            "play.moon.bench.2",
+            "play.moon.bench.3"
+          ],
+          "schedule_weight": 0.15,
+          "schedule_interval_days": 3,
+          "schedule_route_max_seconds": 90,
+          "schedule_route_grace_seconds": 8
+        },
+        "barbecue_points": [
+          {
+            "id": "moon.barbecue",
+            "name": "月牙岛烧烤营地",
+            "anchor": "moon.camp",
+            "place_id": "home.moon",
+            "seat_offsets": [
+              [
+                -2,
+                1
+              ],
+              [
+                0,
+                1.5
+              ],
+              [
+                2,
+                1
+              ],
+              [
+                -2,
+                3
+              ],
+              [
+                0,
+                3.5
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "mushrooms": [
+              {
+                "id": "moon.mushrooms.1",
+                "position": [
+                  -70,
+                  78
+                ]
+              },
+              {
+                "id": "moon.mushrooms.2",
+                "position": [
+                  -54,
+                  93
+                ]
+              }
+            ],
+            "activity_rules": {
+              "job_timeout": 360
+            }
+          }
+        ],
+        "homelands": {
+          "offset": [
+            -19,
+            150
+          ],
+          "bounds": [
+            -19,
+            150,
+            210,
+            180
+          ],
+          "land_index": 1,
+          "bridge_surface": "homelands.bridge"
+        }
+      },
+      "local_origin": [
+        -190,
+        0
+      ],
+      "land_extensions": [
+        [
+          [
+            -178.724,
+            29.585
+          ],
+          [
+            -172.881,
+            24.604
+          ],
+          [
+            -166.284,
+            20.059
+          ],
+          [
+            -159.006,
+            16.003
+          ],
+          [
+            -151.129,
+            12.48
+          ],
+          [
+            -142.739,
+            9.53
+          ],
+          [
+            -133.93,
+            7.184
+          ],
+          [
+            -124.799,
+            5.47
+          ],
+          [
+            -115.448,
+            4.406
+          ],
+          [
+            -105.982,
+            4.004
+          ],
+          [
+            -96.504,
+            4.268
+          ],
+          [
+            -87.121,
+            5.196
+          ],
+          [
+            -77.936,
+            6.777
+          ],
+          [
+            -69.053,
+            8.994
+          ],
+          [
+            -60.568,
+            11.822
+          ],
+          [
+            -52.577,
+            15.229
+          ],
+          [
+            -45.168,
+            19.178
+          ],
+          [
+            -38.424,
+            23.626
+          ],
+          [
+            -32.42,
+            28.521
+          ],
+          [
+            -27.222,
+            33.811
+          ],
+          [
+            -22.888,
+            39.436
+          ],
+          [
+            -19.466,
+            45.335
+          ],
+          [
+            -16.994,
+            51.44
+          ],
+          [
+            -15.5,
+            57.685
+          ],
+          [
+            -15.0,
+            64.0
+          ],
+          [
+            -15.5,
+            70.315
+          ],
+          [
+            -16.994,
+            76.56
+          ],
+          [
+            -19.466,
+            82.665
+          ],
+          [
+            -22.888,
+            88.564
+          ],
+          [
+            -27.222,
+            94.189
+          ],
+          [
+            -32.42,
+            99.479
+          ],
+          [
+            -38.424,
+            104.374
+          ],
+          [
+            -45.168,
+            108.822
+          ],
+          [
+            -52.577,
+            112.771
+          ],
+          [
+            -60.568,
+            116.178
+          ],
+          [
+            -69.053,
+            119.006
+          ],
+          [
+            -77.936,
+            121.223
+          ],
+          [
+            -87.121,
+            122.804
+          ],
+          [
+            -96.504,
+            123.732
+          ],
+          [
+            -105.982,
+            123.996
+          ],
+          [
+            -115.448,
+            123.594
+          ],
+          [
+            -124.799,
+            122.53
+          ],
+          [
+            -133.93,
+            120.816
+          ],
+          [
+            -142.739,
+            118.47
+          ],
+          [
+            -151.129,
+            115.52
+          ],
+          [
+            -159.006,
+            111.997
+          ],
+          [
+            -166.284,
+            107.941
+          ],
+          [
+            -172.881,
+            103.396
+          ],
+          [
+            -178.724,
+            98.415
+          ],
+          [
+            -178.724,
+            98.415
+          ],
+          [
+            -171.498,
+            98.53
+          ],
+          [
+            -164.264,
+            98.482
+          ],
+          [
+            -157.058,
+            98.271
+          ],
+          [
+            -149.914,
+            97.896
+          ],
+          [
+            -142.865,
+            97.361
+          ],
+          [
+            -135.944,
+            96.667
+          ],
+          [
+            -129.185,
+            95.818
+          ],
+          [
+            -122.621,
+            94.818
+          ],
+          [
+            -116.281,
+            93.672
+          ],
+          [
+            -110.196,
+            92.385
+          ],
+          [
+            -104.395,
+            90.963
+          ],
+          [
+            -98.905,
+            89.413
+          ],
+          [
+            -93.753,
+            87.743
+          ],
+          [
+            -88.963,
+            85.96
+          ],
+          [
+            -84.557,
+            84.072
+          ],
+          [
+            -80.558,
+            82.089
+          ],
+          [
+            -76.983,
+            80.021
+          ],
+          [
+            -73.849,
+            77.876
+          ],
+          [
+            -71.172,
+            75.666
+          ],
+          [
+            -68.964,
+            73.4
+          ],
+          [
+            -67.236,
+            71.089
+          ],
+          [
+            -65.996,
+            68.745
+          ],
+          [
+            -65.249,
+            66.378
+          ],
+          [
+            -65.0,
+            64.0
+          ],
+          [
+            -65.249,
+            61.622
+          ],
+          [
+            -65.996,
+            59.255
+          ],
+          [
+            -67.236,
+            56.911
+          ],
+          [
+            -68.964,
+            54.6
+          ],
+          [
+            -71.172,
+            52.334
+          ],
+          [
+            -73.849,
+            50.124
+          ],
+          [
+            -76.983,
+            47.979
+          ],
+          [
+            -80.558,
+            45.911
+          ],
+          [
+            -84.557,
+            43.928
+          ],
+          [
+            -88.963,
+            42.04
+          ],
+          [
+            -93.753,
+            40.257
+          ],
+          [
+            -98.905,
+            38.587
+          ],
+          [
+            -104.395,
+            37.037
+          ],
+          [
+            -110.196,
+            35.615
+          ],
+          [
+            -116.281,
+            34.328
+          ],
+          [
+            -122.621,
+            33.182
+          ],
+          [
+            -129.185,
+            32.182
+          ],
+          [
+            -135.944,
+            31.333
+          ],
+          [
+            -142.865,
+            30.639
+          ],
+          [
+            -149.914,
+            30.104
+          ],
+          [
+            -157.058,
+            29.729
+          ],
+          [
+            -164.264,
+            29.518
+          ],
+          [
+            -171.498,
+            29.47
+          ],
+          [
+            -178.724,
+            29.585
+          ]
+        ],
+        [
+          [
+            -0.18,
+            193.87
+          ],
+          [
+            17.04,
+            174.19
+          ],
+          [
+            50.25,
+            168.04
+          ],
+          [
+            93.3,
+            169.27
+          ],
+          [
+            133.89,
+            172.96
+          ],
+          [
+            156.03,
+            188.95
+          ],
+          [
+            164.64,
+            211.09
+          ],
+          [
+            165.87,
+            241.84
+          ],
+          [
+            159.72,
+            262.75
+          ],
+          [
+            143.73,
+            282.43
+          ],
+          [
+            114.21,
+            295.96
+          ],
+          [
+            83.46,
+            297.19
+          ],
+          [
+            81.0,
+            298.42
+          ],
+          [
+            71.16,
+            298.42
+          ],
+          [
+            69.93,
+            297.19
+          ],
+          [
+            37.95,
+            293.5
+          ],
+          [
+            10.89,
+            277.51
+          ],
+          [
+            1.05,
+            259.06
+          ],
+          [
+            1.05,
+            250.45
+          ],
+          [
+            18.27,
+            247.99
+          ],
+          [
+            18.27,
+            236.92
+          ],
+          [
+            1.05,
+            230.77
+          ],
+          [
+            -3.87,
+            214.78
+          ]
+        ]
+      ],
+      "initial_storage": {}
+    }
+  ]
+}

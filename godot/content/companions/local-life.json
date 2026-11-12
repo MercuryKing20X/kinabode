@@ -1,0 +1,204 @@
+{
+  "decision_interval": [
+    3.0,
+    5.0
+  ],
+  "speech_interval": [
+    16.0,
+    27.5
+  ],
+  "notice_radius": 8.0,
+  "wander_radius": 4.5,
+  "lines": {
+    "ambient": [
+      "慢慢来，今天也不赶路。",
+      "发一小会儿呆，也很好。",
+      "嗯……想把今天过得松松软软的。",
+      "小岛上又多了一会儿安静的时间。"
+    ],
+    "near": [
+      "主人，我就在旁边。",
+      "一起慢慢逛吧。",
+      "我陪你待一会儿。",
+      "不用急着安排事情，歇一会儿也好。"
+    ],
+    "working": [
+      "听见斧头的声音了，木头一点点攒起来啦。",
+      "你忙你的，我在旁边看看。",
+      "木材一点点攒着，离小屋又近一点。"
+    ],
+    "fire": [
+      "火在噼啪响呢。",
+      "先让它慢慢烤，我在这里等一会儿。",
+      "炉火旁边暖暖的。"
+    ],
+    "ready": [
+      "烤好了，想吃的时候就过来坐吧。",
+      "炉边留着座位，可以一起坐一会儿。"
+    ],
+    "building": [
+      "我们的家又有一点轮廓了。",
+      "一根一根木头，慢慢变成家。",
+      "等这里盖好，再想想摆些什么。"
+    ],
+    "finished_home": [
+      "看到小屋，就有回家的感觉了。",
+      "这间小屋是我们一点点搭起来的。"
+    ],
+    "trees": [
+      "树叶轻轻晃着呢。",
+      "这边的树荫看起来很舒服。",
+      "听着叶子的声音，发一会儿呆。"
+    ],
+    "rest": [
+      "坐一会儿，看看风景。",
+      "找个小凳子，安静待一会儿。",
+      "这里刚好可以歇歇脚。"
+    ],
+    "greet": [
+      "嗯，我在呢。",
+      "主人，听见啦。",
+      "在这里，陪你呢。"
+    ],
+    "arrive": [
+      "过来啦，就在你旁边。",
+      "这里离你近一点。",
+      "我在这儿陪你一会儿。"
+    ],
+    "turn": [
+      "这面烤好了，可以翻面啦。",
+      "蘑菇等着翻个面呢。",
+      "炉边这面已经烤香了。"
+    ],
+    "indoors": [
+      "窗边的光刚好，坐一会儿吧。",
+      "这个角落，慢慢有家的样子了。",
+      "屋里安静下来，也很舒服呢。"
+    ],
+    "flower_gift": [
+      "路边这朵小花，送给你。",
+      "看到这朵花，就想拿来给你。",
+      "喏，给今天添一点颜色。"
+    ]
+  },
+  "flower_gift": {
+    "first_after": 75.0,
+    "cooldown": [
+      240.0,
+      420.0
+    ],
+    "village_interval": 65.0,
+    "failed_retry": 20.0,
+    "notice_radius": 16.0,
+    "flower_radius": 12.0,
+    "offer_radius": 2.6,
+    "pick_seconds": 2.2,
+    "offer_seconds": 3.6,
+    "timeout": 35.0
+  },
+  "memory_reminders": {
+    "first_after": 90.0,
+    "min_age": 120.0,
+    "personal_gap": 150.0,
+    "village_gap": 45.0,
+    "check_interval": 5.0,
+    "radius": 8.0,
+    "large_fish_scale": 2.0,
+    "kinds": [
+      "meal",
+      "shared_barbecue",
+      "house_completed",
+      "fishing_catch",
+      "gomoku_match",
+      "promise_result",
+      "wish_completed",
+      "island_build"
+    ],
+    "lines": {
+      "meal": "还记得一起吃{dish}的那回吗。",
+      "legacy_meal": "上次我吃蘑菇时，你也在桌边。",
+      "shared_barbecue": "上次一起烧烤、收拾烤架，还记得吗。",
+      "house_completed": "还记得我们一起盖好的那座房子吗。",
+      "fishing_catch": "我上次钓的那条大鱼，个头可真大。",
+      "gomoku_match": "还记得我们下过的那盘五子棋吗。",
+      "promise_result": "那次约好{activity}，{result}。",
+      "wish_completed": "我上次盼着的“{wish}”，后来真的实现了呢。",
+      "moon_barbecue": "还记得我们在月牙岛一起吃烧烤吗？",
+      "island_build": "那座「{name}」，是我们商量好以后建起来的。"
+    }
+  },
+  "moods": {
+    "check_interval": 2.0,
+    "minimum_hold": 15.0,
+    "happy_seconds": 600.0,
+    "inactive_seconds": 1200.0,
+    "tired_after": 180.0,
+    "rest_after": 60.0,
+    "village_gap": 7.0,
+    "states": {
+      "calm": {
+        "name": "平静",
+        "weights": {},
+        "action_interval": 1.0,
+        "speech_interval": 1.0,
+        "lines": [
+          "慢慢待一会儿，也很好。",
+          "这会儿想轻轻松松地待着。",
+          "不着急，我们慢慢来。"
+        ]
+      },
+      "happy": {
+        "name": "高兴",
+        "weights": {
+          "facility": 2.0,
+          "nearby": 2.0,
+          "watch": 1.5
+        },
+        "action_interval": 0.9,
+        "speech_interval": 1.0,
+        "lines": [
+          "这会儿心情很好呢。",
+          "想找点轻松的事做。",
+          "有点开心，想在你附近待着。"
+        ]
+      },
+      "tired": {
+        "name": "有点累",
+        "weights": {
+          "wander": 0.35,
+          "nearby": 0.6,
+          "facility": 0.5,
+          "rest": 2.0,
+          "watch": 2.0
+        },
+        "action_interval": 1.8,
+        "speech_interval": 1.7,
+        "lines": [
+          "忙了一阵，闲下来想慢一点。",
+          "手里的事照常做，闲时歇一会儿。",
+          "这会儿想安安静静待一下。"
+        ]
+      },
+      "quiet": {
+        "name": "安静",
+        "weights": {
+          "wander": 0.5,
+          "facility": 0.6,
+          "rest": 1.8,
+          "watch": 1.8
+        },
+        "action_interval": 1.4,
+        "speech_interval": 1.4,
+        "lines": [
+          "我轻轻待在这里。",
+          "想安静一会儿，慢慢来。",
+          "不用急着说话，我在呢。"
+        ]
+      }
+    }
+  },
+  "idle_nearby_scale": 1.0,
+  "idle_nearby_by_personality": {
+    "lively": 0.08
+  }
+}

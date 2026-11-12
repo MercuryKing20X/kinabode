@@ -1,0 +1,1462 @@
+{
+  "generator": "tools/art/draw_cat_contact.py",
+  "frames": {
+    "human-starter-hold-down-0.png": {
+      "source_sha256": "cb214d4e21f714f717aef71967bafddc11387c3dd09dd4206d74e7486ae0079a",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "c809ec585885bbfe6d95d29e1769d526ec8542e3000c62b4ffcc0395b4c54a04"
+    },
+    "human-starter-hold-down-1.png": {
+      "source_sha256": "cb214d4e21f714f717aef71967bafddc11387c3dd09dd4206d74e7486ae0079a",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "345bf6e6075b6f30ef156fe2c906b27d598f99409d92f922b16616769c413e0d"
+    },
+    "human-starter-pet-down-0.png": {
+      "source_sha256": "cb214d4e21f714f717aef71967bafddc11387c3dd09dd4206d74e7486ae0079a",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "b582ac6218923ae0b6f7ddea3ce09f57ae0ecab665e3504f5483a48b6303fe6f"
+    },
+    "human-starter-pet-down-1.png": {
+      "source_sha256": "cb214d4e21f714f717aef71967bafddc11387c3dd09dd4206d74e7486ae0079a",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "d79958b8ee71abf4b8ec0d4621ed018f2e8d5ef30703d5f48de48f47611d0537"
+    },
+    "human-starter-hold-up-0.png": {
+      "source_sha256": "cb214d4e21f714f717aef71967bafddc11387c3dd09dd4206d74e7486ae0079a",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "6f2a508272b18bacb2b0754f925c20eed683bed51d8348d48b6c96f3999a22b1"
+    },
+    "human-starter-hold-up-1.png": {
+      "source_sha256": "cb214d4e21f714f717aef71967bafddc11387c3dd09dd4206d74e7486ae0079a",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "2b472bc682761807fe0e6e4b1826a4a164072baed7a0b85b9808f8639fa997bb"
+    },
+    "human-starter-pet-up-0.png": {
+      "source_sha256": "cb214d4e21f714f717aef71967bafddc11387c3dd09dd4206d74e7486ae0079a",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "7fb4c70ac555cddab263d575e5746555ad79e5145da62836efd0e9712669b06a"
+    },
+    "human-starter-pet-up-1.png": {
+      "source_sha256": "cb214d4e21f714f717aef71967bafddc11387c3dd09dd4206d74e7486ae0079a",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "27b9d28a5f2e2c81ad13908f84b61c45525168cdd9fb7be8d94056c74ca5d810"
+    },
+    "human-starter-hold-left-0.png": {
+      "source_sha256": "cb214d4e21f714f717aef71967bafddc11387c3dd09dd4206d74e7486ae0079a",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "f8a861c4721ffc74de3d9e6bc23ca74b79ae05faca5ad719ed73e60174982f1b"
+    },
+    "human-starter-hold-left-1.png": {
+      "source_sha256": "cb214d4e21f714f717aef71967bafddc11387c3dd09dd4206d74e7486ae0079a",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "c09ff092fc4545466eadc7d1b9d440e2254c51fd523de3a5bf8ce9847f3bf18e"
+    },
+    "human-starter-pet-left-0.png": {
+      "source_sha256": "cb214d4e21f714f717aef71967bafddc11387c3dd09dd4206d74e7486ae0079a",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "4311a289e3e86407b29e15805d5d7539700fe9b7b6dabafbb5c444323733f76e"
+    },
+    "human-starter-pet-left-1.png": {
+      "source_sha256": "cb214d4e21f714f717aef71967bafddc11387c3dd09dd4206d74e7486ae0079a",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "135a5972a8802b941a5e43b53f20909b722e75382ee20e7b93dde176ba7bf6f2"
+    },
+    "human-starter-hold-right-0.png": {
+      "source_sha256": "cb214d4e21f714f717aef71967bafddc11387c3dd09dd4206d74e7486ae0079a",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "8ebc68679e0e85837e92e8a228d42c99e8a86c847737a1a14fe7e70479d7fd89"
+    },
+    "human-starter-hold-right-1.png": {
+      "source_sha256": "cb214d4e21f714f717aef71967bafddc11387c3dd09dd4206d74e7486ae0079a",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "be9f5affd061e234920b37acdc1bc5754b82232f6ed7fc5466f666f7ba1cb5e8"
+    },
+    "human-starter-pet-right-0.png": {
+      "source_sha256": "cb214d4e21f714f717aef71967bafddc11387c3dd09dd4206d74e7486ae0079a",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "c6f4181cfe810fa51b71468e7f143e856038785fcd3916296d9fabd7dbf11509"
+    },
+    "human-starter-pet-right-1.png": {
+      "source_sha256": "cb214d4e21f714f717aef71967bafddc11387c3dd09dd4206d74e7486ae0079a",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "e9bcc695d78b4dde5caa784db159b63832001b0b4e961e6c149a9df974b9ca53"
+    },
+    "white-haired-girl-hold-down-0.png": {
+      "source_sha256": "200d6111cb619d1bf85a1957c13b66f0d7f136f92dbfa41880c1f05259b6cd9b",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "7a81cea1a21722be44b2f0eb2c8795588228a7c5d710dc6431aa46ff1c4d954a"
+    },
+    "white-haired-girl-hold-down-1.png": {
+      "source_sha256": "200d6111cb619d1bf85a1957c13b66f0d7f136f92dbfa41880c1f05259b6cd9b",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "8082e5b8a7fea039d676888eadd24679a36c0684776860af6ea7677f6e85fbff"
+    },
+    "white-haired-girl-pet-down-0.png": {
+      "source_sha256": "200d6111cb619d1bf85a1957c13b66f0d7f136f92dbfa41880c1f05259b6cd9b",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "63fb79e3a995a9d04a87a19289744ab038d5b5dbbaea418576f6ce98232a786f"
+    },
+    "white-haired-girl-pet-down-1.png": {
+      "source_sha256": "200d6111cb619d1bf85a1957c13b66f0d7f136f92dbfa41880c1f05259b6cd9b",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "f4cc9143bbe6adbfbe319c863a6b1da3bd999d9d7765e19a57f70d03a977a266"
+    },
+    "white-haired-girl-hold-up-0.png": {
+      "source_sha256": "200d6111cb619d1bf85a1957c13b66f0d7f136f92dbfa41880c1f05259b6cd9b",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "340fbd4d602e93383c59db6a10ad7fcdef49429dc94017d60a434cdebf633a6f"
+    },
+    "white-haired-girl-hold-up-1.png": {
+      "source_sha256": "200d6111cb619d1bf85a1957c13b66f0d7f136f92dbfa41880c1f05259b6cd9b",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "24cd8e27e1341a640569ef82db3d88541e6799134576bf26fc9cdb2e498c6e67"
+    },
+    "white-haired-girl-pet-up-0.png": {
+      "source_sha256": "200d6111cb619d1bf85a1957c13b66f0d7f136f92dbfa41880c1f05259b6cd9b",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "92f771cc572bc34a756c62e75cee75f84e005b10d94c88dc7f524a33f21dbd12"
+    },
+    "white-haired-girl-pet-up-1.png": {
+      "source_sha256": "200d6111cb619d1bf85a1957c13b66f0d7f136f92dbfa41880c1f05259b6cd9b",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "b7f3fb433c0ae6a698597fc5e155b9daae87ea64802cbe4f598bd71c10a6f06f"
+    },
+    "white-haired-girl-hold-left-0.png": {
+      "source_sha256": "200d6111cb619d1bf85a1957c13b66f0d7f136f92dbfa41880c1f05259b6cd9b",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "667e41a4cc76f61db071453e3b23ebf624a588b307a33bf767d7711ef5fd235e"
+    },
+    "white-haired-girl-hold-left-1.png": {
+      "source_sha256": "200d6111cb619d1bf85a1957c13b66f0d7f136f92dbfa41880c1f05259b6cd9b",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "715c6db00f77c359a3b47410160bf9b9d1ac4bd6d5be5391a64e40d771c22371"
+    },
+    "white-haired-girl-pet-left-0.png": {
+      "source_sha256": "200d6111cb619d1bf85a1957c13b66f0d7f136f92dbfa41880c1f05259b6cd9b",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "82e3dc4bfdf4e3a1f809614516c7af2d83252e68b302a2caf3f438bd53fca5cc"
+    },
+    "white-haired-girl-pet-left-1.png": {
+      "source_sha256": "200d6111cb619d1bf85a1957c13b66f0d7f136f92dbfa41880c1f05259b6cd9b",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "58fb287a6823a334669854ba8aacabfbeb9850ef27987ab7d4dc07deb6b3bd22"
+    },
+    "white-haired-girl-hold-right-0.png": {
+      "source_sha256": "200d6111cb619d1bf85a1957c13b66f0d7f136f92dbfa41880c1f05259b6cd9b",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "ae4b9d80849ad1bd22b306668ca2467e27c03353ffd4aa008a877ed1efe921a5"
+    },
+    "white-haired-girl-hold-right-1.png": {
+      "source_sha256": "200d6111cb619d1bf85a1957c13b66f0d7f136f92dbfa41880c1f05259b6cd9b",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "efabe1f96edd8c2df9acd893c0ae4414a74057a8f73e11f8dbce047bd19a4f42"
+    },
+    "white-haired-girl-pet-right-0.png": {
+      "source_sha256": "200d6111cb619d1bf85a1957c13b66f0d7f136f92dbfa41880c1f05259b6cd9b",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "c4261df8065ce53d4ddfdb76807abe0b5f8f462e11fff24e8e869b7e33459c30"
+    },
+    "white-haired-girl-pet-right-1.png": {
+      "source_sha256": "200d6111cb619d1bf85a1957c13b66f0d7f136f92dbfa41880c1f05259b6cd9b",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "dfd5d9b8a07a2a34ccd97d305245a1368c3f988ccd8c9d2c9f29dc84a1d8553d"
+    },
+    "blue-haired-girl-hold-down-0.png": {
+      "source_sha256": "1d680b56f566b6cf1591b48e65948607eb832483b72241df8db721978de389d2",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "29f454dff9e58ed86696fc6e645d22f2641369f45c8c537778c89ec24833346d"
+    },
+    "blue-haired-girl-hold-down-1.png": {
+      "source_sha256": "1d680b56f566b6cf1591b48e65948607eb832483b72241df8db721978de389d2",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "46b93e640c32effd748e92dd9bee780279d16e662483e56408284456f5853dbc"
+    },
+    "blue-haired-girl-pet-down-0.png": {
+      "source_sha256": "1d680b56f566b6cf1591b48e65948607eb832483b72241df8db721978de389d2",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "d672faecf2ecc01650c8bf3efc401278e8e31f2134c9c8819162899e0dd044f1"
+    },
+    "blue-haired-girl-pet-down-1.png": {
+      "source_sha256": "1d680b56f566b6cf1591b48e65948607eb832483b72241df8db721978de389d2",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "08515788d0dd3719ee32bf37d6025851bacbbc3f721b5a15ab13ef08e7d0eb42"
+    },
+    "blue-haired-girl-hold-up-0.png": {
+      "source_sha256": "1d680b56f566b6cf1591b48e65948607eb832483b72241df8db721978de389d2",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "d3e60a587b7ef6db8988a5486093b9ffc93c395a2fba873eb6d46e75f78429d6"
+    },
+    "blue-haired-girl-hold-up-1.png": {
+      "source_sha256": "1d680b56f566b6cf1591b48e65948607eb832483b72241df8db721978de389d2",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "0a74acdc71ca9ef4407897e0aea9c90c44ed51b643619527630292bc8a9d0df4"
+    },
+    "blue-haired-girl-pet-up-0.png": {
+      "source_sha256": "1d680b56f566b6cf1591b48e65948607eb832483b72241df8db721978de389d2",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "58613ba7207a087ca00aabe597658a3f8d8eabaa671249af8c947f075ebedad9"
+    },
+    "blue-haired-girl-pet-up-1.png": {
+      "source_sha256": "1d680b56f566b6cf1591b48e65948607eb832483b72241df8db721978de389d2",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "e3aabf85190d8f2055d451e2adc65e0d7b9ae38a9c0c6c72483645572a35bf4a"
+    },
+    "blue-haired-girl-hold-left-0.png": {
+      "source_sha256": "1d680b56f566b6cf1591b48e65948607eb832483b72241df8db721978de389d2",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "53f629cb1df6bfdb6c3434488bb5d9e3d48a2600847c69a66fd99cf0b35dc8c2"
+    },
+    "blue-haired-girl-hold-left-1.png": {
+      "source_sha256": "1d680b56f566b6cf1591b48e65948607eb832483b72241df8db721978de389d2",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "49c7633e2ab8ba14c97781e1457890c8eb187518e2e52bb5ec06480314ada659"
+    },
+    "blue-haired-girl-pet-left-0.png": {
+      "source_sha256": "1d680b56f566b6cf1591b48e65948607eb832483b72241df8db721978de389d2",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "bc8e5c9449fc45e8a5ca7f82568e32af4c8e39583fc8026c83e1bb60b012ecf1"
+    },
+    "blue-haired-girl-pet-left-1.png": {
+      "source_sha256": "1d680b56f566b6cf1591b48e65948607eb832483b72241df8db721978de389d2",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "8acc771a72e92739bf3b23d32ddc7dc3325958a848fdd1f610a896d484480f84"
+    },
+    "blue-haired-girl-hold-right-0.png": {
+      "source_sha256": "1d680b56f566b6cf1591b48e65948607eb832483b72241df8db721978de389d2",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "4cdb4e7313142afb447ca2fa3d21becb044cbd09f317877c0a662404d96b832f"
+    },
+    "blue-haired-girl-hold-right-1.png": {
+      "source_sha256": "1d680b56f566b6cf1591b48e65948607eb832483b72241df8db721978de389d2",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "71bf049e090ee5737bde4ffdc035a4247213d20085c0371658bc3748379c8aa3"
+    },
+    "blue-haired-girl-pet-right-0.png": {
+      "source_sha256": "1d680b56f566b6cf1591b48e65948607eb832483b72241df8db721978de389d2",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "b1b1e246278336e47a4083c5ff856cc6616c61cfa12c09d765d1d9e0db47d0ca"
+    },
+    "blue-haired-girl-pet-right-1.png": {
+      "source_sha256": "1d680b56f566b6cf1591b48e65948607eb832483b72241df8db721978de389d2",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "d9813095118fda83d567e3cd41ba98e7fd7576f200d60f5a6b23314ce63de617"
+    },
+    "orange-haired-girl-hold-down-0.png": {
+      "source_sha256": "a6efcfe4027f2dda84eafc994c44c84b817e0ba74c2afa73317844b6a90e1bf0",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "6c14a9022500be73714742231e5434488390403e3167bcc1679e51433a193c24"
+    },
+    "orange-haired-girl-hold-down-1.png": {
+      "source_sha256": "a6efcfe4027f2dda84eafc994c44c84b817e0ba74c2afa73317844b6a90e1bf0",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "92a4d2f3acffdc1aaabe7bab726c4bb06006afe8630b779ca7c74ea613590d7f"
+    },
+    "orange-haired-girl-pet-down-0.png": {
+      "source_sha256": "a6efcfe4027f2dda84eafc994c44c84b817e0ba74c2afa73317844b6a90e1bf0",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "3813047ae2072cc4d659cafdb60aa950fe4046fca1cc7d86404ededfad88ac20"
+    },
+    "orange-haired-girl-pet-down-1.png": {
+      "source_sha256": "a6efcfe4027f2dda84eafc994c44c84b817e0ba74c2afa73317844b6a90e1bf0",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "94a5e2c50ee2f35c92fc93efcddbf708a1c66be5caac2bc2d0eeee4c89e938ac"
+    },
+    "orange-haired-girl-hold-up-0.png": {
+      "source_sha256": "a6efcfe4027f2dda84eafc994c44c84b817e0ba74c2afa73317844b6a90e1bf0",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "931c1ee449880fcb48cc4705f33409bc0edb593035011d8c5b1334be99d2ab91"
+    },
+    "orange-haired-girl-hold-up-1.png": {
+      "source_sha256": "a6efcfe4027f2dda84eafc994c44c84b817e0ba74c2afa73317844b6a90e1bf0",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "7cf5e9a9f40b53a89bb997281a5a55e2fc4939e106dc8a7bb21093a83abc0cdf"
+    },
+    "orange-haired-girl-pet-up-0.png": {
+      "source_sha256": "a6efcfe4027f2dda84eafc994c44c84b817e0ba74c2afa73317844b6a90e1bf0",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "41a8acbf44f6ce1f1705cf859ce49412de26a885e0d5722c0913d69a97d32d62"
+    },
+    "orange-haired-girl-pet-up-1.png": {
+      "source_sha256": "a6efcfe4027f2dda84eafc994c44c84b817e0ba74c2afa73317844b6a90e1bf0",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "f1292dd224398bd292821f076e84b78bbe43b34fe69a8f30209e26573d4f2c29"
+    },
+    "orange-haired-girl-hold-left-0.png": {
+      "source_sha256": "a6efcfe4027f2dda84eafc994c44c84b817e0ba74c2afa73317844b6a90e1bf0",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "b16d7abe43b36781706333da9199a3f42ca7d11797ae2e34bdca97b5be1be7d3"
+    },
+    "orange-haired-girl-hold-left-1.png": {
+      "source_sha256": "a6efcfe4027f2dda84eafc994c44c84b817e0ba74c2afa73317844b6a90e1bf0",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "6873b57508fbb75ea7350dc63eaec27d02f68596889ca4d38938bf3485ea5ca0"
+    },
+    "orange-haired-girl-pet-left-0.png": {
+      "source_sha256": "a6efcfe4027f2dda84eafc994c44c84b817e0ba74c2afa73317844b6a90e1bf0",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "114d274a13fa6fc5248eba51836b627947a4ad59ab5e50ecfe041dd1c2ee6ccf"
+    },
+    "orange-haired-girl-pet-left-1.png": {
+      "source_sha256": "a6efcfe4027f2dda84eafc994c44c84b817e0ba74c2afa73317844b6a90e1bf0",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "e70cd434e36a44d0db7e5b05bb817359a95b718649204a0b1f174f71009e7272"
+    },
+    "orange-haired-girl-hold-right-0.png": {
+      "source_sha256": "a6efcfe4027f2dda84eafc994c44c84b817e0ba74c2afa73317844b6a90e1bf0",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "8de42cf28491983a9060dc63c6b68894544e27616eab34711665d847f28d69d2"
+    },
+    "orange-haired-girl-hold-right-1.png": {
+      "source_sha256": "a6efcfe4027f2dda84eafc994c44c84b817e0ba74c2afa73317844b6a90e1bf0",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "c3d0b556677e9f28a2651c082d7392ac4dcf113f7217676c8a55eef923d96d69"
+    },
+    "orange-haired-girl-pet-right-0.png": {
+      "source_sha256": "a6efcfe4027f2dda84eafc994c44c84b817e0ba74c2afa73317844b6a90e1bf0",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "15cf29b6aad7234d2dcd380d30407ecfbc49d418fd4222cf9c97ad0da7a01334"
+    },
+    "orange-haired-girl-pet-right-1.png": {
+      "source_sha256": "a6efcfe4027f2dda84eafc994c44c84b817e0ba74c2afa73317844b6a90e1bf0",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "61619d5f93dc3c7c2cab415796f792b1bb0bfbe6d7ec7221aa811f09ae7b406e"
+    },
+    "black-scarf-girl-hold-down-0.png": {
+      "source_sha256": "2c6c54eb30d2a1a2086e28fbde447fb7ef8f34074cd0ec7c0c091293d7203dd0",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "50bb28257b8948675fc5b3d56d9d1353d477888f92668e79487f941cd6e731ef"
+    },
+    "black-scarf-girl-hold-down-1.png": {
+      "source_sha256": "2c6c54eb30d2a1a2086e28fbde447fb7ef8f34074cd0ec7c0c091293d7203dd0",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "3adc1da40ac863ba305e757a322b501a99af372c6a875385d68b000be1676d4d"
+    },
+    "black-scarf-girl-pet-down-0.png": {
+      "source_sha256": "2c6c54eb30d2a1a2086e28fbde447fb7ef8f34074cd0ec7c0c091293d7203dd0",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "684eaf80067f21fe1a5e0d5ba967a01cdda1c3b97625484c3ed3e3e74434d508"
+    },
+    "black-scarf-girl-pet-down-1.png": {
+      "source_sha256": "2c6c54eb30d2a1a2086e28fbde447fb7ef8f34074cd0ec7c0c091293d7203dd0",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "1e2cf4a9dd9720603ecbb9742725924053f0b8131f8ab8ef72042931251c25a4"
+    },
+    "black-scarf-girl-hold-up-0.png": {
+      "source_sha256": "2c6c54eb30d2a1a2086e28fbde447fb7ef8f34074cd0ec7c0c091293d7203dd0",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "7866dd82f84727197f3137876e191a48cb1e8b64b0fcfc3245440766d4e87eb5"
+    },
+    "black-scarf-girl-hold-up-1.png": {
+      "source_sha256": "2c6c54eb30d2a1a2086e28fbde447fb7ef8f34074cd0ec7c0c091293d7203dd0",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "96564167ee7977e848c21daf630b7d4f288267a9c90b6544e9a6cf607227133f"
+    },
+    "black-scarf-girl-pet-up-0.png": {
+      "source_sha256": "2c6c54eb30d2a1a2086e28fbde447fb7ef8f34074cd0ec7c0c091293d7203dd0",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "65f92283dc67ff657af87e01225b6698545d5b3306c90d35692fb2793eb098c1"
+    },
+    "black-scarf-girl-pet-up-1.png": {
+      "source_sha256": "2c6c54eb30d2a1a2086e28fbde447fb7ef8f34074cd0ec7c0c091293d7203dd0",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "ed7edf825f51fd2f0635116bf7724fe41edf031b3a643dd9f380c73e3d2b6473"
+    },
+    "black-scarf-girl-hold-left-0.png": {
+      "source_sha256": "2c6c54eb30d2a1a2086e28fbde447fb7ef8f34074cd0ec7c0c091293d7203dd0",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "234ca51be3eaff638553565b1f7a2645deeb440695ddc176e0f1701231808afe"
+    },
+    "black-scarf-girl-hold-left-1.png": {
+      "source_sha256": "2c6c54eb30d2a1a2086e28fbde447fb7ef8f34074cd0ec7c0c091293d7203dd0",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "35c4ffbc92f52abebfad3ddd6f6d9a32b71b192da12c6557f80013e8dc89cbf1"
+    },
+    "black-scarf-girl-pet-left-0.png": {
+      "source_sha256": "2c6c54eb30d2a1a2086e28fbde447fb7ef8f34074cd0ec7c0c091293d7203dd0",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "c3a873658748ef71d4207deece5dd5ba37f3da4d05cecae51075a45a26fe5883"
+    },
+    "black-scarf-girl-pet-left-1.png": {
+      "source_sha256": "2c6c54eb30d2a1a2086e28fbde447fb7ef8f34074cd0ec7c0c091293d7203dd0",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "cab332c8c3ba61ae263a096335b90563f552ca356e795bc94bb24ecf44ea6e4b"
+    },
+    "black-scarf-girl-hold-right-0.png": {
+      "source_sha256": "2c6c54eb30d2a1a2086e28fbde447fb7ef8f34074cd0ec7c0c091293d7203dd0",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "6f7318949bd1efad24ac5960639774f284c6cfb63ebd2e6f89b406dd170cf0e5"
+    },
+    "black-scarf-girl-hold-right-1.png": {
+      "source_sha256": "2c6c54eb30d2a1a2086e28fbde447fb7ef8f34074cd0ec7c0c091293d7203dd0",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "d23ab7784ccdaa1a326f2a900eecb6b07fec8972b1cdd58476665993632f139c"
+    },
+    "black-scarf-girl-pet-right-0.png": {
+      "source_sha256": "2c6c54eb30d2a1a2086e28fbde447fb7ef8f34074cd0ec7c0c091293d7203dd0",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "59d76e7b938879de4efec709bc99fbf18d5d332c510c9354057f91e0d493df38"
+    },
+    "black-scarf-girl-pet-right-1.png": {
+      "source_sha256": "2c6c54eb30d2a1a2086e28fbde447fb7ef8f34074cd0ec7c0c091293d7203dd0",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "90f3373ebd80aaa17e62cc84e4eb92c6a7da67c7b8117a2f44463b67d4c76fce"
+    },
+    "ai-gpt-hold-down-0.png": {
+      "source_sha256": "c0cdbff97d9299fe0b37e65b9e8e77f89bf50000a361ed527028f809493497ec",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "63a5bf6581c5fc8114d2807039cada12bd3fe917dc7f255efc3fd7edc3dff4b8"
+    },
+    "ai-gpt-hold-down-1.png": {
+      "source_sha256": "c0cdbff97d9299fe0b37e65b9e8e77f89bf50000a361ed527028f809493497ec",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "55ec1fc3e836a7693721278b4df56364975444a03cce1b91ade7582464739847"
+    },
+    "ai-gpt-pet-down-0.png": {
+      "source_sha256": "c0cdbff97d9299fe0b37e65b9e8e77f89bf50000a361ed527028f809493497ec",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "274e9715112e1d36fb03ee8af4697fa67fdacbb879cd70cdabdf44dd620b4d8f"
+    },
+    "ai-gpt-pet-down-1.png": {
+      "source_sha256": "c0cdbff97d9299fe0b37e65b9e8e77f89bf50000a361ed527028f809493497ec",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "aa6ced3f42d8ddddadaf8094c5a7e000511b0dd24ffcd679e2723a5f7912c341"
+    },
+    "ai-gpt-hold-up-0.png": {
+      "source_sha256": "c0cdbff97d9299fe0b37e65b9e8e77f89bf50000a361ed527028f809493497ec",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "0e8914f6dbd310897a0bfe6e402e02852bfccc045cbc6cc671a296e738d997ce"
+    },
+    "ai-gpt-hold-up-1.png": {
+      "source_sha256": "c0cdbff97d9299fe0b37e65b9e8e77f89bf50000a361ed527028f809493497ec",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "e47254345013cbcee849f425b88c8a640ee474abd9210d40147d0d9aa6637bbe"
+    },
+    "ai-gpt-pet-up-0.png": {
+      "source_sha256": "c0cdbff97d9299fe0b37e65b9e8e77f89bf50000a361ed527028f809493497ec",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "8c672b5423947c8be51fef19ab34bbbfaca0f8128dae397a6cae830bd886c521"
+    },
+    "ai-gpt-pet-up-1.png": {
+      "source_sha256": "c0cdbff97d9299fe0b37e65b9e8e77f89bf50000a361ed527028f809493497ec",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "3f21f8f672c07f14143b42023ee369e74b2d0d2ee683b3063daf56cc432b7aff"
+    },
+    "ai-gpt-hold-left-0.png": {
+      "source_sha256": "c0cdbff97d9299fe0b37e65b9e8e77f89bf50000a361ed527028f809493497ec",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "d4d51c96388e0796a71f29b89b65280ae3ed0c1509f5bb45cffafe113d82168f"
+    },
+    "ai-gpt-hold-left-1.png": {
+      "source_sha256": "c0cdbff97d9299fe0b37e65b9e8e77f89bf50000a361ed527028f809493497ec",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "16e6bf76683cbac0cc210620ac4a6df706fc12c4e6c8f80cd376e88ab32c2e4f"
+    },
+    "ai-gpt-pet-left-0.png": {
+      "source_sha256": "c0cdbff97d9299fe0b37e65b9e8e77f89bf50000a361ed527028f809493497ec",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "19e24ee9fa7c95604baf6d68e82d36e161aa5a3df67c522c98e75c0bbab02c7c"
+    },
+    "ai-gpt-pet-left-1.png": {
+      "source_sha256": "c0cdbff97d9299fe0b37e65b9e8e77f89bf50000a361ed527028f809493497ec",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "74d89dfff99f6b22b28336f516ddc1d2472e211ee25540d8900c5cbee13a8762"
+    },
+    "ai-gpt-hold-right-0.png": {
+      "source_sha256": "c0cdbff97d9299fe0b37e65b9e8e77f89bf50000a361ed527028f809493497ec",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "a859b4f42010be111ec0a150477e71b9fa7b94deb582bbece13191a0a65645bc"
+    },
+    "ai-gpt-hold-right-1.png": {
+      "source_sha256": "c0cdbff97d9299fe0b37e65b9e8e77f89bf50000a361ed527028f809493497ec",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "5c68c51272050850b11801c1a64192d91a220877c65724f5bae4f8b3ea7be3fe"
+    },
+    "ai-gpt-pet-right-0.png": {
+      "source_sha256": "c0cdbff97d9299fe0b37e65b9e8e77f89bf50000a361ed527028f809493497ec",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "10868879c2dc6465d6eb97e08376d1f2249db7ac4d21475615993217376315af"
+    },
+    "ai-gpt-pet-right-1.png": {
+      "source_sha256": "c0cdbff97d9299fe0b37e65b9e8e77f89bf50000a361ed527028f809493497ec",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "ecb1262f1d1a52ef86f4ad169604b0a9f4afc48ba49449afe7e93265c6fa1f1c"
+    },
+    "ai-claude-hold-down-0.png": {
+      "source_sha256": "96fc3d72d3adebbb719ec21f7dd53e2bc925df8b0dbc30d06ea7bc30bba42b93",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "991b9401b6ec82ec63659e42b096a5f06fcd42f6411408c364c470d6b3d3e16d"
+    },
+    "ai-claude-hold-down-1.png": {
+      "source_sha256": "96fc3d72d3adebbb719ec21f7dd53e2bc925df8b0dbc30d06ea7bc30bba42b93",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "8d46a97f6467c5a627db26a5edfde3d058b49a4fb56aede354b7fe4d4da6effa"
+    },
+    "ai-claude-pet-down-0.png": {
+      "source_sha256": "96fc3d72d3adebbb719ec21f7dd53e2bc925df8b0dbc30d06ea7bc30bba42b93",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "7d82a631ca6eb8b85ad9e33306f56683dc0452459ed8fcec84cbde9de85b4898"
+    },
+    "ai-claude-pet-down-1.png": {
+      "source_sha256": "96fc3d72d3adebbb719ec21f7dd53e2bc925df8b0dbc30d06ea7bc30bba42b93",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "9743bf6c4957f9411341705af2cdb942fcfb8f51eef02c230f0fdbd0c7c1cc8c"
+    },
+    "ai-claude-hold-up-0.png": {
+      "source_sha256": "96fc3d72d3adebbb719ec21f7dd53e2bc925df8b0dbc30d06ea7bc30bba42b93",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "40c0e8a6013f64893312ae0e0c3adf6f1a3b7de3af9a944bcd715c4ea823b8a0"
+    },
+    "ai-claude-hold-up-1.png": {
+      "source_sha256": "96fc3d72d3adebbb719ec21f7dd53e2bc925df8b0dbc30d06ea7bc30bba42b93",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "ba4fd2232f9703dcdad0e567416f8f7d21f496b0e5c1b285795048edb971b124"
+    },
+    "ai-claude-pet-up-0.png": {
+      "source_sha256": "96fc3d72d3adebbb719ec21f7dd53e2bc925df8b0dbc30d06ea7bc30bba42b93",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "33f7614e6afbbd06aeff06c72d04f3332e96ecc447d45cf53f2ec98fea273345"
+    },
+    "ai-claude-pet-up-1.png": {
+      "source_sha256": "96fc3d72d3adebbb719ec21f7dd53e2bc925df8b0dbc30d06ea7bc30bba42b93",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "9b10d0674b748a412a01f1004c83452b99e49b123c306b4504f1e5115e6ed72c"
+    },
+    "ai-claude-hold-left-0.png": {
+      "source_sha256": "96fc3d72d3adebbb719ec21f7dd53e2bc925df8b0dbc30d06ea7bc30bba42b93",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "9b6a6db1f370cb119383d0745ee9ac507e993b80304035fe445406868aff5611"
+    },
+    "ai-claude-hold-left-1.png": {
+      "source_sha256": "96fc3d72d3adebbb719ec21f7dd53e2bc925df8b0dbc30d06ea7bc30bba42b93",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "f2da90e704e00853bed98141c2455a5b08448675384c6ab22a729aaa5bc8c164"
+    },
+    "ai-claude-pet-left-0.png": {
+      "source_sha256": "96fc3d72d3adebbb719ec21f7dd53e2bc925df8b0dbc30d06ea7bc30bba42b93",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "f79725abe6458cdf7532b77a0a913b4061d46f9f2764acbcb0478a419eb93725"
+    },
+    "ai-claude-pet-left-1.png": {
+      "source_sha256": "96fc3d72d3adebbb719ec21f7dd53e2bc925df8b0dbc30d06ea7bc30bba42b93",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "e1d440057b095ca638d5376362e01f7d3b9a5dab8d56352ff5b28a96d0c2b867"
+    },
+    "ai-claude-hold-right-0.png": {
+      "source_sha256": "96fc3d72d3adebbb719ec21f7dd53e2bc925df8b0dbc30d06ea7bc30bba42b93",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "65df41bfb67317ba2f4bde258419040b309d419275ba91d46fcfbe40e890aa94"
+    },
+    "ai-claude-hold-right-1.png": {
+      "source_sha256": "96fc3d72d3adebbb719ec21f7dd53e2bc925df8b0dbc30d06ea7bc30bba42b93",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "a2a282d95cab771bab478be793fa5a3b3b4093e42c08ea2db74eb511a1e46fec"
+    },
+    "ai-claude-pet-right-0.png": {
+      "source_sha256": "96fc3d72d3adebbb719ec21f7dd53e2bc925df8b0dbc30d06ea7bc30bba42b93",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "226e0dfd51eed85677306115fed2432e4a64b07cba1f0c0c71df26d0a4997a55"
+    },
+    "ai-claude-pet-right-1.png": {
+      "source_sha256": "96fc3d72d3adebbb719ec21f7dd53e2bc925df8b0dbc30d06ea7bc30bba42b93",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "f67434ecbc5e48056e04eefcf8466be0234c8de68fcc60f7f5b3b9ad5737fa83"
+    },
+    "ai-gemini-hold-down-0.png": {
+      "source_sha256": "2230b098a59a79d39c071424498814985697c4c2b3297b4e1be7d74df81e560e",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "f189873a930c52aaf43d4cea30b7a6bf1a9cf3b91e257d92ccda24727322130b"
+    },
+    "ai-gemini-hold-down-1.png": {
+      "source_sha256": "2230b098a59a79d39c071424498814985697c4c2b3297b4e1be7d74df81e560e",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "d57e0f0cfb590ba6ba380da6eb87fef821fc6da1d078df79cbbd08a966d4931b"
+    },
+    "ai-gemini-pet-down-0.png": {
+      "source_sha256": "2230b098a59a79d39c071424498814985697c4c2b3297b4e1be7d74df81e560e",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "8e6da83149049fed6d93847e47d5fb243180b64d8f324e1dd919eed832e6e9bd"
+    },
+    "ai-gemini-pet-down-1.png": {
+      "source_sha256": "2230b098a59a79d39c071424498814985697c4c2b3297b4e1be7d74df81e560e",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "e29465b0165e6d08e8a57fcb255968e88c72152cea5811b8f1b9a91183f65a56"
+    },
+    "ai-gemini-hold-up-0.png": {
+      "source_sha256": "2230b098a59a79d39c071424498814985697c4c2b3297b4e1be7d74df81e560e",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "efa64db05a3e2109b4224b9760d93e1261efe683682ee6ede94d430725ad3f75"
+    },
+    "ai-gemini-hold-up-1.png": {
+      "source_sha256": "2230b098a59a79d39c071424498814985697c4c2b3297b4e1be7d74df81e560e",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "a0a47d316372311e05cc5593e24a0042567496718086c2863827fadf70cb514b"
+    },
+    "ai-gemini-pet-up-0.png": {
+      "source_sha256": "2230b098a59a79d39c071424498814985697c4c2b3297b4e1be7d74df81e560e",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "7945edacbb0e051fddd210b24469a9f5c8076a1ad26d3bfd072b93ac3057ca3e"
+    },
+    "ai-gemini-pet-up-1.png": {
+      "source_sha256": "2230b098a59a79d39c071424498814985697c4c2b3297b4e1be7d74df81e560e",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "0a59c936cdc840cca1f636143f4285a2b33a604563b8a8e0c7608df66b047bae"
+    },
+    "ai-gemini-hold-left-0.png": {
+      "source_sha256": "2230b098a59a79d39c071424498814985697c4c2b3297b4e1be7d74df81e560e",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "1a8045de262fd801b32ce864d1cbbfa0676a1650768b8182f63ad7246be3f534"
+    },
+    "ai-gemini-hold-left-1.png": {
+      "source_sha256": "2230b098a59a79d39c071424498814985697c4c2b3297b4e1be7d74df81e560e",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "6d964c3fa5a87cee5fb724633abdd10cd8681859e80e9d9ca98d6a981bd7dfcb"
+    },
+    "ai-gemini-pet-left-0.png": {
+      "source_sha256": "2230b098a59a79d39c071424498814985697c4c2b3297b4e1be7d74df81e560e",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "ab6ccd14c669901bb6fa33b742d76c06f152394b0bdb5bf6fb8e2317f2793924"
+    },
+    "ai-gemini-pet-left-1.png": {
+      "source_sha256": "2230b098a59a79d39c071424498814985697c4c2b3297b4e1be7d74df81e560e",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "ef37d8b823db0dd9041cfe2953769de423596cd0bb8b404a0454688feae7c050"
+    },
+    "ai-gemini-hold-right-0.png": {
+      "source_sha256": "2230b098a59a79d39c071424498814985697c4c2b3297b4e1be7d74df81e560e",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "dc2f526c3e7f37344eaa7a7fae2ed1a9dffdc505278ea6547b911e86193793d8"
+    },
+    "ai-gemini-hold-right-1.png": {
+      "source_sha256": "2230b098a59a79d39c071424498814985697c4c2b3297b4e1be7d74df81e560e",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "eeae184d54b5be705a8fa80eb43737f1a583f0702acce4baf56bc63d0f0b2efc"
+    },
+    "ai-gemini-pet-right-0.png": {
+      "source_sha256": "2230b098a59a79d39c071424498814985697c4c2b3297b4e1be7d74df81e560e",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "e06d83efc0a771f33a6049f34de785b993fcfd08169d583709e213a03cc3b036"
+    },
+    "ai-gemini-pet-right-1.png": {
+      "source_sha256": "2230b098a59a79d39c071424498814985697c4c2b3297b4e1be7d74df81e560e",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "f6e01fdd47dad43c9a3754175b3f3f744e5062df996b861f8d40e3f988108b44"
+    },
+    "ai-grok-hold-down-0.png": {
+      "source_sha256": "2196bcf8cb1aad1e8ecbb5960cbe3bfd647f3547edd52a09ccba1f90090630a0",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "72ac8b8046f7cd3e5b71f0d9f3976e1f7a1e8e1d9f6d099f092052e37b9f0307"
+    },
+    "ai-grok-hold-down-1.png": {
+      "source_sha256": "2196bcf8cb1aad1e8ecbb5960cbe3bfd647f3547edd52a09ccba1f90090630a0",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "ddbd81b64be19100b20d5ddbe81a8d8f347723f774128ce7928264ebd717e17c"
+    },
+    "ai-grok-pet-down-0.png": {
+      "source_sha256": "2196bcf8cb1aad1e8ecbb5960cbe3bfd647f3547edd52a09ccba1f90090630a0",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "1121fe3120cefabc4ab71701019617b960f31168c27ad84ae725d7400763e57d"
+    },
+    "ai-grok-pet-down-1.png": {
+      "source_sha256": "2196bcf8cb1aad1e8ecbb5960cbe3bfd647f3547edd52a09ccba1f90090630a0",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "a425aa5df005c69189cda29dedbd93fe9ff0b4e01c71fd785965bad6a2793027"
+    },
+    "ai-grok-hold-up-0.png": {
+      "source_sha256": "2196bcf8cb1aad1e8ecbb5960cbe3bfd647f3547edd52a09ccba1f90090630a0",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "75cd901696feab5edc4507820d0d3452ab591c3fe93174a155d714b8eb86c232"
+    },
+    "ai-grok-hold-up-1.png": {
+      "source_sha256": "2196bcf8cb1aad1e8ecbb5960cbe3bfd647f3547edd52a09ccba1f90090630a0",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "34a084d62e6b010e3d5be5ef9913fb1e7a1973f9b10bc5264fa5f1e8d4d38a9a"
+    },
+    "ai-grok-pet-up-0.png": {
+      "source_sha256": "2196bcf8cb1aad1e8ecbb5960cbe3bfd647f3547edd52a09ccba1f90090630a0",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "d68b03f093b17f8b069441333ffce6ef7e7203654f48966e185e46fe5c7f1624"
+    },
+    "ai-grok-pet-up-1.png": {
+      "source_sha256": "2196bcf8cb1aad1e8ecbb5960cbe3bfd647f3547edd52a09ccba1f90090630a0",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "ddd6fa666f1ce535b1c53126ad31a623f1645e9a8359dc8559266726d2b6ce7f"
+    },
+    "ai-grok-hold-left-0.png": {
+      "source_sha256": "2196bcf8cb1aad1e8ecbb5960cbe3bfd647f3547edd52a09ccba1f90090630a0",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "d1c579108099f4466fd125b09ac6cd4db2a2e753327bb1b76d3e5adb41ca01b0"
+    },
+    "ai-grok-hold-left-1.png": {
+      "source_sha256": "2196bcf8cb1aad1e8ecbb5960cbe3bfd647f3547edd52a09ccba1f90090630a0",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "b5fa09498a40a3fe6b9efe69b686111ddd24df8f6d72c984d5d246e604ad516a"
+    },
+    "ai-grok-pet-left-0.png": {
+      "source_sha256": "2196bcf8cb1aad1e8ecbb5960cbe3bfd647f3547edd52a09ccba1f90090630a0",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "b5576eb9e96b542dcb1cb8d11f44e9214ac425e599a7a8bd4498bb2826f08556"
+    },
+    "ai-grok-pet-left-1.png": {
+      "source_sha256": "2196bcf8cb1aad1e8ecbb5960cbe3bfd647f3547edd52a09ccba1f90090630a0",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "3198fa7baf2d0f7a8acf55422b30a11d7299fcc51d0a4c18069ab123b5f30b74"
+    },
+    "ai-grok-hold-right-0.png": {
+      "source_sha256": "2196bcf8cb1aad1e8ecbb5960cbe3bfd647f3547edd52a09ccba1f90090630a0",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "0cdffa845c16ac9a96c87b9e0b0a8c01b117462020f4ff6039cb56d8c7b10e3a"
+    },
+    "ai-grok-hold-right-1.png": {
+      "source_sha256": "2196bcf8cb1aad1e8ecbb5960cbe3bfd647f3547edd52a09ccba1f90090630a0",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "882961befa812c884f6911714cb369c1ffde8a6e1d64dbb393616f40b230bc98"
+    },
+    "ai-grok-pet-right-0.png": {
+      "source_sha256": "2196bcf8cb1aad1e8ecbb5960cbe3bfd647f3547edd52a09ccba1f90090630a0",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "484151969d3433c97407fbbe93039293a764414afe4c8410a681d2c8d9c51f9b"
+    },
+    "ai-grok-pet-right-1.png": {
+      "source_sha256": "2196bcf8cb1aad1e8ecbb5960cbe3bfd647f3547edd52a09ccba1f90090630a0",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "446a570de51458015dc89649b071f3b0ccdc70008226105e8a72f94df4b969c4"
+    },
+    "ai-deepseek-hold-down-0.png": {
+      "source_sha256": "37314f9669bc8a95bdacdb02abd78d3dc6284d92ecbb2d3b30d19a24b028950e",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "31f0bc5a3007ab2bbc7159cc4ba9376a13306f32a92f411d4df6259d2026da7d"
+    },
+    "ai-deepseek-hold-down-1.png": {
+      "source_sha256": "37314f9669bc8a95bdacdb02abd78d3dc6284d92ecbb2d3b30d19a24b028950e",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "2108bdb16074b6f9047bacb1365caba258d5b153229cc902776ecc821ac5ba16"
+    },
+    "ai-deepseek-pet-down-0.png": {
+      "source_sha256": "37314f9669bc8a95bdacdb02abd78d3dc6284d92ecbb2d3b30d19a24b028950e",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "5341e5bc596a1c77dec6714be70ecb968594e0e41fbcf31dbf2cc5d3eb9d922f"
+    },
+    "ai-deepseek-pet-down-1.png": {
+      "source_sha256": "37314f9669bc8a95bdacdb02abd78d3dc6284d92ecbb2d3b30d19a24b028950e",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "284317f896a778eba297da623be8289e405f5b117569c663b1508c5836f3d733"
+    },
+    "ai-deepseek-hold-up-0.png": {
+      "source_sha256": "37314f9669bc8a95bdacdb02abd78d3dc6284d92ecbb2d3b30d19a24b028950e",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "914634137bf565d1e1eefd627ad3e453b47dca10eea4082fe99dfb906f7e6231"
+    },
+    "ai-deepseek-hold-up-1.png": {
+      "source_sha256": "37314f9669bc8a95bdacdb02abd78d3dc6284d92ecbb2d3b30d19a24b028950e",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "589124e2f940e5f34ae1a771a8eb8b9d400ecb23eafbe2c23bb5fe57f8392421"
+    },
+    "ai-deepseek-pet-up-0.png": {
+      "source_sha256": "37314f9669bc8a95bdacdb02abd78d3dc6284d92ecbb2d3b30d19a24b028950e",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "7d4d888925a46c88a0527e31a7d1ad18327ea1fdd25d1ad3fb1d5a441a3b51a4"
+    },
+    "ai-deepseek-pet-up-1.png": {
+      "source_sha256": "37314f9669bc8a95bdacdb02abd78d3dc6284d92ecbb2d3b30d19a24b028950e",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "57aeeed9d8d8f49a6b8e197cba1d55aaaf3d7e079d3637a8d5df7192de8e3f1c"
+    },
+    "ai-deepseek-hold-left-0.png": {
+      "source_sha256": "37314f9669bc8a95bdacdb02abd78d3dc6284d92ecbb2d3b30d19a24b028950e",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "1ca7e6a18c56f54758d220e03fa6a41e131a6b0d228ac38be72d64b29e46b3d1"
+    },
+    "ai-deepseek-hold-left-1.png": {
+      "source_sha256": "37314f9669bc8a95bdacdb02abd78d3dc6284d92ecbb2d3b30d19a24b028950e",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "a451e37ad73ad6092fb7503ea4d99d95d22cff77a312101c7fc69dfcaee2d044"
+    },
+    "ai-deepseek-pet-left-0.png": {
+      "source_sha256": "37314f9669bc8a95bdacdb02abd78d3dc6284d92ecbb2d3b30d19a24b028950e",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "91c2b45a9448359f3f9308fabb0e89914a5e2b9849ca27eeaaa624c475d7fe64"
+    },
+    "ai-deepseek-pet-left-1.png": {
+      "source_sha256": "37314f9669bc8a95bdacdb02abd78d3dc6284d92ecbb2d3b30d19a24b028950e",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "266aed3d25f445e2be8e34305406d0d99a2398645533f62d6831ad323f7a4295"
+    },
+    "ai-deepseek-hold-right-0.png": {
+      "source_sha256": "37314f9669bc8a95bdacdb02abd78d3dc6284d92ecbb2d3b30d19a24b028950e",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "df406803132307e9d4d51f6ca842edf669db5fb440ce1871d0ad6222cd10e987"
+    },
+    "ai-deepseek-hold-right-1.png": {
+      "source_sha256": "37314f9669bc8a95bdacdb02abd78d3dc6284d92ecbb2d3b30d19a24b028950e",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "573e9d83635a22d61e6671237b19b0ea7697fdc74b23dd1d02ab87bd5a080017"
+    },
+    "ai-deepseek-pet-right-0.png": {
+      "source_sha256": "37314f9669bc8a95bdacdb02abd78d3dc6284d92ecbb2d3b30d19a24b028950e",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "136d70e5f3672b3e80fcd55d75fe7ccf776224603412574cb8e7c0dfab83d21a"
+    },
+    "ai-deepseek-pet-right-1.png": {
+      "source_sha256": "37314f9669bc8a95bdacdb02abd78d3dc6284d92ecbb2d3b30d19a24b028950e",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "2d315e802e275f1e86cbbc5a11976b0e15bdd3f3f53733ade2baf455f07bff02"
+    },
+    "ai-glm-hold-down-0.png": {
+      "source_sha256": "15f1ab947bf4b64217db3e608b59f6050d77dd3ed257c2dea3ea75fe0925d070",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "ee5bd9b9b3d646bccf8e2950134dc0db573bc5aeadad587a2495efa080e092cf"
+    },
+    "ai-glm-hold-down-1.png": {
+      "source_sha256": "15f1ab947bf4b64217db3e608b59f6050d77dd3ed257c2dea3ea75fe0925d070",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "7ab535dc020ec910121b1f685b3ec256b594bcf83e68828f6802ac487e387851"
+    },
+    "ai-glm-pet-down-0.png": {
+      "source_sha256": "15f1ab947bf4b64217db3e608b59f6050d77dd3ed257c2dea3ea75fe0925d070",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "5c9aadbdd2cc9921fdc2edefb251e03536411444e010f2e1d24d072a0f5dff66"
+    },
+    "ai-glm-pet-down-1.png": {
+      "source_sha256": "15f1ab947bf4b64217db3e608b59f6050d77dd3ed257c2dea3ea75fe0925d070",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "86a69f679aba5a42865099696c2bd85d3bf1fca35a1e1a9d285a7e894051e334"
+    },
+    "ai-glm-hold-up-0.png": {
+      "source_sha256": "15f1ab947bf4b64217db3e608b59f6050d77dd3ed257c2dea3ea75fe0925d070",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "47e70ad2352ff16e2974e0c5245610a8d51ce5f35829a6ddb2d0bb5e5cf3948e"
+    },
+    "ai-glm-hold-up-1.png": {
+      "source_sha256": "15f1ab947bf4b64217db3e608b59f6050d77dd3ed257c2dea3ea75fe0925d070",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "ca4b7da04488466d3279b97db8379da5708a023d8de48d70e49a838428fddd69"
+    },
+    "ai-glm-pet-up-0.png": {
+      "source_sha256": "15f1ab947bf4b64217db3e608b59f6050d77dd3ed257c2dea3ea75fe0925d070",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "b2fce761c4be2e2cf81826344957ad69d1da8d1801aa06b9e08671dfa26aedf1"
+    },
+    "ai-glm-pet-up-1.png": {
+      "source_sha256": "15f1ab947bf4b64217db3e608b59f6050d77dd3ed257c2dea3ea75fe0925d070",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "3ad7a35ccaa1e07130336294bb730de3cbacdb6b2cbc275351dda6ee7540b49c"
+    },
+    "ai-glm-hold-left-0.png": {
+      "source_sha256": "15f1ab947bf4b64217db3e608b59f6050d77dd3ed257c2dea3ea75fe0925d070",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "afe6c18df97d6391a7635202249332de2ea475a959131ec37613b0024849ee92"
+    },
+    "ai-glm-hold-left-1.png": {
+      "source_sha256": "15f1ab947bf4b64217db3e608b59f6050d77dd3ed257c2dea3ea75fe0925d070",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "ed59598265870c945cbf11903ece9036a4d78a465edd0bc1a911d9ed2c911ca9"
+    },
+    "ai-glm-pet-left-0.png": {
+      "source_sha256": "15f1ab947bf4b64217db3e608b59f6050d77dd3ed257c2dea3ea75fe0925d070",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "503eef05b5fd61c86e0e6082387c6d9868eb79f7204f2fa1d9c45e6d3e4646da"
+    },
+    "ai-glm-pet-left-1.png": {
+      "source_sha256": "15f1ab947bf4b64217db3e608b59f6050d77dd3ed257c2dea3ea75fe0925d070",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "a5e6d811fc0dbce0ee6183f0a8206326e8f2fbd6f9778c6fa90fc1bffb0b18ef"
+    },
+    "ai-glm-hold-right-0.png": {
+      "source_sha256": "15f1ab947bf4b64217db3e608b59f6050d77dd3ed257c2dea3ea75fe0925d070",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "6a3b817585d34ed138a02a66ac40fc73bbc81837759d4c3a921cd900128a1ccd"
+    },
+    "ai-glm-hold-right-1.png": {
+      "source_sha256": "15f1ab947bf4b64217db3e608b59f6050d77dd3ed257c2dea3ea75fe0925d070",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "5cbc1a25e13df128fa291a1e503e344b70f376ffc349b844566b8a4ee6c092ee"
+    },
+    "ai-glm-pet-right-0.png": {
+      "source_sha256": "15f1ab947bf4b64217db3e608b59f6050d77dd3ed257c2dea3ea75fe0925d070",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "9b7a497fd56abebfc6a049a26eb7758bb1669b7f9eb200cb43e9582158d16edb"
+    },
+    "ai-glm-pet-right-1.png": {
+      "source_sha256": "15f1ab947bf4b64217db3e608b59f6050d77dd3ed257c2dea3ea75fe0925d070",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "44fe7b2091421ab16479c1f868bc4e97a8a89ea98db3ad49d699f3b1b697d4ac"
+    },
+    "ai-qwen-hold-down-0.png": {
+      "source_sha256": "43e94a5fb220b3a8de8e2a598a14e2c11a44b5c63aaa40b3f76845c6c4e09d73",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "c3c5f752f9cf68e21a59ddc9ba3912940aa6144c739cc71ae1fd52e247e27118"
+    },
+    "ai-qwen-hold-down-1.png": {
+      "source_sha256": "43e94a5fb220b3a8de8e2a598a14e2c11a44b5c63aaa40b3f76845c6c4e09d73",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "c219b69ff0311ed5dd097e4847769573410c5c118ad890faa3509c32fd9e002e"
+    },
+    "ai-qwen-pet-down-0.png": {
+      "source_sha256": "43e94a5fb220b3a8de8e2a598a14e2c11a44b5c63aaa40b3f76845c6c4e09d73",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "cc51647f8f01aa537b42c0b148b1df242e3569e837532d14ae13fe41b39030de"
+    },
+    "ai-qwen-pet-down-1.png": {
+      "source_sha256": "43e94a5fb220b3a8de8e2a598a14e2c11a44b5c63aaa40b3f76845c6c4e09d73",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "f523c9bf14c8032dafe2435e4653da9baeb25c82cec48c08c2a3a9651f128184"
+    },
+    "ai-qwen-hold-up-0.png": {
+      "source_sha256": "43e94a5fb220b3a8de8e2a598a14e2c11a44b5c63aaa40b3f76845c6c4e09d73",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "5df2ac566b66956c9dadbae91c746910803ba0138fefeb2e01f6d71d1280cdb6"
+    },
+    "ai-qwen-hold-up-1.png": {
+      "source_sha256": "43e94a5fb220b3a8de8e2a598a14e2c11a44b5c63aaa40b3f76845c6c4e09d73",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "e046875d6899abc6ad5a75c04ea1b777d5624ff11a17956729de7ea8b03a74aa"
+    },
+    "ai-qwen-pet-up-0.png": {
+      "source_sha256": "43e94a5fb220b3a8de8e2a598a14e2c11a44b5c63aaa40b3f76845c6c4e09d73",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "f3acd6ca255d904fe33ae21d264e54c5a2accd7a3b6ac025e263ac42e810ff06"
+    },
+    "ai-qwen-pet-up-1.png": {
+      "source_sha256": "43e94a5fb220b3a8de8e2a598a14e2c11a44b5c63aaa40b3f76845c6c4e09d73",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "fe36c5f190a2be6fc0a67ccce40c018e669b4c68a86ee53b8293f1078f7a149c"
+    },
+    "ai-qwen-hold-left-0.png": {
+      "source_sha256": "43e94a5fb220b3a8de8e2a598a14e2c11a44b5c63aaa40b3f76845c6c4e09d73",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "fe62725b91aabfcd36d39285c353e3ecd2902ed27410fb93a39b401725cc3d4b"
+    },
+    "ai-qwen-hold-left-1.png": {
+      "source_sha256": "43e94a5fb220b3a8de8e2a598a14e2c11a44b5c63aaa40b3f76845c6c4e09d73",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "b9aab169041b0f50079e7d7c19320856194bb668e4987bfcfd992ca1f3f957d5"
+    },
+    "ai-qwen-pet-left-0.png": {
+      "source_sha256": "43e94a5fb220b3a8de8e2a598a14e2c11a44b5c63aaa40b3f76845c6c4e09d73",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "bca7610fd07445031b06d220921695d3feb12cd6637c11d4d6fd920d1ae5e234"
+    },
+    "ai-qwen-pet-left-1.png": {
+      "source_sha256": "43e94a5fb220b3a8de8e2a598a14e2c11a44b5c63aaa40b3f76845c6c4e09d73",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "190e220c43d3f5b663c8fe50836a9d6d921a6f42e1038611f803f5e4befa171d"
+    },
+    "ai-qwen-hold-right-0.png": {
+      "source_sha256": "43e94a5fb220b3a8de8e2a598a14e2c11a44b5c63aaa40b3f76845c6c4e09d73",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "f20bc119c7df6780f604aa9f603855bbb0b94a10bcb76b23b9ac3e9542e3b53f"
+    },
+    "ai-qwen-hold-right-1.png": {
+      "source_sha256": "43e94a5fb220b3a8de8e2a598a14e2c11a44b5c63aaa40b3f76845c6c4e09d73",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "c66a7e28dd394ea92327c10238755ed18abd50cca474d1b5088800550af8131d"
+    },
+    "ai-qwen-pet-right-0.png": {
+      "source_sha256": "43e94a5fb220b3a8de8e2a598a14e2c11a44b5c63aaa40b3f76845c6c4e09d73",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "d81e4bbd909c4c2a61977aa2b6dfebe6c0383b50534ba5c447611893a2484a99"
+    },
+    "ai-qwen-pet-right-1.png": {
+      "source_sha256": "43e94a5fb220b3a8de8e2a598a14e2c11a44b5c63aaa40b3f76845c6c4e09d73",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "ac4f26b72014023ad99be6a225f2f0aba4e2ee6a3054fa71829f7b73aee179ae"
+    },
+    "ai-kimi-hold-down-0.png": {
+      "source_sha256": "9bc04d4546c3e26fb4c0044056c7ef908ce479a924ca29510bd61aba9d081ca8",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "3f255d530de8d9f4e0fc7b3ab1ca95905f6b3934a52eaf03434208bafd9b27fd"
+    },
+    "ai-kimi-hold-down-1.png": {
+      "source_sha256": "9bc04d4546c3e26fb4c0044056c7ef908ce479a924ca29510bd61aba9d081ca8",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "c52f60a6061b000df80718f6b3afb815c59ae3d6e5691cc8084a1077e437487d"
+    },
+    "ai-kimi-pet-down-0.png": {
+      "source_sha256": "9bc04d4546c3e26fb4c0044056c7ef908ce479a924ca29510bd61aba9d081ca8",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "44428cff16eca45359f7e86e3f2f7b645b99fff73549d009bee42cdc604d54c7"
+    },
+    "ai-kimi-pet-down-1.png": {
+      "source_sha256": "9bc04d4546c3e26fb4c0044056c7ef908ce479a924ca29510bd61aba9d081ca8",
+      "source_frame": "down_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "048f3f4ace48c9d444682c946ee452f292ebc657f6ce6611b0a3c3f9ad22048c"
+    },
+    "ai-kimi-hold-up-0.png": {
+      "source_sha256": "9bc04d4546c3e26fb4c0044056c7ef908ce479a924ca29510bd61aba9d081ca8",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "356ce79cf96299d18effe69277446db26732d48a7dcb52bbaeaffce93d024bc7"
+    },
+    "ai-kimi-hold-up-1.png": {
+      "source_sha256": "9bc04d4546c3e26fb4c0044056c7ef908ce479a924ca29510bd61aba9d081ca8",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "78bc549799152a95f853e1ffead0bcbcbc3e678dc18feec962de2039bd2bc401"
+    },
+    "ai-kimi-pet-up-0.png": {
+      "source_sha256": "9bc04d4546c3e26fb4c0044056c7ef908ce479a924ca29510bd61aba9d081ca8",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "6b89c371a275f100425e0bfc66387a260ad23d6dba7bdbc43df1ecc7502f9d22"
+    },
+    "ai-kimi-pet-up-1.png": {
+      "source_sha256": "9bc04d4546c3e26fb4c0044056c7ef908ce479a924ca29510bd61aba9d081ca8",
+      "source_frame": "up_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "d61e487363ce2d8eb65aec86deda6ad25630131f553503818a20a97d591bd8ab"
+    },
+    "ai-kimi-hold-left-0.png": {
+      "source_sha256": "9bc04d4546c3e26fb4c0044056c7ef908ce479a924ca29510bd61aba9d081ca8",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "0c6630e26214a68996e29f0815d0291eb2b21a7d0509983a9c876bd8775f357a"
+    },
+    "ai-kimi-hold-left-1.png": {
+      "source_sha256": "9bc04d4546c3e26fb4c0044056c7ef908ce479a924ca29510bd61aba9d081ca8",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "6330d4eaff469cd1250226f4af0d4a17580ac994f76f0329787aa5512ee8623c"
+    },
+    "ai-kimi-pet-left-0.png": {
+      "source_sha256": "9bc04d4546c3e26fb4c0044056c7ef908ce479a924ca29510bd61aba9d081ca8",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "fc1f3ccd52ec59ce030a7d55c3e3376ad14838a6071f4dd5cc854befa95af566"
+    },
+    "ai-kimi-pet-left-1.png": {
+      "source_sha256": "9bc04d4546c3e26fb4c0044056c7ef908ce479a924ca29510bd61aba9d081ca8",
+      "source_frame": "left_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "962a79a7c9f9b58e23f135b11769d17ef6a567dd6bb19c7b1bef0606326f7ce1"
+    },
+    "ai-kimi-hold-right-0.png": {
+      "source_sha256": "9bc04d4546c3e26fb4c0044056c7ef908ce479a924ca29510bd61aba9d081ca8",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "493bcecb14ce2e8f1ddefeaeaa9a9fa277367118afe5b920adc04a57ecbd339c"
+    },
+    "ai-kimi-hold-right-1.png": {
+      "source_sha256": "9bc04d4546c3e26fb4c0044056c7ef908ce479a924ca29510bd61aba9d081ca8",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "fcb9561a16f7fd22dcead512f59da8b69685b0c5eeda86d231708729fc52e30a"
+    },
+    "ai-kimi-pet-right-0.png": {
+      "source_sha256": "9bc04d4546c3e26fb4c0044056c7ef908ce479a924ca29510bd61aba9d081ca8",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "f38475503a92d409d48a66aafde9682511cd33062e56fc164a67b973d5f331bd"
+    },
+    "ai-kimi-pet-right-1.png": {
+      "source_sha256": "9bc04d4546c3e26fb4c0044056c7ef908ce479a924ca29510bd61aba9d081ca8",
+      "source_frame": "right_0",
+      "method": "idle composite plus new painted contact arms",
+      "independent_full_body": false,
+      "sha256": "374733423db59678ea11e70e463efd74baaa5d1f567f4474377d5350804a7aab"
+    }
+  },
+  "note": "All outfits use explicitly disclosed composite fallback; no pickup frames. Full independently redrawn bodies remain unavailable."
+}

@@ -1,0 +1,11 @@
+{
+  "id": "bbq-gentle-chat-phase",
+  "context": "bbq_chat_phase",
+  "lines": [
+    "现在{phase}，不急，慢慢坐着。",
+    "{phase}的火光，也让人安心。",
+    "到了{phase}，我们在这里歇一会儿。",
+    "{phase}了，能一起坐着就很好。"
+  ],
+  "autonomy_output": false
+}

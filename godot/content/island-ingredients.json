@@ -1,0 +1,299 @@
+{
+  "version": 1,
+  "tide_period_seconds": 600,
+  "low_tide_seconds": 240,
+  "items": [
+    {
+      "id": "wild_berry",
+      "name": "野莓",
+      "name_en": "Wild berries",
+      "island": "main",
+      "region": "home",
+      "position": [
+        103,
+        53
+      ],
+      "regrow_seconds": 600,
+      "amount": 1
+    },
+    {
+      "id": "chestnut",
+      "name": "栗子",
+      "name_en": "Chestnut",
+      "island": "main",
+      "region": "home",
+      "position": [
+        111,
+        57
+      ],
+      "regrow_seconds": 600,
+      "amount": 1
+    },
+    {
+      "id": "clam",
+      "name": "蛤蜊",
+      "name_en": "Clam",
+      "island": "moon",
+      "region": "home",
+      "position": [
+        -75,
+        65
+      ],
+      "regrow_seconds": 600,
+      "amount": 1,
+      "low_tide": true
+    },
+    {
+      "id": "crab",
+      "name": "小螃蟹",
+      "name_en": "Little crab",
+      "island": "moon",
+      "region": "home",
+      "position": [
+        -75,
+        70
+      ],
+      "regrow_seconds": 600,
+      "amount": 1,
+      "low_tide": true
+    },
+    {
+      "id": "kelp",
+      "name": "海带",
+      "name_en": "Kelp",
+      "island": "moon",
+      "region": "home",
+      "position": [
+        -75,
+        75
+      ],
+      "regrow_seconds": 600,
+      "amount": 1
+    },
+    {
+      "id": "moonflower",
+      "name": "月见花",
+      "name_en": "Moonflower",
+      "island": "moon",
+      "region": "home",
+      "position": [
+        -70,
+        60
+      ],
+      "regrow_seconds": 600,
+      "amount": 1,
+      "night": true
+    },
+    {
+      "id": "glow_mushroom",
+      "name": "发光蘑菇",
+      "name_en": "Glow mushroom",
+      "island": "dark",
+      "region": "dark",
+      "position": [
+        50,
+        103
+      ],
+      "regrow_seconds": 600,
+      "amount": 1
+    },
+    {
+      "id": "black_truffle",
+      "name": "黑松露",
+      "name_en": "Black truffle",
+      "island": "dark",
+      "region": "dark",
+      "position": [
+        44,
+        101
+      ],
+      "regrow_seconds": 600,
+      "amount": 1
+    },
+    {
+      "id": "night_nut",
+      "name": "夜栗",
+      "name_en": "Night nut",
+      "island": "dark",
+      "region": "dark",
+      "position": [
+        42,
+        97
+      ],
+      "regrow_seconds": 600,
+      "amount": 1
+    },
+    {
+      "id": "honey",
+      "name": "蜂蜜",
+      "name_en": "Honey",
+      "island": "theirs",
+      "region": "home",
+      "position": [
+        33,
+        205
+      ],
+      "regrow_seconds": 600,
+      "amount": 1,
+      "facility": "produce-flowerhouse",
+      "owner": "codex"
+    },
+    {
+      "id": "petals",
+      "name": "花瓣",
+      "name_en": "Petals",
+      "island": "theirs",
+      "region": "home",
+      "position": [
+        35,
+        205
+      ],
+      "regrow_seconds": 600,
+      "amount": 1,
+      "facility": "produce-flowerhouse",
+      "owner": "codex"
+    },
+    {
+      "id": "herb",
+      "name": "香草",
+      "name_en": "Herb",
+      "island": "theirs",
+      "region": "home",
+      "position": [
+        105,
+        205
+      ],
+      "regrow_seconds": 600,
+      "amount": 1,
+      "facility": "produce-herbgarden",
+      "owner": "npc.mira"
+    },
+    {
+      "id": "star_berry",
+      "name": "星露莓",
+      "name_en": "Star berries",
+      "island": "theirs",
+      "region": "home",
+      "position": [
+        129,
+        205
+      ],
+      "regrow_seconds": 600,
+      "amount": 1,
+      "night": true,
+      "facility": "produce-stargarden",
+      "owner": "npc.nora"
+    },
+    {
+      "id": "potato",
+      "name": "土豆",
+      "name_en": "Potato",
+      "island": "main",
+      "region": "home",
+      "position": [
+        107,
+        55
+      ],
+      "regrow_seconds": 600,
+      "amount": 1,
+      "seed": true
+    },
+    {
+      "id": "corn",
+      "name": "玉米",
+      "name_en": "Corn",
+      "island": "main",
+      "region": "home",
+      "position": [
+        109,
+        59
+      ],
+      "regrow_seconds": 600,
+      "amount": 1,
+      "seed": true
+    },
+    {
+      "id": "dried_fish",
+      "name": "鱼干",
+      "name_en": "Dried fish",
+      "island": "theirs",
+      "region": "home",
+      "position": [
+        57,
+        205
+      ],
+      "regrow_seconds": 600,
+      "amount": 1,
+      "metadata_only": true
+    },
+    {
+      "id": "seed.apple",
+      "name": "林间苹果种子",
+      "name_en": "Woodland apple seeds",
+      "island": "main",
+      "region": "home",
+      "position": [
+        115,
+        51
+      ],
+      "regrow_seconds": 600,
+      "amount": 1,
+      "kind": "seed_source",
+      "farm_gate": "farm.hill",
+      "icon_crop": "apple"
+    },
+    {
+      "id": "seed.blueberry",
+      "name": "林间蓝莓种子",
+      "name_en": "Woodland blueberry seeds",
+      "island": "main",
+      "region": "home",
+      "position": [
+        119,
+        53
+      ],
+      "regrow_seconds": 600,
+      "amount": 1,
+      "kind": "seed_source",
+      "farm_gate": "farm.hill",
+      "icon_crop": "blueberry"
+    },
+    {
+      "id": "seed.pumpkin",
+      "name": "野生南瓜种子",
+      "name_en": "Wild pumpkin seeds",
+      "island": "main",
+      "region": "home",
+      "position": [
+        121,
+        57
+      ],
+      "regrow_seconds": 600,
+      "amount": 1,
+      "kind": "seed_source",
+      "farm_gate": "farm.home",
+      "icon_crop": "pumpkin"
+    },
+    {
+      "id": "seed.daisy",
+      "name": "野生雏菊种子",
+      "name_en": "Wild daisy seeds",
+      "island": "main",
+      "region": "home",
+      "position": [
+        117,
+        55
+      ],
+      "regrow_seconds": 600,
+      "amount": 1,
+      "kind": "seed_source",
+      "farm_gate": "farm.lake",
+      "icon_crop": "daisy"
+    }
+  ],
+  "dry_seconds": 600,
+  "dry_position": [
+    57,
+    205
+  ]
+}

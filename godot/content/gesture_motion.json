@@ -1,0 +1,5 @@
+{
+  "version": 1,
+  "wave": {"duration": 0.7, "bounce_pixels": 2.5, "lean": 0.025},
+  "stretch": {"duration": 1.2, "scale_x": 0.985, "scale_y": 1.035}
+}

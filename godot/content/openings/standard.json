@@ -1,0 +1,158 @@
+{
+  "version": 1,
+  "id": "standard",
+  "template_id": "home-v3",
+  "implemented": true,
+  "purpose": "play-from-empty-island",
+  "companions": [
+    "codex",
+    "companion-2",
+    "npc.mira",
+    "npc.nora"
+  ],
+  "house": {
+    "site_id": "home.house.01",
+    "template_id": "cottage",
+    "furniture": [
+      {
+        "recipe_id": "chair",
+        "position": [
+          9,
+          4.5
+        ],
+        "facing": "down"
+      }
+    ]
+  },
+  "first_farm": "farm.home",
+  "forage_ids": [
+    "home.mushrooms.1",
+    "home.mushrooms.2"
+  ],
+  "forage_anchors": [
+    "camp.mushroom.1",
+    "camp.mushroom.2"
+  ],
+  "suggestion": "我们先生个火吧？",
+  "first_meal_lines": {
+    "codex": "第一顿饭有你在，真好。",
+    "companion-2": "记住啦，这是我们的第一顿烧烤！",
+    "npc.mira": "以后的小岛，也一点点慢慢建吧。",
+    "npc.nora": "围着火坐着，这里已经有点像家了。"
+  },
+  "construction": [
+    {
+      "id": "play.standard.camp",
+      "target": "home.barbecue",
+      "name": "营火灶台",
+      "wood": 6
+    },
+    {
+      "id": "play.standard.moon-camp",
+      "target": "moon.barbecue",
+      "name": "月牙营火",
+      "wood": 12
+    },
+    {
+      "id": "play.standard.moon-platform",
+      "target": "moon.lookout",
+      "name": "赏月台",
+      "wood": 16
+    },
+    {
+      "id": "play.standard.south-pen",
+      "target": "home.fishery.south",
+      "name": "南码头围网",
+      "wood": 12
+    },
+    {
+      "id": "play.standard.west-pen",
+      "target": "home.fishery.west",
+      "name": "西码头围网",
+      "wood": 12
+    },
+    {
+      "id": "play.standard.hill-field",
+      "target": "farm.hill",
+      "name": "待开垦浆果田",
+      "wood": 6
+    },
+    {
+      "id": "play.standard.lake-field",
+      "target": "farm.lake",
+      "name": "待开垦花田",
+      "wood": 6
+    },
+    {
+      "id": "play.standard.east-field",
+      "target": "farm.east",
+      "name": "待开垦混种田",
+      "wood": 6
+    }
+  ],
+  "seat_offsets": [
+    [
+      3,
+      2
+    ],
+    [
+      6,
+      2
+    ],
+    [
+      2,
+      5
+    ],
+    [
+      5,
+      5
+    ],
+    [
+      8,
+      5
+    ],
+    [
+      8,
+      2
+    ]
+  ],
+  "spawn_points": {
+    "codex": {
+      "anchor": "orchard",
+      "offset": [
+        0,
+        -4
+      ]
+    },
+    "companion-2": {
+      "anchor": "plaza.center",
+      "offset": [
+        -4,
+        0
+      ]
+    },
+    "npc.mira": {
+      "anchor": "logging.entry",
+      "offset": [
+        -3,
+        0
+      ]
+    },
+    "npc.nora": {
+      "anchor": "north.view",
+      "offset": [
+        0,
+        2
+      ]
+    }
+  },
+  "hidden_scenery": [
+    "north-slope"
+  ],
+  "storage": {
+    "wood": 4,
+    "mushroom": 6,
+    "seed.turnip": 4,
+    "seed.tomato": 4
+  }
+}

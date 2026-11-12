@@ -1,0 +1,4559 @@
+{
+  "version": 1,
+  "events": {
+    "voice.bright": {
+      "bus": "Voices",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/voice-single-1101/voice.bright-A.wav",
+          "sha256": "241f7ca936a7532e114cce5e92bd6bcbf9521e67aca1766caabf5192ee7eed26",
+          "source_id": "single1101.voice.bright.A"
+        },
+        "B": {
+          "file": "res://content/audio/voice-single-1101/voice.bright-B.wav",
+          "sha256": "abc0ba5f33677013b0da1426f81d09f8a6847e9ff8b81beefb8a840a99e840e7",
+          "source_id": "single1101.voice.bright.B"
+        },
+        "C": {
+          "file": "res://content/audio/voice-single-1101/voice.bright-C.wav",
+          "sha256": "06b9668a52988e92ec7e4baae32b6552592c345a4a5538e54981b701bcd1c491",
+          "source_id": "single1101.voice.bright.C"
+        }
+      },
+      "selected": "A",
+      "volume_db": -5.0,
+      "pitch_min": 0.97,
+      "pitch_max": 1.03,
+      "max_instances": 3,
+      "near_tiles": 2.0,
+      "far_tiles": 18.0,
+      "loop": false,
+      "cooldown_seconds": 0.08
+    },
+    "hunger.hungry": {
+      "bus": "Voices",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/sound-v2/hunger.hungry-A.wav",
+          "sha256": "6f9f8033fe94f2d6271c5956ee803de08d9b22aa6c94094289fa8085ad03919a",
+          "source_id": "v2.hunger.hungry.A"
+        },
+        "B": {
+          "file": "res://content/audio/sound-v2/hunger.hungry-B.wav",
+          "sha256": "f7272a84d162cf70297d226fe5d35ad5754ded8685d907f3cf754506c2368929",
+          "source_id": "v2.hunger.hungry.B"
+        },
+        "C": {
+          "file": "res://content/audio/sound-v2/hunger.hungry-C.wav",
+          "sha256": "db0c4cc14641653e423351c35389088f7c18f47ba201de26a0686c6e81d60e3d",
+          "source_id": "v2.hunger.hungry.C"
+        }
+      },
+      "selected": "A",
+      "volume_db": -3.0,
+      "pitch_min": 0.97,
+      "pitch_max": 1.03,
+      "max_instances": 2,
+      "near_tiles": 2.0,
+      "far_tiles": 18.0,
+      "loop": false,
+      "cooldown_seconds": 0.12
+    },
+    "ambience.fire": {
+      "bus": "Ambience",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/sound-v2/ambience.fire-A.wav",
+          "sha256": "9f413f7fa8e5f8da5f162d2c0b808de42ea1f4467dba758695fb3dfb78984b86",
+          "source_id": "v2.ambience.fire.A"
+        },
+        "B": {
+          "file": "res://content/audio/sound-v2/ambience.fire-B.wav",
+          "sha256": "9db2639b0a24ca2d4643a3cbc6c15396c9d32a267a34d9224eccbe474234da47",
+          "source_id": "v2.ambience.fire.B"
+        },
+        "C": {
+          "file": "res://content/audio/sound-v2/ambience.fire-C.wav",
+          "sha256": "3ad75ae6b1aaeb7f7cf601c33095c8ee97e8e886ecf82db8b498f2f62d423785",
+          "source_id": "v2.ambience.fire.C"
+        }
+      },
+      "selected": "A",
+      "volume_db": 0.0,
+      "pitch_min": 1.0,
+      "pitch_max": 1.0,
+      "max_instances": 2,
+      "near_tiles": 2.0,
+      "far_tiles": 24.0,
+      "loop": true,
+      "cooldown_seconds": 0.12
+    },
+    "ui.click": {
+      "bus": "Effects",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/sound-v2/ui.click-A.wav",
+          "sha256": "0587de4004c8ee7a5528de3a71bf1f82fd3ae27b7f94250a90a253e5fa6ff224",
+          "source_id": "v2.ui.click.A"
+        },
+        "B": {
+          "file": "res://content/audio/sound-v2/ui.click-B.wav",
+          "sha256": "f5afda96a058cfdc7a5f988f72901e9f44441259d665fa5783a25000e4db417b",
+          "source_id": "v2.ui.click.B"
+        },
+        "C": {
+          "file": "res://content/audio/sound-v2/ui.click-C.wav",
+          "sha256": "16060f0a60d092b0ddb12ab82c1ead248243709c3916836a3162c8d7e7d11d5d",
+          "source_id": "v2.ui.click.C"
+        }
+      },
+      "selected": "A",
+      "volume_db": 0.0,
+      "pitch_min": 0.97,
+      "pitch_max": 1.03,
+      "max_instances": 3,
+      "near_tiles": 2.0,
+      "far_tiles": 18.0,
+      "loop": false,
+      "cooldown_seconds": 0.12
+    },
+    "voice.soft": {
+      "bus": "Voices",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/voice-single-1101/voice.soft-A.wav",
+          "sha256": "bbe1ddea5e2f71cfc0f0e989ebd563a4cbc6c925829652f329860d9ba85c30cb",
+          "source_id": "single1101.voice.soft.A"
+        },
+        "B": {
+          "file": "res://content/audio/voice-single-1101/voice.soft-B.wav",
+          "sha256": "146f864cbc9c65286211154f1c3aeadef9e1891a4daae3c5ed3ee494ef842548",
+          "source_id": "single1101.voice.soft.B"
+        },
+        "C": {
+          "file": "res://content/audio/voice-single-1101/voice.soft-C.wav",
+          "sha256": "df6e71383f08ae469d20a4d541c6f84d76b55664eb1efdbfa401a89805bf0f40",
+          "source_id": "single1101.voice.soft.C"
+        }
+      },
+      "selected": "A",
+      "volume_db": -5.0,
+      "pitch_min": 0.97,
+      "pitch_max": 1.03,
+      "max_instances": 3,
+      "near_tiles": 2.0,
+      "far_tiles": 18.0,
+      "loop": false,
+      "cooldown_seconds": 0.08
+    },
+    "voice.crisp": {
+      "bus": "Voices",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/voice-single-1101/voice.crisp-A.wav",
+          "sha256": "d54d18252806aeeabe0d546dfdc3e95dcab4e8f5953f885bd158e9f689b8630c",
+          "source_id": "single1101.voice.crisp.A"
+        },
+        "B": {
+          "file": "res://content/audio/voice-single-1101/voice.crisp-B.wav",
+          "sha256": "00ccf794d3737909213d873c7a4258ccc0b83e0fbb64c129e122d4ad51d96391",
+          "source_id": "single1101.voice.crisp.B"
+        },
+        "C": {
+          "file": "res://content/audio/voice-single-1101/voice.crisp-C.wav",
+          "sha256": "7d1e033f0085673e63b3d8bf9eddbb9e39d83d1ae28240b853d20126f3c9d5a1",
+          "source_id": "single1101.voice.crisp.C"
+        }
+      },
+      "selected": "A",
+      "volume_db": -5.0,
+      "pitch_min": 0.97,
+      "pitch_max": 1.03,
+      "max_instances": 3,
+      "near_tiles": 2.0,
+      "far_tiles": 18.0,
+      "loop": false,
+      "cooldown_seconds": 0.08
+    },
+    "voice.low": {
+      "bus": "Voices",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/voice-single-1101/voice.low-A.wav",
+          "sha256": "1d2b47bfdd437e9857affb9816ae8f4c444997f9d9081bb8d270eaea5be4ae61",
+          "source_id": "single1101.voice.low.A"
+        },
+        "B": {
+          "file": "res://content/audio/voice-single-1101/voice.low-B.wav",
+          "sha256": "6a46b440a5285dcc79ae441d429044d24429bc8f6f7a341be7829c5e82895627",
+          "source_id": "single1101.voice.low.B"
+        },
+        "C": {
+          "file": "res://content/audio/voice-single-1101/voice.low-C.wav",
+          "sha256": "b19ac72bde51b325dcbfeae16c074fd951fad8f83968cb1d310214a3411a52f7",
+          "source_id": "single1101.voice.low.C"
+        }
+      },
+      "selected": "A",
+      "volume_db": -5.0,
+      "pitch_min": 0.97,
+      "pitch_max": 1.03,
+      "max_instances": 3,
+      "near_tiles": 2.0,
+      "far_tiles": 18.0,
+      "loop": false,
+      "cooldown_seconds": 0.08
+    },
+    "hunger.mild": {
+      "bus": "Voices",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/sound-v2/hunger.mild-A.wav",
+          "sha256": "19bf407fd926acbe988684c1744049c64b81f9ece32a87be58dd09f210687ec1",
+          "source_id": "v2.hunger.mild.A"
+        }
+      },
+      "selected": "A",
+      "volume_db": -3.0,
+      "pitch_min": 0.97,
+      "pitch_max": 1.03,
+      "max_instances": 2,
+      "near_tiles": 2.0,
+      "far_tiles": 18.0,
+      "loop": false,
+      "cooldown_seconds": 0.12
+    },
+    "hunger.very_hungry": {
+      "bus": "Voices",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/sound-v2/hunger.very_hungry-A.wav",
+          "sha256": "49f5a7a80901a7a62aaf09a4562e30125169bb6ac98e9a1d08862c6f7306661c",
+          "source_id": "v2.hunger.very_hungry.A"
+        }
+      },
+      "selected": "A",
+      "volume_db": -3.0,
+      "pitch_min": 0.97,
+      "pitch_max": 1.03,
+      "max_instances": 2,
+      "near_tiles": 2.0,
+      "far_tiles": 18.0,
+      "loop": false,
+      "cooldown_seconds": 0.12
+    },
+    "meal.satisfied": {
+      "bus": "Voices",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/sound-v2/meal.satisfied-A.wav",
+          "sha256": "dc1be28ea319799691acf7f5c1dd4a559d957f4eedc3d5b394d312f91fc8d428",
+          "source_id": "v2.meal.satisfied.A"
+        }
+      },
+      "selected": "A",
+      "volume_db": 0.0,
+      "pitch_min": 0.97,
+      "pitch_max": 1.03,
+      "max_instances": 3,
+      "near_tiles": 2.0,
+      "far_tiles": 18.0,
+      "loop": false,
+      "cooldown_seconds": 0.12
+    },
+    "tree.hit": {
+      "bus": "Effects",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/sound-v2/tree.hit-A.wav",
+          "sha256": "3d3e6079536f68fe1dfd92a9baed74cdb16194cddaf3d62bff9e0ada2c5f0b48",
+          "source_id": "v2.tree.hit.A"
+        }
+      },
+      "selected": "A",
+      "volume_db": 0.0,
+      "pitch_min": 0.97,
+      "pitch_max": 1.03,
+      "max_instances": 3,
+      "near_tiles": 2.0,
+      "far_tiles": 18.0,
+      "loop": false,
+      "cooldown_seconds": 0.12
+    },
+    "wood.fall": {
+      "bus": "Effects",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/sound-v2/wood.fall-A.wav",
+          "sha256": "2433b485829138b6e4ae71b19fdfc07529c91db30d738385e0385c8587b9b5ac",
+          "source_id": "v2.wood.fall.A"
+        }
+      },
+      "selected": "A",
+      "volume_db": 0.0,
+      "pitch_min": 0.97,
+      "pitch_max": 1.03,
+      "max_instances": 3,
+      "near_tiles": 2.0,
+      "far_tiles": 18.0,
+      "loop": false,
+      "cooldown_seconds": 0.12
+    },
+    "fire.ignite": {
+      "bus": "Effects",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/sound-v2/fire.ignite-A.wav",
+          "sha256": "24e732d1a0fa946e4157c3a8c7109a150cb414f5cd3c8d9712d3395e9c7036e7",
+          "source_id": "v2.fire.ignite.A"
+        }
+      },
+      "selected": "A",
+      "volume_db": 0.0,
+      "pitch_min": 0.97,
+      "pitch_max": 1.03,
+      "max_instances": 3,
+      "near_tiles": 2.0,
+      "far_tiles": 18.0,
+      "loop": false,
+      "cooldown_seconds": 0.12
+    },
+    "fire.refuel": {
+      "bus": "Effects",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/sound-v2/fire.refuel-A.wav",
+          "sha256": "14351bd0a3dab449700b3a6e50200e27aae794ea06c35dfe4fef8f34697b0816",
+          "source_id": "v2.fire.refuel.A"
+        }
+      },
+      "selected": "A",
+      "volume_db": 0.0,
+      "pitch_min": 0.97,
+      "pitch_max": 1.03,
+      "max_instances": 3,
+      "near_tiles": 2.0,
+      "far_tiles": 18.0,
+      "loop": false,
+      "cooldown_seconds": 0.12
+    },
+    "meal.bite": {
+      "bus": "Effects",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/sound-v2/meal.bite-A.wav",
+          "sha256": "f4a214e3f6d3c67f4f3fc87978dadffe8ddb1461b7613852a7b41bdee05413b8",
+          "source_id": "v2.meal.bite.A"
+        }
+      },
+      "selected": "A",
+      "volume_db": 0.0,
+      "pitch_min": 0.97,
+      "pitch_max": 1.03,
+      "max_instances": 3,
+      "near_tiles": 2.0,
+      "far_tiles": 18.0,
+      "loop": false,
+      "cooldown_seconds": 0.12
+    },
+    "meal.chew": {
+      "bus": "Effects",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/sound-v2/meal.chew-A.wav",
+          "sha256": "dbb3af19039b2f865451fc043ed5fdefddac31de4d153addb328bee5d5b380df",
+          "source_id": "v2.meal.chew.A"
+        }
+      },
+      "selected": "A",
+      "volume_db": 0.0,
+      "pitch_min": 0.97,
+      "pitch_max": 1.03,
+      "max_instances": 3,
+      "near_tiles": 2.0,
+      "far_tiles": 18.0,
+      "loop": false,
+      "cooldown_seconds": 0.12
+    },
+    "fishing.cast": {
+      "bus": "Effects",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/sound-v2/fishing.cast-A.wav",
+          "sha256": "9f594ab6c4b2e9fbb501f94476146303a39f2e4956c1da4133f8204bd185ba0f",
+          "source_id": "v2.fishing.cast.A"
+        }
+      },
+      "selected": "A",
+      "volume_db": 0.0,
+      "pitch_min": 0.97,
+      "pitch_max": 1.03,
+      "max_instances": 3,
+      "near_tiles": 2.0,
+      "far_tiles": 18.0,
+      "loop": false,
+      "cooldown_seconds": 0.12
+    },
+    "fishing.water": {
+      "bus": "Effects",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/sound-v2/fishing.water-A.wav",
+          "sha256": "1f9b15a06c1a9b1483680cb0c70ec35e818f86fbcd8f4c206be7313b7c5d40ad",
+          "source_id": "v2.fishing.water.A"
+        }
+      },
+      "selected": "A",
+      "volume_db": 0.0,
+      "pitch_min": 0.97,
+      "pitch_max": 1.03,
+      "max_instances": 3,
+      "near_tiles": 2.0,
+      "far_tiles": 18.0,
+      "loop": false,
+      "cooldown_seconds": 0.12
+    },
+    "fishing.bite": {
+      "bus": "Effects",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/sound-v2/fishing.bite-A.wav",
+          "sha256": "a23e765f664d50cfa22aa0eca9df6c6620c2c1907e27bd52355315902b51ae5c",
+          "source_id": "v2.fishing.bite.A"
+        }
+      },
+      "selected": "A",
+      "volume_db": 0.0,
+      "pitch_min": 0.97,
+      "pitch_max": 1.03,
+      "max_instances": 3,
+      "near_tiles": 2.0,
+      "far_tiles": 18.0,
+      "loop": false,
+      "cooldown_seconds": 0.12
+    },
+    "fishing.reel": {
+      "bus": "Effects",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/sound-v2/fishing.reel-A.wav",
+          "sha256": "d7ef5852b467147caf9233ab002433313a4dd859ccdfc49ede73a06691a91c7a",
+          "source_id": "v2.fishing.reel.A"
+        }
+      },
+      "selected": "A",
+      "volume_db": 0.0,
+      "pitch_min": 0.97,
+      "pitch_max": 1.03,
+      "max_instances": 3,
+      "near_tiles": 2.0,
+      "far_tiles": 18.0,
+      "loop": false,
+      "cooldown_seconds": 0.12
+    },
+    "fish.flap": {
+      "bus": "Effects",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/sound-v2/fish.flap-A.wav",
+          "sha256": "9e9d86480ecdb9235a05d1a718a24a26855a2590c09661f27a89c2204fd1e025",
+          "source_id": "v2.fish.flap.A"
+        }
+      },
+      "selected": "A",
+      "volume_db": 0.0,
+      "pitch_min": 0.97,
+      "pitch_max": 1.03,
+      "max_instances": 3,
+      "near_tiles": 2.0,
+      "far_tiles": 18.0,
+      "loop": false,
+      "cooldown_seconds": 0.12
+    },
+    "fish.stock": {
+      "bus": "Effects",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/sound-v2/fish.stock-A.wav",
+          "sha256": "f5c22ab9175a3537ef348c868706069ae9ab130d9c31fced52976bad912d9d42",
+          "source_id": "v2.fish.stock.A"
+        }
+      },
+      "selected": "A",
+      "volume_db": 0.0,
+      "pitch_min": 0.97,
+      "pitch_max": 1.03,
+      "max_instances": 3,
+      "near_tiles": 2.0,
+      "far_tiles": 18.0,
+      "loop": false,
+      "cooldown_seconds": 0.12
+    },
+    "fish.release": {
+      "bus": "Effects",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/sound-v2/fish.release-A.wav",
+          "sha256": "d7e696a9be203ff078c189f14e528e624191e6b0b0fe4f6251c7c6b6a5b184d2",
+          "source_id": "v2.fish.release.A"
+        }
+      },
+      "selected": "A",
+      "volume_db": 0.0,
+      "pitch_min": 0.97,
+      "pitch_max": 1.03,
+      "max_instances": 3,
+      "near_tiles": 2.0,
+      "far_tiles": 18.0,
+      "loop": false,
+      "cooldown_seconds": 0.12
+    },
+    "ui.open": {
+      "bus": "Effects",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/sound-v2/ui.open-A.wav",
+          "sha256": "0587de4004c8ee7a5528de3a71bf1f82fd3ae27b7f94250a90a253e5fa6ff224",
+          "source_id": "v2.ui.open.A"
+        }
+      },
+      "selected": "A",
+      "volume_db": 0.0,
+      "pitch_min": 0.97,
+      "pitch_max": 1.03,
+      "max_instances": 3,
+      "near_tiles": 2.0,
+      "far_tiles": 18.0,
+      "loop": false,
+      "cooldown_seconds": 0.12
+    },
+    "ui.close": {
+      "bus": "Effects",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/sound-v2/ui.close-A.wav",
+          "sha256": "df59f5270c9456ace9e779bfa8aa5416528440bab775ccc86bf2e4ee0307e102",
+          "source_id": "v2.ui.close.A"
+        }
+      },
+      "selected": "A",
+      "volume_db": 0.0,
+      "pitch_min": 0.97,
+      "pitch_max": 1.03,
+      "max_instances": 3,
+      "near_tiles": 2.0,
+      "far_tiles": 18.0,
+      "loop": false,
+      "cooldown_seconds": 0.12
+    },
+    "ui.fish_card": {
+      "bus": "Effects",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/sound-v2/ui.fish_card-A.wav",
+          "sha256": "0587de4004c8ee7a5528de3a71bf1f82fd3ae27b7f94250a90a253e5fa6ff224",
+          "source_id": "v2.ui.fish_card.A"
+        }
+      },
+      "selected": "A",
+      "volume_db": 0.0,
+      "pitch_min": 0.97,
+      "pitch_max": 1.03,
+      "max_instances": 3,
+      "near_tiles": 2.0,
+      "far_tiles": 18.0,
+      "loop": false,
+      "cooldown_seconds": 0.12
+    },
+    "ui.invite": {
+      "bus": "Effects",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/sound-v2/ui.invite-A.wav",
+          "sha256": "0587de4004c8ee7a5528de3a71bf1f82fd3ae27b7f94250a90a253e5fa6ff224",
+          "source_id": "v2.ui.invite.A"
+        }
+      },
+      "selected": "A",
+      "volume_db": 0.0,
+      "pitch_min": 0.97,
+      "pitch_max": 1.03,
+      "max_instances": 3,
+      "near_tiles": 2.0,
+      "far_tiles": 18.0,
+      "loop": false,
+      "cooldown_seconds": 0.12
+    },
+    "work.pickup": {
+      "bus": "Effects",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/sound-v2/work.pickup-A.wav",
+          "sha256": "02fc36d376de86773a1cc2556d40e655ecc36fb0082985300902f9def14348f2",
+          "source_id": "v2.work.pickup.A"
+        }
+      },
+      "selected": "A",
+      "volume_db": 0.0,
+      "pitch_min": 0.97,
+      "pitch_max": 1.03,
+      "max_instances": 3,
+      "near_tiles": 2.0,
+      "far_tiles": 18.0,
+      "loop": false,
+      "cooldown_seconds": 0.12
+    },
+    "work.deposit": {
+      "bus": "Effects",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/sound-v2/work.deposit-A.wav",
+          "sha256": "4174a650b8b3b6969d54c12b97d77ce3a75d49fc18cb362f034198339d862c0b",
+          "source_id": "v2.work.deposit.A"
+        }
+      },
+      "selected": "A",
+      "volume_db": 0.0,
+      "pitch_min": 0.97,
+      "pitch_max": 1.03,
+      "max_instances": 3,
+      "near_tiles": 2.0,
+      "far_tiles": 18.0,
+      "loop": false,
+      "cooldown_seconds": 0.12
+    },
+    "gomoku.stone": {
+      "bus": "Effects",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/sound-v2/gomoku.stone-A.wav",
+          "sha256": "42da2fe4da8e5470498971fcb16856da74a226881ef3465c99c431b834a9a3a0",
+          "source_id": "v2.gomoku.stone.A"
+        }
+      },
+      "selected": "A",
+      "volume_db": 0.0,
+      "pitch_min": 0.97,
+      "pitch_max": 1.03,
+      "max_instances": 3,
+      "near_tiles": 2.0,
+      "far_tiles": 18.0,
+      "loop": false,
+      "cooldown_seconds": 0.12
+    },
+    "ambience.waves": {
+      "bus": "Ambience",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/sound-v2/ambience.waves-A.wav",
+          "sha256": "ef14ee50674d986ba834e7eee199626af13328d8bae77306a73bd93e93c7170a",
+          "source_id": "v2.ambience.waves.A"
+        }
+      },
+      "selected": "A",
+      "volume_db": 0.0,
+      "pitch_min": 1.0,
+      "pitch_max": 1.0,
+      "max_instances": 2,
+      "near_tiles": 2.0,
+      "far_tiles": 24.0,
+      "loop": true,
+      "cooldown_seconds": 0.12
+    },
+    "ambience.wind": {
+      "bus": "Ambience",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/sound-v2/ambience.wind-A.wav",
+          "sha256": "4880e57204384368c3d64bc05f5971e5d221f4fedba73397543bab2d51b3f677",
+          "source_id": "v2.ambience.wind.A"
+        }
+      },
+      "selected": "A",
+      "volume_db": 0.0,
+      "pitch_min": 1.0,
+      "pitch_max": 1.0,
+      "max_instances": 2,
+      "near_tiles": 2.0,
+      "far_tiles": 24.0,
+      "loop": true,
+      "cooldown_seconds": 0.12
+    },
+    "ambience.birds": {
+      "bus": "Ambience",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/quiet-nature/ambience.birds-A.wav",
+          "sha256": "943914231731c6c72421ec43dc3fa850e71da1bdfd35a14df470d9d12f99f0d4",
+          "source_id": "quietnature.ambience.birds.A"
+        }
+      },
+      "selected": "A",
+      "volume_db": 0.0,
+      "pitch_min": 1.0,
+      "pitch_max": 1.0,
+      "max_instances": 1,
+      "near_tiles": 2.0,
+      "far_tiles": 24.0,
+      "loop": false,
+      "cooldown_seconds": 30.0
+    },
+    "ambience.insects": {
+      "bus": "Ambience",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/quiet-nature/ambience.insects-A.wav",
+          "sha256": "0bf2ab4f3af57a6a9ca7b10a5155d41752f0416ab3eba0e72dc0f1e2d2185a15",
+          "source_id": "quietnature.ambience.insects.A"
+        }
+      },
+      "selected": "A",
+      "volume_db": 0.0,
+      "pitch_min": 1.0,
+      "pitch_max": 1.0,
+      "max_instances": 2,
+      "near_tiles": 2.0,
+      "far_tiles": 24.0,
+      "loop": true,
+      "cooldown_seconds": 0.12
+    },
+    "ambience.rain": {
+      "bus": "Ambience",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/sound-v2/ambience.rain-A.wav",
+          "sha256": "74e75f0aaa6b51fc41fa2a5c874d1be19ed391fc7f7c4d4e5c7c00bf92dc8780",
+          "source_id": "v2.ambience.rain.A"
+        }
+      },
+      "selected": "A",
+      "volume_db": 0.0,
+      "pitch_min": 1.0,
+      "pitch_max": 1.0,
+      "max_instances": 2,
+      "near_tiles": 2.0,
+      "far_tiles": 24.0,
+      "loop": true,
+      "cooldown_seconds": 0.12
+    },
+    "ambience.sizzle": {
+      "bus": "Ambience",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/sound-v2/ambience.sizzle-A.wav",
+          "sha256": "696784744d334cceeca281bcc51202e871de7b91498ead7cb62d28e58bfcdcb8",
+          "source_id": "v2.ambience.sizzle.A"
+        }
+      },
+      "selected": "A",
+      "volume_db": 0.0,
+      "pitch_min": 1.0,
+      "pitch_max": 1.0,
+      "max_instances": 2,
+      "near_tiles": 2.0,
+      "far_tiles": 24.0,
+      "loop": true,
+      "cooldown_seconds": 0.12
+    },
+    "step.grass": {
+      "bus": "Effects",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/sound-v2/step.grass-A-1.wav",
+          "sha256": "9b67c0594b91dd98a51cb607502f385d6ff6c25f7b4071685dab36ab79208e83",
+          "source_id": "cc0.grass.A.1",
+          "takes": [
+            {
+              "file": "res://content/audio/sound-v2/step.grass-A-1.wav",
+              "sha256": "9b67c0594b91dd98a51cb607502f385d6ff6c25f7b4071685dab36ab79208e83",
+              "source_id": "cc0.grass.A.1"
+            },
+            {
+              "file": "res://content/audio/sound-v2/step.grass-A-2.wav",
+              "sha256": "a14a8ec452a458191b320f7e9ccdf7f8afde1addce9bb0d8c0e1e128fc070261",
+              "source_id": "cc0.grass.A.2"
+            }
+          ]
+        },
+        "B": {
+          "file": "res://content/audio/sound-v2/step.grass-B-1.wav",
+          "sha256": "a14a8ec452a458191b320f7e9ccdf7f8afde1addce9bb0d8c0e1e128fc070261",
+          "source_id": "cc0.grass.B.1",
+          "takes": [
+            {
+              "file": "res://content/audio/sound-v2/step.grass-B-1.wav",
+              "sha256": "a14a8ec452a458191b320f7e9ccdf7f8afde1addce9bb0d8c0e1e128fc070261",
+              "source_id": "cc0.grass.B.1"
+            },
+            {
+              "file": "res://content/audio/sound-v2/step.grass-B-2.wav",
+              "sha256": "dab791abf4b7daa8ec884137219e18283f22cf040614b201a507f0355608365a",
+              "source_id": "cc0.grass.B.2"
+            }
+          ]
+        },
+        "C": {
+          "file": "res://content/audio/sound-v2/step.grass-C-1.wav",
+          "sha256": "f4b86cefb2decd2de1f00afb7c5cd56452730b2a4aba92713c2fdf3650683ab3",
+          "source_id": "cc0.grass.C.1",
+          "takes": [
+            {
+              "file": "res://content/audio/sound-v2/step.grass-C-1.wav",
+              "sha256": "f4b86cefb2decd2de1f00afb7c5cd56452730b2a4aba92713c2fdf3650683ab3",
+              "source_id": "cc0.grass.C.1"
+            },
+            {
+              "file": "res://content/audio/sound-v2/step.grass-C-2.wav",
+              "sha256": "9b67c0594b91dd98a51cb607502f385d6ff6c25f7b4071685dab36ab79208e83",
+              "source_id": "cc0.grass.C.2"
+            }
+          ]
+        }
+      },
+      "selected": "A",
+      "volume_db": 0.0,
+      "pitch_min": 0.97,
+      "pitch_max": 1.03,
+      "max_instances": 3,
+      "near_tiles": 2.0,
+      "far_tiles": 18.0,
+      "loop": false,
+      "cooldown_seconds": 0.12
+    },
+    "step.sand": {
+      "bus": "Effects",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/sound-v2/step.sand-A-1.wav",
+          "sha256": "dab791abf4b7daa8ec884137219e18283f22cf040614b201a507f0355608365a",
+          "source_id": "cc0.sand.A.1",
+          "takes": [
+            {
+              "file": "res://content/audio/sound-v2/step.sand-A-1.wav",
+              "sha256": "dab791abf4b7daa8ec884137219e18283f22cf040614b201a507f0355608365a",
+              "source_id": "cc0.sand.A.1"
+            },
+            {
+              "file": "res://content/audio/sound-v2/step.sand-A-2.wav",
+              "sha256": "a6831f04889d2903315b7eced69ee4f9c654a4fc59acc27885f45d66df2d1268",
+              "source_id": "cc0.sand.A.2"
+            }
+          ]
+        },
+        "B": {
+          "file": "res://content/audio/sound-v2/step.sand-B-1.wav",
+          "sha256": "1167b73fe581c81f6f6efd18cdf5c2c3d99e55a469409684b9aed03f023e3e55",
+          "source_id": "cc0.sand.B.1",
+          "takes": [
+            {
+              "file": "res://content/audio/sound-v2/step.sand-B-1.wav",
+              "sha256": "1167b73fe581c81f6f6efd18cdf5c2c3d99e55a469409684b9aed03f023e3e55",
+              "source_id": "cc0.sand.B.1"
+            },
+            {
+              "file": "res://content/audio/sound-v2/step.sand-B-2.wav",
+              "sha256": "f4b86cefb2decd2de1f00afb7c5cd56452730b2a4aba92713c2fdf3650683ab3",
+              "source_id": "cc0.sand.B.2"
+            }
+          ]
+        },
+        "C": {
+          "file": "res://content/audio/sound-v2/step.sand-C-1.wav",
+          "sha256": "8d1f9fe26f1182f860581b2040710b4ed115f74cb9b6f4a3173895b72a54decc",
+          "source_id": "cc0.sand.C.1",
+          "takes": [
+            {
+              "file": "res://content/audio/sound-v2/step.sand-C-1.wav",
+              "sha256": "8d1f9fe26f1182f860581b2040710b4ed115f74cb9b6f4a3173895b72a54decc",
+              "source_id": "cc0.sand.C.1"
+            },
+            {
+              "file": "res://content/audio/sound-v2/step.sand-C-2.wav",
+              "sha256": "fd5a65a8dcd0aaf18e40377f9a6a5ee75af2ff89cb19cbb1c275d8e854ccd957",
+              "source_id": "cc0.sand.C.2"
+            }
+          ]
+        }
+      },
+      "selected": "A",
+      "volume_db": 0.0,
+      "pitch_min": 0.97,
+      "pitch_max": 1.03,
+      "max_instances": 3,
+      "near_tiles": 2.0,
+      "far_tiles": 18.0,
+      "loop": false,
+      "cooldown_seconds": 0.12
+    },
+    "step.wood": {
+      "bus": "Effects",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/sound-v2/step.wood-A-1.wav",
+          "sha256": "518103f24419d7c17798cec079bd62fdaa4cec0677ae0bf6c70ba88bd696003a",
+          "source_id": "cc0.wood.A.1",
+          "takes": [
+            {
+              "file": "res://content/audio/sound-v2/step.wood-A-1.wav",
+              "sha256": "518103f24419d7c17798cec079bd62fdaa4cec0677ae0bf6c70ba88bd696003a",
+              "source_id": "cc0.wood.A.1"
+            },
+            {
+              "file": "res://content/audio/sound-v2/step.wood-A-2.wav",
+              "sha256": "20793c522f6696f4b19715bc6521c16e949057b498833e949399633d8414fa9a",
+              "source_id": "cc0.wood.A.2"
+            }
+          ]
+        },
+        "B": {
+          "file": "res://content/audio/sound-v2/step.wood-B-1.wav",
+          "sha256": "20793c522f6696f4b19715bc6521c16e949057b498833e949399633d8414fa9a",
+          "source_id": "cc0.wood.B.1",
+          "takes": [
+            {
+              "file": "res://content/audio/sound-v2/step.wood-B-1.wav",
+              "sha256": "20793c522f6696f4b19715bc6521c16e949057b498833e949399633d8414fa9a",
+              "source_id": "cc0.wood.B.1"
+            },
+            {
+              "file": "res://content/audio/sound-v2/step.wood-B-2.wav",
+              "sha256": "70941bc4943cfef544acf3ae5dbb526e9ca29e935e423215aafcfba49dd3e2b9",
+              "source_id": "cc0.wood.B.2"
+            }
+          ]
+        },
+        "C": {
+          "file": "res://content/audio/sound-v2/step.wood-C-1.wav",
+          "sha256": "70941bc4943cfef544acf3ae5dbb526e9ca29e935e423215aafcfba49dd3e2b9",
+          "source_id": "cc0.wood.C.1",
+          "takes": [
+            {
+              "file": "res://content/audio/sound-v2/step.wood-C-1.wav",
+              "sha256": "70941bc4943cfef544acf3ae5dbb526e9ca29e935e423215aafcfba49dd3e2b9",
+              "source_id": "cc0.wood.C.1"
+            },
+            {
+              "file": "res://content/audio/sound-v2/step.wood-C-2.wav",
+              "sha256": "518103f24419d7c17798cec079bd62fdaa4cec0677ae0bf6c70ba88bd696003a",
+              "source_id": "cc0.wood.C.2"
+            }
+          ]
+        }
+      },
+      "selected": "A",
+      "volume_db": 0.0,
+      "pitch_min": 0.97,
+      "pitch_max": 1.03,
+      "max_instances": 3,
+      "near_tiles": 2.0,
+      "far_tiles": 18.0,
+      "loop": false,
+      "cooldown_seconds": 0.12
+    },
+    "step.stone": {
+      "bus": "Effects",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/sound-v2/step.stone-A-1.wav",
+          "sha256": "b5505d41126df718cacd4b27413b7cf76b8b242f51127c9860e231d8266cd288",
+          "source_id": "cc0.stone.A.1",
+          "takes": [
+            {
+              "file": "res://content/audio/sound-v2/step.stone-A-1.wav",
+              "sha256": "b5505d41126df718cacd4b27413b7cf76b8b242f51127c9860e231d8266cd288",
+              "source_id": "cc0.stone.A.1"
+            },
+            {
+              "file": "res://content/audio/sound-v2/step.stone-A-2.wav",
+              "sha256": "bd5c65ae4d6653391f722d6f79b910d9ab863c630d0bfbd4aa83c5a27f1cbb15",
+              "source_id": "cc0.stone.A.2"
+            }
+          ]
+        },
+        "B": {
+          "file": "res://content/audio/sound-v2/step.stone-B-1.wav",
+          "sha256": "ffcda7ddc9119430f6eafd22cfe2f67e74da5e97126a08cf1133b7e352128894",
+          "source_id": "cc0.stone.B.1",
+          "takes": [
+            {
+              "file": "res://content/audio/sound-v2/step.stone-B-1.wav",
+              "sha256": "ffcda7ddc9119430f6eafd22cfe2f67e74da5e97126a08cf1133b7e352128894",
+              "source_id": "cc0.stone.B.1"
+            },
+            {
+              "file": "res://content/audio/sound-v2/step.stone-B-2.wav",
+              "sha256": "1072737f674f4c8963cc5336b17de3c7f212b6f4babefd47095275d51168064d",
+              "source_id": "cc0.stone.B.2"
+            }
+          ]
+        },
+        "C": {
+          "file": "res://content/audio/sound-v2/step.stone-C-1.wav",
+          "sha256": "75994f1050f090f48754abba181930f72c3b8534993c3ac33a74e3c51db41ab5",
+          "source_id": "cc0.stone.C.1",
+          "takes": [
+            {
+              "file": "res://content/audio/sound-v2/step.stone-C-1.wav",
+              "sha256": "75994f1050f090f48754abba181930f72c3b8534993c3ac33a74e3c51db41ab5",
+              "source_id": "cc0.stone.C.1"
+            },
+            {
+              "file": "res://content/audio/sound-v2/step.stone-C-2.wav",
+              "sha256": "7c6cc87b2d2b5437816dff734983d21f6ffedcb19dfe85c40d304c1d41c5a49f",
+              "source_id": "cc0.stone.C.2"
+            }
+          ]
+        }
+      },
+      "selected": "A",
+      "volume_db": 0.0,
+      "pitch_min": 0.97,
+      "pitch_max": 1.03,
+      "max_instances": 3,
+      "near_tiles": 2.0,
+      "far_tiles": 18.0,
+      "loop": false,
+      "cooldown_seconds": 0.12
+    },
+    "torch.ignite": {
+      "bus": "Effects",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/dark-island/torch.ignite.wav",
+          "sha256": "a848a2ac935fd400f213ed8cb3e88fdd68f6839d47131a9c634b257edde9bae7",
+          "source_id": "dark1101.torch.ignite"
+        }
+      },
+      "selected": "A",
+      "volume_db": -3.0,
+      "pitch_min": 1.0,
+      "pitch_max": 1.0,
+      "max_instances": 1,
+      "near_tiles": 6.0,
+      "far_tiles": 22.0,
+      "loop": false,
+      "cooldown_seconds": 0.1
+    },
+    "torch.plant": {
+      "bus": "Effects",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/dark-island/torch.plant.wav",
+          "sha256": "4eef1379809a92e774174229ebfdcd6b8df99f1dbe572b02fc6f0819c78fa38e",
+          "source_id": "dark1101.torch.plant"
+        }
+      },
+      "selected": "A",
+      "volume_db": -3.0,
+      "pitch_min": 1.0,
+      "pitch_max": 1.0,
+      "max_instances": 1,
+      "near_tiles": 6.0,
+      "far_tiles": 22.0,
+      "loop": false,
+      "cooldown_seconds": 0.1
+    },
+    "torch.lift": {
+      "bus": "Effects",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/dark-island/torch.lift.wav",
+          "sha256": "c8e3d7df1904a864c076a2aa43666f98cd1c7cee4fecb0381a92266e9d8f84bb",
+          "source_id": "dark1101.torch.lift"
+        }
+      },
+      "selected": "A",
+      "volume_db": -3.0,
+      "pitch_min": 1.0,
+      "pitch_max": 1.0,
+      "max_instances": 1,
+      "near_tiles": 6.0,
+      "far_tiles": 22.0,
+      "loop": false,
+      "cooldown_seconds": 0.1
+    },
+    "torch.warning": {
+      "bus": "Effects",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/dark-island/torch.warning.wav",
+          "sha256": "1fb9b80f34d20c45a75f0daa3d6efadb07c127b956f002e45d875f1a6a53c93f",
+          "source_id": "dark1101.torch.warning"
+        }
+      },
+      "selected": "A",
+      "volume_db": -3.0,
+      "pitch_min": 1.0,
+      "pitch_max": 1.0,
+      "max_instances": 1,
+      "near_tiles": 6.0,
+      "far_tiles": 22.0,
+      "loop": false,
+      "cooldown_seconds": 0.1
+    },
+    "dark.kindling": {
+      "bus": "Effects",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/dark-island/dark.kindling.wav",
+          "sha256": "7d23a7b5caf528c8af29901ce1aada0383797fb25cefd48e38bbc5b0eecac3ad",
+          "source_id": "dark1101.dark.kindling"
+        }
+      },
+      "selected": "A",
+      "volume_db": -3.0,
+      "pitch_min": 1.0,
+      "pitch_max": 1.0,
+      "max_instances": 1,
+      "near_tiles": 6.0,
+      "far_tiles": 22.0,
+      "loop": false,
+      "cooldown_seconds": 0.1
+    },
+    "dark.beacon": {
+      "bus": "Effects",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/dark-island/dark.beacon.wav",
+          "sha256": "0a48eec7a399bfe42f9e6a96e9834f7dc7207b9a2c5f0ce10c11444aecc4f6eb",
+          "source_id": "dark1101.dark.beacon"
+        }
+      },
+      "selected": "A",
+      "volume_db": -3.0,
+      "pitch_min": 1.0,
+      "pitch_max": 1.0,
+      "max_instances": 1,
+      "near_tiles": 6.0,
+      "far_tiles": 22.0,
+      "loop": false,
+      "cooldown_seconds": 0.1
+    },
+    "cat.meow": {
+      "bus": "Effects",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/cat/meow.wav",
+          "sha256": "4b965d97a955eb7523c125276d859d20d4bb3f1b65a479b79d586072dac00e85",
+          "source_id": "original.cat.meow"
+        }
+      },
+      "selected": "A",
+      "volume_db": -15,
+      "pitch_min": 1.0,
+      "pitch_max": 1.0,
+      "max_instances": 1,
+      "near_tiles": 2.0,
+      "far_tiles": 12.0,
+      "loop": false,
+      "cooldown_seconds": 8.0
+    },
+    "cat.purr": {
+      "bus": "Effects",
+      "variants": {
+        "A": {
+          "file": "res://content/audio/cat/purr.wav",
+          "sha256": "7ce3f9ea8796ee5a744dca82e78d92554212b43609e2327ab090efdc8cc6c657",
+          "source_id": "original.cat.purr"
+        }
+      },
+      "selected": "A",
+      "volume_db": -15,
+      "pitch_min": 1.0,
+      "pitch_max": 1.0,
+      "max_instances": 1,
+      "near_tiles": 2.0,
+      "far_tiles": 12.0,
+      "loop": false,
+      "cooldown_seconds": 8.0
+    }
+  },
+  "sources": {
+    "synth.voice.bright.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 0.065,
+        "frequency": 648.5999999999999,
+        "variant_index": 0,
+        "seed": 10201657637948465873
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "6e30bc90dbad7181e7915db62beac9461d4635ced0238a44bc7bccc37ecafee5"
+    },
+    "synth.voice.bright.B": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 0.065,
+        "frequency": 690.0,
+        "variant_index": 1,
+        "seed": 18184834026511373723
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "77fedc816c85add538e2bc5812c55de3f05cfea4d59d2c777f3820898d42e103"
+    },
+    "synth.voice.bright.C": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 0.065,
+        "frequency": 731.4000000000001,
+        "variant_index": 2,
+        "seed": 15289964168715611865
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "7748db03d5f1cd867b052a512ae7d6c201cb9e6d243432761763b30f79aa54af"
+    },
+    "synth.hunger.hungry.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 1.05,
+        "frequency": 89.3,
+        "variant_index": 0,
+        "seed": 11277461311256401167
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "09d30f5c12cdc1a911e9fb96d6630915dd8d4e0cda21a29b5a925d786a1e41a4"
+    },
+    "synth.hunger.hungry.B": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 1.05,
+        "frequency": 95.0,
+        "variant_index": 1,
+        "seed": 556770612091198885
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "74d95559e5e72f222bf1cbe943f81dfb3271f220cb25d6d9902d2c3a533f8895"
+    },
+    "synth.hunger.hungry.C": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 1.05,
+        "frequency": 100.7,
+        "variant_index": 2,
+        "seed": 13633084367376978531
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "daeec47baee01140b4a6b001e32ebe7a316200b33a292b1049678303c1235b0e"
+    },
+    "synth.ambience.fire.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 12.0,
+        "frequency": 338.4,
+        "variant_index": 0,
+        "seed": 18230186860074765397
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "0d0484e9aaebd845e5231d57ee25974dca13db1abff3738712807d9f5abc0022"
+    },
+    "synth.ambience.fire.B": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 12.0,
+        "frequency": 360.0,
+        "variant_index": 1,
+        "seed": 14693692732795057681
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "ff1ae42b8196c9816babd38a57bd4fa28b3a57f7a5aef2beeae66cfc6a9d25ed"
+    },
+    "synth.ambience.fire.C": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 12.0,
+        "frequency": 381.6,
+        "variant_index": 2,
+        "seed": 10964108914943241203
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "10424142cc0852b33c90bc244a250bc3d88477ed031cef03402499286a72f87f"
+    },
+    "synth.ui.click.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 0.095,
+        "frequency": 601.5999999999999,
+        "variant_index": 0,
+        "seed": 4426491116986225820
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "65fdf40eca89a4ab17e0ebe3126f05c2b058f7c61db890220a8081417765bc1b"
+    },
+    "synth.ui.click.B": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 0.095,
+        "frequency": 640.0,
+        "variant_index": 1,
+        "seed": 10133142431611493637
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "f84861f6137a8198545532f92affb7b608ffda340125c5dbf788cd74872424a7"
+    },
+    "synth.ui.click.C": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 0.095,
+        "frequency": 678.4000000000001,
+        "variant_index": 2,
+        "seed": 16495553533408280814
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "4eb89505e0f667ec4c0c1b54395a8a0ab725b102f628277921703f302c800895"
+    },
+    "sf2.music.sample30.A": {
+      "kind": "soundfont",
+      "script": "tools/audio/render_music.py",
+      "parameters": {
+        "score": "tools/audio/score.json",
+        "score_sha256": "dd4d2f913336ecd41d0c62b987ca698c6065e2cef7e22fddaf2b1580bff33b24",
+        "soundfont": "TimGM6mb.sf2",
+        "author": "Tim Brechbill; David Bolton",
+        "soundfont_sha256": "c5378b62028c920cb11e4803327983fee2f2cdff5dc89c708e39da417e51c854",
+        "download_date": "2026-10-31",
+        "license_url": "https://sources.debian.org/src/timgm6mb-soundfont/1.3-5/debian/copyright/",
+        "programs": [
+          10,
+          24
+        ],
+        "settings": {
+          "bpm": 64,
+          "melody_velocity": 50,
+          "guitar_velocity": 36,
+          "repeats": 1
+        },
+        "variant": "A",
+        "rate": 24000,
+        "seconds": 30.0,
+        "musicbox_only": false,
+        "fluid_version": "FluidSynth runtime version 2.6.1"
+      },
+      "license": "GPL-2.0 (soundfont and conservatively licensed rendered recording); original composition project-original",
+      "url": "https://mirrors.tuna.tsinghua.edu.cn/debian/pool/main/t/timgm6mb-soundfont/timgm6mb-soundfont_1.3-5_all.deb",
+      "sha256": "5fbedaaed2c113b8fbfc60fcdec1bc602bf58a1b4eeb8095b7b4367ccaca09a9"
+    },
+    "sf2.music.sample30.B": {
+      "kind": "soundfont",
+      "script": "tools/audio/render_music.py",
+      "parameters": {
+        "score": "tools/audio/score.json",
+        "score_sha256": "dd4d2f913336ecd41d0c62b987ca698c6065e2cef7e22fddaf2b1580bff33b24",
+        "soundfont": "TimGM6mb.sf2",
+        "author": "Tim Brechbill; David Bolton",
+        "soundfont_sha256": "c5378b62028c920cb11e4803327983fee2f2cdff5dc89c708e39da417e51c854",
+        "download_date": "2026-10-31",
+        "license_url": "https://sources.debian.org/src/timgm6mb-soundfont/1.3-5/debian/copyright/",
+        "programs": [
+          10,
+          24
+        ],
+        "settings": {
+          "bpm": 64,
+          "melody_velocity": 50,
+          "guitar_velocity": 36,
+          "repeats": 1
+        },
+        "variant": "B",
+        "rate": 24000,
+        "seconds": 30.0,
+        "musicbox_only": false,
+        "fluid_version": "FluidSynth runtime version 2.6.1"
+      },
+      "license": "GPL-2.0 (soundfont and conservatively licensed rendered recording); original composition project-original",
+      "url": "https://mirrors.tuna.tsinghua.edu.cn/debian/pool/main/t/timgm6mb-soundfont/timgm6mb-soundfont_1.3-5_all.deb",
+      "sha256": "175e0631766b4a9c0f7d5907a7df8ebcbe55516ac8a007aff49d8c95535bfb79"
+    },
+    "sf2.music.sample30.C": {
+      "kind": "soundfont",
+      "script": "tools/audio/render_music.py",
+      "parameters": {
+        "score": "tools/audio/score.json",
+        "score_sha256": "dd4d2f913336ecd41d0c62b987ca698c6065e2cef7e22fddaf2b1580bff33b24",
+        "soundfont": "TimGM6mb.sf2",
+        "author": "Tim Brechbill; David Bolton",
+        "soundfont_sha256": "c5378b62028c920cb11e4803327983fee2f2cdff5dc89c708e39da417e51c854",
+        "download_date": "2026-10-31",
+        "license_url": "https://sources.debian.org/src/timgm6mb-soundfont/1.3-5/debian/copyright/",
+        "programs": [
+          10,
+          24
+        ],
+        "settings": {
+          "bpm": 64,
+          "melody_velocity": 50,
+          "guitar_velocity": 36,
+          "repeats": 1
+        },
+        "variant": "C",
+        "rate": 24000,
+        "seconds": 30.0,
+        "musicbox_only": false,
+        "fluid_version": "FluidSynth runtime version 2.6.1"
+      },
+      "license": "GPL-2.0 (soundfont and conservatively licensed rendered recording); original composition project-original",
+      "url": "https://mirrors.tuna.tsinghua.edu.cn/debian/pool/main/t/timgm6mb-soundfont/timgm6mb-soundfont_1.3-5_all.deb",
+      "sha256": "52288345aecf571e37f4f76d4d3855d75787b2e32a11f1c824195076f92dfbcc"
+    },
+    "synth.voice.soft.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 0.105,
+        "frequency": 399.5,
+        "variant_index": 0,
+        "seed": 16582825823937347417
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "bcf2ba5fab86cfabea7b337f56d0c593bddf02d1bc979009f766599daf6d6102"
+    },
+    "synth.voice.crisp.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 0.075,
+        "frequency": 479.4,
+        "variant_index": 0,
+        "seed": 14265692986698913509
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "b7fc4ff2f31b52c4d408a90d5559f4b8ce33532f284ac4e9f5871cd1b22279e6"
+    },
+    "synth.voice.low.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 0.145,
+        "frequency": 220.89999999999998,
+        "variant_index": 0,
+        "seed": 3804185438484399699
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "dd2c59fe2d16793d365b68ce04ab80ceae41de3cec64e27e0dc0d76023acf679"
+    },
+    "synth.hunger.mild.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 0.65,
+        "frequency": 108.1,
+        "variant_index": 0,
+        "seed": 6253226700479216440
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "d9fecbdb07c3e03887a4c5a824b8bd5baf0590155a1a95a2de5e2609f5e9a11b"
+    },
+    "synth.hunger.very_hungry.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 1.45,
+        "frequency": 70.5,
+        "variant_index": 0,
+        "seed": 6425401473207550181
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "d0f6bdaee84efcf7bdf258a664482e832b0bafdfc993962a5cbcb6a9a21c6d76"
+    },
+    "synth.meal.satisfied.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 0.38,
+        "frequency": 366.59999999999997,
+        "variant_index": 0,
+        "seed": 8298834462071537341
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "582b31f98403f5c5e6b353818b642f8eb71019ff1f6cc535181c3322e25ff051"
+    },
+    "synth.tree.hit.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 0.17,
+        "frequency": 159.79999999999998,
+        "variant_index": 0,
+        "seed": 1101445174166410582
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "29a9eb7f893a68cf46b9522c769bd15d205abdb59b25b24c3604e9d36382d00c"
+    },
+    "synth.wood.fall.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 0.65,
+        "frequency": 89.3,
+        "variant_index": 0,
+        "seed": 9609997329914423644
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "5f5c8062db01d34c41354cb181b01c11f53d225323901cc9e34ddb63c7ea1384"
+    },
+    "synth.fire.ignite.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 0.7,
+        "frequency": 169.2,
+        "variant_index": 0,
+        "seed": 1970298688786925509
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "eb961e1a24bcd936904bc6be45f72baa9b17fb1d7e5d9c5d7d7df8e2228aca64"
+    },
+    "synth.fire.refuel.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 0.7,
+        "frequency": 169.2,
+        "variant_index": 0,
+        "seed": 13276788546315651086
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "ce69f5e750fd76c4304517a9fe6c942fe850217ebd8f70207f0e31a0fb648d50"
+    },
+    "synth.meal.bite.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 0.18,
+        "frequency": 131.6,
+        "variant_index": 0,
+        "seed": 13833937153533539223
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "7751dc5ee2d310658eef29761b275c4bb303b5e6f3d3324566e63d3a49e6013b"
+    },
+    "synth.meal.chew.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 0.18,
+        "frequency": 131.6,
+        "variant_index": 0,
+        "seed": 8424455548331509284
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "2a01c9103fb428c248000fa8c79fbaf33a2f6e4b52f4c65765e5c7fb575d760b"
+    },
+    "synth.fishing.cast.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 0.42,
+        "frequency": 300.79999999999995,
+        "variant_index": 0,
+        "seed": 2887579926419746560
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "92c0c0aac320ee2cfaea217cd15ce4a03f5854b541123e87f68f930706a6bdf7"
+    },
+    "synth.fishing.water.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 0.42,
+        "frequency": 300.79999999999995,
+        "variant_index": 0,
+        "seed": 7280974163613257182
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "fe65f0e81d14c692215b34e0be5c1e0f37cbfbb0074a88627bfd7136d1fe4af5"
+    },
+    "synth.fishing.bite.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 0.24,
+        "frequency": 714.4,
+        "variant_index": 0,
+        "seed": 9836995159902372899
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "dad49bb8d132027432d2e86f32fe6288ca43f5544f1cfc84e512c2494898bde6"
+    },
+    "synth.fishing.reel.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 0.42,
+        "frequency": 300.79999999999995,
+        "variant_index": 0,
+        "seed": 8504097880128649795
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "23cd08e9b9c5c734b84a594e1a1201c9e32cd59e001658c9c1db64ec3db1ca75"
+    },
+    "synth.fish.flap.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 0.42,
+        "frequency": 300.79999999999995,
+        "variant_index": 0,
+        "seed": 14551861660960781792
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "a19d770a7aba6d099ebdb12fa251a52b30fc17d3406e46d918fa080e51881365"
+    },
+    "synth.fish.stock.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 0.42,
+        "frequency": 300.79999999999995,
+        "variant_index": 0,
+        "seed": 13578344573230899515
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "d7a99afeffa3991832a88dfe649c7d1cf439125bbfcddf8fa45c434de8c4bf6a"
+    },
+    "synth.fish.release.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 0.42,
+        "frequency": 300.79999999999995,
+        "variant_index": 0,
+        "seed": 9689228581714337301
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "475721fcc0c0efab069ff70f9bb7597cc504ac00c16b40cb2ebfdf047b1c318d"
+    },
+    "synth.ui.open.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 0.095,
+        "frequency": 601.5999999999999,
+        "variant_index": 0,
+        "seed": 16698585039141931071
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "65fdf40eca89a4ab17e0ebe3126f05c2b058f7c61db890220a8081417765bc1b"
+    },
+    "synth.ui.close.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 0.095,
+        "frequency": 601.5999999999999,
+        "variant_index": 0,
+        "seed": 12071107819481430509
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "e7bf8236a50b7d552b3a13e37e6bf0287c696157dda875c85e4ac9b7b132b148"
+    },
+    "synth.ui.fish_card.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 0.095,
+        "frequency": 601.5999999999999,
+        "variant_index": 0,
+        "seed": 13557800986056603047
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "65fdf40eca89a4ab17e0ebe3126f05c2b058f7c61db890220a8081417765bc1b"
+    },
+    "synth.ui.invite.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 0.095,
+        "frequency": 601.5999999999999,
+        "variant_index": 0,
+        "seed": 1340805563337701397
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "65fdf40eca89a4ab17e0ebe3126f05c2b058f7c61db890220a8081417765bc1b"
+    },
+    "synth.work.pickup.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 0.09,
+        "frequency": 338.4,
+        "variant_index": 0,
+        "seed": 3044277493236669712
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "f564715ba4953946e65b17460d93578e2d22faff741f28863876f896e8ac7662"
+    },
+    "synth.work.deposit.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 0.09,
+        "frequency": 338.4,
+        "variant_index": 0,
+        "seed": 10107034430050777376
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "eb012b5ffdf9b4b6bbd7e03ea667b56975a4e799187e23845185b522a43a4264"
+    },
+    "synth.gomoku.stone.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 0.09,
+        "frequency": 338.4,
+        "variant_index": 0,
+        "seed": 4590747021475145100
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "8be9140947631bad71fcb1b73d27711346192b240a493f29bca28bb32c4e7772"
+    },
+    "synth.ambience.waves.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 12.0,
+        "frequency": 338.4,
+        "variant_index": 0,
+        "rms_target": 0.14,
+        "seed": 4023528759572978074
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "2d69195f0fe91f565aa33636fad4c9a6163848488942daf91c82400edd202477"
+    },
+    "synth.ambience.wind.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 12.0,
+        "frequency": 338.4,
+        "variant_index": 0,
+        "rms_target": 0.14,
+        "seed": 13029681649003946049
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "f434815da7f6824b004c2731d48fabdde0443a4e9afb86b60462a709d1e61f59"
+    },
+    "synth.ambience.birds.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 12.0,
+        "frequency": 338.4,
+        "variant_index": 0,
+        "rms_target": 0.14,
+        "seed": 9974619939730589069
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "22006d2ec19c2c54bb4d8af2cc858b5df5296f0e2c24655bec2e8dee2e620d61"
+    },
+    "synth.ambience.insects.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 12.0,
+        "frequency": 338.4,
+        "variant_index": 0,
+        "rms_target": 0.14,
+        "seed": 3720652509065415137
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "b25c8694744acf9772ec7530d70c0d7973d730f39d63b623eb454022abdeceb2"
+    },
+    "synth.ambience.rain.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 12.0,
+        "frequency": 338.4,
+        "variant_index": 0,
+        "rms_target": 0.14,
+        "seed": 1410774537209722314
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "7948c819f462b784dc06b6dc1d603d2e6966ed839b8fe4ae72ca7f17f0216ec6"
+    },
+    "synth.ambience.sizzle.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 12.0,
+        "frequency": 338.4,
+        "variant_index": 0,
+        "rms_target": 0.14,
+        "seed": 6583660584380838697
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "cece9f96d9bc25cbca868593f8ea827b981680bf1eb5514de954fc29faad073f"
+    },
+    "synth.step.grass.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 0.14,
+        "frequency": 150.39999999999998,
+        "variant_index": 0,
+        "rms_target": 0.065,
+        "seed": 1256357357899773302
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "6f5b4d5010285690b013ad5f3fe2b4b255c6a420a3b5e985cb6922aa101141f9"
+    },
+    "synth.step.sand.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 0.14,
+        "frequency": 112.8,
+        "variant_index": 0,
+        "rms_target": 0.065,
+        "seed": 10876555684792865462
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "966f5ba0da9507f9f0f8e65846c749d6525c246abda3c1537d1d3330d9e4c15c"
+    },
+    "synth.step.wood.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 0.14,
+        "frequency": 197.39999999999998,
+        "variant_index": 0,
+        "rms_target": 0.065,
+        "seed": 15197368990995516199
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "6c65efed3d2e1e3ba6a03eac56e2d81350715cc1128bf1077cdd251054d02c50"
+    },
+    "synth.step.stone.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize.py",
+      "parameters": {
+        "algorithm": "pastoral-sfx-v1",
+        "sample_rate": 24000,
+        "seconds": 0.14,
+        "frequency": 319.59999999999997,
+        "variant_index": 0,
+        "rms_target": 0.065,
+        "seed": 1358361302078102662
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "64766bc28cc42992a934710798e857c7b339ca1da06f064de9352fea1642cf0b"
+    },
+    "sf2.music.day.A": {
+      "kind": "soundfont",
+      "script": "tools/audio/render_music.py",
+      "parameters": {
+        "score": "tools/audio/score.json",
+        "score_sha256": "dd4d2f913336ecd41d0c62b987ca698c6065e2cef7e22fddaf2b1580bff33b24",
+        "soundfont": "TimGM6mb.sf2",
+        "author": "Tim Brechbill; David Bolton",
+        "soundfont_sha256": "c5378b62028c920cb11e4803327983fee2f2cdff5dc89c708e39da417e51c854",
+        "download_date": "2026-10-31",
+        "license_url": "https://sources.debian.org/src/timgm6mb-soundfont/1.3-5/debian/copyright/",
+        "programs": [
+          10,
+          24
+        ],
+        "settings": {
+          "bpm": 72,
+          "melody_velocity": 54,
+          "guitar_velocity": 41,
+          "repeats": 2
+        },
+        "variant": "A",
+        "rate": 24000,
+        "seconds": 80.0,
+        "musicbox_only": false,
+        "fluid_version": "FluidSynth runtime version 2.6.1"
+      },
+      "license": "GPL-2.0 (soundfont and conservatively licensed rendered recording); original composition project-original",
+      "url": "https://mirrors.tuna.tsinghua.edu.cn/debian/pool/main/t/timgm6mb-soundfont/timgm6mb-soundfont_1.3-5_all.deb",
+      "sha256": "0fd5596c2ca7837c334d38dc92c8cb70079a751e3e33b9d6425af0b2cce09ee3"
+    },
+    "sf2.music.dusk.A": {
+      "kind": "soundfont",
+      "script": "tools/audio/render_music.py",
+      "parameters": {
+        "score": "tools/audio/score.json",
+        "score_sha256": "dd4d2f913336ecd41d0c62b987ca698c6065e2cef7e22fddaf2b1580bff33b24",
+        "soundfont": "TimGM6mb.sf2",
+        "author": "Tim Brechbill; David Bolton",
+        "soundfont_sha256": "c5378b62028c920cb11e4803327983fee2f2cdff5dc89c708e39da417e51c854",
+        "download_date": "2026-10-31",
+        "license_url": "https://sources.debian.org/src/timgm6mb-soundfont/1.3-5/debian/copyright/",
+        "programs": [
+          10,
+          24
+        ],
+        "settings": {
+          "bpm": 66,
+          "melody_velocity": 48,
+          "guitar_velocity": 36,
+          "repeats": 2
+        },
+        "variant": "A",
+        "rate": 24000,
+        "seconds": 87.27272727272727,
+        "musicbox_only": false,
+        "fluid_version": "FluidSynth runtime version 2.6.1"
+      },
+      "license": "GPL-2.0 (soundfont and conservatively licensed rendered recording); original composition project-original",
+      "url": "https://mirrors.tuna.tsinghua.edu.cn/debian/pool/main/t/timgm6mb-soundfont/timgm6mb-soundfont_1.3-5_all.deb",
+      "sha256": "9abdfa6eb75d3fea991bd6a1b9043c1eca90a1ed0525e6f43e3659d1f89ca510"
+    },
+    "sf2.music.night.A": {
+      "kind": "soundfont",
+      "script": "tools/audio/render_music.py",
+      "parameters": {
+        "score": "tools/audio/score.json",
+        "score_sha256": "dd4d2f913336ecd41d0c62b987ca698c6065e2cef7e22fddaf2b1580bff33b24",
+        "soundfont": "TimGM6mb.sf2",
+        "author": "Tim Brechbill; David Bolton",
+        "soundfont_sha256": "c5378b62028c920cb11e4803327983fee2f2cdff5dc89c708e39da417e51c854",
+        "download_date": "2026-10-31",
+        "license_url": "https://sources.debian.org/src/timgm6mb-soundfont/1.3-5/debian/copyright/",
+        "programs": [
+          10,
+          24
+        ],
+        "settings": {
+          "bpm": 54,
+          "melody_velocity": 42,
+          "guitar_velocity": 28,
+          "repeats": 2
+        },
+        "variant": "A",
+        "rate": 24000,
+        "seconds": 106.66666666666667,
+        "musicbox_only": false,
+        "fluid_version": "FluidSynth runtime version 2.6.1"
+      },
+      "license": "GPL-2.0 (soundfont and conservatively licensed rendered recording); original composition project-original",
+      "url": "https://mirrors.tuna.tsinghua.edu.cn/debian/pool/main/t/timgm6mb-soundfont/timgm6mb-soundfont_1.3-5_all.deb",
+      "sha256": "2692941dba1403115ab874a3aa1034afaf612a824d31806091062913a27abdcb"
+    },
+    "sf2.music.rain.A": {
+      "kind": "soundfont",
+      "script": "tools/audio/render_music.py",
+      "parameters": {
+        "score": "tools/audio/score.json",
+        "score_sha256": "dd4d2f913336ecd41d0c62b987ca698c6065e2cef7e22fddaf2b1580bff33b24",
+        "soundfont": "TimGM6mb.sf2",
+        "author": "Tim Brechbill; David Bolton",
+        "soundfont_sha256": "c5378b62028c920cb11e4803327983fee2f2cdff5dc89c708e39da417e51c854",
+        "download_date": "2026-10-31",
+        "license_url": "https://sources.debian.org/src/timgm6mb-soundfont/1.3-5/debian/copyright/",
+        "programs": [
+          10,
+          24
+        ],
+        "settings": {
+          "bpm": 62,
+          "melody_velocity": 46,
+          "guitar_velocity": 34,
+          "repeats": 2
+        },
+        "variant": "A",
+        "rate": 24000,
+        "seconds": 92.90322580645162,
+        "musicbox_only": false,
+        "fluid_version": "FluidSynth runtime version 2.6.1"
+      },
+      "license": "GPL-2.0 (soundfont and conservatively licensed rendered recording); original composition project-original",
+      "url": "https://mirrors.tuna.tsinghua.edu.cn/debian/pool/main/t/timgm6mb-soundfont/timgm6mb-soundfont_1.3-5_all.deb",
+      "sha256": "4023f68790a567f2ff124c8bec2cd6d1389ded4412af8ace12ed2199f0358c8a"
+    },
+    "sf2.music.fireside.A": {
+      "kind": "soundfont",
+      "script": "tools/audio/render_music.py",
+      "parameters": {
+        "score": "tools/audio/score.json",
+        "score_sha256": "dd4d2f913336ecd41d0c62b987ca698c6065e2cef7e22fddaf2b1580bff33b24",
+        "soundfont": "TimGM6mb.sf2",
+        "author": "Tim Brechbill; David Bolton",
+        "soundfont_sha256": "c5378b62028c920cb11e4803327983fee2f2cdff5dc89c708e39da417e51c854",
+        "download_date": "2026-10-31",
+        "license_url": "https://sources.debian.org/src/timgm6mb-soundfont/1.3-5/debian/copyright/",
+        "programs": [
+          10,
+          24
+        ],
+        "settings": {
+          "bpm": 68,
+          "melody_velocity": 50,
+          "guitar_velocity": 42,
+          "repeats": 2
+        },
+        "variant": "A",
+        "rate": 24000,
+        "seconds": 84.70588235294117,
+        "musicbox_only": false,
+        "fluid_version": "FluidSynth runtime version 2.6.1"
+      },
+      "license": "GPL-2.0 (soundfont and conservatively licensed rendered recording); original composition project-original",
+      "url": "https://mirrors.tuna.tsinghua.edu.cn/debian/pool/main/t/timgm6mb-soundfont/timgm6mb-soundfont_1.3-5_all.deb",
+      "sha256": "0de414a66ef6ea2b9b77da768cdb68419ca02421363207f5ba258d74928caaf5"
+    },
+    "sf2.music.moon.A": {
+      "kind": "soundfont",
+      "script": "tools/audio/render_music.py",
+      "parameters": {
+        "score": "tools/audio/score.json",
+        "score_sha256": "dd4d2f913336ecd41d0c62b987ca698c6065e2cef7e22fddaf2b1580bff33b24",
+        "soundfont": "TimGM6mb.sf2",
+        "author": "Tim Brechbill; David Bolton",
+        "soundfont_sha256": "c5378b62028c920cb11e4803327983fee2f2cdff5dc89c708e39da417e51c854",
+        "download_date": "2026-10-31",
+        "license_url": "https://sources.debian.org/src/timgm6mb-soundfont/1.3-5/debian/copyright/",
+        "programs": [
+          10
+        ],
+        "settings": {
+          "bpm": 52,
+          "melody_velocity": 39,
+          "guitar_velocity": 0,
+          "repeats": 2
+        },
+        "variant": "A",
+        "rate": 24000,
+        "seconds": 110.76923076923077,
+        "musicbox_only": false,
+        "fluid_version": "FluidSynth runtime version 2.6.1"
+      },
+      "license": "GPL-2.0 (soundfont and conservatively licensed rendered recording); original composition project-original",
+      "url": "https://mirrors.tuna.tsinghua.edu.cn/debian/pool/main/t/timgm6mb-soundfont/timgm6mb-soundfont_1.3-5_all.deb",
+      "sha256": "a3ec0f9152cc389aedf4ab5a3dd55a0264c2927d3d67c7d6d647ea135a7a88b1"
+    },
+    "sf2.music.day.B": {
+      "kind": "soundfont",
+      "script": "tools/audio/render_music.py",
+      "parameters": {
+        "score": "tools/audio/score.json",
+        "score_sha256": "dd4d2f913336ecd41d0c62b987ca698c6065e2cef7e22fddaf2b1580bff33b24",
+        "soundfont": "TimGM6mb.sf2",
+        "author": "Tim Brechbill; David Bolton",
+        "soundfont_sha256": "c5378b62028c920cb11e4803327983fee2f2cdff5dc89c708e39da417e51c854",
+        "download_date": "2026-10-31",
+        "license_url": "https://sources.debian.org/src/timgm6mb-soundfont/1.3-5/debian/copyright/",
+        "programs": [
+          10,
+          24
+        ],
+        "settings": {
+          "bpm": 72,
+          "melody_velocity": 54,
+          "guitar_velocity": 41,
+          "repeats": 2
+        },
+        "variant": "B",
+        "rate": 24000,
+        "seconds": 80.0,
+        "musicbox_only": false,
+        "fluid_version": "FluidSynth runtime version 2.6.1"
+      },
+      "license": "GPL-2.0 (soundfont and conservatively licensed rendered recording); original composition project-original",
+      "url": "https://mirrors.tuna.tsinghua.edu.cn/debian/pool/main/t/timgm6mb-soundfont/timgm6mb-soundfont_1.3-5_all.deb",
+      "sha256": "1dbe0e09efe2fab365cabf2d14ac94dbbcfb1739648f8389662bcecf6300f1e5"
+    },
+    "sf2.music.day.C": {
+      "kind": "soundfont",
+      "script": "tools/audio/render_music.py",
+      "parameters": {
+        "score": "tools/audio/score.json",
+        "score_sha256": "dd4d2f913336ecd41d0c62b987ca698c6065e2cef7e22fddaf2b1580bff33b24",
+        "soundfont": "TimGM6mb.sf2",
+        "author": "Tim Brechbill; David Bolton",
+        "soundfont_sha256": "c5378b62028c920cb11e4803327983fee2f2cdff5dc89c708e39da417e51c854",
+        "download_date": "2026-10-31",
+        "license_url": "https://sources.debian.org/src/timgm6mb-soundfont/1.3-5/debian/copyright/",
+        "programs": [
+          10,
+          24
+        ],
+        "settings": {
+          "bpm": 72,
+          "melody_velocity": 54,
+          "guitar_velocity": 41,
+          "repeats": 2
+        },
+        "variant": "C",
+        "rate": 24000,
+        "seconds": 80.0,
+        "musicbox_only": false,
+        "fluid_version": "FluidSynth runtime version 2.6.1"
+      },
+      "license": "GPL-2.0 (soundfont and conservatively licensed rendered recording); original composition project-original",
+      "url": "https://mirrors.tuna.tsinghua.edu.cn/debian/pool/main/t/timgm6mb-soundfont/timgm6mb-soundfont_1.3-5_all.deb",
+      "sha256": "ccd2f1721f86e5a6df1ddc398b13f234c4cbb134d599a137a824f876e8cafaf3"
+    },
+    "sf2.music.dusk.B": {
+      "kind": "soundfont",
+      "script": "tools/audio/render_music.py",
+      "parameters": {
+        "score": "tools/audio/score.json",
+        "score_sha256": "dd4d2f913336ecd41d0c62b987ca698c6065e2cef7e22fddaf2b1580bff33b24",
+        "soundfont": "TimGM6mb.sf2",
+        "author": "Tim Brechbill; David Bolton",
+        "soundfont_sha256": "c5378b62028c920cb11e4803327983fee2f2cdff5dc89c708e39da417e51c854",
+        "download_date": "2026-10-31",
+        "license_url": "https://sources.debian.org/src/timgm6mb-soundfont/1.3-5/debian/copyright/",
+        "programs": [
+          10,
+          24
+        ],
+        "settings": {
+          "bpm": 66,
+          "melody_velocity": 48,
+          "guitar_velocity": 36,
+          "repeats": 2
+        },
+        "variant": "B",
+        "rate": 24000,
+        "seconds": 87.27272727272727,
+        "musicbox_only": false,
+        "fluid_version": "FluidSynth runtime version 2.6.1"
+      },
+      "license": "GPL-2.0 (soundfont and conservatively licensed rendered recording); original composition project-original",
+      "url": "https://mirrors.tuna.tsinghua.edu.cn/debian/pool/main/t/timgm6mb-soundfont/timgm6mb-soundfont_1.3-5_all.deb",
+      "sha256": "af2ee57825827fa6b7836e8f4993fdb7733637073fd7b5537bc7cd4878bbd871"
+    },
+    "sf2.music.dusk.C": {
+      "kind": "soundfont",
+      "script": "tools/audio/render_music.py",
+      "parameters": {
+        "score": "tools/audio/score.json",
+        "score_sha256": "dd4d2f913336ecd41d0c62b987ca698c6065e2cef7e22fddaf2b1580bff33b24",
+        "soundfont": "TimGM6mb.sf2",
+        "author": "Tim Brechbill; David Bolton",
+        "soundfont_sha256": "c5378b62028c920cb11e4803327983fee2f2cdff5dc89c708e39da417e51c854",
+        "download_date": "2026-10-31",
+        "license_url": "https://sources.debian.org/src/timgm6mb-soundfont/1.3-5/debian/copyright/",
+        "programs": [
+          10,
+          24
+        ],
+        "settings": {
+          "bpm": 66,
+          "melody_velocity": 48,
+          "guitar_velocity": 36,
+          "repeats": 2
+        },
+        "variant": "C",
+        "rate": 24000,
+        "seconds": 87.27272727272727,
+        "musicbox_only": false,
+        "fluid_version": "FluidSynth runtime version 2.6.1"
+      },
+      "license": "GPL-2.0 (soundfont and conservatively licensed rendered recording); original composition project-original",
+      "url": "https://mirrors.tuna.tsinghua.edu.cn/debian/pool/main/t/timgm6mb-soundfont/timgm6mb-soundfont_1.3-5_all.deb",
+      "sha256": "a2fc9ac0ad9361f4428756a9f3f3b0eb27a66ca43e5d7dfe8371b2c79050fc6f"
+    },
+    "sf2.music.night.B": {
+      "kind": "soundfont",
+      "script": "tools/audio/render_music.py",
+      "parameters": {
+        "score": "tools/audio/score.json",
+        "score_sha256": "dd4d2f913336ecd41d0c62b987ca698c6065e2cef7e22fddaf2b1580bff33b24",
+        "soundfont": "TimGM6mb.sf2",
+        "author": "Tim Brechbill; David Bolton",
+        "soundfont_sha256": "c5378b62028c920cb11e4803327983fee2f2cdff5dc89c708e39da417e51c854",
+        "download_date": "2026-10-31",
+        "license_url": "https://sources.debian.org/src/timgm6mb-soundfont/1.3-5/debian/copyright/",
+        "programs": [
+          10,
+          24
+        ],
+        "settings": {
+          "bpm": 54,
+          "melody_velocity": 42,
+          "guitar_velocity": 28,
+          "repeats": 2
+        },
+        "variant": "B",
+        "rate": 24000,
+        "seconds": 106.66666666666667,
+        "musicbox_only": false,
+        "fluid_version": "FluidSynth runtime version 2.6.1"
+      },
+      "license": "GPL-2.0 (soundfont and conservatively licensed rendered recording); original composition project-original",
+      "url": "https://mirrors.tuna.tsinghua.edu.cn/debian/pool/main/t/timgm6mb-soundfont/timgm6mb-soundfont_1.3-5_all.deb",
+      "sha256": "13464660a2594970e834903065ed962fa750b97a356b3f801e45023521309705"
+    },
+    "sf2.music.night.C": {
+      "kind": "soundfont",
+      "script": "tools/audio/render_music.py",
+      "parameters": {
+        "score": "tools/audio/score.json",
+        "score_sha256": "dd4d2f913336ecd41d0c62b987ca698c6065e2cef7e22fddaf2b1580bff33b24",
+        "soundfont": "TimGM6mb.sf2",
+        "author": "Tim Brechbill; David Bolton",
+        "soundfont_sha256": "c5378b62028c920cb11e4803327983fee2f2cdff5dc89c708e39da417e51c854",
+        "download_date": "2026-10-31",
+        "license_url": "https://sources.debian.org/src/timgm6mb-soundfont/1.3-5/debian/copyright/",
+        "programs": [
+          10,
+          24
+        ],
+        "settings": {
+          "bpm": 54,
+          "melody_velocity": 42,
+          "guitar_velocity": 28,
+          "repeats": 2
+        },
+        "variant": "C",
+        "rate": 24000,
+        "seconds": 106.66666666666667,
+        "musicbox_only": false,
+        "fluid_version": "FluidSynth runtime version 2.6.1"
+      },
+      "license": "GPL-2.0 (soundfont and conservatively licensed rendered recording); original composition project-original",
+      "url": "https://mirrors.tuna.tsinghua.edu.cn/debian/pool/main/t/timgm6mb-soundfont/timgm6mb-soundfont_1.3-5_all.deb",
+      "sha256": "7c6ea6b6a09fb1bef159f5ad17e7cf8b04997bed580ab3c0c5b887185d70dc91"
+    },
+    "sf2.music.rain.B": {
+      "kind": "soundfont",
+      "script": "tools/audio/render_music.py",
+      "parameters": {
+        "score": "tools/audio/score.json",
+        "score_sha256": "dd4d2f913336ecd41d0c62b987ca698c6065e2cef7e22fddaf2b1580bff33b24",
+        "soundfont": "TimGM6mb.sf2",
+        "author": "Tim Brechbill; David Bolton",
+        "soundfont_sha256": "c5378b62028c920cb11e4803327983fee2f2cdff5dc89c708e39da417e51c854",
+        "download_date": "2026-10-31",
+        "license_url": "https://sources.debian.org/src/timgm6mb-soundfont/1.3-5/debian/copyright/",
+        "programs": [
+          10,
+          24
+        ],
+        "settings": {
+          "bpm": 62,
+          "melody_velocity": 46,
+          "guitar_velocity": 34,
+          "repeats": 2
+        },
+        "variant": "B",
+        "rate": 24000,
+        "seconds": 92.90322580645162,
+        "musicbox_only": false,
+        "fluid_version": "FluidSynth runtime version 2.6.1"
+      },
+      "license": "GPL-2.0 (soundfont and conservatively licensed rendered recording); original composition project-original",
+      "url": "https://mirrors.tuna.tsinghua.edu.cn/debian/pool/main/t/timgm6mb-soundfont/timgm6mb-soundfont_1.3-5_all.deb",
+      "sha256": "386e16b995a6911435a7c4c2ca5a95b1f6474e7b3e3f972d96bf710720c83304"
+    },
+    "sf2.music.rain.C": {
+      "kind": "soundfont",
+      "script": "tools/audio/render_music.py",
+      "parameters": {
+        "score": "tools/audio/score.json",
+        "score_sha256": "dd4d2f913336ecd41d0c62b987ca698c6065e2cef7e22fddaf2b1580bff33b24",
+        "soundfont": "TimGM6mb.sf2",
+        "author": "Tim Brechbill; David Bolton",
+        "soundfont_sha256": "c5378b62028c920cb11e4803327983fee2f2cdff5dc89c708e39da417e51c854",
+        "download_date": "2026-10-31",
+        "license_url": "https://sources.debian.org/src/timgm6mb-soundfont/1.3-5/debian/copyright/",
+        "programs": [
+          10,
+          24
+        ],
+        "settings": {
+          "bpm": 62,
+          "melody_velocity": 46,
+          "guitar_velocity": 34,
+          "repeats": 2
+        },
+        "variant": "C",
+        "rate": 24000,
+        "seconds": 92.90322580645162,
+        "musicbox_only": false,
+        "fluid_version": "FluidSynth runtime version 2.6.1"
+      },
+      "license": "GPL-2.0 (soundfont and conservatively licensed rendered recording); original composition project-original",
+      "url": "https://mirrors.tuna.tsinghua.edu.cn/debian/pool/main/t/timgm6mb-soundfont/timgm6mb-soundfont_1.3-5_all.deb",
+      "sha256": "2b8c0a9a734975ba3012d1b9d4dab552bd90bf787a063dfb9ad2cacf69c1544c"
+    },
+    "sf2.music.fireside.B": {
+      "kind": "soundfont",
+      "script": "tools/audio/render_music.py",
+      "parameters": {
+        "score": "tools/audio/score.json",
+        "score_sha256": "dd4d2f913336ecd41d0c62b987ca698c6065e2cef7e22fddaf2b1580bff33b24",
+        "soundfont": "TimGM6mb.sf2",
+        "author": "Tim Brechbill; David Bolton",
+        "soundfont_sha256": "c5378b62028c920cb11e4803327983fee2f2cdff5dc89c708e39da417e51c854",
+        "download_date": "2026-10-31",
+        "license_url": "https://sources.debian.org/src/timgm6mb-soundfont/1.3-5/debian/copyright/",
+        "programs": [
+          10,
+          24
+        ],
+        "settings": {
+          "bpm": 68,
+          "melody_velocity": 50,
+          "guitar_velocity": 42,
+          "repeats": 2
+        },
+        "variant": "B",
+        "rate": 24000,
+        "seconds": 84.70588235294117,
+        "musicbox_only": false,
+        "fluid_version": "FluidSynth runtime version 2.6.1"
+      },
+      "license": "GPL-2.0 (soundfont and conservatively licensed rendered recording); original composition project-original",
+      "url": "https://mirrors.tuna.tsinghua.edu.cn/debian/pool/main/t/timgm6mb-soundfont/timgm6mb-soundfont_1.3-5_all.deb",
+      "sha256": "f742da6bea5eef0245a51f538d2774c9b97fe1b73ee309e1693466f5eb3ac5fd"
+    },
+    "sf2.music.fireside.C": {
+      "kind": "soundfont",
+      "script": "tools/audio/render_music.py",
+      "parameters": {
+        "score": "tools/audio/score.json",
+        "score_sha256": "dd4d2f913336ecd41d0c62b987ca698c6065e2cef7e22fddaf2b1580bff33b24",
+        "soundfont": "TimGM6mb.sf2",
+        "author": "Tim Brechbill; David Bolton",
+        "soundfont_sha256": "c5378b62028c920cb11e4803327983fee2f2cdff5dc89c708e39da417e51c854",
+        "download_date": "2026-10-31",
+        "license_url": "https://sources.debian.org/src/timgm6mb-soundfont/1.3-5/debian/copyright/",
+        "programs": [
+          10,
+          24
+        ],
+        "settings": {
+          "bpm": 68,
+          "melody_velocity": 50,
+          "guitar_velocity": 42,
+          "repeats": 2
+        },
+        "variant": "C",
+        "rate": 24000,
+        "seconds": 84.70588235294117,
+        "musicbox_only": false,
+        "fluid_version": "FluidSynth runtime version 2.6.1"
+      },
+      "license": "GPL-2.0 (soundfont and conservatively licensed rendered recording); original composition project-original",
+      "url": "https://mirrors.tuna.tsinghua.edu.cn/debian/pool/main/t/timgm6mb-soundfont/timgm6mb-soundfont_1.3-5_all.deb",
+      "sha256": "570192cd3fc6728cdb075c604c127d4dd9a4795c97af506aab8fcc919841de10"
+    },
+    "sf2.music.moon.B": {
+      "kind": "soundfont",
+      "script": "tools/audio/render_music.py",
+      "parameters": {
+        "score": "tools/audio/score.json",
+        "score_sha256": "dd4d2f913336ecd41d0c62b987ca698c6065e2cef7e22fddaf2b1580bff33b24",
+        "soundfont": "TimGM6mb.sf2",
+        "author": "Tim Brechbill; David Bolton",
+        "soundfont_sha256": "c5378b62028c920cb11e4803327983fee2f2cdff5dc89c708e39da417e51c854",
+        "download_date": "2026-10-31",
+        "license_url": "https://sources.debian.org/src/timgm6mb-soundfont/1.3-5/debian/copyright/",
+        "programs": [
+          10
+        ],
+        "settings": {
+          "bpm": 52,
+          "melody_velocity": 39,
+          "guitar_velocity": 0,
+          "repeats": 2
+        },
+        "variant": "B",
+        "rate": 24000,
+        "seconds": 110.76923076923077,
+        "musicbox_only": false,
+        "fluid_version": "FluidSynth runtime version 2.6.1"
+      },
+      "license": "GPL-2.0 (soundfont and conservatively licensed rendered recording); original composition project-original",
+      "url": "https://mirrors.tuna.tsinghua.edu.cn/debian/pool/main/t/timgm6mb-soundfont/timgm6mb-soundfont_1.3-5_all.deb",
+      "sha256": "62a3c64556c3cb10f25d6de8cbec017c77cac77fe88ad8d9994b0da4610d9901"
+    },
+    "sf2.music.moon.C": {
+      "kind": "soundfont",
+      "script": "tools/audio/render_music.py",
+      "parameters": {
+        "score": "tools/audio/score.json",
+        "score_sha256": "dd4d2f913336ecd41d0c62b987ca698c6065e2cef7e22fddaf2b1580bff33b24",
+        "soundfont": "TimGM6mb.sf2",
+        "author": "Tim Brechbill; David Bolton",
+        "soundfont_sha256": "c5378b62028c920cb11e4803327983fee2f2cdff5dc89c708e39da417e51c854",
+        "download_date": "2026-10-31",
+        "license_url": "https://sources.debian.org/src/timgm6mb-soundfont/1.3-5/debian/copyright/",
+        "programs": [
+          10
+        ],
+        "settings": {
+          "bpm": 52,
+          "melody_velocity": 39,
+          "guitar_velocity": 0,
+          "repeats": 2
+        },
+        "variant": "C",
+        "rate": 24000,
+        "seconds": 110.76923076923077,
+        "musicbox_only": false,
+        "fluid_version": "FluidSynth runtime version 2.6.1"
+      },
+      "license": "GPL-2.0 (soundfont and conservatively licensed rendered recording); original composition project-original",
+      "url": "https://mirrors.tuna.tsinghua.edu.cn/debian/pool/main/t/timgm6mb-soundfont/timgm6mb-soundfont_1.3-5_all.deb",
+      "sha256": "b93055a66d7d4d88c26aef213693f323d28252551fbd1abdd6dbd6a40f5db469"
+    },
+    "v2.voice.bright.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/voice.bright-A.wav",
+        "input_sha256": "6e30bc90dbad7181e7915db62beac9461d4635ced0238a44bc7bccc37ecafee5",
+        "input_source_id": "synth.voice.bright.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -16.0,
+        "rms_dbfs": -16.000008,
+        "peak_dbfs": -9.147314
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "f0997d3f239ae70f537d0f93111f02c0e5d8e7827023a7eafd02f2e996c47f7f"
+    },
+    "v2.voice.bright.B": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/voice.bright-B.wav",
+        "input_sha256": "77fedc816c85add538e2bc5812c55de3f05cfea4d59d2c777f3820898d42e103",
+        "input_source_id": "synth.voice.bright.B",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -16.0,
+        "rms_dbfs": -15.99997,
+        "peak_dbfs": -9.138201
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "91b907b9d922bf5cd95192f73c07575706aac6dfc6a35442457042a291a86fbb"
+    },
+    "v2.voice.bright.C": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/voice.bright-C.wav",
+        "input_sha256": "7748db03d5f1cd867b052a512ae7d6c201cb9e6d243432761763b30f79aa54af",
+        "input_source_id": "synth.voice.bright.C",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -16.0,
+        "rms_dbfs": -15.999986,
+        "peak_dbfs": -9.147314
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "57bea348583b61c43b4a604e09c09929316e666b607eb5fb7cc8f3fd2e2ce2cc"
+    },
+    "v2.hunger.hungry.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/hunger.hungry-A.wav",
+        "input_sha256": "09d30f5c12cdc1a911e9fb96d6630915dd8d4e0cda21a29b5a925d786a1e41a4",
+        "input_source_id": "synth.hunger.hungry.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -20.000003,
+        "peak_dbfs": -6.70935
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "6f9f8033fe94f2d6271c5956ee803de08d9b22aa6c94094289fa8085ad03919a"
+    },
+    "v2.hunger.hungry.B": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/hunger.hungry-B.wav",
+        "input_sha256": "74d95559e5e72f222bf1cbe943f81dfb3271f220cb25d6d9902d2c3a533f8895",
+        "input_source_id": "synth.hunger.hungry.B",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -20.000002,
+        "peak_dbfs": -7.276699
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "f7272a84d162cf70297d226fe5d35ad5754ded8685d907f3cf754506c2368929"
+    },
+    "v2.hunger.hungry.C": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/hunger.hungry-C.wav",
+        "input_sha256": "daeec47baee01140b4a6b001e32ebe7a316200b33a292b1049678303c1235b0e",
+        "input_source_id": "synth.hunger.hungry.C",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -20.000005,
+        "peak_dbfs": -8.082404
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "db0c4cc14641653e423351c35389088f7c18f47ba201de26a0686c6e81d60e3d"
+    },
+    "v2.ambience.fire.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/ambience.fire-A.wav",
+        "input_sha256": "0d0484e9aaebd845e5231d57ee25974dca13db1abff3738712807d9f5abc0022",
+        "input_source_id": "synth.ambience.fire.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -24.0,
+        "rms_dbfs": -23.999999,
+        "peak_dbfs": -7.79417
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "9f413f7fa8e5f8da5f162d2c0b808de42ea1f4467dba758695fb3dfb78984b86"
+    },
+    "v2.ambience.fire.B": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/ambience.fire-B.wav",
+        "input_sha256": "ff1ae42b8196c9816babd38a57bd4fa28b3a57f7a5aef2beeae66cfc6a9d25ed",
+        "input_source_id": "synth.ambience.fire.B",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -24.0,
+        "rms_dbfs": -24.0,
+        "peak_dbfs": -8.646116
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "9db2639b0a24ca2d4643a3cbc6c15396c9d32a267a34d9224eccbe474234da47"
+    },
+    "v2.ambience.fire.C": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/ambience.fire-C.wav",
+        "input_sha256": "10424142cc0852b33c90bc244a250bc3d88477ed031cef03402499286a72f87f",
+        "input_source_id": "synth.ambience.fire.C",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -24.0,
+        "rms_dbfs": -23.999995,
+        "peak_dbfs": -9.075426
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "3ad75ae6b1aaeb7f7cf601c33095c8ee97e8e886ecf82db8b498f2f62d423785"
+    },
+    "v2.ui.click.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/ui.click-A.wav",
+        "input_sha256": "65fdf40eca89a4ab17e0ebe3126f05c2b058f7c61db890220a8081417765bc1b",
+        "input_source_id": "synth.ui.click.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -20.000004,
+        "peak_dbfs": -8.638946
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "0587de4004c8ee7a5528de3a71bf1f82fd3ae27b7f94250a90a253e5fa6ff224"
+    },
+    "v2.ui.click.B": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/ui.click-B.wav",
+        "input_sha256": "f84861f6137a8198545532f92affb7b608ffda340125c5dbf788cd74872424a7",
+        "input_source_id": "synth.ui.click.B",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -19.999987,
+        "peak_dbfs": -8.809746
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "f5afda96a058cfdc7a5f988f72901e9f44441259d665fa5783a25000e4db417b"
+    },
+    "v2.ui.click.C": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/ui.click-C.wav",
+        "input_sha256": "4eb89505e0f667ec4c0c1b54395a8a0ab725b102f628277921703f302c800895",
+        "input_source_id": "synth.ui.click.C",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -19.999975,
+        "peak_dbfs": -8.687096
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "16060f0a60d092b0ddb12ab82c1ead248243709c3916836a3162c8d7e7d11d5d"
+    },
+    "v2.voice.soft.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/voice.soft-A.wav",
+        "input_sha256": "bcf2ba5fab86cfabea7b337f56d0c593bddf02d1bc979009f766599daf6d6102",
+        "input_source_id": "synth.voice.soft.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -16.0,
+        "rms_dbfs": -15.999984,
+        "peak_dbfs": -9.135924
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "2ff11a6a4be3063fa37d88286b647b39b4042b499cf3781d1ce3aaca31d9b3f5"
+    },
+    "v2.voice.crisp.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/voice.crisp-A.wav",
+        "input_sha256": "b7fc4ff2f31b52c4d408a90d5559f4b8ce33532f284ac4e9f5871cd1b22279e6",
+        "input_source_id": "synth.voice.crisp.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -16.0,
+        "rms_dbfs": -15.999995,
+        "peak_dbfs": -9.132889
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "7ff7b27416da8f5be23a1332287abe922265815a37d5620880e9388fbd112274"
+    },
+    "v2.voice.low.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/voice.low-A.wav",
+        "input_sha256": "dd2c59fe2d16793d365b68ce04ab80ceae41de3cec64e27e0dc0d76023acf679",
+        "input_source_id": "synth.voice.low.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -16.0,
+        "rms_dbfs": -15.999999,
+        "peak_dbfs": -9.136683
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "f6f3a5063539fe9ccbd57ea99d1b9edf18f27d0c9e9f5fa1972ba8e608734ad3"
+    },
+    "v2.hunger.mild.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/hunger.mild-A.wav",
+        "input_sha256": "d9fecbdb07c3e03887a4c5a824b8bd5baf0590155a1a95a2de5e2609f5e9a11b",
+        "input_source_id": "synth.hunger.mild.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -19.999995,
+        "peak_dbfs": -5.827147
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "19bf407fd926acbe988684c1744049c64b81f9ece32a87be58dd09f210687ec1"
+    },
+    "v2.hunger.very_hungry.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/hunger.very_hungry-A.wav",
+        "input_sha256": "d0f6bdaee84efcf7bdf258a664482e832b0bafdfc993962a5cbcb6a9a21c6d76",
+        "input_source_id": "synth.hunger.very_hungry.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -19.999992,
+        "peak_dbfs": -7.236969
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "49f5a7a80901a7a62aaf09a4562e30125169bb6ac98e9a1d08862c6f7306661c"
+    },
+    "v2.meal.satisfied.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/meal.satisfied-A.wav",
+        "input_sha256": "582b31f98403f5c5e6b353818b642f8eb71019ff1f6cc535181c3322e25ff051",
+        "input_source_id": "synth.meal.satisfied.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -16.0,
+        "rms_dbfs": -15.999998,
+        "peak_dbfs": -6.343007
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "dc1be28ea319799691acf7f5c1dd4a559d957f4eedc3d5b394d312f91fc8d428"
+    },
+    "v2.tree.hit.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/tree.hit-A.wav",
+        "input_sha256": "29a9eb7f893a68cf46b9522c769bd15d205abdb59b25b24c3604e9d36382d00c",
+        "input_source_id": "synth.tree.hit.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -20.000007,
+        "peak_dbfs": -4.774709
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "3d3e6079536f68fe1dfd92a9baed74cdb16194cddaf3d62bff9e0ada2c5f0b48"
+    },
+    "v2.wood.fall.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/wood.fall-A.wav",
+        "input_sha256": "5f5c8062db01d34c41354cb181b01c11f53d225323901cc9e34ddb63c7ea1384",
+        "input_source_id": "synth.wood.fall.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -20.000003,
+        "peak_dbfs": -3.525139
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "2433b485829138b6e4ae71b19fdfc07529c91db30d738385e0385c8587b9b5ac"
+    },
+    "v2.fire.ignite.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/fire.ignite-A.wav",
+        "input_sha256": "eb961e1a24bcd936904bc6be45f72baa9b17fb1d7e5d9c5d7d7df8e2228aca64",
+        "input_source_id": "synth.fire.ignite.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 0.55,
+        "target_rms_dbfs": -16.0,
+        "rms_dbfs": -15.999956,
+        "peak_dbfs": -3.269596
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "24e732d1a0fa946e4157c3a8c7109a150cb414f5cd3c8d9712d3395e9c7036e7"
+    },
+    "v2.fire.refuel.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/fire.refuel-A.wav",
+        "input_sha256": "ce69f5e750fd76c4304517a9fe6c942fe850217ebd8f70207f0e31a0fb648d50",
+        "input_source_id": "synth.fire.refuel.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 0.875,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -20.000006,
+        "peak_dbfs": -3.234135
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "14351bd0a3dab449700b3a6e50200e27aae794ea06c35dfe4fef8f34697b0816"
+    },
+    "v2.meal.bite.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/meal.bite-A.wav",
+        "input_sha256": "7751dc5ee2d310658eef29761b275c4bb303b5e6f3d3324566e63d3a49e6013b",
+        "input_source_id": "synth.meal.bite.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -19.999995,
+        "peak_dbfs": -4.815683
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "f4a214e3f6d3c67f4f3fc87978dadffe8ddb1461b7613852a7b41bdee05413b8"
+    },
+    "v2.meal.chew.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/meal.chew-A.wav",
+        "input_sha256": "2a01c9103fb428c248000fa8c79fbaf33a2f6e4b52f4c65765e5c7fb575d760b",
+        "input_source_id": "synth.meal.chew.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 0.95,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -20.000014,
+        "peak_dbfs": -3.234905
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "dbb3af19039b2f865451fc043ed5fdefddac31de4d153addb328bee5d5b380df"
+    },
+    "v2.fishing.cast.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/fishing.cast-A.wav",
+        "input_sha256": "92c0c0aac320ee2cfaea217cd15ce4a03f5854b541123e87f68f930706a6bdf7",
+        "input_source_id": "synth.fishing.cast.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 0.75,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -19.999981,
+        "peak_dbfs": -3.215691
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "9f594ab6c4b2e9fbb501f94476146303a39f2e4956c1da4133f8204bd185ba0f"
+    },
+    "v2.fishing.water.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/fishing.water-A.wav",
+        "input_sha256": "fe65f0e81d14c692215b34e0be5c1e0f37cbfbb0074a88627bfd7136d1fe4af5",
+        "input_source_id": "synth.fishing.water.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 0.975,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -19.999999,
+        "peak_dbfs": -3.335115
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "1f9b15a06c1a9b1483680cb0c70ec35e818f86fbcd8f4c206be7313b7c5d40ad"
+    },
+    "v2.fishing.bite.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/fishing.bite-A.wav",
+        "input_sha256": "dad49bb8d132027432d2e86f32fe6288ca43f5544f1cfc84e512c2494898bde6",
+        "input_source_id": "synth.fishing.bite.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -16.0,
+        "rms_dbfs": -16.000006,
+        "peak_dbfs": -4.261081
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "a23e765f664d50cfa22aa0eca9df6c6620c2c1907e27bd52355315902b51ae5c"
+    },
+    "v2.fishing.reel.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/fishing.reel-A.wav",
+        "input_sha256": "23cd08e9b9c5c734b84a594e1a1201c9e32cd59e001658c9c1db64ec3db1ca75",
+        "input_source_id": "synth.fishing.reel.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 0.925,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -19.99999,
+        "peak_dbfs": -3.153731
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "d7ef5852b467147caf9233ab002433313a4dd859ccdfc49ede73a06691a91c7a"
+    },
+    "v2.fish.flap.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/fish.flap-A.wav",
+        "input_sha256": "a19d770a7aba6d099ebdb12fa251a52b30fc17d3406e46d918fa080e51881365",
+        "input_source_id": "synth.fish.flap.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -20.000003,
+        "peak_dbfs": -3.572602
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "9e9d86480ecdb9235a05d1a718a24a26855a2590c09661f27a89c2204fd1e025"
+    },
+    "v2.fish.stock.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/fish.stock-A.wav",
+        "input_sha256": "d7a99afeffa3991832a88dfe649c7d1cf439125bbfcddf8fa45c434de8c4bf6a",
+        "input_source_id": "synth.fish.stock.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -20.000003,
+        "peak_dbfs": -3.358105
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "f5c22ab9175a3537ef348c868706069ae9ab130d9c31fced52976bad912d9d42"
+    },
+    "v2.fish.release.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/fish.release-A.wav",
+        "input_sha256": "475721fcc0c0efab069ff70f9bb7597cc504ac00c16b40cb2ebfdf047b1c318d",
+        "input_source_id": "synth.fish.release.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 0.6,
+        "target_rms_dbfs": -16.0,
+        "rms_dbfs": -15.999998,
+        "peak_dbfs": -3.105085
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "d7e696a9be203ff078c189f14e528e624191e6b0b0fe4f6251c7c6b6a5b184d2"
+    },
+    "v2.ui.open.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/ui.open-A.wav",
+        "input_sha256": "65fdf40eca89a4ab17e0ebe3126f05c2b058f7c61db890220a8081417765bc1b",
+        "input_source_id": "synth.ui.open.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -20.000004,
+        "peak_dbfs": -8.638946
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "0587de4004c8ee7a5528de3a71bf1f82fd3ae27b7f94250a90a253e5fa6ff224"
+    },
+    "v2.ui.close.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/ui.close-A.wav",
+        "input_sha256": "e7bf8236a50b7d552b3a13e37e6bf0287c696157dda875c85e4ac9b7b132b148",
+        "input_source_id": "synth.ui.close.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -19.999993,
+        "peak_dbfs": -8.676293
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "df59f5270c9456ace9e779bfa8aa5416528440bab775ccc86bf2e4ee0307e102"
+    },
+    "v2.ui.fish_card.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/ui.fish_card-A.wav",
+        "input_sha256": "65fdf40eca89a4ab17e0ebe3126f05c2b058f7c61db890220a8081417765bc1b",
+        "input_source_id": "synth.ui.fish_card.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -20.000004,
+        "peak_dbfs": -8.638946
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "0587de4004c8ee7a5528de3a71bf1f82fd3ae27b7f94250a90a253e5fa6ff224"
+    },
+    "v2.ui.invite.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/ui.invite-A.wav",
+        "input_sha256": "65fdf40eca89a4ab17e0ebe3126f05c2b058f7c61db890220a8081417765bc1b",
+        "input_source_id": "synth.ui.invite.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -20.000004,
+        "peak_dbfs": -8.638946
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "0587de4004c8ee7a5528de3a71bf1f82fd3ae27b7f94250a90a253e5fa6ff224"
+    },
+    "v2.work.pickup.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/work.pickup-A.wav",
+        "input_sha256": "f564715ba4953946e65b17460d93578e2d22faff741f28863876f896e8ac7662",
+        "input_source_id": "synth.work.pickup.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -20.00001,
+        "peak_dbfs": -4.560131
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "02fc36d376de86773a1cc2556d40e655ecc36fb0082985300902f9def14348f2"
+    },
+    "v2.work.deposit.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/work.deposit-A.wav",
+        "input_sha256": "eb012b5ffdf9b4b6bbd7e03ea667b56975a4e799187e23845185b522a43a4264",
+        "input_source_id": "synth.work.deposit.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -19.999991,
+        "peak_dbfs": -4.222636
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "4174a650b8b3b6969d54c12b97d77ce3a75d49fc18cb362f034198339d862c0b"
+    },
+    "v2.gomoku.stone.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/gomoku.stone-A.wav",
+        "input_sha256": "8be9140947631bad71fcb1b73d27711346192b240a493f29bca28bb32c4e7772",
+        "input_source_id": "synth.gomoku.stone.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -19.999982,
+        "peak_dbfs": -8.784202
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "42da2fe4da8e5470498971fcb16856da74a226881ef3465c99c431b834a9a3a0"
+    },
+    "v2.ambience.waves.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/ambience.waves-A.wav",
+        "input_sha256": "2d69195f0fe91f565aa33636fad4c9a6163848488942daf91c82400edd202477",
+        "input_source_id": "synth.ambience.waves.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -24.0,
+        "rms_dbfs": -24.000004,
+        "peak_dbfs": -8.202883
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "ef14ee50674d986ba834e7eee199626af13328d8bae77306a73bd93e93c7170a"
+    },
+    "v2.ambience.wind.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/ambience.wind-A.wav",
+        "input_sha256": "f434815da7f6824b004c2731d48fabdde0443a4e9afb86b60462a709d1e61f59",
+        "input_source_id": "synth.ambience.wind.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -24.0,
+        "rms_dbfs": -23.999997,
+        "peak_dbfs": -8.372188
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "4880e57204384368c3d64bc05f5971e5d221f4fedba73397543bab2d51b3f677"
+    },
+    "v2.ambience.birds.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/ambience.birds-A.wav",
+        "input_sha256": "22006d2ec19c2c54bb4d8af2cc858b5df5296f0e2c24655bec2e8dee2e620d61",
+        "input_source_id": "synth.ambience.birds.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -24.0,
+        "rms_dbfs": -24.000002,
+        "peak_dbfs": -6.191384
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "82e87443a2749aa84063bae971abab5b2ad98a1a8c91fb0d95eba925da4d5394"
+    },
+    "v2.ambience.insects.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/ambience.insects-A.wav",
+        "input_sha256": "b25c8694744acf9772ec7530d70c0d7973d730f39d63b623eb454022abdeceb2",
+        "input_source_id": "synth.ambience.insects.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -24.0,
+        "rms_dbfs": -23.999999,
+        "peak_dbfs": -12.606299
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "a71496d83d74330a50a2e1cff9d0f133b82885030c9487f5e2c6142ed83dea2f"
+    },
+    "v2.ambience.rain.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/ambience.rain-A.wav",
+        "input_sha256": "7948c819f462b784dc06b6dc1d603d2e6966ed839b8fe4ae72ca7f17f0216ec6",
+        "input_source_id": "synth.ambience.rain.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -24.0,
+        "rms_dbfs": -24.0,
+        "peak_dbfs": -9.775882
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "74e75f0aaa6b51fc41fa2a5c874d1be19ed391fc7f7c4d4e5c7c00bf92dc8780"
+    },
+    "v2.ambience.sizzle.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/ambience.sizzle-A.wav",
+        "input_sha256": "cece9f96d9bc25cbca868593f8ea827b981680bf1eb5514de954fc29faad073f",
+        "input_source_id": "synth.ambience.sizzle.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -24.0,
+        "rms_dbfs": -23.999999,
+        "peak_dbfs": -7.111041
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "696784744d334cceeca281bcc51202e871de7b91498ead7cb62d28e58bfcdcb8"
+    },
+    "v2.step.grass.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/step.grass-A.wav",
+        "input_sha256": "6f5b4d5010285690b013ad5f3fe2b4b255c6a420a3b5e985cb6922aa101141f9",
+        "input_source_id": "synth.step.grass.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 0.75,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -19.999932,
+        "peak_dbfs": -4.738042
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "8d313755930d6d3ea69f78d66c547ba5d6a3b92697f774afc4dca7972ad79245"
+    },
+    "v2.step.sand.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/step.sand-A.wav",
+        "input_sha256": "966f5ba0da9507f9f0f8e65846c749d6525c246abda3c1537d1d3330d9e4c15c",
+        "input_source_id": "synth.step.sand.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 0.8,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -19.999972,
+        "peak_dbfs": -4.800468
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "7106dfe369e88115101609fd44e3b699466bd038ae5dd33f5f96678ba115da6f"
+    },
+    "v2.step.wood.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/step.wood-A.wav",
+        "input_sha256": "6c65efed3d2e1e3ba6a03eac56e2d81350715cc1128bf1077cdd251054d02c50",
+        "input_source_id": "synth.step.wood.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 0.925,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -19.999991,
+        "peak_dbfs": -4.680604
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "554d17a6800ed0885fea99fd7956f2826a824ce0f49a43650f101069816b74c1"
+    },
+    "v2.step.stone.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/process_v2.py",
+      "parameters": {
+        "input_file": "godot/content/audio/generated/step.stone-A.wav",
+        "input_sha256": "64766bc28cc42992a934710798e857c7b339ca1da06f064de9352fea1642cf0b",
+        "input_source_id": "synth.step.stone.A",
+        "lowpass_hz": 4500,
+        "compression_exponent": 0.65,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -19.999982,
+        "peak_dbfs": -4.740329
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "2ca0fdf16a600c899f37ce86465a0a9da01ce5fa93aa17c6761193d7a70a3aa3"
+    },
+    "cc0.grass.A.1": {
+      "kind": "recording",
+      "script": "tools/audio/prepare_recorded_steps.py",
+      "parameters": {
+        "author": "TinyWorlds",
+        "download_date": "2026-10-31",
+        "archive_url": "https://opengameart.org/sites/default/files/%5Bkdd%5DDifferentSteps_0.zip",
+        "archive_sha256": "987d072b7deaa65177e005ddd8185f2351be7c9a76cd7575dea560549c39b33b",
+        "input_file": "tmp/sound-v2-downloads/raw/TinyWorlds-leaves01.ogg",
+        "input_sha256": "93b3bbcd06380eec54335d1869924db6ff2cc6c1cb103502133d78484c5ca836",
+        "sample_rate": 24000,
+        "lowpass_hz": 4500,
+        "compression_exponent": 0.55,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -19.999979,
+        "peak_dbfs": -4.790799
+      },
+      "license": "CC0-1.0",
+      "url": "https://opengameart.org/content/different-steps-on-wood-stone-leaves-gravel-and-mud",
+      "sha256": "9b67c0594b91dd98a51cb607502f385d6ff6c25f7b4071685dab36ab79208e83"
+    },
+    "cc0.grass.A.2": {
+      "kind": "recording",
+      "script": "tools/audio/prepare_recorded_steps.py",
+      "parameters": {
+        "author": "TinyWorlds",
+        "download_date": "2026-10-31",
+        "archive_url": "https://opengameart.org/sites/default/files/%5Bkdd%5DDifferentSteps_0.zip",
+        "archive_sha256": "987d072b7deaa65177e005ddd8185f2351be7c9a76cd7575dea560549c39b33b",
+        "input_file": "tmp/sound-v2-downloads/raw/TinyWorlds-leaves02.ogg",
+        "input_sha256": "477c35bfd3f740915b24f93cb66364523217692d2749057f9b8be162eb8209f4",
+        "sample_rate": 24000,
+        "lowpass_hz": 4500,
+        "compression_exponent": 0.85,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -20.000069,
+        "peak_dbfs": -4.78298
+      },
+      "license": "CC0-1.0",
+      "url": "https://opengameart.org/content/different-steps-on-wood-stone-leaves-gravel-and-mud",
+      "sha256": "a14a8ec452a458191b320f7e9ccdf7f8afde1addce9bb0d8c0e1e128fc070261"
+    },
+    "cc0.grass.B.1": {
+      "kind": "recording",
+      "script": "tools/audio/prepare_recorded_steps.py",
+      "parameters": {
+        "author": "TinyWorlds",
+        "download_date": "2026-10-31",
+        "archive_url": "https://opengameart.org/sites/default/files/%5Bkdd%5DDifferentSteps_0.zip",
+        "archive_sha256": "987d072b7deaa65177e005ddd8185f2351be7c9a76cd7575dea560549c39b33b",
+        "input_file": "tmp/sound-v2-downloads/raw/TinyWorlds-leaves02.ogg",
+        "input_sha256": "477c35bfd3f740915b24f93cb66364523217692d2749057f9b8be162eb8209f4",
+        "sample_rate": 24000,
+        "lowpass_hz": 4500,
+        "compression_exponent": 0.85,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -20.000069,
+        "peak_dbfs": -4.78298
+      },
+      "license": "CC0-1.0",
+      "url": "https://opengameart.org/content/different-steps-on-wood-stone-leaves-gravel-and-mud",
+      "sha256": "a14a8ec452a458191b320f7e9ccdf7f8afde1addce9bb0d8c0e1e128fc070261"
+    },
+    "cc0.grass.B.2": {
+      "kind": "recording",
+      "script": "tools/audio/prepare_recorded_steps.py",
+      "parameters": {
+        "author": "Fantozzi",
+        "download_date": "2026-10-31",
+        "archive_url": "https://opengameart.org/sites/default/files/Fantozzi-footsteps.7z",
+        "archive_sha256": "415d360e0911c1c1c5355ee94023b772e6f4044f59b9b580610e7dbffd1840fd",
+        "input_file": "tmp/sound-v2-downloads/raw/Fantozzi-SandL1.flac",
+        "input_sha256": "93a2630579a82507e3c6ceab9b012f71a50cf8922f4beadb14057dcc0636b099",
+        "sample_rate": 24000,
+        "lowpass_hz": 4500,
+        "compression_exponent": 0.525,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -20.000015,
+        "peak_dbfs": -4.738957
+      },
+      "license": "CC0-1.0",
+      "url": "https://opengameart.org/content/fantozzis-footsteps-grasssand-stone",
+      "sha256": "dab791abf4b7daa8ec884137219e18283f22cf040614b201a507f0355608365a"
+    },
+    "cc0.grass.C.1": {
+      "kind": "recording",
+      "script": "tools/audio/prepare_recorded_steps.py",
+      "parameters": {
+        "author": "Fantozzi",
+        "download_date": "2026-10-31",
+        "archive_url": "https://opengameart.org/sites/default/files/Fantozzi-footsteps.7z",
+        "archive_sha256": "415d360e0911c1c1c5355ee94023b772e6f4044f59b9b580610e7dbffd1840fd",
+        "input_file": "tmp/sound-v2-downloads/raw/Fantozzi-SandR2.flac",
+        "input_sha256": "0356f659313887f01a9f21fd5bedf57a77073d0d74d57b5621279ee453a80f3c",
+        "sample_rate": 24000,
+        "lowpass_hz": 4500,
+        "compression_exponent": 0.45,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -19.999989,
+        "peak_dbfs": -4.671068
+      },
+      "license": "CC0-1.0",
+      "url": "https://opengameart.org/content/fantozzis-footsteps-grasssand-stone",
+      "sha256": "f4b86cefb2decd2de1f00afb7c5cd56452730b2a4aba92713c2fdf3650683ab3"
+    },
+    "cc0.grass.C.2": {
+      "kind": "recording",
+      "script": "tools/audio/prepare_recorded_steps.py",
+      "parameters": {
+        "author": "TinyWorlds",
+        "download_date": "2026-10-31",
+        "archive_url": "https://opengameart.org/sites/default/files/%5Bkdd%5DDifferentSteps_0.zip",
+        "archive_sha256": "987d072b7deaa65177e005ddd8185f2351be7c9a76cd7575dea560549c39b33b",
+        "input_file": "tmp/sound-v2-downloads/raw/TinyWorlds-leaves01.ogg",
+        "input_sha256": "93b3bbcd06380eec54335d1869924db6ff2cc6c1cb103502133d78484c5ca836",
+        "sample_rate": 24000,
+        "lowpass_hz": 4500,
+        "compression_exponent": 0.55,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -19.999979,
+        "peak_dbfs": -4.790799
+      },
+      "license": "CC0-1.0",
+      "url": "https://opengameart.org/content/different-steps-on-wood-stone-leaves-gravel-and-mud",
+      "sha256": "9b67c0594b91dd98a51cb607502f385d6ff6c25f7b4071685dab36ab79208e83"
+    },
+    "cc0.sand.A.1": {
+      "kind": "recording",
+      "script": "tools/audio/prepare_recorded_steps.py",
+      "parameters": {
+        "author": "Fantozzi",
+        "download_date": "2026-10-31",
+        "archive_url": "https://opengameart.org/sites/default/files/Fantozzi-footsteps.7z",
+        "archive_sha256": "415d360e0911c1c1c5355ee94023b772e6f4044f59b9b580610e7dbffd1840fd",
+        "input_file": "tmp/sound-v2-downloads/raw/Fantozzi-SandL1.flac",
+        "input_sha256": "93a2630579a82507e3c6ceab9b012f71a50cf8922f4beadb14057dcc0636b099",
+        "sample_rate": 24000,
+        "lowpass_hz": 4500,
+        "compression_exponent": 0.525,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -20.000015,
+        "peak_dbfs": -4.738957
+      },
+      "license": "CC0-1.0",
+      "url": "https://opengameart.org/content/fantozzis-footsteps-grasssand-stone",
+      "sha256": "dab791abf4b7daa8ec884137219e18283f22cf040614b201a507f0355608365a"
+    },
+    "cc0.sand.A.2": {
+      "kind": "recording",
+      "script": "tools/audio/prepare_recorded_steps.py",
+      "parameters": {
+        "author": "Fantozzi",
+        "download_date": "2026-10-31",
+        "archive_url": "https://opengameart.org/sites/default/files/Fantozzi-footsteps.7z",
+        "archive_sha256": "415d360e0911c1c1c5355ee94023b772e6f4044f59b9b580610e7dbffd1840fd",
+        "input_file": "tmp/sound-v2-downloads/raw/Fantozzi-SandR1.flac",
+        "input_sha256": "3514d12f3369297233e915814364ed02902003d4103b010371c2ac15c2aa48fe",
+        "sample_rate": 24000,
+        "lowpass_hz": 4500,
+        "compression_exponent": 0.575,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -19.999989,
+        "peak_dbfs": -4.697431
+      },
+      "license": "CC0-1.0",
+      "url": "https://opengameart.org/content/fantozzis-footsteps-grasssand-stone",
+      "sha256": "a6831f04889d2903315b7eced69ee4f9c654a4fc59acc27885f45d66df2d1268"
+    },
+    "cc0.sand.B.1": {
+      "kind": "recording",
+      "script": "tools/audio/prepare_recorded_steps.py",
+      "parameters": {
+        "author": "Fantozzi",
+        "download_date": "2026-10-31",
+        "archive_url": "https://opengameart.org/sites/default/files/Fantozzi-footsteps.7z",
+        "archive_sha256": "415d360e0911c1c1c5355ee94023b772e6f4044f59b9b580610e7dbffd1840fd",
+        "input_file": "tmp/sound-v2-downloads/raw/Fantozzi-SandL2.flac",
+        "input_sha256": "9bb57478cc96e1410cae27d926aa8d77d5f2d368d9776822f63cf0b37c6d2faf",
+        "sample_rate": 24000,
+        "lowpass_hz": 4500,
+        "compression_exponent": 0.475,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -19.999999,
+        "peak_dbfs": -4.92528
+      },
+      "license": "CC0-1.0",
+      "url": "https://opengameart.org/content/fantozzis-footsteps-grasssand-stone",
+      "sha256": "1167b73fe581c81f6f6efd18cdf5c2c3d99e55a469409684b9aed03f023e3e55"
+    },
+    "cc0.sand.B.2": {
+      "kind": "recording",
+      "script": "tools/audio/prepare_recorded_steps.py",
+      "parameters": {
+        "author": "Fantozzi",
+        "download_date": "2026-10-31",
+        "archive_url": "https://opengameart.org/sites/default/files/Fantozzi-footsteps.7z",
+        "archive_sha256": "415d360e0911c1c1c5355ee94023b772e6f4044f59b9b580610e7dbffd1840fd",
+        "input_file": "tmp/sound-v2-downloads/raw/Fantozzi-SandR2.flac",
+        "input_sha256": "0356f659313887f01a9f21fd5bedf57a77073d0d74d57b5621279ee453a80f3c",
+        "sample_rate": 24000,
+        "lowpass_hz": 4500,
+        "compression_exponent": 0.45,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -19.999989,
+        "peak_dbfs": -4.671068
+      },
+      "license": "CC0-1.0",
+      "url": "https://opengameart.org/content/fantozzis-footsteps-grasssand-stone",
+      "sha256": "f4b86cefb2decd2de1f00afb7c5cd56452730b2a4aba92713c2fdf3650683ab3"
+    },
+    "cc0.sand.C.1": {
+      "kind": "recording",
+      "script": "tools/audio/prepare_recorded_steps.py",
+      "parameters": {
+        "author": "Fantozzi",
+        "download_date": "2026-10-31",
+        "archive_url": "https://opengameart.org/sites/default/files/Fantozzi-footsteps.7z",
+        "archive_sha256": "415d360e0911c1c1c5355ee94023b772e6f4044f59b9b580610e7dbffd1840fd",
+        "input_file": "tmp/sound-v2-downloads/raw/Fantozzi-SandL3.flac",
+        "input_sha256": "042820e65cc947d8bb8adf18524ffff7cdf5fc310f9412cbf8bdf7a139984c21",
+        "sample_rate": 24000,
+        "lowpass_hz": 4500,
+        "compression_exponent": 0.525,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -19.999984,
+        "peak_dbfs": -5.089454
+      },
+      "license": "CC0-1.0",
+      "url": "https://opengameart.org/content/fantozzis-footsteps-grasssand-stone",
+      "sha256": "8d1f9fe26f1182f860581b2040710b4ed115f74cb9b6f4a3173895b72a54decc"
+    },
+    "cc0.sand.C.2": {
+      "kind": "recording",
+      "script": "tools/audio/prepare_recorded_steps.py",
+      "parameters": {
+        "author": "Fantozzi",
+        "download_date": "2026-10-31",
+        "archive_url": "https://opengameart.org/sites/default/files/Fantozzi-footsteps.7z",
+        "archive_sha256": "415d360e0911c1c1c5355ee94023b772e6f4044f59b9b580610e7dbffd1840fd",
+        "input_file": "tmp/sound-v2-downloads/raw/Fantozzi-SandR3.flac",
+        "input_sha256": "7535306b6ff3b9e071256f12789eb53fb90769a913ff7e00b271298727e0f521",
+        "sample_rate": 24000,
+        "lowpass_hz": 4500,
+        "compression_exponent": 0.65,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -19.999975,
+        "peak_dbfs": -4.800929
+      },
+      "license": "CC0-1.0",
+      "url": "https://opengameart.org/content/fantozzis-footsteps-grasssand-stone",
+      "sha256": "fd5a65a8dcd0aaf18e40377f9a6a5ee75af2ff89cb19cbb1c275d8e854ccd957"
+    },
+    "cc0.stone.A.1": {
+      "kind": "recording",
+      "script": "tools/audio/prepare_recorded_steps.py",
+      "parameters": {
+        "author": "Fantozzi",
+        "download_date": "2026-10-31",
+        "archive_url": "https://opengameart.org/sites/default/files/Fantozzi-footsteps.7z",
+        "archive_sha256": "415d360e0911c1c1c5355ee94023b772e6f4044f59b9b580610e7dbffd1840fd",
+        "input_file": "tmp/sound-v2-downloads/raw/Fantozzi-StoneL1.flac",
+        "input_sha256": "7cfa4a2f500ae2bd19a961022296611d837c34ca2e556fe68deb692388f49971",
+        "sample_rate": 24000,
+        "lowpass_hz": 4500,
+        "compression_exponent": 0.8,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -19.999999,
+        "peak_dbfs": -4.760024
+      },
+      "license": "CC0-1.0",
+      "url": "https://opengameart.org/content/fantozzis-footsteps-grasssand-stone",
+      "sha256": "b5505d41126df718cacd4b27413b7cf76b8b242f51127c9860e231d8266cd288"
+    },
+    "cc0.stone.A.2": {
+      "kind": "recording",
+      "script": "tools/audio/prepare_recorded_steps.py",
+      "parameters": {
+        "author": "Fantozzi",
+        "download_date": "2026-10-31",
+        "archive_url": "https://opengameart.org/sites/default/files/Fantozzi-footsteps.7z",
+        "archive_sha256": "415d360e0911c1c1c5355ee94023b772e6f4044f59b9b580610e7dbffd1840fd",
+        "input_file": "tmp/sound-v2-downloads/raw/Fantozzi-StoneR1.flac",
+        "input_sha256": "7073bddd2e3ba432e15a83844180c0ebc52835c2c6bab0fa902ee5952499c729",
+        "sample_rate": 24000,
+        "lowpass_hz": 4500,
+        "compression_exponent": 0.6,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -19.999981,
+        "peak_dbfs": -4.811992
+      },
+      "license": "CC0-1.0",
+      "url": "https://opengameart.org/content/fantozzis-footsteps-grasssand-stone",
+      "sha256": "bd5c65ae4d6653391f722d6f79b910d9ab863c630d0bfbd4aa83c5a27f1cbb15"
+    },
+    "cc0.stone.B.1": {
+      "kind": "recording",
+      "script": "tools/audio/prepare_recorded_steps.py",
+      "parameters": {
+        "author": "Fantozzi",
+        "download_date": "2026-10-31",
+        "archive_url": "https://opengameart.org/sites/default/files/Fantozzi-footsteps.7z",
+        "archive_sha256": "415d360e0911c1c1c5355ee94023b772e6f4044f59b9b580610e7dbffd1840fd",
+        "input_file": "tmp/sound-v2-downloads/raw/Fantozzi-StoneL2.flac",
+        "input_sha256": "dcbd6be44af4b3206daa36c5398035ca527bb057c51ce00482b9ca6356be2468",
+        "sample_rate": 24000,
+        "lowpass_hz": 4500,
+        "compression_exponent": 0.725,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -19.99999,
+        "peak_dbfs": -4.802311
+      },
+      "license": "CC0-1.0",
+      "url": "https://opengameart.org/content/fantozzis-footsteps-grasssand-stone",
+      "sha256": "ffcda7ddc9119430f6eafd22cfe2f67e74da5e97126a08cf1133b7e352128894"
+    },
+    "cc0.stone.B.2": {
+      "kind": "recording",
+      "script": "tools/audio/prepare_recorded_steps.py",
+      "parameters": {
+        "author": "Fantozzi",
+        "download_date": "2026-10-31",
+        "archive_url": "https://opengameart.org/sites/default/files/Fantozzi-footsteps.7z",
+        "archive_sha256": "415d360e0911c1c1c5355ee94023b772e6f4044f59b9b580610e7dbffd1840fd",
+        "input_file": "tmp/sound-v2-downloads/raw/Fantozzi-StoneR2.flac",
+        "input_sha256": "d66330b4a32e93b0dfdcb8c53667654de8702a0fa48b2d06c48d94dc66b3e1cc",
+        "sample_rate": 24000,
+        "lowpass_hz": 4500,
+        "compression_exponent": 0.675,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -19.999996,
+        "peak_dbfs": -4.642069
+      },
+      "license": "CC0-1.0",
+      "url": "https://opengameart.org/content/fantozzis-footsteps-grasssand-stone",
+      "sha256": "1072737f674f4c8963cc5336b17de3c7f212b6f4babefd47095275d51168064d"
+    },
+    "cc0.stone.C.1": {
+      "kind": "recording",
+      "script": "tools/audio/prepare_recorded_steps.py",
+      "parameters": {
+        "author": "Fantozzi",
+        "download_date": "2026-10-31",
+        "archive_url": "https://opengameart.org/sites/default/files/Fantozzi-footsteps.7z",
+        "archive_sha256": "415d360e0911c1c1c5355ee94023b772e6f4044f59b9b580610e7dbffd1840fd",
+        "input_file": "tmp/sound-v2-downloads/raw/Fantozzi-StoneL3.flac",
+        "input_sha256": "37a25f4254cf8f2e56d271912b0569f3bb15c57bf3fde9de492466eb23853b0d",
+        "sample_rate": 24000,
+        "lowpass_hz": 4500,
+        "compression_exponent": 0.775,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -19.999983,
+        "peak_dbfs": -4.763234
+      },
+      "license": "CC0-1.0",
+      "url": "https://opengameart.org/content/fantozzis-footsteps-grasssand-stone",
+      "sha256": "75994f1050f090f48754abba181930f72c3b8534993c3ac33a74e3c51db41ab5"
+    },
+    "cc0.stone.C.2": {
+      "kind": "recording",
+      "script": "tools/audio/prepare_recorded_steps.py",
+      "parameters": {
+        "author": "Fantozzi",
+        "download_date": "2026-10-31",
+        "archive_url": "https://opengameart.org/sites/default/files/Fantozzi-footsteps.7z",
+        "archive_sha256": "415d360e0911c1c1c5355ee94023b772e6f4044f59b9b580610e7dbffd1840fd",
+        "input_file": "tmp/sound-v2-downloads/raw/Fantozzi-StoneR3.flac",
+        "input_sha256": "b98f2c4b932242739ce8687206f7eb3313ce30afd4af7b7e148507c5cbd26787",
+        "sample_rate": 24000,
+        "lowpass_hz": 4500,
+        "compression_exponent": 0.675,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -20.00001,
+        "peak_dbfs": -4.882856
+      },
+      "license": "CC0-1.0",
+      "url": "https://opengameart.org/content/fantozzis-footsteps-grasssand-stone",
+      "sha256": "7c6cc87b2d2b5437816dff734983d21f6ffedcb19dfe85c40d304c1d41c5a49f"
+    },
+    "cc0.wood.A.1": {
+      "kind": "recording",
+      "script": "tools/audio/prepare_recorded_steps.py",
+      "parameters": {
+        "author": "TinyWorlds",
+        "download_date": "2026-10-31",
+        "archive_url": "https://opengameart.org/sites/default/files/%5Bkdd%5DDifferentSteps_0.zip",
+        "archive_sha256": "987d072b7deaa65177e005ddd8185f2351be7c9a76cd7575dea560549c39b33b",
+        "input_file": "tmp/sound-v2-downloads/raw/TinyWorlds-wood01.ogg",
+        "input_sha256": "482d97c5e1e6eb7b239be46f25d093ebebb94cefb56eedb04807b6a5dc68e972",
+        "sample_rate": 24000,
+        "lowpass_hz": 4500,
+        "compression_exponent": 0.925,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -19.999995,
+        "peak_dbfs": -4.85268
+      },
+      "license": "CC0-1.0",
+      "url": "https://opengameart.org/content/different-steps-on-wood-stone-leaves-gravel-and-mud",
+      "sha256": "518103f24419d7c17798cec079bd62fdaa4cec0677ae0bf6c70ba88bd696003a"
+    },
+    "cc0.wood.A.2": {
+      "kind": "recording",
+      "script": "tools/audio/prepare_recorded_steps.py",
+      "parameters": {
+        "author": "TinyWorlds",
+        "download_date": "2026-10-31",
+        "archive_url": "https://opengameart.org/sites/default/files/%5Bkdd%5DDifferentSteps_0.zip",
+        "archive_sha256": "987d072b7deaa65177e005ddd8185f2351be7c9a76cd7575dea560549c39b33b",
+        "input_file": "tmp/sound-v2-downloads/raw/TinyWorlds-wood02.ogg",
+        "input_sha256": "588bb121bd3db005b4c2a5b55c1cf39b8ec620f820c2123ac1f62748d132dac2",
+        "sample_rate": 24000,
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -20.000016,
+        "peak_dbfs": -5.698998
+      },
+      "license": "CC0-1.0",
+      "url": "https://opengameart.org/content/different-steps-on-wood-stone-leaves-gravel-and-mud",
+      "sha256": "20793c522f6696f4b19715bc6521c16e949057b498833e949399633d8414fa9a"
+    },
+    "cc0.wood.B.1": {
+      "kind": "recording",
+      "script": "tools/audio/prepare_recorded_steps.py",
+      "parameters": {
+        "author": "TinyWorlds",
+        "download_date": "2026-10-31",
+        "archive_url": "https://opengameart.org/sites/default/files/%5Bkdd%5DDifferentSteps_0.zip",
+        "archive_sha256": "987d072b7deaa65177e005ddd8185f2351be7c9a76cd7575dea560549c39b33b",
+        "input_file": "tmp/sound-v2-downloads/raw/TinyWorlds-wood02.ogg",
+        "input_sha256": "588bb121bd3db005b4c2a5b55c1cf39b8ec620f820c2123ac1f62748d132dac2",
+        "sample_rate": 24000,
+        "lowpass_hz": 4500,
+        "compression_exponent": 1.0,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -20.000016,
+        "peak_dbfs": -5.698998
+      },
+      "license": "CC0-1.0",
+      "url": "https://opengameart.org/content/different-steps-on-wood-stone-leaves-gravel-and-mud",
+      "sha256": "20793c522f6696f4b19715bc6521c16e949057b498833e949399633d8414fa9a"
+    },
+    "cc0.wood.B.2": {
+      "kind": "recording",
+      "script": "tools/audio/prepare_recorded_steps.py",
+      "parameters": {
+        "author": "TinyWorlds",
+        "download_date": "2026-10-31",
+        "archive_url": "https://opengameart.org/sites/default/files/%5Bkdd%5DDifferentSteps_0.zip",
+        "archive_sha256": "987d072b7deaa65177e005ddd8185f2351be7c9a76cd7575dea560549c39b33b",
+        "input_file": "tmp/sound-v2-downloads/raw/TinyWorlds-wood03.ogg",
+        "input_sha256": "9b677c284389163f132b94e1323ea713a4c7ac9d5fba849cf7cbf8b53a1627e2",
+        "sample_rate": 24000,
+        "lowpass_hz": 4500,
+        "compression_exponent": 0.7,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -19.999961,
+        "peak_dbfs": -4.713835
+      },
+      "license": "CC0-1.0",
+      "url": "https://opengameart.org/content/different-steps-on-wood-stone-leaves-gravel-and-mud",
+      "sha256": "70941bc4943cfef544acf3ae5dbb526e9ca29e935e423215aafcfba49dd3e2b9"
+    },
+    "cc0.wood.C.1": {
+      "kind": "recording",
+      "script": "tools/audio/prepare_recorded_steps.py",
+      "parameters": {
+        "author": "TinyWorlds",
+        "download_date": "2026-10-31",
+        "archive_url": "https://opengameart.org/sites/default/files/%5Bkdd%5DDifferentSteps_0.zip",
+        "archive_sha256": "987d072b7deaa65177e005ddd8185f2351be7c9a76cd7575dea560549c39b33b",
+        "input_file": "tmp/sound-v2-downloads/raw/TinyWorlds-wood03.ogg",
+        "input_sha256": "9b677c284389163f132b94e1323ea713a4c7ac9d5fba849cf7cbf8b53a1627e2",
+        "sample_rate": 24000,
+        "lowpass_hz": 4500,
+        "compression_exponent": 0.7,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -19.999961,
+        "peak_dbfs": -4.713835
+      },
+      "license": "CC0-1.0",
+      "url": "https://opengameart.org/content/different-steps-on-wood-stone-leaves-gravel-and-mud",
+      "sha256": "70941bc4943cfef544acf3ae5dbb526e9ca29e935e423215aafcfba49dd3e2b9"
+    },
+    "cc0.wood.C.2": {
+      "kind": "recording",
+      "script": "tools/audio/prepare_recorded_steps.py",
+      "parameters": {
+        "author": "TinyWorlds",
+        "download_date": "2026-10-31",
+        "archive_url": "https://opengameart.org/sites/default/files/%5Bkdd%5DDifferentSteps_0.zip",
+        "archive_sha256": "987d072b7deaa65177e005ddd8185f2351be7c9a76cd7575dea560549c39b33b",
+        "input_file": "tmp/sound-v2-downloads/raw/TinyWorlds-wood01.ogg",
+        "input_sha256": "482d97c5e1e6eb7b239be46f25d093ebebb94cefb56eedb04807b6a5dc68e972",
+        "sample_rate": 24000,
+        "lowpass_hz": 4500,
+        "compression_exponent": 0.925,
+        "target_rms_dbfs": -20.0,
+        "rms_dbfs": -19.999995,
+        "peak_dbfs": -4.85268
+      },
+      "license": "CC0-1.0",
+      "url": "https://opengameart.org/content/different-steps-on-wood-stone-leaves-gravel-and-mud",
+      "sha256": "518103f24419d7c17798cec079bd62fdaa4cec0677ae0bf6c70ba88bd696003a"
+    },
+    "soft1031.voice.bright.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/soften_voice.py",
+      "parameters": {
+        "input_file": "godot/content/audio/sound-v2/voice.bright-A.wav",
+        "input_sha256": "f0997d3f239ae70f537d0f93111f02c0e5d8e7827023a7eafd02f2e996c47f7f",
+        "lowpass_hz": 2400,
+        "attack_seconds": 0.025,
+        "compression_exponent": 0.65,
+        "target_rms_dbfs": -12,
+        "rms_dbfs": -11.999994,
+        "peak_dbfs": -6.281603
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "28b15cccd43477054a530e4684ac2ce6a88146c7a559b939e34d5da8b379c55b"
+    },
+    "soft1031.voice.bright.B": {
+      "kind": "synthesis",
+      "script": "tools/audio/soften_voice.py",
+      "parameters": {
+        "input_file": "godot/content/audio/sound-v2/voice.bright-B.wav",
+        "input_sha256": "91b907b9d922bf5cd95192f73c07575706aac6dfc6a35442457042a291a86fbb",
+        "lowpass_hz": 2400,
+        "attack_seconds": 0.025,
+        "compression_exponent": 0.65,
+        "target_rms_dbfs": -12,
+        "rms_dbfs": -11.999984,
+        "peak_dbfs": -6.281056
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "f2aabbd9dc11874533964bcd533a84ab8ed8c4ebfa2e94297a1b5d6c479f8867"
+    },
+    "soft1031.voice.bright.C": {
+      "kind": "synthesis",
+      "script": "tools/audio/soften_voice.py",
+      "parameters": {
+        "input_file": "godot/content/audio/sound-v2/voice.bright-C.wav",
+        "input_sha256": "57bea348583b61c43b4a604e09c09929316e666b607eb5fb7cc8f3fd2e2ce2cc",
+        "lowpass_hz": 2400,
+        "attack_seconds": 0.025,
+        "compression_exponent": 0.65,
+        "target_rms_dbfs": -12,
+        "rms_dbfs": -12.000013,
+        "peak_dbfs": -6.271229
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "49cb71194d374a6a704f687656b38f8f890005d56462aafa9c2d9cd8fe960500"
+    },
+    "soft1031.voice.soft.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/soften_voice.py",
+      "parameters": {
+        "input_file": "godot/content/audio/sound-v2/voice.soft-A.wav",
+        "input_sha256": "2ff11a6a4be3063fa37d88286b647b39b4042b499cf3781d1ce3aaca31d9b3f5",
+        "lowpass_hz": 2400,
+        "attack_seconds": 0.025,
+        "compression_exponent": 0.65,
+        "target_rms_dbfs": -12,
+        "rms_dbfs": -11.999991,
+        "peak_dbfs": -6.545622
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "73712c8d2ce41087bd96da345bb08c115bcf38bcdb10cf33c39c1e2dd4d2374e"
+    },
+    "soft1031.voice.crisp.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/soften_voice.py",
+      "parameters": {
+        "input_file": "godot/content/audio/sound-v2/voice.crisp-A.wav",
+        "input_sha256": "7ff7b27416da8f5be23a1332287abe922265815a37d5620880e9388fbd112274",
+        "lowpass_hz": 2400,
+        "attack_seconds": 0.025,
+        "compression_exponent": 0.65,
+        "target_rms_dbfs": -12,
+        "rms_dbfs": -12.000006,
+        "peak_dbfs": -6.400416
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "8abd9297a0429a1cf0cbcbe015c8edbf67221f0c8a35d829d259e4332a2915b5"
+    },
+    "soft1031.voice.low.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/soften_voice.py",
+      "parameters": {
+        "input_file": "godot/content/audio/sound-v2/voice.low-A.wav",
+        "input_sha256": "f6f3a5063539fe9ccbd57ea99d1b9edf18f27d0c9e9f5fa1972ba8e608734ad3",
+        "lowpass_hz": 2400,
+        "attack_seconds": 0.025,
+        "compression_exponent": 0.65,
+        "target_rms_dbfs": -12,
+        "rms_dbfs": -12.000002,
+        "peak_dbfs": -6.602123
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "184e56af07ca5f89cb308caa54c56d4672359b6d5cad7162a63707aa4c67de10"
+    },
+    "deep1101.voice.bright.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/deepen_voice.py",
+      "parameters": {
+        "algorithm": "murmur-voice-1101",
+        "shape": "hum",
+        "sample_rate": 24000,
+        "frequency_hz": 330.0,
+        "seconds": 0.105,
+        "lowpass_hz": 1500,
+        "target_rms_dbfs": -12.0,
+        "rms_dbfs": -12.000207,
+        "peak_dbfs": -4.913605
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "184bbd37c6cb539d212b3a93b275f98c0fcf744e9d67ccac26771a23da2dd154"
+    },
+    "deep1101.voice.bright.B": {
+      "kind": "synthesis",
+      "script": "tools/audio/deepen_voice.py",
+      "parameters": {
+        "algorithm": "murmur-voice-1101",
+        "shape": "hum",
+        "sample_rate": 24000,
+        "frequency_hz": 415.8,
+        "seconds": 0.105,
+        "lowpass_hz": 1800,
+        "target_rms_dbfs": -12.0,
+        "rms_dbfs": -12.000211,
+        "peak_dbfs": -4.924345
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "8d1c4da632ba0e786175eddfbdf3d53fd7242977a7b528bd65fe2b16821a729c"
+    },
+    "deep1101.voice.bright.C": {
+      "kind": "synthesis",
+      "script": "tools/audio/deepen_voice.py",
+      "parameters": {
+        "algorithm": "murmur-voice-1101",
+        "shape": "pluck",
+        "sample_rate": 24000,
+        "frequency_hz": 330.0,
+        "seconds": 0.105,
+        "lowpass_hz": 1700,
+        "target_rms_dbfs": -12.0,
+        "rms_dbfs": -12.050729,
+        "peak_dbfs": -4.264978
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "f02fbc112bf5f6a27356c03a28e9e01a3b00b69d5f6fd06ee8e7924ad6d73e25"
+    },
+    "deep1101.voice.crisp.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/deepen_voice.py",
+      "parameters": {
+        "algorithm": "murmur-voice-1101",
+        "shape": "hum",
+        "sample_rate": 24000,
+        "frequency_hz": 262.0,
+        "seconds": 0.095,
+        "lowpass_hz": 1500,
+        "target_rms_dbfs": -12.0,
+        "rms_dbfs": -12.00022,
+        "peak_dbfs": -4.903343
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "3e0f9b4d047a18c9bf421393009b8b224b0c9b49a985cb726d6acd4d6dee4d53"
+    },
+    "deep1101.voice.crisp.B": {
+      "kind": "synthesis",
+      "script": "tools/audio/deepen_voice.py",
+      "parameters": {
+        "algorithm": "murmur-voice-1101",
+        "shape": "hum",
+        "sample_rate": 24000,
+        "frequency_hz": 330.12,
+        "seconds": 0.095,
+        "lowpass_hz": 1800,
+        "target_rms_dbfs": -12.0,
+        "rms_dbfs": -12.000252,
+        "peak_dbfs": -4.908006
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "ded7b2c2c4b93882b0fdf68ea1e52d63db6472844cbffb0fc89f45465adc5a0a"
+    },
+    "deep1101.voice.crisp.C": {
+      "kind": "synthesis",
+      "script": "tools/audio/deepen_voice.py",
+      "parameters": {
+        "algorithm": "murmur-voice-1101",
+        "shape": "pluck",
+        "sample_rate": 24000,
+        "frequency_hz": 262.0,
+        "seconds": 0.095,
+        "lowpass_hz": 1700,
+        "target_rms_dbfs": -12.0,
+        "rms_dbfs": -12.05158,
+        "peak_dbfs": -4.147106
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "1aefa3450f6ad6ca3df17b35f08fd64a737f808abe8006ef4512c2624ffab708"
+    },
+    "deep1101.voice.soft.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/deepen_voice.py",
+      "parameters": {
+        "algorithm": "murmur-voice-1101",
+        "shape": "hum",
+        "sample_rate": 24000,
+        "frequency_hz": 208.0,
+        "seconds": 0.125,
+        "lowpass_hz": 1500,
+        "target_rms_dbfs": -12.0,
+        "rms_dbfs": -12.000052,
+        "peak_dbfs": -4.893094
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "41c39b3bd93aa42aa61a29940bf435c4e73705b73f6407ec7244086d01fc7aaa"
+    },
+    "deep1101.voice.soft.B": {
+      "kind": "synthesis",
+      "script": "tools/audio/deepen_voice.py",
+      "parameters": {
+        "algorithm": "murmur-voice-1101",
+        "shape": "hum",
+        "sample_rate": 24000,
+        "frequency_hz": 262.08,
+        "seconds": 0.125,
+        "lowpass_hz": 1800,
+        "target_rms_dbfs": -12.0,
+        "rms_dbfs": -12.000119,
+        "peak_dbfs": -4.894025
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "9228e555d64d6a719430a6932dcbadd989020149c5a15f1581c67593daa6223d"
+    },
+    "deep1101.voice.soft.C": {
+      "kind": "synthesis",
+      "script": "tools/audio/deepen_voice.py",
+      "parameters": {
+        "algorithm": "murmur-voice-1101",
+        "shape": "pluck",
+        "sample_rate": 24000,
+        "frequency_hz": 208.0,
+        "seconds": 0.125,
+        "lowpass_hz": 1700,
+        "target_rms_dbfs": -12.0,
+        "rms_dbfs": -12.029734,
+        "peak_dbfs": -4.210145
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "888ddb6b08bb40af0bc0bec5b10895392d1af3ee0b88df526f9768c477c3c3b7"
+    },
+    "deep1101.voice.low.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/deepen_voice.py",
+      "parameters": {
+        "algorithm": "murmur-voice-1101",
+        "shape": "hum",
+        "sample_rate": 24000,
+        "frequency_hz": 147.0,
+        "seconds": 0.145,
+        "lowpass_hz": 1500,
+        "target_rms_dbfs": -12.0,
+        "rms_dbfs": -12.000063,
+        "peak_dbfs": -4.903343
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "f585aeecf0332586d05dd3aa79d65532be80174601753ebe0d42cc985366786e"
+    },
+    "deep1101.voice.low.B": {
+      "kind": "synthesis",
+      "script": "tools/audio/deepen_voice.py",
+      "parameters": {
+        "algorithm": "murmur-voice-1101",
+        "shape": "hum",
+        "sample_rate": 24000,
+        "frequency_hz": 185.22,
+        "seconds": 0.145,
+        "lowpass_hz": 1800,
+        "target_rms_dbfs": -12.0,
+        "rms_dbfs": -12.000031,
+        "peak_dbfs": -4.891231
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "eae8becf450008d6c4e5743c9ddde98469f00546c713e0deb3d4f4422b34fcd4"
+    },
+    "deep1101.voice.low.C": {
+      "kind": "synthesis",
+      "script": "tools/audio/deepen_voice.py",
+      "parameters": {
+        "algorithm": "murmur-voice-1101",
+        "shape": "pluck",
+        "sample_rate": 24000,
+        "frequency_hz": 147.0,
+        "seconds": 0.145,
+        "lowpass_hz": 1700,
+        "target_rms_dbfs": -12.0,
+        "rms_dbfs": -12.032152,
+        "peak_dbfs": -4.399856
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "0de5b23cef77b9998f1ac316ebb5e394ab9fc0129e7b818ef94b9a3c823a14e9"
+    },
+    "single1101.voice.bright.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/one_bubble_voice.py",
+      "parameters": {
+        "algorithm": "single-pulse-murmur-1101",
+        "shape": "hum",
+        "sample_rate": 24000,
+        "frequency_hz": 330.0,
+        "seconds": 0.085,
+        "lowpass_hz": 750,
+        "target_rms_dbfs": -12.0,
+        "rms_dbfs": -12.000421,
+        "peak_dbfs": -5.50051
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "241f7ca936a7532e114cce5e92bd6bcbf9521e67aca1766caabf5192ee7eed26"
+    },
+    "single1101.voice.bright.B": {
+      "kind": "synthesis",
+      "script": "tools/audio/one_bubble_voice.py",
+      "parameters": {
+        "algorithm": "single-pulse-murmur-1101",
+        "shape": "pop",
+        "sample_rate": 24000,
+        "frequency_hz": 330.0,
+        "seconds": 0.085,
+        "lowpass_hz": 1000,
+        "target_rms_dbfs": -12.0,
+        "rms_dbfs": -12.000004,
+        "peak_dbfs": -4.227378
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "abc0ba5f33677013b0da1426f81d09f8a6847e9ff8b81beefb8a840a99e840e7"
+    },
+    "single1101.voice.bright.C": {
+      "kind": "synthesis",
+      "script": "tools/audio/one_bubble_voice.py",
+      "parameters": {
+        "algorithm": "single-pulse-murmur-1101",
+        "shape": "pluck",
+        "sample_rate": 24000,
+        "frequency_hz": 330.0,
+        "seconds": 0.085,
+        "lowpass_hz": 1200,
+        "target_rms_dbfs": -12.0,
+        "rms_dbfs": -12.062252,
+        "peak_dbfs": -4.363859
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "06b9668a52988e92ec7e4baae32b6552592c345a4a5538e54981b701bcd1c491"
+    },
+    "single1101.voice.crisp.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/one_bubble_voice.py",
+      "parameters": {
+        "algorithm": "single-pulse-murmur-1101",
+        "shape": "hum",
+        "sample_rate": 24000,
+        "frequency_hz": 262.0,
+        "seconds": 0.095,
+        "lowpass_hz": 750,
+        "target_rms_dbfs": -12.0,
+        "rms_dbfs": -12.000271,
+        "peak_dbfs": -5.504506
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "d54d18252806aeeabe0d546dfdc3e95dcab4e8f5953f885bd158e9f689b8630c"
+    },
+    "single1101.voice.crisp.B": {
+      "kind": "synthesis",
+      "script": "tools/audio/one_bubble_voice.py",
+      "parameters": {
+        "algorithm": "single-pulse-murmur-1101",
+        "shape": "pop",
+        "sample_rate": 24000,
+        "frequency_hz": 262.0,
+        "seconds": 0.095,
+        "lowpass_hz": 1000,
+        "target_rms_dbfs": -12.0,
+        "rms_dbfs": -11.999996,
+        "peak_dbfs": -4.217465
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "00ccf794d3737909213d873c7a4258ccc0b83e0fbb64c129e122d4ad51d96391"
+    },
+    "single1101.voice.crisp.C": {
+      "kind": "synthesis",
+      "script": "tools/audio/one_bubble_voice.py",
+      "parameters": {
+        "algorithm": "single-pulse-murmur-1101",
+        "shape": "pluck",
+        "sample_rate": 24000,
+        "frequency_hz": 262.0,
+        "seconds": 0.095,
+        "lowpass_hz": 1200,
+        "target_rms_dbfs": -12.0,
+        "rms_dbfs": -12.051661,
+        "peak_dbfs": -4.138137
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "7d1e033f0085673e63b3d8bf9eddbb9e39d83d1ae28240b853d20126f3c9d5a1"
+    },
+    "single1101.voice.soft.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/one_bubble_voice.py",
+      "parameters": {
+        "algorithm": "single-pulse-murmur-1101",
+        "shape": "hum",
+        "sample_rate": 24000,
+        "frequency_hz": 208.0,
+        "seconds": 0.105,
+        "lowpass_hz": 750,
+        "target_rms_dbfs": -12.0,
+        "rms_dbfs": -12.000141,
+        "peak_dbfs": -5.506504
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "bbe1ddea5e2f71cfc0f0e989ebd563a4cbc6c925829652f329860d9ba85c30cb"
+    },
+    "single1101.voice.soft.B": {
+      "kind": "synthesis",
+      "script": "tools/audio/one_bubble_voice.py",
+      "parameters": {
+        "algorithm": "single-pulse-murmur-1101",
+        "shape": "pop",
+        "sample_rate": 24000,
+        "frequency_hz": 208.0,
+        "seconds": 0.105,
+        "lowpass_hz": 1000,
+        "target_rms_dbfs": -12.0,
+        "rms_dbfs": -11.999996,
+        "peak_dbfs": -4.213589
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "146f864cbc9c65286211154f1c3aeadef9e1891a4daae3c5ed3ee494ef842548"
+    },
+    "single1101.voice.soft.C": {
+      "kind": "synthesis",
+      "script": "tools/audio/one_bubble_voice.py",
+      "parameters": {
+        "algorithm": "single-pulse-murmur-1101",
+        "shape": "pluck",
+        "sample_rate": 24000,
+        "frequency_hz": 208.0,
+        "seconds": 0.105,
+        "lowpass_hz": 1200,
+        "target_rms_dbfs": -12.0,
+        "rms_dbfs": -12.035932,
+        "peak_dbfs": -4.282755
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "df6e71383f08ae469d20a4d541c6f84d76b55664eb1efdbfa401a89805bf0f40"
+    },
+    "single1101.voice.low.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/one_bubble_voice.py",
+      "parameters": {
+        "algorithm": "single-pulse-murmur-1101",
+        "shape": "hum",
+        "sample_rate": 24000,
+        "frequency_hz": 147.0,
+        "seconds": 0.115,
+        "lowpass_hz": 750,
+        "target_rms_dbfs": -12.0,
+        "rms_dbfs": -12.000117,
+        "peak_dbfs": -5.517504
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "1d2b47bfdd437e9857affb9816ae8f4c444997f9d9081bb8d270eaea5be4ae61"
+    },
+    "single1101.voice.low.B": {
+      "kind": "synthesis",
+      "script": "tools/audio/one_bubble_voice.py",
+      "parameters": {
+        "algorithm": "single-pulse-murmur-1101",
+        "shape": "pop",
+        "sample_rate": 24000,
+        "frequency_hz": 147.0,
+        "seconds": 0.115,
+        "lowpass_hz": 1000,
+        "target_rms_dbfs": -12.0,
+        "rms_dbfs": -12.000001,
+        "peak_dbfs": -4.213158
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "6a46b440a5285dcc79ae441d429044d24429bc8f6f7a341be7829c5e82895627"
+    },
+    "single1101.voice.low.C": {
+      "kind": "synthesis",
+      "script": "tools/audio/one_bubble_voice.py",
+      "parameters": {
+        "algorithm": "single-pulse-murmur-1101",
+        "shape": "pluck",
+        "sample_rate": 24000,
+        "frequency_hz": 147.0,
+        "seconds": 0.115,
+        "lowpass_hz": 1200,
+        "target_rms_dbfs": -12.0,
+        "rms_dbfs": -12.036591,
+        "peak_dbfs": -3.271141
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "b19ac72bde51b325dcbfeae16c074fd951fad8f83968cb1d310214a3411a52f7"
+    },
+    "dark1101.torch.ignite": {
+      "kind": "synthesis",
+      "script": "tools/audio/dark_island_audio.py",
+      "parameters": {
+        "algorithm": "filtered-noise-single-envelope",
+        "sample_rate": 24000,
+        "seconds": 0.25,
+        "seed": 6101,
+        "lowpass_hz": 950,
+        "rms_dbfs": -18.613461,
+        "peak_dbfs": -6.327066
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "a848a2ac935fd400f213ed8cb3e88fdd68f6839d47131a9c634b257edde9bae7"
+    },
+    "dark1101.torch.plant": {
+      "kind": "synthesis",
+      "script": "tools/audio/dark_island_audio.py",
+      "parameters": {
+        "algorithm": "filtered-noise-single-envelope",
+        "sample_rate": 24000,
+        "seconds": 0.12,
+        "seed": 6102,
+        "lowpass_hz": 950,
+        "rms_dbfs": -18.769023,
+        "peak_dbfs": -7.451828
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "4eef1379809a92e774174229ebfdcd6b8df99f1dbe572b02fc6f0819c78fa38e"
+    },
+    "dark1101.torch.lift": {
+      "kind": "synthesis",
+      "script": "tools/audio/dark_island_audio.py",
+      "parameters": {
+        "algorithm": "filtered-noise-single-envelope",
+        "sample_rate": 24000,
+        "seconds": 0.12,
+        "seed": 6103,
+        "lowpass_hz": 950,
+        "rms_dbfs": -18.732566,
+        "peak_dbfs": -7.546736
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "c8e3d7df1904a864c076a2aa43666f98cd1c7cee4fecb0381a92266e9d8f84bb"
+    },
+    "dark1101.torch.warning": {
+      "kind": "synthesis",
+      "script": "tools/audio/dark_island_audio.py",
+      "parameters": {
+        "algorithm": "filtered-noise-single-envelope",
+        "sample_rate": 24000,
+        "seconds": 0.35,
+        "seed": 6104,
+        "lowpass_hz": 950,
+        "rms_dbfs": -18.760749,
+        "peak_dbfs": -6.807464
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "1fb9b80f34d20c45a75f0daa3d6efadb07c127b956f002e45d875f1a6a53c93f"
+    },
+    "dark1101.dark.kindling": {
+      "kind": "synthesis",
+      "script": "tools/audio/dark_island_audio.py",
+      "parameters": {
+        "algorithm": "filtered-noise-single-envelope",
+        "sample_rate": 24000,
+        "seconds": 0.5,
+        "seed": 6105,
+        "lowpass_hz": 950,
+        "rms_dbfs": -18.631358,
+        "peak_dbfs": -6.975069
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "7d23a7b5caf528c8af29901ce1aada0383797fb25cefd48e38bbc5b0eecac3ad"
+    },
+    "dark1101.dark.beacon": {
+      "kind": "synthesis",
+      "script": "tools/audio/dark_island_audio.py",
+      "parameters": {
+        "algorithm": "warm-major-triad-swell",
+        "sample_rate": 24000,
+        "seconds": 1.2,
+        "seed": 6106,
+        "lowpass_hz": 950,
+        "rms_dbfs": -18.562786,
+        "peak_dbfs": -8.662628
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "0a48eec7a399bfe42f9e6a96e9834f7dc7207b9a2c5f0ce10c11444aecc4f6eb"
+    },
+    "quietnature.ambience.birds.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/soften_nature.py",
+      "parameters": {
+        "input_file": "godot/content/audio/sound-v2/ambience.birds-A.wav",
+        "input_sha256": "82e87443a2749aa84063bae971abab5b2ad98a1a8c91fb0d95eba925da4d5394",
+        "input_source_id": "v2.ambience.birds.A",
+        "lowpass_hz": 1800,
+        "attenuation_db": -8,
+        "rms_dbfs": -31.501914,
+        "peak_dbfs": -19.891705,
+        "single_chirp": true
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "943914231731c6c72421ec43dc3fa850e71da1bdfd35a14df470d9d12f99f0d4"
+    },
+    "quietnature.ambience.insects.A": {
+      "kind": "synthesis",
+      "script": "tools/audio/soften_nature.py",
+      "parameters": {
+        "input_file": "godot/content/audio/sound-v2/ambience.insects-A.wav",
+        "input_sha256": "a71496d83d74330a50a2e1cff9d0f133b82885030c9487f5e2c6142ed83dea2f",
+        "input_source_id": "v2.ambience.insects.A",
+        "lowpass_hz": 1400,
+        "attenuation_db": -14,
+        "rms_dbfs": -57.444051,
+        "peak_dbfs": -31.331421,
+        "single_chirp": false
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "0bf2ab4f3af57a6a9ca7b10a5155d41752f0416ab3eba0e72dc0f1e2d2185a15"
+    },
+    "original.cat.meow": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize_cat.py",
+      "parameters": {
+        "algorithm": "soft-cat-original-v1",
+        "sample_rate": 24000,
+        "seconds": 0.48
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "4b965d97a955eb7523c125276d859d20d4bb3f1b65a479b79d586072dac00e85"
+    },
+    "original.cat.purr": {
+      "kind": "synthesis",
+      "script": "tools/audio/synthesize_cat.py",
+      "parameters": {
+        "algorithm": "soft-cat-original-v1",
+        "sample_rate": 24000,
+        "seconds": 0.8
+      },
+      "license": "project-original",
+      "url": "",
+      "sha256": "7ce3f9ea8796ee5a744dca82e78d92554212b43609e2327ab090efdc8cc6c657"
+    }
+  }
+}

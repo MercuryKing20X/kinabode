@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://b31i2gwwabhsi"
+
+[deps]
+
+files=["res://content/i18n/chess_audience.zh.translation", "res://content/i18n/chess_audience.en.translation"]
+
+source_file="res://content/i18n/chess_audience.csv"
+dest_files=["res://content/i18n/chess_audience.zh.translation", "res://content/i18n/chess_audience.en.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

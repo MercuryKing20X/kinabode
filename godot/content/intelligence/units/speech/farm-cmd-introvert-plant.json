@@ -1,0 +1,11 @@
+{
+  "id": "farm-cmd-introvert-plant",
+  "context": "farm_command_plant",
+  "lines": [
+    "……好，我去种。",
+    "嗯，我去把田种好。",
+    "我去，不用担心。",
+    "好，我慢慢种。"
+  ],
+  "autonomy_output": false
+}

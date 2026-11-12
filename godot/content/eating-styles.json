@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "default": "default",
+  "styles": {
+    "default": {
+      "blow": true,
+      "chew_at": 0.32,
+      "cycles": 2,
+      "puff": false,
+      "quiet": false
+    },
+    "patient": {
+      "blow": true,
+      "chew_at": 0.38,
+      "cycles": 3,
+      "puff": false,
+      "quiet": false
+    },
+    "eager": {
+      "blow": false,
+      "chew_at": 0.2,
+      "cycles": 4,
+      "puff": true,
+      "quiet": false
+    },
+    "hearty": {
+      "blow": true,
+      "chew_at": 0.28,
+      "cycles": 2,
+      "puff": false,
+      "quiet": false
+    },
+    "quiet": {
+      "blow": true,
+      "chew_at": 0.36,
+      "cycles": 3,
+      "puff": false,
+      "quiet": true
+    }
+  }
+}

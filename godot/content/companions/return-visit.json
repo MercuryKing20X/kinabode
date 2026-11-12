@@ -1,0 +1,8 @@
+{
+  "interval_seconds": 480,
+  "far_distance": 24,
+  "far_seconds": 180,
+  "stay_seconds": 18,
+  "stagger_seconds": 35,
+  "route_timeout_seconds": 120
+}

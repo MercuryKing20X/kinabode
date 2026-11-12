@@ -1,0 +1,22 @@
+keys,zh,en
+simple.connect,连接 AI,Connect AI
+simple.disconnect,断开,Disconnect
+simple.local,本地,Local
+simple.builtin,内置 Codex,Built-in Codex
+simple.external,外部 AI（让别的程序接入）,External AI (another application)
+simple.waiting,她在等外部程序，改成连接 AI？,Waiting for another application. Switch to Connect AI?
+simple.explain,游戏会等待外部程序接入，不会自己连接。,The game waits for another application; it will not connect by itself.
+simple.auto,下次启动自动连接,Connect automatically next launch
+simple.advanced,高级,Advanced
+simple.more,更多设置,More settings
+simple.missing,没找到 Codex，请安装 ChatGPT/Codex 后重试。,Codex was not found. Install ChatGPT/Codex and try again.
+simple.login,尚未登录，请打开 Codex 登录后重试。,"Not signed in. Open Codex, sign in, and try again."
+simple.timeout,启动超时，请检查 Codex 和网络后重试。,"Startup timed out. Check Codex and your connection, then retry."
+simple.quota,额度不足，请在 Codex 检查额度后重试。,"Usage limit reached. Check your allowance in Codex, then retry."
+simple.fallback,嗯……我们先在火边坐一会儿吧。,Mm… let’s sit by the fire a moment.
+simple.hello.codex,我在呢～,I’m here…
+simple.hello.companion-2,来啦来啦！,Here I am!
+simple.hello.npc.mira,嗯，我在。,Here. What needs doing?
+simple.hello.npc.nora,……嗯。,…Mm.
+simple.copy,复制配置,Copy configuration
+simple.external_name,外部：MCP 客户端（名字未报告）,External: MCP client (name not reported)

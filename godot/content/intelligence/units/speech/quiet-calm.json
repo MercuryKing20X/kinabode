@@ -1,0 +1,11 @@
+{
+  "id": "quiet-calm",
+  "context": "calm",
+  "lines": [
+    "现在心里很平静。",
+    "想安稳地待着。",
+    "这会儿就看看近处。",
+    "平和的时候，不赶路。"
+  ],
+  "autonomy_output": false
+}

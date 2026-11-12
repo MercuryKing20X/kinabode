@@ -1,0 +1,11 @@
+{
+  "id": "bbq-laborious-category-vegetable",
+  "context": "bbq_category_vegetable",
+  "lines": [
+    "烤蔬菜也得好好吃。",
+    "这份菜正热，别浪费火候。",
+    "蔬菜有焦香了，开吃。",
+    "这一盘菜，认真吃完。"
+  ],
+  "autonomy_output": false
+}

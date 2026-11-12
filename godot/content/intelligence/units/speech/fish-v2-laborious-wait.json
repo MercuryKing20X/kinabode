@@ -1,0 +1,11 @@
+{
+  "id": "fish-v2-laborious-wait",
+  "context": "fishing_v2_wait",
+  "lines": [
+    "好，海面静静的，再等等。",
+    "稳住，还没有动静，不着急。",
+    "接着，浮漂还在水面上。",
+    "认真一点，也许鱼儿正在附近。"
+  ],
+  "autonomy_output": false
+}

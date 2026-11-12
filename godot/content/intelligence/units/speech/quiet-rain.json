@@ -1,0 +1,11 @@
+{
+  "id": "quiet-rain",
+  "context": "rain",
+  "lines": [
+    "下小雨了。想找个屋檐。",
+    "雨丝看得见，先近处待着。",
+    "今天有雨，声音放轻些。",
+    "小雨来了。我先站站。"
+  ],
+  "autonomy_output": false
+}

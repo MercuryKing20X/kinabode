@@ -1,0 +1,11 @@
+{
+  "id": "bbq-quiet-category-vegetable",
+  "context": "bbq_category_vegetable",
+  "lines": [
+    "热蔬菜……也好。",
+    "嗯，菜是软的。",
+    "这份菜，我吃完。",
+    "有一点焦香。可以。"
+  ],
+  "autonomy_output": false
+}

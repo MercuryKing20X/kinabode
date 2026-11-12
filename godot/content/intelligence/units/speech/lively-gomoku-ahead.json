@@ -1,0 +1,11 @@
+{
+  "id": "lively-gomoku-ahead",
+  "context": "gomoku_ahead",
+  "lines": [
+    "嘿，现在我这边的机会多一些。",
+    "哎呀，我似乎更容易接出下一手。",
+    "看这里，局面暂时偏向我一点。",
+    "哈，这会儿我能主动些。"
+  ],
+  "autonomy_output": false
+}

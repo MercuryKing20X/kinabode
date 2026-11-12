@@ -1,0 +1,11 @@
+{
+  "id": "bbq-laborious-chat-phase",
+  "context": "bbq_chat_phase",
+  "lines": [
+    "现在是{phase}，先歇一会儿。",
+    "{phase}了，火边还能坐。",
+    "趁{phase}把这一会儿过踏实。",
+    "到了{phase}，也不用马上忙起来。"
+  ],
+  "autonomy_output": false
+}

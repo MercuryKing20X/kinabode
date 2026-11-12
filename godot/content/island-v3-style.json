@@ -1,0 +1,258 @@
+{
+  "version": 1,
+  "render_only": true,
+  "tile_pixels": 32,
+  "half_level_pixels": 16,
+  "integer_scales": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "palette": [
+    {
+      "name": "海与天空 1",
+      "hex": "#183F54"
+    },
+    {
+      "name": "海与天空 2",
+      "hex": "#20566A"
+    },
+    {
+      "name": "海与天空 3",
+      "hex": "#2A7182"
+    },
+    {
+      "name": "海与天空 4",
+      "hex": "#388E99"
+    },
+    {
+      "name": "海与天空 5",
+      "hex": "#55A7A6"
+    },
+    {
+      "name": "海与天空 6",
+      "hex": "#7CC2B8"
+    },
+    {
+      "name": "海与天空 7",
+      "hex": "#ABD8CB"
+    },
+    {
+      "name": "海与天空 8",
+      "hex": "#D9E7D6"
+    },
+    {
+      "name": "草与叶 1",
+      "hex": "#243F35"
+    },
+    {
+      "name": "草与叶 2",
+      "hex": "#365344"
+    },
+    {
+      "name": "草与叶 3",
+      "hex": "#486A4B"
+    },
+    {
+      "name": "草与叶 4",
+      "hex": "#5B7D50"
+    },
+    {
+      "name": "草与叶 5",
+      "hex": "#719054"
+    },
+    {
+      "name": "草与叶 6",
+      "hex": "#8EA765"
+    },
+    {
+      "name": "草与叶 7",
+      "hex": "#AFBE7B"
+    },
+    {
+      "name": "草与叶 8",
+      "hex": "#CBD39B"
+    },
+    {
+      "name": "土地与沙 1",
+      "hex": "#604B3D"
+    },
+    {
+      "name": "土地与沙 2",
+      "hex": "#7D6247"
+    },
+    {
+      "name": "土地与沙 3",
+      "hex": "#997A50"
+    },
+    {
+      "name": "土地与沙 4",
+      "hex": "#B29560"
+    },
+    {
+      "name": "土地与沙 5",
+      "hex": "#C8AE73"
+    },
+    {
+      "name": "土地与沙 6",
+      "hex": "#DAC18A"
+    },
+    {
+      "name": "土地与沙 7",
+      "hex": "#E8D2A3"
+    },
+    {
+      "name": "土地与沙 8",
+      "hex": "#F3E2BD"
+    },
+    {
+      "name": "石与灰 1",
+      "hex": "#37454B"
+    },
+    {
+      "name": "石与灰 2",
+      "hex": "#526064"
+    },
+    {
+      "name": "石与灰 3",
+      "hex": "#697778"
+    },
+    {
+      "name": "石与灰 4",
+      "hex": "#82918C"
+    },
+    {
+      "name": "石与灰 5",
+      "hex": "#9DA89B"
+    },
+    {
+      "name": "石与灰 6",
+      "hex": "#BAC1AE"
+    },
+    {
+      "name": "石与灰 7",
+      "hex": "#D4D6BE"
+    },
+    {
+      "name": "石与灰 8",
+      "hex": "#ECE8D0"
+    },
+    {
+      "name": "木与屋顶 1",
+      "hex": "#443C38"
+    },
+    {
+      "name": "木与屋顶 2",
+      "hex": "#63483D"
+    },
+    {
+      "name": "木与屋顶 3",
+      "hex": "#80543E"
+    },
+    {
+      "name": "木与屋顶 4",
+      "hex": "#9D6745"
+    },
+    {
+      "name": "木与屋顶 5",
+      "hex": "#B67F50"
+    },
+    {
+      "name": "木与屋顶 6",
+      "hex": "#CA9867"
+    },
+    {
+      "name": "木与屋顶 7",
+      "hex": "#DBB789"
+    },
+    {
+      "name": "木与屋顶 8",
+      "hex": "#E8D0A7"
+    },
+    {
+      "name": "花与暖光 1",
+      "hex": "#6C566F"
+    },
+    {
+      "name": "花与暖光 2",
+      "hex": "#9B7187"
+    },
+    {
+      "name": "花与暖光 3",
+      "hex": "#C88F9C"
+    },
+    {
+      "name": "花与暖光 4",
+      "hex": "#E5B2AF"
+    },
+    {
+      "name": "花与暖光 5",
+      "hex": "#C98A48"
+    },
+    {
+      "name": "花与暖光 6",
+      "hex": "#E9B865"
+    },
+    {
+      "name": "花与暖光 7",
+      "hex": "#F6D690"
+    },
+    {
+      "name": "花与暖光 8",
+      "hex": "#FFF0BD"
+    }
+  ],
+  "shadow": {
+    "direction": [
+      3,
+      2
+    ],
+    "prop_length": 12,
+    "house_length": 24,
+    "actor_length": 8,
+    "opacity": 0.22,
+    "night_opacity": 0.14,
+    "contact_opacity": 0.32,
+    "contact_width": 2
+  },
+  "density": {
+    "cell_tiles": [
+      8,
+      8
+    ],
+    "focus": 1,
+    "small_props": [
+      2,
+      4
+    ]
+  },
+  "roads": {
+    "square": "stone",
+    "main": {
+      "material": "soil",
+      "width": 2,
+      "curb": true
+    },
+    "secondary": {
+      "material": "soil",
+      "width": 1
+    },
+    "trail": {
+      "material": "stepping_stone",
+      "width": 0.6
+    }
+  },
+  "day_tints": {
+    "morning": "#FFF2D8",
+    "afternoon": "#FFFFFF",
+    "dusk": "#F5BD8C",
+    "night": "#647D9D"
+  },
+  "personalities": {
+    "gentle": "花盆与花沿",
+    "curious": "望远镜与观察札记",
+    "lively": "风铃与小旗",
+    "quiet": "书架与安静角落"
+  }
+}

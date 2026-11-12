@@ -1,0 +1,45 @@
+extends SceneTree
+## Save compatibility fixture. This is not the real-mouse acceptance flow.
+const World=preload("res://scripts/world_state.gd")
+const Save=preload("res://scripts/save_store.gd")
+const L=preload("res://scripts/localization.gd")
+func _initialize()->void:
+	var directory:=OS.get_environment("HABITAT_DATA_DIR");assert(directory.contains("youqi-test-"))
+	L.configure(directory)
+	var world:=World.new("res://content/home-v3/world.json");world.residents.provision(world);world.director.set_all_enabled(false)
+	world.actors.human.region_id="dark";world.actors.human.position=[42,79];world.dark.torch.owned=true;world.dark.torch.remaining=120
+	assert(world.dark.discoveries.begin("bell",Vector2(42,79)).ok)
+	for frame in range(20):world.advance(.1)
+	assert(Save.save_world(world,directory))
+	var path:String=directory.path_join("island-v2.json")
+	var old:Dictionary=JSON.parse_string(FileAccess.get_file_as_string(path))
+	for entry in old.shared_memories.records:entry.erase("text_version")
+	FileAccess.open(path,FileAccess.WRITE).store_string(JSON.stringify(old))
+	L.select(directory,"en")
+	var loaded:=World.new("res://content/home-v3/world.json");loaded.residents.provision(loaded)
+	assert(Save.load_world(loaded,directory).ok)
+	assert(loaded.memories.records.all(func(entry):return not entry.has("text_version")))
+	var old_summary:String=loaded.memories.query("human").memories[0].summary
+	assert(old_summary.contains(L.source("content.dark.relic.bell.name")))
+	loaded.actors.human.position=[69,58];loaded.dark.torch.remaining=120
+	assert(loaded.dark.discoveries.begin("page",Vector2(69,58)).ok)
+	for frame in range(20):loaded.advance(.1)
+	var fresh:Dictionary=loaded.memories.records.filter(func(entry):return entry.facts.get("id")=="page")[0]
+	assert(fresh.text_version==1)
+	assert(loaded.memories._describe(fresh).summary=="We found Half a Diary Page.")
+	assert(Save.save_world(loaded,directory))
+	var english_save:Dictionary=JSON.parse_string(FileAccess.get_file_as_string(path))
+	L.select(directory,"zh")
+	assert(loaded.memories._describe(fresh).summary.contains(L.source("content.dark.relic.page.name")))
+	assert(Save.save_world(loaded,directory))
+	var chinese_save:Dictionary=JSON.parse_string(FileAccess.get_file_as_string(path))
+	assert(english_save.shared_memories==chinese_save.shared_memories)
+	# Each save intentionally records the current wall time; compare all gameplay fields.
+	english_save.fishing.erase("saved_at");chinese_save.fishing.erase("saved_at")
+	assert(english_save.fishing==chinese_save.fishing and english_save.actors==chinese_save.actors)
+	assert(Save.load_world(loaded,directory).ok)
+	assert(loaded.memories.records.filter(func(entry):return entry.has("text_version")).size()==1)
+	L.select(directory,"en")
+	assert(loaded.memories.query("human").memories.any(func(entry):return entry.summary==old_summary))
+	print("Localization legacy: committed relics, mixed old/new schema7 memories, save/reload, language-independent facts PASS")
+	quit()

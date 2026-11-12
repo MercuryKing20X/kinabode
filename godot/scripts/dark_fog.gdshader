@@ -1,0 +1,30 @@
+shader_type canvas_item;
+render_mode unshaded;
+uniform sampler2D permanent_mask : filter_linear, repeat_disable;
+uniform sampler2D spread_mask : filter_linear, repeat_disable;
+uniform vec2 viewport_size;
+uniform vec2 camera_center;
+uniform vec2 map_size;
+uniform vec2 map_origin;
+uniform float pixel_scale;
+uniform vec2 personal_center;
+uniform float personal_radius;
+uniform float soft_edge;
+uniform vec2 planted_center;
+uniform float planted_radius = 0.0;
+uniform vec2 spread_center;
+uniform float spread_radius = 0.0;
+uniform float flicker = 1.0;
+void fragment(){
+	vec2 at=(SCREEN_UV*viewport_size-viewport_size*.5)/pixel_scale+camera_center;
+	float fixed_light=texture(permanent_mask,(at-map_origin)/map_size).r;
+	if(any(lessThan(at,map_origin))||any(greaterThan(at,map_origin+map_size)))fixed_light=0.;
+	float personal=1.-smoothstep(personal_radius*flicker,(personal_radius+soft_edge)*flicker,distance(at,personal_center));
+	float planted=planted_radius>0.?1.-smoothstep(planted_radius,planted_radius+soft_edge,distance(at,planted_center)):0.;
+	float spreading=texture(spread_mask,(at-map_origin)/map_size).r*(1.-smoothstep(spread_radius,spread_radius+2.,distance(at,spread_center)));
+	if(any(lessThan(at,map_origin))||any(greaterThan(at,map_origin+map_size)))spreading=0.;
+	float light=max(max(fixed_light,spreading),max(personal,planted));
+	float warm=max(personal_radius>3.?personal:0.,planted)*.065;
+	float opacity=max(1.-light,warm);
+	COLOR=vec4(mix(vec3(.003,.006,.016),vec3(.95,.52,.16),warm/max(opacity,.0001)),opacity);
+}

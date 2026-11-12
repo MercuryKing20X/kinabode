@@ -1,0 +1,13 @@
+{
+  "id": "dark-quiet-firefly",
+  "context": "dark_firefly",
+  "lines": [
+    "光飞起来了。",
+    "轻一点，别吓着它。",
+    "它像一粒星星。",
+    "暗处还有一只。",
+    "我们装好这点光。",
+    "回家也能看见它。"
+  ],
+  "autonomy_output": false
+}

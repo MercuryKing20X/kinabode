@@ -1,0 +1,51 @@
+keys,zh,en
+ingredients.collect,采集 %s,Collect %s
+content.ingredient.potato,土豆,Potato
+content.ingredient.corn,玉米,Corn
+ingredients.empty,空着，可以种,Empty — ready to plant
+content.ingredient.wild_berry,野莓,Wild berries
+content.ingredient.chestnut,栗子,Chestnut
+content.ingredient.clam,蛤蜊,Clam
+content.ingredient.crab,小螃蟹,Little crab
+content.ingredient.kelp,海带,Kelp
+content.ingredient.moonflower,月见花,Moonflower
+content.ingredient.glow_mushroom,发光蘑菇,Glow mushroom
+content.ingredient.black_truffle,黑松露,Black truffle
+content.ingredient.night_nut,夜栗,Night nut
+content.ingredient.honey,蜂蜜,Honey
+content.ingredient.petals,花瓣,Petals
+content.ingredient.herb,香草,Herb
+content.ingredient.star_berry,星露莓,Star berries
+ingredients.facility.produce-flowerhouse,花房,Flowerhouse
+ingredients.facility.produce-herbgarden,菜园工坊,Garden workshop
+ingredients.facility.produce-fishrack,晾鱼架,Fish drying rack
+ingredients.facility.produce-stargarden,星露花架,Star garden
+ingredients.facility.reason,想在自己的地上留一点岛上的味道。,"A little taste of this island, in my own garden."
+content.ingredient.southfarm,南岛菜园,South island garden
+ingredients.dry,晾这条鱼,Dry this fish
+content.ingredient.dried_fish,鱼干,Dried fish
+content.speech.ingredient.truffle,树根边有一点黑松露的香气……光往这里照一照？,There is a hint of truffle by the roots… could we bring the light closer?
+content.ingredient.whitefield,南岛花房田,Flowerhouse beds
+content.ingredient.blackfield,南岛星露田,Star garden beds
+storage.item.wild_berry,野莓,Wild berries
+storage.item.chestnut,栗子,Chestnut
+storage.item.clam,蛤蜊,Clam
+storage.item.crab,小螃蟹,Little crab
+storage.item.kelp,海带,Kelp
+storage.item.moonflower,月见花,Moonflower
+storage.item.glow_mushroom,发光蘑菇,Glow mushroom
+storage.item.black_truffle,黑松露,Black truffle
+storage.item.night_nut,夜栗,Night nut
+storage.item.honey,蜂蜜,Honey
+storage.item.petals,花瓣,Petals
+storage.item.herb,香草,Herb
+storage.item.star_berry,星露莓,Star berries
+storage.item.potato,土豆,Potato
+storage.item.corn,玉米,Corn
+storage.item.dried_fish,鱼干,Dried fish
+storage.item.seed.potato,土豆种子,Potato seeds
+storage.item.seed.corn,玉米种子,Corn seeds
+content.seed_source.apple,林间苹果种子,Woodland apple seeds
+content.seed_source.blueberry,林间蓝莓种子,Woodland blueberry seeds
+content.seed_source.pumpkin,野生南瓜种子,Wild pumpkin seeds
+content.seed_source.daisy,野生雏菊种子,Wild daisy seeds

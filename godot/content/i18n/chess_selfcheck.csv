@@ -1,0 +1,4 @@
+keys,zh,en
+chess.selfcheck.reason,翻出对方的%s将了自己的军。,The revealed opposing %s checked its own side's king.
+jieqi.selfcheck_human,翻出对方棋子将了自己的军，你输了。,The revealed opposing piece checked your king. You lose.
+jieqi.selfcheck_companion,她翻出你的棋子将了自己的军，你赢了。,She revealed your piece and checked her own king. You win.

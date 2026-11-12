@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "board_size": 15,
+  "think_seconds": [0.9, 1.8],
+  "arrival_timeout": 120,
+  "search_ms": 12,
+  "candidate_limit": 32,
+  "root_limit": 8,
+  "reply_limit": 16,
+  "lines": {
+    "start": ["来下一盘吧，我坐这边。", "棋子摆好了，慢慢来。"],
+    "move": ["这一手，落在这里。", "嗯……我选这里。"],
+    "win": ["这次我连起来啦，再来一盘吗？"],
+    "lose": ["看到你的五颗了，这一盘下得真好。"],
+    "draw": ["棋盘都坐满了，平分这一盘吧。"]
+  }
+}

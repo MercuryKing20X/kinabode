@@ -1,0 +1,11 @@
+{
+  "id": "farm-cmd-glutton-harvest",
+  "context": "farm_command_harvest",
+  "lines": [
+    "收菜！收完是不是能烤？",
+    "我去收，越多越好吃！",
+    "好呀，收回来马上就能吃了！",
+    "交给我，收得满满的！"
+  ],
+  "autonomy_output": false
+}

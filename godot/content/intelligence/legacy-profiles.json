@@ -1,0 +1,156 @@
+{
+  "version": 1,
+  "defaults": {
+    "calm": "gentle",
+    "curious": "curious",
+    "lively": "lively"
+  },
+  "fact_age": 600,
+  "personal_gap": 45,
+  "village_gap": 14,
+  "repeat_window": 3600,
+  "repeat_limit": 2,
+  "check_interval": 1,
+  "fact_events_enabled": true,
+  "profiles": {
+    "gentle": {
+      "name": "温柔",
+      "action": "watch",
+      "wish_weights": {
+        "meal": 2,
+        "fish": 0.7,
+        "furniture": 1.2,
+        "facility": 1,
+        "homestead": 1.5
+      },
+      "schedule_weights": {
+        "camp": 1.6,
+        "shelter": 1.5,
+        "sea": 1,
+        "garden": 1.1
+      },
+      "weights": {
+        "nearby": 1.4,
+        "rest": 1.3
+      },
+      "idle_speech_scale": 1.1,
+      "speech_units": [
+        "gentle-ambient",
+        "gentle-calm",
+        "gentle-happy",
+        "gentle-quiet",
+        "gentle-tired",
+        "gentle-meal",
+        "gentle-giant",
+        "gentle-rain",
+        "gentle-fog",
+        "gentle-greet"
+      ]
+    },
+    "curious": {
+      "name": "好奇",
+      "action": "look",
+      "wish_weights": {
+        "meal": 1,
+        "fish": 2.5,
+        "furniture": 1.5,
+        "facility": 1.3,
+        "homestead": 1
+      },
+      "schedule_weights": {
+        "sea": 2,
+        "garden": 1.4,
+        "camp": 0.8,
+        "shelter": 1
+      },
+      "weights": {
+        "look": 1.8,
+        "wander": 1.2
+      },
+      "idle_speech_scale": 1.0,
+      "speech_units": [
+        "curious-ambient",
+        "curious-calm",
+        "curious-happy",
+        "curious-quiet",
+        "curious-tired",
+        "curious-meal",
+        "curious-giant",
+        "curious-rain",
+        "curious-fog",
+        "curious-greet"
+      ]
+    },
+    "lively": {
+      "name": "活泼",
+      "action": "stretch",
+      "wish_weights": {
+        "meal": 1.2,
+        "fish": 1.4,
+        "furniture": 0.8,
+        "facility": 2,
+        "homestead": 1
+      },
+      "schedule_weights": {
+        "sea": 1.6,
+        "garden": 1,
+        "camp": 2,
+        "shelter": 0.8
+      },
+      "weights": {
+        "stretch": 1.5,
+        "facility": 1.4,
+        "nearby": 0.4,
+        "wander": 1.8
+      },
+      "idle_speech_scale": 0.45,
+      "speech_units": [
+        "lively-ambient",
+        "lively-calm",
+        "lively-happy",
+        "lively-quiet",
+        "lively-tired",
+        "lively-meal",
+        "lively-giant",
+        "lively-rain",
+        "lively-fog",
+        "lively-greet"
+      ]
+    },
+    "quiet": {
+      "name": "内敛",
+      "action": "watch",
+      "wish_weights": {
+        "meal": 1.3,
+        "fish": 0.8,
+        "furniture": 2,
+        "facility": 1.4,
+        "homestead": 1
+      },
+      "schedule_weights": {
+        "shelter": 2,
+        "garden": 1.3,
+        "camp": 1,
+        "sea": 0.8
+      },
+      "weights": {
+        "rest": 1.6,
+        "watch": 1.4,
+        "wander": 0.7
+      },
+      "idle_speech_scale": 1.7,
+      "speech_units": [
+        "quiet-ambient",
+        "quiet-calm",
+        "quiet-happy",
+        "quiet-quiet",
+        "quiet-tired",
+        "quiet-meal",
+        "quiet-giant",
+        "quiet-rain",
+        "quiet-fog",
+        "quiet-greet"
+      ]
+    }
+  }
+}

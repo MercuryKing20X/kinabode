@@ -1,0 +1,139 @@
+{
+  "version": 1,
+  "author": "Original hand-authored forearm/grip pixels and directional anchors for Youqi, 2026-10-26",
+  "left_arm": [
+    "....oooo....",
+    "...osssso...",
+    "...osllso...",
+    "...osllso...",
+    "...osssso...",
+    "....osso....",
+    "....osso....",
+    "....osso....",
+    "...osso.....",
+    "...osso.....",
+    "...osso.....",
+    "..osso......",
+    "..osso......",
+    "..osso......",
+    ".osso.......",
+    ".osso.......",
+    ".osso.......",
+    ".osso.......",
+    ".osso.......",
+    "..osso......",
+    "..osso......",
+    "...osso.....",
+    "...osso.....",
+    "...occco....",
+    "...ocllco...",
+    "...ocllco...",
+    "....occco...",
+    "....occco...",
+    ".....ooo...."
+  ],
+  "grip_arm": [
+    "..oooo..",
+    ".osssso.",
+    ".osllso.",
+    "..osso..",
+    "..osso..",
+    "..osso..",
+    "..osso..",
+    "..osso..",
+    "..osso..",
+    "..occco.",
+    ".ocllco.",
+    "..oooo.."
+  ],
+  "rod_grips": {
+    "down": {
+      "shoulders": [
+        [
+          -15,
+          -43
+        ],
+        [
+          15,
+          -43
+        ]
+      ],
+      "hands": [
+        [
+          7,
+          -45
+        ],
+        [
+          22,
+          -43
+        ]
+      ]
+    },
+    "up": {
+      "shoulders": [
+        [
+          -15,
+          -46
+        ],
+        [
+          15,
+          -46
+        ]
+      ],
+      "hands": [
+        [
+          3,
+          -43
+        ],
+        [
+          21,
+          -45
+        ]
+      ]
+    },
+    "left": {
+      "shoulders": [
+        [
+          5,
+          -44
+        ],
+        [
+          -9,
+          -43
+        ]
+      ],
+      "hands": [
+        [
+          -20,
+          -48
+        ],
+        [
+          -31,
+          -44
+        ]
+      ]
+    },
+    "right": {
+      "shoulders": [
+        [
+          -5,
+          -44
+        ],
+        [
+          9,
+          -43
+        ]
+      ],
+      "hands": [
+        [
+          20,
+          -48
+        ],
+        [
+          31,
+          -44
+        ]
+      ]
+    }
+  }
+}

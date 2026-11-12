@@ -1,0 +1,11 @@
+{
+  "id": "bbq-quiet-chat-food",
+  "context": "bbq_chat_food",
+  "lines": [
+    "……刚才的{food}，不错。",
+    "{food}吃完了。坐会儿。",
+    "我还记着{food}的味道。",
+    "热的{food}……嗯。"
+  ],
+  "autonomy_output": false
+}

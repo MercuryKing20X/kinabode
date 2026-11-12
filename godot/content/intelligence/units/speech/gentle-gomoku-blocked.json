@@ -1,0 +1,11 @@
+{
+  "id": "gentle-gomoku-blocked",
+  "context": "gomoku_blocked",
+  "lines": [
+    "嗯，这处连线被挡住了。",
+    "轻轻说，原来的路被你堵住了。",
+    "我想，这个口现在封住了。",
+    "慢慢来，这条路不能直接延伸啦。"
+  ],
+  "autonomy_output": false
+}

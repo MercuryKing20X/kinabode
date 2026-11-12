@@ -1,0 +1,40 @@
+keys,zh,en
+cat.name,小橘猫 · 柚柚,Little orange cat · Yuzu
+cat.hold,抱起来,Pick up
+cat.pet,摸摸,Gentle pats
+cat.release,放下来,Put down
+cat.close,关上,Close
+cat.near,先走近它，忙完再摸摸。,Come closer and finish what you are doing first.
+lively.chat,这会儿真舒服。,Lovely to have a quiet moment together.
+lively.chase,抓到你啦！,Got you!
+lively.back_to_back,借我靠一会儿。,Mind if I lean here a moment?
+lively.flower,这朵花送给你看。,Look at this little flower.
+lively.cat_watch,看那小家伙。,Look at that little one.
+lively.surprise,嘿！,Boo!
+cat.memory.hold,%s第一次抱起柚柚。,%s held Yuzu for the first time.
+cat.memory.pet,%s第一次轻轻摸了柚柚。,%s gave Yuzu a first gentle pat.
+cat.meow,喵～,Mrrp!
+lively.pair.gentle.chat,聊一会儿，好吗？,A little company would be lovely.
+lively.pair.gentle.chase,慢一点，我跟着呢。,Easy now. I am right behind you.
+lively.pair.gentle.back_to_back,这样靠着，很安心。,This feels peaceful.
+lively.pair.gentle.flower,这朵小花，让你先看。,You should see this little blossom.
+lively.pair.gentle.cat_watch,看它小小的耳朵。,Those tiny ears are precious.
+lively.pair.gentle.surprise,呀，是你呀。,Oh! It is you.
+lively.pair.lively.chat,嘿，陪我聊两句！,Hey! Tell me something fun!
+lively.pair.lively.chase,来追我呀！,Bet you cannot catch me!
+lively.pair.lively.back_to_back,靠好啦，不许挠我！,Lean back! And no tickling!
+lively.pair.lively.flower,这朵好看，快看快看！,This one is gorgeous! Look!
+lively.pair.lively.cat_watch,柚柚，看看这边！,Yuzu! Over here!
+lively.pair.lively.surprise,哇！吓我一跳！,Whoa! You got me!
+lively.pair.laborious.chat,歇会儿，聊两句。,A short break. How are things?
+lively.pair.laborious.chase,别跑太远，慢着点！,Keep close. Watch your step!
+lively.pair.laborious.back_to_back,坐稳，靠着歇会儿。,Settle down. Rest your back.
+lively.pair.laborious.flower,拿着看，别折到花茎。,Have a look. Mind the stem.
+lively.pair.laborious.cat_watch,小家伙，别绊着人。,Careful little one. Mind our feet.
+lively.pair.laborious.surprise,哎！别闹，我看见你了。,Hey! I saw you coming.
+lively.pair.quiet.chat,嗯，我听着。,Mm. I am listening.
+lively.pair.quiet.chase,追上了。,Caught you.
+lively.pair.quiet.back_to_back,就这样吧。,This will do.
+lively.pair.quiet.flower,给你看。,Here. A flower.
+lively.pair.quiet.cat_watch,它也喜欢安静。,Quiet company suits us.
+lively.pair.quiet.surprise,……看见你了。,...Saw you.

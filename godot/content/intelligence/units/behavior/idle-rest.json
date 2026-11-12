@@ -1,0 +1,7 @@
+{
+  "id": "idle-rest",
+  "action": "rest",
+  "conditions": {},
+  "cooldown_seconds": 0,
+  "requires_target": true
+}

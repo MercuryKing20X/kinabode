@@ -1,0 +1,828 @@
+{
+  "version": 1,
+  "recipes": {
+    "honey-berry-apple": {
+      "name_en": "Honey berry baked apple",
+      "category": "dessert",
+      "signature_trait": "gentle",
+      "fish_species": "",
+      "method": "将食材在营火上慢慢烤香。",
+      "method_en": "Cook gently over the campfire.",
+      "signature_line": "甜甜的，像把你留在心里了。",
+      "signature_line_en": "Sweet... like keeping a little of you close.",
+      "first_lines": {
+        "gentle": "第一次吃蜂蜜蓝莓烤苹果。",
+        "lively": "哇，第一次尝到蜂蜜蓝莓烤苹果。",
+        "laborious": "第一次尝这道蜂蜜蓝莓烤苹果。",
+        "quiet": "原来，这就是蜂蜜蓝莓烤苹果。"
+      },
+      "normal_lines": {
+        "gentle": "嗯，蜂蜜蓝莓烤苹果，想慢慢尝。",
+        "lively": "蜂蜜蓝莓烤苹果！香气都跑过来了！",
+        "laborious": "蜂蜜蓝莓烤苹果，这一口真踏实。",
+        "quiet": "蜂蜜蓝莓烤苹果……很好。"
+      },
+      "favorite_traits": [
+        "gentle"
+      ]
+    },
+    "sea-land-skewers": {
+      "name_en": "Island feast skewers",
+      "category": "skewers",
+      "signature_trait": "lively",
+      "fish_species": "",
+      "method": "将食材在营火上慢慢烤香。",
+      "method_en": "Cook gently over the campfire.",
+      "signature_line": "海里和地里的好吃都在一起！这串是我的宝贝！",
+      "signature_line_en": "Sea and land on one skewer! This one is my treasure!",
+      "first_lines": {
+        "gentle": "第一次吃海陆豪华烤串。",
+        "lively": "哇，第一次尝到海陆豪华烤串。",
+        "laborious": "第一次尝这道海陆豪华烤串。",
+        "quiet": "原来，这就是海陆豪华烤串。"
+      },
+      "normal_lines": {
+        "gentle": "嗯，海陆豪华烤串，想慢慢尝。",
+        "lively": "海陆豪华烤串！香气都跑过来了！",
+        "laborious": "海陆豪华烤串，这一口真踏实。",
+        "quiet": "海陆豪华烤串……很好。"
+      },
+      "favorite_traits": [
+        "lively"
+      ]
+    },
+    "harvest-stew": {
+      "name_en": "Harvest pot",
+      "category": "soup",
+      "signature_trait": "laborious",
+      "fish_species": "",
+      "method": "将食材在营火上慢慢烤香。",
+      "method_en": "Cook gently over the campfire.",
+      "signature_line": "这一锅收获，终于能慢慢尝了。",
+      "signature_line_en": "All that harvest in one pot. Time to savor it.",
+      "first_lines": {
+        "gentle": "第一次吃一锅丰收大炖菜。",
+        "lively": "哇，第一次尝到一锅丰收大炖菜。",
+        "laborious": "第一次尝这道一锅丰收大炖菜。",
+        "quiet": "原来，这就是一锅丰收大炖菜。"
+      },
+      "normal_lines": {
+        "gentle": "嗯，一锅丰收大炖菜，想慢慢尝。",
+        "lively": "一锅丰收大炖菜！香气都跑过来了！",
+        "laborious": "一锅丰收大炖菜，这一口真踏实。",
+        "quiet": "一锅丰收大炖菜……很好。"
+      },
+      "favorite_traits": [
+        "laborious"
+      ]
+    },
+    "dark-truffle-soup": {
+      "name_en": "Glowing truffle soup",
+      "category": "soup",
+      "signature_trait": "quiet",
+      "fish_species": "",
+      "method": "将食材在营火上慢慢烤香。",
+      "method_en": "Cook gently over the campfire.",
+      "signature_line": "黑暗里也有这么温柔的味道。",
+      "signature_line_en": "Even the dark has a gentle taste.",
+      "first_lines": {
+        "gentle": "第一次吃黑松露发光蘑菇汤。",
+        "lively": "哇，第一次尝到黑松露发光蘑菇汤。",
+        "laborious": "第一次尝这道黑松露发光蘑菇汤。",
+        "quiet": "原来，这就是黑松露发光蘑菇汤。"
+      },
+      "normal_lines": {
+        "gentle": "嗯，黑松露发光蘑菇汤，想慢慢尝。",
+        "lively": "黑松露发光蘑菇汤！香气都跑过来了！",
+        "laborious": "黑松露发光蘑菇汤，这一口真踏实。",
+        "quiet": "黑松露发光蘑菇汤……很好。"
+      },
+      "favorite_traits": [
+        "quiet"
+      ]
+    },
+    "moon-clam-chowder": {
+      "name_en": "Moonbay clam chowder",
+      "category": "soup",
+      "signature_trait": "",
+      "fish_species": "",
+      "method": "将食材在营火上慢慢烤香。",
+      "method_en": "Cook gently over the campfire.",
+      "first_lines": {
+        "gentle": "第一次吃月湾蛤蜊浓汤。",
+        "lively": "哇，第一次尝到月湾蛤蜊浓汤。",
+        "laborious": "第一次尝这道月湾蛤蜊浓汤。",
+        "quiet": "原来，这就是月湾蛤蜊浓汤。"
+      },
+      "normal_lines": {
+        "gentle": "嗯，月湾蛤蜊浓汤，想慢慢尝。",
+        "lively": "月湾蛤蜊浓汤！香气都跑过来了！",
+        "laborious": "月湾蛤蜊浓汤，这一口真踏实。",
+        "quiet": "月湾蛤蜊浓汤……很好。"
+      },
+      "favorite_traits": [
+        "laborious"
+      ]
+    },
+    "crab-corn-pot": {
+      "name_en": "Crab and corn pot",
+      "category": "soup",
+      "signature_trait": "",
+      "fish_species": "",
+      "method": "将食材在营火上慢慢烤香。",
+      "method_en": "Cook gently over the campfire.",
+      "first_lines": {
+        "gentle": "第一次吃蟹蟹玉米煲。",
+        "lively": "哇，第一次尝到蟹蟹玉米煲。",
+        "laborious": "第一次尝这道蟹蟹玉米煲。",
+        "quiet": "原来，这就是蟹蟹玉米煲。"
+      },
+      "normal_lines": {
+        "gentle": "嗯，蟹蟹玉米煲，想慢慢尝。",
+        "lively": "蟹蟹玉米煲！香气都跑过来了！",
+        "laborious": "蟹蟹玉米煲，这一口真踏实。",
+        "quiet": "蟹蟹玉米煲……很好。"
+      },
+      "favorite_traits": [
+        "laborious"
+      ]
+    },
+    "kelp-potato": {
+      "name_en": "Kelp baked potato",
+      "category": "vegetable",
+      "signature_trait": "",
+      "fish_species": "",
+      "method": "将食材在营火上慢慢烤香。",
+      "method_en": "Cook gently over the campfire.",
+      "first_lines": {
+        "gentle": "第一次吃海带烤土豆。",
+        "lively": "哇，第一次尝到海带烤土豆。",
+        "laborious": "第一次尝这道海带烤土豆。",
+        "quiet": "原来，这就是海带烤土豆。"
+      },
+      "normal_lines": {
+        "gentle": "嗯，海带烤土豆，想慢慢尝。",
+        "lively": "海带烤土豆！香气都跑过来了！",
+        "laborious": "海带烤土豆，这一口真踏实。",
+        "quiet": "海带烤土豆……很好。"
+      },
+      "favorite_traits": [
+        "laborious"
+      ]
+    },
+    "moon-honey-cup": {
+      "name_en": "Moonflower honey cup",
+      "category": "dessert",
+      "signature_trait": "",
+      "fish_species": "",
+      "method": "将食材在营火上慢慢烤香。",
+      "method_en": "Cook gently over the campfire.",
+      "first_lines": {
+        "gentle": "第一次吃月见花蜜盏。",
+        "lively": "哇，第一次尝到月见花蜜盏。",
+        "laborious": "第一次尝这道月见花蜜盏。",
+        "quiet": "原来，这就是月见花蜜盏。"
+      },
+      "normal_lines": {
+        "gentle": "嗯，月见花蜜盏，想慢慢尝。",
+        "lively": "月见花蜜盏！香气都跑过来了！",
+        "laborious": "月见花蜜盏，这一口真踏实。",
+        "quiet": "月见花蜜盏……很好。"
+      },
+      "favorite_traits": [
+        "gentle"
+      ]
+    },
+    "berry-flower-skewer": {
+      "name_en": "Berry blossom skewer",
+      "category": "dessert",
+      "signature_trait": "",
+      "fish_species": "",
+      "method": "将食材在营火上慢慢烤香。",
+      "method_en": "Cook gently over the campfire.",
+      "first_lines": {
+        "gentle": "第一次吃野莓花瓣串。",
+        "lively": "哇，第一次尝到野莓花瓣串。",
+        "laborious": "第一次尝这道野莓花瓣串。",
+        "quiet": "原来，这就是野莓花瓣串。"
+      },
+      "normal_lines": {
+        "gentle": "嗯，野莓花瓣串，想慢慢尝。",
+        "lively": "野莓花瓣串！香气都跑过来了！",
+        "laborious": "野莓花瓣串，这一口真踏实。",
+        "quiet": "野莓花瓣串……很好。"
+      },
+      "favorite_traits": [
+        "gentle"
+      ]
+    },
+    "chestnut-honey": {
+      "name_en": "Honey roast chestnuts",
+      "category": "dessert",
+      "signature_trait": "",
+      "fish_species": "",
+      "method": "将食材在营火上慢慢烤香。",
+      "method_en": "Cook gently over the campfire.",
+      "first_lines": {
+        "gentle": "第一次吃蜂蜜烤栗子。",
+        "lively": "哇，第一次尝到蜂蜜烤栗子。",
+        "laborious": "第一次尝这道蜂蜜烤栗子。",
+        "quiet": "原来，这就是蜂蜜烤栗子。"
+      },
+      "normal_lines": {
+        "gentle": "嗯，蜂蜜烤栗子，想慢慢尝。",
+        "lively": "蜂蜜烤栗子！香气都跑过来了！",
+        "laborious": "蜂蜜烤栗子，这一口真踏实。",
+        "quiet": "蜂蜜烤栗子……很好。"
+      },
+      "favorite_traits": [
+        "gentle"
+      ]
+    },
+    "glow-corn": {
+      "name_en": "Glowing corn skewer",
+      "category": "skewers",
+      "signature_trait": "",
+      "fish_species": "",
+      "method": "将食材在营火上慢慢烤香。",
+      "method_en": "Cook gently over the campfire.",
+      "first_lines": {
+        "gentle": "第一次吃萤菇玉米串。",
+        "lively": "哇，第一次尝到萤菇玉米串。",
+        "laborious": "第一次尝这道萤菇玉米串。",
+        "quiet": "原来，这就是萤菇玉米串。"
+      },
+      "normal_lines": {
+        "gentle": "嗯，萤菇玉米串，想慢慢尝。",
+        "lively": "萤菇玉米串！香气都跑过来了！",
+        "laborious": "萤菇玉米串，这一口真踏实。",
+        "quiet": "萤菇玉米串……很好。"
+      },
+      "favorite_traits": [
+        "lively"
+      ]
+    },
+    "truffle-potato": {
+      "name_en": "Truffle baked potato",
+      "category": "vegetable",
+      "signature_trait": "",
+      "fish_species": "",
+      "method": "将食材在营火上慢慢烤香。",
+      "method_en": "Cook gently over the campfire.",
+      "first_lines": {
+        "gentle": "第一次吃松露烤土豆。",
+        "lively": "哇，第一次尝到松露烤土豆。",
+        "laborious": "第一次尝这道松露烤土豆。",
+        "quiet": "原来，这就是松露烤土豆。"
+      },
+      "normal_lines": {
+        "gentle": "嗯，松露烤土豆，想慢慢尝。",
+        "lively": "松露烤土豆！香气都跑过来了！",
+        "laborious": "松露烤土豆，这一口真踏实。",
+        "quiet": "松露烤土豆……很好。"
+      },
+      "favorite_traits": [
+        "laborious"
+      ]
+    },
+    "herb-clam": {
+      "name_en": "Herb grilled clams",
+      "category": "seafood",
+      "signature_trait": "",
+      "fish_species": "",
+      "method": "将食材在营火上慢慢烤香。",
+      "method_en": "Cook gently over the campfire.",
+      "first_lines": {
+        "gentle": "第一次吃香草烤蛤蜊。",
+        "lively": "哇，第一次尝到香草烤蛤蜊。",
+        "laborious": "第一次尝这道香草烤蛤蜊。",
+        "quiet": "原来，这就是香草烤蛤蜊。"
+      },
+      "normal_lines": {
+        "gentle": "嗯，香草烤蛤蜊，想慢慢尝。",
+        "lively": "香草烤蛤蜊！香气都跑过来了！",
+        "laborious": "香草烤蛤蜊，这一口真踏实。",
+        "quiet": "香草烤蛤蜊……很好。"
+      },
+      "favorite_traits": [
+        "lively"
+      ]
+    },
+    "star-moon-dessert": {
+      "name_en": "Star and moon berry cup",
+      "category": "dessert",
+      "signature_trait": "",
+      "fish_species": "",
+      "method": "将食材在营火上慢慢烤香。",
+      "method_en": "Cook gently over the campfire.",
+      "first_lines": {
+        "gentle": "第一次吃星月莓花羹。",
+        "lively": "哇，第一次尝到星月莓花羹。",
+        "laborious": "第一次尝这道星月莓花羹。",
+        "quiet": "原来，这就是星月莓花羹。"
+      },
+      "normal_lines": {
+        "gentle": "嗯，星月莓花羹，想慢慢尝。",
+        "lively": "星月莓花羹！香气都跑过来了！",
+        "laborious": "星月莓花羹，这一口真踏实。",
+        "quiet": "星月莓花羹……很好。"
+      },
+      "favorite_traits": [
+        "gentle"
+      ]
+    },
+    "dried-fish-corn": {
+      "name_en": "Dried fish corn soup",
+      "category": "soup",
+      "signature_trait": "",
+      "fish_species": "",
+      "method": "将食材在营火上慢慢烤香。",
+      "method_en": "Cook gently over the campfire.",
+      "first_lines": {
+        "gentle": "第一次吃鱼干玉米羹。",
+        "lively": "哇，第一次尝到鱼干玉米羹。",
+        "laborious": "第一次尝这道鱼干玉米羹。",
+        "quiet": "原来，这就是鱼干玉米羹。"
+      },
+      "normal_lines": {
+        "gentle": "嗯，鱼干玉米羹，想慢慢尝。",
+        "lively": "鱼干玉米羹！香气都跑过来了！",
+        "laborious": "鱼干玉米羹，这一口真踏实。",
+        "quiet": "鱼干玉米羹……很好。"
+      },
+      "favorite_traits": [
+        "laborious"
+      ]
+    },
+    "petal-pumpkin": {
+      "name_en": "Blossom roast pumpkin",
+      "category": "vegetable",
+      "signature_trait": "",
+      "fish_species": "",
+      "method": "将食材在营火上慢慢烤香。",
+      "method_en": "Cook gently over the campfire.",
+      "first_lines": {
+        "gentle": "第一次吃花瓣烤南瓜。",
+        "lively": "哇，第一次尝到花瓣烤南瓜。",
+        "laborious": "第一次尝这道花瓣烤南瓜。",
+        "quiet": "原来，这就是花瓣烤南瓜。"
+      },
+      "normal_lines": {
+        "gentle": "嗯，花瓣烤南瓜，想慢慢尝。",
+        "lively": "花瓣烤南瓜！香气都跑过来了！",
+        "laborious": "花瓣烤南瓜，这一口真踏实。",
+        "quiet": "花瓣烤南瓜……很好。"
+      },
+      "favorite_traits": [
+        "laborious"
+      ]
+    },
+    "eel-herb": {
+      "name_en": "Herb grilled eel",
+      "category": "seafood",
+      "signature_trait": "",
+      "fish_species": "eel",
+      "method": "将食材在营火上慢慢烤香。",
+      "method_en": "Cook gently over the campfire.",
+      "first_lines": {
+        "gentle": "第一次吃香草炭烤鳗鱼。",
+        "lively": "哇，第一次尝到香草炭烤鳗鱼。",
+        "laborious": "第一次尝这道香草炭烤鳗鱼。",
+        "quiet": "原来，这就是香草炭烤鳗鱼。"
+      },
+      "normal_lines": {
+        "gentle": "嗯，香草炭烤鳗鱼，想慢慢尝。",
+        "lively": "香草炭烤鳗鱼！香气都跑过来了！",
+        "laborious": "香草炭烤鳗鱼，这一口真踏实。",
+        "quiet": "香草炭烤鳗鱼……很好。"
+      },
+      "favorite_traits": [
+        "lively"
+      ]
+    },
+    "cutlass-chestnut": {
+      "name_en": "Chestnut cutlassfish",
+      "category": "seafood",
+      "signature_trait": "",
+      "fish_species": "cutlass",
+      "method": "将食材在营火上慢慢烤香。",
+      "method_en": "Cook gently over the campfire.",
+      "first_lines": {
+        "gentle": "第一次吃栗香烤带鱼。",
+        "lively": "哇，第一次尝到栗香烤带鱼。",
+        "laborious": "第一次尝这道栗香烤带鱼。",
+        "quiet": "原来，这就是栗香烤带鱼。"
+      },
+      "normal_lines": {
+        "gentle": "嗯，栗香烤带鱼，想慢慢尝。",
+        "lively": "栗香烤带鱼！香气都跑过来了！",
+        "laborious": "栗香烤带鱼，这一口真踏实。",
+        "quiet": "栗香烤带鱼……很好。"
+      },
+      "favorite_traits": [
+        "lively"
+      ]
+    },
+    "noodle-moon-soup": {
+      "name_en": "Moonflower noodlefish soup",
+      "category": "soup",
+      "signature_trait": "",
+      "fish_species": "noodle",
+      "method": "将食材在营火上慢慢烤香。",
+      "method_en": "Cook gently over the campfire.",
+      "first_lines": {
+        "gentle": "第一次吃月见面条鱼汤。",
+        "lively": "哇，第一次尝到月见面条鱼汤。",
+        "laborious": "第一次尝这道月见面条鱼汤。",
+        "quiet": "原来，这就是月见面条鱼汤。"
+      },
+      "normal_lines": {
+        "gentle": "嗯，月见面条鱼汤，想慢慢尝。",
+        "lively": "月见面条鱼汤！香气都跑过来了！",
+        "laborious": "月见面条鱼汤，这一口真踏实。",
+        "quiet": "月见面条鱼汤……很好。"
+      },
+      "favorite_traits": [
+        "laborious"
+      ]
+    },
+    "kite-berry-skewer": {
+      "name_en": "Wild berry kitefish skewer",
+      "category": "skewers",
+      "signature_trait": "",
+      "fish_species": "kite",
+      "method": "将食材在营火上慢慢烤香。",
+      "method_en": "Cook gently over the campfire.",
+      "first_lines": {
+        "gentle": "第一次吃野莓风筝鱼串。",
+        "lively": "哇，第一次尝到野莓风筝鱼串。",
+        "laborious": "第一次尝这道野莓风筝鱼串。",
+        "quiet": "原来，这就是野莓风筝鱼串。"
+      },
+      "normal_lines": {
+        "gentle": "嗯，野莓风筝鱼串，想慢慢尝。",
+        "lively": "野莓风筝鱼串！香气都跑过来了！",
+        "laborious": "野莓风筝鱼串，这一口真踏实。",
+        "quiet": "野莓风筝鱼串……很好。"
+      },
+      "favorite_traits": [
+        "lively"
+      ]
+    },
+    "glow-clam-soup": {
+      "name_en": "Glowing bay soup",
+      "category": "soup",
+      "signature_trait": "",
+      "fish_species": "",
+      "method": "将食材在营火上慢慢烤香。",
+      "method_en": "Cook gently over the campfire.",
+      "first_lines": {
+        "gentle": "第一次吃萤光海湾汤。",
+        "lively": "哇，第一次尝到萤光海湾汤。",
+        "laborious": "第一次尝这道萤光海湾汤。",
+        "quiet": "原来，这就是萤光海湾汤。"
+      },
+      "normal_lines": {
+        "gentle": "嗯，萤光海湾汤，想慢慢尝。",
+        "lively": "萤光海湾汤！香气都跑过来了！",
+        "laborious": "萤光海湾汤，这一口真踏实。",
+        "quiet": "萤光海湾汤……很好。"
+      },
+      "favorite_traits": [
+        "quiet"
+      ]
+    },
+    "island-berry-jam": {
+      "name_en": "Island honey berry preserve",
+      "category": "dessert",
+      "signature_trait": "",
+      "fish_species": "",
+      "method": "将食材在营火上慢慢烤香。",
+      "method_en": "Cook gently over the campfire.",
+      "first_lines": {
+        "gentle": "第一次吃群岛蜂蜜莓酱。",
+        "lively": "哇，第一次尝到群岛蜂蜜莓酱。",
+        "laborious": "第一次尝这道群岛蜂蜜莓酱。",
+        "quiet": "原来，这就是群岛蜂蜜莓酱。"
+      },
+      "normal_lines": {
+        "gentle": "嗯，群岛蜂蜜莓酱，想慢慢尝。",
+        "lively": "群岛蜂蜜莓酱！香气都跑过来了！",
+        "laborious": "群岛蜂蜜莓酱，这一口真踏实。",
+        "quiet": "群岛蜂蜜莓酱……很好。"
+      },
+      "favorite_traits": [
+        "gentle"
+      ]
+    },
+    "potato": {
+      "first_lines": {
+        "gentle": "第一次吃烤土豆。",
+        "lively": "第一次尝到烤土豆。",
+        "laborious": "第一次尝这份烤土豆。",
+        "quiet": "原来是烤土豆。"
+      },
+      "normal_lines": {
+        "gentle": "嗯，烤土豆，想慢慢尝。",
+        "lively": "烤土豆！香气都跑过来了！",
+        "laborious": "烤土豆，这一口真踏实。",
+        "quiet": "烤土豆……很好。"
+      },
+      "favorite_traits": [
+        "laborious"
+      ]
+    },
+    "corn": {
+      "first_lines": {
+        "gentle": "第一次吃烤玉米。",
+        "lively": "第一次尝到烤玉米。",
+        "laborious": "第一次尝这份烤玉米。",
+        "quiet": "原来是烤玉米。"
+      },
+      "normal_lines": {
+        "gentle": "嗯，烤玉米，想慢慢尝。",
+        "lively": "烤玉米！香气都跑过来了！",
+        "laborious": "烤玉米，这一口真踏实。",
+        "quiet": "烤玉米……很好。"
+      },
+      "favorite_traits": [
+        "laborious"
+      ]
+    },
+    "chestnut": {
+      "first_lines": {
+        "gentle": "第一次吃烤栗子。",
+        "lively": "第一次尝到烤栗子。",
+        "laborious": "第一次尝这份烤栗子。",
+        "quiet": "原来是烤栗子。"
+      },
+      "normal_lines": {
+        "gentle": "嗯，烤栗子，想慢慢尝。",
+        "lively": "烤栗子！香气都跑过来了！",
+        "laborious": "烤栗子，这一口真踏实。",
+        "quiet": "烤栗子……很好。"
+      },
+      "favorite_traits": [
+        "laborious"
+      ]
+    },
+    "clam": {
+      "first_lines": {
+        "gentle": "第一次吃烤蛤蜊。",
+        "lively": "第一次尝到烤蛤蜊。",
+        "laborious": "第一次尝这份烤蛤蜊。",
+        "quiet": "原来是烤蛤蜊。"
+      },
+      "normal_lines": {
+        "gentle": "嗯，烤蛤蜊，想慢慢尝。",
+        "lively": "烤蛤蜊！香气都跑过来了！",
+        "laborious": "烤蛤蜊，这一口真踏实。",
+        "quiet": "烤蛤蜊……很好。"
+      },
+      "favorite_traits": [
+        "lively"
+      ]
+    },
+    "crab": {
+      "first_lines": {
+        "gentle": "第一次吃烤小螃蟹。",
+        "lively": "第一次尝到烤小螃蟹。",
+        "laborious": "第一次尝这份烤小螃蟹。",
+        "quiet": "原来是烤小螃蟹。"
+      },
+      "normal_lines": {
+        "gentle": "嗯，烤小螃蟹，想慢慢尝。",
+        "lively": "烤小螃蟹！香气都跑过来了！",
+        "laborious": "烤小螃蟹，这一口真踏实。",
+        "quiet": "烤小螃蟹……很好。"
+      },
+      "favorite_traits": [
+        "lively"
+      ]
+    },
+    "kelp": {
+      "first_lines": {
+        "gentle": "第一次吃烤海带。",
+        "lively": "第一次尝到烤海带。",
+        "laborious": "第一次尝这份烤海带。",
+        "quiet": "原来是烤海带。"
+      },
+      "normal_lines": {
+        "gentle": "嗯，烤海带，想慢慢尝。",
+        "lively": "烤海带！香气都跑过来了！",
+        "laborious": "烤海带，这一口真踏实。",
+        "quiet": "烤海带……很好。"
+      },
+      "favorite_traits": [
+        "lively"
+      ]
+    },
+    "glow_mushroom": {
+      "first_lines": {
+        "gentle": "第一次吃烤发光蘑菇。",
+        "lively": "第一次尝到烤发光蘑菇。",
+        "laborious": "第一次尝这份烤发光蘑菇。",
+        "quiet": "原来是烤发光蘑菇。"
+      },
+      "normal_lines": {
+        "gentle": "嗯，烤发光蘑菇，想慢慢尝。",
+        "lively": "烤发光蘑菇！香气都跑过来了！",
+        "laborious": "烤发光蘑菇，这一口真踏实。",
+        "quiet": "烤发光蘑菇……很好。"
+      },
+      "favorite_traits": [
+        "quiet"
+      ]
+    },
+    "black_truffle": {
+      "first_lines": {
+        "gentle": "第一次吃烤黑松露。",
+        "lively": "第一次尝到烤黑松露。",
+        "laborious": "第一次尝这份烤黑松露。",
+        "quiet": "原来是烤黑松露。"
+      },
+      "normal_lines": {
+        "gentle": "嗯，烤黑松露，想慢慢尝。",
+        "lively": "烤黑松露！香气都跑过来了！",
+        "laborious": "烤黑松露，这一口真踏实。",
+        "quiet": "烤黑松露……很好。"
+      },
+      "favorite_traits": [
+        "quiet"
+      ]
+    },
+    "wild_berry": {
+      "first_lines": {
+        "gentle": "第一次吃烤野莓。",
+        "lively": "第一次尝到烤野莓。",
+        "laborious": "第一次尝这份烤野莓。",
+        "quiet": "原来是烤野莓。"
+      },
+      "normal_lines": {
+        "gentle": "嗯，烤野莓，想慢慢尝。",
+        "lively": "烤野莓！香气都跑过来了！",
+        "laborious": "烤野莓，这一口真踏实。",
+        "quiet": "烤野莓……很好。"
+      },
+      "favorite_traits": [
+        "gentle"
+      ]
+    },
+    "star_berry": {
+      "first_lines": {
+        "gentle": "第一次吃烤星露莓。",
+        "lively": "第一次尝到烤星露莓。",
+        "laborious": "第一次尝这份烤星露莓。",
+        "quiet": "原来是烤星露莓。"
+      },
+      "normal_lines": {
+        "gentle": "嗯，烤星露莓，想慢慢尝。",
+        "lively": "烤星露莓！香气都跑过来了！",
+        "laborious": "烤星露莓，这一口真踏实。",
+        "quiet": "烤星露莓……很好。"
+      },
+      "favorite_traits": [
+        "gentle"
+      ]
+    },
+    "night_nut": {
+      "first_lines": {
+        "gentle": "第一次吃烤夜栗，轻轻尝一口。",
+        "lively": "头一回吃烤夜栗，我先尝啦！",
+        "laborious": "第一次尝烤夜栗，慢慢吃。",
+        "quiet": "烤夜栗……第一次尝。"
+      },
+      "normal_lines": {
+        "gentle": "烤夜栗，暖暖的一口。",
+        "lively": "烤夜栗香喷喷，真不错！",
+        "laborious": "烤夜栗，这一口很踏实。",
+        "quiet": "烤夜栗。香气很安静。"
+      },
+      "favorite_traits": [
+        "quiet"
+      ]
+    },
+    "dried_fish": {
+      "first_lines": {
+        "gentle": "第一次吃烤鱼干，轻轻尝一口。",
+        "lively": "头一回吃烤鱼干，我先尝啦！",
+        "laborious": "第一次尝烤鱼干，慢慢吃。",
+        "quiet": "烤鱼干……第一次尝。"
+      },
+      "normal_lines": {
+        "gentle": "烤鱼干，暖暖的一口。",
+        "lively": "烤鱼干香喷喷，真不错！",
+        "laborious": "烤鱼干，这一口很踏实。",
+        "quiet": "烤鱼干。香气很安静。"
+      },
+      "favorite_traits": [
+        "lively"
+      ]
+    },
+    "catfish-herb-pot": {
+      "name_en": "Herbed catfish pot",
+      "category": "fish",
+      "signature_trait": "",
+      "fish_species": "catfish",
+      "method": "在营火慢慢烤香。",
+      "method_en": "Cook gently over the campfire.",
+      "favorite_traits": [],
+      "first_lines": {
+        "gentle": "第一次尝这道香草鲶鱼煲。",
+        "lively": "第一次尝这道香草鲶鱼煲。",
+        "laborious": "第一次尝这道香草鲶鱼煲。",
+        "quiet": "第一次尝这道香草鲶鱼煲。"
+      },
+      "normal_lines": {
+        "gentle": "香草鲶鱼煲，香气正好。",
+        "lively": "香草鲶鱼煲，香气正好。",
+        "laborious": "香草鲶鱼煲，香气正好。",
+        "quiet": "香草鲶鱼煲，香气正好。"
+      }
+    },
+    "moonfish-chowder": {
+      "name_en": "Moonfish chowder",
+      "category": "fish",
+      "signature_trait": "",
+      "fish_species": "moonfish",
+      "method": "在营火慢慢烤香。",
+      "method_en": "Cook gently over the campfire.",
+      "favorite_traits": [],
+      "first_lines": {
+        "gentle": "第一次尝这道月光鱼浓汤。",
+        "lively": "第一次尝这道月光鱼浓汤。",
+        "laborious": "第一次尝这道月光鱼浓汤。",
+        "quiet": "第一次尝这道月光鱼浓汤。"
+      },
+      "normal_lines": {
+        "gentle": "月光鱼浓汤，香气正好。",
+        "lively": "月光鱼浓汤，香气正好。",
+        "laborious": "月光鱼浓汤，香气正好。",
+        "quiet": "月光鱼浓汤，香气正好。"
+      }
+    },
+    "butterfly-skewer": {
+      "name_en": "Butterflyfish skewers",
+      "category": "fish",
+      "signature_trait": "",
+      "fish_species": "butterfly",
+      "method": "在营火慢慢烤香。",
+      "method_en": "Cook gently over the campfire.",
+      "favorite_traits": [],
+      "first_lines": {
+        "gentle": "第一次尝这道蝴蝶鱼烤串。",
+        "lively": "第一次尝这道蝴蝶鱼烤串。",
+        "laborious": "第一次尝这道蝴蝶鱼烤串。",
+        "quiet": "第一次尝这道蝴蝶鱼烤串。"
+      },
+      "normal_lines": {
+        "gentle": "蝴蝶鱼烤串，香气正好。",
+        "lively": "蝴蝶鱼烤串，香气正好。",
+        "laborious": "蝴蝶鱼烤串，香气正好。",
+        "quiet": "蝴蝶鱼烤串，香气正好。"
+      }
+    },
+    "tuna-steak": {
+      "name_en": "Campfire tuna steak",
+      "category": "fish",
+      "signature_trait": "",
+      "fish_species": "tuna",
+      "method": "在营火慢慢烤香。",
+      "method_en": "Cook gently over the campfire.",
+      "favorite_traits": [],
+      "first_lines": {
+        "gentle": "第一次尝这道香煎金枪鱼。",
+        "lively": "第一次尝这道香煎金枪鱼。",
+        "laborious": "第一次尝这道香煎金枪鱼。",
+        "quiet": "第一次尝这道香煎金枪鱼。"
+      },
+      "normal_lines": {
+        "gentle": "香煎金枪鱼，香气正好。",
+        "lively": "香煎金枪鱼，香气正好。",
+        "laborious": "香煎金枪鱼，香气正好。",
+        "quiet": "香煎金枪鱼，香气正好。"
+      }
+    },
+    "clownfish-skewer": {
+      "name_en": "Clownfish mushroom skewer",
+      "category": "fish",
+      "signature_trait": "",
+      "fish_species": "clownfish",
+      "method": "在营火慢慢烤香。",
+      "method_en": "Cook gently over the campfire.",
+      "favorite_traits": [],
+      "first_lines": {
+        "gentle": "第一次尝这道小丑鱼香菇串。",
+        "lively": "第一次尝这道小丑鱼香菇串。",
+        "laborious": "第一次尝这道小丑鱼香菇串。",
+        "quiet": "第一次尝这道小丑鱼香菇串。"
+      },
+      "normal_lines": {
+        "gentle": "小丑鱼香菇串，香气正好。",
+        "lively": "小丑鱼香菇串，香气正好。",
+        "laborious": "小丑鱼香菇串，香气正好。",
+        "quiet": "小丑鱼香菇串，香气正好。"
+      }
+    }
+  }
+}

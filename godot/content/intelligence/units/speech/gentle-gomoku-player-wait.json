@@ -1,0 +1,11 @@
+{
+  "id": "gentle-gomoku-player-wait",
+  "context": "gomoku_player_wait",
+  "lines": [
+    "嗯，你慢慢想，我在这儿。",
+    "轻轻说，想久一点也没关系。",
+    "我想，棋盘还在，不用着急。",
+    "慢慢来，我陪你坐着，等你决定。"
+  ],
+  "autonomy_output": false
+}

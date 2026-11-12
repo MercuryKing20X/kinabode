@@ -1,0 +1,9 @@
+{
+  "id": "lively-fishing-cast",
+  "context": "fishing_cast",
+  "lines": [
+    "出发吧，小浮漂！",
+    "海里的朋友，借我一点惊喜！"
+  ],
+  "autonomy_output": false
+}

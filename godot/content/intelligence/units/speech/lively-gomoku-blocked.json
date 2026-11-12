@@ -1,0 +1,11 @@
+{
+  "id": "lively-gomoku-blocked",
+  "context": "gomoku_blocked",
+  "lines": [
+    "嘿，这处连线被挡住了。",
+    "哎呀，原来的路被你堵住了。",
+    "看这里，这个口现在封住了。",
+    "哈，这条路不能直接延伸啦。"
+  ],
+  "autonomy_output": false
+}

@@ -1,0 +1,9 @@
+{
+  "id": "curious-fishing-bite",
+  "context": "fishing_bite",
+  "lines": [
+    "这次水纹变了，咬钩啦！",
+    "竿弯了，好像真拉住了！"
+  ],
+  "autonomy_output": false
+}

@@ -1,0 +1,11 @@
+{
+  "id": "bbq-quiet-chat-relationship",
+  "context": "bbq_chat_relationship",
+  "lines": [
+    "已经{stage}了……嗯。",
+    "相处到{stage}，我记得。",
+    "我们是{stage}。不用急。",
+    "{stage}……挺好。"
+  ],
+  "autonomy_output": false
+}

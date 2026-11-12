@@ -1,0 +1,11 @@
+{
+  "id": "curious-gomoku-reply-think",
+  "context": "gomoku_reply_think",
+  "lines": [
+    "咦，好，你慢慢想。",
+    "我注意到，不催你，我也看看棋盘。",
+    "让我瞧瞧，我等着，你放心想。",
+    "有意思，给你留足想棋的时间。"
+  ],
+  "autonomy_output": false
+}

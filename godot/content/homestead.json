@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "site": {
+    "id": "home.homestead.flowerbed",
+    "name": "石砌花圃",
+    "region_id": "home",
+    "rect": [
+      26,
+      38,
+      4,
+      3
+    ],
+    "entry": [
+      28,
+      42.5
+    ]
+  },
+  "requirements": {
+    "wood": 24,
+    "crops": 10
+  },
+  "build_seconds": 6,
+  "job_timeout": 180,
+  "stages": [
+    "未开始",
+    "分批备料",
+    "材料齐备",
+    "施工中",
+    "花圃完工"
+  ],
+  "unlock_recipe_id": "blueberry-jam"
+}

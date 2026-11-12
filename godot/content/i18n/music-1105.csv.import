@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bkc53g5fckvan"
+
+[deps]
+
+files=["res://content/i18n/music-1105.zh.translation", "res://content/i18n/music-1105.en.translation"]
+
+source_file="res://content/i18n/music-1105.csv"
+dest_files=["res://content/i18n/music-1105.zh.translation", "res://content/i18n/music-1105.en.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

@@ -1,0 +1,11 @@
+{
+  "id": "farm-cmd-clingy-busy",
+  "context": "farm_command_busy",
+  "lines": [
+    "等我一下，忙完就去。",
+    "我手上还有事，你别走哦。",
+    "先等我弄完，好不好？",
+    "马上，等我一下嘛。"
+  ],
+  "autonomy_output": false
+}

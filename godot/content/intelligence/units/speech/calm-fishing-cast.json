@@ -1,0 +1,9 @@
+{
+  "id": "calm-fishing-cast",
+  "context": "fishing_cast",
+  "lines": [
+    "坐等海里的一点惊喜。",
+    "这次慢慢等。"
+  ],
+  "autonomy_output": false
+}

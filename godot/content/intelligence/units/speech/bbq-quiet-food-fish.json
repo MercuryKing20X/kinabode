@@ -1,0 +1,11 @@
+{
+  "id": "bbq-quiet-food-fish",
+  "context": "bbq_food_fish",
+  "lines": [
+    "……烤鱼，谢谢。",
+    "烤鱼。嗯，热的。",
+    "我在慢慢吃烤鱼。",
+    "这份烤鱼……不错。"
+  ],
+  "autonomy_output": false
+}

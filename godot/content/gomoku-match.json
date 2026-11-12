@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "max_steps": 120,
+  "max_tokens": 120000,
+  "step_tokens": 12000,
+  "step_timeout": 60,
+  "max_retries": 1,
+  "tools_per_turn": 3,
+  "sources": {"local_easy":"本地轻松","local_normal":"本地认真","model":"模型"}
+}

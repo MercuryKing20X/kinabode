@@ -1,0 +1,6 @@
+{
+  "id":"barbecue-reminder-v2",
+  "context":"bbq_reminder",
+  "lines":["还记得我们在{place}一起围火吃饭那回吗？","那次在{place}坐在火边吃饭，我还记得。","在{place}围炉吃饭的那回，想起来还是暖暖的。","我们在{place}围着火吃过饭呢，那是确实发生过的小事。"],
+  "autonomy_output":false
+}

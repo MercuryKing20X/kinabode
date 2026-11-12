@@ -1,0 +1,11 @@
+{
+  "id": "lively-gomoku-four",
+  "context": "gomoku_four",
+  "lines": [
+    "嘿，四颗连起来，要留意缺口。",
+    "哎呀，这条四连不能忽略。",
+    "看这里，这条线上只差一步了。",
+    "哈，四连出现了，我再看清楚。"
+  ],
+  "autonomy_output": false
+}

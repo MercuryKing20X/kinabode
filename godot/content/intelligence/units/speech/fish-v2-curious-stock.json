@@ -1,0 +1,11 @@
+{
+  "id": "fish-v2-curious-stock",
+  "context": "fishing_v2_stock",
+  "lines": [
+    "轻轻地，鱼儿游进渔场了。",
+    "嗯，新朋友有地方住啦。",
+    "好呀，这条鱼已经放进渔场。",
+    "慢慢来，看它在围网里游。"
+  ],
+  "autonomy_output": false
+}

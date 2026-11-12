@@ -1,0 +1,56 @@
+keys,zh,en
+content.one_line.literal_0,大家去种菜 / everyone plant vegetables,everyone plant vegetables
+content.one_line.literal_1,你们都来吃饭 / everyone come to dinner,everyone come to dinner
+content.one_line.literal_2,帮我砍点木头 / please chop some wood,please chop some wood
+content.one_line.literal_3,都跟着我 / everyone follow me,everyone follow me
+content.one_line.literal_4,: 种子不足，先种现有的 / Not enough seeds; planting what is available: ,Not enough seeds; planting what is available:
+content.one_line.literal_5,椅,chair
+content.one_line.literal_6,小路,path
+content.one_line.literal_7,花圃,flower bed
+content.one_line.literal_8,舞台,stage
+content.one_line.literal_9,按你的安排建在自己的地上 / Building in my own territory as requested.,Building in my own territory as requested.
+content.one_line.literal_10,材料超过确认阈值，请确认原建设卡 / Please confirm the project material cost.,Please confirm the project material cost.
+content.one_line.literal_11,: 没有可采集的目标 / No available gathering target,No available gathering target
+content.one_line.literal_12,没有可递交的物品 / No carried items,No carried items
+content.one_line.literal_13,已邀请，到营火边等你开烤 / Invited; waiting by the fire for you to grill.,Invited; waiting by the fire for you to grill.
+content.one_line.literal_14,跟随 / Follow,Follow
+content.one_line.literal_15,跟我来,come with me
+content.one_line.literal_16,都跟着你,everyone follow you
+content.one_line.literal_17,跟我走,come with me
+content.one_line.literal_18,请,please
+content.one_line.literal_19,现在,now
+content.one_line.literal_20,麻烦你,please help
+content.one_line.literal_21,快,quickly
+content.one_line.literal_22,帮我,help me
+content.one_line.word_23,跟牢我,follow me
+content.one_line.word_24,跟着你,follow me
+content.one_line.word_25,去吃饭,barbecue
+content.one_line.word_26,吃饭了,barbecue
+content.one_line.word_27,不干了,stop working
+content.one_line.word_28,别忙了,stop working
+content.one_line.word_29,砍,chop
+content.one_line.word_30,伐木,chop
+content.one_line.word_31,弄点木头,chop
+content.one_line.word_32,交给我,hand over
+content.one_line.word_33,递给我,hand over
+content.one_line.word_34,入库,hand over
+content.one_line.word_35,钓点鱼,fish
+content.one_line.word_36,去钓鱼,fish
+content.one_line.word_37,钓一会,fish
+content.one_line.word_38,浇水,water
+content.one_line.word_39,浇一下,water
+content.one_line.word_40,浇菜,water
+content.one_line.word_41,浇地,water
+content.one_line.word_42,采集,gather mushrooms
+content.one_line.word_43,采蘑菇,gather mushrooms
+content.one_line.word_44,摘蘑菇,gather mushrooms
+content.one_line.word_45,捡蘑菇,gather mushrooms
+content.one_line.word_46,采食材,gather mushrooms
+content.one_line.word_47,陪我下棋,play chess
+content.one_line.word_48,建个,build a
+content.one_line.word_49,造个,build a
+content.one_line.word_50,盖个,build a
+content.one_line.word_51,建一,build a
+content.one_line.word_52,做个亭子,build a
+content.one_line.fish_alias,钓鱼,fish
+content.one_line.chess_alias,五子棋,Gomoku

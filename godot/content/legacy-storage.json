@@ -1,0 +1,171 @@
+{
+  "objects": {
+    "home.chest.01": [
+      {
+        "id": "home.chest.01",
+        "kind": "chest",
+        "zone_id": "home.court",
+        "position": [
+          47,
+          41
+        ],
+        "name": "家园木箱",
+        "items": {},
+        "capacity": 160,
+        "region_id": "home"
+      },
+      {
+        "id": "home.chest.01",
+        "kind": "chest",
+        "zone_id": "home.toolshed",
+        "position": [
+          72,
+          93
+        ],
+        "name": "农具棚共享木箱",
+        "items": {},
+        "capacity": 160,
+        "region_id": "home"
+      }
+    ],
+    "home.chest.02": [
+      {
+        "id": "home.chest.02",
+        "kind": "chest",
+        "zone_id": "home.storage",
+        "position": [
+          90,
+          56
+        ],
+        "name": "林间木箱",
+        "items": {},
+        "capacity": 160,
+        "introduced_in": 2,
+        "region_id": "home"
+      },
+      {
+        "id": "home.chest.02",
+        "kind": "chest",
+        "zone_id": "home.storage",
+        "position": [
+          107,
+          67
+        ],
+        "name": "伐木营地木箱",
+        "items": {},
+        "capacity": 160,
+        "region_id": "home"
+      }
+    ],
+    "dark.chest": [
+      {
+        "id": "dark.chest",
+        "name": "码头箱子",
+        "kind": "chest",
+        "zone_id": "dark.camp",
+        "position": [
+          29,
+          99
+        ],
+        "capacity": 80,
+        "items": {},
+        "introduced_in": 999,
+        "region_id": "dark"
+      }
+    ],
+    "home.private.01": [
+      {
+        "id": "home.private.01",
+        "kind": "chest",
+        "zone_id": "home.residential.01",
+        "position": [
+          45,
+          26
+        ],
+        "name": "你家私人物箱",
+        "owner_id": "human",
+        "items": {},
+        "capacity": 80,
+        "region_id": "home"
+      }
+    ],
+    "home.private.02": [
+      {
+        "id": "home.private.02",
+        "kind": "chest",
+        "zone_id": "home.residential.02",
+        "position": [
+          61,
+          26
+        ],
+        "name": "温柔小院私人物箱",
+        "owner_id": "codex",
+        "items": {},
+        "capacity": 80,
+        "region_id": "home"
+      }
+    ],
+    "home.private.03": [
+      {
+        "id": "home.private.03",
+        "kind": "chest",
+        "zone_id": "home.residential.03",
+        "position": [
+          76,
+          26
+        ],
+        "name": "好奇小院私人物箱",
+        "owner_id": "companion-2",
+        "items": {},
+        "capacity": 80,
+        "region_id": "home"
+      }
+    ],
+    "home.private.04": [
+      {
+        "id": "home.private.04",
+        "kind": "chest",
+        "zone_id": "home.residential.04",
+        "position": [
+          91,
+          26
+        ],
+        "name": "活泼小院私人物箱",
+        "owner_id": "npc.mira",
+        "items": {},
+        "capacity": 80,
+        "region_id": "home"
+      }
+    ],
+    "home.private.05": [
+      {
+        "id": "home.private.05",
+        "kind": "chest",
+        "zone_id": "home.residential.05",
+        "position": [
+          106,
+          26
+        ],
+        "name": "安静小院私人物箱",
+        "owner_id": "npc.nora",
+        "items": {},
+        "capacity": 80,
+        "region_id": "home"
+      }
+    ],
+    "home.standard.tools": [
+      {
+        "id": "home.standard.tools",
+        "kind": "chest",
+        "zone_id": "home.farm",
+        "name": "工具棚木材箱",
+        "anchor": "tools.seed",
+        "offset": [
+          -3,
+          0
+        ],
+        "capacity": 80
+      }
+    ]
+  }
+}

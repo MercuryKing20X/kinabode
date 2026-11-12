@@ -1,0 +1,4 @@
+keys,zh,en
+chess.entry.walking,走到棋桌旁……,Walking to the chess table…
+chess.entry.unreachable,现在走不到棋桌旁。,There is no clear path to this table.
+chess.entry.nearby_only,走到棋桌附近再下棋吧。,Come close to a chess table to play.

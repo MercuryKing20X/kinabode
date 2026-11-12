@@ -1,0 +1,11 @@
+{
+  "id": "fish-v2-glutton-invited",
+  "context": "fishing_v2_invited",
+  "lines": [
+    "好耶，一起到海边钓鱼吧。",
+    "嘿嘿，我也来陪你钓鱼。",
+    "来啦，收到邀请，我这就来。",
+    "哇，找个岸边坐一会儿。"
+  ],
+  "autonomy_output": false
+}

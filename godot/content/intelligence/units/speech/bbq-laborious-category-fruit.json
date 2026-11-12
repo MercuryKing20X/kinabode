@@ -1,0 +1,11 @@
+{
+  "id": "bbq-laborious-category-fruit",
+  "context": "bbq_category_fruit",
+  "lines": [
+    "热水果，尝一口也不错。",
+    "果香出来了，先吃。",
+    "这份水果甜度刚好。",
+    "水果也烤好了，别落下。"
+  ],
+  "autonomy_output": false
+}

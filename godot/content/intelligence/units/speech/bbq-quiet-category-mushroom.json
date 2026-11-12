@@ -1,0 +1,11 @@
+{
+  "id": "bbq-quiet-category-mushroom",
+  "context": "bbq_category_mushroom",
+  "lines": [
+    "……嗯，好吃。",
+    "烤蘑菇。正好。",
+    "这一口……喜欢。",
+    "蘑菇的香气，很安静。"
+  ],
+  "autonomy_output": false
+}

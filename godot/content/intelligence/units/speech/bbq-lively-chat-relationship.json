@@ -1,0 +1,11 @@
+{
+  "id": "bbq-lively-chat-relationship",
+  "context": "bbq_chat_relationship",
+  "lines": [
+    "我们已经{stage}啦，嘿嘿。",
+    "相处到{stage}，坐一起更自在了！",
+    "{stage}的伙伴，继续慢慢过日子吧。",
+    "现在是{stage}，我记着呢。"
+  ],
+  "autonomy_output": false
+}

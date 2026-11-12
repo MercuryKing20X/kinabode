@@ -1,0 +1,132 @@
+{
+  "version": 2,
+  "fire_seconds": 180,
+  "wood": 2,
+  "charcoal_wood": 1,
+  "serve_wait_seconds": 90,
+  "host_radius": 5,
+  "near_radius": 5,
+  "notice_radius": 18,
+  "cook_seconds": 5,
+  "dish_seconds": 8,
+  "eat_seconds": 4,
+  "away_seconds": 30,
+  "bubble_interval": [
+    5,
+    8
+  ],
+  "bubble_seconds": 6,
+  "bubble_limit": 2,
+  "seat_offsets": [
+    [
+      0,
+      -3
+    ],
+    [
+      2.1,
+      -2.1
+    ],
+    [
+      3,
+      0
+    ],
+    [
+      2.1,
+      2.1
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      -2.1,
+      2.1
+    ],
+    [
+      -3,
+      0
+    ],
+    [
+      -2.1,
+      -2.1
+    ]
+  ],
+  "clearing_radius": 4.8,
+  "idle_pose_seconds": 6,
+  "stretch_every": 36,
+  "stretch_seconds": 2,
+  "singles": {
+    "mushroom": {
+      "name": "烤蘑菇",
+      "category": "mushroom"
+    },
+    "turnip": {
+      "name": "烤萝卜",
+      "category": "vegetable"
+    },
+    "pumpkin": {
+      "name": "烤南瓜",
+      "category": "vegetable"
+    },
+    "tomato": {
+      "name": "烤番茄",
+      "category": "vegetable"
+    },
+    "apple": {
+      "name": "烤苹果",
+      "category": "fruit"
+    },
+    "blueberry": {
+      "name": "烤蓝莓串",
+      "category": "fruit"
+    },
+    "potato": {
+      "name": "烤土豆",
+      "category": "vegetable"
+    },
+    "corn": {
+      "name": "烤玉米",
+      "category": "vegetable"
+    },
+    "chestnut": {
+      "name": "烤栗子",
+      "category": "vegetable"
+    },
+    "clam": {
+      "name": "烤蛤蜊",
+      "category": "vegetable"
+    },
+    "crab": {
+      "name": "烤小螃蟹",
+      "category": "vegetable"
+    },
+    "kelp": {
+      "name": "烤海带",
+      "category": "vegetable"
+    },
+    "glow_mushroom": {
+      "name": "烤发光蘑菇",
+      "category": "mushroom"
+    },
+    "black_truffle": {
+      "name": "烤黑松露",
+      "category": "mushroom"
+    },
+    "wild_berry": {
+      "name": "烤野莓",
+      "category": "fruit"
+    },
+    "star_berry": {
+      "name": "烤星露莓",
+      "category": "fruit"
+    },
+    "night_nut": {
+      "name": "烤夜栗",
+      "category": "vegetable"
+    },
+    "dried_fish": {
+      "name": "烤鱼干",
+      "category": "fish"
+    }
+  }
+}

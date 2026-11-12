@@ -1,0 +1,9 @@
+{
+  "id": "lively-fishing-giant",
+  "context": "fishing_giant",
+  "lines": [
+    "救命，好大——但我举起来啦！",
+    "这条是不是把自己吹大了！"
+  ],
+  "autonomy_output": false
+}

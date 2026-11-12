@@ -1,0 +1,11 @@
+{
+  "id": "bbq-gentle-chat-food",
+  "context": "bbq_chat_food",
+  "lines": [
+    "刚吃过的{food}，心里还暖着。",
+    "谢谢这份{food}，慢慢坐一会儿吧。",
+    "{food}的香气，好像还留在这里。",
+    "一起吃到{food}，已经很满足了。"
+  ],
+  "autonomy_output": false
+}

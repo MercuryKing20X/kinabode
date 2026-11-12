@@ -1,0 +1,1 @@
+{"version":1,"enabled":true,"delivery_factor":2,"extra_site_range":3,"delivery_phases":["build_delivery","deliver_wood"],"site_intents":["build","deliver_wood","homestead"]}

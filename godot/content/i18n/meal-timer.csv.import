@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://n0rjip0risxt"
+
+[deps]
+
+files=["res://content/i18n/meal-timer.zh.translation", "res://content/i18n/meal-timer.en.translation"]
+
+source_file="res://content/i18n/meal-timer.csv"
+dest_files=["res://content/i18n/meal-timer.zh.translation", "res://content/i18n/meal-timer.en.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

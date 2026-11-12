@@ -1,0 +1,11 @@
+{
+  "id": "hunger-very-hungry",
+  "context": "hunger_very_hungry",
+  "lines": [
+    "我真的好饿，先到你身边待着。",
+    "让我在你旁边歇一下吧。",
+    "肚子已经在大声提醒我了。",
+    "先陪着你，等一顿热乎饭。"
+  ],
+  "autonomy_output": false
+}

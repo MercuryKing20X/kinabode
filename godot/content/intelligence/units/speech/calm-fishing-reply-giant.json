@@ -1,0 +1,9 @@
+{
+  "id": "calm-fishing-reply-giant",
+  "context": "fishing_reply_giant",
+  "lines": [
+    "这条能遮住一小片天了。",
+    "你举着，我帮你数数有几个人高。"
+  ],
+  "autonomy_output": false
+}

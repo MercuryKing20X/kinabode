@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bfblih2j8nb4"
+
+[deps]
+
+files=["res://content/i18n/wardrobe-v06.zh.translation", "res://content/i18n/wardrobe-v06.en.translation"]
+
+source_file="res://content/i18n/wardrobe-v06.csv"
+dest_files=["res://content/i18n/wardrobe-v06.zh.translation", "res://content/i18n/wardrobe-v06.en.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

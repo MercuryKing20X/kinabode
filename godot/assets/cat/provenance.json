@@ -1,0 +1,688 @@
+{
+  "author": "Codex original hand pixel",
+  "generator": "tools/art/draw_kitten.py",
+  "palette": [
+    "00000000",
+    "66452fff",
+    "df8a43ff",
+    "f3b55eff",
+    "ffe4b2ff",
+    "f7f0ddff",
+    "443a32ff"
+  ],
+  "light": "upper-left",
+  "frames": {
+    "walk_down_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "walk_down_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "walk_left_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "walk_left_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "walk_right_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "walk_right_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "walk_up_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "walk_up_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "run_down_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "run_down_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "run_left_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "run_left_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "run_right_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "run_right_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "run_up_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "run_up_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "sit_down_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "sit_down_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "sit_left_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "sit_left_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "sit_right_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "sit_right_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "sit_up_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "sit_up_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "sleep_down_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "sleep_down_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "sleep_left_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "sleep_left_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "sleep_right_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "sleep_right_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "sleep_up_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "sleep_up_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "stretch_down_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "stretch_down_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "stretch_left_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "stretch_left_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "stretch_right_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "stretch_right_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "stretch_up_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "stretch_up_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "lick_down_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "lick_down_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "lick_left_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "lick_left_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "lick_right_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "lick_right_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "lick_up_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "lick_up_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "butterfly_down_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "butterfly_down_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "butterfly_left_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "butterfly_left_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "butterfly_right_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "butterfly_right_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "butterfly_up_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "butterfly_up_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "rub_down_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "rub_down_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "rub_left_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "rub_left_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "rub_right_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "rub_right_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "rub_up_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "rub_up_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "belly_down_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "belly_down_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "belly_left_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "belly_left_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "belly_right_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "belly_right_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "belly_up_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "belly_up_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "held_down_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "held_down_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "held_left_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "held_left_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "held_right_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "held_right_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "held_up_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "held_up_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "pet_down_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "pet_down_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "pet_left_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "pet_left_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "pet_right_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "pet_right_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "pet_up_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "pet_up_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "jump_down_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "jump_down_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "jump_left_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "jump_left_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "jump_right_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "jump_right_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "jump_up_0.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    },
+    "jump_up_1.png": {
+      "original_hand_pixel": true,
+      "size": [
+        24,
+        24
+      ]
+    }
+  }
+}

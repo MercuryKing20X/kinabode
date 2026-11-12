@@ -1,0 +1,1366 @@
+{
+  "jieqi": {
+    "playful": {
+      "cheer": [
+        {
+          "key": "content.chess.audience.jieqi.playful.cheer.1",
+          "zh": "加油加油，我看着呢！",
+          "en": "Go on, I am cheering for you!"
+        },
+        {
+          "key": "content.chess.audience.jieqi.playful.cheer.5",
+          "zh": "我差点替你拍桌子！",
+          "en": "I nearly slapped the table in excitement!"
+        }
+      ],
+      "comment": [
+        {
+          "key": "content.chess.audience.jieqi.playful.comment.2",
+          "zh": "这局看起来好热闹！",
+          "en": "This game is getting exciting!"
+        },
+        {
+          "key": "content.chess.audience.jieqi.playful.comment.6",
+          "zh": "再走一步让我看看！",
+          "en": "Make another move, I want to see!"
+        },
+        {
+          "key": "content.chess.audience.jieqi.playful.comment.8",
+          "zh": "这棋盘可真会藏秘密。",
+          "en": "This board is full of secrets!"
+        },
+        {
+          "key": "content.chess.audience.jieqi.playful.comment.9",
+          "zh": "我坐在这里也紧张起来啦！",
+          "en": "Even watching from here has me on edge!"
+        },
+        {
+          "key": "content.chess.audience.jieqi.playful.comment.10",
+          "zh": "别急，我替你们数着呢。",
+          "en": "Take your time, I am following along!"
+        },
+        {
+          "key": "content.chess.audience.jieqi.playful.comment.13",
+          "zh": "我也想试试这种走法！",
+          "en": "I want to try a move like that too!"
+        },
+        {
+          "key": "content.chess.audience.jieqi.playful.comment.14",
+          "zh": "棋子们今天好忙呀。",
+          "en": "The pieces are certainly busy today!"
+        },
+        {
+          "key": "content.chess.audience.jieqi.playful.comment.15",
+          "zh": "我的目光要追不上啦。",
+          "en": "My eyes can barely keep up!"
+        },
+        {
+          "key": "content.chess.audience.jieqi.playful.comment.28",
+          "zh": "这边空出来啦！",
+          "en": "There is an opening over here!"
+        },
+        {
+          "key": "content.chess.audience.jieqi.playful.comment.29",
+          "zh": "你们认真得我都不敢出声。",
+          "en": "You two look so focused I almost went quiet!"
+        },
+        {
+          "key": "content.chess.audience.jieqi.playful.comment.30",
+          "zh": "看棋也像玩捉迷藏！",
+          "en": "Watching chess is like hide and seek!"
+        }
+      ],
+      "tease": [
+        {
+          "key": "content.chess.audience.jieqi.playful.tease.3",
+          "zh": "你们谁会先眨眼？",
+          "en": "Which of you will blink first?"
+        },
+        {
+          "key": "content.chess.audience.jieqi.playful.tease.7",
+          "zh": "你是不是偷偷想了个妙招？",
+          "en": "Have you got a secret trick?"
+        },
+        {
+          "key": "content.chess.audience.jieqi.playful.tease.11",
+          "zh": "要不要猜猜接下来会怎样？",
+          "en": "Shall we guess what happens next?"
+        }
+      ],
+      "awe": [
+        {
+          "key": "content.chess.audience.jieqi.playful.awe.4",
+          "zh": "这一手看得我眼睛都亮了！",
+          "en": "That move made me sit right up!"
+        },
+        {
+          "key": "content.chess.audience.jieqi.playful.awe.12",
+          "zh": "哎呀，我刚才看漏了！",
+          "en": "Oops, I missed that!"
+        },
+        {
+          "key": "content.chess.audience.jieqi.playful.awe.27",
+          "zh": "我刚看到棋子换了方向！",
+          "en": "I just saw the piece change course!"
+        }
+      ],
+      "yawn": [
+        {
+          "key": "content.chess.audience.jieqi.playful.yawn.16",
+          "zh": "我打了个哈欠，可还没看够！",
+          "en": "I yawned, but I am not done watching!"
+        },
+        {
+          "key": "content.chess.audience.jieqi.playful.yawn.17",
+          "zh": "坐久了我想伸个懒腰。",
+          "en": "I could use a big stretch!"
+        }
+      ],
+      "hunger": [
+        {
+          "key": "content.chess.audience.jieqi.playful.hunger.18",
+          "zh": "肚子好像也在催我啦。",
+          "en": "My tummy is chiming in too!"
+        },
+        {
+          "key": "content.chess.audience.jieqi.playful.hunger.19",
+          "zh": "看棋看得我想吃点心。",
+          "en": "Watching this makes me want a snack!"
+        }
+      ],
+      "tap": [
+        {
+          "key": "content.chess.audience.jieqi.playful.tap.20",
+          "zh": "嘿，你发现我啦！",
+          "en": "Hey, you found me!"
+        },
+        {
+          "key": "content.chess.audience.jieqi.playful.tap.21",
+          "zh": "点我干嘛，我正看得起劲！",
+          "en": "Why tap me? I am enjoying this!"
+        }
+      ],
+      "result": [
+        {
+          "key": "content.chess.audience.jieqi.playful.result.22",
+          "zh": "这盘结束得真精彩！",
+          "en": "What an exciting finish!"
+        },
+        {
+          "key": "content.chess.audience.jieqi.playful.result.23",
+          "zh": "不管谁赢都值得鼓掌！",
+          "en": "Whoever won deserves a cheer!"
+        },
+        {
+          "key": "content.chess.audience.jieqi.playful.result.24",
+          "zh": "下一局我还要看！",
+          "en": "I want to watch the next one too!"
+        }
+      ],
+      "chaos_selfcheck": [
+        {
+          "key": "content.chess.audience.jieqi.playful.chaos_selfcheck.25",
+          "zh": "等等，自己的将也危险啦！",
+          "en": "Wait, the moving side’s general is in danger too!"
+        },
+        {
+          "key": "content.chess.audience.jieqi.playful.chaos_selfcheck.26",
+          "zh": "这一手把自己也吓了一跳吧！",
+          "en": "That move must have surprised its own side!"
+        }
+      ]
+    },
+    "gentle": {
+      "cheer": [
+        {
+          "key": "content.chess.audience.jieqi.gentle.cheer.1",
+          "zh": "慢慢下，我陪你们看。",
+          "en": "Take your time; I will watch with you."
+        },
+        {
+          "key": "content.chess.audience.jieqi.gentle.cheer.5",
+          "zh": "我会安静地为你们加油。",
+          "en": "I will cheer quietly for both of you."
+        }
+      ],
+      "comment": [
+        {
+          "key": "content.chess.audience.jieqi.gentle.comment.2",
+          "zh": "看着你们对局很安心。",
+          "en": "It is comforting to watch you play."
+        },
+        {
+          "key": "content.chess.audience.jieqi.gentle.comment.6",
+          "zh": "你们都想得很认真。",
+          "en": "You are both giving this such care."
+        },
+        {
+          "key": "content.chess.audience.jieqi.gentle.comment.8",
+          "zh": "我在旁边也学到了一点。",
+          "en": "I am learning a little by watching."
+        },
+        {
+          "key": "content.chess.audience.jieqi.gentle.comment.9",
+          "zh": "不用着急，时间还长。",
+          "en": "There is plenty of time."
+        },
+        {
+          "key": "content.chess.audience.jieqi.gentle.comment.10",
+          "zh": "刚才那一步让我惊讶了。",
+          "en": "That last move surprised me."
+        },
+        {
+          "key": "content.chess.audience.jieqi.gentle.comment.13",
+          "zh": "你们的心思都很巧。",
+          "en": "You both have such thoughtful ideas."
+        },
+        {
+          "key": "content.chess.audience.jieqi.gentle.comment.14",
+          "zh": "坐在一起看棋真好。",
+          "en": "It is nice to sit together and watch."
+        },
+        {
+          "key": "content.chess.audience.jieqi.gentle.comment.15",
+          "zh": "这一局有温柔的节奏。",
+          "en": "This game has a gentle rhythm."
+        },
+        {
+          "key": "content.chess.audience.jieqi.gentle.comment.28",
+          "zh": "我看见这里留了空位。",
+          "en": "I noticed an open space here."
+        },
+        {
+          "key": "content.chess.audience.jieqi.gentle.comment.29",
+          "zh": "你们慢慢想，我等着。",
+          "en": "Think it over; I can wait."
+        },
+        {
+          "key": "content.chess.audience.jieqi.gentle.comment.30",
+          "zh": "这盘棋像一段安静的谈话。",
+          "en": "This game feels like a quiet conversation."
+        }
+      ],
+      "tease": [
+        {
+          "key": "content.chess.audience.jieqi.gentle.tease.3",
+          "zh": "这一手很细心呢。",
+          "en": "That was a thoughtful move."
+        },
+        {
+          "key": "content.chess.audience.jieqi.gentle.tease.7",
+          "zh": "这里还有好多可能。",
+          "en": "There are still so many possibilities here."
+        },
+        {
+          "key": "content.chess.audience.jieqi.gentle.tease.11",
+          "zh": "棋子轻轻落下的声音真好听。",
+          "en": "I like the soft sound of a piece settling."
+        }
+      ],
+      "awe": [
+        {
+          "key": "content.chess.audience.jieqi.gentle.awe.4",
+          "zh": "棋盘上的变化真奇妙。",
+          "en": "It is lovely how the board keeps changing."
+        },
+        {
+          "key": "content.chess.audience.jieqi.gentle.awe.12",
+          "zh": "我想再仔细看看这一边。",
+          "en": "I would like another look at this side."
+        },
+        {
+          "key": "content.chess.audience.jieqi.gentle.awe.27",
+          "zh": "这边的局面变了呢。",
+          "en": "The position on this side has changed."
+        }
+      ],
+      "yawn": [
+        {
+          "key": "content.chess.audience.jieqi.gentle.yawn.16",
+          "zh": "我有一点困了，不过还想看。",
+          "en": "I am a little sleepy, but I want to keep watching."
+        },
+        {
+          "key": "content.chess.audience.jieqi.gentle.yawn.17",
+          "zh": "让我轻轻伸个懒腰。",
+          "en": "Let me stretch for a moment."
+        }
+      ],
+      "hunger": [
+        {
+          "key": "content.chess.audience.jieqi.gentle.hunger.18",
+          "zh": "肚子好像有些饿了。",
+          "en": "I think I am getting a little hungry."
+        },
+        {
+          "key": "content.chess.audience.jieqi.gentle.hunger.19",
+          "zh": "结束以后吃点东西吧。",
+          "en": "Perhaps we can eat something afterwards."
+        }
+      ],
+      "tap": [
+        {
+          "key": "content.chess.audience.jieqi.gentle.tap.20",
+          "zh": "嗯，我一直在旁边呢。",
+          "en": "I am right beside you, listening."
+        },
+        {
+          "key": "content.chess.audience.jieqi.gentle.tap.21",
+          "zh": "你想让我看看哪里？",
+          "en": "Is there somewhere you want me to look?"
+        }
+      ],
+      "result": [
+        {
+          "key": "content.chess.audience.jieqi.gentle.result.22",
+          "zh": "谢谢你们让我看这一局。",
+          "en": "Thank you for letting me watch this game."
+        },
+        {
+          "key": "content.chess.audience.jieqi.gentle.result.23",
+          "zh": "辛苦了，先休息一下吧。",
+          "en": "Well played. Please rest a little."
+        },
+        {
+          "key": "content.chess.audience.jieqi.gentle.result.24",
+          "zh": "能陪着你们真好。",
+          "en": "I am glad I could be here with you."
+        }
+      ],
+      "chaos_selfcheck": [
+        {
+          "key": "content.chess.audience.jieqi.gentle.chaos_selfcheck.25",
+          "zh": "这一手也威胁到了己方的将。",
+          "en": "That move also threatens its own general."
+        },
+        {
+          "key": "content.chess.audience.jieqi.gentle.chaos_selfcheck.26",
+          "zh": "先看看受威胁的将吧。",
+          "en": "Let us look at the threatened general first."
+        }
+      ]
+    },
+    "diligent": {
+      "cheer": [
+        {
+          "key": "content.chess.audience.jieqi.diligent.cheer.1",
+          "zh": "两边都要看仔细。",
+          "en": "Keep an eye on both sides."
+        },
+        {
+          "key": "content.chess.audience.jieqi.diligent.cheer.5",
+          "zh": "坐稳些，别碰乱棋子。",
+          "en": "Sit comfortably and mind the pieces."
+        }
+      ],
+      "comment": [
+        {
+          "key": "content.chess.audience.jieqi.diligent.comment.2",
+          "zh": "这一手想得很周全。",
+          "en": "That move was carefully considered."
+        },
+        {
+          "key": "content.chess.audience.jieqi.diligent.comment.6",
+          "zh": "这一步值得再想一想。",
+          "en": "That move deserves another look."
+        },
+        {
+          "key": "content.chess.audience.jieqi.diligent.comment.8",
+          "zh": "先把附近的位置看清楚。",
+          "en": "First check the nearby positions."
+        },
+        {
+          "key": "content.chess.audience.jieqi.diligent.comment.9",
+          "zh": "你们都考虑得很认真。",
+          "en": "You are both thinking carefully."
+        },
+        {
+          "key": "content.chess.audience.jieqi.diligent.comment.10",
+          "zh": "这里似乎还有一条路。",
+          "en": "There may be another path here."
+        },
+        {
+          "key": "content.chess.audience.jieqi.diligent.comment.13",
+          "zh": "棋子摆得稳稳当当。",
+          "en": "The pieces are sitting securely."
+        },
+        {
+          "key": "content.chess.audience.jieqi.diligent.comment.14",
+          "zh": "遇到难题也别慌。",
+          "en": "There is no need to panic over a puzzle."
+        },
+        {
+          "key": "content.chess.audience.jieqi.diligent.comment.15",
+          "zh": "看清楚再走比较好。",
+          "en": "It is better to look carefully before moving."
+        },
+        {
+          "key": "content.chess.audience.jieqi.diligent.comment.28",
+          "zh": "留意这里的空位。",
+          "en": "Keep that open space in mind."
+        },
+        {
+          "key": "content.chess.audience.jieqi.diligent.comment.29",
+          "zh": "慢慢想，别漏掉细节。",
+          "en": "Take your time and check the details."
+        },
+        {
+          "key": "content.chess.audience.jieqi.diligent.comment.30",
+          "zh": "每一步都得照顾后面。",
+          "en": "Each move should account for what follows."
+        }
+      ],
+      "tease": [
+        {
+          "key": "content.chess.audience.jieqi.diligent.tease.3",
+          "zh": "别忘了看棋盘边缘。",
+          "en": "Do not forget the edge of the board."
+        },
+        {
+          "key": "content.chess.audience.jieqi.diligent.tease.7",
+          "zh": "看棋也要有条理。",
+          "en": "It helps to watch the board methodically."
+        },
+        {
+          "key": "content.chess.audience.jieqi.diligent.tease.11",
+          "zh": "刚才那手确实不容易。",
+          "en": "That last move was not easy."
+        }
+      ],
+      "awe": [
+        {
+          "key": "content.chess.audience.jieqi.diligent.awe.4",
+          "zh": "我帮你们留意局面。",
+          "en": "I will keep an eye on the position."
+        },
+        {
+          "key": "content.chess.audience.jieqi.diligent.awe.12",
+          "zh": "我再检查一下另一边。",
+          "en": "Let me inspect the other side too."
+        },
+        {
+          "key": "content.chess.audience.jieqi.diligent.awe.27",
+          "zh": "这一边有新的变化。",
+          "en": "The position has changed on this side."
+        }
+      ],
+      "yawn": [
+        {
+          "key": "content.chess.audience.jieqi.diligent.yawn.16",
+          "zh": "坐久了记得活动一下。",
+          "en": "Remember to stretch after sitting so long."
+        },
+        {
+          "key": "content.chess.audience.jieqi.diligent.yawn.17",
+          "zh": "我有点困，先坐直些。",
+          "en": "I am getting sleepy; I should sit up."
+        }
+      ],
+      "hunger": [
+        {
+          "key": "content.chess.audience.jieqi.diligent.hunger.18",
+          "zh": "下完记得吃饭。",
+          "en": "Remember to eat after the game."
+        },
+        {
+          "key": "content.chess.audience.jieqi.diligent.hunger.19",
+          "zh": "肚子饿了也不要碰乱棋子。",
+          "en": "Even hungry, I should not disturb the pieces."
+        }
+      ],
+      "tap": [
+        {
+          "key": "content.chess.audience.jieqi.diligent.tap.20",
+          "zh": "叫我吗，我正看着棋盘。",
+          "en": "Did you call? I am watching the board."
+        },
+        {
+          "key": "content.chess.audience.jieqi.diligent.tap.21",
+          "zh": "我在这里陪你们。",
+          "en": "I am right here with you."
+        }
+      ],
+      "result": [
+        {
+          "key": "content.chess.audience.jieqi.diligent.result.22",
+          "zh": "结束了，辛苦你们。",
+          "en": "That is the game. Well played."
+        },
+        {
+          "key": "content.chess.audience.jieqi.diligent.result.23",
+          "zh": "这一局有不少值得回想。",
+          "en": "There is plenty to think about from that game."
+        },
+        {
+          "key": "content.chess.audience.jieqi.diligent.result.24",
+          "zh": "棋子等会儿要收好。",
+          "en": "We should put the pieces away afterwards."
+        }
+      ],
+      "chaos_selfcheck": [
+        {
+          "key": "content.chess.audience.jieqi.diligent.chaos_selfcheck.25",
+          "zh": "这一走连己方的将都受了威胁。",
+          "en": "That move exposed the moving side’s general."
+        },
+        {
+          "key": "content.chess.audience.jieqi.diligent.chaos_selfcheck.26",
+          "zh": "得先应付自己将上的威胁。",
+          "en": "The moving side must answer that threat first."
+        }
+      ]
+    },
+    "quiet": {
+      "cheer": [
+        {
+          "key": "content.chess.audience.jieqi.quiet.cheer.1",
+          "zh": "我看着。",
+          "en": "I am watching."
+        },
+        {
+          "key": "content.chess.audience.jieqi.quiet.cheer.5",
+          "zh": "别急。",
+          "en": "No hurry."
+        }
+      ],
+      "comment": [
+        {
+          "key": "content.chess.audience.jieqi.quiet.comment.2",
+          "zh": "继续吧。",
+          "en": "Carry on."
+        },
+        {
+          "key": "content.chess.audience.jieqi.quiet.comment.6",
+          "zh": "那儿还有地方。",
+          "en": "There is room on that side."
+        },
+        {
+          "key": "content.chess.audience.jieqi.quiet.comment.8",
+          "zh": "棋盘很安静。",
+          "en": "The board is quiet."
+        },
+        {
+          "key": "content.chess.audience.jieqi.quiet.comment.9",
+          "zh": "你们想得很久。",
+          "en": "You have both been thinking a while."
+        },
+        {
+          "key": "content.chess.audience.jieqi.quiet.comment.10",
+          "zh": "有意思。",
+          "en": "Interesting."
+        },
+        {
+          "key": "content.chess.audience.jieqi.quiet.comment.13",
+          "zh": "另一边也要看。",
+          "en": "Watch the other side too."
+        },
+        {
+          "key": "content.chess.audience.jieqi.quiet.comment.14",
+          "zh": "还没有结束。",
+          "en": "It is not over yet."
+        },
+        {
+          "key": "content.chess.audience.jieqi.quiet.comment.15",
+          "zh": "这手我留意到了。",
+          "en": "That move caught my attention."
+        },
+        {
+          "key": "content.chess.audience.jieqi.quiet.comment.28",
+          "zh": "那里空着。",
+          "en": "That space is open."
+        },
+        {
+          "key": "content.chess.audience.jieqi.quiet.comment.29",
+          "zh": "我就在这儿等。",
+          "en": "I will wait right here."
+        },
+        {
+          "key": "content.chess.audience.jieqi.quiet.comment.30",
+          "zh": "还有路。",
+          "en": "There is still a path."
+        }
+      ],
+      "tease": [
+        {
+          "key": "content.chess.audience.jieqi.quiet.tease.3",
+          "zh": "这步不错。",
+          "en": "A good move."
+        },
+        {
+          "key": "content.chess.audience.jieqi.quiet.tease.7",
+          "zh": "我看到了。",
+          "en": "I see it."
+        },
+        {
+          "key": "content.chess.audience.jieqi.quiet.tease.11",
+          "zh": "刚才那步很巧。",
+          "en": "That last move was clever."
+        }
+      ],
+      "awe": [
+        {
+          "key": "content.chess.audience.jieqi.quiet.awe.4",
+          "zh": "还有变化。",
+          "en": "There is more to this position."
+        },
+        {
+          "key": "content.chess.audience.jieqi.quiet.awe.12",
+          "zh": "我再看一眼。",
+          "en": "One more look."
+        },
+        {
+          "key": "content.chess.audience.jieqi.quiet.awe.27",
+          "zh": "局面变了。",
+          "en": "The position changed."
+        }
+      ],
+      "yawn": [
+        {
+          "key": "content.chess.audience.jieqi.quiet.yawn.16",
+          "zh": "有点困。",
+          "en": "A little sleepy."
+        },
+        {
+          "key": "content.chess.audience.jieqi.quiet.yawn.17",
+          "zh": "坐久了。",
+          "en": "We have been sitting a while."
+        }
+      ],
+      "hunger": [
+        {
+          "key": "content.chess.audience.jieqi.quiet.hunger.18",
+          "zh": "饿了。",
+          "en": "I am hungry."
+        },
+        {
+          "key": "content.chess.audience.jieqi.quiet.hunger.19",
+          "zh": "结束后吃饭吧。",
+          "en": "Let us eat after this."
+        }
+      ],
+      "tap": [
+        {
+          "key": "content.chess.audience.jieqi.quiet.tap.20",
+          "zh": "叫我？",
+          "en": "You called?"
+        },
+        {
+          "key": "content.chess.audience.jieqi.quiet.tap.21",
+          "zh": "听着呢。",
+          "en": "I am listening."
+        }
+      ],
+      "result": [
+        {
+          "key": "content.chess.audience.jieqi.quiet.result.22",
+          "zh": "结束了。",
+          "en": "It is over."
+        },
+        {
+          "key": "content.chess.audience.jieqi.quiet.result.23",
+          "zh": "这一局下得好。",
+          "en": "That was a well-played game."
+        },
+        {
+          "key": "content.chess.audience.jieqi.quiet.result.24",
+          "zh": "我看完了。",
+          "en": "I watched to the end."
+        }
+      ],
+      "chaos_selfcheck": [
+        {
+          "key": "content.chess.audience.jieqi.quiet.chaos_selfcheck.25",
+          "zh": "己方的将也危险了。",
+          "en": "That side’s general is in danger too."
+        },
+        {
+          "key": "content.chess.audience.jieqi.quiet.chaos_selfcheck.26",
+          "zh": "先看将。",
+          "en": "Look to the general first."
+        }
+      ]
+    }
+  },
+  "gomoku": {
+    "playful": {
+      "cheer": [
+        {
+          "key": "content.chess.audience.gomoku.playful.cheer.1",
+          "zh": "加油加油，我看着呢！",
+          "en": "Go on, I am cheering for you!"
+        },
+        {
+          "key": "content.chess.audience.gomoku.playful.cheer.5",
+          "zh": "我差点替你拍桌子！",
+          "en": "I nearly slapped the table in excitement!"
+        }
+      ],
+      "comment": [
+        {
+          "key": "content.chess.audience.gomoku.playful.comment.2",
+          "zh": "这局看起来好热闹！",
+          "en": "This game is getting exciting!"
+        },
+        {
+          "key": "content.chess.audience.gomoku.playful.comment.6",
+          "zh": "再走一步让我看看！",
+          "en": "Make another move, I want to see!"
+        },
+        {
+          "key": "content.chess.audience.gomoku.playful.comment.8",
+          "zh": "这棋盘可真会藏秘密。",
+          "en": "This board is full of secrets!"
+        },
+        {
+          "key": "content.chess.audience.gomoku.playful.comment.9",
+          "zh": "我坐在这里也紧张起来啦！",
+          "en": "Even watching from here has me on edge!"
+        },
+        {
+          "key": "content.chess.audience.gomoku.playful.comment.10",
+          "zh": "别急，我替你们数着呢。",
+          "en": "Take your time, I am following along!"
+        },
+        {
+          "key": "content.chess.audience.gomoku.playful.comment.13",
+          "zh": "我也想试试这种走法！",
+          "en": "I want to try a move like that too!"
+        },
+        {
+          "key": "content.chess.audience.gomoku.playful.comment.14",
+          "zh": "棋子们今天好忙呀。",
+          "en": "The pieces are certainly busy today!"
+        },
+        {
+          "key": "content.chess.audience.gomoku.playful.comment.15",
+          "zh": "我的目光要追不上啦。",
+          "en": "My eyes can barely keep up!"
+        },
+        {
+          "key": "content.chess.audience.gomoku.playful.comment.28",
+          "zh": "这边空出来啦！",
+          "en": "There is an opening over here!"
+        },
+        {
+          "key": "content.chess.audience.gomoku.playful.comment.29",
+          "zh": "你们认真得我都不敢出声。",
+          "en": "You two look so focused I almost went quiet!"
+        },
+        {
+          "key": "content.chess.audience.gomoku.playful.comment.30",
+          "zh": "看棋也像玩捉迷藏！",
+          "en": "Watching chess is like hide and seek!"
+        }
+      ],
+      "tease": [
+        {
+          "key": "content.chess.audience.gomoku.playful.tease.3",
+          "zh": "你们谁会先眨眼？",
+          "en": "Which of you will blink first?"
+        },
+        {
+          "key": "content.chess.audience.gomoku.playful.tease.7",
+          "zh": "你是不是偷偷想了个妙招？",
+          "en": "Have you got a secret trick?"
+        },
+        {
+          "key": "content.chess.audience.gomoku.playful.tease.11",
+          "zh": "要不要猜猜接下来会怎样？",
+          "en": "Shall we guess what happens next?"
+        }
+      ],
+      "awe": [
+        {
+          "key": "content.chess.audience.gomoku.playful.awe.4",
+          "zh": "这一手看得我眼睛都亮了！",
+          "en": "That move made me sit right up!"
+        },
+        {
+          "key": "content.chess.audience.gomoku.playful.awe.12",
+          "zh": "哎呀，我刚才看漏了！",
+          "en": "Oops, I missed that!"
+        },
+        {
+          "key": "content.chess.audience.gomoku.playful.awe.27",
+          "zh": "我刚看到棋子换了方向！",
+          "en": "I just saw the piece change course!"
+        }
+      ],
+      "yawn": [
+        {
+          "key": "content.chess.audience.gomoku.playful.yawn.16",
+          "zh": "我打了个哈欠，可还没看够！",
+          "en": "I yawned, but I am not done watching!"
+        },
+        {
+          "key": "content.chess.audience.gomoku.playful.yawn.17",
+          "zh": "坐久了我想伸个懒腰。",
+          "en": "I could use a big stretch!"
+        }
+      ],
+      "hunger": [
+        {
+          "key": "content.chess.audience.gomoku.playful.hunger.18",
+          "zh": "肚子好像也在催我啦。",
+          "en": "My tummy is chiming in too!"
+        },
+        {
+          "key": "content.chess.audience.gomoku.playful.hunger.19",
+          "zh": "看棋看得我想吃点心。",
+          "en": "Watching this makes me want a snack!"
+        }
+      ],
+      "tap": [
+        {
+          "key": "content.chess.audience.gomoku.playful.tap.20",
+          "zh": "嘿，你发现我啦！",
+          "en": "Hey, you found me!"
+        },
+        {
+          "key": "content.chess.audience.gomoku.playful.tap.21",
+          "zh": "点我干嘛，我正看得起劲！",
+          "en": "Why tap me? I am enjoying this!"
+        }
+      ],
+      "result": [
+        {
+          "key": "content.chess.audience.gomoku.playful.result.22",
+          "zh": "这盘结束得真精彩！",
+          "en": "What an exciting finish!"
+        },
+        {
+          "key": "content.chess.audience.gomoku.playful.result.23",
+          "zh": "不管谁赢都值得鼓掌！",
+          "en": "Whoever won deserves a cheer!"
+        },
+        {
+          "key": "content.chess.audience.gomoku.playful.result.24",
+          "zh": "下一局我还要看！",
+          "en": "I want to watch the next one too!"
+        }
+      ],
+      "chaos_selfcheck": [
+        {
+          "key": "content.chess.audience.gomoku.playful.chaos_selfcheck.25",
+          "zh": "等等，自己的将也危险啦！",
+          "en": "Wait, the moving side’s general is in danger too!"
+        },
+        {
+          "key": "content.chess.audience.gomoku.playful.chaos_selfcheck.26",
+          "zh": "这一手把自己也吓了一跳吧！",
+          "en": "That move must have surprised its own side!"
+        }
+      ]
+    },
+    "gentle": {
+      "cheer": [
+        {
+          "key": "content.chess.audience.gomoku.gentle.cheer.1",
+          "zh": "慢慢下，我陪你们看。",
+          "en": "Take your time; I will watch with you."
+        },
+        {
+          "key": "content.chess.audience.gomoku.gentle.cheer.5",
+          "zh": "我会安静地为你们加油。",
+          "en": "I will cheer quietly for both of you."
+        }
+      ],
+      "comment": [
+        {
+          "key": "content.chess.audience.gomoku.gentle.comment.2",
+          "zh": "看着你们对局很安心。",
+          "en": "It is comforting to watch you play."
+        },
+        {
+          "key": "content.chess.audience.gomoku.gentle.comment.6",
+          "zh": "你们都想得很认真。",
+          "en": "You are both giving this such care."
+        },
+        {
+          "key": "content.chess.audience.gomoku.gentle.comment.8",
+          "zh": "我在旁边也学到了一点。",
+          "en": "I am learning a little by watching."
+        },
+        {
+          "key": "content.chess.audience.gomoku.gentle.comment.9",
+          "zh": "不用着急，时间还长。",
+          "en": "There is plenty of time."
+        },
+        {
+          "key": "content.chess.audience.gomoku.gentle.comment.10",
+          "zh": "刚才那一步让我惊讶了。",
+          "en": "That last move surprised me."
+        },
+        {
+          "key": "content.chess.audience.gomoku.gentle.comment.13",
+          "zh": "你们的心思都很巧。",
+          "en": "You both have such thoughtful ideas."
+        },
+        {
+          "key": "content.chess.audience.gomoku.gentle.comment.14",
+          "zh": "坐在一起看棋真好。",
+          "en": "It is nice to sit together and watch."
+        },
+        {
+          "key": "content.chess.audience.gomoku.gentle.comment.15",
+          "zh": "这一局有温柔的节奏。",
+          "en": "This game has a gentle rhythm."
+        },
+        {
+          "key": "content.chess.audience.gomoku.gentle.comment.28",
+          "zh": "我看见这里留了空位。",
+          "en": "I noticed an open space here."
+        },
+        {
+          "key": "content.chess.audience.gomoku.gentle.comment.29",
+          "zh": "你们慢慢想，我等着。",
+          "en": "Think it over; I can wait."
+        },
+        {
+          "key": "content.chess.audience.gomoku.gentle.comment.30",
+          "zh": "这盘棋像一段安静的谈话。",
+          "en": "This game feels like a quiet conversation."
+        }
+      ],
+      "tease": [
+        {
+          "key": "content.chess.audience.gomoku.gentle.tease.3",
+          "zh": "这一手很细心呢。",
+          "en": "That was a thoughtful move."
+        },
+        {
+          "key": "content.chess.audience.gomoku.gentle.tease.7",
+          "zh": "这里还有好多可能。",
+          "en": "There are still so many possibilities here."
+        },
+        {
+          "key": "content.chess.audience.gomoku.gentle.tease.11",
+          "zh": "棋子轻轻落下的声音真好听。",
+          "en": "I like the soft sound of a piece settling."
+        }
+      ],
+      "awe": [
+        {
+          "key": "content.chess.audience.gomoku.gentle.awe.4",
+          "zh": "棋盘上的变化真奇妙。",
+          "en": "It is lovely how the board keeps changing."
+        },
+        {
+          "key": "content.chess.audience.gomoku.gentle.awe.12",
+          "zh": "我想再仔细看看这一边。",
+          "en": "I would like another look at this side."
+        },
+        {
+          "key": "content.chess.audience.gomoku.gentle.awe.27",
+          "zh": "这边的局面变了呢。",
+          "en": "The position on this side has changed."
+        }
+      ],
+      "yawn": [
+        {
+          "key": "content.chess.audience.gomoku.gentle.yawn.16",
+          "zh": "我有一点困了，不过还想看。",
+          "en": "I am a little sleepy, but I want to keep watching."
+        },
+        {
+          "key": "content.chess.audience.gomoku.gentle.yawn.17",
+          "zh": "让我轻轻伸个懒腰。",
+          "en": "Let me stretch for a moment."
+        }
+      ],
+      "hunger": [
+        {
+          "key": "content.chess.audience.gomoku.gentle.hunger.18",
+          "zh": "肚子好像有些饿了。",
+          "en": "I think I am getting a little hungry."
+        },
+        {
+          "key": "content.chess.audience.gomoku.gentle.hunger.19",
+          "zh": "结束以后吃点东西吧。",
+          "en": "Perhaps we can eat something afterwards."
+        }
+      ],
+      "tap": [
+        {
+          "key": "content.chess.audience.gomoku.gentle.tap.20",
+          "zh": "嗯，我一直在旁边呢。",
+          "en": "I am right beside you, listening."
+        },
+        {
+          "key": "content.chess.audience.gomoku.gentle.tap.21",
+          "zh": "你想让我看看哪里？",
+          "en": "Is there somewhere you want me to look?"
+        }
+      ],
+      "result": [
+        {
+          "key": "content.chess.audience.gomoku.gentle.result.22",
+          "zh": "谢谢你们让我看这一局。",
+          "en": "Thank you for letting me watch this game."
+        },
+        {
+          "key": "content.chess.audience.gomoku.gentle.result.23",
+          "zh": "辛苦了，先休息一下吧。",
+          "en": "Well played. Please rest a little."
+        },
+        {
+          "key": "content.chess.audience.gomoku.gentle.result.24",
+          "zh": "能陪着你们真好。",
+          "en": "I am glad I could be here with you."
+        }
+      ],
+      "chaos_selfcheck": [
+        {
+          "key": "content.chess.audience.gomoku.gentle.chaos_selfcheck.25",
+          "zh": "这一手也威胁到了己方的将。",
+          "en": "That move also threatens its own general."
+        },
+        {
+          "key": "content.chess.audience.gomoku.gentle.chaos_selfcheck.26",
+          "zh": "先看看受威胁的将吧。",
+          "en": "Let us look at the threatened general first."
+        }
+      ]
+    },
+    "diligent": {
+      "cheer": [
+        {
+          "key": "content.chess.audience.gomoku.diligent.cheer.1",
+          "zh": "两边都要看仔细。",
+          "en": "Keep an eye on both sides."
+        },
+        {
+          "key": "content.chess.audience.gomoku.diligent.cheer.5",
+          "zh": "坐稳些，别碰乱棋子。",
+          "en": "Sit comfortably and mind the pieces."
+        }
+      ],
+      "comment": [
+        {
+          "key": "content.chess.audience.gomoku.diligent.comment.2",
+          "zh": "这一手想得很周全。",
+          "en": "That move was carefully considered."
+        },
+        {
+          "key": "content.chess.audience.gomoku.diligent.comment.6",
+          "zh": "这一步值得再想一想。",
+          "en": "That move deserves another look."
+        },
+        {
+          "key": "content.chess.audience.gomoku.diligent.comment.8",
+          "zh": "先把附近的位置看清楚。",
+          "en": "First check the nearby positions."
+        },
+        {
+          "key": "content.chess.audience.gomoku.diligent.comment.9",
+          "zh": "你们都考虑得很认真。",
+          "en": "You are both thinking carefully."
+        },
+        {
+          "key": "content.chess.audience.gomoku.diligent.comment.10",
+          "zh": "这里似乎还有一条路。",
+          "en": "There may be another path here."
+        },
+        {
+          "key": "content.chess.audience.gomoku.diligent.comment.13",
+          "zh": "棋子摆得稳稳当当。",
+          "en": "The pieces are sitting securely."
+        },
+        {
+          "key": "content.chess.audience.gomoku.diligent.comment.14",
+          "zh": "遇到难题也别慌。",
+          "en": "There is no need to panic over a puzzle."
+        },
+        {
+          "key": "content.chess.audience.gomoku.diligent.comment.15",
+          "zh": "看清楚再走比较好。",
+          "en": "It is better to look carefully before moving."
+        },
+        {
+          "key": "content.chess.audience.gomoku.diligent.comment.28",
+          "zh": "留意这里的空位。",
+          "en": "Keep that open space in mind."
+        },
+        {
+          "key": "content.chess.audience.gomoku.diligent.comment.29",
+          "zh": "慢慢想，别漏掉细节。",
+          "en": "Take your time and check the details."
+        },
+        {
+          "key": "content.chess.audience.gomoku.diligent.comment.30",
+          "zh": "每一步都得照顾后面。",
+          "en": "Each move should account for what follows."
+        }
+      ],
+      "tease": [
+        {
+          "key": "content.chess.audience.gomoku.diligent.tease.3",
+          "zh": "别忘了看棋盘边缘。",
+          "en": "Do not forget the edge of the board."
+        },
+        {
+          "key": "content.chess.audience.gomoku.diligent.tease.7",
+          "zh": "看棋也要有条理。",
+          "en": "It helps to watch the board methodically."
+        },
+        {
+          "key": "content.chess.audience.gomoku.diligent.tease.11",
+          "zh": "刚才那手确实不容易。",
+          "en": "That last move was not easy."
+        }
+      ],
+      "awe": [
+        {
+          "key": "content.chess.audience.gomoku.diligent.awe.4",
+          "zh": "我帮你们留意局面。",
+          "en": "I will keep an eye on the position."
+        },
+        {
+          "key": "content.chess.audience.gomoku.diligent.awe.12",
+          "zh": "我再检查一下另一边。",
+          "en": "Let me inspect the other side too."
+        },
+        {
+          "key": "content.chess.audience.gomoku.diligent.awe.27",
+          "zh": "这一边有新的变化。",
+          "en": "The position has changed on this side."
+        }
+      ],
+      "yawn": [
+        {
+          "key": "content.chess.audience.gomoku.diligent.yawn.16",
+          "zh": "坐久了记得活动一下。",
+          "en": "Remember to stretch after sitting so long."
+        },
+        {
+          "key": "content.chess.audience.gomoku.diligent.yawn.17",
+          "zh": "我有点困，先坐直些。",
+          "en": "I am getting sleepy; I should sit up."
+        }
+      ],
+      "hunger": [
+        {
+          "key": "content.chess.audience.gomoku.diligent.hunger.18",
+          "zh": "下完记得吃饭。",
+          "en": "Remember to eat after the game."
+        },
+        {
+          "key": "content.chess.audience.gomoku.diligent.hunger.19",
+          "zh": "肚子饿了也不要碰乱棋子。",
+          "en": "Even hungry, I should not disturb the pieces."
+        }
+      ],
+      "tap": [
+        {
+          "key": "content.chess.audience.gomoku.diligent.tap.20",
+          "zh": "叫我吗，我正看着棋盘。",
+          "en": "Did you call? I am watching the board."
+        },
+        {
+          "key": "content.chess.audience.gomoku.diligent.tap.21",
+          "zh": "我在这里陪你们。",
+          "en": "I am right here with you."
+        }
+      ],
+      "result": [
+        {
+          "key": "content.chess.audience.gomoku.diligent.result.22",
+          "zh": "结束了，辛苦你们。",
+          "en": "That is the game. Well played."
+        },
+        {
+          "key": "content.chess.audience.gomoku.diligent.result.23",
+          "zh": "这一局有不少值得回想。",
+          "en": "There is plenty to think about from that game."
+        },
+        {
+          "key": "content.chess.audience.gomoku.diligent.result.24",
+          "zh": "棋子等会儿要收好。",
+          "en": "We should put the pieces away afterwards."
+        }
+      ],
+      "chaos_selfcheck": [
+        {
+          "key": "content.chess.audience.gomoku.diligent.chaos_selfcheck.25",
+          "zh": "这一走连己方的将都受了威胁。",
+          "en": "That move exposed the moving side’s general."
+        },
+        {
+          "key": "content.chess.audience.gomoku.diligent.chaos_selfcheck.26",
+          "zh": "得先应付自己将上的威胁。",
+          "en": "The moving side must answer that threat first."
+        }
+      ]
+    },
+    "quiet": {
+      "cheer": [
+        {
+          "key": "content.chess.audience.gomoku.quiet.cheer.1",
+          "zh": "我看着。",
+          "en": "I am watching."
+        },
+        {
+          "key": "content.chess.audience.gomoku.quiet.cheer.5",
+          "zh": "别急。",
+          "en": "No hurry."
+        }
+      ],
+      "comment": [
+        {
+          "key": "content.chess.audience.gomoku.quiet.comment.2",
+          "zh": "继续吧。",
+          "en": "Carry on."
+        },
+        {
+          "key": "content.chess.audience.gomoku.quiet.comment.6",
+          "zh": "那儿还有地方。",
+          "en": "There is room on that side."
+        },
+        {
+          "key": "content.chess.audience.gomoku.quiet.comment.8",
+          "zh": "棋盘很安静。",
+          "en": "The board is quiet."
+        },
+        {
+          "key": "content.chess.audience.gomoku.quiet.comment.9",
+          "zh": "你们想得很久。",
+          "en": "You have both been thinking a while."
+        },
+        {
+          "key": "content.chess.audience.gomoku.quiet.comment.10",
+          "zh": "有意思。",
+          "en": "Interesting."
+        },
+        {
+          "key": "content.chess.audience.gomoku.quiet.comment.13",
+          "zh": "另一边也要看。",
+          "en": "Watch the other side too."
+        },
+        {
+          "key": "content.chess.audience.gomoku.quiet.comment.14",
+          "zh": "还没有结束。",
+          "en": "It is not over yet."
+        },
+        {
+          "key": "content.chess.audience.gomoku.quiet.comment.15",
+          "zh": "这手我留意到了。",
+          "en": "That move caught my attention."
+        },
+        {
+          "key": "content.chess.audience.gomoku.quiet.comment.28",
+          "zh": "那里空着。",
+          "en": "That space is open."
+        },
+        {
+          "key": "content.chess.audience.gomoku.quiet.comment.29",
+          "zh": "我就在这儿等。",
+          "en": "I will wait right here."
+        },
+        {
+          "key": "content.chess.audience.gomoku.quiet.comment.30",
+          "zh": "还有路。",
+          "en": "There is still a path."
+        }
+      ],
+      "tease": [
+        {
+          "key": "content.chess.audience.gomoku.quiet.tease.3",
+          "zh": "这步不错。",
+          "en": "A good move."
+        },
+        {
+          "key": "content.chess.audience.gomoku.quiet.tease.7",
+          "zh": "我看到了。",
+          "en": "I see it."
+        },
+        {
+          "key": "content.chess.audience.gomoku.quiet.tease.11",
+          "zh": "刚才那步很巧。",
+          "en": "That last move was clever."
+        }
+      ],
+      "awe": [
+        {
+          "key": "content.chess.audience.gomoku.quiet.awe.4",
+          "zh": "还有变化。",
+          "en": "There is more to this position."
+        },
+        {
+          "key": "content.chess.audience.gomoku.quiet.awe.12",
+          "zh": "我再看一眼。",
+          "en": "One more look."
+        },
+        {
+          "key": "content.chess.audience.gomoku.quiet.awe.27",
+          "zh": "局面变了。",
+          "en": "The position changed."
+        }
+      ],
+      "yawn": [
+        {
+          "key": "content.chess.audience.gomoku.quiet.yawn.16",
+          "zh": "有点困。",
+          "en": "A little sleepy."
+        },
+        {
+          "key": "content.chess.audience.gomoku.quiet.yawn.17",
+          "zh": "坐久了。",
+          "en": "We have been sitting a while."
+        }
+      ],
+      "hunger": [
+        {
+          "key": "content.chess.audience.gomoku.quiet.hunger.18",
+          "zh": "饿了。",
+          "en": "I am hungry."
+        },
+        {
+          "key": "content.chess.audience.gomoku.quiet.hunger.19",
+          "zh": "结束后吃饭吧。",
+          "en": "Let us eat after this."
+        }
+      ],
+      "tap": [
+        {
+          "key": "content.chess.audience.gomoku.quiet.tap.20",
+          "zh": "叫我？",
+          "en": "You called?"
+        },
+        {
+          "key": "content.chess.audience.gomoku.quiet.tap.21",
+          "zh": "听着呢。",
+          "en": "I am listening."
+        }
+      ],
+      "result": [
+        {
+          "key": "content.chess.audience.gomoku.quiet.result.22",
+          "zh": "结束了。",
+          "en": "It is over."
+        },
+        {
+          "key": "content.chess.audience.gomoku.quiet.result.23",
+          "zh": "这一局下得好。",
+          "en": "That was a well-played game."
+        },
+        {
+          "key": "content.chess.audience.gomoku.quiet.result.24",
+          "zh": "我看完了。",
+          "en": "I watched to the end."
+        }
+      ],
+      "chaos_selfcheck": [
+        {
+          "key": "content.chess.audience.gomoku.quiet.chaos_selfcheck.25",
+          "zh": "己方的将也危险了。",
+          "en": "That side’s general is in danger too."
+        },
+        {
+          "key": "content.chess.audience.gomoku.quiet.chaos_selfcheck.26",
+          "zh": "先看将。",
+          "en": "Look to the general first."
+        }
+      ]
+    }
+  }
+}

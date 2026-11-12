@@ -1,0 +1,11 @@
+{
+  "id": "fish-v2-night-owl-small",
+  "context": "fishing_v2_small",
+  "lines": [
+    "嗯，钓到一条小鱼。",
+    "……小小的鱼儿真可爱。",
+    "看，这条鱼还挺小的。",
+    "好，一条小鱼来到岸边。"
+  ],
+  "autonomy_output": false
+}

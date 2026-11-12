@@ -1,0 +1,348 @@
+keys,zh,en
+content.recipes.honey-berry-apple,蜂蜜蓝莓烤苹果,Honey berry baked apple
+content.recipes.sea-land-skewers,海陆豪华烤串,Island feast skewers
+content.recipes.harvest-stew,一锅丰收大炖菜,Harvest pot
+content.recipes.dark-truffle-soup,黑松露发光蘑菇汤,Glowing truffle soup
+content.recipes.moon-clam-chowder,月湾蛤蜊浓汤,Moonbay clam chowder
+content.recipes.crab-corn-pot,蟹蟹玉米煲,Crab and corn pot
+content.recipes.kelp-potato,海带烤土豆,Kelp baked potato
+content.recipes.moon-honey-cup,月见花蜜盏,Moonflower honey cup
+content.recipes.berry-flower-skewer,野莓花瓣串,Berry blossom skewer
+content.recipes.chestnut-honey,蜂蜜烤栗子,Honey roast chestnuts
+content.recipes.glow-corn,萤菇玉米串,Glowing corn skewer
+content.recipes.truffle-potato,松露烤土豆,Truffle baked potato
+content.recipes.herb-clam,香草烤蛤蜊,Herb grilled clams
+content.recipes.star-moon-dessert,星月莓花羹,Star and moon berry cup
+content.recipes.dried-fish-corn,鱼干玉米羹,Dried fish corn soup
+content.recipes.petal-pumpkin,花瓣烤南瓜,Blossom roast pumpkin
+content.recipes.eel-herb,香草炭烤鳗鱼,Herb grilled eel
+content.recipes.cutlass-chestnut,栗香烤带鱼,Chestnut cutlassfish
+content.recipes.noodle-moon-soup,月见面条鱼汤,Moonflower noodlefish soup
+content.recipes.kite-berry-skewer,野莓风筝鱼串,Wild berry kitefish skewer
+content.recipes.glow-clam-soup,萤光海湾汤,Glowing bay soup
+content.recipes.island-berry-jam,群岛蜂蜜莓酱,Island honey berry preserve
+content.ingredients.potato,土豆,Potato
+content.ingredients.corn,玉米,Corn
+content.ingredients.wild_berry,野莓,Wild berry
+content.ingredients.chestnut,栗子,Chestnut
+content.ingredients.clam,蛤蜊,Clam
+content.ingredients.crab,小螃蟹,Shore crab
+content.ingredients.kelp,海带,Kelp
+content.ingredients.moonflower,月见花,Moonflower
+content.ingredients.glow_mushroom,发光蘑菇,Glow mushroom
+content.ingredients.black_truffle,黑松露,Black truffle
+content.ingredients.honey,蜂蜜,Honey
+content.ingredients.petals,花瓣,Petals
+content.ingredients.herb,香草,Herb
+content.ingredients.dried_fish,鱼干,Dried fish
+content.ingredients.star_berry,星露莓,Stardew berry
+content.grills.potato,烤土豆,Grilled potato
+content.grills.corn,烤玉米,Grilled corn
+content.grills.chestnut,烤栗子,Grilled chestnut
+content.grills.clam,烤蛤蜊,Grilled clam
+content.grills.crab,烤小螃蟹,Grilled shore crab
+content.grills.kelp,烤海带,Grilled kelp
+content.grills.glow_mushroom,烤发光蘑菇,Grilled glow mushroom
+content.grills.black_truffle,烤黑松露,Grilled black truffle
+content.grills.wild_berry,烤野莓,Grilled wild berry
+content.grills.star_berry,烤星露莓,Grilled stardew berry
+content.speech.bbq-gentle-food-honey-berry-apple,嗯，蜂蜜蓝莓烤苹果，想慢慢尝。,"Mmm, Honey berry baked apple. I want to take my time."
+content.speech.bbq-gentle-food-sea-land-skewers,嗯，海陆豪华烤串，想慢慢尝。,"Mmm, Island feast skewers. I want to take my time."
+content.speech.bbq-gentle-food-harvest-stew,嗯，一锅丰收大炖菜，想慢慢尝。,"Mmm, Harvest pot. I want to take my time."
+content.speech.bbq-gentle-food-dark-truffle-soup,嗯，黑松露发光蘑菇汤，想慢慢尝。,"Mmm, Glowing truffle soup. I want to take my time."
+content.speech.bbq-gentle-food-moon-clam-chowder,嗯，月湾蛤蜊浓汤，想慢慢尝。,"Mmm, Moonbay clam chowder. I want to take my time."
+content.speech.bbq-gentle-food-crab-corn-pot,嗯，蟹蟹玉米煲，想慢慢尝。,"Mmm, Crab and corn pot. I want to take my time."
+content.speech.bbq-gentle-food-kelp-potato,嗯，海带烤土豆，想慢慢尝。,"Mmm, Kelp baked potato. I want to take my time."
+content.speech.bbq-gentle-food-moon-honey-cup,嗯，月见花蜜盏，想慢慢尝。,"Mmm, Moonflower honey cup. I want to take my time."
+content.speech.bbq-gentle-food-berry-flower-skewer,嗯，野莓花瓣串，想慢慢尝。,"Mmm, Berry blossom skewer. I want to take my time."
+content.speech.bbq-gentle-food-chestnut-honey,嗯，蜂蜜烤栗子，想慢慢尝。,"Mmm, Honey roast chestnuts. I want to take my time."
+content.speech.bbq-gentle-food-glow-corn,嗯，萤菇玉米串，想慢慢尝。,"Mmm, Glowing corn skewer. I want to take my time."
+content.speech.bbq-gentle-food-truffle-potato,嗯，松露烤土豆，想慢慢尝。,"Mmm, Truffle baked potato. I want to take my time."
+content.speech.bbq-gentle-food-herb-clam,嗯，香草烤蛤蜊，想慢慢尝。,"Mmm, Herb grilled clams. I want to take my time."
+content.speech.bbq-gentle-food-star-moon-dessert,嗯，星月莓花羹，想慢慢尝。,"Mmm, Star and moon berry cup. I want to take my time."
+content.speech.bbq-gentle-food-dried-fish-corn,嗯，鱼干玉米羹，想慢慢尝。,"Mmm, Dried fish corn soup. I want to take my time."
+content.speech.bbq-gentle-food-petal-pumpkin,嗯，花瓣烤南瓜，想慢慢尝。,"Mmm, Blossom roast pumpkin. I want to take my time."
+content.speech.bbq-gentle-food-eel-herb,嗯，香草炭烤鳗鱼，想慢慢尝。,"Mmm, Herb grilled eel. I want to take my time."
+content.speech.bbq-gentle-food-cutlass-chestnut,嗯，栗香烤带鱼，想慢慢尝。,"Mmm, Chestnut cutlassfish. I want to take my time."
+content.speech.bbq-gentle-food-noodle-moon-soup,嗯，月见面条鱼汤，想慢慢尝。,"Mmm, Moonflower noodlefish soup. I want to take my time."
+content.speech.bbq-gentle-food-kite-berry-skewer,嗯，野莓风筝鱼串，想慢慢尝。,"Mmm, Wild berry kitefish skewer. I want to take my time."
+content.speech.bbq-gentle-food-glow-clam-soup,嗯，萤光海湾汤，想慢慢尝。,"Mmm, Glowing bay soup. I want to take my time."
+content.speech.bbq-gentle-food-island-berry-jam,嗯，群岛蜂蜜莓酱，想慢慢尝。,"Mmm, Island honey berry preserve. I want to take my time."
+content.speech.bbq-gentle-food-potato,嗯，烤土豆，想慢慢尝。,"Mmm, Grilled potato. I want to take my time."
+content.speech.bbq-gentle-food-corn,嗯，烤玉米，想慢慢尝。,"Mmm, Grilled corn. I want to take my time."
+content.speech.bbq-gentle-food-chestnut,嗯，烤栗子，想慢慢尝。,"Mmm, Grilled chestnut. I want to take my time."
+content.speech.bbq-gentle-food-clam,嗯，烤蛤蜊，想慢慢尝。,"Mmm, Grilled clam. I want to take my time."
+content.speech.bbq-gentle-food-crab,嗯，烤小螃蟹，想慢慢尝。,"Mmm, Grilled shore crab. I want to take my time."
+content.speech.bbq-gentle-food-kelp,嗯，烤海带，想慢慢尝。,"Mmm, Grilled kelp. I want to take my time."
+content.speech.bbq-gentle-food-glow_mushroom,嗯，烤发光蘑菇，想慢慢尝。,"Mmm, Grilled glow mushroom. I want to take my time."
+content.speech.bbq-gentle-food-black_truffle,嗯，烤黑松露，想慢慢尝。,"Mmm, Grilled black truffle. I want to take my time."
+content.speech.bbq-gentle-food-wild_berry,嗯，烤野莓，想慢慢尝。,"Mmm, Grilled wild berry. I want to take my time."
+content.speech.bbq-gentle-food-star_berry,嗯，烤星露莓，想慢慢尝。,"Mmm, Grilled stardew berry. I want to take my time."
+content.signature.honey-berry-apple,甜甜的，像把你留在心里了。,Sweet... like keeping a little of you close.
+content.speech.bbq-lively-food-honey-berry-apple,蜂蜜蓝莓烤苹果！香气都跑过来了！,Honey berry baked apple! That smell found me first!
+content.speech.bbq-lively-food-sea-land-skewers,海陆豪华烤串！香气都跑过来了！,Island feast skewers! That smell found me first!
+content.speech.bbq-lively-food-harvest-stew,一锅丰收大炖菜！香气都跑过来了！,Harvest pot! That smell found me first!
+content.speech.bbq-lively-food-dark-truffle-soup,黑松露发光蘑菇汤！香气都跑过来了！,Glowing truffle soup! That smell found me first!
+content.speech.bbq-lively-food-moon-clam-chowder,月湾蛤蜊浓汤！香气都跑过来了！,Moonbay clam chowder! That smell found me first!
+content.speech.bbq-lively-food-crab-corn-pot,蟹蟹玉米煲！香气都跑过来了！,Crab and corn pot! That smell found me first!
+content.speech.bbq-lively-food-kelp-potato,海带烤土豆！香气都跑过来了！,Kelp baked potato! That smell found me first!
+content.speech.bbq-lively-food-moon-honey-cup,月见花蜜盏！香气都跑过来了！,Moonflower honey cup! That smell found me first!
+content.speech.bbq-lively-food-berry-flower-skewer,野莓花瓣串！香气都跑过来了！,Berry blossom skewer! That smell found me first!
+content.speech.bbq-lively-food-chestnut-honey,蜂蜜烤栗子！香气都跑过来了！,Honey roast chestnuts! That smell found me first!
+content.speech.bbq-lively-food-glow-corn,萤菇玉米串！香气都跑过来了！,Glowing corn skewer! That smell found me first!
+content.speech.bbq-lively-food-truffle-potato,松露烤土豆！香气都跑过来了！,Truffle baked potato! That smell found me first!
+content.speech.bbq-lively-food-herb-clam,香草烤蛤蜊！香气都跑过来了！,Herb grilled clams! That smell found me first!
+content.speech.bbq-lively-food-star-moon-dessert,星月莓花羹！香气都跑过来了！,Star and moon berry cup! That smell found me first!
+content.speech.bbq-lively-food-dried-fish-corn,鱼干玉米羹！香气都跑过来了！,Dried fish corn soup! That smell found me first!
+content.speech.bbq-lively-food-petal-pumpkin,花瓣烤南瓜！香气都跑过来了！,Blossom roast pumpkin! That smell found me first!
+content.speech.bbq-lively-food-eel-herb,香草炭烤鳗鱼！香气都跑过来了！,Herb grilled eel! That smell found me first!
+content.speech.bbq-lively-food-cutlass-chestnut,栗香烤带鱼！香气都跑过来了！,Chestnut cutlassfish! That smell found me first!
+content.speech.bbq-lively-food-noodle-moon-soup,月见面条鱼汤！香气都跑过来了！,Moonflower noodlefish soup! That smell found me first!
+content.speech.bbq-lively-food-kite-berry-skewer,野莓风筝鱼串！香气都跑过来了！,Wild berry kitefish skewer! That smell found me first!
+content.speech.bbq-lively-food-glow-clam-soup,萤光海湾汤！香气都跑过来了！,Glowing bay soup! That smell found me first!
+content.speech.bbq-lively-food-island-berry-jam,群岛蜂蜜莓酱！香气都跑过来了！,Island honey berry preserve! That smell found me first!
+content.speech.bbq-lively-food-potato,烤土豆！香气都跑过来了！,Grilled potato! That smell found me first!
+content.speech.bbq-lively-food-corn,烤玉米！香气都跑过来了！,Grilled corn! That smell found me first!
+content.speech.bbq-lively-food-chestnut,烤栗子！香气都跑过来了！,Grilled chestnut! That smell found me first!
+content.speech.bbq-lively-food-clam,烤蛤蜊！香气都跑过来了！,Grilled clam! That smell found me first!
+content.speech.bbq-lively-food-crab,烤小螃蟹！香气都跑过来了！,Grilled shore crab! That smell found me first!
+content.speech.bbq-lively-food-kelp,烤海带！香气都跑过来了！,Grilled kelp! That smell found me first!
+content.speech.bbq-lively-food-glow_mushroom,烤发光蘑菇！香气都跑过来了！,Grilled glow mushroom! That smell found me first!
+content.speech.bbq-lively-food-black_truffle,烤黑松露！香气都跑过来了！,Grilled black truffle! That smell found me first!
+content.speech.bbq-lively-food-wild_berry,烤野莓！香气都跑过来了！,Grilled wild berry! That smell found me first!
+content.speech.bbq-lively-food-star_berry,烤星露莓！香气都跑过来了！,Grilled stardew berry! That smell found me first!
+content.signature.sea-land-skewers,海里和地里的好吃都在一起！这串是我的宝贝！,Sea and land on one skewer! This one is my treasure!
+content.speech.bbq-laborious-food-honey-berry-apple,蜂蜜蓝莓烤苹果，这一口真踏实。,"Honey berry baked apple. A proper, comforting bite."
+content.speech.bbq-laborious-food-sea-land-skewers,海陆豪华烤串，这一口真踏实。,"Island feast skewers. A proper, comforting bite."
+content.speech.bbq-laborious-food-harvest-stew,一锅丰收大炖菜，这一口真踏实。,"Harvest pot. A proper, comforting bite."
+content.speech.bbq-laborious-food-dark-truffle-soup,黑松露发光蘑菇汤，这一口真踏实。,"Glowing truffle soup. A proper, comforting bite."
+content.speech.bbq-laborious-food-moon-clam-chowder,月湾蛤蜊浓汤，这一口真踏实。,"Moonbay clam chowder. A proper, comforting bite."
+content.speech.bbq-laborious-food-crab-corn-pot,蟹蟹玉米煲，这一口真踏实。,"Crab and corn pot. A proper, comforting bite."
+content.speech.bbq-laborious-food-kelp-potato,海带烤土豆，这一口真踏实。,"Kelp baked potato. A proper, comforting bite."
+content.speech.bbq-laborious-food-moon-honey-cup,月见花蜜盏，这一口真踏实。,"Moonflower honey cup. A proper, comforting bite."
+content.speech.bbq-laborious-food-berry-flower-skewer,野莓花瓣串，这一口真踏实。,"Berry blossom skewer. A proper, comforting bite."
+content.speech.bbq-laborious-food-chestnut-honey,蜂蜜烤栗子，这一口真踏实。,"Honey roast chestnuts. A proper, comforting bite."
+content.speech.bbq-laborious-food-glow-corn,萤菇玉米串，这一口真踏实。,"Glowing corn skewer. A proper, comforting bite."
+content.speech.bbq-laborious-food-truffle-potato,松露烤土豆，这一口真踏实。,"Truffle baked potato. A proper, comforting bite."
+content.speech.bbq-laborious-food-herb-clam,香草烤蛤蜊，这一口真踏实。,"Herb grilled clams. A proper, comforting bite."
+content.speech.bbq-laborious-food-star-moon-dessert,星月莓花羹，这一口真踏实。,"Star and moon berry cup. A proper, comforting bite."
+content.speech.bbq-laborious-food-dried-fish-corn,鱼干玉米羹，这一口真踏实。,"Dried fish corn soup. A proper, comforting bite."
+content.speech.bbq-laborious-food-petal-pumpkin,花瓣烤南瓜，这一口真踏实。,"Blossom roast pumpkin. A proper, comforting bite."
+content.speech.bbq-laborious-food-eel-herb,香草炭烤鳗鱼，这一口真踏实。,"Herb grilled eel. A proper, comforting bite."
+content.speech.bbq-laborious-food-cutlass-chestnut,栗香烤带鱼，这一口真踏实。,"Chestnut cutlassfish. A proper, comforting bite."
+content.speech.bbq-laborious-food-noodle-moon-soup,月见面条鱼汤，这一口真踏实。,"Moonflower noodlefish soup. A proper, comforting bite."
+content.speech.bbq-laborious-food-kite-berry-skewer,野莓风筝鱼串，这一口真踏实。,"Wild berry kitefish skewer. A proper, comforting bite."
+content.speech.bbq-laborious-food-glow-clam-soup,萤光海湾汤，这一口真踏实。,"Glowing bay soup. A proper, comforting bite."
+content.speech.bbq-laborious-food-island-berry-jam,群岛蜂蜜莓酱，这一口真踏实。,"Island honey berry preserve. A proper, comforting bite."
+content.speech.bbq-laborious-food-potato,烤土豆，这一口真踏实。,"Grilled potato. A proper, comforting bite."
+content.speech.bbq-laborious-food-corn,烤玉米，这一口真踏实。,"Grilled corn. A proper, comforting bite."
+content.speech.bbq-laborious-food-chestnut,烤栗子，这一口真踏实。,"Grilled chestnut. A proper, comforting bite."
+content.speech.bbq-laborious-food-clam,烤蛤蜊，这一口真踏实。,"Grilled clam. A proper, comforting bite."
+content.speech.bbq-laborious-food-crab,烤小螃蟹，这一口真踏实。,"Grilled shore crab. A proper, comforting bite."
+content.speech.bbq-laborious-food-kelp,烤海带，这一口真踏实。,"Grilled kelp. A proper, comforting bite."
+content.speech.bbq-laborious-food-glow_mushroom,烤发光蘑菇，这一口真踏实。,"Grilled glow mushroom. A proper, comforting bite."
+content.speech.bbq-laborious-food-black_truffle,烤黑松露，这一口真踏实。,"Grilled black truffle. A proper, comforting bite."
+content.speech.bbq-laborious-food-wild_berry,烤野莓，这一口真踏实。,"Grilled wild berry. A proper, comforting bite."
+content.speech.bbq-laborious-food-star_berry,烤星露莓，这一口真踏实。,"Grilled stardew berry. A proper, comforting bite."
+content.signature.harvest-stew,这一锅收获，终于能慢慢尝了。,All that harvest in one pot. Time to savor it.
+content.speech.bbq-quiet-food-honey-berry-apple,蜂蜜蓝莓烤苹果……很好。,Honey berry baked apple... lovely.
+content.speech.bbq-quiet-food-sea-land-skewers,海陆豪华烤串……很好。,Island feast skewers... lovely.
+content.speech.bbq-quiet-food-harvest-stew,一锅丰收大炖菜……很好。,Harvest pot... lovely.
+content.speech.bbq-quiet-food-dark-truffle-soup,黑松露发光蘑菇汤……很好。,Glowing truffle soup... lovely.
+content.speech.bbq-quiet-food-moon-clam-chowder,月湾蛤蜊浓汤……很好。,Moonbay clam chowder... lovely.
+content.speech.bbq-quiet-food-crab-corn-pot,蟹蟹玉米煲……很好。,Crab and corn pot... lovely.
+content.speech.bbq-quiet-food-kelp-potato,海带烤土豆……很好。,Kelp baked potato... lovely.
+content.speech.bbq-quiet-food-moon-honey-cup,月见花蜜盏……很好。,Moonflower honey cup... lovely.
+content.speech.bbq-quiet-food-berry-flower-skewer,野莓花瓣串……很好。,Berry blossom skewer... lovely.
+content.speech.bbq-quiet-food-chestnut-honey,蜂蜜烤栗子……很好。,Honey roast chestnuts... lovely.
+content.speech.bbq-quiet-food-glow-corn,萤菇玉米串……很好。,Glowing corn skewer... lovely.
+content.speech.bbq-quiet-food-truffle-potato,松露烤土豆……很好。,Truffle baked potato... lovely.
+content.speech.bbq-quiet-food-herb-clam,香草烤蛤蜊……很好。,Herb grilled clams... lovely.
+content.speech.bbq-quiet-food-star-moon-dessert,星月莓花羹……很好。,Star and moon berry cup... lovely.
+content.speech.bbq-quiet-food-dried-fish-corn,鱼干玉米羹……很好。,Dried fish corn soup... lovely.
+content.speech.bbq-quiet-food-petal-pumpkin,花瓣烤南瓜……很好。,Blossom roast pumpkin... lovely.
+content.speech.bbq-quiet-food-eel-herb,香草炭烤鳗鱼……很好。,Herb grilled eel... lovely.
+content.speech.bbq-quiet-food-cutlass-chestnut,栗香烤带鱼……很好。,Chestnut cutlassfish... lovely.
+content.speech.bbq-quiet-food-noodle-moon-soup,月见面条鱼汤……很好。,Moonflower noodlefish soup... lovely.
+content.speech.bbq-quiet-food-kite-berry-skewer,野莓风筝鱼串……很好。,Wild berry kitefish skewer... lovely.
+content.speech.bbq-quiet-food-glow-clam-soup,萤光海湾汤……很好。,Glowing bay soup... lovely.
+content.speech.bbq-quiet-food-island-berry-jam,群岛蜂蜜莓酱……很好。,Island honey berry preserve... lovely.
+content.speech.bbq-quiet-food-potato,烤土豆……很好。,Grilled potato... lovely.
+content.speech.bbq-quiet-food-corn,烤玉米……很好。,Grilled corn... lovely.
+content.speech.bbq-quiet-food-chestnut,烤栗子……很好。,Grilled chestnut... lovely.
+content.speech.bbq-quiet-food-clam,烤蛤蜊……很好。,Grilled clam... lovely.
+content.speech.bbq-quiet-food-crab,烤小螃蟹……很好。,Grilled shore crab... lovely.
+content.speech.bbq-quiet-food-kelp,烤海带……很好。,Grilled kelp... lovely.
+content.speech.bbq-quiet-food-glow_mushroom,烤发光蘑菇……很好。,Grilled glow mushroom... lovely.
+content.speech.bbq-quiet-food-black_truffle,烤黑松露……很好。,Grilled black truffle... lovely.
+content.speech.bbq-quiet-food-wild_berry,烤野莓……很好。,Grilled wild berry... lovely.
+content.speech.bbq-quiet-food-star_berry,烤星露莓……很好。,Grilled stardew berry... lovely.
+content.signature.dark-truffle-soup,黑暗里也有这么温柔的味道。,Even the dark has a gentle taste.
+content.cookbook.title,菜谱本,Recipe book
+content.cookbook.unknown,？ · 去各岛寻找食材,? · Explore the islands for ingredients
+content.cookbook.known,已发现,Discovered
+content.cookbook.cooked,做过,Cooked
+content.cookbook.method,将食材在营火上慢慢烤香。,Cook gently over the campfire.
+content.cookbook.ready,现在能做,Ready to cook
+content.cookbook.missing,还缺食材,Ingredients missing
+content.speech.first-gentle-honey-berry-apple,第一次吃蜂蜜蓝莓烤苹果。,My first taste of honey berry baked apple.
+content.speech.first-lively-honey-berry-apple,哇，第一次尝到蜂蜜蓝莓烤苹果。,Whoa! My first honey berry baked apple.
+content.speech.first-laborious-honey-berry-apple,第一次尝这道蜂蜜蓝莓烤苹果。,First time trying honey berry baked apple.
+content.speech.first-quiet-honey-berry-apple,原来，这就是蜂蜜蓝莓烤苹果。,So this is honey berry baked apple.
+content.speech.first-gentle-sea-land-skewers,第一次吃海陆豪华烤串。,My first taste of island feast skewers.
+content.speech.first-lively-sea-land-skewers,哇，第一次尝到海陆豪华烤串。,Whoa! My first island feast skewers.
+content.speech.first-laborious-sea-land-skewers,第一次尝这道海陆豪华烤串。,First time trying island feast skewers.
+content.speech.first-quiet-sea-land-skewers,原来，这就是海陆豪华烤串。,So this is island feast skewers.
+content.speech.first-gentle-harvest-stew,第一次吃一锅丰收大炖菜。,My first taste of harvest pot.
+content.speech.first-lively-harvest-stew,哇，第一次尝到一锅丰收大炖菜。,Whoa! My first harvest pot.
+content.speech.first-laborious-harvest-stew,第一次尝这道一锅丰收大炖菜。,First time trying harvest pot.
+content.speech.first-quiet-harvest-stew,原来，这就是一锅丰收大炖菜。,So this is harvest pot.
+content.speech.first-gentle-dark-truffle-soup,第一次吃黑松露发光蘑菇汤。,My first taste of glowing truffle soup.
+content.speech.first-lively-dark-truffle-soup,哇，第一次尝到黑松露发光蘑菇汤。,Whoa! My first glowing truffle soup.
+content.speech.first-laborious-dark-truffle-soup,第一次尝这道黑松露发光蘑菇汤。,First time trying glowing truffle soup.
+content.speech.first-quiet-dark-truffle-soup,原来，这就是黑松露发光蘑菇汤。,So this is glowing truffle soup.
+content.speech.first-gentle-moon-clam-chowder,第一次吃月湾蛤蜊浓汤。,My first taste of moonbay clam chowder.
+content.speech.first-lively-moon-clam-chowder,哇，第一次尝到月湾蛤蜊浓汤。,Whoa! My first moonbay clam chowder.
+content.speech.first-laborious-moon-clam-chowder,第一次尝这道月湾蛤蜊浓汤。,First time trying moonbay clam chowder.
+content.speech.first-quiet-moon-clam-chowder,原来，这就是月湾蛤蜊浓汤。,So this is moonbay clam chowder.
+content.speech.first-gentle-crab-corn-pot,第一次吃蟹蟹玉米煲。,My first taste of crab and corn pot.
+content.speech.first-lively-crab-corn-pot,哇，第一次尝到蟹蟹玉米煲。,Whoa! My first crab and corn pot.
+content.speech.first-laborious-crab-corn-pot,第一次尝这道蟹蟹玉米煲。,First time trying crab and corn pot.
+content.speech.first-quiet-crab-corn-pot,原来，这就是蟹蟹玉米煲。,So this is crab and corn pot.
+content.speech.first-gentle-kelp-potato,第一次吃海带烤土豆。,My first taste of kelp baked potato.
+content.speech.first-lively-kelp-potato,哇，第一次尝到海带烤土豆。,Whoa! My first kelp baked potato.
+content.speech.first-laborious-kelp-potato,第一次尝这道海带烤土豆。,First time trying kelp baked potato.
+content.speech.first-quiet-kelp-potato,原来，这就是海带烤土豆。,So this is kelp baked potato.
+content.speech.first-gentle-moon-honey-cup,第一次吃月见花蜜盏。,My first taste of moonflower honey cup.
+content.speech.first-lively-moon-honey-cup,哇，第一次尝到月见花蜜盏。,Whoa! My first moonflower honey cup.
+content.speech.first-laborious-moon-honey-cup,第一次尝这道月见花蜜盏。,First time trying moonflower honey cup.
+content.speech.first-quiet-moon-honey-cup,原来，这就是月见花蜜盏。,So this is moonflower honey cup.
+content.speech.first-gentle-berry-flower-skewer,第一次吃野莓花瓣串。,My first taste of berry blossom skewer.
+content.speech.first-lively-berry-flower-skewer,哇，第一次尝到野莓花瓣串。,Whoa! My first berry blossom skewer.
+content.speech.first-laborious-berry-flower-skewer,第一次尝这道野莓花瓣串。,First time trying berry blossom skewer.
+content.speech.first-quiet-berry-flower-skewer,原来，这就是野莓花瓣串。,So this is berry blossom skewer.
+content.speech.first-gentle-chestnut-honey,第一次吃蜂蜜烤栗子。,My first taste of honey roast chestnuts.
+content.speech.first-lively-chestnut-honey,哇，第一次尝到蜂蜜烤栗子。,Whoa! My first honey roast chestnuts.
+content.speech.first-laborious-chestnut-honey,第一次尝这道蜂蜜烤栗子。,First time trying honey roast chestnuts.
+content.speech.first-quiet-chestnut-honey,原来，这就是蜂蜜烤栗子。,So this is honey roast chestnuts.
+content.speech.first-gentle-glow-corn,第一次吃萤菇玉米串。,My first taste of glowing corn skewer.
+content.speech.first-lively-glow-corn,哇，第一次尝到萤菇玉米串。,Whoa! My first glowing corn skewer.
+content.speech.first-laborious-glow-corn,第一次尝这道萤菇玉米串。,First time trying glowing corn skewer.
+content.speech.first-quiet-glow-corn,原来，这就是萤菇玉米串。,So this is glowing corn skewer.
+content.speech.first-gentle-truffle-potato,第一次吃松露烤土豆。,My first taste of truffle baked potato.
+content.speech.first-lively-truffle-potato,哇，第一次尝到松露烤土豆。,Whoa! My first truffle baked potato.
+content.speech.first-laborious-truffle-potato,第一次尝这道松露烤土豆。,First time trying truffle baked potato.
+content.speech.first-quiet-truffle-potato,原来，这就是松露烤土豆。,So this is truffle baked potato.
+content.speech.first-gentle-herb-clam,第一次吃香草烤蛤蜊。,My first taste of herb grilled clams.
+content.speech.first-lively-herb-clam,哇，第一次尝到香草烤蛤蜊。,Whoa! My first herb grilled clams.
+content.speech.first-laborious-herb-clam,第一次尝这道香草烤蛤蜊。,First time trying herb grilled clams.
+content.speech.first-quiet-herb-clam,原来，这就是香草烤蛤蜊。,So this is herb grilled clams.
+content.speech.first-gentle-star-moon-dessert,第一次吃星月莓花羹。,My first taste of star and moon berry cup.
+content.speech.first-lively-star-moon-dessert,哇，第一次尝到星月莓花羹。,Whoa! My first star and moon berry cup.
+content.speech.first-laborious-star-moon-dessert,第一次尝这道星月莓花羹。,First time trying star and moon berry cup.
+content.speech.first-quiet-star-moon-dessert,原来，这就是星月莓花羹。,So this is star and moon berry cup.
+content.speech.first-gentle-dried-fish-corn,第一次吃鱼干玉米羹。,My first taste of dried fish corn soup.
+content.speech.first-lively-dried-fish-corn,哇，第一次尝到鱼干玉米羹。,Whoa! My first dried fish corn soup.
+content.speech.first-laborious-dried-fish-corn,第一次尝这道鱼干玉米羹。,First time trying dried fish corn soup.
+content.speech.first-quiet-dried-fish-corn,原来，这就是鱼干玉米羹。,So this is dried fish corn soup.
+content.speech.first-gentle-petal-pumpkin,第一次吃花瓣烤南瓜。,My first taste of blossom roast pumpkin.
+content.speech.first-lively-petal-pumpkin,哇，第一次尝到花瓣烤南瓜。,Whoa! My first blossom roast pumpkin.
+content.speech.first-laborious-petal-pumpkin,第一次尝这道花瓣烤南瓜。,First time trying blossom roast pumpkin.
+content.speech.first-quiet-petal-pumpkin,原来，这就是花瓣烤南瓜。,So this is blossom roast pumpkin.
+content.speech.first-gentle-eel-herb,第一次吃香草炭烤鳗鱼。,My first taste of herb grilled eel.
+content.speech.first-lively-eel-herb,哇，第一次尝到香草炭烤鳗鱼。,Whoa! My first herb grilled eel.
+content.speech.first-laborious-eel-herb,第一次尝这道香草炭烤鳗鱼。,First time trying herb grilled eel.
+content.speech.first-quiet-eel-herb,原来，这就是香草炭烤鳗鱼。,So this is herb grilled eel.
+content.speech.first-gentle-cutlass-chestnut,第一次吃栗香烤带鱼。,My first taste of chestnut cutlassfish.
+content.speech.first-lively-cutlass-chestnut,哇，第一次尝到栗香烤带鱼。,Whoa! My first chestnut cutlassfish.
+content.speech.first-laborious-cutlass-chestnut,第一次尝这道栗香烤带鱼。,First time trying chestnut cutlassfish.
+content.speech.first-quiet-cutlass-chestnut,原来，这就是栗香烤带鱼。,So this is chestnut cutlassfish.
+content.speech.first-gentle-noodle-moon-soup,第一次吃月见面条鱼汤。,My first taste of moonflower noodlefish soup.
+content.speech.first-lively-noodle-moon-soup,哇，第一次尝到月见面条鱼汤。,Whoa! My first moonflower noodlefish soup.
+content.speech.first-laborious-noodle-moon-soup,第一次尝这道月见面条鱼汤。,First time trying moonflower noodlefish soup.
+content.speech.first-quiet-noodle-moon-soup,原来，这就是月见面条鱼汤。,So this is moonflower noodlefish soup.
+content.speech.first-gentle-kite-berry-skewer,第一次吃野莓风筝鱼串。,My first taste of wild berry kitefish skewer.
+content.speech.first-lively-kite-berry-skewer,哇，第一次尝到野莓风筝鱼串。,Whoa! My first wild berry kitefish skewer.
+content.speech.first-laborious-kite-berry-skewer,第一次尝这道野莓风筝鱼串。,First time trying wild berry kitefish skewer.
+content.speech.first-quiet-kite-berry-skewer,原来，这就是野莓风筝鱼串。,So this is wild berry kitefish skewer.
+content.speech.first-gentle-glow-clam-soup,第一次吃萤光海湾汤。,My first taste of glowing bay soup.
+content.speech.first-lively-glow-clam-soup,哇，第一次尝到萤光海湾汤。,Whoa! My first glowing bay soup.
+content.speech.first-laborious-glow-clam-soup,第一次尝这道萤光海湾汤。,First time trying glowing bay soup.
+content.speech.first-quiet-glow-clam-soup,原来，这就是萤光海湾汤。,So this is glowing bay soup.
+content.speech.first-gentle-island-berry-jam,第一次吃群岛蜂蜜莓酱。,My first taste of island honey berry preserve.
+content.speech.first-lively-island-berry-jam,哇，第一次尝到群岛蜂蜜莓酱。,Whoa! My first island honey berry preserve.
+content.speech.first-laborious-island-berry-jam,第一次尝这道群岛蜂蜜莓酱。,First time trying island honey berry preserve.
+content.speech.first-quiet-island-berry-jam,原来，这就是群岛蜂蜜莓酱。,So this is island honey berry preserve.
+content.cookbook.filter_ready,现在能做,Ready to cook
+content.cookbook.filter_all,全部 · 缺少食材也显示,All · Show missing ingredients
+content.cookbook.filter_dessert,甜点,Desserts
+content.cookbook.filter_soup,汤与炖菜,Soups and stews
+content.cookbook.filter_seafood,海味,Seafood
+content.cookbook.filter_skewers,烤串,Skewers
+content.cookbook.filter_vegetable,蔬菜料理,Vegetable dishes
+content.speech.first-gentle-potato,第一次吃烤土豆。,My first taste: potato.
+content.speech.first-lively-potato,第一次尝到烤土豆。,New snack! potato.
+content.speech.first-laborious-potato,第一次尝这份烤土豆。,First bite of potato.
+content.speech.first-quiet-potato,原来是烤土豆。,So this is potato.
+content.speech.first-gentle-corn,第一次吃烤玉米。,My first taste: corn.
+content.speech.first-lively-corn,第一次尝到烤玉米。,New snack! corn.
+content.speech.first-laborious-corn,第一次尝这份烤玉米。,First bite of corn.
+content.speech.first-quiet-corn,原来是烤玉米。,So this is corn.
+content.speech.first-gentle-chestnut,第一次吃烤栗子。,My first taste: chestnut.
+content.speech.first-lively-chestnut,第一次尝到烤栗子。,New snack! chestnut.
+content.speech.first-laborious-chestnut,第一次尝这份烤栗子。,First bite of chestnut.
+content.speech.first-quiet-chestnut,原来是烤栗子。,So this is chestnut.
+content.speech.first-gentle-clam,第一次吃烤蛤蜊。,My first taste: clam.
+content.speech.first-lively-clam,第一次尝到烤蛤蜊。,New snack! clam.
+content.speech.first-laborious-clam,第一次尝这份烤蛤蜊。,First bite of clam.
+content.speech.first-quiet-clam,原来是烤蛤蜊。,So this is clam.
+content.speech.first-gentle-crab,第一次吃烤小螃蟹。,My first taste: crab.
+content.speech.first-lively-crab,第一次尝到烤小螃蟹。,New snack! crab.
+content.speech.first-laborious-crab,第一次尝这份烤小螃蟹。,First bite of crab.
+content.speech.first-quiet-crab,原来是烤小螃蟹。,So this is crab.
+content.speech.first-gentle-kelp,第一次吃烤海带。,My first taste: kelp.
+content.speech.first-lively-kelp,第一次尝到烤海带。,New snack! kelp.
+content.speech.first-laborious-kelp,第一次尝这份烤海带。,First bite of kelp.
+content.speech.first-quiet-kelp,原来是烤海带。,So this is kelp.
+content.speech.first-gentle-glow_mushroom,第一次吃烤发光蘑菇。,My first taste: glow mushroom.
+content.speech.first-lively-glow_mushroom,第一次尝到烤发光蘑菇。,New snack! glow mushroom.
+content.speech.first-laborious-glow_mushroom,第一次尝这份烤发光蘑菇。,First bite of glow mushroom.
+content.speech.first-quiet-glow_mushroom,原来是烤发光蘑菇。,So this is glow mushroom.
+content.speech.first-gentle-black_truffle,第一次吃烤黑松露。,My first taste: black truffle.
+content.speech.first-lively-black_truffle,第一次尝到烤黑松露。,New snack! black truffle.
+content.speech.first-laborious-black_truffle,第一次尝这份烤黑松露。,First bite of black truffle.
+content.speech.first-quiet-black_truffle,原来是烤黑松露。,So this is black truffle.
+content.speech.first-gentle-wild_berry,第一次吃烤野莓。,My first taste: wild berry.
+content.speech.first-lively-wild_berry,第一次尝到烤野莓。,New snack! wild berry.
+content.speech.first-laborious-wild_berry,第一次尝这份烤野莓。,First bite of wild berry.
+content.speech.first-quiet-wild_berry,原来是烤野莓。,So this is wild berry.
+content.speech.first-gentle-star_berry,第一次吃烤星露莓。,My first taste: star berry.
+content.speech.first-lively-star_berry,第一次尝到烤星露莓。,New snack! star berry.
+content.speech.first-laborious-star_berry,第一次尝这份烤星露莓。,First bite of star berry.
+content.speech.first-quiet-star_berry,原来是烤星露莓。,So this is star berry.
+content.cookbook.expand_basics,展开／收起基础烤物,Show / hide basic grills
+content.cookbook.island_main,主岛,Main Island
+content.cookbook.island_moon,月牙岛,Crescent Island
+content.cookbook.island_dark,黑暗岛,Dark Island
+content.cookbook.island_their,她们的岛,Their Island
+content.cookbook.island_homelands,她们的岛,Their Island
+content.cookbook.hint,沿着桥去各岛寻找真正能采的食材。,Follow the bridges and look for ingredients you can gather.
+content.signature.kind,招牌最爱的第一口,First signature favorite
+content.signature.memory,%s第一次吃到了最爱的%s。,%s tried her signature favorite %s for the first time.
+content.ingredients_alias.produce_stargarden,星露花架,Stardew trellis
+content.ingredients_alias.produce_herbgarden,菜园工坊,Garden workshop
+content.ingredients_alias.produce_fishrack,晾鱼架,Fish drying rack
+content.ingredients_alias.produce_flowerhouse,花房,Flower house
+content.ingredients_alias.potato_alias,马铃薯,Potato
+content.ingredients_alias.south_island_alias,南岛,Southern island
+content.ingredients_alias.white_field_alias,花房田,Flower house field
+content.ingredients_alias.black_field_alias,星露田,Stardew field
+content.cookbook.island_theirs,她们的岛,Their Island
+content.ingredients.mushroom,蘑菇,Mushroom
+content.ingredients.fish,鱼,Fish
+content.ingredients.turnip,萝卜,Turnip
+content.ingredients.pumpkin,南瓜,Pumpkin
+content.ingredients.tomato,番茄,Tomato
+content.ingredients.apple,苹果,Apple
+content.ingredients.blueberry,蓝莓,Blueberry
+content.cookbook.built_source,已建产出点：%s；去她们的岛亲自收取。,Built source: %s. Collect there yourself on Their Island.

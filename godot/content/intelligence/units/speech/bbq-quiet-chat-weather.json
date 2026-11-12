@@ -1,0 +1,11 @@
+{
+  "id": "bbq-quiet-chat-weather",
+  "context": "bbq_chat_weather",
+  "lines": [
+    "……外面{weather}。",
+    "{weather}。这里还暖。",
+    "现在{weather}，我坐着。",
+    "{weather}也好……慢一点。"
+  ],
+  "autonomy_output": false
+}

@@ -1,0 +1,11 @@
+{
+  "id": "fish-v2-quiet-lost",
+  "context": "fishing_v2_lost",
+  "lines": [
+    "嗯，鱼儿脱钩游走了。",
+    "……这次没能留住鱼。",
+    "看，鱼线松了，鱼儿跑掉啦。",
+    "好，没钓到也没关系，再试试。"
+  ],
+  "autonomy_output": false
+}

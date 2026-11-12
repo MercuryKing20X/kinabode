@@ -1,0 +1,11 @@
+{
+  "id": "fish-v2-quiet-bite",
+  "context": "fishing_v2_bite",
+  "lines": [
+    "……上钩了。",
+    "……拉住，鱼线绷紧了。",
+    "看，这次是真的上钩了。",
+    "好，小心一点，慢慢收线。"
+  ],
+  "autonomy_output": false
+}

@@ -1,0 +1,11 @@
+{
+  "id": "farm-cmd-introvert-busy",
+  "context": "farm_command_busy",
+  "lines": [
+    "……还在忙，等一下。",
+    "等我做完这个。",
+    "……马上就好。",
+    "再等等。"
+  ],
+  "autonomy_output": false
+}

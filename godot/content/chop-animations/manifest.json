@@ -1,0 +1,1643 @@
+{
+  "version": 1,
+  "columns": 5,
+  "works": {
+    "human-starter": {
+      "base_frame_sha256": "dbe42774ceb046eab8c76b46a3c69e7bb8de99899992b58f3d005c4f5e0bdb19",
+      "base_palette_sha256": "c943b0160789f4f42e6495470aa08c9f87c5ee627b24e000f69b79a0b40cea11",
+      "status": "independent",
+      "asset": "human-starter.png",
+      "feet": [
+        [
+          {
+            "pixel": [
+              58,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              67,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              44,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              28,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              29,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              46,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              42,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              18,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              23,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              37,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              49,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              52,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              75,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              71,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              57,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              67,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              55,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              29,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              55,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false
+          }
+        ]
+      ],
+      "source_sha256": "220f6f7268ef85f57cc882a86031c058cc62783378b5eda9804f111e525bc5f7",
+      "source": "production/art/actions-redraw-20261105/human-starter-chop-raw.png",
+      "provenance": "Authorized generated full-body work action source; original-palette nearest-neighbor pixel cleanup; right mirrored from left. No original work overwritten."
+    },
+    "white-haired-girl": {
+      "base_frame_sha256": "96b164ee296f6a4799fbf7a746656a5ff2f26de6877346f65f8d2f8896bcd5bf",
+      "base_palette_sha256": "8124cf36514075f92879648b331b86a4e07bca319c973020545e736fee8adb7c",
+      "status": "independent",
+      "asset": "white-haired-girl.png",
+      "feet": [
+        [
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              60,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              46,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              42,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              39,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              52,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              50,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              53,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              23,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              42,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              43,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              46,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              41,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              70,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              38,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              49,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              43,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              48,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              40,
+              119
+            ],
+            "airborne": false
+          }
+        ]
+      ],
+      "source_sha256": "643214acef1d5bc56fb32f5276d84a8068bff075a8460b0110c490407151e6c0",
+      "source": "production/art/actions-redraw-20261105/white-haired-girl-chop-raw.png",
+      "provenance": "Authorized generated full-body work action source; original-palette nearest-neighbor pixel cleanup; right mirrored from left. No original work overwritten."
+    },
+    "blue-haired-girl": {
+      "base_frame_sha256": "c54c16398762f9f8decb16844057aaec337a72ae677b87a0bd5b71097664e0e2",
+      "base_palette_sha256": "9ec5043b5b8786ee787db78bb746265f076dd9fa569e2470202bc9a7963477b0",
+      "status": "independent",
+      "asset": "blue-haired-girl.png",
+      "feet": [
+        [
+          {
+            "pixel": [
+              76,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              73,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              31,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              26,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              75,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              43,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              28,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              27,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              49,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              52,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              66,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              68,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              48,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              57,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              71,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              55,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              36,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              67,
+              119
+            ],
+            "airborne": false
+          }
+        ]
+      ],
+      "source_sha256": "f049e3c2a43733952f57657ac3459ad6eaf418a21765354d09584701b8a8f20f",
+      "source": "production/art/actions-redraw-20261105/blue-haired-girl-chop-raw.png",
+      "provenance": "Authorized generated full-body work action source; original-palette nearest-neighbor pixel cleanup; right mirrored from left. No original work overwritten."
+    },
+    "orange-haired-girl": {
+      "status": "unavailable",
+      "reason": "Visual review rejected grid/segmentation/identity; candidate not enabled."
+    },
+    "black-scarf-girl": {
+      "base_frame_sha256": "b3981ca19fb191368892c95d36e2a7723bda89df54a57428a7ea4162851a9f82",
+      "base_palette_sha256": "dff345190cdc6cc268a3d9c8c30fa809c23cc0a5ebf96297b2b2aae4f8e40a3e",
+      "status": "unavailable",
+      "asset": "black-scarf-girl.png",
+      "feet": [
+        [
+          {
+            "pixel": [
+              54,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              63,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              56,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              15,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              14,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              61,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              53,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              62,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              8,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              15,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              34,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              41,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              31,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              86,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              79,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              62,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              43,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              48,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              57,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              41,
+              119
+            ],
+            "airborne": false
+          }
+        ]
+      ],
+      "source_sha256": "f5e102ed63c597e412bc338402e0f635e3d810ac71d9ebedb7b8c5de57d2cce0",
+      "source": "production/art/actions-redraw-20261105/black-scarf-girl-chop-raw.png",
+      "provenance": "Authorized generated full-body work action source; original-palette nearest-neighbor pixel cleanup; right mirrored from left. No original work overwritten.",
+      "reason": "Visual review rejected grid/segmentation/identity; candidate not enabled."
+    },
+    "ai-gpt": {
+      "base_frame_sha256": "97bfe71c0a9f69f4383ff560f9a7aa89cb742616695178d0d5288b362df0e5c5",
+      "base_palette_sha256": "bf03fa73a1baca8acf3709355b3dd80810ac7282237f6308f9777e03eacf8bcc",
+      "status": "unavailable",
+      "asset": "ai-gpt.png",
+      "feet": [
+        [
+          {
+            "pixel": [
+              50,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              20,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              36,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              -7,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              50,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              17,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              34,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              -4,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              44,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              44,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              77,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              60,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              98,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              51,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              49,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              93,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              62,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              18,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              44,
+              119
+            ],
+            "airborne": false
+          }
+        ]
+      ],
+      "source_sha256": "fd35dbca9bcba5a273fd28265d63093c018450d201d3311c35d696e48338093e",
+      "source": "production/art/actions-redraw-20261105/ai-gpt-chop-raw.png",
+      "provenance": "Authorized generated full-body work action source; original-palette nearest-neighbor pixel cleanup; right mirrored from left. No original work overwritten.",
+      "reason": "Visual review rejected grid/segmentation/identity; candidate not enabled."
+    },
+    "ai-claude": {
+      "status": "unavailable",
+      "reason": "Visual review rejected grid/segmentation/identity; candidate not enabled."
+    },
+    "ai-gemini": {
+      "base_frame_sha256": "367691b03a9cc8889ed10aab86a237c45a2f8581334f705aa75e2e3f2679e245",
+      "base_palette_sha256": "d17c803b29304b89be1d1a8cf36c1ba74661e45ce8422af8c0c7e12a78f6a2fb",
+      "status": "unavailable",
+      "asset": "ai-gemini.png",
+      "feet": [
+        [
+          {
+            "pixel": [
+              33,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              40,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              35,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              41,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              56,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              50,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              39,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              16,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              43,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              38,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              44,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              56,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              79,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              52,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              39,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              42,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              61,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              44,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              42,
+              119
+            ],
+            "airborne": false
+          }
+        ]
+      ],
+      "source_sha256": "1f96d2e335157a28c2ccc1a45cea16911b8c6a3106c260a23d75a9be893942a6",
+      "source": "production/art/actions-redraw-20261105/ai-gemini-chop-raw.png",
+      "provenance": "Authorized generated full-body work action source; original-palette nearest-neighbor pixel cleanup; right mirrored from left. No original work overwritten.",
+      "reason": "Visual review rejected grid/segmentation/identity; candidate not enabled."
+    },
+    "ai-grok": {
+      "base_frame_sha256": "baf15fece0a5c0c84ca7fcd634f41b7b6b898fb83b14b97761600fcc284b0439",
+      "base_palette_sha256": "bbb5b1df844f44cd0890f5413dd00384f7ff1a82e61cdefad3041c7317e7afdd",
+      "status": "unavailable",
+      "asset": "ai-grok.png",
+      "feet": [
+        [
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false
+          }
+        ]
+      ],
+      "source_sha256": "d98b0d85b553370a98277bfb08b5ab6bf47910fb9ad5da9d77ad7687e1f952dc",
+      "source": "production/art/actions-redraw-20261105/ai-grok-chop-raw.png",
+      "provenance": "Authorized generated full-body work action source; original-palette nearest-neighbor pixel cleanup; right mirrored from left. No original work overwritten.",
+      "reason": "Visual review rejected grid/segmentation/identity; candidate not enabled."
+    },
+    "ai-deepseek": {
+      "status": "unavailable",
+      "reason": "Visual review rejected grid/segmentation/identity; candidate not enabled."
+    },
+    "ai-glm": {
+      "base_frame_sha256": "ad27f3e334a4bdfb11f0b318f6e902b400e2a16d4094bbda645cb67d92afb293",
+      "base_palette_sha256": "dfe1593117447f673fd65c4fe8d5e13ef2f275b9b995deb68b7184484b8c4895",
+      "status": "unavailable",
+      "asset": "ai-glm.png",
+      "feet": [
+        [
+          {
+            "pixel": [
+              49,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              15,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              34,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              44,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              50,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              17,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              66,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              32,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              46,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              44,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              78,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              28,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              63,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              49,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              49,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              11,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              49,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              32,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              44,
+              119
+            ],
+            "airborne": false
+          }
+        ]
+      ],
+      "source_sha256": "ef552b0fc2b5e54570a7fc3b71772207a31c0e6c967263111b072e521d3e05ed",
+      "source": "production/art/actions-redraw-20261105/ai-glm-chop-raw.png",
+      "provenance": "Authorized generated full-body work action source; original-palette nearest-neighbor pixel cleanup; right mirrored from left. No original work overwritten.",
+      "reason": "Visual review rejected grid/segmentation/identity; candidate not enabled."
+    },
+    "ai-qwen": {
+      "base_frame_sha256": "2c408077930eb176ee7ca938e7f2e5af09c56f51b19962f683414c24fb1dca01",
+      "base_palette_sha256": "17b58940cd27fff5915849d3ff6a3709b5f8c08f7d8a91f9f23e7df592ee922d",
+      "status": "unavailable",
+      "asset": "ai-qwen.png",
+      "feet": [
+        [
+          {
+            "pixel": [
+              62,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              79,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              36,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              33,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              41,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              60,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              95,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              -11,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              42,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              34,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              0,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              48,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              105,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              52,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              61,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              73,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              24,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              33,
+              119
+            ],
+            "airborne": false
+          }
+        ]
+      ],
+      "source_sha256": "80ebc30e3289d41eb9222fadcc848e0a9793a86a380fc5e9f888f57a8f560c01",
+      "source": "production/art/actions-redraw-20261105/ai-qwen-chop-raw.png",
+      "provenance": "Authorized generated full-body work action source; original-palette nearest-neighbor pixel cleanup; right mirrored from left. No original work overwritten.",
+      "reason": "Visual review rejected grid/segmentation/identity; candidate not enabled."
+    },
+    "ai-kimi": {
+      "base_frame_sha256": "6f172cfecebda0e0667500df61cc1b19227fb02f244aa62a910a8b8d97056670",
+      "base_palette_sha256": "7c1e864229eb610fb7440ad2123350aa92a65564a1d219fd60542e918dc4b1cd",
+      "status": "unavailable",
+      "asset": "ai-kimi.png",
+      "feet": [
+        [
+          {
+            "pixel": [
+              48,
+              118
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              85,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              104,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              -11,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              46,
+              118
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              50,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              83,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              105,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              -10,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              44,
+              118
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              11,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              -10,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              105,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              50,
+              118
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              48,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              51,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              46,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              39,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false
+          }
+        ]
+      ],
+      "source_sha256": "2bc1169134e5a79514c1c765015f6fa300354d548d92219e38d3512b79780f4f",
+      "source": "production/art/actions-redraw-20261105/ai-kimi-chop-raw.png",
+      "provenance": "Authorized generated full-body work action source; original-palette nearest-neighbor pixel cleanup; right mirrored from left. No original work overwritten.",
+      "reason": "Visual review rejected grid/segmentation/identity; candidate not enabled."
+    },
+    "suit-hulk": {
+      "status": "independent",
+      "asset": "suit-hulk.png",
+      "base_frame_sha256": "29ccb8b7fe9c02e7f31412957a1806b1c74fd4c7ea23c4fdd1d7dafa51666f1d",
+      "base_palette_sha256": "11c991c118769b3206091e3e74752db3f73be94d015bbd12726972b2ae31f060",
+      "provenance": "production/art/suit-hulk-v2-20261106/provenance.json"
+    },
+    "orange-sunflower-girl": {
+      "base_frame_sha256": "a4e5a655538ac5a78722be8c6b72f84a21d5268e1209b2a3d24ecb686a78c741",
+      "base_palette_sha256": "d08f948100854ec6bc44a07d92ea1aa7dc20ed47d2108b5e5ff99519417d42ae",
+      "status": "independent",
+      "asset": "orange-sunflower-girl.png",
+      "frames": 20,
+      "method": "Generated standing full-body axe sequence; correct five-column segmentation, uniform nearest-neighbor sampling, fixed foot anchor. No editable artwork modified.",
+      "provenance": "production/art/orange-chop-20261112/provenance.json",
+      "phase_columns": [
+        3,
+        4,
+        0,
+        1,
+        2
+      ],
+      "foot_anchor": [
+        48,
+        120
+      ],
+      "atlas_sha256": "5a7665483e2e55faef3e60b82c2d91ac332539ec96cac704e0ea51944d517dfc"
+    }
+  }
+}

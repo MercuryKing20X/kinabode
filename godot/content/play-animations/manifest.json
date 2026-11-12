@@ -1,0 +1,236 @@
+{
+  "columns": 35,
+  "names": [
+    "sit0",
+    "sit1",
+    "lie0",
+    "lie1",
+    "roll0",
+    "roll1",
+    "roll2",
+    "roll3",
+    "roll4",
+    "roll5",
+    "jump0",
+    "jump1",
+    "jump2",
+    "turn0",
+    "turn1",
+    "turn2",
+    "squat0",
+    "squat1",
+    "kick0",
+    "kick1",
+    "kick2",
+    "turn_right0",
+    "turn_right1",
+    "turn_right2",
+    "turn_left0",
+    "turn_left1",
+    "turn_left2",
+    "cute0",
+    "cute1",
+    "cute2",
+    "cute3",
+    "close0",
+    "close1",
+    "close2",
+    "close3"
+  ],
+  "works": {
+    "human-starter": {
+      "asset": "human-starter.png",
+      "source_sha256": "cb214d4e21f714f717aef71967bafddc11387c3dd09dd4206d74e7486ae0079a",
+      "method": "authored pixel body + unrotated source identity head"
+    },
+    "white-haired-girl": {
+      "asset": "white-haired-girl.png",
+      "source_sha256": "200d6111cb619d1bf85a1957c13b66f0d7f136f92dbfa41880c1f05259b6cd9b",
+      "method": "authored pixel body + unrotated source identity head"
+    },
+    "blue-haired-girl": {
+      "asset": "blue-haired-girl.png",
+      "source_sha256": "1d680b56f566b6cf1591b48e65948607eb832483b72241df8db721978de389d2",
+      "method": "authored pixel body + unrotated source identity head"
+    },
+    "orange-haired-girl": {
+      "asset": "orange-haired-girl.png",
+      "source_sha256": "a6efcfe4027f2dda84eafc994c44c84b817e0ba74c2afa73317844b6a90e1bf0",
+      "method": "authored pixel body + unrotated source identity head"
+    },
+    "black-scarf-girl": {
+      "asset": "black-scarf-girl.png",
+      "source_sha256": "2c6c54eb30d2a1a2086e28fbde447fb7ef8f34074cd0ec7c0c091293d7203dd0",
+      "method": "authored pixel body + unrotated source identity head"
+    },
+    "ai-gpt": {
+      "asset": "ai-gpt.png",
+      "source_sha256": "c0cdbff97d9299fe0b37e65b9e8e77f89bf50000a361ed527028f809493497ec",
+      "method": "authored pixel body + unrotated source identity head"
+    },
+    "ai-claude": {
+      "asset": "ai-claude.png",
+      "source_sha256": "96fc3d72d3adebbb719ec21f7dd53e2bc925df8b0dbc30d06ea7bc30bba42b93",
+      "method": "authored pixel body + unrotated source identity head"
+    },
+    "ai-gemini": {
+      "asset": "ai-gemini.png",
+      "source_sha256": "2230b098a59a79d39c071424498814985697c4c2b3297b4e1be7d74df81e560e",
+      "method": "authored pixel body + unrotated source identity head"
+    },
+    "ai-grok": {
+      "asset": "ai-grok.png",
+      "source_sha256": "2196bcf8cb1aad1e8ecbb5960cbe3bfd647f3547edd52a09ccba1f90090630a0",
+      "method": "authored pixel body + unrotated source identity head"
+    },
+    "ai-deepseek": {
+      "asset": "ai-deepseek.png",
+      "source_sha256": "37314f9669bc8a95bdacdb02abd78d3dc6284d92ecbb2d3b30d19a24b028950e",
+      "method": "authored pixel body + unrotated source identity head"
+    },
+    "ai-glm": {
+      "asset": "ai-glm.png",
+      "source_sha256": "15f1ab947bf4b64217db3e608b59f6050d77dd3ed257c2dea3ea75fe0925d070",
+      "method": "authored pixel body + unrotated source identity head"
+    },
+    "ai-qwen": {
+      "asset": "ai-qwen.png",
+      "source_sha256": "43e94a5fb220b3a8de8e2a598a14e2c11a44b5c63aaa40b3f76845c6c4e09d73",
+      "method": "authored pixel body + unrotated source identity head"
+    },
+    "ai-kimi": {
+      "asset": "ai-kimi.png",
+      "source_sha256": "9bc04d4546c3e26fb4c0044056c7ef908ce479a924ca29510bd61aba9d081ca8",
+      "method": "authored pixel body + unrotated source identity head"
+    },
+    "suit-hulk": {
+      "asset": "suit-hulk.png",
+      "source_sha256": "c1fbc644eb88785b9733d1641dcb0f7d5b947bceec5044d621af7ba1a588a03f",
+      "method": "authored pixel body + unrotated source identity head"
+    },
+    "orange-sunflower-girl": {
+      "asset": "orange-sunflower-girl.png",
+      "method": "2026-11-11 rework: original pixel drawing, empty hands, symmetric face, independent rear cape/hair and six-phase stride",
+      "rope_hands": {
+        "down": [
+          [
+            [
+              25,
+              61
+            ],
+            [
+              85,
+              60
+            ]
+          ],
+          [
+            [
+              25,
+              61
+            ],
+            [
+              85,
+              60
+            ]
+          ],
+          [
+            [
+              25,
+              61
+            ],
+            [
+              85,
+              60
+            ]
+          ]
+        ],
+        "right": [
+          [
+            [
+              10,
+              60
+            ],
+            [
+              85,
+              84
+            ]
+          ],
+          [
+            [
+              10,
+              60
+            ],
+            [
+              85,
+              84
+            ]
+          ],
+          [
+            [
+              10,
+              60
+            ],
+            [
+              85,
+              84
+            ]
+          ]
+        ],
+        "left": [
+          [
+            [
+              10,
+              88
+            ],
+            [
+              85,
+              60
+            ]
+          ],
+          [
+            [
+              10,
+              88
+            ],
+            [
+              85,
+              60
+            ]
+          ],
+          [
+            [
+              10,
+              88
+            ],
+            [
+              85,
+              60
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  "anchor": [
+    48,
+    120
+  ],
+  "size": [
+    96,
+    128
+  ],
+  "hands": [
+    [
+      26,
+      86
+    ],
+    [
+      26,
+      78
+    ],
+    [
+      26,
+      69
+    ]
+  ]
+}

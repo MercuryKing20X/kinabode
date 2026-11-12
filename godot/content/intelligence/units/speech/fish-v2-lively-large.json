@@ -1,0 +1,11 @@
+{
+  "id": "fish-v2-lively-large",
+  "context": "fishing_v2_large",
+  "lines": [
+    "这么大一条鱼，能烤吗？(^_^)",
+    "嘿嘿，这条鱼可真有分量。",
+    "来啦，哇，鱼比想象中大。",
+    "哇，要稳稳托住这条大鱼。"
+  ],
+  "autonomy_output": false
+}

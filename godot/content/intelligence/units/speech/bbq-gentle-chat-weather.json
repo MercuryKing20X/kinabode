@@ -1,0 +1,11 @@
+{
+  "id": "bbq-gentle-chat-weather",
+  "context": "bbq_chat_weather",
+  "lines": [
+    "现在{weather}，在火边歇歇也好。",
+    "外面是{weather}，这里有一点暖。",
+    "{weather}的时候，就慢慢待一会儿。",
+    "这会儿{weather}，你也别着急走。"
+  ],
+  "autonomy_output": false
+}

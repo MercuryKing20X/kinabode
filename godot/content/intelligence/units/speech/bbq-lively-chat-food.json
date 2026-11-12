@@ -1,0 +1,11 @@
+{
+  "id": "bbq-lively-chat-food",
+  "context": "bbq_chat_food",
+  "lines": [
+    "刚才那份{food}，我还想回味一下！",
+    "吃过{food}再烤火，好舒服！",
+    "{food}的香气还在鼻子边耶。",
+    "这一轮吃到{food}，开心！"
+  ],
+  "autonomy_output": false
+}

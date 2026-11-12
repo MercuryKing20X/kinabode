@@ -1,0 +1,11 @@
+{
+  "id": "bbq-gentle-chat-catch",
+  "context": "bbq_chat_catch",
+  "lines": [
+    "记录里的{fish}，确实是{catcher}钓到的呢。",
+    "说起{fish}，这是一条真实的收获。",
+    "{catcher}钓到过{fish}，我记下这件事。",
+    "能钓到{fish}，也是岛上的一件小事。"
+  ],
+  "autonomy_output": false
+}

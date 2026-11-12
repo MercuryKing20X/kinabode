@@ -1,0 +1,25 @@
+extends SceneTree
+const World=preload("res://scripts/world_state.gd")
+const L=preload("res://scripts/localization.gd")
+func _initialize()->void:
+	var dir:=OS.get_environment("HABITAT_DATA_DIR");assert(dir.contains("youqi-"))
+	L.configure(dir)
+	var w:=World.new("res://content/home-v3/world.json");w.residents.provision(w)
+	var rev:int=w.revision;var carry:Dictionary=w.actors.human.carry.duplicate(true)
+	var old:Dictionary={"kind":"dark_discovery","participants":["human","codex"],"facts":{"id":"stars"}}
+	var fresh:Dictionary=old.duplicate(true);fresh["text_version"]=1
+	L.select(dir,"en")
+	assert(L.resident(w,"codex")=="Snow")
+	assert(L.speech(w,"codex","♨ "+L.source("content.speech.glutton-hungry.line_3"))=="♨ When it's mealtime, I'll be right here.")
+	assert(w.memories._describe(old).summary==L.source("memory.stars"))
+	assert(w.memories._describe(fresh).summary=="We watched the stars together.")
+	assert(L.content(w.dark.discoveries.config.objects[0].name)=="Old Ship Bell")
+	L.select(dir,"zh")
+	assert(w.memories._describe(fresh).summary==L.source("memory.stars"))
+	assert(w.revision==rev and w.actors.human.carry==carry)
+	w.residents.rename(w,"codex",L.source("resident.snow"))
+	L.select(dir,"en")
+	assert(L.resident(w,"codex")==L.source("resident.snow"))
+	L.select(dir,"zh")
+	print("Localization records: legacy text, new localized summary, content, display names, custom name, immutable World PASS")
+	quit()

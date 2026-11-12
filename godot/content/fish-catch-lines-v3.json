@@ -1,0 +1,68 @@
+{
+  "koi": {
+    "gentle": "content.fishv3.catch.koi.gentle",
+    "lively": "content.fishv3.catch.koi.lively",
+    "laborious": "content.fishv3.catch.koi.laborious",
+    "quiet": "content.fishv3.catch.koi.quiet"
+  },
+  "catfish": {
+    "gentle": "content.fishv3.catch.catfish.gentle",
+    "lively": "content.fishv3.catch.catfish.lively",
+    "laborious": "content.fishv3.catch.catfish.laborious",
+    "quiet": "content.fishv3.catch.catfish.quiet"
+  },
+  "clownfish": {
+    "gentle": "content.fishv3.catch.clownfish.gentle",
+    "lively": "content.fishv3.catch.clownfish.lively",
+    "laborious": "content.fishv3.catch.clownfish.laborious",
+    "quiet": "content.fishv3.catch.clownfish.quiet"
+  },
+  "moonfish": {
+    "gentle": "content.fishv3.catch.moonfish.gentle",
+    "lively": "content.fishv3.catch.moonfish.lively",
+    "laborious": "content.fishv3.catch.moonfish.laborious",
+    "quiet": "content.fishv3.catch.moonfish.quiet"
+  },
+  "seahorse": {
+    "gentle": "content.fishv3.catch.seahorse.gentle",
+    "lively": "content.fishv3.catch.seahorse.lively",
+    "laborious": "content.fishv3.catch.seahorse.laborious",
+    "quiet": "content.fishv3.catch.seahorse.quiet"
+  },
+  "angler": {
+    "gentle": "content.fishv3.catch.angler.gentle",
+    "lively": "content.fishv3.catch.angler.lively",
+    "laborious": "content.fishv3.catch.angler.laborious",
+    "quiet": "content.fishv3.catch.angler.quiet"
+  },
+  "ghost": {
+    "gentle": "content.fishv3.catch.ghost.gentle",
+    "lively": "content.fishv3.catch.ghost.lively",
+    "laborious": "content.fishv3.catch.ghost.laborious",
+    "quiet": "content.fishv3.catch.ghost.quiet"
+  },
+  "butterfly": {
+    "gentle": "content.fishv3.catch.butterfly.gentle",
+    "lively": "content.fishv3.catch.butterfly.lively",
+    "laborious": "content.fishv3.catch.butterfly.laborious",
+    "quiet": "content.fishv3.catch.butterfly.quiet"
+  },
+  "puffer": {
+    "gentle": "content.fishv3.catch.puffer.gentle",
+    "lively": "content.fishv3.catch.puffer.lively",
+    "laborious": "content.fishv3.catch.puffer.laborious",
+    "quiet": "content.fishv3.catch.puffer.quiet"
+  },
+  "rainbow": {
+    "gentle": "content.fishv3.catch.rainbow.gentle",
+    "lively": "content.fishv3.catch.rainbow.lively",
+    "laborious": "content.fishv3.catch.rainbow.laborious",
+    "quiet": "content.fishv3.catch.rainbow.quiet"
+  },
+  "tuna": {
+    "gentle": "content.fishv3.catch.tuna.gentle",
+    "lively": "content.fishv3.catch.tuna.lively",
+    "laborious": "content.fishv3.catch.tuna.laborious",
+    "quiet": "content.fishv3.catch.tuna.quiet"
+  }
+}

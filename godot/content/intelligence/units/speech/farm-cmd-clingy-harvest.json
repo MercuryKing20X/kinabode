@@ -1,0 +1,11 @@
+{
+  "id": "farm-cmd-clingy-harvest",
+  "context": "farm_command_harvest",
+  "lines": [
+    "好，我收完马上回来。",
+    "我去收，你别走远哦。",
+    "收菜我去，收好了给你看。",
+    "好呀，收完就回来。"
+  ],
+  "autonomy_output": false
+}

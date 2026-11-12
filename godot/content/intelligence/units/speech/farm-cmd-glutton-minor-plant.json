@@ -1,0 +1,11 @@
+{
+  "id": "farm-cmd-glutton-minor-plant",
+  "context": "farm_command_plant",
+  "lines": [
+    "好，我去种，以后能吃。",
+    "种菜呀，我去。",
+    "我去种，种好吃的。",
+    "好，交给我。"
+  ],
+  "autonomy_output": false
+}

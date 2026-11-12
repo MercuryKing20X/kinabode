@@ -1,0 +1,14 @@
+keys,zh,en
+title.name,有栖 · 世界,Kinabode
+title.continue,继续游戏,Continue
+title.new,新游戏,New Game
+title.settings,设置,Settings
+title.quit,退出,Quit
+title.return,回到初始界面,Return to Title
+title.overwrite,会覆盖现在的岛（会先自动备份到 backups/）。继续吗？,This will replace your island (a backup will be saved to backups/ first). Continue?
+title.confirm,继续,Continue
+title.cancel,取消,Cancel
+title.choose,选择开局,Choose your beginning
+title.standard,正式开局：从小屋开始，亲手建设岛屿。,Standard: start with a small home and build your island.
+title.showcase,展示开局：建筑已备好，参观岛屿生活。,Showcase: explore island life with buildings ready.
+title.zh,中文,中文

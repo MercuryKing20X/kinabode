@@ -1,0 +1,9 @@
+{
+  "id": "curious-fishing-catch",
+  "context": "fishing_catch",
+  "lines": [
+    "原来海里还有这种轮廓。",
+    "让我好好看看它的颜色。"
+  ],
+  "autonomy_output": false
+}

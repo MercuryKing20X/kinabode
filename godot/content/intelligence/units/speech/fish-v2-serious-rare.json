@@ -1,0 +1,11 @@
+{
+  "id": "fish-v2-serious-rare",
+  "context": "fishing_v2_rare",
+  "lines": [
+    "好，它的颜色真特别。",
+    "稳住，这条鱼的颜色好少见。",
+    "接着，看，漂亮的稀有颜色。",
+    "认真一点，鳞片闪着不一样的光。"
+  ],
+  "autonomy_output": false
+}

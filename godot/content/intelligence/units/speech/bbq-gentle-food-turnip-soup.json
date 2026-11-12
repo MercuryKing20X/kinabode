@@ -1,0 +1,11 @@
+{
+  "id": "bbq-gentle-food-turnip-soup",
+  "context": "bbq_food_turnip_soup",
+  "lines": [
+    "萝卜汤温温的，慢慢吃。",
+    "能在火边吃萝卜汤，心里也暖了。",
+    "这份萝卜汤，我会好好尝。",
+    "萝卜汤的香气很柔和呢。"
+  ],
+  "autonomy_output": false
+}

@@ -1,0 +1,142 @@
+{
+  "version": 1,
+  "works": {
+    "black-scarf-girl": {
+      "left": "left",
+      "right": "right",
+      "head_y": [
+        35,
+        75
+      ],
+      "face_rule": "skin"
+    },
+    "ai-claude": {
+      "left": "left",
+      "right": "right",
+      "head_y": [
+        35,
+        75
+      ],
+      "face_rule": "skin"
+    },
+    "ai-qwen": {
+      "left": "left",
+      "right": "right",
+      "head_y": [
+        35,
+        75
+      ],
+      "face_rule": "skin"
+    },
+    "ai-deepseek": {
+      "left": "left",
+      "right": "right",
+      "head_y": [
+        35,
+        75
+      ],
+      "face_rule": "skin"
+    },
+    "blue-haired-girl": {
+      "left": "left",
+      "right": "right",
+      "head_y": [
+        35,
+        75
+      ],
+      "face_rule": "skin"
+    },
+    "orange-haired-girl": {
+      "left": "left",
+      "right": "right",
+      "head_y": [
+        35,
+        75
+      ],
+      "face_rule": "skin"
+    },
+    "ai-gemini": {
+      "left": "left",
+      "right": "right",
+      "head_y": [
+        35,
+        75
+      ],
+      "face_rule": "skin"
+    },
+    "ai-kimi": {
+      "left": "left",
+      "right": "right",
+      "head_y": [
+        35,
+        75
+      ],
+      "face_rule": "skin"
+    },
+    "human-starter": {
+      "left": "left",
+      "right": "right",
+      "head_y": [
+        35,
+        75
+      ],
+      "face_rule": "skin"
+    },
+    "ai-glm": {
+      "left": "left",
+      "right": "right",
+      "head_y": [
+        35,
+        75
+      ],
+      "face_rule": "skin"
+    },
+    "white-haired-girl": {
+      "left": "left",
+      "right": "right",
+      "head_y": [
+        25,
+        70
+      ],
+      "face_rule": "palette",
+      "palette_index": 323
+    },
+    "ai-gpt": {
+      "left": "left",
+      "right": "right",
+      "head_y": [
+        40,
+        90
+      ],
+      "face_rule": "palette",
+      "palette_index": 6
+    },
+    "ai-grok": {
+      "left": "left",
+      "right": "right",
+      "head_y": [
+        35,
+        75
+      ],
+      "face_rule": "skin"
+    },
+    "suit-hulk": {
+      "left": "left",
+      "right": "right",
+      "head_y": [
+        5,
+        30
+      ],
+      "face_rule": "skin"
+    },
+    "orange-sunflower-girl": {
+      "left": "left",
+      "right": "right",
+      "head_y": [
+        30,
+        54
+      ],
+      "face_rule": "skin"
+    }
+  }
+}

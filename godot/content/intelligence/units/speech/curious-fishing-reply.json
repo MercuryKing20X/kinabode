@@ -1,0 +1,9 @@
+{
+  "id": "curious-fishing-reply",
+  "context": "fishing_reply",
+  "lines": [
+    "它的花纹能让我再看看吗？",
+    "我想看看另一面是什么颜色。"
+  ],
+  "autonomy_output": false
+}

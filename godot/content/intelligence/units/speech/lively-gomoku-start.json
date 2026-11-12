@@ -1,0 +1,11 @@
+{
+  "id": "lively-gomoku-start",
+  "context": "gomoku_start",
+  "lines": [
+    "嘿，棋子摆好了，我们慢慢下。",
+    "哎呀，这盘从空棋盘开始。",
+    "看这里，我坐好啦，你也别急。",
+    "哈，先看看中间的空位。"
+  ],
+  "autonomy_output": false
+}

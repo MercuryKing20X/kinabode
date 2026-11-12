@@ -1,0 +1,11 @@
+{
+  "id": "fish-v2-curious-context-bite",
+  "context": "fishing_v2_bite",
+  "lines": [
+    "轻轻地，浮漂动了，有鱼咬钩。",
+    "嗯，拉住，鱼线绷紧了。",
+    "好呀，这次是真的上钩了。",
+    "慢慢来，小心一点，慢慢收线。"
+  ],
+  "autonomy_output": false
+}

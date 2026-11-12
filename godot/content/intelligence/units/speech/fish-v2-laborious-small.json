@@ -1,0 +1,11 @@
+{
+  "id": "fish-v2-laborious-small",
+  "context": "fishing_v2_small",
+  "lines": [
+    "好，钓到一条小鱼。",
+    "稳住，小小的鱼儿真可爱。",
+    "接着，这条鱼还挺小的。",
+    "认真一点，一条小鱼来到岸边。"
+  ],
+  "autonomy_output": false
+}

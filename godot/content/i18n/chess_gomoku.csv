@@ -1,0 +1,9 @@
+keys,zh,en
+chess.gomoku.stats,"共 %d 手
+轮到：%s
+上一手：%s","%d moves
+Turn: %s
+Last: %s"
+chess.presentation.winner,%s赢了,%s wins
+chess.presentation.draw,和棋,Draw
+chess.gomoku.finished,已结束,Finished

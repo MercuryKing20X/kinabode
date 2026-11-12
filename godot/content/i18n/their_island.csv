@@ -1,0 +1,74 @@
+keys,zh,en
+theirs.finished,%s 完工啦。,%s is finished.
+theirs.memory,%s 建好了「%s」。,%s finished building “%s”.
+theirs.accept,好呀,"Yes, go ahead"
+theirs.later,再想想,Think it over
+theirs.change,换一个,Another idea
+theirs.card,她的提议,Her idea
+theirs.wood,木材：需要 %s · 仓库 %s,Wood: need %s · storage %s
+theirs.inspect,看看她们的提议,Their ideas
+theirs.preset.0.0.name,看云小亭,Cloudwatch Pavilion
+theirs.preset.0.0.reason,想留一处安静的地方，看看云，也看看花。,Could we leave a quiet little spot for clouds and flowers?
+theirs.preset.0.1.name,风里的秋千,Breeze Swing
+theirs.preset.0.1.reason,想留一处安静的地方，看看云，也看看花。,Could we leave a quiet little spot for clouds and flowers?
+theirs.preset.0.2.name,安静长椅,A Quiet Seat
+theirs.preset.0.2.reason,想留一处安静的地方，看看云，也看看花。,Could we leave a quiet little spot for clouds and flowers?
+theirs.preset.0.3.name,花间木径,Petal Walk
+theirs.preset.0.3.reason,想留一处安静的地方，看看云，也看看花。,Could we leave a quiet little spot for clouds and flowers?
+theirs.preset.0.4.name,白花角落,White Blossom Corner
+theirs.preset.0.4.reason,想留一处安静的地方，看看云，也看看花。,Could we leave a quiet little spot for clouds and flowers?
+theirs.preset.0.5.name,云影小台,Cloudshade Stage
+theirs.preset.0.5.reason,想留一处安静的地方，看看云，也看看花。,Could we leave a quiet little spot for clouds and flowers?
+theirs.preset.1.0.name,蓝蓝烤鱼摊,Blue’s Grilled Fish Nook
+theirs.preset.1.0.reason,我想在这儿开个烤鱼摊！鱼烤好，大家就来这里坐。,I want a grilled fish nook here! We can sit together when the fish is ready.
+theirs.preset.1.1.name,飞起来秋千,Skyhigh Swing
+theirs.preset.1.1.reason,吃完烤鱼就在这里歇歇，肯定很开心！,A happy place to flop down after grilled fish!
+theirs.preset.1.2.name,野餐小座,Picnic Perch
+theirs.preset.1.2.reason,吃完烤鱼就在这里歇歇，肯定很开心！,A happy place to flop down after grilled fish!
+theirs.preset.1.3.name,开饭小路,Dinner Walk
+theirs.preset.1.3.reason,吃完烤鱼就在这里歇歇，肯定很开心！,A happy place to flop down after grilled fish!
+theirs.preset.1.4.name,香香花圃,Sweet Blossom Patch
+theirs.preset.1.4.reason,吃完烤鱼就在这里歇歇，肯定很开心！,A happy place to flop down after grilled fish!
+theirs.preset.1.5.name,热闹小台,Party Platform
+theirs.preset.1.5.reason,吃完烤鱼就在这里歇歇，肯定很开心！,A happy place to flop down after grilled fish!
+theirs.preset.2.0.name,整齐工作亭,Tidy Work Pavilion
+theirs.preset.2.0.reason,把这里布置整齐，做事和休息都方便。,Keep it tidy. Then work and breaks both have a place.
+theirs.preset.2.1.name,结实秋千,Sturdy Swing
+theirs.preset.2.1.reason,把这里布置整齐，做事和休息都方便。,Keep it tidy. Then work and breaks both have a place.
+theirs.preset.2.2.name,工间小椅,Breaktime Chair
+theirs.preset.2.2.reason,把这里布置整齐，做事和休息都方便。,Keep it tidy. Then work and breaks both have a place.
+theirs.preset.2.3.name,笔直园路,Straight Garden Walk
+theirs.preset.2.3.reason,把这里布置整齐，做事和休息都方便。,Keep it tidy. Then work and breaks both have a place.
+theirs.preset.2.4.name,有序花圃,Ordered Flowerbed
+theirs.preset.2.4.reason,把这里布置整齐，做事和休息都方便。,Keep it tidy. Then work and breaks both have a place.
+theirs.preset.2.5.name,整理小台,Sorting Platform
+theirs.preset.2.5.reason,把这里布置整齐，做事和休息都方便。,Keep it tidy. Then work and breaks both have a place.
+theirs.preset.3.0.name,海风书亭,Sea Breeze Reading Nook
+theirs.preset.3.0.reason,留一点空白，听海风，等星星。,"A little space. Sea wind. Stars, when they come."
+theirs.preset.3.1.name,月影秋千,Moonshadow Swing
+theirs.preset.3.1.reason,留一点空白，听海风，等星星。,"A little space. Sea wind. Stars, when they come."
+theirs.preset.3.2.name,观星小座,Stargazing Seat
+theirs.preset.3.2.reason,留一点空白，听海风，等星星。,"A little space. Sea wind. Stars, when they come."
+theirs.preset.3.3.name,星光木径,Starlight Walk
+theirs.preset.3.3.reason,留一点空白，听海风，等星星。,"A little space. Sea wind. Stars, when they come."
+theirs.preset.3.4.name,夜色花圃,Night Garden
+theirs.preset.3.4.reason,留一点空白，听海风，等星星。,"A little space. Sea wind. Stars, when they come."
+theirs.preset.3.5.name,望天小台,Skywatch Platform
+theirs.preset.3.5.reason,留一点空白，听海风，等星星。,"A little space. Sea wind. Stars, when they come."
+theirs.rejected,这次还不能动工，请检查材料、空地和她的状态。,"We cannot start yet. Check supplies, space and how she is doing."
+theirs.goal,去南边的岛看看,Visit the island to the south
+theirs.arrival_memory,%s 第一次来到自己的那块地，说起想在这里做的事。,%s visited her own patch for the first time and shared a plan.
+theirs.intro.codex,南边有玻璃花园和暖暖的露台，要一起去度假吗？,There is a glass garden and a warm terrace to the south. Shall we go on holiday?
+theirs.intro.companion-2,南边有泳池和海边秋千！一起去度假嘛！,Pools and seaside swings to the south! Let us go on holiday!
+theirs.intro.npc.mira,南边已经有休息的地方了。今天去放松放松吧。,There is a place to rest in the south. Let us relax there today.
+theirs.intro.npc.nora,南边适合看海。想一起去。,The south is good for watching the sea. I would like to go together.
+theirs.arrival.codex,花廊和玻璃窗……想邀你来坐坐，慢慢看云。,The flower walk and glass windows… come sit with me and watch the clouds.
+theirs.arrival.companion-2,风帆屋顶！泳池！秋千！这里每一样都想和你一起玩！,A sail roof! A pool! Swings! I want to try everything here with you!
+theirs.arrival.npc.mira,宽门廊正好歇脚。到了这里，就把活儿放一放。,The broad porch is perfect for resting. Let us leave work behind while we are here.
+theirs.arrival.npc.nora,树上的观星台。晚上，一起看星星吧。,A stargazing deck in the tree. Let us watch the stars tonight.
+content.theirs.remember,那座「{name}」，是我们商量好以后建起来的。,We planned “{name}” together. Then I built it.
+theirs.goals,小目标,Little goals
+theirs.kind.first_visit,初次登岛,First visits
+theirs.kind.plan,地上的打算,Island plans
+theirs.kind.built,亲手建成,Built together
+theirs.kind.other,往事,Memories

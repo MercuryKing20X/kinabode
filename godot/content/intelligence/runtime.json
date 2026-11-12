@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "phase": 3,
+  "activation_limit": 2,
+  "exit_cooldown": 60,
+  "priority": [
+    "glutton",
+    "glutton-minor",
+    "clingy",
+    "serious"
+  ],
+  "reactions": {
+    "gentle": "watch",
+    "curious": "look",
+    "lively": "stretch",
+    "quiet": "watch",
+    "laborious": "stretch",
+    "serious": "watch",
+    "clingy": "watch",
+    "slow-warm": "watch",
+    "introvert": "watch",
+    "night-owl": "watch",
+    "curious-context": "look",
+    "glutton-minor": "watch",
+    "glutton": "watch"
+  }
+}

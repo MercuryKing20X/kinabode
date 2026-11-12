@@ -1,0 +1,7 @@
+{
+  "id": "idle-watch",
+  "action": "watch",
+  "conditions": {},
+  "cooldown_seconds": 0,
+  "requires_target": false
+}

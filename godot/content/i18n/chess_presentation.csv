@@ -1,0 +1,11 @@
+keys,zh,en
+chess.presentation.replay,再来一局,Play again
+chess.presentation.change,换对手,Change opponent
+chess.presentation.leave,离开,Leave
+chess.presentation.result,结果,Result
+chess.presentation.mine,我吃掉的,I took
+chess.presentation.hers,她吃掉的,She took
+chess.presentation.own,自己人,Own
+chess.presentation.rules,规则,Rules
+chess.presentation.win,你赢了！,You win!
+chess.presentation.opponent_win,%s赢了,%s wins

@@ -1,0 +1,31 @@
+{
+  "home_dock": [
+    81,
+    109
+  ],
+  "arrival": [
+    100,
+    28
+  ],
+  "dock": [
+    100,
+    26
+  ],
+  "camp": [
+    110,
+    37
+  ],
+  "cat_home": [
+    98,
+    30
+  ],
+  "mushrooms": [
+    {
+      "id": "homelands.mushrooms.1",
+      "position": [
+        114,
+        40
+      ]
+    }
+  ]
+}

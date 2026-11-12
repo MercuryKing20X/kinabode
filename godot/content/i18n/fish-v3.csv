@@ -1,0 +1,143 @@
+keys,zh,en
+content.fishv3.species.koi,锦鲤,Koi
+content.fishv3.species.catfish,鲶鱼,Catfish
+content.fishv3.species.clownfish,小丑鱼,Clownfish
+content.fishv3.species.moonfish,月光鱼,Moonfish
+content.fishv3.species.seahorse,海马,Seahorse
+content.fishv3.species.angler,幽灯鱼,Deep lanternfish
+content.fishv3.species.ghost,幽灵鱼,Ghost fish
+content.fishv3.species.butterfly,热带蝴蝶鱼,Butterflyfish
+content.fishv3.species.puffer,河豚,Pufferfish
+content.fishv3.species.rainbow,彩虹鳟,Rainbow trout
+content.fishv3.species.tuna,金枪鱼,Giant tuna
+content.fishv3.dark_coast,幽光海岸,Glimmer Coast
+content.fishv3.description.koi,锦鲤在主岛的自然海岸出没。,Koi lives off the main island.
+content.fishv3.description.catfish,鲶鱼在主岛的自然海岸出没。,Catfish lives off the main island.
+content.fishv3.description.clownfish,小丑鱼在主岛的自然海岸出没。,Clownfish lives off the main island.
+content.fishv3.description.moonfish,月光鱼在月牙岛的自然海岸出没。,Moonfish lives off Crescent Island.
+content.fishv3.description.seahorse,海马在月牙岛的自然海岸出没。,Seahorse lives off Crescent Island.
+content.fishv3.description.angler,幽灯鱼在黑暗岛的自然海岸出没。,Deep lanternfish lives off the Dark Island.
+content.fishv3.description.ghost,幽灵鱼在黑暗岛的自然海岸出没。,Ghost fish lives off the Dark Island.
+content.fishv3.description.butterfly,热带蝴蝶鱼在度假岛的自然海岸出没。,Butterflyfish lives off Holiday Island.
+content.fishv3.description.puffer,河豚在度假岛的自然海岸出没。,Pufferfish lives off Holiday Island.
+content.fishv3.description.rainbow,彩虹鳟在主岛的自然海岸出没。,Rainbow trout lives off the main island.
+content.fishv3.description.tuna,金枪鱼在度假岛的自然海岸出没。,Giant tuna lives off Holiday Island.
+content.fishv3.taste.koi,第一次吃锦鲤，记住这个味道了。,My first taste of koi. I will remember this flavor.
+content.fishv3.taste.catfish,第一次吃鲶鱼，记住这个味道了。,My first taste of catfish. I will remember this flavor.
+content.fishv3.taste.clownfish,第一次吃小丑鱼，记住这个味道了。,My first taste of clownfish. I will remember this flavor.
+content.fishv3.taste.moonfish,第一次吃月光鱼，记住这个味道了。,My first taste of moonfish. I will remember this flavor.
+content.fishv3.taste.seahorse,第一次吃海马，记住这个味道了。,My first taste of seahorse. I will remember this flavor.
+content.fishv3.taste.angler,第一次吃幽灯鱼，记住这个味道了。,My first taste of deep lanternfish. I will remember this flavor.
+content.fishv3.taste.ghost,第一次吃幽灵鱼，记住这个味道了。,My first taste of ghost fish. I will remember this flavor.
+content.fishv3.taste.butterfly,第一次吃热带蝴蝶鱼，记住这个味道了。,My first taste of butterflyfish. I will remember this flavor.
+content.fishv3.taste.puffer,第一次吃河豚，记住这个味道了。,My first taste of pufferfish. I will remember this flavor.
+content.fishv3.taste.rainbow,第一次吃彩虹鳟，记住这个味道了。,My first taste of rainbow trout. I will remember this flavor.
+content.fishv3.taste.tuna,第一次吃金枪鱼，记住这个味道了。,My first taste of giant tuna. I will remember this flavor.
+content.fishv3.recipe.catfish-herb-pot,香草鲶鱼煲,Herbed catfish pot
+content.fishv3.recipe.first.catfish-herb-pot.gentle,第一次尝这道香草鲶鱼煲。,My first taste of herbed catfish pot... how lovely.
+content.fishv3.recipe.normal.catfish-herb-pot.gentle,香草鲶鱼煲，香气正好。,Herbed catfish pot... let us enjoy it slowly.
+content.fishv3.recipe.first.catfish-herb-pot.lively,第一次尝这道香草鲶鱼煲。,"Whoa, Herbed catfish pot! First bite!"
+content.fishv3.recipe.normal.catfish-herb-pot.lively,香草鲶鱼煲，香气正好。,Herbed catfish pot! Smells amazing!
+content.fishv3.recipe.first.catfish-herb-pot.laborious,第一次尝这道香草鲶鱼煲。,First time trying herbed catfish pot. A proper meal.
+content.fishv3.recipe.normal.catfish-herb-pot.laborious,香草鲶鱼煲，香气正好。,Herbed catfish pot. Just right.
+content.fishv3.recipe.first.catfish-herb-pot.quiet,第一次尝这道香草鲶鱼煲。,...Herbed catfish pot. First time.
+content.fishv3.recipe.normal.catfish-herb-pot.quiet,香草鲶鱼煲，香气正好。,...Herbed catfish pot. Good.
+content.fishv3.recipe.method.catfish-herb-pot,在营火慢慢烤香。,Cook gently over the campfire.
+content.fishv3.recipe.moonfish-chowder,月光鱼浓汤,Moonfish chowder
+content.fishv3.recipe.first.moonfish-chowder.gentle,第一次尝这道月光鱼浓汤。,My first taste of moonfish chowder... how lovely.
+content.fishv3.recipe.normal.moonfish-chowder.gentle,月光鱼浓汤，香气正好。,Moonfish chowder... let us enjoy it slowly.
+content.fishv3.recipe.first.moonfish-chowder.lively,第一次尝这道月光鱼浓汤。,"Whoa, Moonfish chowder! First bite!"
+content.fishv3.recipe.normal.moonfish-chowder.lively,月光鱼浓汤，香气正好。,Moonfish chowder! Smells amazing!
+content.fishv3.recipe.first.moonfish-chowder.laborious,第一次尝这道月光鱼浓汤。,First time trying moonfish chowder. A proper meal.
+content.fishv3.recipe.normal.moonfish-chowder.laborious,月光鱼浓汤，香气正好。,Moonfish chowder. Just right.
+content.fishv3.recipe.first.moonfish-chowder.quiet,第一次尝这道月光鱼浓汤。,...Moonfish chowder. First time.
+content.fishv3.recipe.normal.moonfish-chowder.quiet,月光鱼浓汤，香气正好。,...Moonfish chowder. Good.
+content.fishv3.recipe.method.moonfish-chowder,在营火慢慢烤香。,Cook gently over the campfire.
+content.fishv3.recipe.butterfly-skewer,蝴蝶鱼烤串,Butterflyfish skewers
+content.fishv3.recipe.first.butterfly-skewer.gentle,第一次尝这道蝴蝶鱼烤串。,My first taste of butterflyfish skewers... how lovely.
+content.fishv3.recipe.normal.butterfly-skewer.gentle,蝴蝶鱼烤串，香气正好。,Butterflyfish skewers... let us enjoy it slowly.
+content.fishv3.recipe.first.butterfly-skewer.lively,第一次尝这道蝴蝶鱼烤串。,"Whoa, Butterflyfish skewers! First bite!"
+content.fishv3.recipe.normal.butterfly-skewer.lively,蝴蝶鱼烤串，香气正好。,Butterflyfish skewers! Smells amazing!
+content.fishv3.recipe.first.butterfly-skewer.laborious,第一次尝这道蝴蝶鱼烤串。,First time trying butterflyfish skewers. A proper meal.
+content.fishv3.recipe.normal.butterfly-skewer.laborious,蝴蝶鱼烤串，香气正好。,Butterflyfish skewers. Just right.
+content.fishv3.recipe.first.butterfly-skewer.quiet,第一次尝这道蝴蝶鱼烤串。,...Butterflyfish skewers. First time.
+content.fishv3.recipe.normal.butterfly-skewer.quiet,蝴蝶鱼烤串，香气正好。,...Butterflyfish skewers. Good.
+content.fishv3.recipe.method.butterfly-skewer,在营火慢慢烤香。,Cook gently over the campfire.
+content.fishv3.recipe.tuna-steak,香煎金枪鱼,Campfire tuna steak
+content.fishv3.recipe.first.tuna-steak.gentle,第一次尝这道香煎金枪鱼。,My first taste of campfire tuna steak... how lovely.
+content.fishv3.recipe.normal.tuna-steak.gentle,香煎金枪鱼，香气正好。,Campfire tuna steak... let us enjoy it slowly.
+content.fishv3.recipe.first.tuna-steak.lively,第一次尝这道香煎金枪鱼。,"Whoa, Campfire tuna steak! First bite!"
+content.fishv3.recipe.normal.tuna-steak.lively,香煎金枪鱼，香气正好。,Campfire tuna steak! Smells amazing!
+content.fishv3.recipe.first.tuna-steak.laborious,第一次尝这道香煎金枪鱼。,First time trying campfire tuna steak. A proper meal.
+content.fishv3.recipe.normal.tuna-steak.laborious,香煎金枪鱼，香气正好。,Campfire tuna steak. Just right.
+content.fishv3.recipe.first.tuna-steak.quiet,第一次尝这道香煎金枪鱼。,...Campfire tuna steak. First time.
+content.fishv3.recipe.normal.tuna-steak.quiet,香煎金枪鱼，香气正好。,...Campfire tuna steak. Good.
+content.fishv3.recipe.method.tuna-steak,在营火慢慢烤香。,Cook gently over the campfire.
+content.fishv3.recipe.clownfish-skewer,小丑鱼香菇串,Clownfish mushroom skewer
+content.fishv3.recipe.first.clownfish-skewer.gentle,第一次尝这道小丑鱼香菇串。,My first taste of clownfish mushroom skewer... how lovely.
+content.fishv3.recipe.normal.clownfish-skewer.gentle,小丑鱼香菇串，香气正好。,Clownfish mushroom skewer... let us enjoy it slowly.
+content.fishv3.recipe.first.clownfish-skewer.lively,第一次尝这道小丑鱼香菇串。,"Whoa, Clownfish mushroom skewer! First bite!"
+content.fishv3.recipe.normal.clownfish-skewer.lively,小丑鱼香菇串，香气正好。,Clownfish mushroom skewer! Smells amazing!
+content.fishv3.recipe.first.clownfish-skewer.laborious,第一次尝这道小丑鱼香菇串。,First time trying clownfish mushroom skewer. A proper meal.
+content.fishv3.recipe.normal.clownfish-skewer.laborious,小丑鱼香菇串，香气正好。,Clownfish mushroom skewer. Just right.
+content.fishv3.recipe.first.clownfish-skewer.quiet,第一次尝这道小丑鱼香菇串。,...Clownfish mushroom skewer. First time.
+content.fishv3.recipe.normal.clownfish-skewer.quiet,小丑鱼香菇串，香气正好。,...Clownfish mushroom skewer. Good.
+content.fishv3.recipe.method.clownfish-skewer,在营火慢慢烤香。,Cook gently over the campfire.
+content.fishv3.catch.koi.gentle,呀，锦鲤……像海送来的一封小信。,Oh... a koi. A little letter from the sea.
+content.fishv3.catch.koi.lively,哇！锦鲤！快看快看这个新朋友！,Whoa! A koi! Come see our new sea friend!
+content.fishv3.catch.koi.laborious,锦鲤钓到了。记清楚，可别认错。,A koi. Let us remember its markings properly.
+content.fishv3.catch.koi.quiet,……锦鲤。原来长这样。,...A koi. So that is what you look like.
+content.fishv3.catch.catfish.gentle,呀，鲶鱼……像海送来的一封小信。,Oh... a catfish. A little letter from the sea.
+content.fishv3.catch.catfish.lively,哇！鲶鱼！快看快看这个新朋友！,Whoa! A catfish! Come see our new sea friend!
+content.fishv3.catch.catfish.laborious,鲶鱼钓到了。记清楚，可别认错。,A catfish. Let us remember its markings properly.
+content.fishv3.catch.catfish.quiet,……鲶鱼。原来长这样。,...A catfish. So that is what you look like.
+content.fishv3.catch.clownfish.gentle,呀，小丑鱼……像海送来的一封小信。,Oh... a clownfish. A little letter from the sea.
+content.fishv3.catch.clownfish.lively,哇！小丑鱼！快看快看这个新朋友！,Whoa! A clownfish! Come see our new sea friend!
+content.fishv3.catch.clownfish.laborious,小丑鱼钓到了。记清楚，可别认错。,A clownfish. Let us remember its markings properly.
+content.fishv3.catch.clownfish.quiet,……小丑鱼。原来长这样。,...A clownfish. So that is what you look like.
+content.fishv3.catch.moonfish.gentle,呀，月光鱼……像海送来的一封小信。,Oh... a moonfish. A little letter from the sea.
+content.fishv3.catch.moonfish.lively,哇！月光鱼！快看快看这个新朋友！,Whoa! A moonfish! Come see our new sea friend!
+content.fishv3.catch.moonfish.laborious,月光鱼钓到了。记清楚，可别认错。,A moonfish. Let us remember its markings properly.
+content.fishv3.catch.moonfish.quiet,……月光鱼。原来长这样。,...A moonfish. So that is what you look like.
+content.fishv3.catch.seahorse.gentle,呀，海马……像海送来的一封小信。,Oh... a seahorse. A little letter from the sea.
+content.fishv3.catch.seahorse.lively,哇！海马！快看快看这个新朋友！,Whoa! A seahorse! Come see our new sea friend!
+content.fishv3.catch.seahorse.laborious,海马钓到了。记清楚，可别认错。,A seahorse. Let us remember its markings properly.
+content.fishv3.catch.seahorse.quiet,……海马。原来长这样。,...A seahorse. So that is what you look like.
+content.fishv3.catch.angler.gentle,呀，幽灯鱼……像海送来的一封小信。,Oh... a deep lanternfish. A little letter from the sea.
+content.fishv3.catch.angler.lively,哇！幽灯鱼！快看快看这个新朋友！,Whoa! A deep lanternfish! Come see our new sea friend!
+content.fishv3.catch.angler.laborious,幽灯鱼钓到了。记清楚，可别认错。,A deep lanternfish. Let us remember its markings properly.
+content.fishv3.catch.angler.quiet,……幽灯鱼。原来长这样。,...A deep lanternfish. So that is what you look like.
+content.fishv3.catch.ghost.gentle,呀，幽灵鱼……像海送来的一封小信。,Oh... a ghost fish. A little letter from the sea.
+content.fishv3.catch.ghost.lively,哇！幽灵鱼！快看快看这个新朋友！,Whoa! A ghost fish! Come see our new sea friend!
+content.fishv3.catch.ghost.laborious,幽灵鱼钓到了。记清楚，可别认错。,A ghost fish. Let us remember its markings properly.
+content.fishv3.catch.ghost.quiet,……幽灵鱼。原来长这样。,...A ghost fish. So that is what you look like.
+content.fishv3.catch.butterfly.gentle,呀，热带蝴蝶鱼……像海送来的一封小信。,Oh... a butterflyfish. A little letter from the sea.
+content.fishv3.catch.butterfly.lively,哇！热带蝴蝶鱼！快看快看这个新朋友！,Whoa! A butterflyfish! Come see our new sea friend!
+content.fishv3.catch.butterfly.laborious,热带蝴蝶鱼钓到了。记清楚，可别认错。,A butterflyfish. Let us remember its markings properly.
+content.fishv3.catch.butterfly.quiet,……热带蝴蝶鱼。原来长这样。,...A butterflyfish. So that is what you look like.
+content.fishv3.catch.puffer.gentle,呀，河豚……像海送来的一封小信。,Oh... a pufferfish. A little letter from the sea.
+content.fishv3.catch.puffer.lively,哇！河豚！快看快看这个新朋友！,Whoa! A pufferfish! Come see our new sea friend!
+content.fishv3.catch.puffer.laborious,河豚钓到了。记清楚，可别认错。,A pufferfish. Let us remember its markings properly.
+content.fishv3.catch.puffer.quiet,……河豚。原来长这样。,...A pufferfish. So that is what you look like.
+content.fishv3.catch.rainbow.gentle,呀，彩虹鳟……像海送来的一封小信。,Oh... a rainbow trout. A little letter from the sea.
+content.fishv3.catch.rainbow.lively,哇！彩虹鳟！快看快看这个新朋友！,Whoa! A rainbow trout! Come see our new sea friend!
+content.fishv3.catch.rainbow.laborious,彩虹鳟钓到了。记清楚，可别认错。,A rainbow trout. Let us remember its markings properly.
+content.fishv3.catch.rainbow.quiet,……彩虹鳟。原来长这样。,...A rainbow trout. So that is what you look like.
+content.fishv3.catch.tuna.gentle,呀，金枪鱼……像海送来的一封小信。,Oh... a giant tuna. A little letter from the sea.
+content.fishv3.catch.tuna.lively,哇！金枪鱼！快看快看这个新朋友！,Whoa! A giant tuna! Come see our new sea friend!
+content.fishv3.catch.tuna.laborious,金枪鱼钓到了。记清楚，可别认错。,A giant tuna. Let us remember its markings properly.
+content.fishv3.catch.tuna.quiet,……金枪鱼。原来长这样。,...A giant tuna. So that is what you look like.
+fishv3.island.main,主岛,Main Island
+fishv3.island.moon,月牙岛,Crescent Island
+fishv3.island.dark,黑暗岛,Dark Island
+fishv3.island.south,度假岛,Holiday Island
+fishv3.any,不限,Any
+fishv3.summer,夏季,Summer
+fishv3.night,夜间,Night
+fishv3.rain,雨天,Rain
+fishv3.hints,出现：%s · %s · %s,Habitat: %s · %s · %s
+fishv3.maximum,最大纪录：%.2f 倍身高,Largest catch: %.2f × height
+quota.unknown,含尚未确认的用量预留,Includes usage awaiting confirmation
+quota.limit,今日上限（token）,Daily limit (tokens)
+quota.unlimited,不限（0）,Unlimited (0)
+quota.exhausted,今天的 AI 份额用完了，我先用本地智能陪你。,My AI allowance is used up for today. I will keep you company locally.

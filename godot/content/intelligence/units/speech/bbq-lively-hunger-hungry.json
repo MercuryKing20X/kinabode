@@ -1,0 +1,11 @@
+{
+  "id": "bbq-lively-hunger-hungry",
+  "context": "bbq_hunger_hungry",
+  "lines": [
+    "终于吃到热的了！",
+    "饿着的时候，这口特别香。",
+    "先让我认真吃完这一份。",
+    "这一口下去，真舒服。"
+  ],
+  "autonomy_output": false
+}

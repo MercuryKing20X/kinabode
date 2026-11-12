@@ -1,0 +1,74 @@
+{
+  "id": "glutton",
+  "name": "吃货",
+  "description": "饿时更惦记真实的饭。",
+  "speech_units": [
+    "glutton-hungry",
+    "gentle-gomoku-start",
+    "gentle-gomoku-other-move",
+    "gentle-gomoku-move",
+    "gentle-gomoku-open-three",
+    "gentle-gomoku-four",
+    "gentle-gomoku-blocked",
+    "gentle-gomoku-ahead",
+    "gentle-gomoku-behind",
+    "gentle-gomoku-win",
+    "gentle-gomoku-lose",
+    "gentle-gomoku-draw",
+    "gentle-gomoku-long-think",
+    "gentle-gomoku-player-wait",
+    "gentle-gomoku-reply-praise",
+    "gentle-gomoku-reply-think",
+    "gentle-gomoku-reply-tease",
+    "calm-fishing-cast",
+    "calm-fishing-wait",
+    "calm-fishing-nibble",
+    "calm-fishing-bite",
+    "calm-fishing-catch",
+    "calm-fishing-giant",
+    "calm-fishing-reply",
+    "calm-fishing-reply-giant",
+    "calm-fishing-show",
+    "fish-v2-glutton-invited",
+    "fish-v2-glutton-cast",
+    "fish-v2-glutton-wait",
+    "fish-v2-glutton-bite",
+    "fish-v2-glutton-small",
+    "fish-v2-glutton-large",
+    "fish-v2-glutton-rare",
+    "fish-v2-glutton-lost",
+    "fish-v2-glutton-witness",
+    "fish-v2-glutton-first",
+    "fish-v2-glutton-stock",
+    "fish-v2-glutton-release",
+    "farm-cmd-glutton-plant",
+    "farm-cmd-glutton-harvest",
+    "farm-cmd-glutton-busy"
+  ],
+  "behavior_units": [
+    "idle-nearby",
+    "idle-rest"
+  ],
+  "speech_multiplier": 1.1,
+  "hunger_multiplier": 1.25,
+  "activation": {
+    "hunger_at_least": "hungry"
+  },
+  "weights": {
+    "facility": 1.4,
+    "nearby": 1.5
+  },
+  "wish_weights": {
+    "meal": 2,
+    "fish": 0.7,
+    "furniture": 1.2,
+    "facility": 1,
+    "homestead": 1.5
+  },
+  "schedule_weights": {
+    "camp": 1.6,
+    "shelter": 1.5,
+    "sea": 1,
+    "garden": 1.1
+  }
+}

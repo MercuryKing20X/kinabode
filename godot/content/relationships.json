@@ -1,0 +1,198 @@
+{
+  "version": 1,
+  "check_interval": 0.5,
+  "per_kind_day_limit": 1,
+  "lifetime_kind_limit": 4,
+  "near_radius": 8,
+  "personal_gap": 45.0,
+  "village_gap": 15.0,
+  "return_after": 180,
+  "stages": [
+    {
+      "id": "new",
+      "name": "初识",
+      "threshold": 0
+    },
+    {
+      "id": "familiar",
+      "name": "熟悉",
+      "threshold": 8
+    },
+    {
+      "id": "close",
+      "name": "亲近",
+      "threshold": 20
+    },
+    {
+      "id": "attuned",
+      "name": "默契",
+      "threshold": 44
+    },
+    {
+      "id": "family",
+      "name": "家人",
+      "threshold": 68
+    }
+  ],
+  "weights": {
+    "meal": 4,
+    "shared_barbecue": 5,
+    "house_completed": 6,
+    "homestead_completed": 6,
+    "fishing": 2,
+    "gomoku_match": 4,
+    "promise_result": 3,
+    "gift": 2,
+    "proposal_decision": 1,
+    "wish_completed": 3
+  },
+  "labels": {
+    "meal": "一起吃过饭",
+    "shared_barbecue": "一起完成烧烤",
+    "house_completed": "共同建好房屋",
+    "homestead_completed": "共同建好花圃",
+    "fishing": "在彼此身边见证钓获",
+    "gomoku_match": "一起下完棋",
+    "promise_result": "履行过约定",
+    "gift": "真实送过礼物",
+    "proposal_decision": "接受过一起活动的建议",
+    "wish_completed": "一起完成小愿望"
+  },
+  "behavior_weights": {
+    "1": {
+      "nearby": 1.5
+    },
+    "2": {
+      "nearby": 1.6,
+      "rest": 1.6
+    },
+    "3": {
+      "watch": 1.7,
+      "nearby": 1.5
+    },
+    "4": {
+      "nearby": 1.8,
+      "rest": 1.8
+    }
+  },
+  "lines": {
+    "familiar": [
+      "{address}，好像越来越习惯有你在附近了。",
+      "{address}，今天也想走过来和你打声招呼。",
+      "{address}，见到你，打招呼都变得顺口了。",
+      "{address}，我们已经一起做过一些事了呢。"
+    ],
+    "close": [
+      "{address}，和你待在一个地方，很安心。",
+      "{address}，想在你旁边坐一小会儿。",
+      "{address}，不急着找话题，坐在旁边也很好。",
+      "{address}，靠近一点，听听岛上的声音。"
+    ],
+    "attuned": [
+      "{address}，你忙你的，我在旁边陪一会儿。",
+      "{address}，这阵忙完了，我们再慢慢聊。",
+      "{address}，我不碰你的东西，在这里等你。",
+      "{address}，看着你认真做事，也挺好的。"
+    ],
+    "family": [
+      "{address}，岛上有你，日子就有了熟悉的样子。",
+      "{address}，晚风里也有一起住着的感觉。",
+      "{address}，想把这样平常的一晚慢慢过完。",
+      "{address}，知道你也在这里，心里很踏实。"
+    ],
+    "meal_ready": [
+      "桌上的饭已经做好了，想来坐坐吗？",
+      "营地有现成的饭，我们可以一起坐会儿。",
+      "闻到饭香了，想吃的话桌上还有。",
+      "饭已经端上桌了，我想陪你坐坐。"
+    ],
+    "returned": [
+      "{address}，你回来啦，我过来打个招呼。",
+      "{address}，又看见你了，想和你待一会儿。",
+      "{address}，欢迎回来，岛上的风还在吹。",
+      "{address}，你又在身边了，今天慢慢来吧。"
+    ],
+    "common": [
+      "最近我们常常{activity}，我记着呢。",
+      "说起来，{activity}已经有几回了。",
+      "我们有过好几次{activity}了呢。",
+      "想到最近{activity}，心里很熟悉。"
+    ],
+    "passing": [
+      "{address}，路过这里，停下来和你打个招呼。",
+      "{address}，见到你啦，我站一小会儿。",
+      "{address}，我在这里，和你打个招呼。",
+      "{address}，你好呀，不耽误你做事。"
+    ],
+    "sea": [
+      "{address}，我在岸边陪你看看海。",
+      "一起站在这里，看一会儿海吧。",
+      "{address}，海就在眼前，我们慢慢看。",
+      "我在你旁边，看看海面的颜色。"
+    ]
+  },
+  "seat_near_radius": 6,
+  "stage_events_enabled": true,
+  "legacy_pacing": {
+    "thresholds": [
+      0,
+      6,
+      16,
+      30,
+      48
+    ],
+    "weights": {
+      "meal": 4,
+      "shared_barbecue": 5,
+      "house_completed": 6,
+      "homestead_completed": 6,
+      "fishing": 2,
+      "gomoku_match": 4,
+      "promise_result": 3,
+      "gift": 2,
+      "proposal_decision": 1,
+      "wish_completed": 3
+    },
+    "lifetime_kind_limit": 4
+  },
+  "rewards": {
+    "default_address": "岛主",
+    "address_max_length": 12,
+    "action_interval": 180,
+    "action_chance": 0.35,
+    "notice_radius": 16,
+    "passing_radius": 5,
+    "stay_seconds": 30,
+    "stand_distances": [
+      2.5,
+      3.5,
+      5
+    ],
+    "work_lines": {
+      "chop": [
+        "{address}，这阵木头的活，你慢慢做。",
+        "等你砍树时，我会在旁边站好。",
+        "{address}，木头由你处理，我不抢工具。",
+        "我在旁边，给你留着走路的位置。"
+      ],
+      "fish": [
+        "{address}，你慢慢钓，我在岸边陪着。",
+        "钓位留给你，我在旁边看看水面。",
+        "{address}，等鱼儿的时候，我不挤你。",
+        "准备钓鱼也可以慢一点，我陪你。"
+      ],
+      "cook": [
+        "{address}，你正在准备这道菜，我陪着。",
+        "取料和灶台的事由你来，我不挡路。",
+        "{address}，想在旁边看看你做菜。",
+        "慢慢做这道菜，我在附近待着。"
+      ],
+      "farm": [
+        "{address}，我站在田埂边陪你。",
+        "菜地这边正在忙呢，我给你让路。",
+        "{address}，种田的事我不抢，看看就好。",
+        "我在菜园旁边，陪你忙完这一小段。"
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bfd5hfyuww6n1"
+
+[deps]
+
+files=["res://content/i18n/dark_dialogue.zh.translation", "res://content/i18n/dark_dialogue.en.translation"]
+
+source_file="res://content/i18n/dark_dialogue.csv"
+dest_files=["res://content/i18n/dark_dialogue.zh.translation", "res://content/i18n/dark_dialogue.en.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

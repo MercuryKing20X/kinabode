@@ -1,0 +1,13 @@
+{
+  "id": "dark-gentle-beacon",
+  "context": "dark_beacon",
+  "lines": [
+    "嗯，灯醒过来了呢。",
+    "嗯，这一片都亮了呢。",
+    "嗯，以后回来就认得路了呢。",
+    "嗯，大家都在这里呢。",
+    "嗯，这盏灯等到人了呢。",
+    "嗯，给夜里回家的船看看呢。"
+  ],
+  "autonomy_output": false
+}

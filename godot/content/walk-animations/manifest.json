@@ -1,0 +1,2929 @@
+{
+  "version": 1,
+  "columns": 6,
+  "works": {
+    "human-starter": {
+      "base_frame_sha256": "dbe42774ceb046eab8c76b46a3c69e7bb8de99899992b58f3d005c4f5e0bdb19",
+      "base_palette_sha256": "c943b0160789f4f42e6495470aa08c9f87c5ee627b24e000f69b79a0b40cea11",
+      "status": "independent",
+      "asset": "human-starter.png",
+      "feet": [
+        [
+          {
+            "pixel": [
+              53,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              43,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              41,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              50,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              51,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              42,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              41,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              37,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              35,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              38,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              43,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              59,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              55,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              53,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              53,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              54,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              55,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              42,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              39,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              39,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              40,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              51,
+              119
+            ],
+            "airborne": false
+          }
+        ]
+      ],
+      "source_sha256": "7fc4f8fffc78d18bfcce4b3cf772bfd1f4418040123fd22092f2b9aa695d589f",
+      "source": "production/art/actions-redraw-20261105/human-starter-walk-raw.png",
+      "provenance": "Authorized generated walking source; original-palette nearest-neighbor pixel cleanup; opposite leg silhouette offsets; right mirrored from left. No original work overwritten."
+    },
+    "white-haired-girl": {
+      "base_frame_sha256": "96b164ee296f6a4799fbf7a746656a5ff2f26de6877346f65f8d2f8896bcd5bf",
+      "base_palette_sha256": "8124cf36514075f92879648b331b86a4e07bca319c973020545e736fee8adb7c",
+      "status": "independent",
+      "asset": "white-haired-girl.png",
+      "feet": [
+        [
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              43,
+              113
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              48,
+              112
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              38,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              39,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              44,
+              112
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              53,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              52,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              48,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              49,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              51,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              45,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              43,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              42,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              44,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              56,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              41,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              50,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              37,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              51,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              43,
+              119
+            ],
+            "airborne": false
+          }
+        ]
+      ],
+      "source_sha256": "6136d299a4064a00aaf122f0767379471c2706a1f1565d4c46659a4f90b5c06a",
+      "source": "production/art/actions-redraw-20261105/white-haired-girl-walk-raw.png",
+      "provenance": "Authorized generated walking source; original-palette nearest-neighbor pixel cleanup; opposite leg silhouette offsets; right mirrored from left. No original work overwritten."
+    },
+    "blue-haired-girl": {
+      "base_frame_sha256": "c54c16398762f9f8decb16844057aaec337a72ae677b87a0bd5b71097664e0e2",
+      "base_palette_sha256": "9ec5043b5b8786ee787db78bb746265f076dd9fa569e2470202bc9a7963477b0",
+      "status": "independent",
+      "asset": "blue-haired-girl.png",
+      "feet": [
+        [
+          {
+            "pixel": [
+              49,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              47,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              39,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              49,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              45,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              44,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              41,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              40,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              34,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              34,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              37,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              38,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              60,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              56,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              56,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              54,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              55,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              60,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              52,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              53,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              41,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              49,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              49,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              53,
+              119
+            ],
+            "airborne": false
+          }
+        ]
+      ],
+      "source_sha256": "3d45f2f0294b43dfcc37ea89c7a3c5e660e75b9006719bd37df13f0a660e77c0",
+      "source": "production/art/actions-redraw-20261105/blue-haired-girl-walk-raw.png",
+      "provenance": "Authorized generated walking source; original-palette nearest-neighbor pixel cleanup; opposite leg silhouette offsets; right mirrored from left. No original work overwritten."
+    },
+    "orange-haired-girl": {
+      "base_frame_sha256": "478dfc99c2cf2705295f71719604d2afe13696f5b318deafac305d9aa0400283",
+      "base_palette_sha256": "5c1716b5357596bd52f57647440e53b1f0bffe816e607477835ccc92121ab058",
+      "status": "independent",
+      "asset": "orange-haired-girl.png",
+      "feet": [
+        [
+          {
+            "pixel": [
+              51,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              51,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              46,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              44,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              45,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              53,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              39,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              39,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              38,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              36,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              40,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              44,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              61,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              57,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              52,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              52,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              53,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              53,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              54,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              52,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              49,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              49,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              50,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              53,
+              119
+            ],
+            "airborne": false
+          }
+        ]
+      ],
+      "source_sha256": "1a1322d9e2708c5cc3438be24e087e806c1f4a6905fc07a2cadd0b5874a0388f",
+      "source": "production/art/actions-redraw-20261105/orange-haired-girl-walk-raw.png",
+      "provenance": "Authorized generated walking source; original-palette nearest-neighbor pixel cleanup; opposite leg silhouette offsets; right mirrored from left. No original work overwritten."
+    },
+    "black-scarf-girl": {
+      "base_frame_sha256": "b3981ca19fb191368892c95d36e2a7723bda89df54a57428a7ea4162851a9f82",
+      "base_palette_sha256": "dff345190cdc6cc268a3d9c8c30fa809c23cc0a5ebf96297b2b2aae4f8e40a3e",
+      "status": "independent",
+      "asset": "black-scarf-girl.png",
+      "feet": [
+        [
+          {
+            "pixel": [
+              38,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              38,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              33,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              36,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              39,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              38,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              37,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              34,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              34,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              36,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              37,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              62,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              59,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              56,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              55,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              57,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              62,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              43,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              46,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              38,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              36,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              46,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false
+          }
+        ]
+      ],
+      "source_sha256": "a17fe168e8696049847224965b1a0cd90f9a45bde7e3f7c203ec6bc6228939a7",
+      "source": "production/art/actions-redraw-20261105/black-scarf-girl-walk-raw.png",
+      "provenance": "Authorized generated walking source; original-palette nearest-neighbor pixel cleanup; opposite leg silhouette offsets; right mirrored from left. No original work overwritten."
+    },
+    "ai-gpt": {
+      "base_frame_sha256": "97bfe71c0a9f69f4383ff560f9a7aa89cb742616695178d0d5288b362df0e5c5",
+      "base_palette_sha256": "bf03fa73a1baca8acf3709355b3dd80810ac7282237f6308f9777e03eacf8bcc",
+      "status": "independent",
+      "asset": "ai-gpt.png",
+      "feet": [
+        [
+          {
+            "pixel": [
+              54,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              57,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              40,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              39,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              41,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              44,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              37,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              54,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              30,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              32,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              32,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              37,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              64,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              42,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              59,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              56,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              60,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              61,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              48,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              50,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              41,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              48,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              50,
+              119
+            ],
+            "airborne": false
+          }
+        ]
+      ],
+      "source_sha256": "5056596eb6a66a3564c3648f4426e41b8de740c67cf64362ad3e7c60b3c05a7c",
+      "source": "production/art/actions-redraw-20261105/ai-gpt-walk-raw.png",
+      "provenance": "Authorized generated walking source; original-palette nearest-neighbor pixel cleanup; opposite leg silhouette offsets; right mirrored from left. No original work overwritten."
+    },
+    "ai-claude": {
+      "base_frame_sha256": "8ca858401b8c00fba278363dd72c4a1e700887bf795968a9e3ab173cb5536bd5",
+      "base_palette_sha256": "5df657effb67508bdc1554fbaf31705fa36aa4cdc60d4232ac01f1d0fe4806bd",
+      "status": "independent",
+      "asset": "ai-claude.png",
+      "feet": [
+        [
+          {
+            "pixel": [
+              56,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              49,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              44,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              46,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              48,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              56,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              40,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              39,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              35,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              33,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              41,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              41,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              60,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              58,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              56,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              54,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              51,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              58,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              46,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              43,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              51,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              51,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              43,
+              119
+            ],
+            "airborne": false
+          }
+        ]
+      ],
+      "source_sha256": "e36c3d4071a8e342f7e391aa5f2f90231be845cba0c3e27a9d4783e8d9f050ff",
+      "source": "production/art/actions-redraw-20261105/ai-claude-walk-raw.png",
+      "provenance": "Authorized generated walking source; original-palette nearest-neighbor pixel cleanup; opposite leg silhouette offsets; right mirrored from left. No original work overwritten."
+    },
+    "ai-gemini": {
+      "base_frame_sha256": "367691b03a9cc8889ed10aab86a237c45a2f8581334f705aa75e2e3f2679e245",
+      "base_palette_sha256": "d17c803b29304b89be1d1a8cf36c1ba74661e45ce8422af8c0c7e12a78f6a2fb",
+      "status": "independent",
+      "asset": "ai-gemini.png",
+      "feet": [
+        [
+          {
+            "pixel": [
+              52,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              43,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              46,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              41,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              49,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              38,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              35,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              33,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              31,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              34,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              39,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              62,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              62,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              57,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              56,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              58,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              58,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              51,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              46,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              41,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              49,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              52,
+              119
+            ],
+            "airborne": false
+          }
+        ]
+      ],
+      "source_sha256": "7c6d14d6c8d5db30ac855e6d031724c19e6474a0f212496d4ca95055455f4931",
+      "source": "production/art/actions-redraw-20261105/ai-gemini-walk-raw.png",
+      "provenance": "Authorized generated walking source; original-palette nearest-neighbor pixel cleanup; opposite leg silhouette offsets; right mirrored from left. No original work overwritten."
+    },
+    "ai-grok": {
+      "base_frame_sha256": "baf15fece0a5c0c84ca7fcd634f41b7b6b898fb83b14b97761600fcc284b0439",
+      "base_palette_sha256": "bbb5b1df844f44cd0890f5413dd00384f7ff1a82e61cdefad3041c7317e7afdd",
+      "status": "independent",
+      "asset": "ai-grok.png",
+      "feet": [
+        [
+          {
+            "pixel": [
+              52,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              47,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              48,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              50,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              57,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              42,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              39,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              35,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              34,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              36,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              39,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              59,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              58,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              56,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              54,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              57,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              60,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              50,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              44,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              39,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              39,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              49,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              50,
+              119
+            ],
+            "airborne": false
+          }
+        ]
+      ],
+      "source_sha256": "a79db356bf323159ef886472a6466dbbebd6d00038be1f6ae9d68e78752ddf78",
+      "source": "production/art/actions-redraw-20261105/ai-grok-walk-raw.png",
+      "provenance": "Authorized generated walking source; original-palette nearest-neighbor pixel cleanup; opposite leg silhouette offsets; right mirrored from left. No original work overwritten."
+    },
+    "ai-deepseek": {
+      "base_frame_sha256": "14b4cd844d454a21ed7cd4f5bccb6836151f8411823272af672143b3931bdd19",
+      "base_palette_sha256": "b2c2450b65057646228f23fb47697d8dc5d5f869385fca7cd265dfeee3201d25",
+      "status": "independent",
+      "asset": "ai-deepseek.png",
+      "feet": [
+        [
+          {
+            "pixel": [
+              49,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              52,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              46,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              40,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              44,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              40,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              44,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              40,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              41,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              36,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              46,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              61,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              52,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              51,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              48,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              57,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              52,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              52,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              52,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              44,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              50,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              48,
+              119
+            ],
+            "airborne": false
+          }
+        ]
+      ],
+      "source_sha256": "21a02657cfb26753008e1279b0b2c0be40afd99d0de414b48d643aaf94076c05",
+      "source": "production/art/actions-redraw-20261105/ai-deepseek-walk-raw.png",
+      "provenance": "Authorized generated walking source; original-palette nearest-neighbor pixel cleanup; opposite leg silhouette offsets; right mirrored from left. No original work overwritten."
+    },
+    "ai-glm": {
+      "base_frame_sha256": "ad27f3e334a4bdfb11f0b318f6e902b400e2a16d4094bbda645cb67d92afb293",
+      "base_palette_sha256": "dfe1593117447f673fd65c4fe8d5e13ef2f275b9b995deb68b7184484b8c4895",
+      "status": "independent",
+      "asset": "ai-glm.png",
+      "feet": [
+        [
+          {
+            "pixel": [
+              50,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              50,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              43,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              46,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              48,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              48,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              56,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              52,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              48,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              50,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              53,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              55,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              44,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              44,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              41,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              39,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              39,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              43,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              52,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              50,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              49,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              46,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              49,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              50,
+              119
+            ],
+            "airborne": false
+          }
+        ]
+      ],
+      "source_sha256": "e500e926d4acf0b084bb738bf0660c60a6c43d493b376ed8bcef669466cab3c5",
+      "source": "production/art/actions-redraw-20261105/ai-glm-walk-raw.png",
+      "provenance": "Authorized generated walking source; original-palette nearest-neighbor pixel cleanup; opposite leg silhouette offsets; right mirrored from left. No original work overwritten."
+    },
+    "ai-qwen": {
+      "base_frame_sha256": "2c408077930eb176ee7ca938e7f2e5af09c56f51b19962f683414c24fb1dca01",
+      "base_palette_sha256": "17b58940cd27fff5915849d3ff6a3709b5f8c08f7d8a91f9f23e7df592ee922d",
+      "status": "independent",
+      "asset": "ai-qwen.png",
+      "feet": [
+        [
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              46,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              41,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              43,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              43,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              46,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              40,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              38,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              35,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              34,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              36,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              39,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              61,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              59,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              56,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              55,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              56,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              59,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              53,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              52,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              49,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              48,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              49,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              53,
+              119
+            ],
+            "airborne": false
+          }
+        ]
+      ],
+      "source_sha256": "7498a50066878e2e1ebb5ff306628d47755b0028bc38641e8042929a4be958cf",
+      "source": "production/art/actions-redraw-20261105/ai-qwen-walk-raw.png",
+      "provenance": "Authorized generated walking source; original-palette nearest-neighbor pixel cleanup; opposite leg silhouette offsets; right mirrored from left. No original work overwritten."
+    },
+    "ai-kimi": {
+      "base_frame_sha256": "6f172cfecebda0e0667500df61cc1b19227fb02f244aa62a910a8b8d97056670",
+      "base_palette_sha256": "7c1e864229eb610fb7440ad2123350aa92a65564a1d219fd60542e918dc4b1cd",
+      "status": "independent",
+      "asset": "ai-kimi.png",
+      "feet": [
+        [
+          {
+            "pixel": [
+              49,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              49,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              39,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              41,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              44,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              40,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              43,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              34,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              33,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              36,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              38,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              60,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              53,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              56,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              55,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              55,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              60,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              46,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              49,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              40,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              46,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              48,
+              120
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              48,
+              119
+            ],
+            "airborne": false
+          }
+        ]
+      ],
+      "source_sha256": "e2e56a7cbf493526c314de2f16f95167e6712be56a0ba4148c02956013b75af5",
+      "source": "production/art/actions-redraw-20261105/ai-kimi-walk-raw.png",
+      "provenance": "Authorized generated walking source; original-palette nearest-neighbor pixel cleanup; opposite leg silhouette offsets; right mirrored from left. No original work overwritten."
+    },
+    "suit-hulk": {
+      "status": "independent",
+      "asset": "suit-hulk.png",
+      "base_frame_sha256": "29ccb8b7fe9c02e7f31412957a1806b1c74fd4c7ea23c4fdd1d7dafa51666f1d",
+      "base_palette_sha256": "11c991c118769b3206091e3e74752db3f73be94d015bbd12726972b2ae31f060",
+      "provenance": "production/art/suit-hulk-v2-20261106/provenance.json",
+      "feet": [
+        [
+          {
+            "pixel": [
+              57,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              59,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              54,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              60,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              60,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              55,
+              118
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              60,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              48,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              46,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              30,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              43,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              46,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              66,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              47,
+              118
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              38,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              72,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              60,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              39,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              32,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              29,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              38,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              48,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              37,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              31,
+              119
+            ],
+            "airborne": false
+          }
+        ]
+      ]
+    },
+    "orange-sunflower-girl": {
+      "base_frame_sha256": "a4e5a655538ac5a78722be8c6b72f84a21d5268e1209b2a3d24ecb686a78c741",
+      "base_palette_sha256": "d08f948100854ec6bc44a07d92ea1aa7dc20ed47d2108b5e5ff99519417d42ae",
+      "status": "independent",
+      "asset": "orange-sunflower-girl.png",
+      "frames": 24,
+      "method": "new whole-body illustrated pose source, uniform pixel downsample; no limb assembly, body transplant or palette swap",
+      "provenance": "production/art/orange-cohesive-20261111/provenance.json",
+      "feet": [
+        [
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              62,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              41,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              50,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              48,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              49,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              51,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              50,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              49,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              49,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              51,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              44,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              43,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              46,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              50,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              42,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              42,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              39,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              50,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ]
+      ]
+    }
+  }
+}

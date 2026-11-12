@@ -1,0 +1,640 @@
+{
+  "version": 1,
+  "region_id": "dark",
+  "size": [
+    187,
+    240
+  ],
+  "future_size": [
+    480,
+    384
+  ],
+  "home_dock": [
+    129,
+    17
+  ],
+  "home_arrival": [
+    129,
+    20
+  ],
+  "dock": [
+    34,
+    105
+  ],
+  "arrival": [
+    34,
+    101
+  ],
+  "camp": [
+    38,
+    98
+  ],
+  "camp_radius": 10,
+  "bare_radius": 2,
+  "soft_edge": 1.5,
+  "torch_radius": 4,
+  "fire_radius": 5,
+  "torch_seconds": 120,
+  "torch_warning_seconds": 20,
+  "torch_wood": 1,
+  "fire_wood": 2,
+  "beacon_wood": 6,
+  "fire_spacing": 8,
+  "interact_radius": 2.5,
+  "gesture_seconds": 0.5,
+  "beacon_spread_seconds": 2.6,
+  "ponds": [
+    [
+      [
+        94,
+        39
+      ],
+      [
+        108,
+        33
+      ],
+      [
+        121,
+        42
+      ],
+      [
+        125,
+        58
+      ],
+      [
+        116,
+        69
+      ],
+      [
+        99,
+        65
+      ],
+      [
+        91,
+        52
+      ]
+    ]
+  ],
+  "areas": [
+    {
+      "id": "grove",
+      "name": "发光蘑菇林",
+      "polygon": [
+        [
+          16,
+          20
+        ],
+        [
+          80,
+          20
+        ],
+        [
+          80,
+          89
+        ],
+        [
+          17,
+          89
+        ]
+      ],
+      "beacon": [
+        65,
+        42
+      ]
+    },
+    {
+      "id": "lake",
+      "name": "萤火虫湖边",
+      "polygon": [
+        [
+          80,
+          20
+        ],
+        [
+          141,
+          20
+        ],
+        [
+          141,
+          91
+        ],
+        [
+          80,
+          91
+        ]
+      ]
+    },
+    {
+      "id": "cedar",
+      "name": "幽光杉径",
+      "polygon": [
+        [
+          26,
+          -44
+        ],
+        [
+          76,
+          -44
+        ],
+        [
+          77,
+          2
+        ],
+        [
+          24,
+          2
+        ]
+      ],
+      "beacon": [
+        52,
+        -24
+      ]
+    },
+    {
+      "id": "tide",
+      "name": "静潮石湾",
+      "polygon": [
+        [
+          88,
+          -42
+        ],
+        [
+          142,
+          -42
+        ],
+        [
+          147,
+          4
+        ],
+        [
+          88,
+          4
+        ]
+      ],
+      "beacon": [
+        116,
+        -22
+      ]
+    },
+    {
+      "id": "stars",
+      "name": "星空崖",
+      "polygon": [
+        [
+          32,
+          -98
+        ],
+        [
+          80,
+          -98
+        ],
+        [
+          80,
+          -54
+        ],
+        [
+          28,
+          -54
+        ]
+      ],
+      "starlight": true
+    },
+    {
+      "id": "heather",
+      "name": "灯芯草原",
+      "polygon": [
+        [
+          88,
+          -94
+        ],
+        [
+          140,
+          -94
+        ],
+        [
+          150,
+          -55
+        ],
+        [
+          88,
+          -55
+        ]
+      ],
+      "beacon": [
+        116,
+        -75
+      ]
+    }
+  ],
+  "paths": [
+    [
+      [
+        34,
+        103
+      ],
+      [
+        35,
+        85
+      ],
+      [
+        43,
+        73
+      ],
+      [
+        44,
+        55
+      ],
+      [
+        65,
+        42
+      ]
+    ],
+    [
+      [
+        43,
+        73
+      ],
+      [
+        68,
+        82
+      ],
+      [
+        86,
+        77
+      ],
+      [
+        111,
+        78
+      ],
+      [
+        132,
+        65
+      ]
+    ],
+    [
+      [
+        44,
+        55
+      ],
+      [
+        80,
+        53
+      ],
+      [
+        86,
+        32
+      ],
+      [
+        109,
+        25
+      ],
+      [
+        132,
+        41
+      ]
+    ],
+    [
+      [
+        68,
+        82
+      ],
+      [
+        77,
+        64
+      ],
+      [
+        80,
+        53
+      ]
+    ],
+    [
+      [
+        65,
+        42
+      ],
+      [
+        62,
+        15
+      ],
+      [
+        60,
+        -7
+      ],
+      [
+        52,
+        -24
+      ]
+    ],
+    [
+      [
+        109,
+        25
+      ],
+      [
+        108,
+        8
+      ],
+      [
+        116,
+        -22
+      ]
+    ],
+    [
+      [
+        52,
+        -24
+      ],
+      [
+        82,
+        -18
+      ],
+      [
+        116,
+        -22
+      ]
+    ],
+    [
+      [
+        52,
+        -24
+      ],
+      [
+        52,
+        -47
+      ],
+      [
+        52,
+        -78
+      ]
+    ],
+    [
+      [
+        116,
+        -22
+      ],
+      [
+        116,
+        -49
+      ],
+      [
+        116,
+        -75
+      ]
+    ],
+    [
+      [
+        52,
+        -78
+      ],
+      [
+        82,
+        -70
+      ],
+      [
+        116,
+        -75
+      ]
+    ]
+  ],
+  "glows": [
+    {
+      "kind": "mushroom",
+      "position": [
+        34,
+        83
+      ]
+    },
+    {
+      "kind": "mushroom",
+      "position": [
+        47,
+        68
+      ]
+    },
+    {
+      "kind": "mushroom",
+      "position": [
+        40,
+        54
+      ]
+    },
+    {
+      "kind": "mushroom",
+      "position": [
+        61,
+        49
+      ]
+    },
+    {
+      "kind": "mushroom",
+      "position": [
+        69,
+        36
+      ]
+    },
+    {
+      "kind": "mushroom",
+      "position": [
+        74,
+        71
+      ]
+    },
+    {
+      "kind": "mushroom",
+      "position": [
+        29,
+        48
+      ]
+    },
+    {
+      "kind": "firefly",
+      "position": [
+        89,
+        66
+      ]
+    },
+    {
+      "kind": "firefly",
+      "position": [
+        109,
+        73
+      ]
+    },
+    {
+      "kind": "firefly",
+      "position": [
+        128,
+        59
+      ]
+    },
+    {
+      "kind": "firefly",
+      "position": [
+        125,
+        37
+      ]
+    },
+    {
+      "kind": "firefly",
+      "position": [
+        88,
+        33
+      ]
+    },
+    {
+      "kind": "mushroom",
+      "position": [
+        62,
+        8
+      ]
+    },
+    {
+      "kind": "firefly",
+      "position": [
+        60,
+        -7
+      ]
+    },
+    {
+      "kind": "mushroom",
+      "position": [
+        52,
+        -20
+      ]
+    },
+    {
+      "kind": "firefly",
+      "position": [
+        98,
+        12
+      ]
+    },
+    {
+      "kind": "mushroom",
+      "position": [
+        108,
+        -4
+      ]
+    },
+    {
+      "kind": "firefly",
+      "position": [
+        118,
+        -20
+      ]
+    },
+    {
+      "kind": "mushroom",
+      "position": [
+        82,
+        -18
+      ]
+    },
+    {
+      "kind": "firefly",
+      "position": [
+        52,
+        -46
+      ]
+    },
+    {
+      "kind": "firefly",
+      "position": [
+        52,
+        -63
+      ]
+    },
+    {
+      "kind": "firefly",
+      "position": [
+        83,
+        -70
+      ]
+    },
+    {
+      "kind": "firefly",
+      "position": [
+        115,
+        -48
+      ]
+    },
+    {
+      "kind": "firefly",
+      "position": [
+        116,
+        -62
+      ]
+    }
+  ],
+  "audio": {
+    "wind_gain": 0.22,
+    "wind_gust_gain": 0.4,
+    "waves_gain": 0.35,
+    "insects_gain": 0.45
+  },
+  "companion_behaviors": {
+    "gentle": "dark-gentle-nearby",
+    "lively": "dark-lively-nearby",
+    "quiet": "dark-quiet-nearby",
+    "laborious": "dark-laborious-nearby"
+  },
+  "walking_connection": {
+    "home_end": [
+      129,
+      1
+    ],
+    "dark_end": [
+      34,
+      127
+    ],
+    "home_bridge": [
+      [
+        126,
+        0
+      ],
+      [
+        132,
+        0
+      ],
+      [
+        132,
+        21
+      ],
+      [
+        126,
+        21
+      ]
+    ],
+    "dark_bridge": [
+      [
+        31,
+        101
+      ],
+      [
+        37,
+        101
+      ],
+      [
+        37,
+        127.9
+      ],
+      [
+        31,
+        127.9
+      ]
+    ]
+  },
+  "local_origin": [
+    0,
+    -112
+  ],
+  "personality_motion": {
+    "lively_ahead": 0.8,
+    "gentle_pause_seconds": 1.6,
+    "gentle_close": 1.2,
+    "orange_return_distance": 24,
+    "quiet_distance": 3.0,
+    "laborious_distance": 2.0,
+    "star_gather_radius": 10
+  }
+}

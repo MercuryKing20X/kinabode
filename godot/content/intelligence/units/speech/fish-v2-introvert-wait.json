@@ -1,0 +1,11 @@
+{
+  "id": "fish-v2-introvert-wait",
+  "context": "fishing_v2_wait",
+  "lines": [
+    "嗯，海面静静的，再等等。",
+    "……还没有动静，不着急。",
+    "看，浮漂还在水面上。",
+    "好，也许鱼儿正在附近。"
+  ],
+  "autonomy_output": false
+}

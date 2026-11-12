@@ -1,0 +1,11 @@
+{
+  "id": "fish-v2-laborious-lost",
+  "context": "fishing_v2_lost",
+  "lines": [
+    "好，鱼儿脱钩游走了。",
+    "稳住，这次没能留住鱼。",
+    "接着，鱼线松了，鱼儿跑掉啦。",
+    "认真一点，没钓到也没关系，再试试。"
+  ],
+  "autonomy_output": false
+}

@@ -1,0 +1,11 @@
+{
+  "id": "hunger-full",
+  "context": "hunger_full",
+  "lines": [
+    "刚刚吃得好满足。",
+    "热乎乎的一餐真舒服。",
+    "吃饱后慢慢待一会儿。",
+    "现在精神好多啦。"
+  ],
+  "autonomy_output": false
+}

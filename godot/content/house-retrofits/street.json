@@ -1,0 +1,266 @@
+{
+  "camera": [
+    43,
+    41
+  ],
+  "detail": [
+    43,
+    41
+  ],
+  "plaza": [
+    [
+      32,
+      41.1
+    ],
+    [
+      35,
+      39.6
+    ],
+    [
+      40.3,
+      39.8
+    ],
+    [
+      43.5,
+      42.6
+    ],
+    [
+      41.9,
+      45.1
+    ],
+    [
+      36,
+      45.8
+    ],
+    [
+      33,
+      44.4
+    ]
+  ],
+  "paving": [
+    [
+      36.6,
+      40.7
+    ],
+    [
+      39.4,
+      40.6
+    ],
+    [
+      40,
+      42.7
+    ],
+    [
+      37.7,
+      43.6
+    ],
+    [
+      36,
+      42.6
+    ]
+  ],
+  "roads": [
+    {
+      "points": [
+        [
+          28,
+          42.4
+        ],
+        [
+          43,
+          43
+        ],
+        [
+          57,
+          42.6
+        ]
+      ],
+      "width": 1.0
+    },
+    {
+      "points": [
+        [
+          43,
+          43
+        ],
+        [
+          44,
+          45
+        ],
+        [
+          32,
+          50.6
+        ],
+        [
+          54,
+          51
+        ]
+      ],
+      "width": 0.8
+    }
+  ],
+  "well": [],
+  "shortcut": [],
+  "houses": [
+    {
+      "id": "human",
+      "position": [
+        33.5,
+        40
+      ]
+    },
+    {
+      "id": "gentle",
+      "position": [
+        43,
+        40.8
+      ]
+    },
+    {
+      "id": "curious",
+      "position": [
+        52.5,
+        40.2
+      ]
+    },
+    {
+      "id": "lively",
+      "position": [
+        38,
+        49
+      ]
+    },
+    {
+      "id": "quiet",
+      "position": [
+        48.5,
+        49.4
+      ]
+    }
+  ],
+  "props": [
+    {
+      "id": "yard-0",
+      "kind": "scenery",
+      "position": [
+        30.2,
+        40.8
+      ],
+      "asset": "fence_h"
+    },
+    {
+      "id": "yard-1",
+      "kind": "scenery",
+      "position": [
+        32.2,
+        41.1
+      ],
+      "asset": "logs"
+    },
+    {
+      "id": "yard-2",
+      "kind": "lamp",
+      "position": [
+        36.7,
+        40.7
+      ]
+    },
+    {
+      "id": "yard-3",
+      "kind": "flower_arch",
+      "position": [
+        43,
+        42.2
+      ]
+    },
+    {
+      "id": "yard-4",
+      "kind": "scenery",
+      "position": [
+        40.4,
+        42.3
+      ],
+      "asset": "flowers"
+    },
+    {
+      "id": "yard-5",
+      "kind": "scenery",
+      "position": [
+        46,
+        42
+      ],
+      "asset": "flowers"
+    },
+    {
+      "id": "yard-6",
+      "kind": "telescope",
+      "position": [
+        55.1,
+        41.9
+      ]
+    },
+    {
+      "id": "yard-7",
+      "kind": "scenery",
+      "position": [
+        50,
+        42
+      ],
+      "asset": "chest"
+    },
+    {
+      "id": "yard-8",
+      "kind": "clothesline",
+      "position": [
+        37.3,
+        50.1
+      ]
+    },
+    {
+      "id": "yard-9",
+      "kind": "windchime",
+      "position": [
+        40.6,
+        49.3
+      ]
+    },
+    {
+      "id": "yard-10",
+      "kind": "scenery",
+      "position": [
+        34.9,
+        49.4
+      ],
+      "asset": "fence_v"
+    },
+    {
+      "id": "yard-11",
+      "kind": "bench",
+      "position": [
+        50.8,
+        50
+      ]
+    },
+    {
+      "id": "yard-12",
+      "kind": "lamp",
+      "position": [
+        45.5,
+        50.1
+      ]
+    },
+    {
+      "id": "yard-13",
+      "kind": "scenery",
+      "position": [
+        46,
+        50.4
+      ],
+      "asset": "flowers"
+    }
+  ],
+  "foliage": [],
+  "actors": [],
+  "snapshot_only": true,
+  "purpose": "five complete master house retrofits, no world map or playable data"
+}

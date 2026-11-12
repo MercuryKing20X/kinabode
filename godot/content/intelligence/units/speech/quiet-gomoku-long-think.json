@@ -1,0 +1,11 @@
+{
+  "id": "quiet-gomoku-long-think",
+  "context": "gomoku_long_think",
+  "lines": [
+    "嗯。我再想一下这一步。",
+    "我看看。这处要多看一会儿。",
+    "轻声说。不急，我还在看棋。",
+    "先看清。让我把几条线看清楚。"
+  ],
+  "autonomy_output": false
+}

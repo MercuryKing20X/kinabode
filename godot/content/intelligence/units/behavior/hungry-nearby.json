@@ -1,0 +1,11 @@
+{
+  "id": "hungry-nearby",
+  "action": "nearby",
+  "conditions": {
+    "hunger_at_least": "hungry"
+  },
+  "cooldown_seconds": 30,
+  "requires_target": true,
+  "weight": 2,
+  "aspect": "social"
+}

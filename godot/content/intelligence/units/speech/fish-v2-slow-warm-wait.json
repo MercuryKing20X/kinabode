@@ -1,0 +1,11 @@
+{
+  "id": "fish-v2-slow-warm-wait",
+  "context": "fishing_v2_wait",
+  "lines": [
+    "轻轻地，海面静静的，再等等。",
+    "嗯，还没有动静，不着急。",
+    "好呀，浮漂还在水面上。",
+    "慢慢来，也许鱼儿正在附近。"
+  ],
+  "autonomy_output": false
+}

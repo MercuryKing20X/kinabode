@@ -1,0 +1,168 @@
+{
+  "home_dock": [
+    81,
+    109
+  ],
+  "arrival": [
+    81,
+    180
+  ],
+  "dock": [
+    81,
+    176
+  ],
+  "camp": [
+    81,
+    185
+  ],
+  "cat_home": [
+    88,
+    180
+  ],
+  "mushrooms": [
+    {
+      "id": "homelands.mushrooms.1",
+      "position": [
+        95,
+        190
+      ]
+    }
+  ],
+  "offset": [
+    -19,
+    150
+  ],
+  "bounds": [
+    20,
+    162,
+    125,
+    90
+  ],
+  "merged_version": 2,
+  "their_island": {
+    "meal_threshold": 3,
+    "retry_seconds": 180,
+    "territories": [
+      {
+        "owner_id": "codex",
+        "anchor": [
+          33,
+          238
+        ],
+        "sign": [
+          33,
+          205
+        ]
+      },
+      {
+        "owner_id": "companion-2",
+        "anchor": [
+          57,
+          238
+        ],
+        "sign": [
+          57,
+          205
+        ]
+      },
+      {
+        "owner_id": "shared",
+        "anchor": [
+          81,
+          238
+        ],
+        "sign": [
+          81,
+          205
+        ]
+      },
+      {
+        "owner_id": "npc.mira",
+        "anchor": [
+          105,
+          238
+        ],
+        "sign": [
+          105,
+          205
+        ]
+      },
+      {
+        "owner_id": "npc.nora",
+        "anchor": [
+          129,
+          238
+        ],
+        "sign": [
+          129,
+          205
+        ]
+      }
+    ]
+  },
+  "roads": [
+    {
+      "id": "arrival",
+      "points": [
+        [
+          81,
+          178
+        ],
+        [
+          81,
+          185
+        ],
+        [
+          93,
+          185
+        ],
+        [
+          93,
+          208
+        ],
+        [
+          57,
+          208
+        ]
+      ]
+    },
+    {
+      "id": "doors",
+      "points": [
+        [
+          39,
+          205.5
+        ],
+        [
+          39,
+          208
+        ],
+        [
+          75,
+          208
+        ],
+        [
+          75,
+          205.5
+        ]
+      ]
+    },
+    {
+      "id": "pool",
+      "points": [
+        [
+          57,
+          208
+        ],
+        [
+          57,
+          235
+        ]
+      ]
+    }
+  ],
+  "plaza": [
+    81,
+    185
+  ]
+}

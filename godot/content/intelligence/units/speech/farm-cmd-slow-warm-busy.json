@@ -1,0 +1,11 @@
+{
+  "id": "farm-cmd-slow-warm-busy",
+  "context": "farm_command_busy",
+  "lines": [
+    "……等我一下，好吗？",
+    "我还在忙。",
+    "再等等。",
+    "……快好了。"
+  ],
+  "autonomy_output": false
+}

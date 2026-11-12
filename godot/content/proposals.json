@@ -1,0 +1,10 @@
+{
+  "version":1,"max_text":40,"max_ttl_seconds":600,"default_ttl_seconds":300,
+  "activities":{
+    "fish_together":{"name":"一起钓鱼","target":"sea"},
+    "cook_together":{"name":"一起做菜","target":"recipe"},
+    "homestead_together":{"name":"一起建家园","target":"homestead"},
+    "sit_together":{"name":"来坐坐","target":"table"},
+    "watch_fishery":{"name":"去看渔场","target":"fishery"}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "author": "Original hand-authored pixel matrix for 有栖 M1, 2026-10-26",
+  "palette": {".":"00000000","o":"283d37ff","b":"92694aff","c":"c79560ff","h":"e6c48cff","s":"f4dfadff","v":"b87346ff","g":"759553ff"},
+  "rows": [
+    "........................",
+    ".........oooooo.........",
+    "........obhhhhoo........",
+    "......oobcccccboo.......",
+    "....oobhhsssshhboo......",
+    "...obhhssgssvsshhbo.....",
+    ".ooobhssoosssgsshbooo...",
+    "obbbobhhsssssshhbobbbbo.",
+    "obccooobhhsshhbooocccbo.",
+    ".ooooobboooooobbbooooo..",
+    ".....obcccccccchbo......",
+    ".....obcccccchhhbo......",
+    ".....obcccccchhhbo......",
+    "......obccccchhbo.......",
+    "......obbbbbbbbo........",
+    ".......oobbbboo.........",
+    ".........oooo...........",
+    "........................"
+  ]
+}

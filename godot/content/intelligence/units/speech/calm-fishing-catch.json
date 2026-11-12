@@ -1,0 +1,9 @@
+{
+  "id": "calm-fishing-catch",
+  "context": "fishing_catch",
+  "lines": [
+    "原来是你呀。",
+    "钓到了，给你看看。"
+  ],
+  "autonomy_output": false
+}

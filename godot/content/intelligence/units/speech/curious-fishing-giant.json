@@ -1,0 +1,9 @@
+{
+  "id": "curious-fishing-giant",
+  "context": "fishing_giant",
+  "lines": [
+    "这么大的尾巴，怎么藏在海里的？",
+    "原来真的能长到这么大！"
+  ],
+  "autonomy_output": false
+}

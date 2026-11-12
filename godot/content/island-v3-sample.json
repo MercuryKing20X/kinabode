@@ -1,0 +1,618 @@
+{
+  "version": 1,
+  "id": "island-v3-sample",
+  "snapshot_only": true,
+  "tile_pixels": 32,
+  "size": [
+    40,
+    25
+  ],
+  "default_material": "grass",
+  "patches": [
+    {
+      "rect": [
+        0,
+        23,
+        40,
+        2
+      ],
+      "material": "deep_water"
+    },
+    {
+      "rect": [
+        0,
+        22,
+        40,
+        1
+      ],
+      "material": "shallow_water"
+    },
+    {
+      "rect": [
+        0,
+        21,
+        40,
+        1
+      ],
+      "material": "sand"
+    },
+    {
+      "rect": [
+        3,
+        14,
+        3,
+        1
+      ],
+      "material": "sand"
+    },
+    {
+      "rect": [
+        1,
+        15,
+        6,
+        1
+      ],
+      "material": "sand"
+    },
+    {
+      "rect": [
+        0,
+        16,
+        8,
+        1
+      ],
+      "material": "sand"
+    },
+    {
+      "rect": [
+        0,
+        17,
+        9,
+        3
+      ],
+      "material": "sand"
+    },
+    {
+      "rect": [
+        1,
+        20,
+        8,
+        1
+      ],
+      "material": "sand"
+    },
+    {
+      "rect": [
+        2,
+        21,
+        6,
+        1
+      ],
+      "material": "sand"
+    },
+    {
+      "rect": [
+        3,
+        15,
+        3,
+        1
+      ],
+      "material": "shallow_water"
+    },
+    {
+      "rect": [
+        1,
+        16,
+        6,
+        1
+      ],
+      "material": "shallow_water"
+    },
+    {
+      "rect": [
+        1,
+        17,
+        7,
+        2
+      ],
+      "material": "shallow_water"
+    },
+    {
+      "rect": [
+        2,
+        19,
+        6,
+        1
+      ],
+      "material": "shallow_water"
+    },
+    {
+      "rect": [
+        3,
+        20,
+        4,
+        1
+      ],
+      "material": "shallow_water"
+    },
+    {
+      "rect": [
+        3,
+        17,
+        3,
+        1
+      ],
+      "material": "deep_water"
+    },
+    {
+      "rect": [
+        2,
+        18,
+        5,
+        1
+      ],
+      "material": "deep_water"
+    },
+    {
+      "rect": [
+        3,
+        19,
+        3,
+        1
+      ],
+      "material": "deep_water"
+    },
+    {
+      "rect": [
+        0,
+        10,
+        40,
+        2
+      ],
+      "material": "soil"
+    },
+    {
+      "rect": [
+        18,
+        12,
+        4,
+        10
+      ],
+      "material": "soil"
+    },
+    {
+      "rect": [
+        12,
+        14,
+        18,
+        8
+      ],
+      "material": "stone"
+    },
+    {
+      "rect": [
+        29,
+        16,
+        11,
+        1
+      ],
+      "material": "soil"
+    }
+  ],
+  "plateaus": [
+    {
+      "rect": [
+        0,
+        0,
+        40,
+        12
+      ],
+      "half_levels": 1
+    }
+  ],
+  "stairs": [
+    {
+      "rect": [
+        19,
+        11,
+        3,
+        2
+      ]
+    }
+  ],
+  "camera": {
+    "center": [
+      20,
+      12.5
+    ],
+    "detail": [
+      20,
+      9
+    ],
+    "detail_scale": 2
+  },
+  "note": "Snapshot-only art prototype, not a registered/playable island; no world save or resident tasks.",
+  "houses": [
+    {
+      "id": "sample.gentle",
+      "position": [
+        10,
+        11
+      ],
+      "template_id": "cottage-blue",
+      "personality": "gentle",
+      "sign": "花语"
+    },
+    {
+      "id": "sample.curious",
+      "position": [
+        20,
+        11
+      ],
+      "template_id": "cottage",
+      "personality": "curious",
+      "sign": "望星"
+    },
+    {
+      "id": "sample.quiet",
+      "position": [
+        30,
+        11
+      ],
+      "template_id": "cottage-large",
+      "personality": "quiet",
+      "sign": "静读"
+    }
+  ],
+  "actors": [
+    {
+      "resident_id": "codex",
+      "position": [
+        11,
+        15.5
+      ],
+      "artwork_id": "white-haired-girl",
+      "frame": "down_0"
+    },
+    {
+      "resident_id": "companion-2",
+      "position": [
+        22.5,
+        18
+      ],
+      "artwork_id": "blue-haired-girl",
+      "frame": "left_0"
+    },
+    {
+      "resident_id": "npc.mira",
+      "position": [
+        17,
+        18.5
+      ],
+      "artwork_id": "orange-haired-girl",
+      "frame": "right_0"
+    },
+    {
+      "resident_id": "npc.nora",
+      "position": [
+        31.5,
+        15
+      ],
+      "artwork_id": "black-scarf-girl",
+      "frame": "left_0"
+    }
+  ],
+  "props": [
+    {
+      "id": "prop.1",
+      "kind": "well",
+      "position": [
+        20,
+        17
+      ]
+    },
+    {
+      "id": "prop.2",
+      "kind": "notice",
+      "position": [
+        15,
+        14.5
+      ]
+    },
+    {
+      "id": "prop.3",
+      "kind": "lamp",
+      "position": [
+        13,
+        14
+      ]
+    },
+    {
+      "id": "prop.4",
+      "kind": "lamp",
+      "position": [
+        28.5,
+        14
+      ]
+    },
+    {
+      "id": "prop.5",
+      "kind": "campfire",
+      "position": [
+        25.5,
+        18
+      ]
+    },
+    {
+      "id": "prop.6",
+      "kind": "crates",
+      "position": [
+        28.8,
+        20.2
+      ]
+    },
+    {
+      "id": "prop.7",
+      "kind": "bench",
+      "position": [
+        26,
+        20.5
+      ]
+    },
+    {
+      "id": "prop.8",
+      "kind": "bench",
+      "position": [
+        33,
+        14
+      ]
+    },
+    {
+      "id": "prop.9",
+      "kind": "mailbox",
+      "position": [
+        13.6,
+        11.7
+      ]
+    },
+    {
+      "id": "prop.10",
+      "kind": "mailbox",
+      "position": [
+        23.5,
+        11.7
+      ]
+    },
+    {
+      "id": "prop.11",
+      "kind": "mailbox",
+      "position": [
+        33.5,
+        11.7
+      ]
+    },
+    {
+      "id": "prop.12",
+      "kind": "planter",
+      "position": [
+        7.3,
+        11.5
+      ]
+    },
+    {
+      "id": "prop.13",
+      "kind": "planter",
+      "position": [
+        12.3,
+        11.5
+      ]
+    },
+    {
+      "id": "prop.14",
+      "kind": "planter",
+      "position": [
+        17.4,
+        11.5
+      ]
+    },
+    {
+      "id": "prop.15",
+      "kind": "telescope",
+      "position": [
+        15,
+        11.5
+      ]
+    },
+    {
+      "id": "prop.16",
+      "kind": "bookshelf",
+      "position": [
+        34,
+        11.5
+      ]
+    },
+    {
+      "id": "prop.17",
+      "kind": "windchime",
+      "position": [
+        14,
+        14
+      ]
+    },
+    {
+      "id": "prop.18",
+      "kind": "grass",
+      "position": [
+        8.4,
+        14.5
+      ]
+    },
+    {
+      "id": "prop.19",
+      "kind": "grass",
+      "position": [
+        9.4,
+        14.6
+      ]
+    },
+    {
+      "id": "prop.20",
+      "kind": "flowers",
+      "position": [
+        9,
+        14.3
+      ]
+    },
+    {
+      "id": "prop.21",
+      "kind": "grass",
+      "position": [
+        27.6,
+        13.5
+      ]
+    },
+    {
+      "id": "prop.22",
+      "kind": "grass",
+      "position": [
+        28,
+        13.7
+      ]
+    },
+    {
+      "id": "prop.23",
+      "kind": "flowers",
+      "position": [
+        28.5,
+        13.5
+      ]
+    },
+    {
+      "id": "prop.24",
+      "kind": "grass",
+      "position": [
+        4,
+        14
+      ]
+    },
+    {
+      "id": "prop.25",
+      "kind": "grass",
+      "position": [
+        3,
+        14.5
+      ]
+    },
+    {
+      "id": "prop.26",
+      "kind": "grass",
+      "position": [
+        7.7,
+        18.5
+      ]
+    },
+    {
+      "id": "prop.27",
+      "kind": "flowers",
+      "position": [
+        8.3,
+        18.8
+      ]
+    },
+    {
+      "id": "prop.28",
+      "kind": "grass",
+      "position": [
+        34.5,
+        18
+      ]
+    },
+    {
+      "id": "prop.29",
+      "kind": "grass",
+      "position": [
+        35.5,
+        18.4
+      ]
+    },
+    {
+      "id": "prop.30",
+      "kind": "flowers",
+      "position": [
+        34.3,
+        18.3
+      ]
+    },
+    {
+      "id": "sign.0",
+      "kind": "placard",
+      "position": [
+        6.6,
+        11.9
+      ],
+      "text": "花语"
+    },
+    {
+      "id": "sign.1",
+      "kind": "placard",
+      "position": [
+        16.6,
+        11.9
+      ],
+      "text": "望星"
+    },
+    {
+      "id": "sign.2",
+      "kind": "placard",
+      "position": [
+        26.6,
+        11.9
+      ],
+      "text": "静读"
+    }
+  ],
+  "foliage": [
+    {
+      "asset": "oak",
+      "position": [
+        3,
+        9
+      ]
+    },
+    {
+      "asset": "birch",
+      "position": [
+        37,
+        9
+      ]
+    },
+    {
+      "asset": "oak_small",
+      "position": [
+        14.8,
+        5.5
+      ]
+    },
+    {
+      "asset": "fir",
+      "position": [
+        25.5,
+        5.5
+      ]
+    },
+    {
+      "asset": "rock",
+      "position": [
+        1.7,
+        16.5
+      ]
+    },
+    {
+      "asset": "rock",
+      "position": [
+        7.5,
+        20.5
+      ]
+    }
+  ]
+}

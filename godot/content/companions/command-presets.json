@@ -1,0 +1,240 @@
+[
+  {
+    "id": "cmd0",
+    "category": 1,
+    "zh": "都跟着我",
+    "en": "Follow me"
+  },
+  {
+    "id": "cmd1",
+    "category": 1,
+    "zh": "别跟了自由活动",
+    "en": "Stop following"
+  },
+  {
+    "id": "cmd2",
+    "category": 1,
+    "zh": "到营火集合",
+    "en": "Gather at campfire"
+  },
+  {
+    "id": "cmd3",
+    "category": 1,
+    "zh": "到小屋集合",
+    "en": "Gather at house"
+  },
+  {
+    "id": "cmd4",
+    "category": 1,
+    "zh": "到我这儿来",
+    "en": "Gather here"
+  },
+  {
+    "id": "cmd5",
+    "category": 1,
+    "zh": "都回家休息",
+    "en": "Gather at house"
+  },
+  {
+    "id": "cmd6",
+    "category": 2,
+    "zh": "一起砍树",
+    "en": "Chop trees"
+  },
+  {
+    "id": "cmd7",
+    "category": 2,
+    "zh": "去种菜",
+    "en": "Plant crops"
+  },
+  {
+    "id": "cmd8",
+    "category": 2,
+    "zh": "种萝卜",
+    "en": "Plant turnip"
+  },
+  {
+    "id": "cmd9",
+    "category": 2,
+    "zh": "种土豆",
+    "en": "Plant potato"
+  },
+  {
+    "id": "cmd10",
+    "category": 2,
+    "zh": "种番茄",
+    "en": "Plant tomato"
+  },
+  {
+    "id": "cmd11",
+    "category": 2,
+    "zh": "收菜",
+    "en": "Harvest"
+  },
+  {
+    "id": "cmd12",
+    "category": 2,
+    "zh": "浇水",
+    "en": "Water crops"
+  },
+  {
+    "id": "cmd13",
+    "category": 2,
+    "zh": "采蘑菇",
+    "en": "Gather mushrooms"
+  },
+  {
+    "id": "cmd14",
+    "category": 2,
+    "zh": "采点野果",
+    "en": "Gather ingredients",
+    "blocked": [
+      "请在现场选择具体野果",
+      "Select the actual berry source on site"
+    ]
+  },
+  {
+    "id": "cmd15",
+    "category": 2,
+    "zh": "把东西交给我",
+    "en": "Give me your items"
+  },
+  {
+    "id": "cmd16",
+    "category": 2,
+    "zh": "去钓鱼",
+    "en": "Go fishing"
+  },
+  {
+    "id": "cmd17",
+    "category": 3,
+    "zh": "来烧烤吃饭",
+    "en": "Barbecue time"
+  },
+  {
+    "id": "cmd18",
+    "category": 3,
+    "zh": "谁饿了？",
+    "en": "Are you hungry?"
+  },
+  {
+    "id": "cmd19",
+    "category": 4,
+    "zh": "下五子棋",
+    "en": "Play gomoku"
+  },
+  {
+    "id": "cmd20",
+    "category": 4,
+    "zh": "下揭棋",
+    "en": "Play chess"
+  },
+  {
+    "id": "cmd21",
+    "category": 4,
+    "zh": "一起看星星",
+    "en": "Watch stars together",
+    "blocked": [
+      "请使用现场原有入口",
+      "Use the existing activity entry"
+    ]
+  },
+  {
+    "id": "cmd22",
+    "category": 4,
+    "zh": "去摸摸柚柚",
+    "en": "Pet Yuzu",
+    "blocked": [
+      "请使用现场原有入口",
+      "Use the existing activity entry"
+    ]
+  },
+  {
+    "id": "cmd23",
+    "category": 4,
+    "zh": "去她们的岛看看",
+    "en": "Gather at south"
+  },
+  {
+    "id": "cmd24",
+    "category": 5,
+    "zh": "你在干嘛？",
+    "en": "What are you doing?"
+  },
+  {
+    "id": "cmd25",
+    "category": 5,
+    "zh": "饿不饿？",
+    "en": "Are you hungry?"
+  },
+  {
+    "id": "cmd26",
+    "category": 5,
+    "zh": "仓库还有多少木材？",
+    "en": "How much wood?"
+  },
+  {
+    "id": "cmd27",
+    "category": 5,
+    "zh": "今天做了什么？",
+    "en": "What are you doing today?",
+    "blocked": [
+      "请在回忆中查看真实记录",
+      "Open Memories for retained facts"
+    ]
+  },
+  {
+    "id": "cmd28",
+    "category": 6,
+    "zh": "别干了",
+    "en": "Stop working"
+  },
+  {
+    "id": "cmd29",
+    "category": 6,
+    "zh": "停下",
+    "en": "Stop"
+  },
+  {
+    "id": "vacation.lounge",
+    "zh": "一起躺一会儿",
+    "en": "Lie down together",
+    "category": 5,
+    "resort_kind": "lounge"
+  },
+  {
+    "id": "vacation.pool",
+    "zh": "一起下水玩",
+    "en": "Play in the pool together",
+    "category": 5,
+    "resort_kind": "pool"
+  },
+  {
+    "id": "vacation.swing",
+    "zh": "一起荡秋千",
+    "en": "Use the swings together",
+    "category": 5,
+    "resort_kind": "swing"
+  },
+  {
+    "id": "vacation.hammock",
+    "zh": "一起荡吊床",
+    "en": "Rest in hammocks together",
+    "category": 5,
+    "resort_kind": "hammock"
+  },
+  {
+    "id": "vacation.sea",
+    "zh": "一起看海",
+    "en": "Watch the sea together",
+    "category": 5,
+    "resort_kind": "sea"
+  },
+  {
+    "id": "vacation.stars",
+    "zh": "一起看星星",
+    "en": "Watch the stars together",
+    "category": 5,
+    "resort_kind": "stars"
+  }
+]

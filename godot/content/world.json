@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "id": "youqi-archipelago",
+  "name": "有栖群岛",
+  "bounds": [
+    0,
+    0,
+    8192,
+    8192
+  ],
+  "active_packs": [
+    "res://content/packs/core.json"
+  ],
+  "spawn": {
+    "region_id": "home",
+    "position": [
+      51,
+      44
+    ]
+  },
+  "tile_units": 32
+}

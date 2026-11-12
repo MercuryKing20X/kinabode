@@ -1,0 +1,76 @@
+keys,zh,en
+jieqi.start,开局,Start
+jieqi.resign,认输,Resign
+jieqi.draw,提和,Offer draw
+jieqi.close,关闭,Close
+jieqi.hungry,太饿了，先吃饭再下吧。,Too hungry. Let’s eat first.
+jieqi.draw_yes,和棋,Draw
+jieqi.draw_no,还想再下一会儿。,Let’s keep playing.
+jieqi.win,你赢了,You won
+jieqi.lose,她赢了,She won
+jieqi.your_turn,轮到你,Your turn
+jieqi.thinking,她在想下一步,Thinking…
+jieqi.rules,暗子按原位置走，走后翻开。明士象可过河。须应将，将帅不照面；无棋可走判负。三次重复或六十回合无吃子和棋。,"Hidden pieces make their first move as their starting role, then reveal. Revealed advisors and elephants may cross the river. Escape check; kings cannot face. No legal move loses. Three repetitions or 60 rounds without capture draw."
+jieqi.piece.K,帅,K
+jieqi.piece.A,士,A
+jieqi.piece.E,象,E
+jieqi.piece.H,马,H
+jieqi.piece.R,车,R
+jieqi.piece.C,炮,C
+jieqi.piece.S,兵,S
+jieqi.line.gentle.start,嗯，来，看看今天翻出什么。,"Mm, Let’s see what we uncover."
+jieqi.line.gentle.win,嗯，这次是我赢啦。,"Mm, That one’s mine."
+jieqi.line.gentle.lose,嗯，你赢啦，下得真好。,"Mm, You got me. Nice game."
+jieqi.line.gentle.draw,嗯，平手，下次再来。,"Mm, Even. Another day."
+jieqi.line.gentle.big_self,嗯，哇，翻出大子了！,"Mm, Ooh, a big one!"
+jieqi.line.gentle.big_you,嗯，你的大子出来了！,"Mm, There’s your big piece!"
+jieqi.line.gentle.river,嗯，士象也过河啦！,"Mm, Across the river it goes!"
+jieqi.line.gentle.capture_hidden,嗯，原来藏着这么厉害的子！,"Mm, That was hiding under there?"
+jieqi.line.gentle.capture_big,嗯，大子被吃掉啦。,"Mm, There goes a big piece."
+jieqi.line.gentle.soldier,嗯，居然让小兵吃掉了！,"Mm, A soldier got it!"
+jieqi.line.gentle.check_self,嗯，呀，得先护住将。,"Mm, Oh. Better cover my king."
+jieqi.line.gentle.check_you,嗯，将军，轮到你想啦。,"Mm, Check. Your move."
+jieqi.line.playful.start,嘿！来，看看今天翻出什么。,Hehe! Let’s see what we uncover.
+jieqi.line.playful.win,嘿！这次是我赢啦。,Hehe! That one’s mine.
+jieqi.line.playful.lose,嘿！你赢啦，下得真好。,Hehe! You got me. Nice game.
+jieqi.line.playful.draw,嘿！平手，下次再来。,Hehe! Even. Another day.
+jieqi.line.playful.big_self,嘿！哇，翻出大子了！,"Hehe! Ooh, a big one!"
+jieqi.line.playful.big_you,嘿！你的大子出来了！,Hehe! There’s your big piece!
+jieqi.line.playful.river,嘿！士象也过河啦！,Hehe! Across the river it goes!
+jieqi.line.playful.capture_hidden,嘿！原来藏着这么厉害的子！,Hehe! That was hiding under there?
+jieqi.line.playful.capture_big,嘿！大子被吃掉啦。,Hehe! There goes a big piece.
+jieqi.line.playful.soldier,嘿！居然让小兵吃掉了！,Hehe! A soldier got it!
+jieqi.line.playful.check_self,嘿！呀，得先护住将。,Hehe! Oh. Better cover my king.
+jieqi.line.playful.check_you,嘿！将军，轮到你想啦。,Hehe! Check. Your move.
+jieqi.line.diligent.start,看仔细，来，看看今天翻出什么。,Watch closely. Let’s see what we uncover.
+jieqi.line.diligent.win,看仔细，这次是我赢啦。,Watch closely. That one’s mine.
+jieqi.line.diligent.lose,看仔细，你赢啦，下得真好。,Watch closely. You got me. Nice game.
+jieqi.line.diligent.draw,看仔细，平手，下次再来。,Watch closely. Even. Another day.
+jieqi.line.diligent.big_self,看仔细，哇，翻出大子了！,"Watch closely. Ooh, a big one!"
+jieqi.line.diligent.big_you,看仔细，你的大子出来了！,Watch closely. There’s your big piece!
+jieqi.line.diligent.river,看仔细，士象也过河啦！,Watch closely. Across the river it goes!
+jieqi.line.diligent.capture_hidden,看仔细，原来藏着这么厉害的子！,Watch closely. That was hiding under there?
+jieqi.line.diligent.capture_big,看仔细，大子被吃掉啦。,Watch closely. There goes a big piece.
+jieqi.line.diligent.soldier,看仔细，居然让小兵吃掉了！,Watch closely. A soldier got it!
+jieqi.line.diligent.check_self,看仔细，呀，得先护住将。,Watch closely. Oh. Better cover my king.
+jieqi.line.diligent.check_you,看仔细，将军，轮到你想啦。,Watch closely. Check. Your move.
+jieqi.line.quiet.start,……来，看看今天翻出什么。,… Let’s see what we uncover.
+jieqi.line.quiet.win,……这次是我赢啦。,… That one’s mine.
+jieqi.line.quiet.lose,……你赢啦，下得真好。,… You got me. Nice game.
+jieqi.line.quiet.draw,……平手，下次再来。,… Even. Another day.
+jieqi.line.quiet.big_self,……哇，翻出大子了！,"… Ooh, a big one!"
+jieqi.line.quiet.big_you,……你的大子出来了！,… There’s your big piece!
+jieqi.line.quiet.river,……士象也过河啦！,… Across the river it goes!
+jieqi.line.quiet.capture_hidden,……原来藏着这么厉害的子！,… That was hiding under there?
+jieqi.line.quiet.capture_big,……大子被吃掉啦。,… There goes a big piece.
+jieqi.line.quiet.soldier,……居然让小兵吃掉了！,… A soldier got it!
+jieqi.line.quiet.check_self,……呀，得先护住将。,… Oh. Better cover my king.
+jieqi.line.quiet.check_you,……将军，轮到你想啦。,… Check. Your move.
+jieqi.captured,被吃的子,Captured pieces
+jieqi.title,揭棋,Jieqi
+jieqi.memory.win,和{resident}下揭棋赢了一局。,Won a game of Jieqi against {resident}.
+jieqi.memory.lose,和{resident}下揭棋输了这一局。,Lost a game of Jieqi against {resident}.
+jieqi.memory.draw,和{resident}下揭棋打成平手。,Drew a game of Jieqi with {resident}.
+jieqi.captured_red,红方被吃,Red pieces captured
+jieqi.captured_black,黑方被吃,Black pieces captured
+jieqi.unavailable,现在不能开局，先完成手上的事情并建好棋桌。,Finish your current activity and build the table first.

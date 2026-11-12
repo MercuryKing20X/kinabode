@@ -1,0 +1,47 @@
+{
+  "chaos_profiles": {
+    "playful": {"random": 0.45, "capture": 1.0, "reveal": 1.2, "forward": 0.3, "delay": 0.7, "safety": 0.0, "guard": 0.0},
+    "gentle": {"random": 0.6, "capture": 0.8, "reveal": 0.5, "forward": 0.05, "delay": 1.8, "safety": 0.35, "guard": 0.08},
+    "diligent": {"random": 0.62, "capture": 1.0, "reveal": 0.5, "forward": 0.05, "delay": 1.1, "safety": 0.5, "guard": 0.15},
+    "quiet": {"random": 0.65, "capture": 1.4, "reveal": 0.6, "forward": 0.1, "delay": 1.8, "safety": 0.15, "big_chance": 0.25, "big_bonus": 2.0}
+  },
+  "profiles": {
+    "playful": {
+      "random": 0.45,
+      "capture": 1.0,
+      "reveal": 1.2,
+      "forward": 0.3,
+      "delay": 0.7,
+      "safety": 0.0,
+      "guard": 0.0
+    },
+    "gentle": {
+      "random": 0.6,
+      "capture": 0.8,
+      "reveal": 0.5,
+      "forward": 0.05,
+      "delay": 1.8,
+      "safety": 0.35,
+      "guard": 0.08
+    },
+    "diligent": {
+      "random": 0.62,
+      "capture": 1.0,
+      "reveal": 0.5,
+      "forward": 0.05,
+      "delay": 1.1,
+      "safety": 0.5,
+      "guard": 0.15
+    },
+    "quiet": {
+      "random": 0.65,
+      "capture": 1.4,
+      "reveal": 0.6,
+      "forward": 0.1,
+      "delay": 1.8,
+      "safety": 0.15,
+      "big_chance": 0.25,
+      "big_bonus": 2.0
+    }
+  }
+}

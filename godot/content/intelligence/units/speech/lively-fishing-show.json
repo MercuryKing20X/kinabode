@@ -1,0 +1,9 @@
+{
+  "id": "lively-fishing-show",
+  "context": "fishing_show",
+  "lines": [
+    "转过来一点，我还没看够！",
+    "它的尾巴在跟我打招呼！"
+  ],
+  "autonomy_output": false
+}

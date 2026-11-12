@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "slots": {
+    "day": [],
+    "dusk": [],
+    "night": [],
+    "rain": [],
+    "fireside": [],
+    "moon": []
+  }
+}

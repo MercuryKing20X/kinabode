@@ -1,0 +1,9 @@
+{
+  "version":1,"per_resident":3,"max_future_days":7,"default_valid_seconds":600,"max_valid_seconds":600,"retry_seconds":30,"job_timeout":600,"arrival_distance":4,
+  "actions":{
+    "water":{"name":"帮你浇水","target":"plot"},
+    "harvest":{"name":"帮你收获","target":"plot"},
+    "fish":{"name":"去海边钓鱼","target":"sea"},
+    "come_near":{"name":"来找你","target":"human"}
+  }
+}

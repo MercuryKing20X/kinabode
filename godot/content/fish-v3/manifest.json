@@ -1,0 +1,293 @@
+{
+  "version": 3,
+  "standard": {
+    "cell": [
+      128,
+      64
+    ],
+    "water_frames": 4,
+    "pen_frames": 4,
+    "palette_max_per_species": 48,
+    "light": "upper-left",
+    "outline": "warm-dark",
+    "source": "new generated artwork, pixel conversion and caudal articulation; never resized legacy sprites"
+  },
+  "species": {
+    "bean": {
+      "atlas": "bean.png",
+      "card": "bean-card.png",
+      "held": "bean-held.png",
+      "grill": "bean-grill.png",
+      "rect": [
+        19,
+        0,
+        90,
+        64
+      ]
+    },
+    "ribbon": {
+      "atlas": "ribbon.png",
+      "card": "ribbon-card.png",
+      "held": "ribbon-held.png",
+      "grill": "ribbon-grill.png",
+      "rect": [
+        25,
+        0,
+        78,
+        64
+      ]
+    },
+    "glass": {
+      "atlas": "glass.png",
+      "card": "glass-card.png",
+      "held": "glass-held.png",
+      "grill": "glass-grill.png",
+      "rect": [
+        18,
+        0,
+        91,
+        64
+      ]
+    },
+    "bell": {
+      "atlas": "bell.png",
+      "card": "bell-card.png",
+      "held": "bell-held.png",
+      "grill": "bell-grill.png",
+      "rect": [
+        26,
+        0,
+        75,
+        64
+      ]
+    },
+    "cloud": {
+      "atlas": "cloud.png",
+      "card": "cloud-card.png",
+      "held": "cloud-held.png",
+      "grill": "cloud-grill.png",
+      "rect": [
+        21,
+        0,
+        85,
+        64
+      ]
+    },
+    "lantern": {
+      "atlas": "lantern.png",
+      "card": "lantern-card.png",
+      "held": "lantern-held.png",
+      "grill": "lantern-grill.png",
+      "rect": [
+        20,
+        0,
+        88,
+        64
+      ]
+    },
+    "star": {
+      "atlas": "star.png",
+      "card": "star-card.png",
+      "held": "star-held.png",
+      "grill": "star-grill.png",
+      "rect": [
+        2,
+        0,
+        124,
+        64
+      ]
+    },
+    "dream": {
+      "atlas": "dream.png",
+      "card": "dream-card.png",
+      "held": "dream-held.png",
+      "grill": "dream-grill.png",
+      "rect": [
+        14,
+        0,
+        99,
+        64
+      ]
+    },
+    "noodle": {
+      "atlas": "noodle.png",
+      "card": "noodle-card.png",
+      "held": "noodle-held.png",
+      "grill": "noodle-grill.png",
+      "rect": [
+        4,
+        19,
+        123,
+        31
+      ]
+    },
+    "eel": {
+      "atlas": "eel.png",
+      "card": "eel-card.png",
+      "held": "eel-held.png",
+      "grill": "eel-grill.png",
+      "rect": [
+        4,
+        13,
+        123,
+        42
+      ]
+    },
+    "kite": {
+      "atlas": "kite.png",
+      "card": "kite-card.png",
+      "held": "kite-held.png",
+      "grill": "kite-grill.png",
+      "rect": [
+        25,
+        0,
+        78,
+        64
+      ]
+    },
+    "cutlass": {
+      "atlas": "cutlass.png",
+      "card": "cutlass-card.png",
+      "held": "cutlass-held.png",
+      "grill": "cutlass-grill.png",
+      "rect": [
+        4,
+        20,
+        123,
+        30
+      ]
+    },
+    "koi": {
+      "atlas": "koi.png",
+      "card": "koi-card.png",
+      "held": "koi-held.png",
+      "grill": "koi-grill.png",
+      "rect": [
+        16,
+        0,
+        96,
+        64
+      ]
+    },
+    "catfish": {
+      "atlas": "catfish.png",
+      "card": "catfish-card.png",
+      "held": "catfish-held.png",
+      "grill": "catfish-grill.png",
+      "rect": [
+        15,
+        0,
+        97,
+        64
+      ]
+    },
+    "clownfish": {
+      "atlas": "clownfish.png",
+      "card": "clownfish-card.png",
+      "held": "clownfish-held.png",
+      "grill": "clownfish-grill.png",
+      "rect": [
+        14,
+        0,
+        100,
+        64
+      ]
+    },
+    "moonfish": {
+      "atlas": "moonfish.png",
+      "card": "moonfish-card.png",
+      "held": "moonfish-held.png",
+      "grill": "moonfish-grill.png",
+      "rect": [
+        27,
+        0,
+        75,
+        64
+      ]
+    },
+    "seahorse": {
+      "atlas": "seahorse.png",
+      "card": "seahorse-card.png",
+      "held": "seahorse-held.png",
+      "grill": "seahorse-grill.png",
+      "rect": [
+        39,
+        0,
+        50,
+        64
+      ]
+    },
+    "angler": {
+      "atlas": "angler.png",
+      "card": "angler-card.png",
+      "held": "angler-held.png",
+      "grill": "angler-grill.png",
+      "rect": [
+        23,
+        0,
+        81,
+        64
+      ]
+    },
+    "ghost": {
+      "atlas": "ghost.png",
+      "card": "ghost-card.png",
+      "held": "ghost-held.png",
+      "grill": "ghost-grill.png",
+      "rect": [
+        21,
+        0,
+        86,
+        64
+      ]
+    },
+    "butterfly": {
+      "atlas": "butterfly.png",
+      "card": "butterfly-card.png",
+      "held": "butterfly-held.png",
+      "grill": "butterfly-grill.png",
+      "rect": [
+        18,
+        0,
+        91,
+        64
+      ]
+    },
+    "puffer": {
+      "atlas": "puffer.png",
+      "card": "puffer-card.png",
+      "held": "puffer-held.png",
+      "grill": "puffer-grill.png",
+      "rect": [
+        19,
+        0,
+        89,
+        64
+      ]
+    },
+    "rainbow": {
+      "atlas": "rainbow.png",
+      "card": "rainbow-card.png",
+      "held": "rainbow-held.png",
+      "grill": "rainbow-grill.png",
+      "rect": [
+        7,
+        0,
+        114,
+        64
+      ]
+    },
+    "tuna": {
+      "atlas": "tuna.png",
+      "card": "tuna-card.png",
+      "held": "tuna-held.png",
+      "grill": "tuna-grill.png",
+      "rect": [
+        2,
+        2,
+        124,
+        59
+      ]
+    }
+  }
+}

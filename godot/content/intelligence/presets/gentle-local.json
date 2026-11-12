@@ -1,0 +1,10 @@
+{
+  "id": "gentle-local",
+  "name": "温柔本地预设",
+  "main_trait": "gentle",
+  "context_traits": [
+    "glutton"
+  ],
+  "speech_style": "轻声、简短，根据真实状态说话。",
+  "mode": "local"
+}

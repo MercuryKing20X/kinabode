@@ -1,0 +1,13 @@
+{
+  "id": "dark-quiet-relic",
+  "context": "dark_relic",
+  "lines": [
+    "这里有旧东西。",
+    "看，留下来的记号。",
+    "轻轻拿起来吧。",
+    "它一定有人珍惜过。",
+    "把它好好记住。",
+    "又找到一点故事。"
+  ],
+  "autonomy_output": false
+}

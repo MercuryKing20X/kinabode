@@ -1,0 +1,11 @@
+{
+  "id": "fish-v2-introvert-invited",
+  "context": "fishing_v2_invited",
+  "lines": [
+    "嗯，一起到海边钓鱼吧。",
+    "……我也来陪你钓鱼。",
+    "看，收到邀请，我这就来。",
+    "好，找个岸边坐一会儿。"
+  ],
+  "autonomy_output": false
+}

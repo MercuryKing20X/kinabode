@@ -1,0 +1,11 @@
+{
+  "id": "gentle-gomoku-other-move",
+  "context": "gomoku_other_move",
+  "lines": [
+    "嗯，看到你落在这里了。",
+    "轻轻说，这一手，我得看仔细。",
+    "我想，嗯，我看看你的新棋子。",
+    "慢慢来，换个角度想想你的这步。"
+  ],
+  "autonomy_output": false
+}

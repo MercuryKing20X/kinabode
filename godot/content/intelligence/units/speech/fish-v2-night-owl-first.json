@@ -1,0 +1,11 @@
+{
+  "id": "fish-v2-night-owl-first",
+  "context": "fishing_v2_first",
+  "lines": [
+    "嗯，发现册里添了新的一页。",
+    "……这条鱼是我第一次钓到。",
+    "看，原来海里还有这样的鱼。",
+    "好，第一次遇见这种鱼。"
+  ],
+  "autonomy_output": false
+}

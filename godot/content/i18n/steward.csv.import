@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://b5rw5y1fwqauq"
+
+[deps]
+
+files=["res://content/i18n/steward.zh.translation", "res://content/i18n/steward.en.translation"]
+
+source_file="res://content/i18n/steward.csv"
+dest_files=["res://content/i18n/steward.zh.translation", "res://content/i18n/steward.en.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

@@ -1,0 +1,11 @@
+{
+  "id": "lively-gomoku-lose",
+  "context": "gomoku_lose",
+  "lines": [
+    "嘿，这盘你赢了，下得真好。",
+    "哎呀，这次我输了，还挺尽兴。",
+    "看这里，赢的是你，我记住这盘了。",
+    "哈，这一局我输了，再学一点。"
+  ],
+  "autonomy_output": false
+}

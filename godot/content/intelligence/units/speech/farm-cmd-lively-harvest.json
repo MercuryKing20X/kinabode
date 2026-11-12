@@ -1,0 +1,11 @@
+{
+  "id": "farm-cmd-lively-harvest",
+  "context": "farm_command_harvest",
+  "lines": [
+    "收菜收菜！我这就去！",
+    "好耶，收完就能吃了吧！",
+    "我去收，跑着去！",
+    "交给我，一颗都不落下！"
+  ],
+  "autonomy_output": false
+}

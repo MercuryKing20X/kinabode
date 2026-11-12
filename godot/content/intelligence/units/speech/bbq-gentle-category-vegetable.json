@@ -1,0 +1,11 @@
+{
+  "id": "bbq-gentle-category-vegetable",
+  "context": "bbq_category_vegetable",
+  "lines": [
+    "蔬菜烤软了，暖暖的。",
+    "这一口菜，吃着很安心。",
+    "烤蔬菜的香气也很舒服。",
+    "把这份热蔬菜慢慢吃完吧。"
+  ],
+  "autonomy_output": false
+}

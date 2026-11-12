@@ -1,0 +1,11 @@
+{
+  "id": "fish-v2-quiet-release",
+  "context": "fishing_v2_release",
+  "lines": [
+    "嗯，鱼儿回到海里了。",
+    "……再见，小鱼，慢慢游。",
+    "看，这次让鱼儿回大海。",
+    "好，看着它游远了。"
+  ],
+  "autonomy_output": false
+}

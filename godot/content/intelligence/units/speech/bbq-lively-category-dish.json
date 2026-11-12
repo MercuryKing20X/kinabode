@@ -1,0 +1,11 @@
+{
+  "id": "bbq-lively-category-dish",
+  "context": "bbq_category_dish",
+  "lines": [
+    "一整道菜！太像样啦！",
+    "这次能吃得很满足啦！",
+    "有菜有热气，开饭开饭！",
+    "给我留个位置，我要吃这道菜！"
+  ],
+  "autonomy_output": false
+}

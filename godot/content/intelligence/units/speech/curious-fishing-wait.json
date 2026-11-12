@@ -1,0 +1,9 @@
+{
+  "id": "curious-fishing-wait",
+  "context": "fishing_wait",
+  "lines": [
+    "浮漂旁边的水纹真有趣。",
+    "猜猜它会先碰哪边？"
+  ],
+  "autonomy_output": false
+}

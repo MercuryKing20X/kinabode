@@ -1,0 +1,11 @@
+{
+  "id": "lively-gomoku-move",
+  "context": "gomoku_move",
+  "lines": [
+    "嘿，这一手，我选这里。",
+    "哎呀，棋子落好啦。",
+    "看这里，这里，接着试试看。",
+    "哈，这一步已经放好了。"
+  ],
+  "autonomy_output": false
+}

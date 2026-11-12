@@ -1,0 +1,11 @@
+{
+  "id": "gentle-gomoku-move",
+  "context": "gomoku_move",
+  "lines": [
+    "嗯，这一手，我选这里。",
+    "轻轻说，棋子落好啦。",
+    "我想，这里，接着试试看。",
+    "慢慢来，这一步已经放好了。"
+  ],
+  "autonomy_output": false
+}

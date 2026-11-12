@@ -1,0 +1,9 @@
+{
+  "id": "curious-fishing-cast",
+  "context": "fishing_cast",
+  "lines": [
+    "想知道这片海藏着什么颜色。",
+    "这次会是什么形状呢？"
+  ],
+  "autonomy_output": false
+}

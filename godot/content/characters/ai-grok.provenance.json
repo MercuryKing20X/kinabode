@@ -1,0 +1,26 @@
+{
+  "source": "production/art/ai-girls-studies/concepts/grok-keyed.png",
+  "original_cells": 24,
+  "aliases": {
+    "chop_down_2": "chop_down_0",
+    "carry_down_0": "carry_down",
+    "carry_down_1": "carry_down",
+    "pickup_down": "down_0",
+    "chop_left_2": "chop_left_0",
+    "carry_left_0": "carry_left",
+    "carry_left_1": "carry_left",
+    "pickup_left": "left_0",
+    "chop_right_2": "chop_right_0",
+    "carry_right_0": "carry_right",
+    "carry_right_1": "carry_right",
+    "pickup_right": "right_0",
+    "chop_up_2": "chop_up_0",
+    "carry_up_0": "carry_up",
+    "carry_up_1": "carry_up",
+    "pickup_up": "up_0"
+  },
+  "palette_limit_including_transparency": 24,
+  "review_required": true,
+  "notes": "Right-facing walk cells mirror the matching left-facing cells; background removal is provisional and each pose still needs hand cleanup.",
+  "original_study": "production/art/ai-girls-studies/studies/grok.json"
+}

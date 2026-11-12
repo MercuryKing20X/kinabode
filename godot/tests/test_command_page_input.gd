@@ -1,0 +1,47 @@
+extends "res://tests/test_host_journey_input.gd"
+func run()->void:
+	await fresh()
+	var w:RefCounted=game.world
+	game.journey._process(0)
+	check(await UI.click(self,game.journey.map_button),"map opens shortcuts")
+	game.journey._process(0);await process_frame
+	await picture("navigation-column")
+	var home:Button
+	for b in game.journey.shortcuts.get_children():
+		if b.get_meta("journey","")=="home":home=b
+	check(await UI.click(self,home),"home native click")
+	await advance(150)
+	check(game.journey.destination.is_empty(),"home arrival")
+	var close_buttons:Array=UI.descendants(game.house_panel).filter(func(n):return n is Button and n.text=="×")
+	check(not close_buttons.is_empty() and await UI.click(self,close_buttons[0]),"close arrived house card before navigation")
+	await picture("home-arrived")
+	check(await UI.click(self,game.journey.map_button),"reopen shortcuts")
+	check(await UI.click(self,game.journey.shortcuts.get_child(0)),"open atlas native click")
+	await picture("world-map")
+	game._toggle_atlas(false)
+	check(await UI.click(self,game.dialogue_button),"open command page")
+	check(not game.command_page.commands_mode and game.chat_input.visible and not game.command_page.tabs.visible,"one unified dialogue input")
+	check(await UI.click(self,game.command_page.targets.get_child(0)),"select everyone")
+	var category:OptionButton=game.command_page.body.get_child(0)
+	category.select(2);category.item_selected.emit(2)
+	await process_frame;await picture("commands-zh")
+	check(await UI.click(self,game.command_page.buttons.cmd7),"plant native click")
+	check(w.farms.orders.size()==4,"four real farm orders")
+	await advance(600)
+	check(w.farms.plots.values().any(func(p):return not str(p.crop_id).is_empty()),"real seedlings")
+	await picture("seedlings")
+	game.command_page.category=5;game.command_page.rebuild()
+	check(await UI.click(self,game.command_page.targets.get_child(2)),"select Skye")
+	check(await UI.click(self,game.command_page.buttons.cmd24),"true state query")
+	await picture("state-reply")
+	game.command_page.category=4;game.command_page.rebuild()
+	check(game.command_page.buttons.cmd21.disabled and not game.command_page.buttons.cmd21.tooltip_text.is_empty(),"unavailable reason")
+	check(game.chat_input.visible,"same input remains available after presets")
+	await text_input("跟我来")
+	await picture("talk-command")
+	TranslationServer.set_locale("en");game.command_page.show_mode(true);game.command_page.category=2;game.command_page.rebuild_targets();game.command_page.rebuild()
+	await picture("commands-en")
+	root.size=Vector2i(960,640);await process_frame;game.command_page.show_mode(true)
+	await picture("commands-960")
+	game.queue_free();await process_frame
+	print("COMMAND_PAGE_INPUT ",checks," failed=",failed);quit(1 if failed else 0)

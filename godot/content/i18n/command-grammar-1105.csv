@@ -1,0 +1,81 @@
+keys,zh,en
+content.command_grammar.token_0,先,first
+content.command_grammar.token_1,，收完来,after harvesting come
+content.command_grammar.token_2,|到,|to
+content.command_grammar.token_3,收完来,come after harvesting
+content.command_grammar.token_4,然后,then
+content.command_grammar.token_5,再,next
+content.command_grammar.token_6,除了,except
+content.command_grammar.token_7,全部,all
+content.command_grammar.token_8,大家,everyone
+content.command_grammar.token_9,所有人,everyone
+content.command_grammar.token_10,你们,you all
+content.command_grammar.token_11,所有伙伴,all companions
+content.command_grammar.token_12,不要,do not
+content.command_grammar.token_13,不用,no need
+content.command_grammar.token_14,别去,do not go
+content.command_grammar.token_15,别种,do not plant
+content.command_grammar.token_16,别收,do not harvest
+content.command_grammar.token_17,都,all
+content.command_grammar.token_18,一起,together
+content.command_grammar.token_19,和,and
+content.command_grammar.token_20,与,and
+content.command_grammar.token_21,去种地,go plant the fields
+content.command_grammar.token_22,种地,plant the fields
+content.command_grammar.token_23,去种田,go plant the field
+content.command_grammar.token_24,种田,plant the field
+content.command_grammar.token_25,种满,fill the field
+content.command_grammar.token_26,去种,go plant
+content.command_grammar.token_27,收菜,harvest vegetables
+content.command_grammar.token_28,种,plant
+content.command_grammar.token_29,去收菜,go harvest
+content.command_grammar.token_30,帮我种,help me plant
+content.command_grammar.token_31,去种菜,go plant vegetables
+content.command_grammar.token_32,种菜,plant vegetables
+content.command_grammar.token_33,去把地种了,go fill the field
+content.command_grammar.token_34,把地种了,fill the field
+content.command_grammar.token_35,种 the field,plant the field
+content.command_grammar.token_36,种 fields,plant fields
+content.command_grammar.token_37,南岛,South Island
+content.command_grammar.token_38,她们的岛,Their Island
+content.command_grammar.token_39,小屋,cottage
+content.command_grammar.token_40,屋边,near the cottage
+content.command_grammar.token_41,营火,campfire
+content.command_grammar.token_42,篝火,bonfire
+content.command_alias.unfollow.0,别跟,stop following
+content.command_alias.unfollow.1,不跟,stop following
+content.command_alias.unfollow.2,自由活动,stop following
+content.command_alias.unfollow.3,散了,stop following
+content.command_alias.follow.0,跟我,follow me
+content.command_alias.follow.1,跟着我,follow me
+content.command_alias.follow.2,跟过来,follow me
+content.command_alias.barbecue.0,烧烤,barbecue together
+content.command_alias.barbecue.1,开饭,barbecue together
+content.command_alias.gather.0,集合,gather at the destination
+content.command_alias.gather.1,到营火,gather at the destination
+content.command_alias.gather.2,去营火,gather at the destination
+content.command_alias.gather.3,到小屋,gather at the destination
+content.command_alias.gather.4,去小屋,gather at the destination
+content.command_alias.ready.0,收菜,harvest
+content.command_alias.ready.1,收获,harvest
+content.command_alias.ready.2,收成,harvest
+content.command_alias.ready.3,摘菜,harvest
+content.command_alias.ready.4,摘果,harvest
+content.command_alias.ready.5,采收,harvest
+content.command_alias.ready.6,收割,harvest
+content.command_alias.ready.7,摘一下,harvest
+content.command_alias.plant.0,种,plant
+content.command_alias.plant.1,播种,plant
+content.command_alias.plant.2,栽,plant
+content.command_alias.plant.3,撒种,plant
+content.command_alias.plant.4,种植,plant
+content.command_alias.plant.5,种莱,plant
+content.command_alias.stop.0,别干了,stop working
+content.command_alias.stop.1,停下,stop working
+content.command_alias.stop.2,停止,stop working
+content.command_alias.stop.3,算了,stop working
+content.command_alias.query_state.0,你在干嘛,tell me your current state
+content.command_alias.query_state.1,在做什么,tell me your current state
+content.command_alias.query_state.2,饿不饿,tell me your current state
+content.command_alias.query_state.3,多少木材,tell me your current state
+content.command_alias.query_state.4,多少木头,tell me your current state

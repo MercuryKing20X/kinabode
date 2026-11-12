@@ -1,0 +1,11 @@
+{
+  "id": "bbq-laborious-food-fish",
+  "context": "bbq_food_fish",
+  "lines": [
+    "烤鱼做好了，先趁热吃。",
+    "这份烤鱼，火候看着不错。",
+    "先认真吃烤鱼，别急着走。",
+    "烤鱼上桌，今天这一口有着落了。"
+  ],
+  "autonomy_output": false
+}

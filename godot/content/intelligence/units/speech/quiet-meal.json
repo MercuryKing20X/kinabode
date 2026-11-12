@@ -1,0 +1,11 @@
+{
+  "id": "quiet-meal",
+  "context": "meal",
+  "lines": [
+    "刚刚一起吃完了。挺好。",
+    "这顿饭，我真的吃到了。",
+    "一起吃过，心里踏实些。",
+    "吃完了，还想坐一会儿。"
+  ],
+  "autonomy_output": false
+}

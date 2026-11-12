@@ -1,0 +1,11 @@
+{
+  "id": "farm-cmd-gentle-harvest",
+  "context": "farm_command_harvest",
+  "lines": [
+    "好，我去把熟了的收回来。",
+    "嗯，我去看看，熟的都收进箱子。",
+    "好呀，收好了就能做饭了。",
+    "我去收，你别累着。"
+  ],
+  "autonomy_output": false
+}

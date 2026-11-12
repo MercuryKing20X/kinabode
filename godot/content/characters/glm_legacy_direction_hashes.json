@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "pairs": [
+    {
+      "left": "left_0",
+      "right": "right_0",
+      "left_pixels": "fa9d8e9a6b373926468eb740f664a67759e6b9b2aadb04225a94fb14f1a9c6e2",
+      "right_pixels": "c081162da7dc62a8fe82ffc8874d7c4c25068573a7e05edfd8f057dfb8d484a9"
+    },
+    {
+      "left": "left_1",
+      "right": "right_1",
+      "left_pixels": "de11321926c9fdf67aeca02c96175731b90dc57c6c7f8be4b0ff1f80b9a1b2bc",
+      "right_pixels": "f05ebfa216cae16b8e491c6a5282d9d1b0d73030a20541765ebad3d5c3f82b6b"
+    },
+    {
+      "left": "left_2",
+      "right": "right_2",
+      "left_pixels": "3af97b4c22abd0b169e16e735baf41b4dd179274a3dcf130c4c925dcda5ce409",
+      "right_pixels": "2a36ab5532d2a6be569ec2a08f7dfade3114444ce80dd5b65f7b1b40fd9820ac"
+    },
+    {
+      "left": "chop_left_0",
+      "right": "chop_right_0",
+      "left_pixels": "9c5141917c28af4f55ac7ac3c24147090b5c3e28ea99ba19c38154bb1b8afd6e",
+      "right_pixels": "97e70b216925d2e2e3857999707f9a58ba78efc2d267ddd82487a0828f49d2c3"
+    },
+    {
+      "left": "chop_left_1",
+      "right": "chop_right_1",
+      "left_pixels": "5dc9c66e1ff9e1e7fa4ffea87232c029fe46dbc736eff8984e3deaad8b14f441",
+      "right_pixels": "0cd00bb47e6e54c4ed2914c67f9587c4004b25429a3355d69b74923814157b8a"
+    },
+    {
+      "left": "carry_left",
+      "right": "carry_right",
+      "left_pixels": "62a778a2a0b5b7ed8a2aebff1f0cc60c15c8783441ec5cf433dd3fe03a71a1f7",
+      "right_pixels": "a80b47945e19ff43559568ec80c6bbcf78bba5a39022fb8da93ee530731aa6a0"
+    },
+    {
+      "left": "chop_left_2",
+      "right": "chop_right_2",
+      "left_pixels": "9c5141917c28af4f55ac7ac3c24147090b5c3e28ea99ba19c38154bb1b8afd6e",
+      "right_pixels": "97e70b216925d2e2e3857999707f9a58ba78efc2d267ddd82487a0828f49d2c3"
+    },
+    {
+      "left": "carry_left_0",
+      "right": "carry_right_0",
+      "left_pixels": "62a778a2a0b5b7ed8a2aebff1f0cc60c15c8783441ec5cf433dd3fe03a71a1f7",
+      "right_pixels": "a80b47945e19ff43559568ec80c6bbcf78bba5a39022fb8da93ee530731aa6a0"
+    },
+    {
+      "left": "carry_left_1",
+      "right": "carry_right_1",
+      "left_pixels": "62a778a2a0b5b7ed8a2aebff1f0cc60c15c8783441ec5cf433dd3fe03a71a1f7",
+      "right_pixels": "a80b47945e19ff43559568ec80c6bbcf78bba5a39022fb8da93ee530731aa6a0"
+    },
+    {
+      "left": "pickup_left",
+      "right": "pickup_right",
+      "left_pixels": "fa9d8e9a6b373926468eb740f664a67759e6b9b2aadb04225a94fb14f1a9c6e2",
+      "right_pixels": "c081162da7dc62a8fe82ffc8874d7c4c25068573a7e05edfd8f057dfb8d484a9"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "dark-quiet-beacon",
+  "context": "dark_beacon",
+  "lines": [
+    "灯醒过来了。",
+    "这一片都亮了。",
+    "以后回来就认得路了。",
+    "大家都在这里。",
+    "这盏灯等到人了。",
+    "给夜里回家的船看看。"
+  ],
+  "autonomy_output": false
+}

@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "id": "showcase",
+  "template_id": "home-v3",
+  "purpose": "art-and-interface-acceptance-only",
+  "houses": "assigned-plots",
+  "facilities": "authored-sites",
+  "homestead_completed": true,
+  "furniture": [
+    {
+      "recipe_id": "table",
+      "position": [
+        7,
+        4.5
+      ],
+      "facing": "down"
+    },
+    {
+      "recipe_id": "chair",
+      "position": [
+        9,
+        4.5
+      ],
+      "facing": "up"
+    },
+    {
+      "recipe_id": "lamp",
+      "position": [
+        21,
+        2.5
+      ],
+      "facing": "down"
+    }
+  ],
+  "crop_phases": [
+    0.1,
+    0.5,
+    1.0
+  ],
+  "empty_records": [
+    "shared_memories",
+    "relationships",
+    "wishes",
+    "promises",
+    "journal",
+    "gomoku",
+    "day_cycle"
+  ],
+  "provenance": "Initial authored state; no builder, contribution, investment or historical completion.",
+  "facility_anchors": {
+    "play.swing": "swing",
+    "play.gazebo": "gazebo",
+    "play.stage": "stage",
+    "play.gomoku": "chess.first",
+    "play.gomoku.2": "chess.second",
+    "play.chess.bench": "chess.bench",
+    "play.dock.bench.south": "dock.south.bench",
+    "play.dock.bench.west": "dock.west.bench",
+    "play.gazebo.bench": "gazebo.bench",
+    "play.well.bench.nw": "plaza.bench.nw",
+    "play.well.bench.ne": "plaza.bench.ne",
+    "play.well.bench.sw": "plaza.bench.sw",
+    "play.well.bench.se": "plaza.bench.se",
+    "play.moon.bench.1": "moon.bench.1",
+    "play.moon.bench.2": "moon.bench.2",
+    "play.moon.bench.3": "moon.bench.3"
+  },
+  "storage": {
+    "wood": 24,
+    "mushroom": 12,
+    "turnip": 6,
+    "tomato": 4,
+    "pumpkin": 2,
+    "blueberry": 4,
+    "seed.turnip": 4,
+    "seed.tomato": 4,
+    "seed.pumpkin": 4,
+    "seed.daisy": 4,
+    "seed.blueberry": 2,
+    "seed.apple": 2
+  }
+}

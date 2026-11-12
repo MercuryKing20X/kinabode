@@ -1,0 +1,134 @@
+{
+  "version": 1,
+  "resident_capacity": 32,
+  "residents": [
+    {
+      "id": "human",
+      "name": "你",
+      "role": "human",
+      "appearance_id": "human-starter",
+      "position": [
+        51,
+        44
+      ],
+      "controller": "human",
+      "capabilities": [
+        "social",
+        "work"
+      ]
+    },
+    {
+      "id": "codex",
+      "name": "小白",
+      "role": "companion",
+      "appearance_id": "white-haired-girl",
+      "position": [
+        53,
+        44
+      ],
+      "controller": "model",
+      "capabilities": [
+        "social",
+        "work"
+      ],
+      "preferences": {
+        "facilities": {
+          "swing": 5,
+          "sit": 3,
+          "dance": 1
+        },
+        "weights": {
+          "nearby": 2,
+          "garden": 1
+        },
+        "fishing_style": "calm",
+        "personality": "gentle"
+      }
+    },
+    {
+      "id": "companion-2",
+      "name": "小蓝",
+      "role": "companion",
+      "appearance_id": "blue-haired-girl",
+      "position": [
+        55,
+        46
+      ],
+      "controller": "model",
+      "capabilities": [
+        "social",
+        "work"
+      ],
+      "preferences": {
+        "facilities": {
+          "swing": 2,
+          "sit": 1,
+          "dance": 5
+        },
+        "weights": {
+          "wander": 4,
+          "facility": 5
+        },
+        "fishing_style": "curious",
+        "personality": "curious"
+      }
+    },
+    {
+      "id": "npc.mira",
+      "name": "小橙",
+      "role": "companion",
+      "appearance_id": "orange-sunflower-girl",
+      "position": [
+        43,
+        46
+      ],
+      "controller": "local",
+      "capabilities": [
+        "social",
+        "work"
+      ],
+      "preferences": {
+        "facilities": {
+          "swing": 1,
+          "sit": 5,
+          "dance": 2
+        },
+        "weights": {
+          "garden": 4,
+          "rest": 3
+        },
+        "fishing_style": "lively",
+        "personality": "lively"
+      }
+    },
+    {
+      "id": "npc.nora",
+      "name": "阿黑",
+      "role": "companion",
+      "appearance_id": "black-scarf-girl",
+      "position": [
+        55,
+        66
+      ],
+      "controller": "local",
+      "capabilities": [
+        "social",
+        "work"
+      ],
+      "preferences": {
+        "facilities": {
+          "swing": 2,
+          "sit": 3,
+          "dance": 3
+        },
+        "weights": {
+          "watch": 3,
+          "garden": 3,
+          "nearby": 0
+        },
+        "fishing_style": "calm",
+        "personality": "quiet"
+      }
+    }
+  ]
+}

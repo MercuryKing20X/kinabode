@@ -1,0 +1,11 @@
+{
+  "id": "lively-gomoku-reply-praise",
+  "context": "gomoku_reply_praise",
+  "lines": [
+    "嘿，谢谢，这一步我也看了好一会儿。",
+    "哎呀，被你夸得有点开心。",
+    "看这里，这句夸奖我收下啦。",
+    "哈，我会继续认真下的。"
+  ],
+  "autonomy_output": false
+}

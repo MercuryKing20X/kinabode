@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "character_ids": [
+    "ai-gpt",
+    "ai-claude",
+    "ai-gemini",
+    "ai-grok",
+    "ai-deepseek",
+    "ai-glm",
+    "ai-qwen",
+    "ai-kimi",
+    "suit-hulk",
+    "orange-sunflower-girl"
+  ]
+}

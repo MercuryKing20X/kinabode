@@ -1,0 +1,280 @@
+{
+  "version": 1,
+  "crops": {
+    "turnip": {
+      "name": "小萝卜",
+      "seconds": 1200,
+      "yield": 3,
+      "regrow": false,
+      "art": "crop-turnip"
+    },
+    "tomato": {
+      "name": "番茄",
+      "seconds": 7200,
+      "yield": 3,
+      "regrow": true,
+      "art": "crop-tomato"
+    },
+    "pumpkin": {
+      "name": "南瓜",
+      "seconds": 21600,
+      "yield": 4,
+      "regrow": false,
+      "art": "crop-pumpkin"
+    },
+    "daisy": {
+      "name": "雏菊",
+      "seconds": 3600,
+      "yield": 3,
+      "regrow": false,
+      "art": "crop-daisy"
+    },
+    "blueberry": {
+      "name": "蓝莓",
+      "seconds": 14400,
+      "yield": 3,
+      "regrow": true,
+      "art": "crop-blueberry"
+    },
+    "apple": {
+      "name": "苹果",
+      "seconds": 86400,
+      "yield": 4,
+      "regrow": true,
+      "art": "crop-apple"
+    }
+  },
+  "farms": [
+    {
+      "id": "farm.home",
+      "name": "家园菜园",
+      "manager_id": "codex",
+      "zone_id": "home.garden",
+      "rect": [
+        29,
+        49,
+        17,
+        14
+      ],
+      "crop_ids": [
+        "turnip",
+        "tomato",
+        "pumpkin"
+      ],
+      "grid": [
+        4,
+        3
+      ],
+      "first": [
+        32,
+        52
+      ],
+      "spacing": [
+        3,
+        3
+      ],
+      "seed_at": [
+        45,
+        60
+      ],
+      "harvest_at": [
+        48,
+        60
+      ],
+      "meeting_at": [
+        47,
+        63
+      ],
+      "road": [
+        [
+          48,
+          56.5
+        ],
+        [
+          47,
+          60
+        ],
+        [
+          47,
+          63
+        ]
+      ]
+    },
+    {
+      "id": "farm.hill",
+      "name": "山坡果园",
+      "manager_id": "",
+      "zone_id": "home.orchard",
+      "rect": [
+        59,
+        57,
+        21,
+        12
+      ],
+      "crop_ids": [
+        "apple",
+        "blueberry"
+      ],
+      "grid": [
+        3,
+        2
+      ],
+      "first": [
+        63,
+        61
+      ],
+      "spacing": [
+        6,
+        5
+      ],
+      "seed_at": [
+        61,
+        70
+      ],
+      "harvest_at": [
+        64,
+        70
+      ],
+      "meeting_at": [
+        68,
+        70
+      ],
+      "road": [
+        [
+          54,
+          68
+        ],
+        [
+          59,
+          68
+        ],
+        [
+          68,
+          68
+        ],
+        [
+          79,
+          68
+        ],
+        [
+          80,
+          76
+        ]
+      ]
+    },
+    {
+      "id": "farm.lake",
+      "name": "湖畔花田",
+      "manager_id": "",
+      "zone_id": "home.east_orchard",
+      "rect": [
+        86,
+        83,
+        16,
+        12
+      ],
+      "crop_ids": [
+        "daisy",
+        "blueberry"
+      ],
+      "grid": [
+        3,
+        2
+      ],
+      "first": [
+        89,
+        87
+      ],
+      "spacing": [
+        4,
+        4
+      ],
+      "seed_at": [
+        88,
+        96
+      ],
+      "harvest_at": [
+        91,
+        96
+      ],
+      "meeting_at": [
+        95,
+        96
+      ],
+      "road": [
+        [
+          103,
+          89
+        ],
+        [
+          103,
+          96
+        ],
+        [
+          95,
+          96
+        ]
+      ]
+    },
+    {
+      "id": "farm.east",
+      "name": "东岸农场",
+      "manager_id": "",
+      "zone_id": "home.east_farm",
+      "rect": [
+        112,
+        90,
+        19,
+        14
+      ],
+      "crop_ids": [
+        "turnip",
+        "tomato",
+        "pumpkin",
+        "daisy"
+      ],
+      "grid": [
+        3,
+        2
+      ],
+      "first": [
+        116,
+        94
+      ],
+      "spacing": [
+        5,
+        5
+      ],
+      "seed_at": [
+        116,
+        105
+      ],
+      "harvest_at": [
+        119,
+        105
+      ],
+      "meeting_at": [
+        123,
+        105
+      ],
+      "road": [
+        [
+          114,
+          94
+        ],
+        [
+          112,
+          102
+        ],
+        [
+          118,
+          103
+        ],
+        [
+          128,
+          103
+        ]
+      ]
+    }
+  ]
+}

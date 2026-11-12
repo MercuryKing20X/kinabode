@@ -1,0 +1,11 @@
+{
+  "id": "fish-v2-laborious-stock",
+  "context": "fishing_v2_stock",
+  "lines": [
+    "好，鱼儿游进渔场了。",
+    "稳住，新朋友有地方住啦。",
+    "接着，这条鱼已经放进渔场。",
+    "认真一点，看它在围网里游。"
+  ],
+  "autonomy_output": false
+}

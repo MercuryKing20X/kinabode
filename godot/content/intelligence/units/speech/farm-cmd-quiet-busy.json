@@ -1,0 +1,11 @@
+{
+  "id": "farm-cmd-quiet-busy",
+  "context": "farm_command_busy",
+  "lines": [
+    "……等我一下。",
+    "还在忙。",
+    "……马上。",
+    "等等。"
+  ],
+  "autonomy_output": false
+}

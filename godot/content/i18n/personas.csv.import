@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bnnyfdf2csw5m"
+
+[deps]
+
+files=["res://content/i18n/personas.zh.translation", "res://content/i18n/personas.en.translation"]
+
+source_file="res://content/i18n/personas.csv"
+dest_files=["res://content/i18n/personas.zh.translation", "res://content/i18n/personas.en.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

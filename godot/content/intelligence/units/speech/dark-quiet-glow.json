@@ -1,0 +1,13 @@
+{
+  "id": "dark-quiet-glow",
+  "context": "dark_glow",
+  "lines": [
+    "这里亮起来了。",
+    "歇一会儿再走吧。",
+    "光把路照得暖暖的。",
+    "我们能看清彼此了。",
+    "这片地方真安静。",
+    "回来的路记住了。"
+  ],
+  "autonomy_output": false
+}

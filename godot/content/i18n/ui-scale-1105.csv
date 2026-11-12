@@ -1,0 +1,7 @@
+keys,zh,en
+ui.scale.title,界面大小,Interface size
+ui.scale.small,小,Small
+ui.scale.medium,中,Medium
+ui.scale.large,大,Large
+ui.scale.extra,特大,Extra large
+local.commands.executable_plots,本单可执行 %d 块田,This order can act on %d plots

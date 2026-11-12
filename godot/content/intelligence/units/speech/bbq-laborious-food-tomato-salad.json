@@ -1,0 +1,11 @@
+{
+  "id": "bbq-laborious-food-tomato-salad",
+  "context": "bbq_food_tomato_salad",
+  "lines": [
+    "番茄沙拉做好了，先趁热吃。",
+    "这份番茄沙拉，火候看着不错。",
+    "先认真吃番茄沙拉，别急着走。",
+    "番茄沙拉上桌，今天这一口有着落了。"
+  ],
+  "autonomy_output": false
+}

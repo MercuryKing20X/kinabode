@@ -1,0 +1,11 @@
+{
+  "id": "bbq-lively-chat-moon",
+  "context": "bbq_chat_moon",
+  "lines": [
+    "今晚月相是{moon}，记住这个样子！",
+    "{moon}的夜晚，想多坐一会儿。",
+    "火光和今晚的{moon}，都暖进心里啦。",
+    "看日子，今晚轮到{moon}呀。"
+  ],
+  "autonomy_output": false
+}

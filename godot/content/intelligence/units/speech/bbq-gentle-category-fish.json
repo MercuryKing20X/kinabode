@@ -1,0 +1,11 @@
+{
+  "id": "bbq-gentle-category-fish",
+  "context": "bbq_category_fish",
+  "lines": [
+    "鱼肉热热的，先吹一吹。",
+    "这口鱼，慢慢尝就很好。",
+    "鱼烤得很香呢。",
+    "一起吃鱼的时候，也不用着急。"
+  ],
+  "autonomy_output": false
+}

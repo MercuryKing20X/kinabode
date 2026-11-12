@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://cb3hg8225nonv"
+
+[deps]
+
+files=["res://content/i18n/storage.zh.translation", "res://content/i18n/storage.en.translation"]
+
+source_file="res://content/i18n/storage.csv"
+dest_files=["res://content/i18n/storage.zh.translation", "res://content/i18n/storage.en.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

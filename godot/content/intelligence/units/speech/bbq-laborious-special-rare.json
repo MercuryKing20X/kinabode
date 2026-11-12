@@ -1,0 +1,11 @@
+{
+  "id": "bbq-laborious-special-rare",
+  "context": "bbq_special_rare",
+  "lines": [
+    "这次钓到的鱼很少见，我尝到了。",
+    "少见的鱼，也得认真吃这一口。",
+    "这条鱼的味道，想记住。",
+    "难得钓到的这一份，慢慢吃。"
+  ],
+  "autonomy_output": false
+}

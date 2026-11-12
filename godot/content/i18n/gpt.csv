@@ -1,0 +1,14 @@
+keys,zh,en
+gpt.key,GPT API 密钥,GPT API key
+gpt.key_hint,输入密钥（仅保存到系统钥匙串）,Enter key (system Keychain only)
+gpt.save_key,保存密钥,Save key
+gpt.saved,已保存,Saved
+gpt.key_failed,钥匙串保存失败,Keychain save failed
+gpt.test_key,隔离测试仅使用进程环境密钥,Isolated tests use process environment keys only
+gpt.chat,聊天模型,Chat model
+gpt.thinking,思考模型,Thinking model
+gpt.limit,每日 token 上限（0 不限）,Daily token limit (0 unlimited)
+gpt.usage,今日 GPT token 与费用,Today GPT tokens and cost
+gpt.estimate,估算,Estimate
+gpt.stop,停止所有 AI,Stop all AI
+gpt.warning,今日 GPT 用量已达上限的 90%,GPT daily usage has reached 90% of the limit

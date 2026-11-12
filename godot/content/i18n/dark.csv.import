@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bmkec3a6wbs7a"
+
+[deps]
+
+files=["res://content/i18n/dark.zh.translation", "res://content/i18n/dark.en.translation"]
+
+source_file="res://content/i18n/dark.csv"
+dest_files=["res://content/i18n/dark.zh.translation", "res://content/i18n/dark.en.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

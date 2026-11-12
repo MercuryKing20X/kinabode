@@ -1,0 +1,11 @@
+{
+  "id": "curious-gomoku-other-move",
+  "context": "gomoku_other_move",
+  "lines": [
+    "咦，看到你落在这里了。",
+    "我注意到，这一手，我得看仔细。",
+    "让我瞧瞧，嗯，我看看你的新棋子。",
+    "有意思，换个角度想想你的这步。"
+  ],
+  "autonomy_output": false
+}

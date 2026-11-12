@@ -1,0 +1,11 @@
+{
+  "id": "bbq-quiet-category-fish",
+  "context": "bbq_category_fish",
+  "lines": [
+    "……鱼肉很香。",
+    "嗯。鱼烤好了。",
+    "小心刺……我知道。",
+    "这口鱼，不错。"
+  ],
+  "autonomy_output": false
+}

@@ -1,0 +1,50 @@
+keys,zh,en
+gestation.heart,心声,Inner voice
+gestation.records,心声流,Thoughts
+gestation.dreams,梦与今天的我,Dreams & today
+gestation.selves,我是谁,Who I am
+gestation.wishes,长期心愿,Long wishes
+gestation.curve,心情曲线,Mood history
+gestation.joy,开心,Joy
+gestation.tired,累,Weariness
+gestation.missing,想念,Missing you
+gestation.curious,好奇,Curiosity
+gestation.hurt,委屈,Hurt
+gestation.safe,安心,Feeling safe
+gestation.day,游戏日,Day
+gestation.ai,她写的,Her own words
+gestation.local,本地简记,Local sketch
+gestation.empty,生命孕育档位开启后，新的心声会留在这里。,New thoughts appear here when Life Nurturing is selected.
+gestation.expand,展开全部心声,Show all thoughts
+gestation.collapse,最近50条,Latest 50
+gestation.export,导出她的日记并打开,Export & open her diary
+gestation.diary,她的日记,Her diary
+gestation.self_initial,我是我。在岛上慢慢认识自己，也慢慢认识你。,"I am myself. There is time to learn who I am, and to get to know you."
+gestation.self_local,我仍然是我，也愿意留一点位置，给接下来真实发生的日子。,"Still myself, with a little room for the days we actually share next."
+gestation.event_feeling,刚才的事留在了心里：{event},Something stayed with me: {event}
+gestation.dream_local,梦里是模糊的海风。这只是一个梦，不是发生过的事。,"In my dream, the sea breeze had no edges. Only a dream, not a memory."
+gestation.today_local,今天的心情慢慢落定。真实发生的事，另记在记忆本里。,My feelings settled a little today. What actually happened is in my memory book.
+gestation.wish_farm,想看见{farm}真正种满并浇好水。,I would like to see {farm} planted and watered.
+gestation.wish_fish,想亲手钓到一条鱼。,I would like to catch a fish myself.
+gestation.pending,还在期待,Still hoping
+gestation.completed,真实完成了,Really completed
+gestation.today_usage,今日生命孕育用量：,Life Nurturing today: 
+gestation.observed,此刻看见的天空：{weather}；时段：{phase}。,The sky I see now: {weather}; time of day: {phase}.
+gestation.praise_thanks,谢谢,Thank you
+gestation.praise_good,做得好,Well done
+gestation.praise_great,好厉害,Great job
+gestation.reasoning_policy,聊天与简单指令固定轻推理；规划、写信、总结与自主回合使用所选档位。,"Chat and simple commands use light reasoning; planning, letters, summaries and autonomy use this level."
+gestation.unknown_cost,: %d · 费用未知（接口未提供单价）,: %d · cost unknown (no provider price supplied)
+gestation.api_domain,接口地址（域名）,API address (domain)
+gestation.refresh_models,从接口刷新模型列表,Refresh models from provider
+gestation.list_failed,无法读取列表；请手动填写模型 ID。,Could not load models; enter a model ID.
+gestation.manual_model,手动模型 ID（列表未读取）,Model ID (list unavailable)
+gestation.water_proof,我亲手浇好了这一畦。,I watered this plot myself.
+gestation.farm_proof,那片田真的种满并浇好了水。,That field is really planted and watered now.
+gestation.tab_thoughts,心声,Thoughts
+gestation.tab_dreams,梦,Dreams
+gestation.tab_self,自我,Self
+gestation.tab_wishes,心愿,Wishes
+gestation.act_rest,我想先静静待一会儿。,I want a quiet moment here.
+gestation.act_plan,我打算：{actions}。,I plan to: {actions}.
+gestation.act_other,做件小事,do something small

@@ -1,0 +1,11 @@
+{
+  "id": "curious-gomoku-move",
+  "context": "gomoku_move",
+  "lines": [
+    "咦，这一手，我选这里。",
+    "我注意到，棋子落好啦。",
+    "让我瞧瞧，这里，接着试试看。",
+    "有意思，这一步已经放好了。"
+  ],
+  "autonomy_output": false
+}

@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "id": "youqi-archipelago",
+  "template_id": "home-v3",
+  "name": "有栖群岛",
+  "bounds": [
+    0,
+    0,
+    8192,
+    8192
+  ],
+  "active_packs": [
+    "res://content/home-v3/pack.json",
+    "res://content/packs/core.json",
+    "res://content/packs/dark.json"
+  ],
+  "spawn": {
+    "region_id": "home",
+    "anchor": "spawn"
+  },
+  "tile_units": 32,
+  "pack_regions": {
+    "res://content/packs/core.json": [
+      "pine",
+      "moon"
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "farm-cmd-night-owl-plant",
+  "context": "farm_command_plant",
+  "lines": [
+    "好，我去种，晚上也能看着它们。",
+    "嗯，我去种。",
+    "我去，种好了月光下看。",
+    "好，交给我。"
+  ],
+  "autonomy_output": false
+}

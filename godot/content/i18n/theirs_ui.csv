@@ -1,0 +1,9 @@
+keys,zh,en
+theirs_ui.materials,木材：需要 %s · 仓库 %s,Wood: need %s · storage %s
+theirs_ui.missing,还缺 %s 木材；准备好了再点「好呀」。,Still need %s wood. You can say yes when it is ready.
+theirs_ui.enough,材料够了，点头后她才会开工。,Supplies are ready. She starts only after you say yes.
+theirs_ui.preview,南岛位置预览（圆圈处）：%s · %s,Island placement preview (ring): %s · %s
+theirs_ui.stale,这张提议已失效，请关闭后重新查看。,This idea has changed. Close this card and check again.
+theirs_ui.shortage,木材还不够，这张提议会等着你。,There is not enough wood yet. This idea can wait.
+theirs_ui.busy,她正忙着或很饿，等她方便时再确认。,She is busy or very hungry. Try when she is ready.
+theirs_ui.occupied,这块位置被占用了，请稍后或换一个提议。,That spot is occupied. Try later or ask for another idea.

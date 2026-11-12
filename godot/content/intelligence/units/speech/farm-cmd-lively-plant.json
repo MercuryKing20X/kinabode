@@ -1,0 +1,11 @@
+{
+  "id": "farm-cmd-lively-plant",
+  "context": "farm_command_plant",
+  "lines": [
+    "好耶！我去种，种得满满的！",
+    "交给我！马上去种！",
+    "种田种田，我来啦！",
+    "好嘞，我去把田种满！"
+  ],
+  "autonomy_output": false
+}

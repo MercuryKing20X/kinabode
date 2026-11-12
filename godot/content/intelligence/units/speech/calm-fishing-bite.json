@@ -1,0 +1,9 @@
+{
+  "id": "calm-fishing-bite",
+  "context": "fishing_bite",
+  "lines": [
+    "咬钩了，拉住啦。",
+    "这回真的来啦。"
+  ],
+  "autonomy_output": false
+}

@@ -1,0 +1,169 @@
+{
+  "version": 1,
+  "seed": 3102703,
+  "transition_seconds": 60,
+  "phases": {
+    "morning": {
+      "tint": "#fff0d8",
+      "light": 0.0,
+      "mist": 0.025
+    },
+    "afternoon": {
+      "tint": "#ffffff",
+      "light": 0.0,
+      "mist": 0.0
+    },
+    "dusk": {
+      "tint": "#f4ba8a",
+      "light": 0.45,
+      "mist": 0.0
+    },
+    "night": {
+      "tint": "#8b9ebd",
+      "light": 1.0,
+      "mist": 0.0
+    }
+  },
+  "limits": {
+    "birds": 6,
+    "butterflies": 10,
+    "fireflies": 20,
+    "coast_waves": 64,
+    "dock_waves": 16,
+    "smoke_per_chimney": 3,
+    "house_refresh_seconds": 2,
+    "smoke_total": 24
+  },
+  "bird_anchors": [
+    "plaza.center",
+    "spawn",
+    "spring.bridge"
+  ],
+  "butterfly_anchors": [
+    "plaza.planter.nw",
+    "plaza.planter.ne",
+    "plaza.planter.sw",
+    "plaza.planter.se"
+  ],
+  "firefly_anchors": [
+    "plaza.planter.nw",
+    "plaza.planter.se",
+    "spawn",
+    "garden.meeting",
+    "north.view"
+  ],
+  "chimneys": {
+    "human": [
+      [
+        162,
+        34
+      ],
+      [
+        116,
+        38
+      ]
+    ],
+    "gentle": [
+      [
+        162,
+        34
+      ]
+    ],
+    "curious": [
+      [
+        162,
+        34
+      ]
+    ],
+    "lively": [
+      [
+        78,
+        34
+      ]
+    ],
+    "quiet": [
+      [
+        162,
+        34
+      ]
+    ]
+  },
+  "strings": [
+    {
+      "anchor": "gazebo",
+      "start": [
+        -88,
+        -125
+      ],
+      "end": [
+        88,
+        -125
+      ],
+      "bulbs": 7
+    },
+    {
+      "anchor": "stage",
+      "start": [
+        -88,
+        -108
+      ],
+      "end": [
+        88,
+        -108
+      ],
+      "bulbs": 7
+    }
+  ],
+  "wind_pixels": 2,
+  "wave_seconds": 3.8,
+  "window_color": "#ffcc80",
+  "warm_light": "#ffd69a",
+  "chimneys_by_parent": {
+    "cottage": [
+      [
+        162,
+        34
+      ]
+    ],
+    "cottage-blue": [
+      [
+        162,
+        34
+      ]
+    ],
+    "cottage-large": [
+      [
+        162,
+        34
+      ]
+    ]
+  },
+  "lamp_glass_rects": [
+    [
+      12,
+      19,
+      9,
+      14
+    ],
+    [
+      24,
+      19,
+      12,
+      14
+    ],
+    [
+      12,
+      36,
+      9,
+      11
+    ],
+    [
+      24,
+      36,
+      12,
+      11
+    ]
+  ],
+  "window_strength": 1.0,
+  "ground_light_gain": 1.8
+}

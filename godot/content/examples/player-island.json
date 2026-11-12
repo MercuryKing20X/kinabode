@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "id": "example",
+  "version": 1,
+  "name": "玩家海岛示例（未启用）",
+  "regions": [
+    {
+      "id": "example.harbor",
+      "name": "风铃岛",
+      "origin": [
+        4600,
+        4100
+      ],
+      "size": [
+        64,
+        64
+      ],
+      "land": [
+        [
+          8,
+          25
+        ],
+        [
+          24,
+          8
+        ],
+        [
+          45,
+          12
+        ],
+        [
+          57,
+          31
+        ],
+        [
+          43,
+          53
+        ],
+        [
+          19,
+          55
+        ],
+        [
+          7,
+          40
+        ]
+      ],
+      "zones": [
+        {
+          "id": "example.harbor.meadow",
+          "name": "中央草地",
+          "purpose": "scenery",
+          "rect": [
+            24,
+            24,
+            14,
+            14
+          ],
+          "planned_actions": []
+        }
+      ],
+      "objects": []
+    }
+  ]
+}

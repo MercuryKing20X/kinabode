@@ -1,0 +1,13 @@
+{
+  "id": "dark-lively-firefly",
+  "context": "dark_firefly",
+  "lines": [
+    "哇，光飞起来了呀！",
+    "哇，轻一点，别吓着它呀！",
+    "哇，它像一粒星星呀！",
+    "哇，暗处还有一只呀！",
+    "哇，我们装好这点光呀！",
+    "哇，回家也能看见它呀！"
+  ],
+  "autonomy_output": false
+}

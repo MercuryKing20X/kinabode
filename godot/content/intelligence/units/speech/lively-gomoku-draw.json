@@ -1,0 +1,11 @@
+{
+  "id": "lively-gomoku-draw",
+  "context": "gomoku_draw",
+  "lines": [
+    "嘿，棋盘下满，平分这一盘。",
+    "哎呀，这盘是和棋，谁也没输。",
+    "看这里，满盘啦，我们打了个平手。",
+    "哈，这一局就这样和和气气收尾。"
+  ],
+  "autonomy_output": false
+}

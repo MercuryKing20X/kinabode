@@ -1,0 +1,11 @@
+{
+  "id": "gentle-gomoku-reply-tease",
+  "context": "gomoku_reply_tease",
+  "lines": [
+    "嗯，嗯，想陪你好好下一盘。",
+    "轻轻说，被你发现啦，我在认真看。",
+    "我想，当然认真，你也是好对手。",
+    "慢慢来，这盘值得认真一点。"
+  ],
+  "autonomy_output": false
+}

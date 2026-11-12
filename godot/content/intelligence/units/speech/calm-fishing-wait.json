@@ -1,0 +1,9 @@
+{
+  "id": "calm-fishing-wait",
+  "context": "fishing_wait",
+  "lines": [
+    "听着海，等一会儿也很好。",
+    "不急，浮漂还在晒太阳。"
+  ],
+  "autonomy_output": false
+}

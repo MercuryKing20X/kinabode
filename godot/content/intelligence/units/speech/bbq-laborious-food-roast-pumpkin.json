@@ -1,0 +1,11 @@
+{
+  "id": "bbq-laborious-food-roast-pumpkin",
+  "context": "bbq_food_roast_pumpkin",
+  "lines": [
+    "烤南瓜做好了，先趁热吃。",
+    "这份烤南瓜，火候看着不错。",
+    "先认真吃烤南瓜，别急着走。",
+    "烤南瓜上桌，今天这一口有着落了。"
+  ],
+  "autonomy_output": false
+}

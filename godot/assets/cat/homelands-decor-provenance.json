@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "source": "original hand-authored pixel rectangles in home_island_renderer.gd",
+  "assets": ["cat_home", "sign"],
+  "pixel_canvas": [64,56],
+  "lighting": "upper left",
+  "palette": ["#604735", "#ae7d4d", "#d6b071", "#8b603d", "#486447", "#dfcfa8", "#de9950", "#f7eacb"],
+  "generation": "no image model; deterministic hand-drawn pixel fallback",
+  "authority": "pure decoration; no storage inventory, object, job, collision, or item grant"
+}

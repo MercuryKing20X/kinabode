@@ -1,0 +1,11 @@
+{
+  "id": "glutton-hungry",
+  "context": "hungry",
+  "lines": [
+    "有点想吃热乎乎的东西了。",
+    "肚子好像在提醒我啦。",
+    "等开饭的时候，我就在旁边。",
+    "闻到饭香就想过去看看。"
+  ],
+  "autonomy_output": false
+}

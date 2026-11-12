@@ -1,0 +1,11 @@
+{
+  "id": "bbq-lively-hunger-very-hungry",
+  "context": "bbq_hunger_very_hungry",
+  "lines": [
+    "呜，终于有饭吃了！",
+    "我先吃一口，真的等饿了。",
+    "热饭！这下能缓过来了。",
+    "这一口，值得我抱着凳子坐稳！"
+  ],
+  "autonomy_output": false
+}

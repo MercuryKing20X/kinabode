@@ -1,0 +1,11 @@
+{
+  "id": "farm-cmd-introvert-harvest",
+  "context": "farm_command_harvest",
+  "lines": [
+    "……我去收。",
+    "嗯，我去看看。",
+    "好，我去收。",
+    "我去，收好了说一声。"
+  ],
+  "autonomy_output": false
+}

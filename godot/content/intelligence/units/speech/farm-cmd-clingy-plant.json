@@ -1,0 +1,11 @@
+{
+  "id": "farm-cmd-clingy-plant",
+  "context": "farm_command_plant",
+  "lines": [
+    "你叫我我就去，种好了要夸我。",
+    "好，我去种，你要等我哦。",
+    "我去种，很快就回来找你。",
+    "嗯，交给我，种完回来陪你。"
+  ],
+  "autonomy_output": false
+}

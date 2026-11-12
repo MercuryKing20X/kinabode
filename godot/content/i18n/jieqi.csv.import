@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://c17dp07by1pph"
+
+[deps]
+
+files=["res://content/i18n/jieqi.zh.translation", "res://content/i18n/jieqi.en.translation"]
+
+source_file="res://content/i18n/jieqi.csv"
+dest_files=["res://content/i18n/jieqi.zh.translation", "res://content/i18n/jieqi.en.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

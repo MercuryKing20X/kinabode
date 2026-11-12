@@ -1,0 +1,11 @@
+{
+  "id": "quiet-gomoku-behind",
+  "context": "gomoku_behind",
+  "lines": [
+    "嗯。你这边的威胁更明显。",
+    "我看看。我得认真守一下了。",
+    "轻声说。现在你有更多机会。",
+    "先看清。我这边要多看几步。"
+  ],
+  "autonomy_output": false
+}

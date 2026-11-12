@@ -1,0 +1,45 @@
+name: Checks
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+env:
+  PYTHONUTF8: "1"
+jobs:
+  quick:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Godot 4.7.2
+        shell: python
+        run: |
+          import os, pathlib, stat, sys, urllib.request, zipfile
+          root = pathlib.Path(os.environ['RUNNER_TEMP']) / 'godot'
+          root.mkdir()
+          asset = ('linux.x86_64' if sys.platform.startswith('linux') else 'win64.exe' if sys.platform == 'win32' else 'macos.universal')
+          filename = 'Godot_v4.7.2-stable_' + asset + '.zip'
+          archive = root / filename
+          urllib.request.urlretrieve('https://github.com/godotengine/godot-builds/releases/download/4.7.2-stable/' + filename, archive)
+          with zipfile.ZipFile(archive) as data:
+              data.extractall(root)
+          executable = (root / 'Godot.app/Contents/MacOS/Godot' if sys.platform == 'darwin' else root / ('Godot_v4.7.2-stable_win64.exe' if sys.platform == 'win32' else 'Godot_v4.7.2-stable_linux.x86_64'))
+          if sys.platform != 'win32':
+              executable.chmod(executable.stat().st_mode | stat.S_IXUSR)
+          with open(os.environ['GITHUB_ENV'], 'a', encoding='utf-8') as target:
+              target.write('HABITAT_GODOT=' + str(executable) + '\n')
+      - name: Quick checks
+        run: python scripts/test_quick.py
+      - name: Translations
+        if: runner.os == 'Linux'
+        run: python scripts/portable_godot_checks.py --script check_translations.gd
+      - name: Secrets and private paths
+        if: runner.os == 'Linux'
+        run: python scripts/scan_secrets.py --directory . --output secret-scan.json

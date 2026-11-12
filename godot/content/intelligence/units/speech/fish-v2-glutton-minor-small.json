@@ -1,0 +1,11 @@
+{
+  "id": "fish-v2-glutton-minor-small",
+  "context": "fishing_v2_small",
+  "lines": [
+    "好耶，钓到一条小鱼。",
+    "嘿嘿，小小的鱼儿真可爱。",
+    "来啦，这条鱼还挺小的。",
+    "哇，一条小鱼来到岸边。"
+  ],
+  "autonomy_output": false
+}

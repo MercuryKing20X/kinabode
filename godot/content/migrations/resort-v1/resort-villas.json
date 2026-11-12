@@ -1,0 +1,732 @@
+{
+  "version": 1,
+  "villas": [
+    {
+      "id": "resort.villa.codex",
+      "key": "white",
+      "owner_id": "codex",
+      "name": "玻璃花园别墅",
+      "name_en": "Glass Garden Villa",
+      "position": [
+        25,
+        335
+      ],
+      "footprint": [
+        32,
+        28
+      ],
+      "sprite_size": [
+        36,
+        36
+      ],
+      "door": [
+        25,
+        350.5
+      ],
+      "courtyard": [
+        "lounger",
+        "pool",
+        "swing",
+        "table",
+        "parasol",
+        "path"
+      ],
+      "style": "white",
+      "activities": [
+        {
+          "id": "resort.white.lounge",
+          "kind": "lounge",
+          "position": [
+            25,
+            359
+          ],
+          "slots": [
+            [
+              19.8,
+              359
+            ],
+            [
+              22.4,
+              359
+            ],
+            [
+              25.0,
+              359
+            ],
+            [
+              27.6,
+              359
+            ],
+            [
+              30.2,
+              359
+            ]
+          ],
+          "size": [
+            14,
+            6
+          ]
+        },
+        {
+          "id": "resort.white.pool",
+          "kind": "pool",
+          "position": [
+            37,
+            359
+          ],
+          "slots": [
+            [
+              33.6,
+              359
+            ],
+            [
+              35.3,
+              359
+            ],
+            [
+              37.0,
+              359
+            ],
+            [
+              38.7,
+              359
+            ],
+            [
+              40.4,
+              359
+            ]
+          ],
+          "size": [
+            10,
+            8
+          ]
+        },
+        {
+          "id": "resort.white.swing",
+          "kind": "swing",
+          "position": [
+            13,
+            359
+          ],
+          "slots": [
+            [
+              9.6,
+              359
+            ],
+            [
+              11.3,
+              359
+            ],
+            [
+              13.0,
+              359
+            ],
+            [
+              14.7,
+              359
+            ],
+            [
+              16.4,
+              359
+            ]
+          ],
+          "size": [
+            8,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "id": "resort.villa.companion-2",
+      "key": "blue",
+      "owner_id": "companion-2",
+      "name": "风帆海边度假屋",
+      "name_en": "Sail Seaside Villa",
+      "position": [
+        135,
+        335
+      ],
+      "footprint": [
+        32,
+        28
+      ],
+      "sprite_size": [
+        36,
+        36
+      ],
+      "door": [
+        135,
+        350.5
+      ],
+      "courtyard": [
+        "lounger",
+        "pool",
+        "swing",
+        "table",
+        "parasol",
+        "path"
+      ],
+      "style": "blue",
+      "activities": [
+        {
+          "id": "resort.blue.lounge",
+          "kind": "lounge",
+          "position": [
+            135,
+            359
+          ],
+          "slots": [
+            [
+              129.8,
+              359
+            ],
+            [
+              132.4,
+              359
+            ],
+            [
+              135.0,
+              359
+            ],
+            [
+              137.6,
+              359
+            ],
+            [
+              140.2,
+              359
+            ]
+          ],
+          "size": [
+            14,
+            6
+          ]
+        },
+        {
+          "id": "resort.blue.pool",
+          "kind": "pool",
+          "position": [
+            147,
+            359
+          ],
+          "slots": [
+            [
+              143.6,
+              359
+            ],
+            [
+              145.3,
+              359
+            ],
+            [
+              147.0,
+              359
+            ],
+            [
+              148.7,
+              359
+            ],
+            [
+              150.4,
+              359
+            ]
+          ],
+          "size": [
+            10,
+            8
+          ]
+        },
+        {
+          "id": "resort.blue.swing",
+          "kind": "swing",
+          "position": [
+            123,
+            359
+          ],
+          "slots": [
+            [
+              119.6,
+              359
+            ],
+            [
+              121.3,
+              359
+            ],
+            [
+              123.0,
+              359
+            ],
+            [
+              124.7,
+              359
+            ],
+            [
+              126.4,
+              359
+            ]
+          ],
+          "size": [
+            8,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "id": "resort.villa.human",
+      "key": "human",
+      "owner_id": "human",
+      "name": "海景大宅",
+      "name_en": "Ocean Terrace Mansion",
+      "position": [
+        80,
+        335
+      ],
+      "footprint": [
+        32,
+        28
+      ],
+      "sprite_size": [
+        36,
+        36
+      ],
+      "door": [
+        80,
+        350.5
+      ],
+      "courtyard": [
+        "lounger",
+        "pool",
+        "hammock",
+        "table",
+        "parasol",
+        "path"
+      ],
+      "style": "human",
+      "activities": [
+        {
+          "id": "resort.human.lounge",
+          "kind": "lounge",
+          "position": [
+            80,
+            359
+          ],
+          "slots": [
+            [
+              74.8,
+              359
+            ],
+            [
+              77.4,
+              359
+            ],
+            [
+              80.0,
+              359
+            ],
+            [
+              82.6,
+              359
+            ],
+            [
+              85.2,
+              359
+            ]
+          ],
+          "size": [
+            14,
+            6
+          ]
+        },
+        {
+          "id": "resort.human.pool",
+          "kind": "pool",
+          "position": [
+            92,
+            359
+          ],
+          "slots": [
+            [
+              88.6,
+              359
+            ],
+            [
+              90.3,
+              359
+            ],
+            [
+              92.0,
+              359
+            ],
+            [
+              93.7,
+              359
+            ],
+            [
+              95.4,
+              359
+            ]
+          ],
+          "size": [
+            10,
+            8
+          ]
+        },
+        {
+          "id": "resort.human.hammock",
+          "kind": "hammock",
+          "position": [
+            68,
+            359
+          ],
+          "slots": [
+            [
+              64.6,
+              359
+            ],
+            [
+              66.3,
+              359
+            ],
+            [
+              68.0,
+              359
+            ],
+            [
+              69.7,
+              359
+            ],
+            [
+              71.4,
+              359
+            ]
+          ],
+          "size": [
+            8,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "id": "resort.villa.npc.mira",
+      "key": "orange",
+      "owner_id": "npc.mira",
+      "name": "暖木大庄园",
+      "name_en": "Warm Timber Manor",
+      "position": [
+        52,
+        385
+      ],
+      "footprint": [
+        32,
+        28
+      ],
+      "sprite_size": [
+        36,
+        36
+      ],
+      "door": [
+        52,
+        400.5
+      ],
+      "courtyard": [
+        "lounger",
+        "pool",
+        "hammock",
+        "table",
+        "parasol",
+        "path"
+      ],
+      "style": "orange",
+      "activities": [
+        {
+          "id": "resort.orange.lounge",
+          "kind": "lounge",
+          "position": [
+            52,
+            409
+          ],
+          "slots": [
+            [
+              46.8,
+              409
+            ],
+            [
+              49.4,
+              409
+            ],
+            [
+              52.0,
+              409
+            ],
+            [
+              54.6,
+              409
+            ],
+            [
+              57.2,
+              409
+            ]
+          ],
+          "size": [
+            14,
+            6
+          ]
+        },
+        {
+          "id": "resort.orange.pool",
+          "kind": "pool",
+          "position": [
+            64,
+            409
+          ],
+          "slots": [
+            [
+              60.6,
+              409
+            ],
+            [
+              62.3,
+              409
+            ],
+            [
+              64.0,
+              409
+            ],
+            [
+              65.7,
+              409
+            ],
+            [
+              67.4,
+              409
+            ]
+          ],
+          "size": [
+            10,
+            8
+          ]
+        },
+        {
+          "id": "resort.orange.hammock",
+          "kind": "hammock",
+          "position": [
+            40,
+            409
+          ],
+          "slots": [
+            [
+              36.6,
+              409
+            ],
+            [
+              38.3,
+              409
+            ],
+            [
+              40.0,
+              409
+            ],
+            [
+              41.7,
+              409
+            ],
+            [
+              43.4,
+              409
+            ]
+          ],
+          "size": [
+            8,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "id": "resort.villa.npc.nora",
+      "key": "black",
+      "owner_id": "npc.nora",
+      "name": "树顶星空屋",
+      "name_en": "Starlit Tree Mansion",
+      "position": [
+        112,
+        385
+      ],
+      "footprint": [
+        32,
+        28
+      ],
+      "sprite_size": [
+        36,
+        36
+      ],
+      "door": [
+        112,
+        400.5
+      ],
+      "courtyard": [
+        "lounger",
+        "pool",
+        "swing",
+        "table",
+        "parasol",
+        "path"
+      ],
+      "style": "black",
+      "activities": [
+        {
+          "id": "resort.black.lounge",
+          "kind": "lounge",
+          "position": [
+            112,
+            409
+          ],
+          "slots": [
+            [
+              106.8,
+              409
+            ],
+            [
+              109.4,
+              409
+            ],
+            [
+              112.0,
+              409
+            ],
+            [
+              114.6,
+              409
+            ],
+            [
+              117.2,
+              409
+            ]
+          ],
+          "size": [
+            14,
+            6
+          ]
+        },
+        {
+          "id": "resort.black.pool",
+          "kind": "pool",
+          "position": [
+            124,
+            409
+          ],
+          "slots": [
+            [
+              120.6,
+              409
+            ],
+            [
+              122.3,
+              409
+            ],
+            [
+              124.0,
+              409
+            ],
+            [
+              125.7,
+              409
+            ],
+            [
+              127.4,
+              409
+            ]
+          ],
+          "size": [
+            10,
+            8
+          ]
+        },
+        {
+          "id": "resort.black.swing",
+          "kind": "swing",
+          "position": [
+            100,
+            409
+          ],
+          "slots": [
+            [
+              96.6,
+              409
+            ],
+            [
+              98.3,
+              409
+            ],
+            [
+              100.0,
+              409
+            ],
+            [
+              101.7,
+              409
+            ],
+            [
+              103.4,
+              409
+            ]
+          ],
+          "size": [
+            8,
+            7
+          ]
+        }
+      ]
+    }
+  ],
+  "texture_native_size": [
+    384,
+    384
+  ],
+  "light": "upper-left",
+  "activities": {
+    "lounger": {
+      "offset": [
+        0,
+        24
+      ],
+      "size": [
+        10,
+        6
+      ]
+    },
+    "pool": {
+      "offset": [
+        12,
+        24
+      ],
+      "size": [
+        10,
+        8
+      ]
+    },
+    "swing": {
+      "offset": [
+        -12,
+        24
+      ],
+      "size": [
+        8,
+        7
+      ]
+    },
+    "hammock": {
+      "offset": [
+        -12,
+        24
+      ],
+      "size": [
+        8,
+        7
+      ]
+    }
+  }
+}

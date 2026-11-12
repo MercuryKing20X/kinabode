@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://cudnien2jcgwy"
+
+[deps]
+
+files=["res://content/i18n/panels.zh.translation", "res://content/i18n/panels.en.translation"]
+
+source_file="res://content/i18n/panels.csv"
+dest_files=["res://content/i18n/panels.zh.translation", "res://content/i18n/panels.en.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

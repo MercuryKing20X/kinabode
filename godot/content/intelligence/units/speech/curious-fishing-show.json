@@ -1,0 +1,9 @@
+{
+  "id": "curious-fishing-show",
+  "context": "fishing_show",
+  "lines": [
+    "这边的光照着，颜色又不同了。",
+    "它的轮廓好特别。"
+  ],
+  "autonomy_output": false
+}

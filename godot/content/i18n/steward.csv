@@ -1,0 +1,95 @@
+keys,zh,en
+steward.authority,管事权,Management authority
+steward.daily_limit,每日上限（token）,Daily token limit
+steward.today,今天的安排,Today’s plans
+steward.give,交给%s,Leave it to %s
+steward.choose,选择总管,Choose a steward
+steward.stop,收回托管,Stop managing
+steward.empty,今天还没有安排,No plans yet today
+steward.unavailable,先连接 AI 并打开管事权,Connect AI and enable management first
+steward.camera,镜头跟随总管,Follow steward
+steward.limit,今天先按熟悉的节奏过吧～,Let’s keep a familiar rhythm today.
+steward.local,按本地作息,Local routine
+steward.handover,好，你来安排，我就在旁边～,All yours. I’ll be nearby.
+steward.plan_request,请根据眼前真实情况安排接下来一段。饿了优先张罗烧烤，雨天躲雨，夜里看星星或回家。,Plan the next part of today from actual facts. Feed hungry friends by barbecue; shelter in rain; stars or home at night.
+watch.expand,展开,Expand
+watch.all,所有人,Everyone
+watch.common,常用,Frequent
+watch.everyone,大家,Everyone
+watch.myself,我自己,Myself
+watch.ask,问问,Ask
+watch.manage,托管,Manage
+watch.chop,派活：砍树,Chop trees
+watch.harvest,派活：收菜,Harvest
+watch.gather,集合,Gather
+watch.follow,跟随,Follow
+watch.unfollow,不跟随,Stop following
+watch.doing,在干嘛,What’s up
+watch.hungry,饿不饿,Hungry
+watch.stock,仓库,Storage
+watch.summary,第 %s 天的小结,Day %s in review
+steward.phase.now,现在,Now
+steward.phase.morning,清晨,Morning
+steward.phase.noon,中午,Noon
+steward.phase.afternoon,午后,Afternoon
+steward.phase.evening,傍晚,Evening
+steward.phase.dusk,傍晚,Dusk
+steward.phase.night,夜里,Night
+watch.wood_receipt,%s 砍了 %d 棵树，%d 木材已入库,%s chopped %d trees; %d wood stored
+watch.reason,她的心里话：,"Her thoughts: "
+watch.follow_options,跟随,Follow
+watch.missing,东西还差一点，先等等吧。,We need a few more things. Let’s wait.
+watch.blocked,这会儿办不到，我换个安排吧。,That won’t work right now. Let me rethink it.
+watch.material_confirm,这段安排预计最多用到 %d 份材料。现在交给她们吗？,This plan may use up to %d materials. Go ahead?
+intent.action.assemble,集合,Gather
+steward.current_manager,总管：%s,Steward: %s
+steward.handover.gentle,好，你来安排，我就在旁边～,All yours. I’ll be nearby.
+steward.handover.lively,交给你啦，我去旁边看看～,Your turn! I’ll go have a look around.
+steward.handover.laborious,那就按你的安排来。,We’ll follow your plan then.
+steward.handover.quiet,……交给你。,…Your turn.
+watch.mail_short,信 %d,Mail %d
+watch.log,日志,Today’s log
+content.steward.command.chop,大家去砍树,Everyone chop trees
+content.steward.command.harvest,大家去收菜,Everyone harvest
+content.steward.command.assemble,到营火集合,Gather at campfire
+content.steward.command.follow,都跟着我,Follow me
+content.steward.command.unfollow,别跟了自由活动,Stop following
+content.steward.command.doing,大家在干嘛,What is everyone doing
+content.steward.command.hungry,大家饿不饿,Is anyone hungry
+content.steward.command.stock,仓库有什么,What is in storage
+content.steward.everyone_prefix,大家,Everyone
+content.steward.stop_short,别管了,Stop managing
+content.steward.stop_command,停止托管,Stop managing
+repair.connecting,正在连接中,Connecting
+repair.disconnected,没连接 AI,AI is not connected
+repair.no_authority,没开管事权,Management permission is off
+repair.one_click,一键连接并让%s当总管,Connect and appoint %s
+repair.accepted,交给我吧～,Leave it to me!
+repair.offer,要我来照看大家吗？,Shall I look after everyone?
+repair.yes,好,Yes
+repair.later,先不用,Not now
+repair.ask_authority,我还没有管事权呢，要交给我吗？,May I have permission to manage everyone?
+repair.running,托管中·%s,Steward · %s
+repair.no_manager,还没有总管,No steward yet
+repair.reset,重置总管询问,Reset steward invitation
+repair.tasks,任务,Tasks
+repair.suggestion,今日建议,Today’s suggestion
+repair.wood,木材不多了，去砍树吧,Wood is low. Chop some trees
+repair.food,有人饿了，生火烧烤吧,Someone is hungry. Have a barbecue
+repair.harvest,田熟了，去收菜吧,Crops are ready. Harvest them
+repair.fish,去钓鱼吧,Go fishing
+reliable.persona,她的设定,Her persona
+reliable.default,恢复默认,Restore default
+reliable.save,保存,Save
+reliable.next_connection,保存后下次连接生效；已连接时请重连。,Saved changes apply on the next connection. Reconnect to apply now.
+reliable.reconnect,一键重连,Reconnect
+reliable.reconnected,刚才走神了～我回来啦。,Mm… I drifted for a moment. I’m back.
+content.steward.all,所有人,all companions
+content.steward.everyone,大家,everyone
+content.steward.leave,交给你了,Leave it to you
+content.steward.decide,你看着办,You decide
+steward.gentle_suffix,呀～,~
+steward.returned,干完回来啦。, has finished and returned.
+content.steward.self_barbecue,自己烧烤,host a barbecue
+content.steward.call_chop,叫人砍树,ask companions to chop
+watch.dialogue_commands,对话/指令,Chat / Commands

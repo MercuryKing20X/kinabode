@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "card_chars": 2200,
+  "entry_max_bytes": 65536,
+  "raw_chat_limit": 2000,
+  "photo_daily_limit": 6,
+  "photo_kinds": [
+    "first_shared_meal",
+    "shared_barbecue",
+    "fishing_catch",
+    "home_island_arrival",
+    "island_arrival",
+    "dark_beacon",
+    "signature_taste",
+    "gomoku_match",
+    "cat_contact",
+    "anniversary",
+    "goal_completed"
+  ]
+}

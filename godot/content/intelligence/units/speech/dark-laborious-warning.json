@@ -1,0 +1,13 @@
+{
+  "id": "dark-laborious-warning",
+  "context": "dark_warning",
+  "lines": [
+    "你看，别走太远。",
+    "你看，火把小了，该回营地了。",
+    "你看，先看看最近的灯。",
+    "你看，我们一起往亮处走。",
+    "你看，木材还够吗？。",
+    "你看，这段路慢一点。"
+  ],
+  "autonomy_output": false
+}

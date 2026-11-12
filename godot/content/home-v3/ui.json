@@ -1,0 +1,88 @@
+{
+  "version": 1,
+  "handbook": [
+    {
+      "id": "map",
+      "label": "群岛地图"
+    },
+    {
+      "id": "memories",
+      "label": "家园回忆"
+    },
+    {
+      "id": "journal",
+      "label": "鱼图鉴"
+    },
+    {
+      "id": "workshop",
+      "label": "像素工坊"
+    },
+    {
+      "id": "homestead",
+      "label": "家园工程"
+    },
+    {
+      "id": "autonomy_records",
+      "label": "主动记录"
+    },
+    {
+      "id": "farms",
+      "label": "农庄管理"
+    },
+    {
+      "id": "facilities",
+      "label": "设施与模板"
+    },
+    {
+      "id": "fisheries",
+      "label": "渔场与待安置鱼"
+    },
+    {
+      "id": "recipes",
+      "label": "菜谱本"
+    }
+  ],
+  "context_radius": 4.5,
+  "notification_limit": 3,
+  "common_stock": [
+    "wood",
+    "mushroom",
+    "turnip",
+    "tomato"
+  ],
+  "task_names": {
+    "chop": "砍树与搬运",
+    "gather_wood": "采集木材",
+    "move": "走路",
+    "build": "建造",
+    "take": "取材料",
+    "store": "放材料",
+    "cook": "做菜",
+    "eat": "围炉吃饭",
+    "fish": "海边钓鱼",
+    "farm_work": "照料农田",
+    "house_work": "布置小屋",
+    "shared_barbecue": "一起烧烤",
+    "collect": "拾取木材",
+    "build_facility": "建造设施",
+    "play_gomoku": "下棋",
+    "manage_farm": "照料农田",
+    "build_house": "建造小屋"
+  },
+  "phase_names": {
+    "fire_travel": "走到火边",
+    "fire_sit": "坐着烤火",
+    "fire_eat": "吃热乎的",
+    "host_food_take": "亲自取背包食材",
+    "chop": "正在砍树",
+    "load": "取材料",
+    "walk": "前往目标",
+    "fish_cast": "抛出鱼竿",
+    "fish_wait": "等鱼儿靠近",
+    "fish_bite": "咬钩了",
+    "fish_reel": "慢慢收线",
+    "building": "施工中",
+    "store": "存进箱子",
+    "waiting": "等作物生长"
+  }
+}

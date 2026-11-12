@@ -1,0 +1,11 @@
+{
+  "id": "bbq-quiet-chat-moon",
+  "context": "bbq_chat_moon",
+  "lines": [
+    "今晚……{moon}。",
+    "{moon}。坐着也好。",
+    "月相是{moon}，嗯。",
+    "{moon}的夜晚……不急。"
+  ],
+  "autonomy_output": false
+}

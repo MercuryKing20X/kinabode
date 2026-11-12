@@ -1,0 +1,11 @@
+{
+  "id": "farm-cmd-serious-busy",
+  "context": "farm_command_busy",
+  "lines": [
+    "手上的事还没完，等一下。",
+    "先做完这件，再去。",
+    "稍等，我马上就好。",
+    "等我忙完。"
+  ],
+  "autonomy_output": false
+}

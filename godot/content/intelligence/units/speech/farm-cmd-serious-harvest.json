@@ -1,0 +1,11 @@
+{
+  "id": "farm-cmd-serious-harvest",
+  "context": "farm_command_harvest",
+  "lines": [
+    "明白，我去收成熟的。",
+    "好，我去收菜。",
+    "收到，收完放进箱子。",
+    "好，我去看看。"
+  ],
+  "autonomy_output": false
+}

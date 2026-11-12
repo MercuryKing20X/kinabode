@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://be8xtodo7jqeo"
+
+[deps]
+
+files=["res://content/i18n/island-food-idle.zh.translation", "res://content/i18n/island-food-idle.en.translation"]
+
+source_file="res://content/i18n/island-food-idle.csv"
+dest_files=["res://content/i18n/island-food-idle.zh.translation", "res://content/i18n/island-food-idle.en.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

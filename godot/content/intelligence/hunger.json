@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "thresholds": [
+    0,
+    240,
+    600,
+    1500
+  ],
+  "snack_age": 180,
+  "work_after": 600,
+  "work_extra": 0.5,
+  "slow_speed": 125,
+  "rush_speed": 360,
+  "follow_interval": 1.5,
+  "follow_distance": 2.8,
+  "follow_spacing": 1.8,
+  "max_follow_distance": 12,
+  "state_hourly_limit": 2,
+  "personal_gap": 22.5,
+  "village_gap": 7.0,
+  "snack_items": [
+    "apple",
+    "tomato",
+    "blueberry",
+    "turnip"
+  ],
+  "rush_cooldown": 120,
+  "invitation_words": [
+    "开饭了",
+    "来吃饭",
+    "一起吃饭",
+    "一起烧烤",
+    "来烧烤"
+  ],
+  "rush_timeout": 180,
+  "presentation": {
+    "very_slow_speed": 110,
+    "pause_every": 18,
+    "pause_seconds": 1.2,
+    "rumble_every": 75,
+    "rumble_seconds": 2,
+    "rumble_icon": "咕噜",
+    "reaction_long_seconds": 300,
+    "reaction_seconds": 5,
+    "rush_lean": 0.22,
+    "dust_scale": 2.5,
+    "reaction_grace_seconds": 60
+  }
+}

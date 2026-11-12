@@ -1,0 +1,9 @@
+{
+  "id": "lively-fishing-wait",
+  "context": "fishing_wait",
+  "lines": [
+    "谁先钓到，谁先炫耀！",
+    "鱼是不是也在偷偷看我们？"
+  ],
+  "autonomy_output": false
+}

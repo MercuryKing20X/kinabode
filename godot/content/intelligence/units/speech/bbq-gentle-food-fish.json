@@ -1,0 +1,11 @@
+{
+  "id": "bbq-gentle-food-fish",
+  "context": "bbq_food_fish",
+  "lines": [
+    "烤鱼温温的，慢慢吃。",
+    "能在火边吃烤鱼，心里也暖了。",
+    "这份烤鱼，我会好好尝。",
+    "烤鱼的香气很柔和呢。"
+  ],
+  "autonomy_output": false
+}

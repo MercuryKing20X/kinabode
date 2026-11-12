@@ -1,0 +1,88 @@
+{
+  "id": "slow-warm",
+  "name": "慢热",
+  "description": "本轮情境性格包。",
+  "speech_units": [
+    "quiet-ambient",
+    "quiet-calm",
+    "quiet-happy",
+    "quiet-quiet",
+    "quiet-tired",
+    "quiet-meal",
+    "quiet-giant",
+    "quiet-rain",
+    "quiet-fog",
+    "quiet-greet",
+    "quiet-gomoku-start",
+    "quiet-gomoku-other-move",
+    "quiet-gomoku-move",
+    "quiet-gomoku-open-three",
+    "quiet-gomoku-four",
+    "quiet-gomoku-blocked",
+    "quiet-gomoku-ahead",
+    "quiet-gomoku-behind",
+    "quiet-gomoku-win",
+    "quiet-gomoku-lose",
+    "quiet-gomoku-draw",
+    "quiet-gomoku-long-think",
+    "quiet-gomoku-player-wait",
+    "quiet-gomoku-reply-praise",
+    "quiet-gomoku-reply-think",
+    "quiet-gomoku-reply-tease",
+    "calm-fishing-cast",
+    "calm-fishing-wait",
+    "calm-fishing-nibble",
+    "calm-fishing-bite",
+    "calm-fishing-catch",
+    "calm-fishing-giant",
+    "calm-fishing-reply",
+    "calm-fishing-reply-giant",
+    "calm-fishing-show",
+    "fish-v2-slow-warm-invited",
+    "fish-v2-slow-warm-cast",
+    "fish-v2-slow-warm-wait",
+    "fish-v2-slow-warm-bite",
+    "fish-v2-slow-warm-small",
+    "fish-v2-slow-warm-large",
+    "fish-v2-slow-warm-rare",
+    "fish-v2-slow-warm-lost",
+    "fish-v2-slow-warm-witness",
+    "fish-v2-slow-warm-first",
+    "fish-v2-slow-warm-stock",
+    "fish-v2-slow-warm-release",
+    "farm-cmd-slow-warm-plant",
+    "farm-cmd-slow-warm-harvest",
+    "farm-cmd-slow-warm-busy"
+  ],
+  "behavior_units": [
+    "idle-rest",
+    "idle-watch",
+    "idle-wander"
+  ],
+  "speech_multiplier": 1.7,
+  "hunger_multiplier": 1.0,
+  "activation": {
+    "relationship_below": "familiar"
+  },
+  "weights": {
+    "rest": 1.6,
+    "watch": 1.4,
+    "wander": 0.7
+  },
+  "wish_weights": {
+    "meal": 1.3,
+    "fish": 0.8,
+    "furniture": 2,
+    "facility": 1.4,
+    "homestead": 1
+  },
+  "schedule_weights": {
+    "shelter": 2,
+    "garden": 1.3,
+    "camp": 1,
+    "sea": 0.8
+  },
+  "return_visit": {
+    "interval_seconds": 600
+  }
+}

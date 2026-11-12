@@ -1,0 +1,11 @@
+{
+  "id": "bbq-lively-chat-weather",
+  "context": "bbq_chat_weather",
+  "lines": [
+    "现在是{weather}，火边刚刚好！",
+    "{weather}也挡不住这里暖暖的。",
+    "外面{weather}，我想再坐一下。",
+    "今天的{weather}，配热食也不错嘛。"
+  ],
+  "autonomy_output": false
+}

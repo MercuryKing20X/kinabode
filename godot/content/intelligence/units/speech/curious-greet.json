@@ -1,0 +1,11 @@
+{
+  "id": "curious-greet",
+  "context": "greet",
+  "lines": [
+    "嗨，想一起看看附近吗。",
+    "我发现这里换个角度也挺有趣。",
+    "打个招呼，再看一眼周围。",
+    "你也在这儿，正好一起瞧瞧。"
+  ],
+  "autonomy_output": false
+}

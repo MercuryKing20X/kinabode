@@ -1,0 +1,11 @@
+{
+  "id": "farm-cmd-slow-warm-harvest",
+  "context": "farm_command_harvest",
+  "lines": [
+    "……嗯，我去收。",
+    "好，我去看看。",
+    "我去收，慢慢来。",
+    "嗯，交给我。"
+  ],
+  "autonomy_output": false
+}

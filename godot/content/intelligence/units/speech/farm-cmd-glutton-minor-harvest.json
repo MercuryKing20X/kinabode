@@ -1,0 +1,11 @@
+{
+  "id": "farm-cmd-glutton-minor-harvest",
+  "context": "farm_command_harvest",
+  "lines": [
+    "我去收，收了好吃。",
+    "好，收回来做饭。",
+    "收菜我去。",
+    "好呀，我去收。"
+  ],
+  "autonomy_output": false
+}

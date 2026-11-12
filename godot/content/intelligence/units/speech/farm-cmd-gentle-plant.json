@@ -1,0 +1,11 @@
+{
+  "id": "farm-cmd-gentle-plant",
+  "context": "farm_command_plant",
+  "lines": [
+    "好，我这就去种，慢慢来。",
+    "嗯，我去把田种好，再浇点水。",
+    "交给我吧，种好了告诉你。",
+    "好呀，我去给它们找个好位置。"
+  ],
+  "autonomy_output": false
+}

@@ -1,0 +1,9 @@
+{
+  "id": "curious-fishing-nibble",
+  "context": "fishing_nibble",
+  "lines": [
+    "它是不是在试探鱼线？",
+    "刚才那圈水纹，像个小问号。"
+  ],
+  "autonomy_output": false
+}

@@ -1,0 +1,4520 @@
+{
+  "version": 1,
+  "columns": 6,
+  "directions": [
+    "down",
+    "left",
+    "right",
+    "up"
+  ],
+  "cell": [
+    96,
+    128
+  ],
+  "works": {
+    "human-starter": {
+      "status": "independent",
+      "asset": "human-starter.png",
+      "source_file": "human-starter-source-v2.png",
+      "source_sha256": "558d869fcc2450bf2c0e8c83e29f9045b12b458647f126a1cdfa76173b46fe06",
+      "base_frame_sha256": "dbe42774ceb046eab8c76b46a3c69e7bb8de99899992b58f3d005c4f5e0bdb19",
+      "base_palette_sha256": "c943b0160789f4f42e6495470aa08c9f87c5ee627b24e000f69b79a0b40cea11",
+      "frames": 24,
+      "review_file": "run-review.json",
+      "feet": [
+        [
+          {
+            "pixel": [
+              49,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              42,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              53,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              49,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              42,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              41,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              43,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              79,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              41,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              42,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              43,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              51,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              15,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              53,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              52,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              50,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              52,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              50,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              51,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              52,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              50,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              44,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              40,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ]
+      ]
+    },
+    "white-haired-girl": {
+      "status": "independent",
+      "asset": "white-haired-girl.png",
+      "source_file": "white-haired-girl-source-v2.png",
+      "source_sha256": "e7487e3b27378d60f41f26a1a0ea49f9614bcc4f26217ed9bb7ca1aabdd33bae",
+      "base_frame_sha256": "96b164ee296f6a4799fbf7a746656a5ff2f26de6877346f65f8d2f8896bcd5bf",
+      "base_palette_sha256": "8124cf36514075f92879648b331b86a4e07bca319c973020545e736fee8adb7c",
+      "frames": 24,
+      "review_file": "run-review.json",
+      "feet": [
+        [
+          {
+            "pixel": [
+              44,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              43,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              40,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              46,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              44,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              32,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              64,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              57,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              27,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              20,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              55,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              62,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              31,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              38,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              68,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              73,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              38,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              49,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              48,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              50,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              49,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              46,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              50,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ]
+      ]
+    },
+    "blue-haired-girl": {
+      "status": "independent",
+      "asset": "blue-haired-girl.png",
+      "source_file": "blue-haired-girl-source-v2.png",
+      "source_sha256": "979ca5ab0c0f8df60a1dc567f0a4490c86ad446f0b2c1d4bc838ffe77e404c3f",
+      "base_frame_sha256": "c54c16398762f9f8decb16844057aaec337a72ae677b87a0bd5b71097664e0e2",
+      "base_palette_sha256": "9ec5043b5b8786ee787db78bb746265f076dd9fa569e2470202bc9a7963477b0",
+      "frames": 24,
+      "review_file": "run-review.json",
+      "feet": [
+        [
+          {
+            "pixel": [
+              49,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              49,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              49,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              44,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              42,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              34,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              29,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              73,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              39,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              76,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              71,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              60,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              65,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              22,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              56,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              19,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              24,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              43,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              42,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              45,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              52,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              52,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ]
+      ]
+    },
+    "orange-haired-girl": {
+      "status": "independent",
+      "asset": "orange-haired-girl.png",
+      "source_file": "orange-haired-girl-source-v2.png",
+      "source_sha256": "ef1482553c6079bd233fc1195645b874e63c925dcd0e09f7978875c007fcf892",
+      "base_frame_sha256": "478dfc99c2cf2705295f71719604d2afe13696f5b318deafac305d9aa0400283",
+      "base_palette_sha256": "5c1716b5357596bd52f57647440e53b1f0bffe816e607477835ccc92121ab058",
+      "frames": 24,
+      "review_file": "run-review.json",
+      "feet": [
+        [
+          {
+            "pixel": [
+              42,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              44,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              51,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              43,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              52,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              31,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              28,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              51,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              73,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              28,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              51,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              64,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              66,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              42,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              22,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              65,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              43,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              43,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              45,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              49,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              43,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ]
+      ]
+    },
+    "black-scarf-girl": {
+      "status": "independent",
+      "asset": "black-scarf-girl.png",
+      "source_file": "black-scarf-girl-source-v2.png",
+      "source_sha256": "88c352e4a3bb503e8646ff796f2ef0284b61eb7a099e76471dc1037824015f47",
+      "base_frame_sha256": "b3981ca19fb191368892c95d36e2a7723bda89df54a57428a7ea4162851a9f82",
+      "base_palette_sha256": "dff345190cdc6cc268a3d9c8c30fa809c23cc0a5ebf96297b2b2aae4f8e40a3e",
+      "frames": 24,
+      "review_file": "run-review.json",
+      "feet": [
+        [
+          {
+            "pixel": [
+              41,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              42,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              43,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              38,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              42,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              38,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              27,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              25,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              60,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              24,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              26,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              65,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              68,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              69,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              33,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              71,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              69,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              30,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              50,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              50,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              50,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              51,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              51,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              51,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ]
+      ]
+    },
+    "ai-gpt": {
+      "status": "independent",
+      "asset": "ai-gpt.png",
+      "source_file": "ai-gpt-source-v2.png",
+      "source_sha256": "d2595cedcea1e78528622c30dcda7b24285ac4147f8e73a5287dfefc30202ec1",
+      "base_frame_sha256": "97bfe71c0a9f69f4383ff560f9a7aa89cb742616695178d0d5288b362df0e5c5",
+      "base_palette_sha256": "bf03fa73a1baca8acf3709355b3dd80810ac7282237f6308f9777e03eacf8bcc",
+      "frames": 24,
+      "review_file": "run-review.json",
+      "feet": [
+        [
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              41,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              48,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              44,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              41,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              46,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              29,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              24,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              64,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              51,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              27,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              58,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              66,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              71,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              31,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              44,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              67,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              36,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              51,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              50,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              52,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              54,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              52,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ]
+      ]
+    },
+    "ai-claude": {
+      "status": "independent",
+      "asset": "ai-claude.png",
+      "source_file": "ai-claude-source-v2.png",
+      "source_sha256": "b3f6d30932b373adfad81fd6418e49c71fe06a22b0db7536ce19a30c61e6ad94",
+      "base_frame_sha256": "8ca858401b8c00fba278363dd72c4a1e700887bf795968a9e3ab173cb5536bd5",
+      "base_palette_sha256": "5df657effb67508bdc1554fbaf31705fa36aa4cdc60d4232ac01f1d0fe4806bd",
+      "frames": 24,
+      "review_file": "run-review.json",
+      "feet": [
+        [
+          {
+            "pixel": [
+              51,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              51,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              48,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              46,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              49,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              52,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              26,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              24,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              62,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              21,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              28,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              63,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              69,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              71,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              33,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              73,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              67,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              32,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              42,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              44,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              46,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ]
+      ]
+    },
+    "ai-gemini": {
+      "status": "independent",
+      "asset": "ai-gemini.png",
+      "source_file": "ai-gemini-source-v2.png",
+      "source_sha256": "94359d27e5133e029b07242ab7c568d80010978240a58fc78e357ee44fe52203",
+      "base_frame_sha256": "367691b03a9cc8889ed10aab86a237c45a2f8581334f705aa75e2e3f2679e245",
+      "base_palette_sha256": "d17c803b29304b89be1d1a8cf36c1ba74661e45ce8422af8c0c7e12a78f6a2fb",
+      "frames": 24,
+      "review_file": "run-review.json",
+      "feet": [
+        [
+          {
+            "pixel": [
+              43,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              51,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              48,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              46,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              43,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              31,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              26,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              62,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              28,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              22,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              62,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              63,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              68,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              33,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              66,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              72,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              31,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              49,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              48,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              42,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              48,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              48,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              51,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ]
+      ]
+    },
+    "ai-grok": {
+      "status": "independent",
+      "asset": "ai-grok.png",
+      "source_file": "ai-grok-source-v2.png",
+      "source_sha256": "83752478ee06ec5c4f35f6303d846318d60b4922952f77cf0f61bcc77ff00bce",
+      "base_frame_sha256": "baf15fece0a5c0c84ca7fcd634f41b7b6b898fb83b14b97761600fcc284b0439",
+      "base_palette_sha256": "bbb5b1df844f44cd0890f5413dd00384f7ff1a82e61cdefad3041c7317e7afdd",
+      "frames": 24,
+      "review_file": "run-review.json",
+      "feet": [
+        [
+          {
+            "pixel": [
+              48,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              46,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              44,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              48,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              48,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              27,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              22,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              41,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              24,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              23,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              44,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              67,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              72,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              53,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              70,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              70,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              51,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              48,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              50,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              46,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ]
+      ]
+    },
+    "ai-deepseek": {
+      "status": "independent",
+      "asset": "ai-deepseek.png",
+      "source_file": "ai-deepseek-source-v2.png",
+      "source_sha256": "f9d7bf2f950f46d9a545009776279cafd80478839577998a7fbc3c7606879948",
+      "base_frame_sha256": "14b4cd844d454a21ed7cd4f5bccb6836151f8411823272af672143b3931bdd19",
+      "base_palette_sha256": "b2c2450b65057646228f23fb47697d8dc5d5f869385fca7cd265dfeee3201d25",
+      "frames": 24,
+      "review_file": "run-review.json",
+      "feet": [
+        [
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              52,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              52,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              51,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              40,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              49,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              37,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              65,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              63,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              28,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              37,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              63,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              58,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              28,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              32,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              65,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              58,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              32,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              46,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              43,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              41,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              43,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              49,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              43,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ]
+      ]
+    },
+    "ai-glm": {
+      "status": "independent",
+      "asset": "ai-glm.png",
+      "source_file": "ai-glm-source-v2.png",
+      "source_sha256": "6588ed1482941e1a90e461d342fa26204c8928f45322b5a3db790f17a28da2ca",
+      "base_frame_sha256": "ad27f3e334a4bdfb11f0b318f6e902b400e2a16d4094bbda645cb67d92afb293",
+      "base_palette_sha256": "dfe1593117447f673fd65c4fe8d5e13ef2f275b9b995deb68b7184484b8c4895",
+      "frames": 24,
+      "review_file": "run-review.json",
+      "feet": [
+        [
+          {
+            "pixel": [
+              53,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              52,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              61,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              51,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              48,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              62,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              29,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              31,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              67,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              27,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              28,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              64,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              65,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              64,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              27,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              67,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              65,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              31,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              39,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              46,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              40,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              44,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              49,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              44,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ]
+      ]
+    },
+    "ai-qwen": {
+      "status": "independent",
+      "asset": "ai-qwen.png",
+      "source_file": "ai-qwen-source-v2.png",
+      "source_sha256": "60845c00b0f1cdd2204d1169eea99a2253b4bfed673887104f1f6606ee2a1239",
+      "base_frame_sha256": "2c408077930eb176ee7ca938e7f2e5af09c56f51b19962f683414c24fb1dca01",
+      "base_palette_sha256": "17b58940cd27fff5915849d3ff6a3709b5f8c08f7d8a91f9f23e7df592ee922d",
+      "frames": 24,
+      "review_file": "run-review.json",
+      "feet": [
+        [
+          {
+            "pixel": [
+              43,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              37,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              44,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              40,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              37,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              44,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              24,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              63,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              53,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              21,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              67,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              44,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              70,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              32,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              42,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              73,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              27,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              51,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              44,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              48,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              43,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              50,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ]
+      ]
+    },
+    "ai-kimi": {
+      "status": "independent",
+      "asset": "ai-kimi.png",
+      "source_file": "ai-kimi-source-v2.png",
+      "source_sha256": "6db54e3bdf04b96d1c6b2e5f88311243e4ce41a219f48cc04f65adde1a30afd3",
+      "base_frame_sha256": "6f172cfecebda0e0667500df61cc1b19227fb02f244aa62a910a8b8d97056670",
+      "base_palette_sha256": "7c1e864229eb610fb7440ad2123350aa92a65564a1d219fd60542e918dc4b1cd",
+      "frames": 24,
+      "review_file": "run-review.json",
+      "feet": [
+        [
+          {
+            "pixel": [
+              44,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              44,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              46,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              43,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              41,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              51,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              24,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              23,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              51,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              24,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              26,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              57,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              71,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              70,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              44,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              71,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              69,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              38,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              48,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              51,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              50,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              46,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              51,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              45,
+              112
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ]
+      ]
+    },
+    "suit-hulk": {
+      "status": "independent",
+      "asset": "suit-hulk.png",
+      "base_frame_sha256": "29ccb8b7fe9c02e7f31412957a1806b1c74fd4c7ea23c4fdd1d7dafa51666f1d",
+      "base_palette_sha256": "11c991c118769b3206091e3e74752db3f73be94d015bbd12726972b2ae31f060",
+      "provenance": "production/art/suit-hulk-v2-20261106/provenance.json",
+      "feet": [
+        [
+          {
+            "pixel": [
+              48,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              39,
+              114
+            ],
+            "airborne": true
+          },
+          {
+            "pixel": [
+              39,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              48,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              54,
+              114
+            ],
+            "airborne": true
+          },
+          {
+            "pixel": [
+              42,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              25,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              43,
+              114
+            ],
+            "airborne": true
+          },
+          {
+            "pixel": [
+              37,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              23,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              55,
+              114
+            ],
+            "airborne": true
+          },
+          {
+            "pixel": [
+              42,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              62,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              48,
+              114
+            ],
+            "airborne": true
+          },
+          {
+            "pixel": [
+              54,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              68,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              10,
+              114
+            ],
+            "airborne": true
+          },
+          {
+            "pixel": [
+              48,
+              119
+            ],
+            "airborne": false
+          }
+        ],
+        [
+          {
+            "pixel": [
+              48,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              37,
+              114
+            ],
+            "airborne": true
+          },
+          {
+            "pixel": [
+              50,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              47,
+              119
+            ],
+            "airborne": false
+          },
+          {
+            "pixel": [
+              52,
+              114
+            ],
+            "airborne": true
+          },
+          {
+            "pixel": [
+              51,
+              119
+            ],
+            "airborne": false
+          }
+        ]
+      ],
+      "source_file": "../suit-hulk-v2-20261106/run-source.png",
+      "source_sha256": "f14260105f9b089c15475115a78d4d6cfdf1c14ebe967a2be54a1ce6ec4b00ec",
+      "review_file": "run-review.json",
+      "frames": 24
+    },
+    "orange-sunflower-girl": {
+      "base_frame_sha256": "a4e5a655538ac5a78722be8c6b72f84a21d5268e1209b2a3d24ecb686a78c741",
+      "base_palette_sha256": "d08f948100854ec6bc44a07d92ea1aa7dc20ed47d2108b5e5ff99519417d42ae",
+      "status": "independent",
+      "asset": "orange-sunflower-girl.png",
+      "frames": 24,
+      "method": "new whole-body illustrated pose source, uniform pixel downsample; no limb assembly, body transplant or palette swap",
+      "provenance": "production/art/orange-cohesive-20261111/provenance.json",
+      "feet": [
+        [
+          {
+            "pixel": [
+              40,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              52,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              39,
+              109
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              37,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              32,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              38,
+              109
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              23,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              56,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              33,
+              109
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              35,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              33,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              37,
+              109
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              72,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              40,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              63,
+              109
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              63,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              66,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              58,
+              109
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ],
+        [
+          {
+            "pixel": [
+              34,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              48,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              34,
+              109
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              37,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              45,
+              119
+            ],
+            "airborne": false,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          },
+          {
+            "pixel": [
+              39,
+              109
+            ],
+            "airborne": true,
+            "ground_pixel": [
+              48,
+              120
+            ],
+            "source_direction_reviewed": true
+          }
+        ]
+      ],
+      "source_file": "run-source.png",
+      "source_sha256": "dd5562c08c04caf610663ed021574aafba03865d1ccedaf5ddeac81e1aec5d7d",
+      "review_file": "run-review.json",
+      "atlas_sha256": "4ff6d8314ddcbb09b742dd91deffc549da7bef016650d85367e145dac50f00ef"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "bbq-gentle-chat-relationship",
+  "context": "bbq_chat_relationship",
+  "lines": [
+    "现在已经{stage}了，心里很暖。",
+    "相处到了{stage}，谢谢你一直在。",
+    "在{stage}的日子里，也慢慢来吧。",
+    "能从真实的小事走到{stage}，很好呢。"
+  ],
+  "autonomy_output": false
+}

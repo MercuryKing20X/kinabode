@@ -1,0 +1,7 @@
+{
+  "id": "idle-flower-gift",
+  "action": "flower_gift",
+  "conditions": {},
+  "cooldown_seconds": 0,
+  "requires_target": true
+}

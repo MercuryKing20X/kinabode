@@ -1,0 +1,11 @@
+{
+  "id": "fish-v2-glutton-cast",
+  "context": "fishing_v2_cast",
+  "lines": [
+    "好耶，鱼线飞出去啦。",
+    "嘿嘿，把鱼钩轻轻抛出去。",
+    "来啦，看着浮漂落下去了。",
+    "哇，这一竿要抛稳。"
+  ],
+  "autonomy_output": false
+}

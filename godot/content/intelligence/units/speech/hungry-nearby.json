@@ -1,0 +1,9 @@
+{
+  "id": "hungry-nearby",
+  "context": "hungry_clingy",
+  "lines": [
+    "有一点想吃东西了，我先陪在你旁边。",
+    "肚子空空的，想和你一起等开饭。"
+  ],
+  "autonomy_output": false
+}

@@ -1,0 +1,11 @@
+{
+  "id": "farm-cmd-night-owl-harvest",
+  "context": "farm_command_harvest",
+  "lines": [
+    "好，我去收。",
+    "嗯，我去看看熟没熟。",
+    "我去收，收完再歇。",
+    "好，我去。"
+  ],
+  "autonomy_output": false
+}

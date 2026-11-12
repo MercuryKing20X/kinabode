@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "first_after": 120,
+  "chance": 0.4,
+  "interval": 150,
+  "retry": 20,
+  "stay_seconds": 16,
+  "max_distance": 48,
+  "arrival_radius": 1.0,
+  "phases": {
+    "morning": [
+      {
+        "place": "sea",
+        "weight": 5
+      },
+      {
+        "place": "garden",
+        "weight": 2
+      }
+    ],
+    "afternoon": [
+      {
+        "place": "garden",
+        "weight": 5
+      },
+      {
+        "place": "camp",
+        "weight": 2
+      }
+    ],
+    "dusk": [
+      {
+        "place": "camp",
+        "weight": 5
+      },
+      {
+        "place": "sea",
+        "weight": 2
+      }
+    ],
+    "night": [
+      {
+        "place": "shelter",
+        "weight": 6
+      },
+      {
+        "place": "camp",
+        "weight": 2
+      }
+    ]
+  },
+  "weather_preferences": {
+    "sunny": {},
+    "cloudy": {},
+    "rain": {
+      "shelter": 9,
+      "camp": 0.3,
+      "sea": 0.2,
+      "garden": 0.2
+    },
+    "fog": {
+      "camp": 3,
+      "shelter": 4,
+      "sea": 0.3
+    }
+  },
+  "offsets": [
+    [
+      2,
+      2
+    ],
+    [
+      -2,
+      2
+    ],
+    [
+      3,
+      0
+    ],
+    [
+      -3,
+      0
+    ]
+  ],
+  "labels": {
+    "sea": "海边看海",
+    "garden": "菜园走走",
+    "camp": "营地歇脚",
+    "shelter": "屋檐或凉亭避一避",
+    "our_place": "你们常待的地方"
+  },
+  "shared_place_weight": 2
+}

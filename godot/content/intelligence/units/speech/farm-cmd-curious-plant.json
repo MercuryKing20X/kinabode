@@ -1,0 +1,11 @@
+{
+  "id": "farm-cmd-curious-plant",
+  "context": "farm_command_plant",
+  "lines": [
+    "好！我去种，想看看它们怎么发芽。",
+    "种田吗？我去试试！",
+    "好呀，我去种，顺便观察一下。",
+    "我去种，等着看它们长出来。"
+  ],
+  "autonomy_output": false
+}

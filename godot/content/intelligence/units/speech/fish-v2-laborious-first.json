@@ -1,0 +1,11 @@
+{
+  "id": "fish-v2-laborious-first",
+  "context": "fishing_v2_first",
+  "lines": [
+    "好，发现册里添了新的一页。",
+    "稳住，这条鱼是我第一次钓到。",
+    "接着，原来海里还有这样的鱼。",
+    "认真一点，第一次遇见这种鱼。"
+  ],
+  "autonomy_output": false
+}

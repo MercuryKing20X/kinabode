@@ -1,0 +1,11 @@
+{
+  "id": "bbq-laborious-chat-moon",
+  "context": "bbq_chat_moon",
+  "lines": [
+    "今晚轮到{moon}，知道了。",
+    "{moon}的夜晚，也能好好歇歇。",
+    "今天的月相是{moon}。",
+    "{moon}，火边坐着看日子也行。"
+  ],
+  "autonomy_output": false
+}

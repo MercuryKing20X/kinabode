@@ -1,0 +1,11 @@
+{
+  "id": "bbq-gentle-hunger-full",
+  "context": "bbq_hunger_full",
+  "lines": [
+    "还有热食，慢慢尝一点。",
+    "这一口吃得很从容。",
+    "坐着吃，不急。",
+    "先尝尝这份热乎的。"
+  ],
+  "autonomy_output": false
+}

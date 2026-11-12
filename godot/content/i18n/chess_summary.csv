@@ -1,0 +1,12 @@
+keys,zh,en
+chess.summary.counts,共 %d 步 · 我吃 %d 子 · 她吃 %d 子,%d moves · I took %d · She took %d
+chess.summary.capture,第 %d 步，吃掉了%s。,Move %d: captured a %s.
+chess.summary.opposite,第 %d 步，翻出了对方的%s。,Move %d: revealed the opponent's %s.
+chess.summary.piece.K,将帅,king
+chess.summary.piece.R,车,chariot
+chess.summary.piece.H,马,horse
+chess.summary.piece.C,炮,cannon
+chess.summary.piece.A,士,advisor
+chess.summary.piece.E,象,elephant
+chess.summary.piece.S,兵,soldier
+chess.summary.gomoku,共 %d 手 · 上一步 %s,%d moves · Last move %s

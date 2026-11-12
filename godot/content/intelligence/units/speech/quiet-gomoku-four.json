@@ -1,0 +1,11 @@
+{
+  "id": "quiet-gomoku-four",
+  "context": "gomoku_four",
+  "lines": [
+    "嗯。四颗连起来，要留意缺口。",
+    "我看看。这条四连不能忽略。",
+    "轻声说。这条线上只差一步了。",
+    "先看清。四连出现了，我再看清楚。"
+  ],
+  "autonomy_output": false
+}

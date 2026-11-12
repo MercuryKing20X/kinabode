@@ -1,0 +1,4 @@
+keys,zh,en
+memory.jieqi.human,和%s下了%s步揭棋，我赢了。,I won a game of Jieqi with %s after %s moves.
+memory.jieqi.opponent,和%s下了%s步揭棋，她赢了。,I played Jieqi with %s for %s moves. She won.
+memory.jieqi.draw,和%s下了%s步揭棋，和棋了。,I drew a game of Jieqi with %s after %s moves.

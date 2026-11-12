@@ -1,0 +1,11 @@
+{
+  "id": "farm-cmd-laborious-plant",
+  "context": "farm_command_plant",
+  "lines": [
+    "好，我去种，保证种得整整齐齐。",
+    "交给我，种完浇好水。",
+    "行，我这就去种。",
+    "好，一块都不会落下。"
+  ],
+  "autonomy_output": false
+}

@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bptmwo0d08p44"
+
+[deps]
+
+files=["res://content/i18n/outdoor.zh.translation", "res://content/i18n/outdoor.en.translation"]
+
+source_file="res://content/i18n/outdoor.csv"
+dest_files=["res://content/i18n/outdoor.zh.translation", "res://content/i18n/outdoor.en.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

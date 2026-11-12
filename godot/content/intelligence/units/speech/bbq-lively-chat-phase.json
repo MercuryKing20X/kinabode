@@ -1,0 +1,11 @@
+{
+  "id": "bbq-lively-chat-phase",
+  "context": "bbq_chat_phase",
+  "lines": [
+    "已经是{phase}啦，火还暖着！",
+    "{phase}围着火，也挺好。",
+    "现在{phase}，先让我再坐一下。",
+    "{phase}的火边，我喜欢！"
+  ],
+  "autonomy_output": false
+}

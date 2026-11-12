@@ -1,0 +1,11 @@
+{
+  "id": "fish-v2-glutton-release",
+  "context": "fishing_v2_release",
+  "lines": [
+    "好耶，鱼儿回到海里了。",
+    "嘿嘿，再见，小鱼，慢慢游。",
+    "来啦，这次让鱼儿回大海。",
+    "哇，看着它游远了。"
+  ],
+  "autonomy_output": false
+}

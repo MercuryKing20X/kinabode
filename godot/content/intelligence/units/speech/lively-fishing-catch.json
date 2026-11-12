@@ -1,0 +1,9 @@
+{
+  "id": "lively-fishing-catch",
+  "context": "fishing_catch",
+  "lines": [
+    "嘿，看我钓到了什么！",
+    "锵锵！海里送来的礼物！"
+  ],
+  "autonomy_output": false
+}

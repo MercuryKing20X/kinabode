@@ -1,0 +1,11 @@
+{
+  "id": "fish-v2-curious-cast",
+  "context": "fishing_v2_cast",
+  "lines": [
+    "轻轻地，鱼线飞出去啦。",
+    "嗯，把鱼钩轻轻抛出去。",
+    "好呀，看着浮漂落下去了。",
+    "慢慢来，这一竿要抛稳。"
+  ],
+  "autonomy_output": false
+}

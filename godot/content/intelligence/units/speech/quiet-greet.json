@@ -1,0 +1,11 @@
+{
+  "id": "quiet-greet",
+  "context": "greet",
+  "lines": [
+    "嗯，我在。",
+    "看见你了，打个招呼。",
+    "在旁边陪你一会儿。",
+    "你好。这里还留着位置。"
+  ],
+  "autonomy_output": false
+}

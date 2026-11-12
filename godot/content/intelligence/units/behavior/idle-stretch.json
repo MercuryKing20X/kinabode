@@ -1,0 +1,7 @@
+{
+  "id": "idle-stretch",
+  "action": "stretch",
+  "conditions": {},
+  "cooldown_seconds": 0,
+  "requires_target": false
+}

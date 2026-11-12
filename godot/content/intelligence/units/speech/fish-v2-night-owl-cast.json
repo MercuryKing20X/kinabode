@@ -1,0 +1,11 @@
+{
+  "id": "fish-v2-night-owl-cast",
+  "context": "fishing_v2_cast",
+  "lines": [
+    "嗯，鱼线飞出去啦。",
+    "……把鱼钩轻轻抛出去。",
+    "看，看着浮漂落下去了。",
+    "好，这一竿要抛稳。"
+  ],
+  "autonomy_output": false
+}

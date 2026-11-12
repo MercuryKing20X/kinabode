@@ -1,0 +1,499 @@
+{
+  "version": 2,
+  "crops": {
+    "turnip": {
+      "name": "萝卜",
+      "seconds": 1200,
+      "yield": 3,
+      "regrow": false,
+      "art": "crop-turnip"
+    },
+    "tomato": {
+      "name": "番茄",
+      "seconds": 7200,
+      "yield": 3,
+      "regrow": true,
+      "art": "crop-tomato"
+    },
+    "pumpkin": {
+      "name": "南瓜",
+      "seconds": 21600,
+      "yield": 4,
+      "regrow": false,
+      "art": "crop-pumpkin"
+    },
+    "daisy": {
+      "name": "雏菊",
+      "seconds": 3600,
+      "yield": 3,
+      "regrow": false,
+      "art": "crop-daisy"
+    },
+    "blueberry": {
+      "name": "蓝莓",
+      "seconds": 14400,
+      "yield": 3,
+      "regrow": true,
+      "art": "crop-blueberry"
+    },
+    "apple": {
+      "name": "苹果",
+      "seconds": 86400,
+      "yield": 4,
+      "regrow": true,
+      "art": "crop-apple"
+    },
+    "potato": {
+      "name": "土豆",
+      "seconds": 3600,
+      "yield": 3,
+      "regrow": false,
+      "art": "crop-turnip"
+    },
+    "corn": {
+      "name": "玉米",
+      "seconds": 7200,
+      "yield": 3,
+      "regrow": false,
+      "art": "crop-tomato"
+    }
+  },
+  "farms": [
+    {
+      "id": "farm.home",
+      "name": "家园菜园",
+      "manager_id": "codex",
+      "zone_id": "home.garden",
+      "rect": [
+        30,
+        50,
+        12.4,
+        8.8
+      ],
+      "crop_ids": [
+        "turnip",
+        "tomato",
+        "pumpkin",
+        "potato",
+        "corn"
+      ],
+      "grid": [
+        4,
+        3
+      ],
+      "first": [
+        32,
+        52
+      ],
+      "spacing": [
+        2.8,
+        2.4
+      ],
+      "seed_at": [
+        44.8,
+        59.5
+      ],
+      "harvest_at": [
+        47.2,
+        59.5
+      ],
+      "meeting_at": [
+        46.0,
+        62.5
+      ],
+      "road": [
+        [
+          45.8,
+          56
+        ],
+        [
+          43.8,
+          56
+        ],
+        [
+          42.95,
+          56
+        ],
+        [
+          41.9,
+          56
+        ]
+      ],
+      "bed_size": [
+        2.6,
+        2.2
+      ]
+    },
+    {
+      "id": "farm.hill",
+      "name": "山坡果园",
+      "manager_id": "",
+      "zone_id": "home.orchard",
+      "rect": [
+        61,
+        59,
+        12.4,
+        8.8
+      ],
+      "crop_ids": [
+        "apple",
+        "blueberry"
+      ],
+      "grid": [
+        4,
+        3
+      ],
+      "first": [
+        63,
+        61
+      ],
+      "spacing": [
+        2.8,
+        2.4
+      ],
+      "seed_at": [
+        75.8,
+        68.5
+      ],
+      "harvest_at": [
+        78.2,
+        68.5
+      ],
+      "meeting_at": [
+        77.0,
+        71.5
+      ],
+      "road": [
+        [
+          76.8,
+          65
+        ],
+        [
+          74.8,
+          65
+        ],
+        [
+          73.95,
+          65
+        ],
+        [
+          72.9,
+          65
+        ]
+      ],
+      "bed_size": [
+        2.6,
+        2.2
+      ]
+    },
+    {
+      "id": "farm.lake",
+      "name": "湖畔花田",
+      "manager_id": "",
+      "zone_id": "home.east_orchard",
+      "rect": [
+        87,
+        85,
+        12.4,
+        8.8
+      ],
+      "crop_ids": [
+        "daisy",
+        "blueberry"
+      ],
+      "grid": [
+        4,
+        3
+      ],
+      "first": [
+        89,
+        87
+      ],
+      "spacing": [
+        2.8,
+        2.4
+      ],
+      "seed_at": [
+        101.8,
+        94.5
+      ],
+      "harvest_at": [
+        104.2,
+        94.5
+      ],
+      "meeting_at": [
+        103.0,
+        97.5
+      ],
+      "road": [
+        [
+          102.8,
+          91
+        ],
+        [
+          100.8,
+          91
+        ],
+        [
+          99.95,
+          91
+        ],
+        [
+          98.9,
+          91
+        ]
+      ],
+      "bed_size": [
+        2.6,
+        2.2
+      ]
+    },
+    {
+      "id": "farm.east",
+      "name": "东岸农场",
+      "manager_id": "",
+      "zone_id": "home.east_farm",
+      "rect": [
+        114,
+        92,
+        12.4,
+        8.8
+      ],
+      "crop_ids": [
+        "turnip",
+        "tomato",
+        "pumpkin",
+        "daisy",
+        "potato",
+        "corn"
+      ],
+      "grid": [
+        4,
+        3
+      ],
+      "first": [
+        116,
+        94
+      ],
+      "spacing": [
+        2.8,
+        2.4
+      ],
+      "seed_at": [
+        128.8,
+        101.5
+      ],
+      "harvest_at": [
+        131.2,
+        101.5
+      ],
+      "meeting_at": [
+        130.0,
+        104.5
+      ],
+      "road": [
+        [
+          129.8,
+          98
+        ],
+        [
+          127.8,
+          98
+        ],
+        [
+          126.95,
+          98
+        ],
+        [
+          125.9,
+          98
+        ]
+      ],
+      "bed_size": [
+        2.6,
+        2.2
+      ]
+    },
+    {
+      "id": "farm.theirs",
+      "name": "南岛菜园",
+      "manager_id": "",
+      "zone_id": "home.homelands",
+      "rect": [
+        101.5,
+        231,
+        8.8,
+        6.8
+      ],
+      "crop_ids": [
+        "turnip",
+        "tomato",
+        "pumpkin",
+        "potato",
+        "corn"
+      ],
+      "grid": [
+        3,
+        2
+      ],
+      "first": [
+        103,
+        233
+      ],
+      "spacing": [
+        2.8,
+        2.4
+      ],
+      "seed_at": [
+        105.5,
+        229
+      ],
+      "harvest_at": [
+        105.5,
+        229
+      ],
+      "meeting_at": [
+        105.5,
+        229
+      ],
+      "road": [
+        [
+          105.5,
+          229
+        ],
+        [
+          105.5,
+          232
+        ]
+      ],
+      "bed_size": [
+        2.6,
+        2.2
+      ],
+      "entrance": [
+        105.5,
+        229
+      ]
+    },
+    {
+      "id": "farm.theirs.white",
+      "name": "南岛花房田",
+      "manager_id": "",
+      "zone_id": "home.homelands",
+      "rect": [
+        29.5,
+        231,
+        8.8,
+        6.8
+      ],
+      "crop_ids": [
+        "daisy",
+        "blueberry",
+        "potato",
+        "corn"
+      ],
+      "grid": [
+        3,
+        2
+      ],
+      "first": [
+        31,
+        233
+      ],
+      "spacing": [
+        2.8,
+        2.4
+      ],
+      "seed_at": [
+        33.5,
+        229
+      ],
+      "harvest_at": [
+        33.5,
+        229
+      ],
+      "meeting_at": [
+        33.5,
+        229
+      ],
+      "road": [
+        [
+          33.5,
+          229
+        ],
+        [
+          33.5,
+          232
+        ]
+      ],
+      "bed_size": [
+        2.6,
+        2.2
+      ],
+      "entrance": [
+        33.5,
+        229
+      ]
+    },
+    {
+      "id": "farm.theirs.black",
+      "name": "南岛星露田",
+      "manager_id": "",
+      "zone_id": "home.homelands",
+      "rect": [
+        125.5,
+        231,
+        8.8,
+        6.8
+      ],
+      "crop_ids": [
+        "daisy",
+        "blueberry",
+        "potato",
+        "corn"
+      ],
+      "grid": [
+        3,
+        2
+      ],
+      "first": [
+        127,
+        233
+      ],
+      "spacing": [
+        2.8,
+        2.4
+      ],
+      "seed_at": [
+        129.5,
+        229
+      ],
+      "harvest_at": [
+        129.5,
+        229
+      ],
+      "meeting_at": [
+        129.5,
+        229
+      ],
+      "road": [
+        [
+          129.5,
+          229
+        ],
+        [
+          129.5,
+          232
+        ]
+      ],
+      "bed_size": [
+        2.6,
+        2.2
+      ],
+      "entrance": [
+        129.5,
+        229
+      ]
+    }
+  ]
+}

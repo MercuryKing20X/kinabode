@@ -1,0 +1,493 @@
+{
+  "version": 2,
+  "pending_limit": 1,
+  "max_fish": 4096,
+  "cast_seconds": 2.4,
+  "reel_seconds": 6.0,
+  "job_timeout": 240,
+  "regrow_seconds": 300,
+  "waits": [
+    {
+      "weight": 70,
+      "min": 30,
+      "max": 55
+    },
+    {
+      "weight": 20,
+      "min": 55,
+      "max": 85
+    },
+    {
+      "weight": 10,
+      "min": 12,
+      "max": 24
+    }
+  ],
+  "sizes": [
+    {
+      "id": "person",
+      "name": "等身",
+      "min": 1,
+      "max": 1,
+      "weight": 25
+    },
+    {
+      "id": "large",
+      "name": "大号",
+      "min": 2,
+      "max": 3,
+      "weight": 50
+    },
+    {
+      "id": "huge",
+      "name": "超大",
+      "min": 4,
+      "max": 6,
+      "weight": 20
+    },
+    {
+      "id": "giant",
+      "name": "巨型",
+      "min": 7,
+      "max": 8,
+      "weight": 5
+    }
+  ],
+  "colors": [
+    {
+      "id": "cream",
+      "name": "奶油珊瑚",
+      "tint": "ffcbad",
+      "weight": 35
+    },
+    {
+      "id": "mint",
+      "name": "薄荷天空",
+      "tint": "91ded7",
+      "weight": 35
+    },
+    {
+      "id": "sunset",
+      "name": "落日莓紫",
+      "tint": "eaa3d8",
+      "weight": 25
+    },
+    {
+      "id": "aurora",
+      "name": "极光流彩",
+      "tint": "e1e6ff",
+      "weight": 5
+    }
+  ],
+  "species": [
+    {
+      "id": "bean",
+      "name": "豆豆鱼",
+      "weight": 19
+    },
+    {
+      "id": "ribbon",
+      "name": "飘带鱼",
+      "weight": 22
+    },
+    {
+      "id": "glass",
+      "name": "玻璃鱼",
+      "weight": 10
+    },
+    {
+      "id": "bell",
+      "name": "铃铛鱼",
+      "weight": 10
+    },
+    {
+      "id": "cloud",
+      "name": "云团鱼",
+      "weight": 1
+    },
+    {
+      "id": "lantern",
+      "name": "灯笼鱼",
+      "weight": 1
+    },
+    {
+      "id": "star",
+      "name": "星尾鱼",
+      "weight": 1
+    },
+    {
+      "id": "dream",
+      "name": "梦游鱼",
+      "weight": 1
+    },
+    {
+      "id": "noodle",
+      "name": "面条鱼",
+      "weight": 10
+    },
+    {
+      "id": "eel",
+      "name": "鳗鱼",
+      "weight": 1
+    },
+    {
+      "id": "kite",
+      "name": "风筝鱼",
+      "weight": 1
+    },
+    {
+      "id": "cutlass",
+      "name": "带鱼",
+      "weight": 1,
+      "night_only": true
+    },
+    {
+      "id": "koi",
+      "name": "锦鲤",
+      "weight": 2,
+      "island": "main",
+      "appearance": "summer",
+      "weather": "any",
+      "scale_range": [
+        1,
+        8
+      ]
+    },
+    {
+      "id": "catfish",
+      "name": "鲶鱼",
+      "weight": 2,
+      "island": "main",
+      "appearance": "any",
+      "weather": "rain",
+      "scale_range": [
+        1,
+        8
+      ]
+    },
+    {
+      "id": "clownfish",
+      "name": "小丑鱼",
+      "weight": 9,
+      "island": "main",
+      "appearance": "any",
+      "weather": "any",
+      "scale_range": [
+        1,
+        8
+      ]
+    },
+    {
+      "id": "moonfish",
+      "name": "月光鱼",
+      "weight": 2,
+      "island": "moon",
+      "appearance": "night",
+      "weather": "any",
+      "scale_range": [
+        1,
+        8
+      ]
+    },
+    {
+      "id": "seahorse",
+      "name": "海马",
+      "weight": 1,
+      "island": "moon",
+      "appearance": "any",
+      "weather": "any",
+      "scale_range": [
+        1,
+        8
+      ]
+    },
+    {
+      "id": "angler",
+      "name": "幽灯鱼",
+      "weight": 1,
+      "island": "dark",
+      "appearance": "night",
+      "weather": "any",
+      "scale_range": [
+        1,
+        8
+      ]
+    },
+    {
+      "id": "ghost",
+      "name": "幽灵鱼",
+      "weight": 1,
+      "island": "dark",
+      "appearance": "any",
+      "weather": "any",
+      "scale_range": [
+        1,
+        8
+      ]
+    },
+    {
+      "id": "butterfly",
+      "name": "热带蝴蝶鱼",
+      "weight": 1,
+      "island": "south",
+      "appearance": "any",
+      "weather": "any",
+      "scale_range": [
+        1,
+        8
+      ]
+    },
+    {
+      "id": "puffer",
+      "name": "河豚",
+      "weight": 1,
+      "island": "south",
+      "appearance": "any",
+      "weather": "any",
+      "scale_range": [
+        1,
+        8
+      ]
+    },
+    {
+      "id": "rainbow",
+      "name": "彩虹鳟",
+      "weight": 1,
+      "island": "main",
+      "appearance": "any",
+      "weather": "any",
+      "scale_range": [
+        1,
+        8
+      ]
+    },
+    {
+      "id": "tuna",
+      "name": "金枪鱼",
+      "weight": 1,
+      "island": "south",
+      "appearance": "any",
+      "weather": "any",
+      "scale_range": [
+        7,
+        8
+      ]
+    }
+  ],
+  "pens": [
+    {
+      "id": "home.fishery.north",
+      "name": "北岸星潮渔场",
+      "region_id": "home",
+      "rect": [
+        68,
+        -15,
+        24,
+        20
+      ],
+      "capacity": 12
+    },
+    {
+      "id": "home.fishery.south",
+      "name": "南湾云浪渔场",
+      "region_id": "home",
+      "rect": [
+        68,
+        120,
+        24,
+        20
+      ],
+      "capacity": 12
+    },
+    {
+      "id": "home.fishery.west",
+      "name": "西岸铃风渔场",
+      "region_id": "home",
+      "rect": [
+        -17,
+        50,
+        24,
+        20
+      ],
+      "capacity": 12
+    },
+    {
+      "id": "home.fishery.east",
+      "name": "东湾流光渔场",
+      "region_id": "home",
+      "rect": [
+        152,
+        50,
+        24,
+        20
+      ],
+      "capacity": 12
+    }
+  ],
+  "shore_reach": 5.0,
+  "shore_spacing": 1.8,
+  "seas": [
+    {
+      "id": "home.sea.north",
+      "name": "北面大海",
+      "region_id": "home",
+      "anchor": [
+        80,
+        0
+      ],
+      "stock_capacity": 24,
+      "legacy_id": "home.fishery.north",
+      "legacy_spots": [
+        {
+          "id": "home.fishery.north.spot.1",
+          "position": [
+            77.8,
+            11
+          ],
+          "hook": [
+            77.8,
+            4
+          ]
+        },
+        {
+          "id": "home.fishery.north.spot.2",
+          "position": [
+            82.2,
+            11
+          ],
+          "hook": [
+            82.2,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "id": "home.sea.south",
+      "name": "南面大海",
+      "region_id": "home",
+      "anchor": [
+        80,
+        128
+      ],
+      "stock_capacity": 24,
+      "legacy_id": "home.fishery.south",
+      "legacy_spots": [
+        {
+          "id": "home.fishery.south.spot.1",
+          "position": [
+            77.8,
+            111
+          ],
+          "hook": [
+            77.8,
+            118
+          ]
+        },
+        {
+          "id": "home.fishery.south.spot.2",
+          "position": [
+            82.2,
+            111
+          ],
+          "hook": [
+            82.2,
+            118
+          ]
+        }
+      ]
+    },
+    {
+      "id": "home.sea.west",
+      "name": "西面大海",
+      "region_id": "home",
+      "anchor": [
+        0,
+        64
+      ],
+      "stock_capacity": 24,
+      "legacy_id": "home.fishery.west",
+      "legacy_spots": [
+        {
+          "id": "home.fishery.west.spot.1",
+          "position": [
+            11,
+            57.8
+          ],
+          "hook": [
+            4,
+            57.8
+          ]
+        },
+        {
+          "id": "home.fishery.west.spot.2",
+          "position": [
+            11,
+            62.2
+          ],
+          "hook": [
+            4,
+            62.2
+          ]
+        }
+      ]
+    },
+    {
+      "id": "home.sea.east",
+      "name": "东面大海",
+      "region_id": "home",
+      "anchor": [
+        160,
+        64
+      ],
+      "stock_capacity": 24,
+      "legacy_id": "home.fishery.east",
+      "legacy_spots": [
+        {
+          "id": "home.fishery.east.spot.1",
+          "position": [
+            145,
+            57.8
+          ],
+          "hook": [
+            152,
+            57.8
+          ]
+        },
+        {
+          "id": "home.fishery.east.spot.2",
+          "position": [
+            145,
+            62.2
+          ],
+          "hook": [
+            152,
+            62.2
+          ]
+        }
+      ]
+    }
+  ],
+  "bite_seconds": 2.4,
+  "cast_min": 5.0,
+  "cast_max": 9.0,
+  "nibble_delay": [
+    8.0,
+    13.0
+  ],
+  "fishing_season_days": 28,
+  "extra_seas": [
+    {
+      "id": "dark.sea.coast",
+      "name": "幽光海岸",
+      "region_id": "dark",
+      "anchor": [
+        34,
+        110
+      ],
+      "stock_capacity": 24,
+      "legacy_id": "dark.fishery.coast",
+      "legacy_spots": []
+    }
+  ]
+}

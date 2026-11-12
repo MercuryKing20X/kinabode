@@ -1,0 +1,9 @@
+{
+  "id": "calm-fishing-giant",
+  "context": "fishing_giant",
+  "lines": [
+    "哇……两只手都快举不住了！",
+    "这条比我们想的还要大。"
+  ],
+  "autonomy_output": false
+}

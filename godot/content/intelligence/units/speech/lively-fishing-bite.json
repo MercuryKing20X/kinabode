@@ -1,0 +1,9 @@
+{
+  "id": "lively-fishing-bite",
+  "context": "fishing_bite",
+  "lines": [
+    "来啦！这回拉住啦！",
+    "快看我的竿尖！"
+  ],
+  "autonomy_output": false
+}

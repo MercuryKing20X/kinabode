@@ -1,0 +1,11 @@
+{
+  "id": "lively-gomoku-reply-tease",
+  "context": "gomoku_reply_tease",
+  "lines": [
+    "嘿，嗯，想陪你好好下一盘。",
+    "哎呀，被你发现啦，我在认真看。",
+    "看这里，当然认真，你也是好对手。",
+    "哈，这盘值得认真一点。"
+  ],
+  "autonomy_output": false
+}

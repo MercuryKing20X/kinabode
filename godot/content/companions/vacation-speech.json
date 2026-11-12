@@ -1,0 +1,466 @@
+{
+  "lounge": {
+    "gentle": {
+      "zh": [
+        "躺着晒太阳，连风都变温柔了。",
+        "躺着晒太阳，想把这一刻留久一点。",
+        "躺着晒太阳，你在旁边就很安心。",
+        "躺着晒太阳，我们慢慢来，好不好？"
+      ],
+      "en": [
+        "stretching out in the sun makes even the breeze feel gentle.",
+        "stretching out in the sun makes me want this moment to last.",
+        "stretching out in the sun feels safe with you nearby.",
+        "stretching out in the sun — let us take our time."
+      ]
+    },
+    "lively": {
+      "zh": [
+        "躺着晒太阳！今天快乐加倍！",
+        "躺着晒太阳，我还想再玩一会儿！",
+        "躺着晒太阳，快看我快看我！",
+        "躺着晒太阳，这是我的度假拿手好戏！"
+      ],
+      "en": [
+        "stretching out in the sun! Double the fun today!",
+        "stretching out in the sun — can we stay a little longer?",
+        "stretching out in the sun — hey, watch me!",
+        "stretching out in the sun is my holiday specialty!"
+      ]
+    },
+    "laborious": {
+      "zh": [
+        "躺着晒太阳，肩膀总算放松了。",
+        "躺着晒太阳，今天不赶工，慢慢享受。",
+        "躺着晒太阳，大家舒舒服服才好。",
+        "躺着晒太阳，有空这样歇歇真不错。"
+      ],
+      "en": [
+        "stretching out in the sun lets my shoulders relax.",
+        "stretching out in the sun — no rushing work today.",
+        "stretching out in the sun is best when everyone is comfortable.",
+        "stretching out in the sun is a good way to take a break."
+      ]
+    },
+    "quiet": {
+      "zh": [
+        "躺着晒太阳。嗯，挺好。",
+        "躺着晒太阳，安安静静也很自在。",
+        "躺着晒太阳，暂时不想走。",
+        "躺着晒太阳。不用找话，我在呢。"
+      ],
+      "en": [
+        "stretching out in the sun. Mm, this is nice.",
+        "stretching out in the sun is comfortable even in silence.",
+        "stretching out in the sun makes me want to stay.",
+        "stretching out in the sun. No need to fill the silence; I am here."
+      ]
+    }
+  },
+  "pool": {
+    "gentle": {
+      "zh": [
+        "在泳池玩水，连风都变温柔了。",
+        "在泳池玩水，想把这一刻留久一点。",
+        "在泳池玩水，你在旁边就很安心。",
+        "在泳池玩水，我们慢慢来，好不好？"
+      ],
+      "en": [
+        "playing in the pool makes even the breeze feel gentle.",
+        "playing in the pool makes me want this moment to last.",
+        "playing in the pool feels safe with you nearby.",
+        "playing in the pool — let us take our time."
+      ]
+    },
+    "lively": {
+      "zh": [
+        "在泳池玩水！今天快乐加倍！",
+        "在泳池玩水，我还想再玩一会儿！",
+        "在泳池玩水，快看我快看我！",
+        "在泳池玩水，这是我的度假拿手好戏！"
+      ],
+      "en": [
+        "playing in the pool! Double the fun today!",
+        "playing in the pool — can we stay a little longer?",
+        "playing in the pool — hey, watch me!",
+        "playing in the pool is my holiday specialty!"
+      ]
+    },
+    "laborious": {
+      "zh": [
+        "在泳池玩水，肩膀总算放松了。",
+        "在泳池玩水，今天不赶工，慢慢享受。",
+        "在泳池玩水，大家舒舒服服才好。",
+        "在泳池玩水，有空这样歇歇真不错。"
+      ],
+      "en": [
+        "playing in the pool lets my shoulders relax.",
+        "playing in the pool — no rushing work today.",
+        "playing in the pool is best when everyone is comfortable.",
+        "playing in the pool is a good way to take a break."
+      ]
+    },
+    "quiet": {
+      "zh": [
+        "在泳池玩水。嗯，挺好。",
+        "在泳池玩水，安安静静也很自在。",
+        "在泳池玩水，暂时不想走。",
+        "在泳池玩水。不用找话，我在呢。"
+      ],
+      "en": [
+        "playing in the pool. Mm, this is nice.",
+        "playing in the pool is comfortable even in silence.",
+        "playing in the pool makes me want to stay.",
+        "playing in the pool. No need to fill the silence; I am here."
+      ]
+    }
+  },
+  "swing": {
+    "gentle": {
+      "zh": [
+        "一起荡秋千，连风都变温柔了。",
+        "一起荡秋千，想把这一刻留久一点。",
+        "一起荡秋千，你在旁边就很安心。",
+        "一起荡秋千，我们慢慢来，好不好？"
+      ],
+      "en": [
+        "swinging together makes even the breeze feel gentle.",
+        "swinging together makes me want this moment to last.",
+        "swinging together feels safe with you nearby.",
+        "swinging together — let us take our time."
+      ]
+    },
+    "lively": {
+      "zh": [
+        "一起荡秋千！今天快乐加倍！",
+        "一起荡秋千，我还想再玩一会儿！",
+        "一起荡秋千，快看我快看我！",
+        "一起荡秋千，这是我的度假拿手好戏！"
+      ],
+      "en": [
+        "swinging together! Double the fun today!",
+        "swinging together — can we stay a little longer?",
+        "swinging together — hey, watch me!",
+        "swinging together is my holiday specialty!"
+      ]
+    },
+    "laborious": {
+      "zh": [
+        "一起荡秋千，肩膀总算放松了。",
+        "一起荡秋千，今天不赶工，慢慢享受。",
+        "一起荡秋千，大家舒舒服服才好。",
+        "一起荡秋千，有空这样歇歇真不错。"
+      ],
+      "en": [
+        "swinging together lets my shoulders relax.",
+        "swinging together — no rushing work today.",
+        "swinging together is best when everyone is comfortable.",
+        "swinging together is a good way to take a break."
+      ]
+    },
+    "quiet": {
+      "zh": [
+        "一起荡秋千。嗯，挺好。",
+        "一起荡秋千，安安静静也很自在。",
+        "一起荡秋千，暂时不想走。",
+        "一起荡秋千。不用找话，我在呢。"
+      ],
+      "en": [
+        "swinging together. Mm, this is nice.",
+        "swinging together is comfortable even in silence.",
+        "swinging together makes me want to stay.",
+        "swinging together. No need to fill the silence; I am here."
+      ]
+    }
+  },
+  "hammock": {
+    "gentle": {
+      "zh": [
+        "在吊床里轻轻晃，连风都变温柔了。",
+        "在吊床里轻轻晃，想把这一刻留久一点。",
+        "在吊床里轻轻晃，你在旁边就很安心。",
+        "在吊床里轻轻晃，我们慢慢来，好不好？"
+      ],
+      "en": [
+        "swaying in a hammock makes even the breeze feel gentle.",
+        "swaying in a hammock makes me want this moment to last.",
+        "swaying in a hammock feels safe with you nearby.",
+        "swaying in a hammock — let us take our time."
+      ]
+    },
+    "lively": {
+      "zh": [
+        "在吊床里轻轻晃！今天快乐加倍！",
+        "在吊床里轻轻晃，我还想再玩一会儿！",
+        "在吊床里轻轻晃，快看我快看我！",
+        "在吊床里轻轻晃，这是我的度假拿手好戏！"
+      ],
+      "en": [
+        "swaying in a hammock! Double the fun today!",
+        "swaying in a hammock — can we stay a little longer?",
+        "swaying in a hammock — hey, watch me!",
+        "swaying in a hammock is my holiday specialty!"
+      ]
+    },
+    "laborious": {
+      "zh": [
+        "在吊床里轻轻晃，肩膀总算放松了。",
+        "在吊床里轻轻晃，今天不赶工，慢慢享受。",
+        "在吊床里轻轻晃，大家舒舒服服才好。",
+        "在吊床里轻轻晃，有空这样歇歇真不错。"
+      ],
+      "en": [
+        "swaying in a hammock lets my shoulders relax.",
+        "swaying in a hammock — no rushing work today.",
+        "swaying in a hammock is best when everyone is comfortable.",
+        "swaying in a hammock is a good way to take a break."
+      ]
+    },
+    "quiet": {
+      "zh": [
+        "在吊床里轻轻晃。嗯，挺好。",
+        "在吊床里轻轻晃，安安静静也很自在。",
+        "在吊床里轻轻晃，暂时不想走。",
+        "在吊床里轻轻晃。不用找话，我在呢。"
+      ],
+      "en": [
+        "swaying in a hammock. Mm, this is nice.",
+        "swaying in a hammock is comfortable even in silence.",
+        "swaying in a hammock makes me want to stay.",
+        "swaying in a hammock. No need to fill the silence; I am here."
+      ]
+    }
+  },
+  "barbecue": {
+    "gentle": {
+      "zh": [
+        "在海边一起吃饭，连风都变温柔了。",
+        "在海边一起吃饭，想把这一刻留久一点。",
+        "在海边一起吃饭，你在旁边就很安心。",
+        "在海边一起吃饭，我们慢慢来，好不好？"
+      ],
+      "en": [
+        "sharing dinner by the beach makes even the breeze feel gentle.",
+        "sharing dinner by the beach makes me want this moment to last.",
+        "sharing dinner by the beach feels safe with you nearby.",
+        "sharing dinner by the beach — let us take our time."
+      ]
+    },
+    "lively": {
+      "zh": [
+        "在海边一起吃饭！今天快乐加倍！",
+        "在海边一起吃饭，我还想再玩一会儿！",
+        "在海边一起吃饭，快看我快看我！",
+        "在海边一起吃饭，这是我的度假拿手好戏！"
+      ],
+      "en": [
+        "sharing dinner by the beach! Double the fun today!",
+        "sharing dinner by the beach — can we stay a little longer?",
+        "sharing dinner by the beach — hey, watch me!",
+        "sharing dinner by the beach is my holiday specialty!"
+      ]
+    },
+    "laborious": {
+      "zh": [
+        "在海边一起吃饭，肩膀总算放松了。",
+        "在海边一起吃饭，今天不赶工，慢慢享受。",
+        "在海边一起吃饭，大家舒舒服服才好。",
+        "在海边一起吃饭，有空这样歇歇真不错。"
+      ],
+      "en": [
+        "sharing dinner by the beach lets my shoulders relax.",
+        "sharing dinner by the beach — no rushing work today.",
+        "sharing dinner by the beach is best when everyone is comfortable.",
+        "sharing dinner by the beach is a good way to take a break."
+      ]
+    },
+    "quiet": {
+      "zh": [
+        "在海边一起吃饭。嗯，挺好。",
+        "在海边一起吃饭，安安静静也很自在。",
+        "在海边一起吃饭，暂时不想走。",
+        "在海边一起吃饭。不用找话，我在呢。"
+      ],
+      "en": [
+        "sharing dinner by the beach. Mm, this is nice.",
+        "sharing dinner by the beach is comfortable even in silence.",
+        "sharing dinner by the beach makes me want to stay.",
+        "sharing dinner by the beach. No need to fill the silence; I am here."
+      ]
+    }
+  },
+  "sea": {
+    "gentle": {
+      "zh": [
+        "一起看海，连风都变温柔了。",
+        "一起看海，想把这一刻留久一点。",
+        "一起看海，你在旁边就很安心。",
+        "一起看海，我们慢慢来，好不好？"
+      ],
+      "en": [
+        "watching the sea together makes even the breeze feel gentle.",
+        "watching the sea together makes me want this moment to last.",
+        "watching the sea together feels safe with you nearby.",
+        "watching the sea together — let us take our time."
+      ]
+    },
+    "lively": {
+      "zh": [
+        "一起看海！今天快乐加倍！",
+        "一起看海，我还想再玩一会儿！",
+        "一起看海，快看我快看我！",
+        "一起看海，这是我的度假拿手好戏！"
+      ],
+      "en": [
+        "watching the sea together! Double the fun today!",
+        "watching the sea together — can we stay a little longer?",
+        "watching the sea together — hey, watch me!",
+        "watching the sea together is my holiday specialty!"
+      ]
+    },
+    "laborious": {
+      "zh": [
+        "一起看海，肩膀总算放松了。",
+        "一起看海，今天不赶工，慢慢享受。",
+        "一起看海，大家舒舒服服才好。",
+        "一起看海，有空这样歇歇真不错。"
+      ],
+      "en": [
+        "watching the sea together lets my shoulders relax.",
+        "watching the sea together — no rushing work today.",
+        "watching the sea together is best when everyone is comfortable.",
+        "watching the sea together is a good way to take a break."
+      ]
+    },
+    "quiet": {
+      "zh": [
+        "一起看海。嗯，挺好。",
+        "一起看海，安安静静也很自在。",
+        "一起看海，暂时不想走。",
+        "一起看海。不用找话，我在呢。"
+      ],
+      "en": [
+        "watching the sea together. Mm, this is nice.",
+        "watching the sea together is comfortable even in silence.",
+        "watching the sea together makes me want to stay.",
+        "watching the sea together. No need to fill the silence; I am here."
+      ]
+    }
+  },
+  "stars": {
+    "gentle": {
+      "zh": [
+        "一起看星星，连风都变温柔了。",
+        "一起看星星，想把这一刻留久一点。",
+        "一起看星星，你在旁边就很安心。",
+        "一起看星星，我们慢慢来，好不好？"
+      ],
+      "en": [
+        "watching stars together makes even the breeze feel gentle.",
+        "watching stars together makes me want this moment to last.",
+        "watching stars together feels safe with you nearby.",
+        "watching stars together — let us take our time."
+      ]
+    },
+    "lively": {
+      "zh": [
+        "一起看星星！今天快乐加倍！",
+        "一起看星星，我还想再玩一会儿！",
+        "一起看星星，快看我快看我！",
+        "一起看星星，这是我的度假拿手好戏！"
+      ],
+      "en": [
+        "watching stars together! Double the fun today!",
+        "watching stars together — can we stay a little longer?",
+        "watching stars together — hey, watch me!",
+        "watching stars together is my holiday specialty!"
+      ]
+    },
+    "laborious": {
+      "zh": [
+        "一起看星星，肩膀总算放松了。",
+        "一起看星星，今天不赶工，慢慢享受。",
+        "一起看星星，大家舒舒服服才好。",
+        "一起看星星，有空这样歇歇真不错。"
+      ],
+      "en": [
+        "watching stars together lets my shoulders relax.",
+        "watching stars together — no rushing work today.",
+        "watching stars together is best when everyone is comfortable.",
+        "watching stars together is a good way to take a break."
+      ]
+    },
+    "quiet": {
+      "zh": [
+        "一起看星星。嗯，挺好。",
+        "一起看星星，安安静静也很自在。",
+        "一起看星星，暂时不想走。",
+        "一起看星星。不用找话，我在呢。"
+      ],
+      "en": [
+        "watching stars together. Mm, this is nice.",
+        "watching stars together is comfortable even in silence.",
+        "watching stars together makes me want to stay.",
+        "watching stars together. No need to fill the silence; I am here."
+      ]
+    }
+  },
+  "villa": {
+    "gentle": {
+      "zh": [
+        "到别墅里坐坐，连风都变温柔了。",
+        "到别墅里坐坐，想把这一刻留久一点。",
+        "到别墅里坐坐，你在旁边就很安心。",
+        "到别墅里坐坐，我们慢慢来，好不好？"
+      ],
+      "en": [
+        "spending time in the villa makes even the breeze feel gentle.",
+        "spending time in the villa makes me want this moment to last.",
+        "spending time in the villa feels safe with you nearby.",
+        "spending time in the villa — let us take our time."
+      ]
+    },
+    "lively": {
+      "zh": [
+        "到别墅里坐坐！今天快乐加倍！",
+        "到别墅里坐坐，我还想再玩一会儿！",
+        "到别墅里坐坐，快看我快看我！",
+        "到别墅里坐坐，这是我的度假拿手好戏！"
+      ],
+      "en": [
+        "spending time in the villa! Double the fun today!",
+        "spending time in the villa — can we stay a little longer?",
+        "spending time in the villa — hey, watch me!",
+        "spending time in the villa is my holiday specialty!"
+      ]
+    },
+    "laborious": {
+      "zh": [
+        "到别墅里坐坐，肩膀总算放松了。",
+        "到别墅里坐坐，今天不赶工，慢慢享受。",
+        "到别墅里坐坐，大家舒舒服服才好。",
+        "到别墅里坐坐，有空这样歇歇真不错。"
+      ],
+      "en": [
+        "spending time in the villa lets my shoulders relax.",
+        "spending time in the villa — no rushing work today.",
+        "spending time in the villa is best when everyone is comfortable.",
+        "spending time in the villa is a good way to take a break."
+      ]
+    },
+    "quiet": {
+      "zh": [
+        "到别墅里坐坐。嗯，挺好。",
+        "到别墅里坐坐，安安静静也很自在。",
+        "到别墅里坐坐，暂时不想走。",
+        "到别墅里坐坐。不用找话，我在呢。"
+      ],
+      "en": [
+        "spending time in the villa. Mm, this is nice.",
+        "spending time in the villa is comfortable even in silence.",
+        "spending time in the villa makes me want to stay.",
+        "spending time in the villa. No need to fill the silence; I am here."
+      ]
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "bbq-quiet-chat-catch",
+  "context": "bbq_chat_catch",
+  "lines": [
+    "{fish}……{catcher}钓到过。",
+    "记录里有{fish}。真的。",
+    "{catcher}的{fish}……看到了记录。",
+    "有一条{fish}的收获。嗯。"
+  ],
+  "autonomy_output": false
+}

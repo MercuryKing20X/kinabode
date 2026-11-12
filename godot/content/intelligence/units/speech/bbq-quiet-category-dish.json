@@ -1,0 +1,11 @@
+{
+  "id": "bbq-quiet-category-dish",
+  "context": "bbq_category_dish",
+  "lines": [
+    "……先吃饭。",
+    "这道菜，我会吃完。",
+    "热饭。谢谢。",
+    "嗯……坐着吃吧。"
+  ],
+  "autonomy_output": false
+}

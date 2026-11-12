@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "tracks": {
+    "day": {
+      "file": "res://content/audio/user-music/day.ogg",
+      "title": "Morning",
+      "author": "Kevin MacLeod",
+      "license": "CC-BY-4.0",
+      "url": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN2300003",
+      "sha256": "30bfff921c3126c95aa8d85651577be2acf96a626284a9a71b5373e701a3747d",
+      "rms_dbfs": -20.277829166437407,
+      "peak_dbfs": -4.9775292218550575
+    },
+    "dusk": {
+      "file": "res://content/audio/user-music/dusk.ogg",
+      "title": "Evening",
+      "author": "Kevin MacLeod",
+      "license": "CC-BY-4.0",
+      "url": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN2300002",
+      "sha256": "6ed85e2cf8aba0196e2f03fa68a46868a50c5bf618fae578d298065215ca236f",
+      "rms_dbfs": -19.713862376192637,
+      "peak_dbfs": -4.966653603690063
+    },
+    "night": {
+      "file": "res://content/audio/user-music/night.ogg",
+      "title": "Calmant",
+      "author": "Kevin MacLeod",
+      "license": "CC-BY-4.0",
+      "url": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100859",
+      "sha256": "9a9b85beae15bc970836c8954d956a4a4c93a779f11693a856997100be05b6ca",
+      "rms_dbfs": -21.20910882184608,
+      "peak_dbfs": -4.7637247639655165
+    },
+    "rain": {
+      "file": "res://content/audio/user-music/rain.ogg",
+      "title": "Water Lily",
+      "author": "Kevin MacLeod",
+      "license": "CC-BY-4.0",
+      "url": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400035",
+      "sha256": "bcaab4cebadef4c0123511170108dc323d07d4c46405de86bbe6e54389cd0c0a",
+      "rms_dbfs": -20.51336322709527,
+      "peak_dbfs": -4.768682538348495
+    },
+    "fireside": {
+      "file": "res://content/audio/user-music/fireside.ogg",
+      "title": "Pepper's Theme",
+      "author": "Kevin MacLeod",
+      "license": "CC-BY-4.0",
+      "url": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400033",
+      "sha256": "b725f6824054016823ac754f4566dad614fdb4f08bae686573c50466e061e95b",
+      "rms_dbfs": -19.27202613315092,
+      "peak_dbfs": -4.716979488552785
+    },
+    "moon": {
+      "file": "res://content/audio/user-music/moon.ogg",
+      "title": "Enchanted Journey",
+      "author": "Kevin MacLeod",
+      "license": "CC-BY-4.0",
+      "url": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100799",
+      "sha256": "55d81bedbed1d3c2f98a4cd0562466e73130051a46490040ae96f44a0e41b997",
+      "rms_dbfs": -21.106988717414676,
+      "peak_dbfs": -4.70065232313169
+    },
+    "dark": {
+      "file": "res://content/audio/user-music/dark.ogg",
+      "title": "Midnight Tale",
+      "author": "Kevin MacLeod",
+      "license": "CC-BY-4.0",
+      "url": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1900004",
+      "sha256": "a4aa61d1cd0d1812ba63b23d34b68dc0a30de59004b0b741178d5a99410544ef",
+      "rms_dbfs": -20.341784123598956,
+      "peak_dbfs": -4.622519624777736
+    },
+    "their": {
+      "file": "res://content/audio/user-music/their.ogg",
+      "title": "Melodie Victoria",
+      "author": "Kevin MacLeod",
+      "license": "CC-BY-4.0",
+      "url": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100819",
+      "sha256": "7454680939b3c7c95573623ecbedd8d480a7c70512e54b93f1114d54c2ed4757",
+      "rms_dbfs": -21.64434272472625,
+      "peak_dbfs": -6.496644067900648
+    }
+  }
+}

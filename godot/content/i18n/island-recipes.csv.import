@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://pasjdys6uqvh"
+
+[deps]
+
+files=["res://content/i18n/island-recipes.zh.translation", "res://content/i18n/island-recipes.en.translation"]
+
+source_file="res://content/i18n/island-recipes.csv"
+dest_files=["res://content/i18n/island-recipes.zh.translation", "res://content/i18n/island-recipes.en.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

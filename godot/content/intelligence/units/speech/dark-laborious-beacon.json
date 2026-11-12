@@ -1,0 +1,13 @@
+{
+  "id": "dark-laborious-beacon",
+  "context": "dark_beacon",
+  "lines": [
+    "你看，灯醒过来了。",
+    "你看，这一片都亮了。",
+    "你看，以后回来就认得路了。",
+    "你看，大家都在这里。",
+    "你看，这盏灯等到人了。",
+    "你看，给夜里回家的船看看。"
+  ],
+  "autonomy_output": false
+}

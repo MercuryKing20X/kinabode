@@ -1,0 +1,11 @@
+{
+  "id": "bbq-quiet-chat-phase",
+  "context": "bbq_chat_phase",
+  "lines": [
+    "……{phase}了。",
+    "{phase}。再坐一会儿。",
+    "现在{phase}，火还在。",
+    "{phase}也可以安静待着。"
+  ],
+  "autonomy_output": false
+}

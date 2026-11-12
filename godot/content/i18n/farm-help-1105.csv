@@ -1,0 +1,15 @@
+keys,zh,en
+farm.help.choose,先选要帮忙的伙伴。,Choose companions first.
+farm.help.accepted,已接下这一单，完成后结束授权。,Accepted this order; permission ends with it.
+farm.help.unknown_resident,找不到这位伙伴。,Resident unavailable.
+farm.help.different_region,不在菜田所在区域，暂时不能帮忙。,Outside the field's region.
+farm.help.very_hungry,很饿，先一起吃饭吧。,Very hungry; share a meal first.
+farm.help.hungry,饿了，先一起吃饭吧。,Hungry; share a meal first.
+farm.help.busy,等我忙完，不打断当前事情。,Busy; the current activity stays in place.
+farm.help.hands_full,手里有家具，先安置好。,Holding furniture; place it first.
+farm.help.no_work,这片田没有可做的空格、缺水格或成熟作物。,"No available empty, dry or ripe plots for this order."
+farm.help.no_seed,仓库和本人背包的种子不够；没有开始。,Not enough seeds in storage and own backpack; nothing started.
+farm.help.changed,田格已变化，请重新查看并确认。,Plots changed; review and confirm again.
+farm.help.invalid_farm_plan,这份农活确认已失效，请重新选择。,This farm plan is invalid; choose again.
+farm.help.choose_hint,只让勾选的伙伴接这一单；按现有种子分格，收成送进仓库。,"Only selected companions take this order, using real seeds and depositing harvest in storage."
+farm.help.assigned_done,分给我的田格已种好并浇水。,My assigned plots are planted and watered.

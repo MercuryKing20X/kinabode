@@ -1,0 +1,1135 @@
+{
+  "frames": {
+    "human-starter-hold-down-0.png": {
+      "raw_sha256": "4e30196d7004a2571faac014bf6deab19ccc0758a4b7040ede0303dddcc37462",
+      "grid_cell": [
+        0,
+        0
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "human-starter-hold-down-1.png": {
+      "raw_sha256": "4e30196d7004a2571faac014bf6deab19ccc0758a4b7040ede0303dddcc37462",
+      "grid_cell": [
+        0,
+        1
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "human-starter-hold-down-2.png": {
+      "raw_sha256": "4e30196d7004a2571faac014bf6deab19ccc0758a4b7040ede0303dddcc37462",
+      "grid_cell": [
+        0,
+        2
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "human-starter-pet-down-0.png": {
+      "raw_sha256": "4e30196d7004a2571faac014bf6deab19ccc0758a4b7040ede0303dddcc37462",
+      "grid_cell": [
+        0,
+        3
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "human-starter-hold-up-0.png": {
+      "raw_sha256": "4e30196d7004a2571faac014bf6deab19ccc0758a4b7040ede0303dddcc37462",
+      "grid_cell": [
+        1,
+        0
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "human-starter-hold-up-1.png": {
+      "raw_sha256": "4e30196d7004a2571faac014bf6deab19ccc0758a4b7040ede0303dddcc37462",
+      "grid_cell": [
+        1,
+        1
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "human-starter-hold-up-2.png": {
+      "raw_sha256": "4e30196d7004a2571faac014bf6deab19ccc0758a4b7040ede0303dddcc37462",
+      "grid_cell": [
+        1,
+        2
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "human-starter-pet-up-0.png": {
+      "raw_sha256": "4e30196d7004a2571faac014bf6deab19ccc0758a4b7040ede0303dddcc37462",
+      "grid_cell": [
+        1,
+        3
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "human-starter-hold-left-0.png": {
+      "raw_sha256": "4e30196d7004a2571faac014bf6deab19ccc0758a4b7040ede0303dddcc37462",
+      "grid_cell": [
+        2,
+        0
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "human-starter-hold-left-1.png": {
+      "raw_sha256": "4e30196d7004a2571faac014bf6deab19ccc0758a4b7040ede0303dddcc37462",
+      "grid_cell": [
+        2,
+        1
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "human-starter-hold-left-2.png": {
+      "raw_sha256": "4e30196d7004a2571faac014bf6deab19ccc0758a4b7040ede0303dddcc37462",
+      "grid_cell": [
+        2,
+        2
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "human-starter-pet-left-0.png": {
+      "raw_sha256": "4e30196d7004a2571faac014bf6deab19ccc0758a4b7040ede0303dddcc37462",
+      "grid_cell": [
+        2,
+        3
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "human-starter-hold-right-0.png": {
+      "raw_sha256": "4e30196d7004a2571faac014bf6deab19ccc0758a4b7040ede0303dddcc37462",
+      "grid_cell": [
+        3,
+        0
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "human-starter-hold-right-1.png": {
+      "raw_sha256": "4e30196d7004a2571faac014bf6deab19ccc0758a4b7040ede0303dddcc37462",
+      "grid_cell": [
+        3,
+        1
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "human-starter-hold-right-2.png": {
+      "raw_sha256": "4e30196d7004a2571faac014bf6deab19ccc0758a4b7040ede0303dddcc37462",
+      "grid_cell": [
+        3,
+        2
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "human-starter-pet-right-0.png": {
+      "raw_sha256": "4e30196d7004a2571faac014bf6deab19ccc0758a4b7040ede0303dddcc37462",
+      "grid_cell": [
+        3,
+        3
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "white-haired-girl-hold-down-0.png": {
+      "raw_sha256": "6cde1e1ae9124a2f52f0d1c8809c8761777c8e542aadb8efc6c6e8deb12ca996",
+      "grid_cell": [
+        0,
+        0
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "white-haired-girl-hold-down-1.png": {
+      "raw_sha256": "6cde1e1ae9124a2f52f0d1c8809c8761777c8e542aadb8efc6c6e8deb12ca996",
+      "grid_cell": [
+        0,
+        1
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "white-haired-girl-hold-down-2.png": {
+      "raw_sha256": "6cde1e1ae9124a2f52f0d1c8809c8761777c8e542aadb8efc6c6e8deb12ca996",
+      "grid_cell": [
+        0,
+        2
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "white-haired-girl-pet-down-0.png": {
+      "raw_sha256": "6cde1e1ae9124a2f52f0d1c8809c8761777c8e542aadb8efc6c6e8deb12ca996",
+      "grid_cell": [
+        0,
+        3
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "white-haired-girl-hold-up-0.png": {
+      "raw_sha256": "6cde1e1ae9124a2f52f0d1c8809c8761777c8e542aadb8efc6c6e8deb12ca996",
+      "grid_cell": [
+        1,
+        0
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "white-haired-girl-hold-up-1.png": {
+      "raw_sha256": "6cde1e1ae9124a2f52f0d1c8809c8761777c8e542aadb8efc6c6e8deb12ca996",
+      "grid_cell": [
+        1,
+        1
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "white-haired-girl-hold-up-2.png": {
+      "raw_sha256": "6cde1e1ae9124a2f52f0d1c8809c8761777c8e542aadb8efc6c6e8deb12ca996",
+      "grid_cell": [
+        1,
+        2
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "white-haired-girl-pet-up-0.png": {
+      "raw_sha256": "6cde1e1ae9124a2f52f0d1c8809c8761777c8e542aadb8efc6c6e8deb12ca996",
+      "grid_cell": [
+        1,
+        3
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "white-haired-girl-hold-left-0.png": {
+      "raw_sha256": "6cde1e1ae9124a2f52f0d1c8809c8761777c8e542aadb8efc6c6e8deb12ca996",
+      "grid_cell": [
+        2,
+        0
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "white-haired-girl-hold-left-1.png": {
+      "raw_sha256": "6cde1e1ae9124a2f52f0d1c8809c8761777c8e542aadb8efc6c6e8deb12ca996",
+      "grid_cell": [
+        2,
+        1
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "white-haired-girl-hold-left-2.png": {
+      "raw_sha256": "6cde1e1ae9124a2f52f0d1c8809c8761777c8e542aadb8efc6c6e8deb12ca996",
+      "grid_cell": [
+        2,
+        2
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "white-haired-girl-pet-left-0.png": {
+      "raw_sha256": "6cde1e1ae9124a2f52f0d1c8809c8761777c8e542aadb8efc6c6e8deb12ca996",
+      "grid_cell": [
+        2,
+        3
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "white-haired-girl-hold-right-0.png": {
+      "raw_sha256": "6cde1e1ae9124a2f52f0d1c8809c8761777c8e542aadb8efc6c6e8deb12ca996",
+      "grid_cell": [
+        3,
+        0
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "white-haired-girl-hold-right-1.png": {
+      "raw_sha256": "6cde1e1ae9124a2f52f0d1c8809c8761777c8e542aadb8efc6c6e8deb12ca996",
+      "grid_cell": [
+        3,
+        1
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "white-haired-girl-hold-right-2.png": {
+      "raw_sha256": "6cde1e1ae9124a2f52f0d1c8809c8761777c8e542aadb8efc6c6e8deb12ca996",
+      "grid_cell": [
+        3,
+        2
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "white-haired-girl-pet-right-0.png": {
+      "raw_sha256": "6cde1e1ae9124a2f52f0d1c8809c8761777c8e542aadb8efc6c6e8deb12ca996",
+      "grid_cell": [
+        3,
+        3
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "blue-haired-girl-hold-down-0.png": {
+      "raw_sha256": "198a2c56fc9544c37e37668f6a10ebeb9bb54eb562fcdb81d0a56bd617a4cd3f",
+      "grid_cell": [
+        0,
+        0
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "blue-haired-girl-hold-down-1.png": {
+      "raw_sha256": "198a2c56fc9544c37e37668f6a10ebeb9bb54eb562fcdb81d0a56bd617a4cd3f",
+      "grid_cell": [
+        0,
+        1
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "blue-haired-girl-hold-down-2.png": {
+      "raw_sha256": "198a2c56fc9544c37e37668f6a10ebeb9bb54eb562fcdb81d0a56bd617a4cd3f",
+      "grid_cell": [
+        0,
+        2
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "blue-haired-girl-pet-down-0.png": {
+      "raw_sha256": "198a2c56fc9544c37e37668f6a10ebeb9bb54eb562fcdb81d0a56bd617a4cd3f",
+      "grid_cell": [
+        0,
+        3
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "blue-haired-girl-hold-up-0.png": {
+      "raw_sha256": "198a2c56fc9544c37e37668f6a10ebeb9bb54eb562fcdb81d0a56bd617a4cd3f",
+      "grid_cell": [
+        1,
+        0
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "blue-haired-girl-hold-up-1.png": {
+      "raw_sha256": "198a2c56fc9544c37e37668f6a10ebeb9bb54eb562fcdb81d0a56bd617a4cd3f",
+      "grid_cell": [
+        1,
+        1
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "blue-haired-girl-hold-up-2.png": {
+      "raw_sha256": "198a2c56fc9544c37e37668f6a10ebeb9bb54eb562fcdb81d0a56bd617a4cd3f",
+      "grid_cell": [
+        1,
+        2
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "blue-haired-girl-pet-up-0.png": {
+      "raw_sha256": "198a2c56fc9544c37e37668f6a10ebeb9bb54eb562fcdb81d0a56bd617a4cd3f",
+      "grid_cell": [
+        1,
+        3
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "blue-haired-girl-hold-left-0.png": {
+      "raw_sha256": "198a2c56fc9544c37e37668f6a10ebeb9bb54eb562fcdb81d0a56bd617a4cd3f",
+      "grid_cell": [
+        2,
+        0
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "blue-haired-girl-hold-left-1.png": {
+      "raw_sha256": "198a2c56fc9544c37e37668f6a10ebeb9bb54eb562fcdb81d0a56bd617a4cd3f",
+      "grid_cell": [
+        2,
+        1
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "blue-haired-girl-hold-left-2.png": {
+      "raw_sha256": "198a2c56fc9544c37e37668f6a10ebeb9bb54eb562fcdb81d0a56bd617a4cd3f",
+      "grid_cell": [
+        2,
+        2
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "blue-haired-girl-pet-left-0.png": {
+      "raw_sha256": "198a2c56fc9544c37e37668f6a10ebeb9bb54eb562fcdb81d0a56bd617a4cd3f",
+      "grid_cell": [
+        2,
+        3
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "blue-haired-girl-hold-right-0.png": {
+      "raw_sha256": "198a2c56fc9544c37e37668f6a10ebeb9bb54eb562fcdb81d0a56bd617a4cd3f",
+      "grid_cell": [
+        3,
+        0
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "blue-haired-girl-hold-right-1.png": {
+      "raw_sha256": "198a2c56fc9544c37e37668f6a10ebeb9bb54eb562fcdb81d0a56bd617a4cd3f",
+      "grid_cell": [
+        3,
+        1
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "blue-haired-girl-hold-right-2.png": {
+      "raw_sha256": "198a2c56fc9544c37e37668f6a10ebeb9bb54eb562fcdb81d0a56bd617a4cd3f",
+      "grid_cell": [
+        3,
+        2
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "blue-haired-girl-pet-right-0.png": {
+      "raw_sha256": "198a2c56fc9544c37e37668f6a10ebeb9bb54eb562fcdb81d0a56bd617a4cd3f",
+      "grid_cell": [
+        3,
+        3
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "orange-haired-girl-hold-down-0.png": {
+      "raw_sha256": "bb93bb96a23ef9ee621395d6da3b421b40b45ba06b2565253b63ec5209713e65",
+      "grid_cell": [
+        0,
+        0
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "orange-haired-girl-hold-down-1.png": {
+      "raw_sha256": "bb93bb96a23ef9ee621395d6da3b421b40b45ba06b2565253b63ec5209713e65",
+      "grid_cell": [
+        0,
+        1
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "orange-haired-girl-hold-down-2.png": {
+      "raw_sha256": "bb93bb96a23ef9ee621395d6da3b421b40b45ba06b2565253b63ec5209713e65",
+      "grid_cell": [
+        0,
+        2
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "orange-haired-girl-pet-down-0.png": {
+      "raw_sha256": "bb93bb96a23ef9ee621395d6da3b421b40b45ba06b2565253b63ec5209713e65",
+      "grid_cell": [
+        0,
+        3
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "orange-haired-girl-hold-up-0.png": {
+      "raw_sha256": "bb93bb96a23ef9ee621395d6da3b421b40b45ba06b2565253b63ec5209713e65",
+      "grid_cell": [
+        1,
+        0
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "orange-haired-girl-hold-up-1.png": {
+      "raw_sha256": "bb93bb96a23ef9ee621395d6da3b421b40b45ba06b2565253b63ec5209713e65",
+      "grid_cell": [
+        1,
+        1
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "orange-haired-girl-hold-up-2.png": {
+      "raw_sha256": "bb93bb96a23ef9ee621395d6da3b421b40b45ba06b2565253b63ec5209713e65",
+      "grid_cell": [
+        1,
+        2
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "orange-haired-girl-pet-up-0.png": {
+      "raw_sha256": "bb93bb96a23ef9ee621395d6da3b421b40b45ba06b2565253b63ec5209713e65",
+      "grid_cell": [
+        1,
+        3
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "orange-haired-girl-hold-left-0.png": {
+      "raw_sha256": "bb93bb96a23ef9ee621395d6da3b421b40b45ba06b2565253b63ec5209713e65",
+      "grid_cell": [
+        2,
+        0
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "orange-haired-girl-hold-left-1.png": {
+      "raw_sha256": "bb93bb96a23ef9ee621395d6da3b421b40b45ba06b2565253b63ec5209713e65",
+      "grid_cell": [
+        2,
+        1
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "orange-haired-girl-hold-left-2.png": {
+      "raw_sha256": "bb93bb96a23ef9ee621395d6da3b421b40b45ba06b2565253b63ec5209713e65",
+      "grid_cell": [
+        2,
+        2
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "orange-haired-girl-pet-left-0.png": {
+      "raw_sha256": "bb93bb96a23ef9ee621395d6da3b421b40b45ba06b2565253b63ec5209713e65",
+      "grid_cell": [
+        2,
+        3
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "orange-haired-girl-hold-right-0.png": {
+      "raw_sha256": "bb93bb96a23ef9ee621395d6da3b421b40b45ba06b2565253b63ec5209713e65",
+      "grid_cell": [
+        3,
+        0
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "orange-haired-girl-hold-right-1.png": {
+      "raw_sha256": "bb93bb96a23ef9ee621395d6da3b421b40b45ba06b2565253b63ec5209713e65",
+      "grid_cell": [
+        3,
+        1
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "orange-haired-girl-hold-right-2.png": {
+      "raw_sha256": "bb93bb96a23ef9ee621395d6da3b421b40b45ba06b2565253b63ec5209713e65",
+      "grid_cell": [
+        3,
+        2
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "orange-haired-girl-pet-right-0.png": {
+      "raw_sha256": "bb93bb96a23ef9ee621395d6da3b421b40b45ba06b2565253b63ec5209713e65",
+      "grid_cell": [
+        3,
+        3
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "black-scarf-girl-hold-down-0.png": {
+      "raw_sha256": "77ee8666e7d77be61a8995aeda42fe6cb9514ea14a54a79fe1769c6adec017db",
+      "grid_cell": [
+        0,
+        0
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "black-scarf-girl-hold-down-1.png": {
+      "raw_sha256": "77ee8666e7d77be61a8995aeda42fe6cb9514ea14a54a79fe1769c6adec017db",
+      "grid_cell": [
+        0,
+        1
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "black-scarf-girl-hold-down-2.png": {
+      "raw_sha256": "77ee8666e7d77be61a8995aeda42fe6cb9514ea14a54a79fe1769c6adec017db",
+      "grid_cell": [
+        0,
+        2
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "black-scarf-girl-pet-down-0.png": {
+      "raw_sha256": "77ee8666e7d77be61a8995aeda42fe6cb9514ea14a54a79fe1769c6adec017db",
+      "grid_cell": [
+        0,
+        3
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "black-scarf-girl-hold-up-0.png": {
+      "raw_sha256": "77ee8666e7d77be61a8995aeda42fe6cb9514ea14a54a79fe1769c6adec017db",
+      "grid_cell": [
+        1,
+        0
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "black-scarf-girl-hold-up-1.png": {
+      "raw_sha256": "77ee8666e7d77be61a8995aeda42fe6cb9514ea14a54a79fe1769c6adec017db",
+      "grid_cell": [
+        1,
+        1
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "black-scarf-girl-hold-up-2.png": {
+      "raw_sha256": "77ee8666e7d77be61a8995aeda42fe6cb9514ea14a54a79fe1769c6adec017db",
+      "grid_cell": [
+        1,
+        2
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "black-scarf-girl-pet-up-0.png": {
+      "raw_sha256": "77ee8666e7d77be61a8995aeda42fe6cb9514ea14a54a79fe1769c6adec017db",
+      "grid_cell": [
+        1,
+        3
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "black-scarf-girl-hold-left-0.png": {
+      "raw_sha256": "77ee8666e7d77be61a8995aeda42fe6cb9514ea14a54a79fe1769c6adec017db",
+      "grid_cell": [
+        2,
+        0
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "black-scarf-girl-hold-left-1.png": {
+      "raw_sha256": "77ee8666e7d77be61a8995aeda42fe6cb9514ea14a54a79fe1769c6adec017db",
+      "grid_cell": [
+        2,
+        1
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "black-scarf-girl-hold-left-2.png": {
+      "raw_sha256": "77ee8666e7d77be61a8995aeda42fe6cb9514ea14a54a79fe1769c6adec017db",
+      "grid_cell": [
+        2,
+        2
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "black-scarf-girl-pet-left-0.png": {
+      "raw_sha256": "77ee8666e7d77be61a8995aeda42fe6cb9514ea14a54a79fe1769c6adec017db",
+      "grid_cell": [
+        2,
+        3
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "black-scarf-girl-hold-right-0.png": {
+      "raw_sha256": "77ee8666e7d77be61a8995aeda42fe6cb9514ea14a54a79fe1769c6adec017db",
+      "grid_cell": [
+        3,
+        0
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "black-scarf-girl-hold-right-1.png": {
+      "raw_sha256": "77ee8666e7d77be61a8995aeda42fe6cb9514ea14a54a79fe1769c6adec017db",
+      "grid_cell": [
+        3,
+        1
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "black-scarf-girl-hold-right-2.png": {
+      "raw_sha256": "77ee8666e7d77be61a8995aeda42fe6cb9514ea14a54a79fe1769c6adec017db",
+      "grid_cell": [
+        3,
+        2
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    },
+    "black-scarf-girl-pet-right-0.png": {
+      "raw_sha256": "77ee8666e7d77be61a8995aeda42fe6cb9514ea14a54a79fe1769c6adec017db",
+      "grid_cell": [
+        3,
+        3
+      ],
+      "source": "new generated full body with manual grid/foot alignment and pixel cleanup",
+      "independent_full_body": true,
+      "base_idle_pixels_copied": false,
+      "native_size": [
+        96,
+        128
+      ]
+    }
+  },
+  "fallback_outfits": [
+    "ai-gpt",
+    "ai-claude",
+    "ai-gemini",
+    "ai-grok",
+    "ai-deepseek",
+    "ai-glm",
+    "ai-qwen",
+    "ai-kimi"
+  ],
+  "note": "Five defaults use new complete full-body drawings; remaining eight keep explicitly disclosed previous composites."
+}

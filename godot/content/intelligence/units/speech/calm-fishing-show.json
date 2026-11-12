@@ -1,0 +1,9 @@
+{
+  "id": "calm-fishing-show",
+  "context": "fishing_show",
+  "lines": [
+    "近看颜色更好看呢。",
+    "尾巴还在晃呀。"
+  ],
+  "autonomy_output": false
+}

@@ -1,0 +1,11 @@
+{
+  "id": "farm-cmd-serious-plant",
+  "context": "farm_command_plant",
+  "lines": [
+    "明白，我去种。",
+    "好，我去把田种好。",
+    "收到，我这就去种。",
+    "好，我去，种完告诉你。"
+  ],
+  "autonomy_output": false
+}

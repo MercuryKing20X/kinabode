@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://lg6bprn7t78h"
+
+[deps]
+
+files=["res://content/i18n/island-food-extra.zh.translation", "res://content/i18n/island-food-extra.en.translation"]
+
+source_file="res://content/i18n/island-food-extra.csv"
+dest_files=["res://content/i18n/island-food-extra.zh.translation", "res://content/i18n/island-food-extra.en.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

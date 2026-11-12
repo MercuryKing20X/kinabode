@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "handbook_title": "岛上手册",
+  "entries": [
+    {
+      "id": "map",
+      "label": "群岛地图"
+    },
+    {
+      "id": "memories",
+      "label": "家园回忆"
+    },
+    {
+      "id": "workshop",
+      "label": "像素工坊"
+    },
+    {
+      "id": "residents",
+      "label": "居民连接"
+    },
+    {
+      "id": "autonomy_records",
+      "label": "主动记录"
+    },
+    {
+      "id": "recipes",
+      "label": "菜谱本"
+    }
+  ]
+}

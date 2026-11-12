@@ -1,0 +1,11 @@
+{
+  "id": "gentle-gomoku-ahead",
+  "context": "gomoku_ahead",
+  "lines": [
+    "嗯，现在我这边的机会多一些。",
+    "轻轻说，我似乎更容易接出下一手。",
+    "我想，局面暂时偏向我一点。",
+    "慢慢来，这会儿我能主动些。"
+  ],
+  "autonomy_output": false
+}

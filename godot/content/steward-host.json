@@ -1,0 +1,28 @@
+{
+  "duty_cooldown_seconds": 180,
+  "thought_pause_seconds": 2,
+  "rest_seconds": 15,
+  "retry_seconds": 180,
+  "squad_idle_radius": 5,
+  "director_check_seconds": 2,
+  "walking_stall_seconds": 10,
+  "goal_watchdog_seconds": 20,
+  "task_timeout_seconds": 240,
+  "task_timeouts": {
+    "build": 360,
+    "plant": 360,
+    "harvest": 360,
+    "fish": 180,
+    "roast": 180,
+    "go_to": 180,
+    "chop": 600
+  },
+  "owner_question_seconds": 150,
+  "owner_answer_seconds": 15,
+  "planning_interval_seconds": 240,
+  "batch_timeout_seconds": 780,
+  "shared_activity_seconds": 45,
+  "wood_reserve": 8,
+  "wood_lookahead_builds": 3,
+  "wood_batch_trees": 4
+}

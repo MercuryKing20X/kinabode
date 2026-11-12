@@ -1,0 +1,11 @@
+{
+  "id": "bbq-laborious-category-mushroom",
+  "context": "bbq_category_mushroom",
+  "lines": [
+    "蘑菇烤透了，吃吧。",
+    "热蘑菇趁现在吃。",
+    "这份蘑菇香气不错。",
+    "蘑菇上架有回报了，开吃。"
+  ],
+  "autonomy_output": false
+}

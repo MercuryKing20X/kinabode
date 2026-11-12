@@ -1,0 +1,11 @@
+{
+  "id": "hunger-after-very-hungry",
+  "context": "hunger_after_very_hungry",
+  "lines": [
+    "救命，这顿饭也太幸福了！",
+    "我刚才真的饿坏了，现在满血——我是说，心情好起来啦。",
+    "终于不用抱着肚子等啦，好满足！",
+    "刚刚还蹲着呢，现在只想谢谢你。"
+  ],
+  "autonomy_output": false
+}

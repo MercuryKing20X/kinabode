@@ -1,0 +1,107 @@
+{
+  "version": 1,
+  "presence_seconds": 120,
+  "settling_seconds": 5,
+  "event_ttl_seconds": 180,
+  "threshold": 6,
+  "event_scores": {
+    "meal": 6,
+    "shared_barbecue": 8,
+    "house_completed": 10,
+    "fishing_catch": 6,
+    "gomoku_match": 6,
+    "homestead_completed": 10,
+    "work_blocked": 6,
+    "work_completed": 2,
+    "day_changed": 3,
+    "player_returned": 3,
+    "reflection": 6
+  },
+  "levels": {
+    "low": {
+      "cooldown": 0,
+      "hourly": 0,
+      "daily": 0,
+      "tools": 0,
+      "turn_tokens": 0,
+      "daily_tokens": 0,
+      "reflection_seconds": 0
+    },
+    "medium": {
+      "cooldown": 600,
+      "hourly": 4,
+      "daily": 16,
+      "tools": 2,
+      "turn_tokens": 12000,
+      "daily_tokens": 128000,
+      "reflection_seconds": 0
+    },
+    "high": {
+      "cooldown": 240,
+      "hourly": 10,
+      "daily": 40,
+      "tools": 4,
+      "turn_tokens": 12000,
+      "daily_tokens": 480000,
+      "reflection_seconds": 0
+    },
+    "ultra": {
+      "cooldown": 120,
+      "hourly": 20,
+      "daily": 80,
+      "tools": 6,
+      "turn_tokens": 16000,
+      "daily_tokens": 1280000,
+      "reflection_seconds": 300
+    },
+    "lifeblood": {
+      "cooldown": 30,
+      "hourly": 120,
+      "daily": 2880,
+      "tools": 8,
+      "turn_tokens": 64000,
+      "daily_tokens": 0,
+      "reflection_seconds": 30
+    }
+  },
+  "failure_limit": 3,
+  "estimate": {
+    "base_ascii": 17713,
+    "base_non_ascii": 229,
+    "ascii_per_token": 4,
+    "non_ascii_per_token": 1.5,
+    "protocol_tokens": 64,
+    "output_tokens": 256,
+    "reference_tokens_per_turn": 5071
+  },
+  "record_limit": 20,
+  "notice_seconds": 10,
+  "gate_labels": {
+    "busy": "忙碌或待回答",
+    "not_present": "玩家不在场",
+    "cooldown": "冷却中",
+    "budget": "预算已用尽",
+    "settling": "等待事件落定",
+    "waiting_event": "等待合适事件",
+    "unavailable": "运行不可用"
+  },
+  "measured_usage": {
+    "label": "实测",
+    "level": "medium",
+    "date": "2026-10-27",
+    "sample_count": 2,
+    "average_input_tokens": 8963.0,
+    "average_output_tokens": 29.5,
+    "average_total_tokens": 8992.5,
+    "excluded_partial_rounds": 1,
+    "source": "production/evidence/2026-10-27-polish/live/observations.json"
+  },
+  "lifeblood_estimate": {
+    "tokens_per_turn": 76072.07692307692,
+    "sample_count": 13,
+    "status": "measured_native_tool",
+    "game_seconds": 610.139535188675,
+    "observed_tokens_per_hour": 5835014.770677134,
+    "source": "LIVE_SUMMARY.json"
+  }
+}

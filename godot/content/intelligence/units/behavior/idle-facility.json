@@ -1,0 +1,7 @@
+{
+  "id": "idle-facility",
+  "action": "facility",
+  "conditions": {},
+  "cooldown_seconds": 0,
+  "requires_target": true
+}

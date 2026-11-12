@@ -1,0 +1,11 @@
+{
+  "id": "bbq-laborious-food-turnip-soup",
+  "context": "bbq_food_turnip_soup",
+  "lines": [
+    "萝卜汤做好了，先趁热吃。",
+    "这份萝卜汤，火候看着不错。",
+    "先认真吃萝卜汤，别急着走。",
+    "萝卜汤上桌，今天这一口有着落了。"
+  ],
+  "autonomy_output": false
+}

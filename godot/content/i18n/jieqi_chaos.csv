@@ -1,0 +1,14 @@
+keys,zh,en
+jieqi.chaos_rules,红黑暗子混在一起，先由棋位一方操作；翻开后归真身颜色。翻出对方的子将了自己的军，翻子方立即判负。,Hidden red and black pieces are mixed. The slot's side controls the first move; the revealed color controls it afterward. Revealing an opposing piece that checks your own king loses immediately.
+jieqi.line.playful.chaos_opposite,哎呀，原来是你的！,Oh! That one was yours!
+jieqi.line.playful.chaos_own_capture,哈哈，吃到自己人了！,Ha! I captured my own piece!
+jieqi.line.playful.chaos_selfcheck,哎呀，这一翻把自己输掉了！,Oops! That flip just lost the whole game!
+jieqi.line.gentle.chaos_opposite,呀，它是另一边的。,Oh! It belongs to the other side.
+jieqi.line.gentle.chaos_own_capture,原来吃掉的是自己人。,That was one of our own.
+jieqi.line.gentle.chaos_selfcheck,啊，翻出来的子将了自己，这局结束了。,Oh… that reveal checked its own king. The game is over.
+jieqi.line.diligent.chaos_opposite,翻出来的是对方的子。,That piece belongs to the other side.
+jieqi.line.diligent.chaos_own_capture,这次吃到了自己的子。,That captured piece was ours.
+jieqi.line.diligent.chaos_selfcheck,翻子将了自己，按规则这盘输了。,That reveal checked its own king. That is a loss.
+jieqi.line.quiet.chaos_opposite,是对面的子啊。,It's theirs.
+jieqi.line.quiet.chaos_own_capture,吃到自己人了。,That was our own.
+jieqi.line.quiet.chaos_selfcheck,翻错一边。输了。,Wrong color. Game over.

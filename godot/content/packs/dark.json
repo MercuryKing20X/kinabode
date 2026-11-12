@@ -1,0 +1,429 @@
+{
+  "schema_version": 1,
+  "id": "dark-island-stage1",
+  "version": 1,
+  "regions": [
+    {
+      "id": "dark",
+      "name": "黑暗岛",
+      "origin": [
+        4143,
+        3920
+      ],
+      "size": [
+        187,
+        240
+      ],
+      "land": [
+        [
+          10,
+          26
+        ],
+        [
+          12,
+          -24
+        ],
+        [
+          17,
+          -67
+        ],
+        [
+          34,
+          -103
+        ],
+        [
+          90,
+          -106
+        ],
+        [
+          143,
+          -98
+        ],
+        [
+          166,
+          -64
+        ],
+        [
+          164,
+          -30
+        ],
+        [
+          173,
+          12
+        ],
+        [
+          151,
+          45
+        ],
+        [
+          150,
+          89
+        ],
+        [
+          132,
+          111
+        ],
+        [
+          94,
+          121
+        ],
+        [
+          48,
+          119
+        ],
+        [
+          16,
+          103
+        ],
+        [
+          7,
+          69
+        ]
+      ],
+      "zones": [
+        {
+          "id": "dark.camp",
+          "name": "码头营地",
+          "purpose": "camp",
+          "rect": [
+            24,
+            92,
+            22,
+            14
+          ]
+        },
+        {
+          "id": "dark.grove",
+          "name": "发光蘑菇林",
+          "purpose": "forest",
+          "rect": [
+            24,
+            30,
+            55,
+            50
+          ]
+        },
+        {
+          "id": "dark.lake",
+          "name": "萤火虫湖边",
+          "purpose": "exploration",
+          "rect": [
+            83,
+            28,
+            48,
+            55
+          ]
+        },
+        {
+          "id": "dark.cedar",
+          "name": "幽光杉径",
+          "purpose": "exploration",
+          "rect": [
+            30,
+            -42,
+            43,
+            35
+          ]
+        },
+        {
+          "id": "dark.tide",
+          "name": "静潮石湾",
+          "purpose": "exploration",
+          "rect": [
+            92,
+            -40,
+            49,
+            34
+          ]
+        },
+        {
+          "id": "dark.stars",
+          "name": "星空崖",
+          "purpose": "leisure",
+          "rect": [
+            35,
+            -95,
+            43,
+            39
+          ]
+        },
+        {
+          "id": "dark.heather",
+          "name": "灯芯草原",
+          "purpose": "exploration",
+          "rect": [
+            92,
+            -88,
+            45,
+            30
+          ]
+        }
+      ],
+      "objects": [
+        {
+          "id": "dark.tree.00",
+          "name": "蘑菇林树",
+          "kind": "tree",
+          "zone_id": "dark.grove",
+          "position": [
+            30,
+            78
+          ],
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8,
+          "introduced_in": 999
+        },
+        {
+          "id": "dark.tree.01",
+          "name": "蘑菇林树",
+          "kind": "tree",
+          "zone_id": "dark.grove",
+          "position": [
+            42,
+            71
+          ],
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8,
+          "introduced_in": 999
+        },
+        {
+          "id": "dark.tree.02",
+          "name": "蘑菇林树",
+          "kind": "tree",
+          "zone_id": "dark.grove",
+          "position": [
+            65,
+            72
+          ],
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8,
+          "introduced_in": 999
+        },
+        {
+          "id": "dark.tree.03",
+          "name": "蘑菇林树",
+          "kind": "tree",
+          "zone_id": "dark.grove",
+          "position": [
+            27,
+            57
+          ],
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8,
+          "introduced_in": 999
+        },
+        {
+          "id": "dark.tree.04",
+          "name": "蘑菇林树",
+          "kind": "tree",
+          "zone_id": "dark.grove",
+          "position": [
+            53,
+            56
+          ],
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8,
+          "introduced_in": 999
+        },
+        {
+          "id": "dark.tree.05",
+          "name": "蘑菇林树",
+          "kind": "tree",
+          "zone_id": "dark.grove",
+          "position": [
+            72,
+            43
+          ],
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8,
+          "introduced_in": 999
+        },
+        {
+          "id": "dark.tree.06",
+          "name": "蘑菇林树",
+          "kind": "tree",
+          "zone_id": "dark.grove",
+          "position": [
+            39,
+            39
+          ],
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8,
+          "introduced_in": 999
+        },
+        {
+          "id": "dark.tree.07",
+          "name": "蘑菇林树",
+          "kind": "tree",
+          "zone_id": "dark.grove",
+          "position": [
+            62,
+            33
+          ],
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8,
+          "introduced_in": 999
+        },
+        {
+          "id": "dark.tree.08",
+          "name": "幽光树",
+          "kind": "tree",
+          "zone_id": "dark.cedar",
+          "position": [
+            36,
+            -35
+          ],
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8,
+          "introduced_in": 999
+        },
+        {
+          "id": "dark.tree.09",
+          "name": "幽光树",
+          "kind": "tree",
+          "zone_id": "dark.cedar",
+          "position": [
+            67,
+            -31
+          ],
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8,
+          "introduced_in": 999
+        },
+        {
+          "id": "dark.tree.10",
+          "name": "幽光树",
+          "kind": "tree",
+          "zone_id": "dark.cedar",
+          "position": [
+            39,
+            -12
+          ],
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8,
+          "introduced_in": 999
+        },
+        {
+          "id": "dark.tree.11",
+          "name": "幽光树",
+          "kind": "tree",
+          "zone_id": "dark.tide",
+          "position": [
+            98,
+            -31
+          ],
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8,
+          "introduced_in": 999
+        },
+        {
+          "id": "dark.tree.12",
+          "name": "幽光树",
+          "kind": "tree",
+          "zone_id": "dark.tide",
+          "position": [
+            135,
+            -18
+          ],
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8,
+          "introduced_in": 999
+        },
+        {
+          "id": "dark.tree.13",
+          "name": "幽光树",
+          "kind": "tree",
+          "zone_id": "dark.tide",
+          "position": [
+            99,
+            -10
+          ],
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8,
+          "introduced_in": 999
+        },
+        {
+          "id": "dark.tree.14",
+          "name": "灯芯草原树",
+          "kind": "tree",
+          "zone_id": "dark.heather",
+          "position": [
+            102,
+            -82
+          ],
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8,
+          "introduced_in": 999
+        },
+        {
+          "id": "dark.tree.15",
+          "name": "灯芯草原树",
+          "kind": "tree",
+          "zone_id": "dark.heather",
+          "position": [
+            126,
+            -67
+          ],
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8,
+          "introduced_in": 999
+        },
+        {
+          "id": "dark.tree.16",
+          "name": "灯芯草原树",
+          "kind": "tree",
+          "zone_id": "dark.heather",
+          "position": [
+            109,
+            -62
+          ],
+          "status": "mature",
+          "health": 6,
+          "wood_yield": 8,
+          "introduced_in": 999
+        }
+      ],
+      "land_extensions": [
+        [
+          [
+            31,
+            101
+          ],
+          [
+            37,
+            101
+          ],
+          [
+            37,
+            127.9
+          ],
+          [
+            31,
+            127.9
+          ]
+        ]
+      ],
+      "local_origin": [
+        0,
+        -112
+      ],
+      "initial_storage": {}
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "id": "fish-v2-curious-small",
+  "context": "fishing_v2_small",
+  "lines": [
+    "轻轻地，钓到一条小鱼。",
+    "嗯，小小的鱼儿真可爱。",
+    "好呀，这条鱼还挺小的。",
+    "慢慢来，一条小鱼来到岸边。"
+  ],
+  "autonomy_output": false
+}

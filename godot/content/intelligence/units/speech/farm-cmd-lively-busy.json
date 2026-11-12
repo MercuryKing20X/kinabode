@@ -1,0 +1,11 @@
+{
+  "id": "farm-cmd-lively-busy",
+  "context": "farm_command_busy",
+  "lines": [
+    "等我一下下，马上就好！",
+    "我还在忙，忙完就冲过去！",
+    "再等等，我快弄完啦！",
+    "先等我做完这个嘛。"
+  ],
+  "autonomy_output": false
+}

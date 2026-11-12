@@ -1,0 +1,13 @@
+{
+  "id": "dark-lively-warning",
+  "context": "dark_warning",
+  "lines": [
+    "哇，别走太远呀！",
+    "哇，火把小了，该回营地了呀！",
+    "哇，先看看最近的灯呀！",
+    "哇，我们一起往亮处走呀！",
+    "哇，木材还够吗？呀！",
+    "哇，这段路慢一点呀！"
+  ],
+  "autonomy_output": false
+}

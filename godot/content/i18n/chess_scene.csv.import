@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://dsyiwlpx3vn61"
+
+[deps]
+
+files=["res://content/i18n/chess_scene.zh.translation", "res://content/i18n/chess_scene.en.translation"]
+
+source_file="res://content/i18n/chess_scene.csv"
+dest_files=["res://content/i18n/chess_scene.zh.translation", "res://content/i18n/chess_scene.en.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

@@ -1,0 +1,624 @@
+{
+  "version": 1,
+  "snapshot_only": true,
+  "purpose": "Two art studies, not map packs or gameplay configuration",
+  "A": {
+    "camera": [
+      26,
+      47
+    ],
+    "detail": [
+      26,
+      48
+    ],
+    "plaza": [
+      [
+        17.5,
+        44.8
+      ],
+      [
+        22,
+        43.9
+      ],
+      [
+        28,
+        44.4
+      ],
+      [
+        32.7,
+        46.4
+      ],
+      [
+        34.5,
+        49
+      ],
+      [
+        32,
+        51.7
+      ],
+      [
+        27.8,
+        52.4
+      ],
+      [
+        22.2,
+        51.8
+      ],
+      [
+        18,
+        50.4
+      ],
+      [
+        16.9,
+        47.8
+      ]
+    ],
+    "paving": [
+      [
+        20,
+        45.1
+      ],
+      [
+        24.4,
+        45
+      ],
+      [
+        27,
+        46.8
+      ],
+      [
+        26,
+        49.3
+      ],
+      [
+        22.2,
+        50.1
+      ],
+      [
+        19.6,
+        48.1
+      ]
+    ],
+    "roads": [
+      {
+        "points": [
+          [
+            12,
+            49
+          ],
+          [
+            18,
+            48.3
+          ],
+          [
+            25,
+            48
+          ],
+          [
+            33,
+            47
+          ],
+          [
+            40,
+            45.9
+          ]
+        ],
+        "width": 1.0
+      }
+    ],
+    "well": [
+      22,
+      47.7
+    ],
+    "shortcut": [
+      [
+        22,
+        48
+      ],
+      [
+        25,
+        48.4
+      ],
+      [
+        27.4,
+        49.4
+      ],
+      [
+        31,
+        50
+      ]
+    ],
+    "props": [
+      {
+        "id": "well",
+        "kind": "well",
+        "anchor_path": [
+          "well"
+        ],
+        "scale": 1,
+        "nominal_pixels": [
+          192,
+          224
+        ],
+        "size_class": "large"
+      },
+      {
+        "id": "fire",
+        "kind": "campfire",
+        "anchor_path": [
+          "shortcut",
+          -1
+        ],
+        "scale": 1,
+        "nominal_pixels": [
+          96,
+          72
+        ],
+        "size_class": "medium"
+      },
+      {
+        "id": "stove",
+        "kind": "work",
+        "artwork_id": "camp-grill",
+        "frame": "lit",
+        "position": [
+          32.8,
+          48.7
+        ],
+        "scale": 1
+      },
+      {
+        "id": "crates",
+        "kind": "scenery",
+        "asset": "chest",
+        "position": [
+          34.4,
+          50.8
+        ],
+        "scale": 1
+      },
+      {
+        "id": "logs",
+        "kind": "scenery",
+        "asset": "logs",
+        "position": [
+          33.8,
+          51.7
+        ],
+        "scale": 1
+      },
+      {
+        "id": "bucket",
+        "kind": "bucket",
+        "position": [
+          30,
+          50.6
+        ],
+        "scale": 1,
+        "nominal_pixels": [
+          22,
+          28
+        ],
+        "size_class": "tiny"
+      },
+      {
+        "id": "gazebo",
+        "kind": "work",
+        "artwork_id": "play-gazebo",
+        "frame": "idle",
+        "position": [
+          35,
+          44
+        ],
+        "scale": 1
+      },
+      {
+        "id": "bench",
+        "kind": "bench",
+        "position": [
+          35,
+          46.9
+        ],
+        "scale": 1
+      },
+      {
+        "id": "pot",
+        "kind": "planter",
+        "position": [
+          38,
+          44.8
+        ],
+        "scale": 1
+      },
+      {
+        "id": "notice",
+        "kind": "notice",
+        "position": [
+          17.8,
+          43.6
+        ],
+        "scale": 1,
+        "nominal_pixels": [
+          112,
+          112
+        ],
+        "size_class": "medium"
+      },
+      {
+        "id": "chess",
+        "kind": "work",
+        "artwork_id": "play-gomoku",
+        "frame": "idle",
+        "position": [
+          16.5,
+          44.8
+        ],
+        "scale": 1
+      },
+      {
+        "id": "lamp.west",
+        "kind": "lamp",
+        "position": [
+          20.3,
+          44.1
+        ],
+        "scale": 1
+      },
+      {
+        "id": "lamp.fire",
+        "kind": "lamp",
+        "position": [
+          33.5,
+          51.7
+        ],
+        "scale": 1
+      },
+      {
+        "id": "lamp.gazebo",
+        "kind": "lamp",
+        "position": [
+          37.5,
+          45.6
+        ],
+        "scale": 1
+      }
+    ],
+    "foliage": [
+      {
+        "asset": "oak",
+        "position": [
+          13.5,
+          42.1
+        ]
+      },
+      {
+        "asset": "birch",
+        "position": [
+          40,
+          42.2
+        ]
+      },
+      {
+        "asset": "bush",
+        "position": [
+          38,
+          50.8
+        ]
+      },
+      {
+        "asset": "flowers",
+        "position": [
+          19.3,
+          45.7
+        ]
+      }
+    ],
+    "notice_clearance": {
+      "center": [
+        17.8,
+        45
+      ],
+      "radius": 1.2
+    },
+    "actors": [
+      {
+        "artwork_id": "white-haired-girl",
+        "frame": "down_0",
+        "position": [
+          24,
+          50.7
+        ]
+      },
+      {
+        "artwork_id": "orange-haired-girl",
+        "frame": "left_0",
+        "position": [
+          29,
+          51
+        ]
+      },
+      {
+        "artwork_id": "black-scarf-girl",
+        "frame": "down_0",
+        "position": [
+          37,
+          47
+        ]
+      }
+    ]
+  },
+  "B": {
+    "camera": [
+      43.25,
+      36
+    ],
+    "detail": [
+      38,
+      36.7
+    ],
+    "plaza": [
+      [
+        32,
+        41.1
+      ],
+      [
+        35,
+        39.6
+      ],
+      [
+        40.3,
+        39.8
+      ],
+      [
+        43.5,
+        42.6
+      ],
+      [
+        41.9,
+        45.1
+      ],
+      [
+        36,
+        45.8
+      ],
+      [
+        33,
+        44.4
+      ]
+    ],
+    "paving": [
+      [
+        36.6,
+        40.7
+      ],
+      [
+        39.4,
+        40.6
+      ],
+      [
+        40,
+        42.7
+      ],
+      [
+        37.7,
+        43.6
+      ],
+      [
+        36,
+        42.6
+      ]
+    ],
+    "roads": [
+      {
+        "points": [
+          [
+            27,
+            44
+          ],
+          [
+            35,
+            44.8
+          ],
+          [
+            42,
+            43.3
+          ],
+          [
+            48,
+            41.2
+          ],
+          [
+            56,
+            42
+          ]
+        ],
+        "width": 0.8
+      },
+      {
+        "points": [
+          "gentle",
+          [
+            38,
+            42
+          ],
+          [
+            35,
+            44.8
+          ]
+        ],
+        "width": 0.35
+      },
+      {
+        "points": [
+          "curious",
+          [
+            48.8,
+            40.5
+          ],
+          [
+            48,
+            41.2
+          ]
+        ],
+        "width": 0.35
+      }
+    ],
+    "well": [],
+    "shortcut": [],
+    "houses": [
+      {
+        "id": "gentle",
+        "source_id": "gentle",
+        "position": [
+          38,
+          40.5
+        ]
+      },
+      {
+        "id": "curious",
+        "source_id": "curious",
+        "position": [
+          49.5,
+          39
+        ]
+      }
+    ],
+    "props": [
+      {
+        "id": "flower.arch",
+        "kind": "flower_arch",
+        "house": "gentle",
+        "offset": [
+          0,
+          3.5
+        ],
+        "scale": 1
+      },
+      {
+        "id": "swing.chair",
+        "kind": "swing_chair",
+        "house": "gentle",
+        "offset": [
+          -4.3,
+          4.2
+        ],
+        "scale": 1
+      },
+      {
+        "id": "pot.left",
+        "kind": "planter",
+        "house": "gentle",
+        "offset": [
+          -5.5,
+          5.3
+        ],
+        "scale": 1
+      },
+      {
+        "id": "pot.right",
+        "kind": "planter",
+        "house": "gentle",
+        "offset": [
+          4.2,
+          1.3
+        ],
+        "scale": 1
+      },
+      {
+        "id": "curious.scope",
+        "kind": "telescope",
+        "house": "curious",
+        "offset": [
+          -2.7,
+          2.3
+        ],
+        "scale": 1
+      },
+      {
+        "id": "curious.notes",
+        "kind": "note_table",
+        "house": "curious",
+        "offset": [
+          3,
+          2.4
+        ],
+        "scale": 1
+      },
+      {
+        "id": "lamp.flowers",
+        "kind": "lamp",
+        "house": "gentle",
+        "offset": [
+          5.2,
+          4.5
+        ],
+        "scale": 1
+      },
+      {
+        "id": "lamp.notes",
+        "kind": "lamp",
+        "house": "curious",
+        "offset": [
+          3.3,
+          3.4
+        ],
+        "scale": 1
+      }
+    ],
+    "foliage": [
+      {
+        "asset": "birch",
+        "position": [
+          30.5,
+          37
+        ]
+      },
+      {
+        "asset": "fir",
+        "position": [
+          54.5,
+          37
+        ]
+      },
+      {
+        "asset": "bush",
+        "position": [
+          34.7,
+          44.7
+        ]
+      },
+      {
+        "asset": "flowers",
+        "position": [
+          35.1,
+          44.6
+        ]
+      },
+      {
+        "asset": "flowers",
+        "position": [
+          40.8,
+          42.3
+        ]
+      }
+    ],
+    "actors": [
+      {
+        "artwork_id": "white-haired-girl",
+        "frame": "right_0",
+        "position": [
+          37,
+          45.1
+        ]
+      },
+      {
+        "artwork_id": "blue-haired-girl",
+        "frame": "left_0",
+        "position": [
+          50,
+          43
+        ]
+      }
+    ]
+  }
+}

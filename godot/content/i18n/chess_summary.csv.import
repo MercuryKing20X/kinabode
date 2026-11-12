@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://cygsh58bj6on6"
+
+[deps]
+
+files=["res://content/i18n/chess_summary.zh.translation", "res://content/i18n/chess_summary.en.translation"]
+
+source_file="res://content/i18n/chess_summary.csv"
+dest_files=["res://content/i18n/chess_summary.zh.translation", "res://content/i18n/chess_summary.en.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

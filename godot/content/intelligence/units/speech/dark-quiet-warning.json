@@ -1,0 +1,13 @@
+{
+  "id": "dark-quiet-warning",
+  "context": "dark_warning",
+  "lines": [
+    "别走太远。",
+    "火把小了，该回营地了。",
+    "先看看最近的灯。",
+    "我们一起往亮处走。",
+    "木材还够吗？。",
+    "这段路慢一点。"
+  ],
+  "autonomy_output": false
+}

@@ -1,0 +1,11 @@
+{
+  "id": "lively-gomoku-other-move",
+  "context": "gomoku_other_move",
+  "lines": [
+    "嘿，看到你落在这里了。",
+    "哎呀，这一手，我得看仔细。",
+    "看这里，嗯，我看看你的新棋子。",
+    "哈，换个角度想想你的这步。"
+  ],
+  "autonomy_output": false
+}

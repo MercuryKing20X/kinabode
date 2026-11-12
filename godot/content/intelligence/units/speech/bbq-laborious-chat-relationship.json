@@ -1,0 +1,11 @@
+{
+  "id": "bbq-laborious-chat-relationship",
+  "context": "bbq_chat_relationship",
+  "lines": [
+    "已经{stage}了，一步一步来的。",
+    "走到{stage}，靠的都是实在的小事。",
+    "我们现在是{stage}，我知道。",
+    "相处到{stage}，不用多说也记得。"
+  ],
+  "autonomy_output": false
+}

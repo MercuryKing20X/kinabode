@@ -1,0 +1,96 @@
+{
+  "fish": [
+    "钓鱼",
+    "钓条鱼",
+    "fish"
+  ],
+  "light": [
+    "生火",
+    "添柴",
+    "light the fire",
+    "add wood"
+  ],
+  "roast": [
+    "烧烤",
+    "烤鱼",
+    "烤蘑菇",
+    "grill",
+    "barbecue",
+    "一起烤",
+    "烤上",
+    "烤一烤"
+  ],
+  "hold_cat": [
+    "抱抱柚柚",
+    "抱猫",
+    "hold yoyo"
+  ],
+  "pet_cat": [
+    "摸猫",
+    "摸摸柚柚",
+    "pet yoyo"
+  ],
+  "wander": [
+    "逛逛",
+    "逛一逛",
+    "wander"
+  ],
+  "pool": [
+    "泳池",
+    "游泳",
+    "pool"
+  ],
+  "lounge": [
+    "躺椅",
+    "lounge"
+  ],
+  "swing": [
+    "秋千",
+    "swing"
+  ],
+  "stars": [
+    "看星星",
+    "watch stars"
+  ],
+  "home": [
+    "回家",
+    "go home"
+  ],
+  "chess": [
+    "下棋",
+    "五子棋",
+    "play chess"
+  ],
+  "go_to": [
+    "去海边",
+    "到海边",
+    "go to the coast"
+  ],
+  "_chat_markers": [
+    "喜欢",
+    "觉得",
+    "怎么样",
+    "漂亮",
+    "好看",
+    "记得",
+    "为什么",
+    "do you like",
+    "remember",
+    "how was",
+    "why"
+  ],
+  "_request_overrides": [
+    "帮我",
+    "请帮",
+    "请你去",
+    "麻烦你",
+    "can you ",
+    "could you ",
+    "please go",
+    "please help"
+  ],
+  "assemble": [
+    "集合",
+    "gather at campfire"
+  ]
+}

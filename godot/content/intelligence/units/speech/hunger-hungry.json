@@ -1,0 +1,11 @@
+{
+  "id": "hunger-hungry",
+  "context": "hunger_hungry",
+  "lines": [
+    "肚子在咕咕叫了。",
+    "现在有点想吃热乎乎的饭。",
+    "我走慢一点，等你开饭。",
+    "要是能坐下来吃顿饭就好啦。"
+  ],
+  "autonomy_output": false
+}

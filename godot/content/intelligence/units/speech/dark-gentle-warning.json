@@ -1,0 +1,13 @@
+{
+  "id": "dark-gentle-warning",
+  "context": "dark_warning",
+  "lines": [
+    "嗯，别走太远呢。",
+    "嗯，火把小了，该回营地了呢。",
+    "嗯，先看看最近的灯呢。",
+    "嗯，我们一起往亮处走呢。",
+    "嗯，木材还够吗？呢。",
+    "嗯，这段路慢一点呢。"
+  ],
+  "autonomy_output": false
+}

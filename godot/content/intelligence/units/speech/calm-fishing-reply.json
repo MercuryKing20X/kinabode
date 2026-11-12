@@ -1,0 +1,9 @@
+{
+  "id": "calm-fishing-reply",
+  "context": "fishing_reply",
+  "lines": [
+    "看到了，真漂亮。",
+    "给它留一片好水吧。"
+  ],
+  "autonomy_output": false
+}

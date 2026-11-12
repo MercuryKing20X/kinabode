@@ -1,0 +1,48 @@
+keys,zh,en
+local.commands.farm_title,确认农活,Confirm farm work
+local.commands.title,确认大家的安排,Confirm the plan
+local.commands.ok,好,OK
+local.commands.cancel,先不去,Not now
+local.commands.review,确认后才会出发；不会改变你的动作。,They will start after confirmation.
+local.commands.awaiting,看一下安排，点“好”才出发。,Review the plan and choose OK to start.
+local.commands.canceled,这次先不安排。,Plan canceled.
+local.commands.nobody,现在没有能接下这单的伙伴，请看每个人的原因。,Nobody can take this order right now. Check each reason.
+local.commands.started,已接受的伙伴开始执行；接单不等于完成。,The selected companions have started. Completion will be reported.
+local.commands.all_done,这次大家的安排都完成了。,Everyone has completed this plan.
+local.commands.busy,等我忙完这件事。,Let me finish what I am doing.
+local.commands.model,按原模型对话处理，不由本地代办。,Handled through the original model conversation.
+local.commands.region,不在同一区域，不能接这单。,In another region; cannot join this order.
+local.commands.hungry,现在很饿，先不去。,Too hungry to join right now.
+local.commands.no_target,目标尚未建好或无法使用。,The destination is not available yet.
+local.commands.mixed,适合这块田的混种,A suitable crop mix
+local.commands.seed_line,%s种子：需要%d，缺%d,"%s seeds: need %d, missing %d"
+local.commands.bbq_handoff,已打开原烧烤邀请；仍需你亲自选菜、开烤。,The barbecue invitation is open. Choose food and start grilling yourself.
+local.commands.action_plant,种满并浇水,Plant and water
+local.commands.action_ready,只收成熟的菜,Harvest ripe crops
+local.commands.action_follow,跟着主角,Follow you
+local.commands.action_unfollow,不再跟随，自由活动,Stop following; free time
+local.commands.action_gather,沿路到指定地方集合,Gather at the selected place
+local.commands.action_barbecue,进入原烧烤邀请,Open barbecue invitation
+local.commands.unknown_gentle,我没太听明白，能像下面这样说吗？,I did not quite catch that. Could you try one of these?
+local.commands.unknown_lively,咦？我没听懂！试试这么说？,Huh? I missed that! Try saying it like this?
+local.commands.unknown_laborious,这件事我还没听明白，说清楚我再动手。,I need a clearer instruction before I get to work.
+local.commands.unknown_quiet,……没听懂。可以这样说。,...I did not understand. You can say this.
+local.commands.done_gentle,这件事做好啦。,"All done, nice and carefully."
+local.commands.done_lively,做好啦！还有谁没跟上？,Done! Anyone still catching up?
+local.commands.done_laborious,这单做完了，东西都在原处。,This job is finished; everything is accounted for.
+local.commands.done_quiet,……好了。,...Done.
+local.commands.example_plant,帮我种萝卜,Help me plant turnips
+local.commands.example_harvest,大家去收菜,"Everyone, harvest the crops"
+local.commands.example_follow,小蓝跟我来,"Skye, follow me"
+local.commands.interrupted,%s的这单已暂停或被新安排替换，不记为完成。,%s’s order paused or was replaced; it is not marked complete.
+local.commands.all_done_follow,大家都跟上了，会继续跟随。,Everyone has caught up and will keep following.
+local.commands.all_done_unfollow,大家都不再跟随了。,Everyone has stopped following.
+local.commands.all_done_gather,大家已到集合点，会按原规则留一会儿。,Everyone has arrived and will stay for the original gathering period.
+local.commands.plot_count,本次实际照料%d格,This order covers %d plots
+local.commands.start_gentle,嗯，我去。,Okay. I will go.
+local.commands.start_lively,好嘞～,On my way!
+local.commands.start_laborious,马上。,Right away.
+local.commands.start_quiet,……行。,…Okay.
+camera.distance.close,视角远近：拉近,Camera distance: closer
+camera.distance.original,视角远近：原来,Camera distance: original
+local.commands.state,现在：%s；%s；仓库木材 %d。,Now: %s; %s; warehouse wood: %d.

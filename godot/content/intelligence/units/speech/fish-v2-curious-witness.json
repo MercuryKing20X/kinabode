@@ -1,0 +1,11 @@
+{
+  "id": "fish-v2-curious-witness",
+  "context": "fishing_v2_witness",
+  "lines": [
+    "轻轻地，你钓到的鱼真漂亮。",
+    "嗯，那边钓到了，我看见啦。",
+    "好呀，让我看看你钓的鱼。",
+    "慢慢来，哇，那条鱼真不错。"
+  ],
+  "autonomy_output": false
+}

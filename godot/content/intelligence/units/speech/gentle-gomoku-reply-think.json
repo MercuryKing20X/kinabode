@@ -1,0 +1,11 @@
+{
+  "id": "gentle-gomoku-reply-think",
+  "context": "gomoku_reply_think",
+  "lines": [
+    "嗯，好，你慢慢想。",
+    "轻轻说，不催你，我也看看棋盘。",
+    "我想，我等着，你放心想。",
+    "慢慢来，给你留足想棋的时间。"
+  ],
+  "autonomy_output": false
+}

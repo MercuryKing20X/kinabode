@@ -1,0 +1,11 @@
+{
+  "id": "bbq-lively-chat-catch",
+  "context": "bbq_chat_catch",
+  "lines": [
+    "{catcher}钓到的{fish}，我在记录里看到了！",
+    "{fish}那条真实收获，真有意思！",
+    "说起{fish}，{catcher}可真钓到过。",
+    "岛上已经有{fish}的真实钓获啦。"
+  ],
+  "autonomy_output": false
+}

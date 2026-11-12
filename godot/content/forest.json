@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "sprout_seconds": 180,
+  "mature_seconds": 1800,
+  "spread_seconds": 900,
+  "scan_seconds": 5,
+  "normal_hits": 6,
+  "large_hits": 9,
+  "normal_wood": 3,
+  "large_wood": 6,
+  "swing_seconds": 2.0
+}

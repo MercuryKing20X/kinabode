@@ -1,0 +1,640 @@
+{
+  "hungry": {
+    "gentle": {
+      "zh": [
+        "肚子空空的，想喝口热汤。",
+        "能一起吃饭吗？",
+        "闻到饭香就走不动了。",
+        "有一点饿，陪我吃点好吗？"
+      ],
+      "en": [
+        "My tummy feels empty; warm soup sounds nice.",
+        "Could we eat together?",
+        "Dinner smells make me stop and listen.",
+        "A little hungry. Will you eat with me?"
+      ]
+    },
+    "lively": {
+      "zh": [
+        "饿饿！开饭叫上我！",
+        "肚子在打鼓啦！",
+        "我能闻到烤串了吗？",
+        "吃饭小队缺我一个！"
+      ],
+      "en": [
+        "Hungry! Call me for dinner!",
+        "My tummy is playing drums!",
+        "Do I smell skewers yet?",
+        "Your dinner team needs me!"
+      ]
+    },
+    "laborious": {
+      "zh": [
+        "忙完想吃口热乎的。",
+        "该坐下来吃饭了吧。",
+        "肚子提醒我该开饭了。",
+        "一起吃饱，再慢慢来。"
+      ],
+      "en": [
+        "Something warm after work sounds good.",
+        "Time to sit down for dinner, perhaps.",
+        "My stomach says dinner is due.",
+        "Let us eat, then take our time."
+      ]
+    },
+    "quiet": {
+      "zh": [
+        "有点饿。",
+        "等一顿热饭。",
+        "想坐在火边吃东西。",
+        "饭好了，叫我。"
+      ],
+      "en": [
+        "A little hungry.",
+        "Waiting for a warm meal.",
+        "I would like dinner by the fire.",
+        "Call me when dinner is ready."
+      ]
+    }
+  },
+  "fish": {
+    "gentle": {
+      "zh": [
+        "想坐在岸边等一条鱼。",
+        "水面亮亮的，想去钓鱼。",
+        "能陪我看看鱼漂吗？",
+        "今天想听鱼线轻轻响。"
+      ],
+      "en": [
+        "I would like to wait for a fish by the shore.",
+        "The shining water makes me want to fish.",
+        "Will you watch the float with me?",
+        "I want to hear the fishing line today."
+      ]
+    },
+    "lively": {
+      "zh": [
+        "鱼鱼会不会在等我！",
+        "走呀，一起去钓大鱼！",
+        "今天想跟鱼比耐心！",
+        "鱼漂一动我就喊你！"
+      ],
+      "en": [
+        "Are the fish waiting for me?",
+        "Come on, let us catch a big one!",
+        "I want to test my patience against a fish!",
+        "I will call you when the float moves!"
+      ]
+    },
+    "laborious": {
+      "zh": [
+        "找块稳当的岸边钓会儿吧。",
+        "想安安静静守一根鱼竿。",
+        "一起钓鱼，慢慢等就好。",
+        "今天想去岸边试试鱼口。"
+      ],
+      "en": [
+        "Let us find a firm spot on the shore.",
+        "I would like some quiet time with a rod.",
+        "We can fish and wait patiently.",
+        "I would like to try fishing today."
+      ]
+    },
+    "quiet": {
+      "zh": [
+        "想去钓鱼。",
+        "岸边适合发呆，也适合钓鱼。",
+        "想看鱼漂，不说话也行。",
+        "陪我等一条鱼吧。"
+      ],
+      "en": [
+        "I would like to fish.",
+        "The shore is good for thinking and fishing.",
+        "Let us watch a float; silence is fine.",
+        "Wait for a fish with me."
+      ]
+    }
+  },
+  "chess": {
+    "gentle": {
+      "zh": [
+        "想一起下一盘棋。 可以陪我吗？",
+        "想一起下一盘棋。 不着急，等你有空。",
+        "想一起下一盘棋。 在你旁边就好。",
+        "想一起下一盘棋。 想轻轻跟你说一声。"
+      ],
+      "en": [
+        "I would like a game of chess together. Will you join me?",
+        "I would like a game of chess together. Whenever you have time.",
+        "I would like a game of chess together. Being beside you is enough.",
+        "I would like a game of chess together. Just wanted to tell you softly."
+      ]
+    },
+    "lively": {
+      "zh": [
+        "想一起下一盘棋。 叫上我呀！",
+        "想一起下一盘棋。 我已经期待起来啦！",
+        "想一起下一盘棋。 我们一起去嘛！",
+        "想一起下一盘棋。 举手，我也想！"
+      ],
+      "en": [
+        "I would like a game of chess together. Count me in!",
+        "I would like a game of chess together. I am excited already!",
+        "I would like a game of chess together. Let us go together!",
+        "I would like a game of chess together. Hand up, me too!"
+      ]
+    },
+    "laborious": {
+      "zh": [
+        "想一起下一盘棋。 找个稳当的地方吧。",
+        "想一起下一盘棋。 大家一起才舒坦。",
+        "想一起下一盘棋。 不急，慢慢安排。",
+        "想一起下一盘棋。 我陪着就好。"
+      ],
+      "en": [
+        "I would like a game of chess together. Let us find a comfortable spot.",
+        "I would like a game of chess together. It is better together.",
+        "I would like a game of chess together. No rush; we can plan it.",
+        "I would like a game of chess together. I will keep you company."
+      ]
+    },
+    "quiet": {
+      "zh": [
+        "想一起下一盘棋。 就待一会儿。",
+        "想一起下一盘棋。 安静点也没关系。",
+        "想一起下一盘棋。 你有空再叫我。",
+        "想一起下一盘棋。 不用急着回答。"
+      ],
+      "en": [
+        "I would like a game of chess together. Just for a little while.",
+        "I would like a game of chess together. Silence is fine too.",
+        "I would like a game of chess together. Call me when you have time.",
+        "I would like a game of chess together. No need to answer right away."
+      ]
+    }
+  },
+  "cat": {
+    "gentle": {
+      "zh": [
+        "想去陪陪柚柚。 可以陪我吗？",
+        "想去陪陪柚柚。 不着急，等你有空。",
+        "想去陪陪柚柚。 在你旁边就好。",
+        "想去陪陪柚柚。 想轻轻跟你说一声。"
+      ],
+      "en": [
+        "I would like to spend time with Yoyo. Will you join me?",
+        "I would like to spend time with Yoyo. Whenever you have time.",
+        "I would like to spend time with Yoyo. Being beside you is enough.",
+        "I would like to spend time with Yoyo. Just wanted to tell you softly."
+      ]
+    },
+    "lively": {
+      "zh": [
+        "想去陪陪柚柚。 叫上我呀！",
+        "想去陪陪柚柚。 我已经期待起来啦！",
+        "想去陪陪柚柚。 我们一起去嘛！",
+        "想去陪陪柚柚。 举手，我也想！"
+      ],
+      "en": [
+        "I would like to spend time with Yoyo. Count me in!",
+        "I would like to spend time with Yoyo. I am excited already!",
+        "I would like to spend time with Yoyo. Let us go together!",
+        "I would like to spend time with Yoyo. Hand up, me too!"
+      ]
+    },
+    "laborious": {
+      "zh": [
+        "想去陪陪柚柚。 找个稳当的地方吧。",
+        "想去陪陪柚柚。 大家一起才舒坦。",
+        "想去陪陪柚柚。 不急，慢慢安排。",
+        "想去陪陪柚柚。 我陪着就好。"
+      ],
+      "en": [
+        "I would like to spend time with Yoyo. Let us find a comfortable spot.",
+        "I would like to spend time with Yoyo. It is better together.",
+        "I would like to spend time with Yoyo. No rush; we can plan it.",
+        "I would like to spend time with Yoyo. I will keep you company."
+      ]
+    },
+    "quiet": {
+      "zh": [
+        "想去陪陪柚柚。 就待一会儿。",
+        "想去陪陪柚柚。 安静点也没关系。",
+        "想去陪陪柚柚。 你有空再叫我。",
+        "想去陪陪柚柚。 不用急着回答。"
+      ],
+      "en": [
+        "I would like to spend time with Yoyo. Just for a little while.",
+        "I would like to spend time with Yoyo. Silence is fine too.",
+        "I would like to spend time with Yoyo. Call me when you have time.",
+        "I would like to spend time with Yoyo. No need to answer right away."
+      ]
+    }
+  },
+  "rain": {
+    "gentle": {
+      "zh": [
+        "想找个屋檐听雨。 可以陪我吗？",
+        "想找个屋檐听雨。 不着急，等你有空。",
+        "想找个屋檐听雨。 在你旁边就好。",
+        "想找个屋檐听雨。 想轻轻跟你说一声。"
+      ],
+      "en": [
+        "I would like to listen to rain under a roof. Will you join me?",
+        "I would like to listen to rain under a roof. Whenever you have time.",
+        "I would like to listen to rain under a roof. Being beside you is enough.",
+        "I would like to listen to rain under a roof. Just wanted to tell you softly."
+      ]
+    },
+    "lively": {
+      "zh": [
+        "想找个屋檐听雨。 叫上我呀！",
+        "想找个屋檐听雨。 我已经期待起来啦！",
+        "想找个屋檐听雨。 我们一起去嘛！",
+        "想找个屋檐听雨。 举手，我也想！"
+      ],
+      "en": [
+        "I would like to listen to rain under a roof. Count me in!",
+        "I would like to listen to rain under a roof. I am excited already!",
+        "I would like to listen to rain under a roof. Let us go together!",
+        "I would like to listen to rain under a roof. Hand up, me too!"
+      ]
+    },
+    "laborious": {
+      "zh": [
+        "想找个屋檐听雨。 找个稳当的地方吧。",
+        "想找个屋檐听雨。 大家一起才舒坦。",
+        "想找个屋檐听雨。 不急，慢慢安排。",
+        "想找个屋檐听雨。 我陪着就好。"
+      ],
+      "en": [
+        "I would like to listen to rain under a roof. Let us find a comfortable spot.",
+        "I would like to listen to rain under a roof. It is better together.",
+        "I would like to listen to rain under a roof. No rush; we can plan it.",
+        "I would like to listen to rain under a roof. I will keep you company."
+      ]
+    },
+    "quiet": {
+      "zh": [
+        "想找个屋檐听雨。 就待一会儿。",
+        "想找个屋檐听雨。 安静点也没关系。",
+        "想找个屋檐听雨。 你有空再叫我。",
+        "想找个屋檐听雨。 不用急着回答。"
+      ],
+      "en": [
+        "I would like to listen to rain under a roof. Just for a little while.",
+        "I would like to listen to rain under a roof. Silence is fine too.",
+        "I would like to listen to rain under a roof. Call me when you have time.",
+        "I would like to listen to rain under a roof. No need to answer right away."
+      ]
+    }
+  },
+  "sun": {
+    "gentle": {
+      "zh": [
+        "想在暖暖的阳光里坐一会儿。 可以陪我吗？",
+        "想在暖暖的阳光里坐一会儿。 不着急，等你有空。",
+        "想在暖暖的阳光里坐一会儿。 在你旁边就好。",
+        "想在暖暖的阳光里坐一会儿。 想轻轻跟你说一声。"
+      ],
+      "en": [
+        "I would like to sit in the warm sun. Will you join me?",
+        "I would like to sit in the warm sun. Whenever you have time.",
+        "I would like to sit in the warm sun. Being beside you is enough.",
+        "I would like to sit in the warm sun. Just wanted to tell you softly."
+      ]
+    },
+    "lively": {
+      "zh": [
+        "想在暖暖的阳光里坐一会儿。 叫上我呀！",
+        "想在暖暖的阳光里坐一会儿。 我已经期待起来啦！",
+        "想在暖暖的阳光里坐一会儿。 我们一起去嘛！",
+        "想在暖暖的阳光里坐一会儿。 举手，我也想！"
+      ],
+      "en": [
+        "I would like to sit in the warm sun. Count me in!",
+        "I would like to sit in the warm sun. I am excited already!",
+        "I would like to sit in the warm sun. Let us go together!",
+        "I would like to sit in the warm sun. Hand up, me too!"
+      ]
+    },
+    "laborious": {
+      "zh": [
+        "想在暖暖的阳光里坐一会儿。 找个稳当的地方吧。",
+        "想在暖暖的阳光里坐一会儿。 大家一起才舒坦。",
+        "想在暖暖的阳光里坐一会儿。 不急，慢慢安排。",
+        "想在暖暖的阳光里坐一会儿。 我陪着就好。"
+      ],
+      "en": [
+        "I would like to sit in the warm sun. Let us find a comfortable spot.",
+        "I would like to sit in the warm sun. It is better together.",
+        "I would like to sit in the warm sun. No rush; we can plan it.",
+        "I would like to sit in the warm sun. I will keep you company."
+      ]
+    },
+    "quiet": {
+      "zh": [
+        "想在暖暖的阳光里坐一会儿。 就待一会儿。",
+        "想在暖暖的阳光里坐一会儿。 安静点也没关系。",
+        "想在暖暖的阳光里坐一会儿。 你有空再叫我。",
+        "想在暖暖的阳光里坐一会儿。 不用急着回答。"
+      ],
+      "en": [
+        "I would like to sit in the warm sun. Just for a little while.",
+        "I would like to sit in the warm sun. Silence is fine too.",
+        "I would like to sit in the warm sun. Call me when you have time.",
+        "I would like to sit in the warm sun. No need to answer right away."
+      ]
+    }
+  },
+  "stars": {
+    "gentle": {
+      "zh": [
+        "想一起看今晚的星星。 可以陪我吗？",
+        "想一起看今晚的星星。 不着急，等你有空。",
+        "想一起看今晚的星星。 在你旁边就好。",
+        "想一起看今晚的星星。 想轻轻跟你说一声。"
+      ],
+      "en": [
+        "I would like to watch the stars together. Will you join me?",
+        "I would like to watch the stars together. Whenever you have time.",
+        "I would like to watch the stars together. Being beside you is enough.",
+        "I would like to watch the stars together. Just wanted to tell you softly."
+      ]
+    },
+    "lively": {
+      "zh": [
+        "想一起看今晚的星星。 叫上我呀！",
+        "想一起看今晚的星星。 我已经期待起来啦！",
+        "想一起看今晚的星星。 我们一起去嘛！",
+        "想一起看今晚的星星。 举手，我也想！"
+      ],
+      "en": [
+        "I would like to watch the stars together. Count me in!",
+        "I would like to watch the stars together. I am excited already!",
+        "I would like to watch the stars together. Let us go together!",
+        "I would like to watch the stars together. Hand up, me too!"
+      ]
+    },
+    "laborious": {
+      "zh": [
+        "想一起看今晚的星星。 找个稳当的地方吧。",
+        "想一起看今晚的星星。 大家一起才舒坦。",
+        "想一起看今晚的星星。 不急，慢慢安排。",
+        "想一起看今晚的星星。 我陪着就好。"
+      ],
+      "en": [
+        "I would like to watch the stars together. Let us find a comfortable spot.",
+        "I would like to watch the stars together. It is better together.",
+        "I would like to watch the stars together. No rush; we can plan it.",
+        "I would like to watch the stars together. I will keep you company."
+      ]
+    },
+    "quiet": {
+      "zh": [
+        "想一起看今晚的星星。 就待一会儿。",
+        "想一起看今晚的星星。 安静点也没关系。",
+        "想一起看今晚的星星。 你有空再叫我。",
+        "想一起看今晚的星星。 不用急着回答。"
+      ],
+      "en": [
+        "I would like to watch the stars together. Just for a little while.",
+        "I would like to watch the stars together. Silence is fine too.",
+        "I would like to watch the stars together. Call me when you have time.",
+        "I would like to watch the stars together. No need to answer right away."
+      ]
+    }
+  },
+  "sleepy": {
+    "gentle": {
+      "zh": [
+        "夜深了，想安静歇一会儿。 可以陪我吗？",
+        "夜深了，想安静歇一会儿。 不着急，等你有空。",
+        "夜深了，想安静歇一会儿。 在你旁边就好。",
+        "夜深了，想安静歇一会儿。 想轻轻跟你说一声。"
+      ],
+      "en": [
+        "It is late; I would like a quiet rest. Will you join me?",
+        "It is late; I would like a quiet rest. Whenever you have time.",
+        "It is late; I would like a quiet rest. Being beside you is enough.",
+        "It is late; I would like a quiet rest. Just wanted to tell you softly."
+      ]
+    },
+    "lively": {
+      "zh": [
+        "夜深了，想安静歇一会儿。 叫上我呀！",
+        "夜深了，想安静歇一会儿。 我已经期待起来啦！",
+        "夜深了，想安静歇一会儿。 我们一起去嘛！",
+        "夜深了，想安静歇一会儿。 举手，我也想！"
+      ],
+      "en": [
+        "It is late; I would like a quiet rest. Count me in!",
+        "It is late; I would like a quiet rest. I am excited already!",
+        "It is late; I would like a quiet rest. Let us go together!",
+        "It is late; I would like a quiet rest. Hand up, me too!"
+      ]
+    },
+    "laborious": {
+      "zh": [
+        "夜深了，想安静歇一会儿。 找个稳当的地方吧。",
+        "夜深了，想安静歇一会儿。 大家一起才舒坦。",
+        "夜深了，想安静歇一会儿。 不急，慢慢安排。",
+        "夜深了，想安静歇一会儿。 我陪着就好。"
+      ],
+      "en": [
+        "It is late; I would like a quiet rest. Let us find a comfortable spot.",
+        "It is late; I would like a quiet rest. It is better together.",
+        "It is late; I would like a quiet rest. No rush; we can plan it.",
+        "It is late; I would like a quiet rest. I will keep you company."
+      ]
+    },
+    "quiet": {
+      "zh": [
+        "夜深了，想安静歇一会儿。 就待一会儿。",
+        "夜深了，想安静歇一会儿。 安静点也没关系。",
+        "夜深了，想安静歇一会儿。 你有空再叫我。",
+        "夜深了，想安静歇一会儿。 不用急着回答。"
+      ],
+      "en": [
+        "It is late; I would like a quiet rest. Just for a little while.",
+        "It is late; I would like a quiet rest. Silence is fine too.",
+        "It is late; I would like a quiet rest. Call me when you have time.",
+        "It is late; I would like a quiet rest. No need to answer right away."
+      ]
+    }
+  },
+  "island": {
+    "gentle": {
+      "zh": [
+        "想去南边的岛散散步。 可以陪我吗？",
+        "想去南边的岛散散步。 不着急，等你有空。",
+        "想去南边的岛散散步。 在你旁边就好。",
+        "想去南边的岛散散步。 想轻轻跟你说一声。"
+      ],
+      "en": [
+        "I would like a walk on the southern island. Will you join me?",
+        "I would like a walk on the southern island. Whenever you have time.",
+        "I would like a walk on the southern island. Being beside you is enough.",
+        "I would like a walk on the southern island. Just wanted to tell you softly."
+      ]
+    },
+    "lively": {
+      "zh": [
+        "想去南边的岛散散步。 叫上我呀！",
+        "想去南边的岛散散步。 我已经期待起来啦！",
+        "想去南边的岛散散步。 我们一起去嘛！",
+        "想去南边的岛散散步。 举手，我也想！"
+      ],
+      "en": [
+        "I would like a walk on the southern island. Count me in!",
+        "I would like a walk on the southern island. I am excited already!",
+        "I would like a walk on the southern island. Let us go together!",
+        "I would like a walk on the southern island. Hand up, me too!"
+      ]
+    },
+    "laborious": {
+      "zh": [
+        "想去南边的岛散散步。 找个稳当的地方吧。",
+        "想去南边的岛散散步。 大家一起才舒坦。",
+        "想去南边的岛散散步。 不急，慢慢安排。",
+        "想去南边的岛散散步。 我陪着就好。"
+      ],
+      "en": [
+        "I would like a walk on the southern island. Let us find a comfortable spot.",
+        "I would like a walk on the southern island. It is better together.",
+        "I would like a walk on the southern island. No rush; we can plan it.",
+        "I would like a walk on the southern island. I will keep you company."
+      ]
+    },
+    "quiet": {
+      "zh": [
+        "想去南边的岛散散步。 就待一会儿。",
+        "想去南边的岛散散步。 安静点也没关系。",
+        "想去南边的岛散散步。 你有空再叫我。",
+        "想去南边的岛散散步。 不用急着回答。"
+      ],
+      "en": [
+        "I would like a walk on the southern island. Just for a little while.",
+        "I would like a walk on the southern island. Silence is fine too.",
+        "I would like a walk on the southern island. Call me when you have time.",
+        "I would like a walk on the southern island. No need to answer right away."
+      ]
+    }
+  },
+  "bored": {
+    "gentle": {
+      "zh": [
+        "想找你一起玩一会儿。 可以陪我吗？",
+        "想找你一起玩一会儿。 不着急，等你有空。",
+        "想找你一起玩一会儿。 在你旁边就好。",
+        "想找你一起玩一会儿。 想轻轻跟你说一声。"
+      ],
+      "en": [
+        "I would like to spend some time with you. Will you join me?",
+        "I would like to spend some time with you. Whenever you have time.",
+        "I would like to spend some time with you. Being beside you is enough.",
+        "I would like to spend some time with you. Just wanted to tell you softly."
+      ]
+    },
+    "lively": {
+      "zh": [
+        "想找你一起玩一会儿。 叫上我呀！",
+        "想找你一起玩一会儿。 我已经期待起来啦！",
+        "想找你一起玩一会儿。 我们一起去嘛！",
+        "想找你一起玩一会儿。 举手，我也想！"
+      ],
+      "en": [
+        "I would like to spend some time with you. Count me in!",
+        "I would like to spend some time with you. I am excited already!",
+        "I would like to spend some time with you. Let us go together!",
+        "I would like to spend some time with you. Hand up, me too!"
+      ]
+    },
+    "laborious": {
+      "zh": [
+        "想找你一起玩一会儿。 找个稳当的地方吧。",
+        "想找你一起玩一会儿。 大家一起才舒坦。",
+        "想找你一起玩一会儿。 不急，慢慢安排。",
+        "想找你一起玩一会儿。 我陪着就好。"
+      ],
+      "en": [
+        "I would like to spend some time with you. Let us find a comfortable spot.",
+        "I would like to spend some time with you. It is better together.",
+        "I would like to spend some time with you. No rush; we can plan it.",
+        "I would like to spend some time with you. I will keep you company."
+      ]
+    },
+    "quiet": {
+      "zh": [
+        "想找你一起玩一会儿。 就待一会儿。",
+        "想找你一起玩一会儿。 安静点也没关系。",
+        "想找你一起玩一会儿。 你有空再叫我。",
+        "想找你一起玩一会儿。 不用急着回答。"
+      ],
+      "en": [
+        "I would like to spend some time with you. Just for a little while.",
+        "I would like to spend some time with you. Silence is fine too.",
+        "I would like to spend some time with you. Call me when you have time.",
+        "I would like to spend some time with you. No need to answer right away."
+      ]
+    }
+  },
+  "favorite": {
+    "gentle": {
+      "zh": [
+        "想吃%s。 可以陪我吗？",
+        "想吃%s。 不着急，等你有空。",
+        "想吃%s。 在你旁边就好。",
+        "想吃%s。 想轻轻跟你说一声。"
+      ],
+      "en": [
+        "I am craving %s. Will you join me?",
+        "I am craving %s. Whenever you have time.",
+        "I am craving %s. Being beside you is enough.",
+        "I am craving %s. Just wanted to tell you softly."
+      ]
+    },
+    "lively": {
+      "zh": [
+        "想吃%s。 叫上我呀！",
+        "想吃%s。 我已经期待起来啦！",
+        "想吃%s。 我们一起去嘛！",
+        "想吃%s。 举手，我也想！"
+      ],
+      "en": [
+        "I am craving %s. Count me in!",
+        "I am craving %s. I am excited already!",
+        "I am craving %s. Let us go together!",
+        "I am craving %s. Hand up, me too!"
+      ]
+    },
+    "laborious": {
+      "zh": [
+        "想吃%s。 找个稳当的地方吧。",
+        "想吃%s。 大家一起才舒坦。",
+        "想吃%s。 不急，慢慢安排。",
+        "想吃%s。 我陪着就好。"
+      ],
+      "en": [
+        "I am craving %s. Let us find a comfortable spot.",
+        "I am craving %s. It is better together.",
+        "I am craving %s. No rush; we can plan it.",
+        "I am craving %s. I will keep you company."
+      ]
+    },
+    "quiet": {
+      "zh": [
+        "想吃%s。 就待一会儿。",
+        "想吃%s。 安静点也没关系。",
+        "想吃%s。 你有空再叫我。",
+        "想吃%s。 不用急着回答。"
+      ],
+      "en": [
+        "I am craving %s. Just for a little while.",
+        "I am craving %s. Silence is fine too.",
+        "I am craving %s. Call me when you have time.",
+        "I am craving %s. No need to answer right away."
+      ]
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "farm-cmd-curious-harvest",
+  "context": "farm_command_harvest",
+  "lines": [
+    "好！我去看看长成什么样了。",
+    "收菜？我去数数有多少。",
+    "我去收，看看哪个最大。",
+    "好呀，我去把熟的都找出来。"
+  ],
+  "autonomy_output": false
+}

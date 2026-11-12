@@ -1,0 +1,11 @@
+{
+  "id": "bbq-laborious-category-fish",
+  "context": "bbq_category_fish",
+  "lines": [
+    "鱼烤好了，先挑好刺。",
+    "这份鱼肉，趁热。",
+    "鱼别放凉了，坐稳吃。",
+    "鱼香出来了，可以开吃。"
+  ],
+  "autonomy_output": false
+}

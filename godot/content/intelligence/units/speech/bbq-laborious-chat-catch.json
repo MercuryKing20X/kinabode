@@ -1,0 +1,11 @@
+{
+  "id": "bbq-laborious-chat-catch",
+  "context": "bbq_chat_catch",
+  "lines": [
+    "{catcher}钓到的{fish}，是实实在在的收获。",
+    "{fish}那条记录，确实存在。",
+    "钓到{fish}的是{catcher}，没记错。",
+    "有{fish}这份收获，就值得记一下。"
+  ],
+  "autonomy_output": false
+}

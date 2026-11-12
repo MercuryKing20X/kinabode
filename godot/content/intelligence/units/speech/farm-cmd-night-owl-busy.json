@@ -1,0 +1,11 @@
+{
+  "id": "farm-cmd-night-owl-busy",
+  "context": "farm_command_busy",
+  "lines": [
+    "等我一下，还没弄完。",
+    "手上还有事。",
+    "……马上。",
+    "再等一下下。"
+  ],
+  "autonomy_output": false
+}

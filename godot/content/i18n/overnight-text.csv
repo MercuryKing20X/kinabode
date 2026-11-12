@@ -1,0 +1,491 @@
+keys,zh,en
+content.overnight.dialogue.thought.gentle.0,慢慢呼吸，心也会慢下来。,One soft breath. Then another.
+content.overnight.dialogue.thought.gentle.1,安静也能装下好多话。,Quiet can hold so much.
+content.overnight.dialogue.thought.gentle.2,想把这一小会儿留长一点。,I wish this little moment could linger.
+content.overnight.dialogue.thought.gentle.3,不用马上变得很勇敢。,I can be brave a little at a time.
+content.overnight.dialogue.thought.gentle.4,发呆的时候，念头像云。,Thoughts drift like little clouds.
+content.overnight.dialogue.thought.gentle.5,有人在身边，真好呀。,"Company feels warm, even quietly."
+content.overnight.dialogue.thought.gentle.6,今天也想温柔一点。,A little gentleness for today.
+content.overnight.dialogue.thought.gentle.7,不着急找到每个答案。,The answers can take their time.
+content.overnight.dialogue.thought.gentle.8,想听听自己的心跳。,Just listening to my own heartbeat.
+content.overnight.dialogue.thought.gentle.9,小小的期待，先藏在心里。,"A tiny hope, tucked away for now."
+content.overnight.dialogue.thought.gentle.10,夜色像一条柔软的毯子。,Night feels like a soft blanket.
+content.overnight.dialogue.thought.gentle.11,星光会不会也怕孤单？,I wonder if starlight gets lonely.
+content.overnight.dialogue.thought.gentle.12,黑一点，声音就近一点。,"In the dark, little sounds feel closer."
+content.overnight.dialogue.thought.gentle.13,想靠近亮着的地方。,"A little closer to the light, perhaps."
+content.overnight.dialogue.thought.gentle.14,夜风把思绪吹轻了。,The night breeze makes my thoughts lighter.
+content.overnight.dialogue.thought.gentle.15,雨点像在轻轻敲门。,The rain knocks so gently.
+content.overnight.dialogue.thought.gentle.16,雨味有一点像新翻的书。,Rain smells a little like a freshly opened book.
+content.overnight.dialogue.thought.gentle.17,一滴一滴，听着就安心。,Drop by drop. Such a soothing rhythm.
+content.overnight.dialogue.thought.gentle.18,衣袖上接住一小片天空。,A little piece of sky on my sleeve.
+content.overnight.dialogue.thought.gentle.19,雨天也有自己的亮色。,Rainy days have their own soft colours.
+content.overnight.dialogue.thought.gentle.20,海把天空接住了。,The sea is holding up the sky.
+content.overnight.dialogue.thought.gentle.21,浪花一朵也不着急。,None of these little waves seems in a hurry.
+content.overnight.dialogue.thought.gentle.22,想把海声装进贝壳。,Could I tuck that sound inside a shell?
+content.overnight.dialogue.thought.gentle.23,远处的蓝，真让人出神。,That distant blue is easy to get lost in.
+content.overnight.dialogue.thought.gentle.24,看着海，心事也松一点。,The sea loosens a little knot inside me.
+content.overnight.dialogue.thought.gentle.25,肚子有一点空……真的一点。,Just a little empty inside. Only a little.
+content.overnight.dialogue.thought.gentle.26,热乎乎的饭，会让人安心吧。,Something warm would feel lovely.
+content.overnight.dialogue.thought.gentle.27,先不出声，等你有空。,I can wait until you have a moment.
+content.overnight.dialogue.thought.gentle.28,想到烤苹果，就有点期待。,A baked apple sounds so comforting.
+content.overnight.dialogue.thought.gentle.29,小口吃，也能慢慢暖起来。,Small bites can still warm a whole heart.
+content.overnight.dialogue.sea.gentle.0,面前就是海，我陪你。,Sea ahead of us. I can stay with you.
+content.overnight.dialogue.sea.gentle.1,海面有一层碎光，慢一点也好。,Small pieces of light on the water. No hurry from me.
+content.overnight.dialogue.sea.gentle.2,远处的水连在一起，留一点时间看吧。,Water meeting water out there. We can give it a moment.
+content.overnight.dialogue.sea.gentle.3,浪一层层往这边来，不说话也可以。,Waves arriving in layers. We need not fill the silence.
+content.overnight.dialogue.mountain.gentle.0,远处的山在那儿，我陪你。,Mountains out there. I can stay with you.
+content.overnight.dialogue.mountain.gentle.1,山的轮廓很安静，慢一点也好。,Such a still outline. No hurry from me.
+content.overnight.dialogue.mountain.gentle.2,山影压在天边，留一点时间看吧。,A ridge against the sky. We can give it a moment.
+content.overnight.dialogue.mountain.gentle.3,朝山那边看了一会儿，不说话也可以。,A moment looking toward the hills. We need not fill the silence.
+content.overnight.dialogue.rain.gentle.0,雨落下来了，我陪你。,Rain coming down. I can stay with you.
+content.overnight.dialogue.rain.gentle.1,雨点敲着这条路，慢一点也好。,Drops tapping on the path. No hurry from me.
+content.overnight.dialogue.rain.gentle.2,空气里有雨水味，留一点时间看吧。,That clean wet smell. We can give it a moment.
+content.overnight.dialogue.rain.gentle.3,衣角接到雨点了，不说话也可以。,Rain catching our hems. We need not fill the silence.
+content.overnight.dialogue.night.gentle.0,夜已经深了，我陪你。,Properly late now. I can stay with you.
+content.overnight.dialogue.night.gentle.1,岛上的暗处更多了，慢一点也好。,More dark corners on the island. No hurry from me.
+content.overnight.dialogue.night.gentle.2,现在连脚步都听得清，留一点时间看吧。,You can hear each footstep. We can give it a moment.
+content.overnight.dialogue.night.gentle.3,深夜的海声更近，不说话也可以。,The sea sounds closer at night. We need not fill the silence.
+content.overnight.dialogue.moon.gentle.0,月牙岛的夜空就在头顶，我陪你。,Crescent Island's night above us. I can stay with you.
+content.overnight.dialogue.moon.gentle.1,朝月亮这边望一会儿，慢一点也好。,A moment facing the moon. No hurry from me.
+content.overnight.dialogue.moon.gentle.2,月色落在这边的水上，留一点时间看吧。,Moonlight across this water. We can give it a moment.
+content.overnight.dialogue.moon.gentle.3,这里看夜空很开阔，不说话也可以。,A wide piece of night sky here. We need not fill the silence.
+content.overnight.dialogue.morning.gentle.0,清晨见到你了，我陪你。,There you are this morning. I can stay with you.
+content.overnight.dialogue.morning.gentle.1,今天第一次看见你，慢一点也好。,My first hello to you today. No hurry from me.
+content.overnight.dialogue.morning.gentle.2,新一天的脚步还很轻，留一点时间看吧。,The day is still on tiptoe. We can give it a moment.
+content.overnight.dialogue.morning.gentle.3,早上的光落到你肩上，不说话也可以。,Morning light on your shoulder. We need not fill the silence.
+content.overnight.dialogue.dusk.gentle.0,天边慢慢变暖色了，我陪你。,Warm colour at the horizon. I can stay with you.
+content.overnight.dialogue.quiet_company.gentle.0,你不说话，我也知道你在呢。,You don't have to speak for me to notice you're here.
+content.overnight.dialogue.quiet_company.gentle.1,就这样站一会儿吧。,We can simply stand here a while.
+content.overnight.dialogue.quiet_company.gentle.2,旁边有你，安静也暖一点。,The silence feels warmer with you beside me.
+content.overnight.dialogue.quiet_company.gentle.3,想说话的时候，我在听。,"Whenever you feel like talking, I'm listening."
+content.overnight.dialogue.reunion.gentle.0,你从远处回来了，我陪你。,Back from over there. I can stay with you.
+content.overnight.dialogue.reunion.gentle.1,又看见你走近了，慢一点也好。,Here you come again. No hurry from me.
+content.overnight.dialogue.reunion.gentle.2,你的脚步回到这边了，留一点时间看吧。,Your footsteps back this way. We can give it a moment.
+content.overnight.dialogue.reunion.gentle.3,刚才离得远，现在近了，不说话也可以。,"Far a moment ago, close now. We need not fill the silence."
+content.overnight.dialogue.idle.gentle.0,你站得好安静，我陪你。,You've gone quiet. I can stay with you.
+content.overnight.dialogue.idle.gentle.1,这会儿不用赶路，慢一点也好。,Nothing is chasing us. No hurry from me.
+content.overnight.dialogue.idle.gentle.2,脚边的影子也停了，留一点时间看吧。,Even your shadow has stopped. We can give it a moment.
+content.overnight.dialogue.idle.gentle.3,陪你发会儿呆，不说话也可以。,A little daydreaming company. We need not fill the silence.
+content.overnight.dialogue.her_door.gentle.0,你停在我家门口了，我陪你。,"At my door, are you. I can stay with you."
+content.overnight.dialogue.her_door.gentle.1,我家门前有人等着呢，慢一点也好。,Someone waiting by my doorstep. No hurry from me.
+content.overnight.dialogue.her_door.gentle.2,在我门边歇会儿吧，留一点时间看吧。,A pause beside my door. We can give it a moment.
+content.overnight.dialogue.her_door.gentle.3,你在看我家的门呀，不说话也可以。,Having a look at my doorway. We need not fill the silence.
+content.overnight.dialogue.no_work.gentle.0,今天没给我派活呢，我陪你。,No errands from you today. I can stay with you.
+content.overnight.dialogue.no_work.gentle.1,今天这一段全归自己，慢一点也好。,A whole day of my own. No hurry from me.
+content.overnight.dialogue.no_work.gentle.2,没接活的一天也过去了，留一点时间看吧。,An unassigned day still counts. We can give it a moment.
+content.overnight.dialogue.no_work.gentle.3,今天没等来你的差事，不说话也可以。,No little job with my name on it. We need not fill the silence.
+content.overnight.dialogue.noon.gentle.0,日头升高了，我陪你。,Sun climbing overhead. I can stay with you.
+content.overnight.dialogue.noon.gentle.1,现在的影子短短的，慢一点也好。,Little short shadows now. No hurry from me.
+content.overnight.dialogue.noon.gentle.2,午后的光有点暖，留一点时间看吧。,Some warmth in the afternoon light. We can give it a moment.
+content.overnight.dialogue.noon.gentle.3,一天走到中间了，不说话也可以。,Halfway through the daylight. We need not fill the silence.
+content.overnight.dialogue.peer_stop.gentle.0,她也在你身边停下了，我陪你。,She's stopped beside you too. I can stay with you.
+content.overnight.dialogue.thought.lively.0,嘿嘿，脑袋里又冒小点子啦！,"Hehe, another tiny idea!"
+content.overnight.dialogue.thought.lively.1,无聊想追我？追不上！,Boredom can try catching me!
+content.overnight.dialogue.thought.lively.2,脚尖好想弹一下！,My toes want a little bounce!
+content.overnight.dialogue.thought.lively.3,想玩，可是玩什么呢？,Playtime thoughts! But which game?
+content.overnight.dialogue.thought.lively.4,把笑憋住，好难哦。,Holding in a grin is HARD.
+content.overnight.dialogue.thought.lively.5,我才没有走神，哼哼。,Daydreaming? Me? Nope!
+content.overnight.dialogue.thought.lively.6,下一件开心事在哪里？,Where's the next fun thing hiding?
+content.overnight.dialogue.thought.lively.7,今天也要黏紧一点点。,Just a tiny bit more togetherness today.
+content.overnight.dialogue.thought.lively.8,想法比蝴蝶还多！,More ideas than butterflies!
+content.overnight.dialogue.thought.lively.9,嘿，给自己鼓个掌！,A little cheer for me! Yay!
+content.overnight.dialogue.thought.lively.10,夜里也有好玩的吧！,"Night has fun stuff too, right?"
+content.overnight.dialogue.thought.lively.11,星星像撒了一把糖！,Someone spilled sugar all over the sky!
+content.overnight.dialogue.thought.lively.12,黑的地方……要贴近一点。,That bit is dark. Scooting closer!
+content.overnight.dialogue.thought.lively.13,月亮会不会也是饭桶？,Does the moon get snacky too?
+content.overnight.dialogue.thought.lively.14,小声一点，小声……嘿嘿。,Quiet voice. Quiet voice. Hehe.
+content.overnight.dialogue.thought.lively.15,雨点在比赛！,The raindrops are racing!
+content.overnight.dialogue.thought.lively.16,水珠跳得比我还高？,That drop bounced higher than me!
+content.overnight.dialogue.thought.lively.17,雨天的空气凉丝丝！,"Ooh, rainy air tickles!"
+content.overnight.dialogue.thought.lively.18,想看水洼，先不踩。,"Puddle spotted! Looking, not stomping."
+content.overnight.dialogue.thought.lively.19,哒哒哒，天空在打节拍。,Tap tap tap. Sky percussion!
+content.overnight.dialogue.thought.lively.20,浪花冲呀！,"Go, little wave, GO!"
+content.overnight.dialogue.thought.lively.21,海里会藏多少种鱼呀？,How many fish could be hiding in there?
+content.overnight.dialogue.thought.lively.22,那片蓝像超大果冻！,That blue looks like giant jelly!
+content.overnight.dialogue.thought.lively.23,海风把脑袋吹清醒啦！,Sea breeze! Brain awake!
+content.overnight.dialogue.thought.lively.24,想和浪比谁声音大！,Bet I could out-cheer a wave!
+content.overnight.dialogue.thought.lively.25,饿饿饿……脑袋也在喊！,Hungryyy. Even my thoughts are rumbling!
+content.overnight.dialogue.thought.lively.26,烤鱼的想象都好香！,Even imaginary grilled fish smells amazing!
+content.overnight.dialogue.thought.lively.27,肚子在偷偷开会。,My tummy is holding an emergency meeting.
+content.overnight.dialogue.thought.lively.28,要是饭会自己走来就好啦。,Wish dinner had little legs!
+content.overnight.dialogue.thought.lively.29,不偷吃，等真的开饭！,No sneaky bites. Waiting for real dinner!
+content.overnight.dialogue.sea.lively.0,面前就是海！哎，你看你看。,"Sea ahead of us! Oh, look, look!"
+content.overnight.dialogue.sea.lively.1,海面有一层碎光，嘿嘿，我注意到了！,"Small pieces of light on the water — yep, I spotted it!"
+content.overnight.dialogue.sea.lively.2,远处的水连在一起！这个我要多看两眼。,"Water meeting water out there! Hang on, I want another look."
+content.overnight.dialogue.sea.lively.3,浪一层层往这边来，你也看到了吧？,"Waves arriving in layers! You caught that too, right?"
+content.overnight.dialogue.mountain.lively.0,远处的山在那儿！哎，你看你看。,"Mountains out there! Oh, look, look!"
+content.overnight.dialogue.mountain.lively.1,山的轮廓很安静，嘿嘿，我注意到了！,"Such a still outline — yep, I spotted it!"
+content.overnight.dialogue.mountain.lively.2,山影压在天边！这个我要多看两眼。,"A ridge against the sky! Hang on, I want another look."
+content.overnight.dialogue.mountain.lively.3,朝山那边看了一会儿，你也看到了吧？,"A moment looking toward the hills! You caught that too, right?"
+content.overnight.dialogue.rain.lively.0,雨落下来了！哎，你看你看。,"Rain coming down! Oh, look, look!"
+content.overnight.dialogue.rain.lively.1,雨点敲着这条路，嘿嘿，我注意到了！,"Drops tapping on the path — yep, I spotted it!"
+content.overnight.dialogue.rain.lively.2,空气里有雨水味！这个我要多看两眼。,"That clean wet smell! Hang on, I want another look."
+content.overnight.dialogue.rain.lively.3,衣角接到雨点了，你也看到了吧？,"Rain catching our hems! You caught that too, right?"
+content.overnight.dialogue.night.lively.0,夜已经深了！哎，你看你看。,"Properly late now! Oh, look, look!"
+content.overnight.dialogue.night.lively.1,岛上的暗处更多了，嘿嘿，我注意到了！,"More dark corners on the island — yep, I spotted it!"
+content.overnight.dialogue.night.lively.2,现在连脚步都听得清！这个我要多看两眼。,"You can hear each footstep! Hang on, I want another look."
+content.overnight.dialogue.night.lively.3,深夜的海声更近，你也看到了吧？,"The sea sounds closer at night! You caught that too, right?"
+content.overnight.dialogue.moon.lively.0,月牙岛的夜空就在头顶！哎，你看你看。,"Crescent Island's night above us! Oh, look, look!"
+content.overnight.dialogue.moon.lively.1,朝月亮这边望一会儿，嘿嘿，我注意到了！,"A moment facing the moon — yep, I spotted it!"
+content.overnight.dialogue.moon.lively.2,月色落在这边的水上！这个我要多看两眼。,"Moonlight across this water! Hang on, I want another look."
+content.overnight.dialogue.moon.lively.3,这里看夜空很开阔，你也看到了吧？,"A wide piece of night sky here! You caught that too, right?"
+content.overnight.dialogue.morning.lively.0,清晨见到你了！哎，你看你看。,"There you are this morning! Oh, look, look!"
+content.overnight.dialogue.morning.lively.1,今天第一次看见你，嘿嘿，我注意到了！,"My first hello to you today — yep, I spotted it!"
+content.overnight.dialogue.morning.lively.2,新一天的脚步还很轻！这个我要多看两眼。,"The day is still on tiptoe! Hang on, I want another look."
+content.overnight.dialogue.morning.lively.3,早上的光落到你肩上，你也看到了吧？,"Morning light on your shoulder! You caught that too, right?"
+content.overnight.dialogue.dusk.lively.0,天边慢慢变暖色了！哎，你看你看。,"Warm colour at the horizon! Oh, look, look!"
+content.overnight.dialogue.quiet_company.lively.0,你在我旁边站了好一会儿！哎，你看你看。,"You've stayed beside me a while! Oh, look, look!"
+content.overnight.dialogue.quiet_company.lively.1,你没说话也没走开，嘿嘿，我注意到了！,"No words, and you haven't left — yep, I spotted it!"
+content.overnight.dialogue.quiet_company.lively.2,我们并排停在这里！这个我要多看两眼。,"Both of us paused right here! Hang on, I want another look."
+content.overnight.dialogue.quiet_company.lively.3,这段安静有人陪着，你也看到了吧？,"Quiet, with company in it! You caught that too, right?"
+content.overnight.dialogue.reunion.lively.0,你从远处回来了！哎，你看你看。,"Back from over there! Oh, look, look!"
+content.overnight.dialogue.reunion.lively.1,又看见你走近了，嘿嘿，我注意到了！,"Here you come again — yep, I spotted it!"
+content.overnight.dialogue.reunion.lively.2,你的脚步回到这边了！这个我要多看两眼。,"Your footsteps back this way! Hang on, I want another look."
+content.overnight.dialogue.reunion.lively.3,刚才离得远，现在近了，你也看到了吧？,"Far a moment ago, close now! You caught that too, right?"
+content.overnight.dialogue.idle.lively.0,你站得好安静！哎，你看你看。,"You've gone quiet! Oh, look, look!"
+content.overnight.dialogue.idle.lively.1,这会儿不用赶路，嘿嘿，我注意到了！,"Nothing is chasing us — yep, I spotted it!"
+content.overnight.dialogue.idle.lively.2,脚边的影子也停了！这个我要多看两眼。,"Even your shadow has stopped! Hang on, I want another look."
+content.overnight.dialogue.idle.lively.3,陪你发会儿呆，你也看到了吧？,"A little daydreaming company! You caught that too, right?"
+content.overnight.dialogue.her_door.lively.0,你停在我家门口了！哎，你看你看。,"At my door, are you! Oh, look, look!"
+content.overnight.dialogue.her_door.lively.1,我家门前有人等着呢，嘿嘿，我注意到了！,"Someone waiting by my doorstep — yep, I spotted it!"
+content.overnight.dialogue.her_door.lively.2,在我门边歇会儿吧！这个我要多看两眼。,"A pause beside my door! Hang on, I want another look."
+content.overnight.dialogue.her_door.lively.3,你在看我家的门呀，你也看到了吧？,"Having a look at my doorway! You caught that too, right?"
+content.overnight.dialogue.no_work.lively.0,今天没给我派活呢！哎，你看你看。,"No errands from you today! Oh, look, look!"
+content.overnight.dialogue.no_work.lively.1,今天这一段全归自己，嘿嘿，我注意到了！,"A whole day of my own — yep, I spotted it!"
+content.overnight.dialogue.no_work.lively.2,没接活的一天也过去了！这个我要多看两眼。,"An unassigned day still counts! Hang on, I want another look."
+content.overnight.dialogue.no_work.lively.3,今天没等来你的差事，你也看到了吧？,"No little job with my name on it! You caught that too, right?"
+content.overnight.dialogue.noon.lively.0,日头升高了！哎，你看你看。,"Sun climbing overhead! Oh, look, look!"
+content.overnight.dialogue.noon.lively.1,现在的影子短短的，嘿嘿，我注意到了！,"Little short shadows now — yep, I spotted it!"
+content.overnight.dialogue.noon.lively.2,午后的光有点暖！这个我要多看两眼。,"Some warmth in the afternoon light! Hang on, I want another look."
+content.overnight.dialogue.noon.lively.3,一天走到中间了，你也看到了吧？,"Halfway through the daylight! You caught that too, right?"
+content.overnight.dialogue.peer_stop.lively.0,她也在你身边停下了！哎，你看你看。,"She's stopped beside you too! Oh, look, look!"
+content.overnight.dialogue.thought.laborious.0,先把脑袋里的事排整齐。,Thoughts first. One neat row.
+content.overnight.dialogue.thought.laborious.1,歇一会儿，也不是偷懒。,"A pause is sensible, too."
+content.overnight.dialogue.thought.laborious.2,不用把每一刻都填满。,Every minute needn't be filled.
+content.overnight.dialogue.thought.laborious.3,衣角理好了，心也稳一点。,Straight hem. Steadier thoughts.
+content.overnight.dialogue.thought.laborious.4,操心归操心，别催得太紧。,Careful. Caring needn't become nagging.
+content.overnight.dialogue.thought.laborious.5,今天也想做个可靠的人。,I'd like to be someone dependable.
+content.overnight.dialogue.thought.laborious.6,有时候，陪着就够了。,Sometimes staying beside someone is enough.
+content.overnight.dialogue.thought.laborious.7,书里的事，慢慢想。,Let the book's words settle.
+content.overnight.dialogue.thought.laborious.8,要紧的事情，记在心上。,Keep the important things close.
+content.overnight.dialogue.thought.laborious.9,不急着动手，先看清楚。,Look properly before doing anything.
+content.overnight.dialogue.thought.laborious.10,天黑了，脚下更要稳。,Dark now. Steady footing matters.
+content.overnight.dialogue.thought.laborious.11,夜色会把小事放大。,Night makes small worries seem bigger.
+content.overnight.dialogue.thought.laborious.12,想提醒，又怕太唠叨。,One reminder? Or am I fussing again?
+content.overnight.dialogue.thought.laborious.13,安静下来，才听见海。,Quiet enough to hear the sea properly.
+content.overnight.dialogue.thought.laborious.14,灯光照着裙角，挺安心。,Light on my hem. That's reassuring.
+content.overnight.dialogue.thought.laborious.15,雨天的路，光看也知道滑。,Those wet paths call for care.
+content.overnight.dialogue.thought.laborious.16,别把自己绷得像伞骨。,No need to hold myself so rigidly.
+content.overnight.dialogue.thought.laborious.17,雨声倒是很有条理。,Rain has a very orderly rhythm.
+content.overnight.dialogue.thought.laborious.18,书要藏好，别淋湿了。,Keep the book tucked safely away.
+content.overnight.dialogue.thought.laborious.19,这一阵雨，也会过去。,This shower will pass in its own time.
+content.overnight.dialogue.thought.laborious.20,海这么大，事可以慢慢做。,A sea that wide puts tasks in perspective.
+content.overnight.dialogue.thought.laborious.21,浪一遍遍来，从不乱套。,Wave after wave. A dependable rhythm.
+content.overnight.dialogue.thought.laborious.22,书页之外，也有好风景。,"There's a view worth reading, too."
+content.overnight.dialogue.thought.laborious.23,站稳了，再看远处。,Steady feet. Then the horizon.
+content.overnight.dialogue.thought.laborious.24,海风吹散一点操心。,Let the sea breeze carry a worry away.
+content.overnight.dialogue.thought.laborious.25,……先吃饭，才有心思。,...Dinner first. Then clear thinking.
+content.overnight.dialogue.thought.laborious.26,不是馋，是肚子在讲道理。,It's a perfectly reasonable tummy.
+content.overnight.dialogue.thought.laborious.27,丰收炖菜，想想就踏实。,A harvest stew sounds properly comforting.
+content.overnight.dialogue.thought.laborious.28,饿着的时候，少念叨两句。,Less fussing on an empty stomach.
+content.overnight.dialogue.thought.laborious.29,等开饭，不自己乱拿东西。,Wait for dinner. No helping myself.
+content.overnight.dialogue.sea.laborious.0,面前就是海，脚下留点神。,Sea ahead of us. Mind where you put your feet.
+content.overnight.dialogue.sea.laborious.1,海面有一层碎光，别急，稳当点。,Small pieces of light on the water. Steady; no need to rush it.
+content.overnight.dialogue.sea.laborious.2,远处的水连在一起，手边的事慢慢理。,Water meeting water out there. We can sort things one at a time.
+content.overnight.dialogue.sea.laborious.3,浪一层层往这边来，我看着呢。,"Waves arriving in layers. Yes, I am keeping an eye on it."
+content.overnight.dialogue.mountain.laborious.0,远处的山在那儿，脚下留点神。,Mountains out there. Mind where you put your feet.
+content.overnight.dialogue.mountain.laborious.1,山的轮廓很安静，别急，稳当点。,Such a still outline. Steady; no need to rush it.
+content.overnight.dialogue.mountain.laborious.2,山影压在天边，手边的事慢慢理。,A ridge against the sky. We can sort things one at a time.
+content.overnight.dialogue.mountain.laborious.3,朝山那边看了一会儿，我看着呢。,"A moment looking toward the hills. Yes, I am keeping an eye on it."
+content.overnight.dialogue.rain.laborious.0,雨落下来了，脚下留点神。,Rain coming down. Mind where you put your feet.
+content.overnight.dialogue.rain.laborious.1,雨点敲着这条路，别急，稳当点。,Drops tapping on the path. Steady; no need to rush it.
+content.overnight.dialogue.rain.laborious.2,空气里有雨水味，手边的事慢慢理。,That clean wet smell. We can sort things one at a time.
+content.overnight.dialogue.rain.laborious.3,衣角接到雨点了，我看着呢。,"Rain catching our hems. Yes, I am keeping an eye on it."
+content.overnight.dialogue.night.laborious.0,这么晚了，眼睛还撑得住吗？,This late? Give those eyes a break.
+content.overnight.dialogue.night.laborious.1,夜路别光顾着跑，看脚下。,Watch your footing on the night path.
+content.overnight.dialogue.night.laborious.2,该歇会儿了，我不是催你干活。,Time for a breather. I'm not assigning you chores.
+content.overnight.dialogue.night.laborious.3,夜里凉，别在水边站太久。,Night air's cool. Don't linger by the water.
+content.overnight.dialogue.moon.laborious.0,月牙岛的夜空就在头顶，脚下留点神。,Crescent Island's night above us. Mind where you put your feet.
+content.overnight.dialogue.moon.laborious.1,朝月亮这边望一会儿，别急，稳当点。,A moment facing the moon. Steady; no need to rush it.
+content.overnight.dialogue.moon.laborious.2,月色落在这边的水上，手边的事慢慢理。,Moonlight across this water. We can sort things one at a time.
+content.overnight.dialogue.moon.laborious.3,这里看夜空很开阔，我看着呢。,"A wide piece of night sky here. Yes, I am keeping an eye on it."
+content.overnight.dialogue.morning.laborious.0,清晨见到你了，脚下留点神。,There you are this morning. Mind where you put your feet.
+content.overnight.dialogue.morning.laborious.1,今天第一次看见你，别急，稳当点。,My first hello to you today. Steady; no need to rush it.
+content.overnight.dialogue.morning.laborious.2,新一天的脚步还很轻，手边的事慢慢理。,The day is still on tiptoe. We can sort things one at a time.
+content.overnight.dialogue.morning.laborious.3,早上的光落到你肩上，我看着呢。,"Morning light on your shoulder. Yes, I am keeping an eye on it."
+content.overnight.dialogue.dusk.laborious.0,天边慢慢变暖色了，脚下留点神。,Warm colour at the horizon. Mind where you put your feet.
+content.overnight.dialogue.quiet_company.laborious.0,你在我旁边站了好一会儿，脚下留点神。,You've stayed beside me a while. Mind where you put your feet.
+content.overnight.dialogue.quiet_company.laborious.1,你没说话也没走开，别急，稳当点。,"No words, and you haven't left. Steady; no need to rush it."
+content.overnight.dialogue.quiet_company.laborious.2,我们并排停在这里，手边的事慢慢理。,Both of us paused right here. We can sort things one at a time.
+content.overnight.dialogue.quiet_company.laborious.3,这段安静有人陪着，我看着呢。,"Quiet, with company in it. Yes, I am keeping an eye on it."
+content.overnight.dialogue.reunion.laborious.0,你从远处回来了，脚下留点神。,Back from over there. Mind where you put your feet.
+content.overnight.dialogue.reunion.laborious.1,又看见你走近了，别急，稳当点。,Here you come again. Steady; no need to rush it.
+content.overnight.dialogue.reunion.laborious.2,你的脚步回到这边了，手边的事慢慢理。,Your footsteps back this way. We can sort things one at a time.
+content.overnight.dialogue.reunion.laborious.3,刚才离得远，现在近了，我看着呢。,"Far a moment ago, close now. Yes, I am keeping an eye on it."
+content.overnight.dialogue.idle.laborious.0,你站得好安静，脚下留点神。,You've gone quiet. Mind where you put your feet.
+content.overnight.dialogue.idle.laborious.1,这会儿不用赶路，别急，稳当点。,Nothing is chasing us. Steady; no need to rush it.
+content.overnight.dialogue.idle.laborious.2,脚边的影子也停了，手边的事慢慢理。,Even your shadow has stopped. We can sort things one at a time.
+content.overnight.dialogue.idle.laborious.3,陪你发会儿呆，我看着呢。,"A little daydreaming company. Yes, I am keeping an eye on it."
+content.overnight.dialogue.her_door.laborious.0,你停在我家门口了，脚下留点神。,"At my door, are you. Mind where you put your feet."
+content.overnight.dialogue.her_door.laborious.1,我家门前有人等着呢，别急，稳当点。,Someone waiting by my doorstep. Steady; no need to rush it.
+content.overnight.dialogue.her_door.laborious.2,在我门边歇会儿吧，手边的事慢慢理。,A pause beside my door. We can sort things one at a time.
+content.overnight.dialogue.her_door.laborious.3,你在看我家的门呀，我看着呢。,"Having a look at my doorway. Yes, I am keeping an eye on it."
+content.overnight.dialogue.no_work.laborious.0,今天没给我派活呢，脚下留点神。,No errands from you today. Mind where you put your feet.
+content.overnight.dialogue.no_work.laborious.1,今天这一段全归自己，别急，稳当点。,A whole day of my own. Steady; no need to rush it.
+content.overnight.dialogue.no_work.laborious.2,没接活的一天也过去了，手边的事慢慢理。,An unassigned day still counts. We can sort things one at a time.
+content.overnight.dialogue.no_work.laborious.3,今天没等来你的差事，我看着呢。,"No little job with my name on it. Yes, I am keeping an eye on it."
+content.overnight.dialogue.noon.laborious.0,日头升高了，脚下留点神。,Sun climbing overhead. Mind where you put your feet.
+content.overnight.dialogue.noon.laborious.1,现在的影子短短的，别急，稳当点。,Little short shadows now. Steady; no need to rush it.
+content.overnight.dialogue.noon.laborious.2,午后的光有点暖，手边的事慢慢理。,Some warmth in the afternoon light. We can sort things one at a time.
+content.overnight.dialogue.noon.laborious.3,一天走到中间了，我看着呢。,"Halfway through the daylight. Yes, I am keeping an eye on it."
+content.overnight.dialogue.peer_stop.laborious.0,她也在你身边停下了，脚下留点神。,She's stopped beside you too. Mind where you put your feet.
+content.overnight.dialogue.thought.quiet.0,……没什么。也挺好。,...Nothing much. Fine by me.
+content.overnight.dialogue.thought.quiet.1,一个念头。先放着。,A thought. Let it sit.
+content.overnight.dialogue.thought.quiet.2,安静不是没在想。,Quiet doesn't mean empty.
+content.overnight.dialogue.thought.quiet.3,风从哪边来？,Which way is the breeze?
+content.overnight.dialogue.thought.quiet.4,不说也没关系。,No need to say it.
+content.overnight.dialogue.thought.quiet.5,看着就好。,Just looking is enough.
+content.overnight.dialogue.thought.quiet.6,脑子还醒着。,Mind's awake.
+content.overnight.dialogue.thought.quiet.7,嗯。这里不错。,Mm. Good spot.
+content.overnight.dialogue.thought.quiet.8,想翻一页书。,Could turn a page.
+content.overnight.dialogue.thought.quiet.9,有人陪，不吵。刚好。,Company. No noise. Just right.
+content.overnight.dialogue.thought.quiet.10,终于是夜里了。,Night at last.
+content.overnight.dialogue.thought.quiet.11,星星不会催人。,Stars don't rush anyone.
+content.overnight.dialogue.thought.quiet.12,黑一点，看光更清楚。,Darker sky. Clearer lights.
+content.overnight.dialogue.thought.quiet.13,夜风。舒服。,Night breeze. Good.
+content.overnight.dialogue.thought.quiet.14,不想错过这段安静。,Keeping this bit of quiet.
+content.overnight.dialogue.thought.quiet.15,雨。听着。,Rain. Listening.
+content.overnight.dialogue.thought.quiet.16,水滴各有方向。,"Every drop, its own way."
+content.overnight.dialogue.thought.quiet.17,袖口湿了一点。,Sleeve's a little wet.
+content.overnight.dialogue.thought.quiet.18,雨声把别的声音盖住了。,Rain softens the other sounds.
+content.overnight.dialogue.thought.quiet.19,等它小一点。,Let it ease.
+content.overnight.dialogue.thought.quiet.20,浪知道回去的路。,Waves know their way back.
+content.overnight.dialogue.thought.quiet.21,远处没有句号。,No full stop on that horizon.
+content.overnight.dialogue.thought.quiet.22,海面。像一页深蓝的书。,Sea. A page of dark blue.
+content.overnight.dialogue.thought.quiet.23,听。又一层浪。,Listen. Another wave.
+content.overnight.dialogue.thought.quiet.24,想把这片蓝记住。,Keeping that blue in mind.
+content.overnight.dialogue.thought.quiet.25,……饿。,...Hungry.
+content.overnight.dialogue.thought.quiet.26,蘑菇。烤一点焦边。,Mushrooms. A little char on the edge.
+content.overnight.dialogue.thought.quiet.27,等火边叫我。,Waiting for the dinner call.
+content.overnight.dialogue.thought.quiet.28,肚子比我话多。,Tummy talks more than I do.
+content.overnight.dialogue.thought.quiet.29,嗯。饭的念头。,Mm. Dinner thoughts.
+content.overnight.dialogue.sea.quiet.0,面前就是海。,Sea ahead of us.
+content.overnight.dialogue.sea.quiet.1,海面有一层碎光。嗯。,Small pieces of light on the water. Mm.
+content.overnight.dialogue.sea.quiet.2,远处的水连在一起。看见了。,Water meeting water out there. Saw it.
+content.overnight.dialogue.sea.quiet.3,浪一层层往这边来。不赖。,Waves arriving in layers. Could be worse.
+content.overnight.dialogue.mountain.quiet.0,远处的山在那儿。,Mountains out there.
+content.overnight.dialogue.mountain.quiet.1,山的轮廓很安静。嗯。,Such a still outline. Mm.
+content.overnight.dialogue.mountain.quiet.2,山影压在天边。看见了。,A ridge against the sky. Saw it.
+content.overnight.dialogue.mountain.quiet.3,朝山那边看了一会儿。不赖。,A moment looking toward the hills. Could be worse.
+content.overnight.dialogue.rain.quiet.0,雨落下来了。,Rain coming down.
+content.overnight.dialogue.rain.quiet.1,雨点敲着这条路。嗯。,Drops tapping on the path. Mm.
+content.overnight.dialogue.rain.quiet.2,空气里有雨水味。看见了。,That clean wet smell. Saw it.
+content.overnight.dialogue.rain.quiet.3,衣角接到雨点了。不赖。,Rain catching our hems. Could be worse.
+content.overnight.dialogue.night.quiet.0,夜深了。现在才清静。,Late. Finally quiet.
+content.overnight.dialogue.night.quiet.1,不困。你困就先歇着。,Not sleepy. You can rest if you want.
+content.overnight.dialogue.night.quiet.2,夜里的海，比白天好听。,Sea sounds better at night.
+content.overnight.dialogue.night.quiet.3,还醒着。陪你一会儿。,Still awake. I'll stay a bit.
+content.overnight.dialogue.moon.quiet.0,月牙岛的夜空就在头顶。,Crescent Island's night above us.
+content.overnight.dialogue.moon.quiet.1,朝月亮这边望一会儿。嗯。,A moment facing the moon. Mm.
+content.overnight.dialogue.moon.quiet.2,月色落在这边的水上。看见了。,Moonlight across this water. Saw it.
+content.overnight.dialogue.moon.quiet.3,这里看夜空很开阔。不赖。,A wide piece of night sky here. Could be worse.
+content.overnight.dialogue.morning.quiet.0,清晨见到你了。,There you are this morning.
+content.overnight.dialogue.morning.quiet.1,今天第一次看见你。嗯。,My first hello to you today. Mm.
+content.overnight.dialogue.morning.quiet.2,新一天的脚步还很轻。看见了。,The day is still on tiptoe. Saw it.
+content.overnight.dialogue.morning.quiet.3,早上的光落到你肩上。不赖。,Morning light on your shoulder. Could be worse.
+content.overnight.dialogue.dusk.quiet.0,天边慢慢变暖色了。,Warm colour at the horizon.
+content.overnight.dialogue.quiet_company.quiet.0,你在我旁边站了好一会儿。,You've stayed beside me a while.
+content.overnight.dialogue.quiet_company.quiet.1,你没说话也没走开。嗯。,"No words, and you haven't left. Mm."
+content.overnight.dialogue.quiet_company.quiet.2,我们并排停在这里。看见了。,Both of us paused right here. Saw it.
+content.overnight.dialogue.quiet_company.quiet.3,这段安静有人陪着。不赖。,"Quiet, with company in it. Could be worse."
+content.overnight.dialogue.reunion.quiet.0,你从远处回来了。,Back from over there.
+content.overnight.dialogue.reunion.quiet.1,又看见你走近了。嗯。,Here you come again. Mm.
+content.overnight.dialogue.reunion.quiet.2,你的脚步回到这边了。看见了。,Your footsteps back this way. Saw it.
+content.overnight.dialogue.reunion.quiet.3,刚才离得远，现在近了。不赖。,"Far a moment ago, close now. Could be worse."
+content.overnight.dialogue.idle.quiet.0,你站得好安静。,You've gone quiet.
+content.overnight.dialogue.idle.quiet.1,这会儿不用赶路。嗯。,Nothing is chasing us. Mm.
+content.overnight.dialogue.idle.quiet.2,脚边的影子也停了。看见了。,Even your shadow has stopped. Saw it.
+content.overnight.dialogue.idle.quiet.3,陪你发会儿呆。不赖。,A little daydreaming company. Could be worse.
+content.overnight.dialogue.her_door.quiet.0,你停在我家门口了。,"At my door, are you."
+content.overnight.dialogue.her_door.quiet.1,我家门前有人等着呢。嗯。,Someone waiting by my doorstep. Mm.
+content.overnight.dialogue.her_door.quiet.2,在我门边歇会儿吧。看见了。,A pause beside my door. Saw it.
+content.overnight.dialogue.her_door.quiet.3,你在看我家的门呀。不赖。,Having a look at my doorway. Could be worse.
+content.overnight.dialogue.no_work.quiet.0,没派活。挺好。,No jobs. Fine by me.
+content.overnight.dialogue.no_work.quiet.1,一天没叫我干活。难得。,A day without errands. Rare treat.
+content.overnight.dialogue.no_work.quiet.2,今天没接你的差事。不急。,No errands from you today. No rush.
+content.overnight.dialogue.no_work.quiet.3,闲了一天。没浪费。,A day off. Not wasted.
+content.overnight.dialogue.noon.quiet.0,日头升高了。,Sun climbing overhead.
+content.overnight.dialogue.noon.quiet.1,现在的影子短短的。嗯。,Little short shadows now. Mm.
+content.overnight.dialogue.noon.quiet.2,午后的光有点暖。看见了。,Some warmth in the afternoon light. Saw it.
+content.overnight.dialogue.noon.quiet.3,一天走到中间了。不赖。,Halfway through the daylight. Could be worse.
+content.overnight.dialogue.peer_stop.quiet.0,她也在你身边停下了。,She's stopped beside you too.
+"content.overnight.dialogue.pair.codex,companion-2.0.0",你脑袋里又在想什么呀？,What's bouncing round your head now?
+"content.overnight.dialogue.pair.codex,companion-2.0.1",嘿嘿，秘密点心！,Hehe! Secret snacks!
+"content.overnight.dialogue.pair.codex,companion-2.1.0",小声一点，我听得见呢。,A little softer. I can hear you.
+"content.overnight.dialogue.pair.codex,companion-2.1.1",好！……这个好够小声吗？,Okay! ...Was THAT quiet enough?
+"content.overnight.dialogue.pair.codex,companion-2.2.0",你的笑像一小束太阳。,Your smile feels like a little sunbeam.
+"content.overnight.dialogue.pair.codex,companion-2.2.1",那我分你半束！,Then you get half of it!
+"content.overnight.dialogue.pair.codex,companion-2.3.0",慢慢说，不会漏掉你的话。,Take your time. I won't miss a word.
+"content.overnight.dialogue.pair.codex,companion-2.3.1",可是想法挤着出门啦！,But my ideas are all crowding the door!
+"content.overnight.dialogue.pair.codex,companion-2.4.0",你会安静地发呆吗？,Can you daydream quietly?
+"content.overnight.dialogue.pair.codex,companion-2.4.1",会呀！用脑袋蹦！,Yep! I bounce inside my brain!
+"content.overnight.dialogue.pair.codex,companion-2.5.0",跟你在一起，很难不笑。,It's hard not to smile beside you.
+"content.overnight.dialogue.pair.codex,companion-2.5.1",嘿嘿，这叫传染快乐！,Hehe! Catching a case of happy!
+"content.overnight.dialogue.pair.codex,companion-2.6.0",你像一阵跑来跑去的风。,You're a breeze with busy little feet.
+"content.overnight.dialogue.pair.codex,companion-2.6.1",那你就是软软的云！,And you're a soft little cloud!
+"content.overnight.dialogue.pair.codex,companion-2.7.0",不用每次都逗大家开心呀。,You needn't cheer everyone up all the time.
+"content.overnight.dialogue.pair.codex,companion-2.7.1",那这次就只逗你！,Then this one's just for you!
+"content.overnight.dialogue.pair.codex,companion-2.8.0",想歇会儿就靠我这边。,"If you want a pause, I'm right here."
+"content.overnight.dialogue.pair.codex,companion-2.8.1",靠一点点！真的一点点！,Scooting a teensy bit! Promise!
+"content.overnight.dialogue.pair.codex,companion-2.9.0",我们可以慢一点点。,We could take it a little slower.
+"content.overnight.dialogue.pair.codex,companion-2.9.1",那就慢慢地开心！,Then we'll have fun slooowly!
+"content.overnight.dialogue.pair.codex,npc.mira.0.0",你又在替谁操心呀？,Whose worries are you carrying now?
+"content.overnight.dialogue.pair.codex,npc.mira.0.1",先别管我，你衣角乱了。,Never mind me. Your hem's folded up.
+"content.overnight.dialogue.pair.codex,npc.mira.1.0",偶尔歇一会儿，也很好呢。,A little pause can be lovely.
+"content.overnight.dialogue.pair.codex,npc.mira.1.1",知道。歇也要歇踏实。,"I know. Properly, if we're resting."
+"content.overnight.dialogue.pair.codex,npc.mira.2.0",你的话听着好安心。,Your words make things feel safer.
+"content.overnight.dialogue.pair.codex,npc.mira.2.1",别只听，脚下也看着。,"Keep an eye on your footing, too."
+"content.overnight.dialogue.pair.codex,npc.mira.3.0",书里写了什么呀？,What does your book say?
+"content.overnight.dialogue.pair.codex,npc.mira.3.1",这一页，先不急着讲完。,This page can wait a little.
+"content.overnight.dialogue.pair.codex,npc.mira.4.0",你其实很温柔呢。,"You're very gentle, underneath."
+"content.overnight.dialogue.pair.codex,npc.mira.4.1",……别突然这样说。,...Don't spring that on me.
+"content.overnight.dialogue.pair.codex,npc.mira.5.0",今天的心事，放轻一点吧。,Let today's worries feel a little lighter.
+"content.overnight.dialogue.pair.codex,npc.mira.5.1",嗯。先把眉头松开。,Mm. Unfurrowing my brow first.
+"content.overnight.dialogue.pair.codex,npc.mira.6.0",可以让我陪你发呆吗？,May I keep you daydreaming company?
+"content.overnight.dialogue.pair.codex,npc.mira.6.1",可以。别站风口。,"Of course. Out of the draught, though."
+"content.overnight.dialogue.pair.codex,npc.mira.7.0",你不说话的时候也很可靠。,You're reassuring even in silence.
+"content.overnight.dialogue.pair.codex,npc.mira.7.1",可靠的人也得想事情。,Dependable people need thinking time.
+"content.overnight.dialogue.pair.codex,npc.mira.8.0",想把这份安心记在心里。,I'd like to keep this safe little feeling.
+"content.overnight.dialogue.pair.codex,npc.mira.8.1",记得就好，不用说那么多。,"Keep it, then. No big speech needed."
+"content.overnight.dialogue.pair.codex,npc.mira.9.0",谢谢你总看着大家。,Thank you for keeping an eye on us.
+"content.overnight.dialogue.pair.codex,npc.mira.9.1",你们平安，我就少念两句。,Stay safe and I'll fuss less.
+"content.overnight.dialogue.pair.codex,npc.nora.0.0",不说话也不尴尬呢。,The quiet doesn't feel awkward.
+"content.overnight.dialogue.pair.codex,npc.nora.0.1",嗯。挺好。,Mm. Works for me.
+"content.overnight.dialogue.pair.codex,npc.nora.1.0",你在想很远的地方吗？,Are your thoughts somewhere far away?
+"content.overnight.dialogue.pair.codex,npc.nora.1.1",没。就在这里。,No. Right here.
+"content.overnight.dialogue.pair.codex,npc.nora.2.0",你的安静像一页书。,Your quiet feels like an open page.
+"content.overnight.dialogue.pair.codex,npc.nora.2.1",那就慢慢看。,"Read slowly, then."
+"content.overnight.dialogue.pair.codex,npc.nora.3.0",我可以站在这里吗？,May I stand here?
+"content.overnight.dialogue.pair.codex,npc.nora.3.1",给你留着的。,Kept the space for you.
+"content.overnight.dialogue.pair.codex,npc.nora.4.0",好像不用找话题呀。,We needn't hunt for something to say.
+"content.overnight.dialogue.pair.codex,npc.nora.4.1",别找。会累。,Don't. Tiring work.
+"content.overnight.dialogue.pair.codex,npc.nora.5.0",你刚才是不是笑了？,Did you smile just then?
+"content.overnight.dialogue.pair.codex,npc.nora.5.1",……你看错。,...You saw nothing.
+"content.overnight.dialogue.pair.codex,npc.nora.6.0",小小的事也能让人安心。,Little things can feel so reassuring.
+"content.overnight.dialogue.pair.codex,npc.nora.6.1",比如，不被催。,Like not being rushed.
+"content.overnight.dialogue.pair.codex,npc.nora.7.0",我喜欢这种陪伴。,I like this kind of company.
+"content.overnight.dialogue.pair.codex,npc.nora.7.1",我也是。别声张。,Me too. Keep it quiet.
+"content.overnight.dialogue.pair.codex,npc.nora.8.0",你的话少，可我听得很清楚。,You say little. I hear it clearly.
+"content.overnight.dialogue.pair.codex,npc.nora.8.1",够了就好。,Enough is enough.
+"content.overnight.dialogue.pair.codex,npc.nora.9.0",想把这段安静留长一点。,Could this quiet last a little longer?
+"content.overnight.dialogue.pair.codex,npc.nora.9.1",嗯。不急。,Mm. No hurry.
+"content.overnight.dialogue.pair.companion-2,npc.mira.0.0",我是不是特别乖！,"I'm being SO good, right?"
+"content.overnight.dialogue.pair.companion-2,npc.mira.0.1",这句话先别喊那么响。,You could announce it more quietly.
+"content.overnight.dialogue.pair.companion-2,npc.mira.1.0",你皱眉像个小括号！,Your frown looks like little brackets!
+"content.overnight.dialogue.pair.companion-2,npc.mira.1.1",那你就是感叹号。,And you're an exclamation mark.
+"content.overnight.dialogue.pair.companion-2,npc.mira.2.0",我脑袋里有好多计划！,I've got SO many plans!
+"content.overnight.dialogue.pair.companion-2,npc.mira.2.1",先挑一个说清楚。,Pick one. Explain that one first.
+"content.overnight.dialogue.pair.companion-2,npc.mira.3.0",你会不会也想偷懒呀？,Do you ever want a lazy minute?
+"content.overnight.dialogue.pair.companion-2,npc.mira.3.1",休息不叫偷懒。,Resting isn't stealing anything.
+"content.overnight.dialogue.pair.companion-2,npc.mira.4.0",书里有烤鱼吗？,Any grilled fish in that book?
+"content.overnight.dialogue.pair.companion-2,npc.mira.4.1",你只会找这一页？,Is that the only page you'd read?
+"content.overnight.dialogue.pair.companion-2,npc.mira.5.0",我可以负责开心！,I'll be in charge of happy!
+"content.overnight.dialogue.pair.companion-2,npc.mira.5.1",行，别把自己绊倒。,Fine. Mind your feet while you're at it.
+"content.overnight.dialogue.pair.companion-2,npc.mira.6.0",别念啦，我耳朵很乖！,My ears are behaving! Less fussing!
+"content.overnight.dialogue.pair.companion-2,npc.mira.6.1",我看你的脚先乖一点。,"I'd like your feet to behave, too."
+"content.overnight.dialogue.pair.companion-2,npc.mira.7.0",给我夸一句嘛！,One compliment! Pleeease!
+"content.overnight.dialogue.pair.companion-2,npc.mira.7.1",嗯。今天笑得挺精神。,Mm. That's a very lively smile.
+"content.overnight.dialogue.pair.companion-2,npc.mira.8.0",你看书，我负责不吵！,You read! I'll handle being quiet!
+"content.overnight.dialogue.pair.companion-2,npc.mira.8.1",先坚持说完这句之后。,"Start after that sentence, then."
+"content.overnight.dialogue.pair.companion-2,npc.mira.9.0",我有一点点听话哦！,"I listen a tiny bit, you know!"
+"content.overnight.dialogue.pair.companion-2,npc.mira.9.1",这一点，我记下了。,I'll give you credit for that bit.
+"content.overnight.dialogue.pair.companion-2,npc.nora.0.0",你是不是偷偷走神啦？,"Secret daydreaming, huh?"
+"content.overnight.dialogue.pair.companion-2,npc.nora.0.1",你太响。想不成。,You're loud. Can't think.
+"content.overnight.dialogue.pair.companion-2,npc.nora.1.0",我猜得到你在想什么！,Bet I know what you're thinking!
+"content.overnight.dialogue.pair.companion-2,npc.nora.1.1",猜错了。,Wrong already.
+"content.overnight.dialogue.pair.companion-2,npc.nora.2.0",嘿，笑一下嘛！,"Hey, gimme a little smile!"
+"content.overnight.dialogue.pair.companion-2,npc.nora.2.1",给了。太快。,Did. You blinked.
+"content.overnight.dialogue.pair.companion-2,npc.nora.3.0",你的话怎么这么省呀？,How do you save so many words?
+"content.overnight.dialogue.pair.companion-2,npc.nora.3.1",你替我说够了。,You use enough for both.
+"content.overnight.dialogue.pair.companion-2,npc.nora.4.0",我能安静三秒！,I can be quiet for THREE seconds!
+"content.overnight.dialogue.pair.companion-2,npc.nora.4.1",从现在算。,Starting now.
+"content.overnight.dialogue.pair.companion-2,npc.nora.5.0",你看起来像只猫！,You've got cat energy!
+"content.overnight.dialogue.pair.companion-2,npc.nora.5.1",猫也嫌你吵。,"Cat thinks you're loud, too."
+"content.overnight.dialogue.pair.companion-2,npc.nora.6.0",我要把快乐分你一大份！,Huge helping of happy for you!
+"content.overnight.dialogue.pair.companion-2,npc.nora.6.1",小份。装得下。,Small one. It'll fit.
+"content.overnight.dialogue.pair.companion-2,npc.nora.7.0",你其实偷偷喜欢热闹吧！,"Secretly like a little chaos, huh?"
+"content.overnight.dialogue.pair.companion-2,npc.nora.7.1",只喜欢散场。,I like when it ends.
+"content.overnight.dialogue.pair.companion-2,npc.nora.8.0",我是不是很有精神！,Am I full of beans or WHAT!
+"content.overnight.dialogue.pair.companion-2,npc.nora.8.1",嗯。溢出来了。,Mm. Overflowing.
+"content.overnight.dialogue.pair.companion-2,npc.nora.9.0",我站近一点，不闹你！,Scooting closer! No pestering!
+"content.overnight.dialogue.pair.companion-2,npc.nora.9.1",行。说到做到。,Fine. Hold yourself to it.
+"content.overnight.dialogue.pair.npc.mira,npc.nora.0.0",没在发呆吧？,"Thinking, or just drifting?"
+"content.overnight.dialogue.pair.npc.mira,npc.nora.0.1",想事。,Thinking.
+"content.overnight.dialogue.pair.npc.mira,npc.nora.1.0",有话就直说。,Say it straight if you've got something.
+"content.overnight.dialogue.pair.npc.mira,npc.nora.1.1",没急事。,Nothing urgent.
+"content.overnight.dialogue.pair.npc.mira,npc.nora.2.0",书看累了就看看远处。,Eyes tired? Try the distance.
+"content.overnight.dialogue.pair.npc.mira,npc.nora.2.1",你也是。,You too.
+"content.overnight.dialogue.pair.npc.mira,npc.nora.3.0",你倒是很会安静。,You do quiet rather well.
+"content.overnight.dialogue.pair.npc.mira,npc.nora.3.1",你可以学。,You could try it.
+"content.overnight.dialogue.pair.npc.mira,npc.nora.4.0",我是不是又操心太多？,Am I fussing too much again?
+"content.overnight.dialogue.pair.npc.mira,npc.nora.4.1",一点。,A bit.
+"content.overnight.dialogue.pair.npc.mira,npc.nora.5.0",今天别把自己绷太紧。,Don't hold yourself so tightly today.
+"content.overnight.dialogue.pair.npc.mira,npc.nora.5.1",这句送回你。,Sending that back to you.
+"content.overnight.dialogue.pair.npc.mira,npc.nora.6.0",有你在边上，省不少话。,You save me a fair few words.
+"content.overnight.dialogue.pair.npc.mira,npc.nora.6.1",嗯。懂了。,Mm. Understood.
+"content.overnight.dialogue.pair.npc.mira,npc.nora.7.0",不用每件事都马上回答。,Not every question needs an instant answer.
+"content.overnight.dialogue.pair.npc.mira,npc.nora.7.1",终于听见你说这个。,Glad you said that.
+"content.overnight.dialogue.pair.npc.mira,npc.nora.8.0",我看一会儿书。,Reading for a little while.
+"content.overnight.dialogue.pair.npc.mira,npc.nora.8.1",我替你安静。,I'll handle the silence.
+"content.overnight.dialogue.pair.npc.mira,npc.nora.9.0",咱们就站这一会儿。,We'll stay here a moment.
+"content.overnight.dialogue.pair.npc.mira,npc.nora.9.1",行。不赶。,Fine. No rush.
+content.overnight.orange.name,向日葵长裙 · 抱书,Clem · Sunflower dress
+content.overnight.text.2b81dc69db797a,轻量,Light
+content.overnight.text.6bea77acefb364,标准,Standard
+content.overnight.text.e952e0cafb0e8a,深入,Deep
+content.overnight.text.22c2d7c2ee6997,生命孕育,Lifeblood
+content.overnight.text.fa173dc0680a2a,档位：,Level: 
+content.overnight.text.348f1cf1243e74,我知道了,I understand
+content.overnight.text.72a9bad2f4d003,你的消息已排队，会在当前回应后优先发送。,Your message is queued and will go first after the current reply.
+content.overnight.text.a854fac9fa318f,肚子有点饿了，想和大家一起烤点东西。,A little hungry... I would like to grill something with everyone.
+content.overnight.text.59d3a67d8993ce,下雨了呀，我就在你旁边陪着。,It is raining. I will keep you company right here.
+content.overnight.text.03a86a624ff6fd,天黑了，我们待在一起吧。,It is getting dark. Let us stay together.
+content.overnight.text.837d6153e7a867,刚才的事忙完啦，现在陪你待一会儿。,All done with that. I will stay here with you a while.
+content.overnight.text.b933abf2e06aae,也在旁边呢，一起玩吧。, is nearby too. Let us play together.
+content.overnight.text.87c479f93e29ce,老鹰抓小鸡,Eagle and chicks
+content.overnight.text.29f07ca1600fd9,老鹰捉小鸡,Eagle and chicks
+content.overnight.text.f1bf53c0148547,来玩游戏吧,Let us play a game
+content.overnight.text.6adb4bfec2ff5b,玩老鹰捉小鸡,Play eagle and chicks
+content.overnight.text.33f5a6f0f66c60,来玩游戏,Let us play
+content.overnight.text.6f9543d8ee7fcd,玩个游戏,Play a game
+content.overnight.text.16833aa2becf6e,停,Stop
+content.overnight.text.312062aef6737d,别玩了,Stop playing
+content.overnight.text.cfb252a606cf13,不玩了,Stop playing
+content.overnight.text.9e5e9b480d7a5b,先一起补些木材 / Gather wood together,Gather wood together
+content.overnight.text.6745d2af88080a,搭好营火 / Build the campfire,Build the campfire
+content.overnight.text.50fcba62e25972,生火等大家吃饭 / Light the fire and gather for dinner,Light the fire and gather for dinner
+content.overnight.text.55e1c8bfddbaab,巡查补缺：,Island check: 
+content.overnight.text.19738806daeb86,巡查补缺：渔场补鱼,Island check: stock the fishery
+content.overnight.text.e62e9694d39b50,今天先,"Today, let us "
+content.overnight.text.891ae8b5661fb2,补木材、,"gather some wood, "
+content.overnight.text.4731f6cb6fdc8e,巡田、,"check the fields, "
+content.overnight.text.156c87ffc94fe7,照看大家吃饭，再一起玩。,"make sure everyone eats, then play together."
+content.overnight.text.4a2029f8ef2454,天快晚了，先收尾，看看大家有没有吃好。,Evening soon. Let us finish up and check that everyone has eaten.
+content.overnight.text.26a5a22bacdd8a,这件事暂时做不了，我先安排下一件。,This cannot be done just now. I will arrange the next thing.
+content.overnight.text.f867f34178594f,好,Okay
+content.overnight.text.59275de2fad284,先不用,Not now
+content.overnight.text.0147dc31ac1357,钓鱼,fish
+content.overnight.text.5691a276aac242,烧烤,barbecue
+content.overnight.text.6dcbe3fe605ebc,看星星,watch stars
+content.overnight.text.25eeed50fdb7dc,那边,that place
+content.overnight.text.806ee16ed5500c,接下来带大家去%s，好吗？,Shall I take everyone to %s next?
+content.overnight.text.a3eded935620db,那我先自己安排啦～,"I will arrange things for now, then~"
+content.overnight.text.ef1920c1bab412,去种菜,Go plant crops
+content.overnight.text.dcb3c256839799,种菜,Plant crops
+content.overnight.text.3e0da8855fa512,种满,Fill the plots
+content.overnight.text.d0a3c372b12813,大家来火边坐好，我等齐了再烤。,Come sit by the fire. I will wait for everyone before grilling.
+content.overnight.text.572176c7810b0c,%s 路上没能及时到，先给到了的开烤。,%s did not arrive in time. I will start grilling for those who are here.
+content.overnight.alias.come,过来,Come here
+content.overnight.alias.come_me,来我这里,Come over to me
+content.overnight.alias.doing,你在做什么,What are you doing?
+content.overnight.alias.doing_short,在干什么,What are you up to?

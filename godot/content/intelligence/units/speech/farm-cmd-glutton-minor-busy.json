@@ -1,0 +1,11 @@
+{
+  "id": "farm-cmd-glutton-minor-busy",
+  "context": "farm_command_busy",
+  "lines": [
+    "等我一下下。",
+    "忙完就去。",
+    "再等等。",
+    "马上好。"
+  ],
+  "autonomy_output": false
+}

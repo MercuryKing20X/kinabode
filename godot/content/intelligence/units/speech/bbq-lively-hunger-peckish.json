@@ -1,0 +1,11 @@
+{
+  "id": "bbq-lively-hunger-peckish",
+  "context": "bbq_hunger_peckish",
+  "lines": [
+    "有点饿，正好开吃。",
+    "这份热食来得刚刚好。",
+    "肚子有一点空，先吃一口。",
+    "闻到香气就更想吃了。"
+  ],
+  "autonomy_output": false
+}

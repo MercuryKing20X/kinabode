@@ -1,0 +1,11 @@
+{
+  "id": "quiet-gomoku-open-three",
+  "context": "gomoku_open_three",
+  "lines": [
+    "嗯。这条三连两头还空着。",
+    "我看看。有一条活三要留意。",
+    "轻声说。三颗连起来了，还能往两边走。",
+    "先看清。这处三连开始有威胁了。"
+  ],
+  "autonomy_output": false
+}

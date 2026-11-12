@@ -1,0 +1,11 @@
+{
+  "id": "bbq-laborious-chat-weather",
+  "context": "bbq_chat_weather",
+  "lines": [
+    "外面{weather}，在火边别乱挤。",
+    "这会儿{weather}，先坐着。",
+    "{weather}归{weather}，火还暖。",
+    "现在是{weather}，看看火就好。"
+  ],
+  "autonomy_output": false
+}

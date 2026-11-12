@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://cxqn7lcb34dlj"
+
+[deps]
+
+files=["res://content/i18n/chess_entry_near.zh.translation", "res://content/i18n/chess_entry_near.en.translation"]
+
+source_file="res://content/i18n/chess_entry_near.csv"
+dest_files=["res://content/i18n/chess_entry_near.zh.translation", "res://content/i18n/chess_entry_near.en.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

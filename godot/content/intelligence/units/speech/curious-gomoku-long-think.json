@@ -1,0 +1,11 @@
+{
+  "id": "curious-gomoku-long-think",
+  "context": "gomoku_long_think",
+  "lines": [
+    "咦，我再想一下这一步。",
+    "我注意到，这处要多看一会儿。",
+    "让我瞧瞧，不急，我还在看棋。",
+    "有意思，让我把几条线看清楚。"
+  ],
+  "autonomy_output": false
+}

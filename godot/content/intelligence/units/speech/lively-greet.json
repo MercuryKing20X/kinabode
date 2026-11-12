@@ -1,0 +1,11 @@
+{
+  "id": "lively-greet",
+  "context": "greet",
+  "lines": [
+    "嗨！我在这儿！",
+    "看见你啦，精神都跟着一亮！",
+    "在附近碰见你，挥个手！",
+    "来打个小招呼，嘿！"
+  ],
+  "autonomy_output": false
+}

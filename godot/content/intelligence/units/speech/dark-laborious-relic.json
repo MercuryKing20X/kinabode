@@ -1,0 +1,13 @@
+{
+  "id": "dark-laborious-relic",
+  "context": "dark_relic",
+  "lines": [
+    "你看，这里有旧东西。",
+    "你看，看，留下来的记号。",
+    "你看，轻轻拿起来吧。",
+    "你看，它一定有人珍惜过。",
+    "你看，把它好好记住。",
+    "你看，又找到一点故事。"
+  ],
+  "autonomy_output": false
+}

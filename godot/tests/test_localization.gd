@@ -1,0 +1,15 @@
+extends SceneTree
+const L=preload("res://scripts/localization.gd")
+func _initialize()->void:
+	var dir:=OS.get_environment("HABITAT_DATA_DIR");assert(dir.contains("youqi-"))
+	assert(L.configure(dir)=="zh")
+	assert(L.text("ui.audio.title")=="声音与自动备份")
+	L.select(dir,"en")
+	assert(L.text("ui.audio.title")=="Sound & Backups")
+	assert(L.configure(dir)=="en")
+	assert(L.text("ui.backup.latest") % "2026-11-02"=="Latest backup: 2026-11-02")
+	L.select(dir,"zh")
+	assert(L.text("ui.audio.title")=="声音与自动备份")
+	assert(not FileAccess.file_exists(dir.path_join("island-v2.json")))
+	print("Localization: default, switch, persistence, template, switch-back, no World save PASS")
+	quit()

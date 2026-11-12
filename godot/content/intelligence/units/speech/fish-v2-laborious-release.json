@@ -1,0 +1,11 @@
+{
+  "id": "fish-v2-laborious-release",
+  "context": "fishing_v2_release",
+  "lines": [
+    "好，鱼儿回到海里了。",
+    "稳住，再见，小鱼，慢慢游。",
+    "接着，这次让鱼儿回大海。",
+    "认真一点，看着它游远了。"
+  ],
+  "autonomy_output": false
+}

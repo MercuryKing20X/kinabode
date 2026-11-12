@@ -1,0 +1,11 @@
+{
+  "id": "bbq-laborious-chat-food",
+  "context": "bbq_chat_food",
+  "lines": [
+    "{food}吃过了，先坐稳歇一会儿。",
+    "这一顿有{food}，挺踏实。",
+    "刚才的{food}，确实落进肚子了。",
+    "好好吃完{food}，这会儿歇歇。"
+  ],
+  "autonomy_output": false
+}

@@ -1,0 +1,2970 @@
+{
+  "jieqi": {
+    "playful": {
+      "start": [
+        {
+          "key": "content.chess.jieqi.playful.start.1",
+          "zh": "来来来，看我今天的棋！",
+          "en": "Come on, watch my brilliant moves!"
+        },
+        {
+          "key": "content.chess.jieqi.playful.start.2",
+          "zh": "我要先找到最有趣的位置。",
+          "en": "I am looking for the most exciting spot first."
+        },
+        {
+          "key": "content.chess.jieqi.playful.start.3",
+          "zh": "我准备好啦，快开始！",
+          "en": "Ready! Let us get this game going!"
+        }
+      ],
+      "thinking": [
+        {
+          "key": "content.chess.jieqi.playful.thinking.4",
+          "zh": "等一下，我的脑袋在转！",
+          "en": "Wait, my brain is spinning!"
+        },
+        {
+          "key": "content.chess.jieqi.playful.thinking.5",
+          "zh": "这一边好像有点意思。",
+          "en": "Ooh, this side looks promising."
+        },
+        {
+          "key": "content.chess.jieqi.playful.thinking.6",
+          "zh": "嘘，我在想大招。",
+          "en": "Shh, I am plotting something big."
+        }
+      ],
+      "idle": [
+        {
+          "key": "content.chess.jieqi.playful.idle.7",
+          "zh": "棋盘像一座小迷宫！",
+          "en": "The board is like a tiny maze!"
+        },
+        {
+          "key": "content.chess.jieqi.playful.idle.8",
+          "zh": "你会不会偷偷留了一手？",
+          "en": "Have you got a secret trick up your sleeve?"
+        },
+        {
+          "key": "content.chess.jieqi.playful.idle.39",
+          "zh": "棋子都排队等着我们呢。",
+          "en": "The pieces are lining up for us!"
+        },
+        {
+          "key": "content.chess.jieqi.playful.idle.40",
+          "zh": "你可别被我的招数吓一跳！",
+          "en": "Do not be surprised by my next trick!"
+        },
+        {
+          "key": "content.chess.jieqi.playful.idle.extra1",
+          "zh": "棋局还藏着什么惊喜？",
+          "en": "What other surprises are hiding in this game?"
+        },
+        {
+          "key": "content.chess.jieqi.playful.idle.extra2",
+          "zh": "我的眼睛快跟不上棋子啦。",
+          "en": "My eyes can barely keep up with these pieces!"
+        },
+        {
+          "key": "content.chess.jieqi.playful.idle.extra3",
+          "zh": "这儿还有一片空地！",
+          "en": "Look at all the open space here!"
+        }
+      ],
+      "slowplayer": [
+        {
+          "key": "content.chess.jieqi.playful.slowplayer.9",
+          "zh": "你想得比我还久呢！",
+          "en": "You are taking even longer than I do!"
+        },
+        {
+          "key": "content.chess.jieqi.playful.slowplayer.10",
+          "zh": "慢慢挑，我来猜猜你的计划。",
+          "en": "Take your time. I will guess your plan."
+        }
+      ],
+      "goodmove": [
+        {
+          "key": "content.chess.jieqi.playful.goodmove.11",
+          "zh": "哇，这步漂亮！",
+          "en": "Wow, what a move!"
+        },
+        {
+          "key": "content.chess.jieqi.playful.goodmove.12",
+          "zh": "你居然发现了那个位置！",
+          "en": "You spotted that opening!"
+        }
+      ],
+      "regret": [
+        {
+          "key": "content.chess.jieqi.playful.regret.13",
+          "zh": "糟糕，我的棋跑错地方啦！",
+          "en": "Oops, my piece took a wrong turn!"
+        },
+        {
+          "key": "content.chess.jieqi.playful.regret.14",
+          "zh": "哎呀，这次聪明反被聪明误。",
+          "en": "Oh no, I outsmarted myself!"
+        }
+      ],
+      "prereveal": [
+        {
+          "key": "content.chess.jieqi.playful.prereveal.15",
+          "zh": "这颗下面藏了谁？",
+          "en": "Who is hiding under this one?"
+        },
+        {
+          "key": "content.chess.jieqi.playful.prereveal.16",
+          "zh": "翻开翻开，我等不及啦！",
+          "en": "Flip it! I cannot wait to see!"
+        }
+      ],
+      "weather": [
+        {
+          "key": "content.chess.jieqi.playful.weather.17",
+          "zh": "棋桌旁边也能冒险！",
+          "en": "Even a board game can be an adventure!"
+        },
+        {
+          "key": "content.chess.jieqi.playful.weather.18",
+          "zh": "这一局比我想的还有趣。",
+          "en": "This game is even more fun than I expected."
+        }
+      ],
+      "hunger": [
+        {
+          "key": "content.chess.jieqi.playful.hunger.19",
+          "zh": "肚子已经开始喊点心啦！",
+          "en": "My tummy is calling for snacks!"
+        },
+        {
+          "key": "content.chess.jieqi.playful.hunger.20",
+          "zh": "我想念热乎乎的饭！",
+          "en": "I am dreaming of a hot meal!"
+        }
+      ],
+      "tap": [
+        {
+          "key": "content.chess.jieqi.playful.tap.21",
+          "zh": "抓到你点我啦！",
+          "en": "Caught you tapping me!"
+        },
+        {
+          "key": "content.chess.jieqi.playful.tap.22",
+          "zh": "嘿！我还在看棋呢！",
+          "en": "Hey! I am watching the board!"
+        }
+      ],
+      "nearwin": [
+        {
+          "key": "content.chess.jieqi.playful.nearwin.23",
+          "zh": "好耶，机会来了！",
+          "en": "Yes! Here comes my chance!"
+        },
+        {
+          "key": "content.chess.jieqi.playful.nearwin.24",
+          "zh": "我是不是快碰到胜利啦？",
+          "en": "Am I getting close to winning?"
+        }
+      ],
+      "nearlose": [
+        {
+          "key": "content.chess.jieqi.playful.nearlose.25",
+          "zh": "你追得也太紧了！",
+          "en": "You are right on my heels!"
+        },
+        {
+          "key": "content.chess.jieqi.playful.nearlose.26",
+          "zh": "等等，我还有办法！",
+          "en": "Wait, I still have a trick!"
+        }
+      ],
+      "resign": [
+        {
+          "key": "content.chess.jieqi.playful.resign.27",
+          "zh": "这盘先收起来，下次再比！",
+          "en": "Let us put this game away and play again!"
+        },
+        {
+          "key": "content.chess.jieqi.playful.resign.28",
+          "zh": "我先认输，下一局见！",
+          "en": "I give up this time. Rematch soon!"
+        }
+      ],
+      "drawoffer": [
+        {
+          "key": "content.chess.jieqi.playful.drawoffer.29",
+          "zh": "要不要握手言和？",
+          "en": "How about we call it even?"
+        },
+        {
+          "key": "content.chess.jieqi.playful.drawoffer.30",
+          "zh": "这盘算我们打平好不好？",
+          "en": "Shall we call this one a tie?"
+        }
+      ],
+      "result": [
+        {
+          "key": "content.chess.jieqi.playful.result.31",
+          "zh": "真好玩！再来一盘吧！",
+          "en": "That was fun! Let us play again!"
+        },
+        {
+          "key": "content.chess.jieqi.playful.result.32",
+          "zh": "这局我会记住的！",
+          "en": "I am going to remember this game!"
+        }
+      ],
+      "rankchanged": [
+        {
+          "key": "content.chess.jieqi.playful.rankchanged.33",
+          "zh": "翻出来居然是这个！",
+          "en": "That was hiding underneath?"
+        },
+        {
+          "key": "content.chess.jieqi.playful.rankchanged.34",
+          "zh": "哇，它换了个身份！",
+          "en": "Whoa, it turned into something else!"
+        }
+      ],
+      "fish": [
+        {
+          "key": "content.chess.jieqi.playful.fish.35",
+          "zh": "想到鱼儿我就坐不住！",
+          "en": "Thinking of fish makes me fidget!"
+        },
+        {
+          "key": "content.chess.jieqi.playful.fish.36",
+          "zh": "说不定鱼儿也想下棋！",
+          "en": "Maybe the fish want to play too!"
+        }
+      ],
+      "food": [
+        {
+          "key": "content.chess.jieqi.playful.food.37",
+          "zh": "一提吃的我就来精神！",
+          "en": "Mention food and I perk right up!"
+        },
+        {
+          "key": "content.chess.jieqi.playful.food.38",
+          "zh": "我已经开始猜菜单啦！",
+          "en": "I am already guessing what is on the menu!"
+        }
+      ],
+      "chaos_selfcheck": [
+        {
+          "key": "content.chess.jieqi.playful.chaos_selfcheck.1",
+          "zh": "翻出的敌子将了自己的军，这局输了。",
+          "en": "The opposing piece checked its own king. That side loses."
+        },
+        {
+          "key": "content.chess.jieqi.playful.chaos_selfcheck.2",
+          "zh": "这一手翻子结束了整盘棋。",
+          "en": "That reveal ended the entire game."
+        },
+        {
+          "key": "content.chess.jieqi.playful.chaos_selfcheck.3",
+          "zh": "这次没有补救步，翻子方直接输了。",
+          "en": "There is no extra move. The revealing side loses immediately."
+        }
+      ],
+      "chaos_own_capture": [
+        {
+          "key": "content.chess.jieqi.playful.chaos_own_capture.1",
+          "zh": "竟然吃到了同一边的棋子。",
+          "en": "That turned out to be a piece on the same side."
+        },
+        {
+          "key": "content.chess.jieqi.playful.chaos_own_capture.2",
+          "zh": "揭开才发现吃的是同一边。",
+          "en": "Only after the reveal did we see it was on the same side."
+        },
+        {
+          "key": "content.chess.jieqi.playful.chaos_own_capture.3",
+          "zh": "这两枚棋子原来属于同一边。",
+          "en": "Those pieces were on the same side after all."
+        }
+      ],
+      "chaos_opposite": [
+        {
+          "key": "content.chess.jieqi.playful.chaos_opposite.1",
+          "zh": "翻开后竟然换了边。",
+          "en": "It changed sides when it was revealed."
+        },
+        {
+          "key": "content.chess.jieqi.playful.chaos_opposite.2",
+          "zh": "这枚棋子的真颜色不同。",
+          "en": "The piece turned out to be the other color."
+        },
+        {
+          "key": "content.chess.jieqi.playful.chaos_opposite.3",
+          "zh": "原来它属于对面。",
+          "en": "It actually belongs to the other side."
+        }
+      ],
+      "river": [
+        {
+          "key": "content.chess.jieqi.playful.river.1",
+          "zh": "这枚棋子过河了。",
+          "en": "That piece has crossed the river."
+        },
+        {
+          "key": "content.chess.jieqi.playful.river.2",
+          "zh": "河对岸也能走到了。",
+          "en": "It can reach the other side of the river."
+        },
+        {
+          "key": "content.chess.jieqi.playful.river.3",
+          "zh": "过河后的路又多了一些。",
+          "en": "Crossing the river opens another path."
+        }
+      ],
+      "big_self": [
+        {
+          "key": "content.chess.jieqi.playful.big_self.1",
+          "zh": "我的大棋子揭开了。",
+          "en": "My major piece has been revealed."
+        },
+        {
+          "key": "content.chess.jieqi.playful.big_self.2",
+          "zh": "这次翻出的是我的大棋子。",
+          "en": "That reveal was one of my major pieces."
+        },
+        {
+          "key": "content.chess.jieqi.playful.big_self.3",
+          "zh": "我的棋子终于露面了。",
+          "en": "My piece has finally shown itself."
+        }
+      ],
+      "big_you": [
+        {
+          "key": "content.chess.jieqi.playful.big_you.1",
+          "zh": "你的大棋子揭开了。",
+          "en": "Your major piece has been revealed."
+        },
+        {
+          "key": "content.chess.jieqi.playful.big_you.2",
+          "zh": "这次翻出的是你的大棋子。",
+          "en": "That reveal was one of your major pieces."
+        },
+        {
+          "key": "content.chess.jieqi.playful.big_you.3",
+          "zh": "你的棋子终于露面了。",
+          "en": "Your piece has finally shown itself."
+        }
+      ],
+      "capture_hidden": [
+        {
+          "key": "content.chess.jieqi.playful.capture_hidden.1",
+          "zh": "暗着的棋子被吃掉了。",
+          "en": "A hidden piece was captured."
+        },
+        {
+          "key": "content.chess.jieqi.playful.capture_hidden.2",
+          "zh": "这一手吃掉了一枚暗棋。",
+          "en": "That move captured a hidden piece."
+        },
+        {
+          "key": "content.chess.jieqi.playful.capture_hidden.3",
+          "zh": "还没揭开的棋子离开了棋盘。",
+          "en": "An unrevealed piece has left the board."
+        }
+      ],
+      "capture_big": [
+        {
+          "key": "content.chess.jieqi.playful.capture_big.1",
+          "zh": "一枚大棋子被吃掉了。",
+          "en": "A major piece was captured."
+        },
+        {
+          "key": "content.chess.jieqi.playful.capture_big.2",
+          "zh": "这一手吃掉了大棋子。",
+          "en": "That move captured a major piece."
+        },
+        {
+          "key": "content.chess.jieqi.playful.capture_big.3",
+          "zh": "棋盘上少了一枚大棋子。",
+          "en": "There is one fewer major piece on the board."
+        }
+      ],
+      "soldier": [
+        {
+          "key": "content.chess.jieqi.playful.soldier.1",
+          "zh": "小兵也能吃子。",
+          "en": "A soldier can capture too."
+        },
+        {
+          "key": "content.chess.jieqi.playful.soldier.2",
+          "zh": "这次是小兵吃了棋子。",
+          "en": "A soldier made that capture."
+        },
+        {
+          "key": "content.chess.jieqi.playful.soldier.3",
+          "zh": "小兵走出了这一手。",
+          "en": "The soldier made that move."
+        }
+      ],
+      "check_self": [
+        {
+          "key": "content.chess.jieqi.playful.check_self.1",
+          "zh": "我的将被将军了。",
+          "en": "My general is in check."
+        },
+        {
+          "key": "content.chess.jieqi.playful.check_self.2",
+          "zh": "得先护住我的将。",
+          "en": "I need to protect my general first."
+        },
+        {
+          "key": "content.chess.jieqi.playful.check_self.3",
+          "zh": "这一手威胁到了我的将。",
+          "en": "That move threatens my general."
+        }
+      ],
+      "check_you": [
+        {
+          "key": "content.chess.jieqi.playful.check_you.1",
+          "zh": "你的将被将军了。",
+          "en": "Your general is in check."
+        },
+        {
+          "key": "content.chess.jieqi.playful.check_you.2",
+          "zh": "这一手威胁到你的将。",
+          "en": "This move threatens your general."
+        },
+        {
+          "key": "content.chess.jieqi.playful.check_you.3",
+          "zh": "要留心你的将。",
+          "en": "Watch your general."
+        }
+      ],
+      "result_win": [
+        {
+          "key": "content.chess.jieqi.playful.result_win.1",
+          "zh": "耶！这盘我抱走啦！",
+          "en": "Ha! This one is coming home with me!"
+        },
+        {
+          "key": "content.chess.jieqi.playful.result_win.2",
+          "zh": "看见没，我的小妙招奏效啦！",
+          "en": "See? My tiny master plan actually worked!"
+        }
+      ],
+      "result_lose": [
+        {
+          "key": "content.chess.jieqi.playful.result_lose.1",
+          "zh": "哼，我刚刚才热身呢！",
+          "en": "Hmph. I was only just warming up!"
+        },
+        {
+          "key": "content.chess.jieqi.playful.result_lose.2",
+          "zh": "好吧好吧，这盘归你，下盘等着！",
+          "en": "All right, take this one. Rematch, though!"
+        }
+      ],
+      "result_draw": [
+        {
+          "key": "content.chess.jieqi.playful.result_draw.1",
+          "zh": "谁也不让谁，真有我们的！",
+          "en": "Neither of us budged. That is so us!"
+        },
+        {
+          "key": "content.chess.jieqi.playful.result_draw.2",
+          "zh": "平手也能这么惊险呀！",
+          "en": "Who knew a tie could be such a ride?"
+        }
+      ]
+    },
+    "gentle": {
+      "start": [
+        {
+          "key": "content.chess.jieqi.gentle.start.1",
+          "zh": "我们坐下来，慢慢开始吧。",
+          "en": "Let us sit together and begin gently."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.start.2",
+          "zh": "和你一起下棋，我很期待。",
+          "en": "I have been looking forward to playing with you."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.start.3",
+          "zh": "棋子摆好了，真整齐。",
+          "en": "The pieces are set out so neatly."
+        }
+      ],
+      "thinking": [
+        {
+          "key": "content.chess.jieqi.gentle.thinking.4",
+          "zh": "让我仔细看看这里。",
+          "en": "Let me look carefully at this place."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.thinking.5",
+          "zh": "我想再考虑一会儿。",
+          "en": "I would like a little more time to think."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.thinking.6",
+          "zh": "这一步需要温柔地斟酌。",
+          "en": "This move deserves some gentle thought."
+        }
+      ],
+      "idle": [
+        {
+          "key": "content.chess.jieqi.gentle.idle.7",
+          "zh": "这样安静地坐着真好。",
+          "en": "It is lovely to sit quietly together."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.idle.8",
+          "zh": "有你在，对局也很温暖。",
+          "en": "Your company makes the game feel warm."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.idle.39",
+          "zh": "我会认真陪你走每一步。",
+          "en": "I will give every move my attention."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.idle.40",
+          "zh": "棋局慢慢展开了呢。",
+          "en": "The game is unfolding little by little."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.idle.extra1",
+          "zh": "每一步都有自己的节奏。",
+          "en": "Every move has its own rhythm."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.idle.extra2",
+          "zh": "棋盘上还有许多可能。",
+          "en": "There are still many possibilities on the board."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.idle.extra3",
+          "zh": "我喜欢这样一起思考。",
+          "en": "I like thinking things through together."
+        }
+      ],
+      "slowplayer": [
+        {
+          "key": "content.chess.jieqi.gentle.slowplayer.9",
+          "zh": "别着急，我会等你。",
+          "en": "There is no hurry. I will wait."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.slowplayer.10",
+          "zh": "你可以好好想，我陪着你。",
+          "en": "Take the time you need; I am here."
+        }
+      ],
+      "goodmove": [
+        {
+          "key": "content.chess.jieqi.gentle.goodmove.11",
+          "zh": "你看得真仔细。",
+          "en": "You have such a thoughtful eye."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.goodmove.12",
+          "zh": "这一手走得很巧呢。",
+          "en": "That was a beautifully considered move."
+        }
+      ],
+      "regret": [
+        {
+          "key": "content.chess.jieqi.gentle.regret.13",
+          "zh": "啊，我刚才疏忽了。",
+          "en": "Oh, I overlooked that just now."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.regret.14",
+          "zh": "我应该再多看一眼的。",
+          "en": "I should have taken another look."
+        }
+      ],
+      "prereveal": [
+        {
+          "key": "content.chess.jieqi.gentle.prereveal.15",
+          "zh": "不知道里面藏着什么。",
+          "en": "I wonder what is hidden beneath it."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.prereveal.16",
+          "zh": "揭开之前，心里有点期待。",
+          "en": "There is a little anticipation before the reveal."
+        }
+      ],
+      "weather": [
+        {
+          "key": "content.chess.jieqi.gentle.weather.17",
+          "zh": "陪你在这里，时间过得很轻。",
+          "en": "Time feels gentle when I am here with you."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.weather.18",
+          "zh": "我喜欢棋子轻轻落下的声音。",
+          "en": "I like the soft sound of a piece being placed."
+        }
+      ],
+      "hunger": [
+        {
+          "key": "content.chess.jieqi.gentle.hunger.19",
+          "zh": "肚子轻轻叫了一声。",
+          "en": "My stomach gave a little rumble."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.hunger.20",
+          "zh": "结束以后吃点热的吧。",
+          "en": "Perhaps we can have something warm afterwards."
+        }
+      ],
+      "tap": [
+        {
+          "key": "content.chess.jieqi.gentle.tap.21",
+          "zh": "嗯？我在这里。",
+          "en": "Hm? I am right here."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.tap.22",
+          "zh": "你找我吗？",
+          "en": "Were you looking for me?"
+        }
+      ],
+      "nearwin": [
+        {
+          "key": "content.chess.jieqi.gentle.nearwin.23",
+          "zh": "好像有一条路可以试试。",
+          "en": "I think there may be a path to try."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.nearwin.24",
+          "zh": "这一步让我有了一点希望。",
+          "en": "This move gives me a little hope."
+        }
+      ],
+      "nearlose": [
+        {
+          "key": "content.chess.jieqi.gentle.nearlose.25",
+          "zh": "我得耐心找找出路。",
+          "en": "I will patiently look for a way through."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.nearlose.26",
+          "zh": "你给我出了一个难题。",
+          "en": "You have given me a difficult puzzle."
+        }
+      ],
+      "resign": [
+        {
+          "key": "content.chess.jieqi.gentle.resign.27",
+          "zh": "停在这里也没有关系。",
+          "en": "It is all right to stop here."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.resign.28",
+          "zh": "我认输了，谢谢你陪我。",
+          "en": "I concede. Thank you for playing with me."
+        }
+      ],
+      "drawoffer": [
+        {
+          "key": "content.chess.jieqi.gentle.drawoffer.29",
+          "zh": "我们和棋，好吗？",
+          "en": "Would you like to call it a draw?"
+        },
+        {
+          "key": "content.chess.jieqi.gentle.drawoffer.30",
+          "zh": "就让这一局平平静静结束吧。",
+          "en": "Shall we let this game end peacefully as a draw?"
+        }
+      ],
+      "result": [
+        {
+          "key": "content.chess.jieqi.gentle.result.31",
+          "zh": "谢谢你陪我下完这一局。",
+          "en": "Thank you for sharing this game with me."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.result.32",
+          "zh": "这段一起下棋的时间真好。",
+          "en": "I enjoyed this time together."
+        }
+      ],
+      "rankchanged": [
+        {
+          "key": "content.chess.jieqi.gentle.rankchanged.33",
+          "zh": "原来藏着的是它。",
+          "en": "So that is what was hidden there."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.rankchanged.34",
+          "zh": "这枚棋子的样子变了呢。",
+          "en": "This piece has revealed another face."
+        }
+      ],
+      "fish": [
+        {
+          "key": "content.chess.jieqi.gentle.fish.35",
+          "zh": "想到鱼儿，心里也安静下来。",
+          "en": "Thinking of fish makes me feel calm."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.fish.36",
+          "zh": "鱼儿游动的样子很温柔。",
+          "en": "Fish move so gently through the water."
+        }
+      ],
+      "food": [
+        {
+          "key": "content.chess.jieqi.gentle.food.37",
+          "zh": "热乎乎的食物让人安心。",
+          "en": "Warm food is comforting."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.food.38",
+          "zh": "一起吃饭的时候也像现在这样温暖。",
+          "en": "Sharing a meal feels warm like this too."
+        }
+      ],
+      "chaos_selfcheck": [
+        {
+          "key": "content.chess.jieqi.gentle.chaos_selfcheck.1",
+          "zh": "翻出的敌子将了自己的军，这局输了。",
+          "en": "The opposing piece checked its own king. That side loses."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.chaos_selfcheck.2",
+          "zh": "这一手翻子结束了整盘棋。",
+          "en": "That reveal ended the entire game."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.chaos_selfcheck.3",
+          "zh": "这次没有补救步，翻子方直接输了。",
+          "en": "There is no extra move. The revealing side loses immediately."
+        }
+      ],
+      "chaos_own_capture": [
+        {
+          "key": "content.chess.jieqi.gentle.chaos_own_capture.1",
+          "zh": "竟然吃到了同一边的棋子。",
+          "en": "That turned out to be a piece on the same side."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.chaos_own_capture.2",
+          "zh": "揭开才发现吃的是同一边。",
+          "en": "Only after the reveal did we see it was on the same side."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.chaos_own_capture.3",
+          "zh": "这两枚棋子原来属于同一边。",
+          "en": "Those pieces were on the same side after all."
+        }
+      ],
+      "chaos_opposite": [
+        {
+          "key": "content.chess.jieqi.gentle.chaos_opposite.1",
+          "zh": "翻开后竟然换了边。",
+          "en": "It changed sides when it was revealed."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.chaos_opposite.2",
+          "zh": "这枚棋子的真颜色不同。",
+          "en": "The piece turned out to be the other color."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.chaos_opposite.3",
+          "zh": "原来它属于对面。",
+          "en": "It actually belongs to the other side."
+        }
+      ],
+      "river": [
+        {
+          "key": "content.chess.jieqi.gentle.river.1",
+          "zh": "这枚棋子过河了。",
+          "en": "That piece has crossed the river."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.river.2",
+          "zh": "河对岸也能走到了。",
+          "en": "It can reach the other side of the river."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.river.3",
+          "zh": "过河后的路又多了一些。",
+          "en": "Crossing the river opens another path."
+        }
+      ],
+      "big_self": [
+        {
+          "key": "content.chess.jieqi.gentle.big_self.1",
+          "zh": "我的大棋子揭开了。",
+          "en": "My major piece has been revealed."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.big_self.2",
+          "zh": "这次翻出的是我的大棋子。",
+          "en": "That reveal was one of my major pieces."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.big_self.3",
+          "zh": "我的棋子终于露面了。",
+          "en": "My piece has finally shown itself."
+        }
+      ],
+      "big_you": [
+        {
+          "key": "content.chess.jieqi.gentle.big_you.1",
+          "zh": "你的大棋子揭开了。",
+          "en": "Your major piece has been revealed."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.big_you.2",
+          "zh": "这次翻出的是你的大棋子。",
+          "en": "That reveal was one of your major pieces."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.big_you.3",
+          "zh": "你的棋子终于露面了。",
+          "en": "Your piece has finally shown itself."
+        }
+      ],
+      "capture_hidden": [
+        {
+          "key": "content.chess.jieqi.gentle.capture_hidden.1",
+          "zh": "暗着的棋子被吃掉了。",
+          "en": "A hidden piece was captured."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.capture_hidden.2",
+          "zh": "这一手吃掉了一枚暗棋。",
+          "en": "That move captured a hidden piece."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.capture_hidden.3",
+          "zh": "还没揭开的棋子离开了棋盘。",
+          "en": "An unrevealed piece has left the board."
+        }
+      ],
+      "capture_big": [
+        {
+          "key": "content.chess.jieqi.gentle.capture_big.1",
+          "zh": "一枚大棋子被吃掉了。",
+          "en": "A major piece was captured."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.capture_big.2",
+          "zh": "这一手吃掉了大棋子。",
+          "en": "That move captured a major piece."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.capture_big.3",
+          "zh": "棋盘上少了一枚大棋子。",
+          "en": "There is one fewer major piece on the board."
+        }
+      ],
+      "soldier": [
+        {
+          "key": "content.chess.jieqi.gentle.soldier.1",
+          "zh": "小兵也能吃子。",
+          "en": "A soldier can capture too."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.soldier.2",
+          "zh": "这次是小兵吃了棋子。",
+          "en": "A soldier made that capture."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.soldier.3",
+          "zh": "小兵走出了这一手。",
+          "en": "The soldier made that move."
+        }
+      ],
+      "check_self": [
+        {
+          "key": "content.chess.jieqi.gentle.check_self.1",
+          "zh": "我的将被将军了。",
+          "en": "My general is in check."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.check_self.2",
+          "zh": "得先护住我的将。",
+          "en": "I need to protect my general first."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.check_self.3",
+          "zh": "这一手威胁到了我的将。",
+          "en": "That move threatens my general."
+        }
+      ],
+      "check_you": [
+        {
+          "key": "content.chess.jieqi.gentle.check_you.1",
+          "zh": "你的将被将军了。",
+          "en": "Your general is in check."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.check_you.2",
+          "zh": "这一手威胁到你的将。",
+          "en": "This move threatens your general."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.check_you.3",
+          "zh": "要留心你的将。",
+          "en": "Watch your general."
+        }
+      ],
+      "result_win": [
+        {
+          "key": "content.chess.jieqi.gentle.result_win.1",
+          "zh": "这次恰好是我赢了，谢谢你陪我下。",
+          "en": "This one fell my way. Thank you for sitting with me."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.result_win.2",
+          "zh": "慢慢想的那一步，原来真的有用。",
+          "en": "That quiet little move mattered after all."
+        }
+      ],
+      "result_lose": [
+        {
+          "key": "content.chess.jieqi.gentle.result_lose.1",
+          "zh": "你下得很好，我记住这一盘了。",
+          "en": "You played that beautifully. I will remember the shape of it."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.result_lose.2",
+          "zh": "嗯，我输了，心里倒还是暖暖的。",
+          "en": "Mm. I lost, but it was a lovely game to share."
+        }
+      ],
+      "result_draw": [
+        {
+          "key": "content.chess.jieqi.gentle.result_draw.1",
+          "zh": "我们一起走到这里，就很好。",
+          "en": "We arrived at the same place. I rather like that."
+        },
+        {
+          "key": "content.chess.jieqi.gentle.result_draw.2",
+          "zh": "这盘没有输赢，也很值得呢。",
+          "en": "No winner this time. Still time well spent."
+        }
+      ]
+    },
+    "diligent": {
+      "start": [
+        {
+          "key": "content.chess.jieqi.diligent.start.1",
+          "zh": "棋盘摆稳了，我们开始吧。",
+          "en": "The board is steady. Let us begin."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.start.2",
+          "zh": "先检查一下棋子的位置。",
+          "en": "First, let us check the pieces."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.start.3",
+          "zh": "我准备好了，你也坐稳些。",
+          "en": "I am ready. Make yourself comfortable too."
+        }
+      ],
+      "thinking": [
+        {
+          "key": "content.chess.jieqi.diligent.thinking.4",
+          "zh": "先把附近的位置检查一遍。",
+          "en": "I will inspect the nearby positions first."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.thinking.5",
+          "zh": "这一步要想周全。",
+          "en": "I need to consider this move thoroughly."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.thinking.6",
+          "zh": "让我算算接下来怎么走。",
+          "en": "Let me work out what comes next."
+        }
+      ],
+      "idle": [
+        {
+          "key": "content.chess.jieqi.diligent.idle.7",
+          "zh": "坐久了记得活动一下手。",
+          "en": "Remember to stretch your hands after sitting."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.idle.8",
+          "zh": "棋盘上的空位也要留心。",
+          "en": "Empty spaces deserve attention too."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.idle.39",
+          "zh": "先把这边的棋子照顾好。",
+          "en": "I will make sure these pieces are covered."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.idle.40",
+          "zh": "每一步都要留意后路。",
+          "en": "Each move should leave a way forward."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.idle.extra1",
+          "zh": "棋盘边缘也不能忽略。",
+          "en": "I should not overlook the edge of the board."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.idle.extra2",
+          "zh": "我再整理一下思路。",
+          "en": "Let me put my thoughts in order."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.idle.extra3",
+          "zh": "稳稳地走好每一步。",
+          "en": "I will take each move steadily."
+        }
+      ],
+      "slowplayer": [
+        {
+          "key": "content.chess.jieqi.diligent.slowplayer.9",
+          "zh": "仔细想好再落子，不急。",
+          "en": "Make sure you are happy with your choice."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.slowplayer.10",
+          "zh": "需要时间就多看一会儿。",
+          "en": "Take another look if you need time."
+        }
+      ],
+      "goodmove": [
+        {
+          "key": "content.chess.jieqi.diligent.goodmove.11",
+          "zh": "这一步考虑得很周全。",
+          "en": "You planned that move thoroughly."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.goodmove.12",
+          "zh": "你把前后的位置都照顾到了。",
+          "en": "You accounted for the whole position."
+        }
+      ],
+      "regret": [
+        {
+          "key": "content.chess.jieqi.diligent.regret.13",
+          "zh": "我刚才检查得不够仔细。",
+          "en": "I did not check carefully enough."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.regret.14",
+          "zh": "这一处漏洞是我留下的。",
+          "en": "I left that opening myself."
+        }
+      ],
+      "prereveal": [
+        {
+          "key": "content.chess.jieqi.diligent.prereveal.15",
+          "zh": "揭开之前先看看周围。",
+          "en": "I should inspect the surroundings before revealing it."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.prereveal.16",
+          "zh": "这枚棋子翻开后要重新判断。",
+          "en": "I will reassess once this piece is revealed."
+        }
+      ],
+      "weather": [
+        {
+          "key": "content.chess.jieqi.diligent.weather.17",
+          "zh": "下棋也得有条理。",
+          "en": "A little order helps in a game too."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.weather.18",
+          "zh": "我把眼前的几步理一理。",
+          "en": "I am sorting through the next few moves."
+        }
+      ],
+      "hunger": [
+        {
+          "key": "content.chess.jieqi.diligent.hunger.19",
+          "zh": "下完棋记得去吃饭。",
+          "en": "Remember to eat when we are finished."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.hunger.20",
+          "zh": "饿了也要先把这一步看清。",
+          "en": "Even hungry, I should think this move through."
+        }
+      ],
+      "tap": [
+        {
+          "key": "content.chess.jieqi.diligent.tap.21",
+          "zh": "怎么了，要我看哪里？",
+          "en": "What is it? Where should I look?"
+        },
+        {
+          "key": "content.chess.jieqi.diligent.tap.22",
+          "zh": "我在，有事就告诉我。",
+          "en": "I am here. Tell me what you need."
+        }
+      ],
+      "nearwin": [
+        {
+          "key": "content.chess.jieqi.diligent.nearwin.23",
+          "zh": "有机会也要把后面守好。",
+          "en": "Even with an opening, I must guard what follows."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.nearwin.24",
+          "zh": "这一处值得认真经营。",
+          "en": "This position is worth developing carefully."
+        }
+      ],
+      "nearlose": [
+        {
+          "key": "content.chess.jieqi.diligent.nearlose.25",
+          "zh": "先别慌，我还要检查一遍。",
+          "en": "No need to panic. I will check again."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.nearlose.26",
+          "zh": "局面紧了，更要稳住。",
+          "en": "The position is tight; I must stay steady."
+        }
+      ],
+      "resign": [
+        {
+          "key": "content.chess.jieqi.diligent.resign.27",
+          "zh": "这局先到这里，棋子收好。",
+          "en": "We can stop here and put the pieces away."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.resign.28",
+          "zh": "我认输，这次你安排得更好。",
+          "en": "I concede. You planned better this time."
+        }
+      ],
+      "drawoffer": [
+        {
+          "key": "content.chess.jieqi.diligent.drawoffer.29",
+          "zh": "双方都不容易前进，考虑和棋吧。",
+          "en": "Neither side has an easy path. Shall we draw?"
+        },
+        {
+          "key": "content.chess.jieqi.diligent.drawoffer.30",
+          "zh": "继续僵持不如握手言和。",
+          "en": "Rather than stay stuck, shall we agree to a draw?"
+        }
+      ],
+      "result": [
+        {
+          "key": "content.chess.jieqi.diligent.result.31",
+          "zh": "棋局结束了，我来整理思路。",
+          "en": "The game is over. Let me review my thinking."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.result.32",
+          "zh": "这一局有不少值得记住的地方。",
+          "en": "There is plenty to learn from this game."
+        }
+      ],
+      "rankchanged": [
+        {
+          "key": "content.chess.jieqi.diligent.rankchanged.33",
+          "zh": "身份变了，要重新看局面。",
+          "en": "The piece changed; I must reassess the board."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.rankchanged.34",
+          "zh": "翻开的结果和预想不同。",
+          "en": "The reveal was not what I expected."
+        }
+      ],
+      "fish": [
+        {
+          "key": "content.chess.jieqi.diligent.fish.35",
+          "zh": "下完棋再去看看鱼儿吧。",
+          "en": "Let us check on the fish after the game."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.fish.36",
+          "zh": "鱼儿也需要人照看。",
+          "en": "The fish need looking after too."
+        }
+      ],
+      "food": [
+        {
+          "key": "content.chess.jieqi.diligent.food.37",
+          "zh": "吃饭的事也要记着。",
+          "en": "We should remember to eat."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.food.38",
+          "zh": "做好的饭趁热吃才好。",
+          "en": "A prepared meal is best eaten warm."
+        }
+      ],
+      "chaos_selfcheck": [
+        {
+          "key": "content.chess.jieqi.diligent.chaos_selfcheck.1",
+          "zh": "翻出的敌子将了自己的军，这局输了。",
+          "en": "The opposing piece checked its own king. That side loses."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.chaos_selfcheck.2",
+          "zh": "这一手翻子结束了整盘棋。",
+          "en": "That reveal ended the entire game."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.chaos_selfcheck.3",
+          "zh": "这次没有补救步，翻子方直接输了。",
+          "en": "There is no extra move. The revealing side loses immediately."
+        }
+      ],
+      "chaos_own_capture": [
+        {
+          "key": "content.chess.jieqi.diligent.chaos_own_capture.1",
+          "zh": "竟然吃到了同一边的棋子。",
+          "en": "That turned out to be a piece on the same side."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.chaos_own_capture.2",
+          "zh": "揭开才发现吃的是同一边。",
+          "en": "Only after the reveal did we see it was on the same side."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.chaos_own_capture.3",
+          "zh": "这两枚棋子原来属于同一边。",
+          "en": "Those pieces were on the same side after all."
+        }
+      ],
+      "chaos_opposite": [
+        {
+          "key": "content.chess.jieqi.diligent.chaos_opposite.1",
+          "zh": "翻开后竟然换了边。",
+          "en": "It changed sides when it was revealed."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.chaos_opposite.2",
+          "zh": "这枚棋子的真颜色不同。",
+          "en": "The piece turned out to be the other color."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.chaos_opposite.3",
+          "zh": "原来它属于对面。",
+          "en": "It actually belongs to the other side."
+        }
+      ],
+      "river": [
+        {
+          "key": "content.chess.jieqi.diligent.river.1",
+          "zh": "这枚棋子过河了。",
+          "en": "That piece has crossed the river."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.river.2",
+          "zh": "河对岸也能走到了。",
+          "en": "It can reach the other side of the river."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.river.3",
+          "zh": "过河后的路又多了一些。",
+          "en": "Crossing the river opens another path."
+        }
+      ],
+      "big_self": [
+        {
+          "key": "content.chess.jieqi.diligent.big_self.1",
+          "zh": "我的大棋子揭开了。",
+          "en": "My major piece has been revealed."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.big_self.2",
+          "zh": "这次翻出的是我的大棋子。",
+          "en": "That reveal was one of my major pieces."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.big_self.3",
+          "zh": "我的棋子终于露面了。",
+          "en": "My piece has finally shown itself."
+        }
+      ],
+      "big_you": [
+        {
+          "key": "content.chess.jieqi.diligent.big_you.1",
+          "zh": "你的大棋子揭开了。",
+          "en": "Your major piece has been revealed."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.big_you.2",
+          "zh": "这次翻出的是你的大棋子。",
+          "en": "That reveal was one of your major pieces."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.big_you.3",
+          "zh": "你的棋子终于露面了。",
+          "en": "Your piece has finally shown itself."
+        }
+      ],
+      "capture_hidden": [
+        {
+          "key": "content.chess.jieqi.diligent.capture_hidden.1",
+          "zh": "暗着的棋子被吃掉了。",
+          "en": "A hidden piece was captured."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.capture_hidden.2",
+          "zh": "这一手吃掉了一枚暗棋。",
+          "en": "That move captured a hidden piece."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.capture_hidden.3",
+          "zh": "还没揭开的棋子离开了棋盘。",
+          "en": "An unrevealed piece has left the board."
+        }
+      ],
+      "capture_big": [
+        {
+          "key": "content.chess.jieqi.diligent.capture_big.1",
+          "zh": "一枚大棋子被吃掉了。",
+          "en": "A major piece was captured."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.capture_big.2",
+          "zh": "这一手吃掉了大棋子。",
+          "en": "That move captured a major piece."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.capture_big.3",
+          "zh": "棋盘上少了一枚大棋子。",
+          "en": "There is one fewer major piece on the board."
+        }
+      ],
+      "soldier": [
+        {
+          "key": "content.chess.jieqi.diligent.soldier.1",
+          "zh": "小兵也能吃子。",
+          "en": "A soldier can capture too."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.soldier.2",
+          "zh": "这次是小兵吃了棋子。",
+          "en": "A soldier made that capture."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.soldier.3",
+          "zh": "小兵走出了这一手。",
+          "en": "The soldier made that move."
+        }
+      ],
+      "check_self": [
+        {
+          "key": "content.chess.jieqi.diligent.check_self.1",
+          "zh": "我的将被将军了。",
+          "en": "My general is in check."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.check_self.2",
+          "zh": "得先护住我的将。",
+          "en": "I need to protect my general first."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.check_self.3",
+          "zh": "这一手威胁到了我的将。",
+          "en": "That move threatens my general."
+        }
+      ],
+      "check_you": [
+        {
+          "key": "content.chess.jieqi.diligent.check_you.1",
+          "zh": "你的将被将军了。",
+          "en": "Your general is in check."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.check_you.2",
+          "zh": "这一手威胁到你的将。",
+          "en": "This move threatens your general."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.check_you.3",
+          "zh": "要留心你的将。",
+          "en": "Watch your general."
+        }
+      ],
+      "result_win": [
+        {
+          "key": "content.chess.jieqi.diligent.result_win.1",
+          "zh": "总算守到最后，下一盘也别大意。",
+          "en": "Held it together to the end. No getting careless next time."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.result_win.2",
+          "zh": "收好棋子，这次算我赢了。",
+          "en": "Let us put the pieces in order. This round is mine."
+        }
+      ],
+      "result_lose": [
+        {
+          "key": "content.chess.jieqi.diligent.result_lose.1",
+          "zh": "是我漏看了，下次会记得检查。",
+          "en": "I missed that. One more thing to check next time."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.result_lose.2",
+          "zh": "这盘你赢了，我得把那一步想明白。",
+          "en": "You earned this one. I need to understand that last turn."
+        }
+      ],
+      "result_draw": [
+        {
+          "key": "content.chess.jieqi.diligent.result_draw.1",
+          "zh": "双方都没松懈，平手很公平。",
+          "en": "Neither side slipped. A draw is a fair result."
+        },
+        {
+          "key": "content.chess.jieqi.diligent.result_draw.2",
+          "zh": "先整理一下棋子，再决定下不下。",
+          "en": "Pieces tidy first. Then we can decide about another game."
+        }
+      ]
+    },
+    "quiet": {
+      "start": [
+        {
+          "key": "content.chess.jieqi.quiet.start.1",
+          "zh": "棋盘归你一半。",
+          "en": "Half the board is yours."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.start.2",
+          "zh": "开始吧。",
+          "en": "Let us begin."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.start.3",
+          "zh": "这局，我陪你。",
+          "en": "I will play this one with you."
+        }
+      ],
+      "thinking": [
+        {
+          "key": "content.chess.jieqi.quiet.thinking.4",
+          "zh": "这里还有变化。",
+          "en": "There is another possibility here."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.thinking.5",
+          "zh": "我再看看。",
+          "en": "I will take another look."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.thinking.6",
+          "zh": "不能急。",
+          "en": "No need to rush."
+        }
+      ],
+      "idle": [
+        {
+          "key": "content.chess.jieqi.quiet.idle.7",
+          "zh": "听，棋子落下的声音。",
+          "en": "Listen to the piece settle."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.idle.8",
+          "zh": "这里很安静。",
+          "en": "It is quiet here."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.idle.39",
+          "zh": "我看着这边。",
+          "en": "I am watching this side."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.idle.40",
+          "zh": "轮到你了。",
+          "en": "Your turn."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.idle.extra1",
+          "zh": "还可以再看看。",
+          "en": "There is more to consider."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.idle.extra2",
+          "zh": "棋局还长。",
+          "en": "There is more game ahead."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.idle.extra3",
+          "zh": "这里有空位。",
+          "en": "There is space here."
+        }
+      ],
+      "slowplayer": [
+        {
+          "key": "content.chess.jieqi.quiet.slowplayer.9",
+          "zh": "你看了很久。",
+          "en": "You have been studying it a while."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.slowplayer.10",
+          "zh": "我等你。",
+          "en": "I can wait."
+        }
+      ],
+      "goodmove": [
+        {
+          "key": "content.chess.jieqi.quiet.goodmove.11",
+          "zh": "这一手，我记住了。",
+          "en": "I will remember that move."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.goodmove.12",
+          "zh": "走得不错。",
+          "en": "Well played."
+        }
+      ],
+      "regret": [
+        {
+          "key": "content.chess.jieqi.quiet.regret.13",
+          "zh": "失算了。",
+          "en": "A miscalculation."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.regret.14",
+          "zh": "这里是我的疏漏。",
+          "en": "I missed that opening."
+        }
+      ],
+      "prereveal": [
+        {
+          "key": "content.chess.jieqi.quiet.prereveal.15",
+          "zh": "背面藏不住太久。",
+          "en": "The hidden side will not stay hidden long."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.prereveal.16",
+          "zh": "翻开看看。",
+          "en": "Let us see what is underneath."
+        }
+      ],
+      "weather": [
+        {
+          "key": "content.chess.jieqi.quiet.weather.17",
+          "zh": "棋盘很小，路不少。",
+          "en": "A small board, with many paths."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.weather.18",
+          "zh": "我还在看。",
+          "en": "I am still watching."
+        }
+      ],
+      "hunger": [
+        {
+          "key": "content.chess.jieqi.quiet.hunger.19",
+          "zh": "肚子提醒我了。",
+          "en": "My stomach just reminded me."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.hunger.20",
+          "zh": "有点饿。",
+          "en": "A little hungry."
+        }
+      ],
+      "tap": [
+        {
+          "key": "content.chess.jieqi.quiet.tap.21",
+          "zh": "嗯？",
+          "en": "Yes?"
+        },
+        {
+          "key": "content.chess.jieqi.quiet.tap.22",
+          "zh": "我在。",
+          "en": "I am here."
+        }
+      ],
+      "nearwin": [
+        {
+          "key": "content.chess.jieqi.quiet.nearwin.23",
+          "zh": "有一线机会。",
+          "en": "There is an opening."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.nearwin.24",
+          "zh": "还差一点。",
+          "en": "Nearly there."
+        }
+      ],
+      "nearlose": [
+        {
+          "key": "content.chess.jieqi.quiet.nearlose.25",
+          "zh": "局面不太好。",
+          "en": "The position is difficult."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.nearlose.26",
+          "zh": "还有路吗。",
+          "en": "Is there a way out?"
+        }
+      ],
+      "resign": [
+        {
+          "key": "content.chess.jieqi.quiet.resign.27",
+          "zh": "这盘到此为止。",
+          "en": "This game ends here."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.resign.28",
+          "zh": "我认输。",
+          "en": "I concede."
+        }
+      ],
+      "drawoffer": [
+        {
+          "key": "content.chess.jieqi.quiet.drawoffer.29",
+          "zh": "和棋如何？",
+          "en": "A draw?"
+        },
+        {
+          "key": "content.chess.jieqi.quiet.drawoffer.30",
+          "zh": "就此握手吧。",
+          "en": "Shall we shake on a draw?"
+        }
+      ],
+      "result": [
+        {
+          "key": "content.chess.jieqi.quiet.result.31",
+          "zh": "下完了。",
+          "en": "The game is finished."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.result.32",
+          "zh": "这局不错。",
+          "en": "A good game."
+        }
+      ],
+      "rankchanged": [
+        {
+          "key": "content.chess.jieqi.quiet.rankchanged.33",
+          "zh": "原来如此。",
+          "en": "So that is what it was."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.rankchanged.34",
+          "zh": "棋子露出真面目了。",
+          "en": "The piece has shown its true face."
+        }
+      ],
+      "fish": [
+        {
+          "key": "content.chess.jieqi.quiet.fish.35",
+          "zh": "鱼啊。",
+          "en": "Fish."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.fish.36",
+          "zh": "鱼在水里很安静。",
+          "en": "Fish are quiet in the water."
+        }
+      ],
+      "food": [
+        {
+          "key": "content.chess.jieqi.quiet.food.37",
+          "zh": "说到吃的，饿了。",
+          "en": "Food. Now I am hungry."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.food.38",
+          "zh": "热饭不错。",
+          "en": "A warm meal sounds good."
+        }
+      ],
+      "chaos_selfcheck": [
+        {
+          "key": "content.chess.jieqi.quiet.chaos_selfcheck.1",
+          "zh": "翻出的敌子将了自己的军，这局输了。",
+          "en": "The opposing piece checked its own king. That side loses."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.chaos_selfcheck.2",
+          "zh": "这一手翻子结束了整盘棋。",
+          "en": "That reveal ended the entire game."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.chaos_selfcheck.3",
+          "zh": "这次没有补救步，翻子方直接输了。",
+          "en": "There is no extra move. The revealing side loses immediately."
+        }
+      ],
+      "chaos_own_capture": [
+        {
+          "key": "content.chess.jieqi.quiet.chaos_own_capture.1",
+          "zh": "竟然吃到了同一边的棋子。",
+          "en": "That turned out to be a piece on the same side."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.chaos_own_capture.2",
+          "zh": "揭开才发现吃的是同一边。",
+          "en": "Only after the reveal did we see it was on the same side."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.chaos_own_capture.3",
+          "zh": "这两枚棋子原来属于同一边。",
+          "en": "Those pieces were on the same side after all."
+        }
+      ],
+      "chaos_opposite": [
+        {
+          "key": "content.chess.jieqi.quiet.chaos_opposite.1",
+          "zh": "翻开后竟然换了边。",
+          "en": "It changed sides when it was revealed."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.chaos_opposite.2",
+          "zh": "这枚棋子的真颜色不同。",
+          "en": "The piece turned out to be the other color."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.chaos_opposite.3",
+          "zh": "原来它属于对面。",
+          "en": "It actually belongs to the other side."
+        }
+      ],
+      "river": [
+        {
+          "key": "content.chess.jieqi.quiet.river.1",
+          "zh": "这枚棋子过河了。",
+          "en": "That piece has crossed the river."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.river.2",
+          "zh": "河对岸也能走到了。",
+          "en": "It can reach the other side of the river."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.river.3",
+          "zh": "过河后的路又多了一些。",
+          "en": "Crossing the river opens another path."
+        }
+      ],
+      "big_self": [
+        {
+          "key": "content.chess.jieqi.quiet.big_self.1",
+          "zh": "我的大棋子揭开了。",
+          "en": "My major piece has been revealed."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.big_self.2",
+          "zh": "这次翻出的是我的大棋子。",
+          "en": "That reveal was one of my major pieces."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.big_self.3",
+          "zh": "我的棋子终于露面了。",
+          "en": "My piece has finally shown itself."
+        }
+      ],
+      "big_you": [
+        {
+          "key": "content.chess.jieqi.quiet.big_you.1",
+          "zh": "你的大棋子揭开了。",
+          "en": "Your major piece has been revealed."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.big_you.2",
+          "zh": "这次翻出的是你的大棋子。",
+          "en": "That reveal was one of your major pieces."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.big_you.3",
+          "zh": "你的棋子终于露面了。",
+          "en": "Your piece has finally shown itself."
+        }
+      ],
+      "capture_hidden": [
+        {
+          "key": "content.chess.jieqi.quiet.capture_hidden.1",
+          "zh": "暗着的棋子被吃掉了。",
+          "en": "A hidden piece was captured."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.capture_hidden.2",
+          "zh": "这一手吃掉了一枚暗棋。",
+          "en": "That move captured a hidden piece."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.capture_hidden.3",
+          "zh": "还没揭开的棋子离开了棋盘。",
+          "en": "An unrevealed piece has left the board."
+        }
+      ],
+      "capture_big": [
+        {
+          "key": "content.chess.jieqi.quiet.capture_big.1",
+          "zh": "一枚大棋子被吃掉了。",
+          "en": "A major piece was captured."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.capture_big.2",
+          "zh": "这一手吃掉了大棋子。",
+          "en": "That move captured a major piece."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.capture_big.3",
+          "zh": "棋盘上少了一枚大棋子。",
+          "en": "There is one fewer major piece on the board."
+        }
+      ],
+      "soldier": [
+        {
+          "key": "content.chess.jieqi.quiet.soldier.1",
+          "zh": "小兵也能吃子。",
+          "en": "A soldier can capture too."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.soldier.2",
+          "zh": "这次是小兵吃了棋子。",
+          "en": "A soldier made that capture."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.soldier.3",
+          "zh": "小兵走出了这一手。",
+          "en": "The soldier made that move."
+        }
+      ],
+      "check_self": [
+        {
+          "key": "content.chess.jieqi.quiet.check_self.1",
+          "zh": "我的将被将军了。",
+          "en": "My general is in check."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.check_self.2",
+          "zh": "得先护住我的将。",
+          "en": "I need to protect my general first."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.check_self.3",
+          "zh": "这一手威胁到了我的将。",
+          "en": "That move threatens my general."
+        }
+      ],
+      "check_you": [
+        {
+          "key": "content.chess.jieqi.quiet.check_you.1",
+          "zh": "你的将被将军了。",
+          "en": "Your general is in check."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.check_you.2",
+          "zh": "这一手威胁到你的将。",
+          "en": "This move threatens your general."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.check_you.3",
+          "zh": "要留心你的将。",
+          "en": "Watch your general."
+        }
+      ],
+      "result_win": [
+        {
+          "key": "content.chess.jieqi.quiet.result_win.1",
+          "zh": "赢了。最后那步，险。",
+          "en": "Mine. That last move was close."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.result_win.2",
+          "zh": "这回是我。再来？",
+          "en": "My round. Again?"
+        }
+      ],
+      "result_lose": [
+        {
+          "key": "content.chess.jieqi.quiet.result_lose.1",
+          "zh": "嗯，输了。你看得准。",
+          "en": "Lost. Good eye."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.result_lose.2",
+          "zh": "那一步，我没守住。",
+          "en": "I left that one open."
+        }
+      ],
+      "result_draw": [
+        {
+          "key": "content.chess.jieqi.quiet.result_draw.1",
+          "zh": "平手。谁也不欠。",
+          "en": "Even. Nothing owed."
+        },
+        {
+          "key": "content.chess.jieqi.quiet.result_draw.2",
+          "zh": "停在这里，也好。",
+          "en": "A good place to stop."
+        }
+      ]
+    }
+  },
+  "gomoku": {
+    "playful": {
+      "start": [
+        {
+          "key": "content.chess.gomoku.playful.start.1",
+          "zh": "来来来，看我今天的棋！",
+          "en": "Come on, watch my brilliant moves!"
+        },
+        {
+          "key": "content.chess.gomoku.playful.start.2",
+          "zh": "我要先找到最有趣的位置。",
+          "en": "I am looking for the most exciting spot first."
+        },
+        {
+          "key": "content.chess.gomoku.playful.start.3",
+          "zh": "我准备好啦，快开始！",
+          "en": "Ready! Let us get this game going!"
+        }
+      ],
+      "thinking": [
+        {
+          "key": "content.chess.gomoku.playful.thinking.4",
+          "zh": "等一下，我的脑袋在转！",
+          "en": "Wait, my brain is spinning!"
+        },
+        {
+          "key": "content.chess.gomoku.playful.thinking.5",
+          "zh": "这一边好像有点意思。",
+          "en": "Ooh, this side looks promising."
+        },
+        {
+          "key": "content.chess.gomoku.playful.thinking.6",
+          "zh": "嘘，我在想大招。",
+          "en": "Shh, I am plotting something big."
+        }
+      ],
+      "idle": [
+        {
+          "key": "content.chess.gomoku.playful.idle.7",
+          "zh": "棋盘像一座小迷宫！",
+          "en": "The board is like a tiny maze!"
+        },
+        {
+          "key": "content.chess.gomoku.playful.idle.8",
+          "zh": "你会不会偷偷留了一手？",
+          "en": "Have you got a secret trick up your sleeve?"
+        },
+        {
+          "key": "content.chess.gomoku.playful.idle.39",
+          "zh": "棋子都排队等着我们呢。",
+          "en": "The pieces are lining up for us!"
+        },
+        {
+          "key": "content.chess.gomoku.playful.idle.40",
+          "zh": "你可别被我的招数吓一跳！",
+          "en": "Do not be surprised by my next trick!"
+        },
+        {
+          "key": "content.chess.gomoku.playful.idle.extra1",
+          "zh": "棋局还藏着什么惊喜？",
+          "en": "What other surprises are hiding in this game?"
+        },
+        {
+          "key": "content.chess.gomoku.playful.idle.extra2",
+          "zh": "我的眼睛快跟不上棋子啦。",
+          "en": "My eyes can barely keep up with these pieces!"
+        },
+        {
+          "key": "content.chess.gomoku.playful.idle.extra3",
+          "zh": "这儿还有一片空地！",
+          "en": "Look at all the open space here!"
+        }
+      ],
+      "slowplayer": [
+        {
+          "key": "content.chess.gomoku.playful.slowplayer.9",
+          "zh": "你想得比我还久呢！",
+          "en": "You are taking even longer than I do!"
+        },
+        {
+          "key": "content.chess.gomoku.playful.slowplayer.10",
+          "zh": "慢慢挑，我来猜猜你的计划。",
+          "en": "Take your time. I will guess your plan."
+        }
+      ],
+      "goodmove": [
+        {
+          "key": "content.chess.gomoku.playful.goodmove.11",
+          "zh": "哇，这步漂亮！",
+          "en": "Wow, what a move!"
+        },
+        {
+          "key": "content.chess.gomoku.playful.goodmove.12",
+          "zh": "你居然发现了那个位置！",
+          "en": "You spotted that opening!"
+        }
+      ],
+      "regret": [
+        {
+          "key": "content.chess.gomoku.playful.regret.13",
+          "zh": "糟糕，我的棋跑错地方啦！",
+          "en": "Oops, my piece took a wrong turn!"
+        },
+        {
+          "key": "content.chess.gomoku.playful.regret.14",
+          "zh": "哎呀，这次聪明反被聪明误。",
+          "en": "Oh no, I outsmarted myself!"
+        }
+      ],
+      "weather": [
+        {
+          "key": "content.chess.gomoku.playful.weather.17",
+          "zh": "棋桌旁边也能冒险！",
+          "en": "Even a board game can be an adventure!"
+        },
+        {
+          "key": "content.chess.gomoku.playful.weather.18",
+          "zh": "这一局比我想的还有趣。",
+          "en": "This game is even more fun than I expected."
+        }
+      ],
+      "hunger": [
+        {
+          "key": "content.chess.gomoku.playful.hunger.19",
+          "zh": "肚子已经开始喊点心啦！",
+          "en": "My tummy is calling for snacks!"
+        },
+        {
+          "key": "content.chess.gomoku.playful.hunger.20",
+          "zh": "我想念热乎乎的饭！",
+          "en": "I am dreaming of a hot meal!"
+        }
+      ],
+      "tap": [
+        {
+          "key": "content.chess.gomoku.playful.tap.21",
+          "zh": "抓到你点我啦！",
+          "en": "Caught you tapping me!"
+        },
+        {
+          "key": "content.chess.gomoku.playful.tap.22",
+          "zh": "嘿！我还在看棋呢！",
+          "en": "Hey! I am watching the board!"
+        }
+      ],
+      "nearwin": [
+        {
+          "key": "content.chess.gomoku.playful.nearwin.23",
+          "zh": "好耶，机会来了！",
+          "en": "Yes! Here comes my chance!"
+        },
+        {
+          "key": "content.chess.gomoku.playful.nearwin.24",
+          "zh": "我是不是快碰到胜利啦？",
+          "en": "Am I getting close to winning?"
+        }
+      ],
+      "nearlose": [
+        {
+          "key": "content.chess.gomoku.playful.nearlose.25",
+          "zh": "你追得也太紧了！",
+          "en": "You are right on my heels!"
+        },
+        {
+          "key": "content.chess.gomoku.playful.nearlose.26",
+          "zh": "等等，我还有办法！",
+          "en": "Wait, I still have a trick!"
+        }
+      ],
+      "resign": [
+        {
+          "key": "content.chess.gomoku.playful.resign.27",
+          "zh": "这盘先收起来，下次再比！",
+          "en": "Let us put this game away and play again!"
+        },
+        {
+          "key": "content.chess.gomoku.playful.resign.28",
+          "zh": "我先认输，下一局见！",
+          "en": "I give up this time. Rematch soon!"
+        }
+      ],
+      "drawoffer": [
+        {
+          "key": "content.chess.gomoku.playful.drawoffer.29",
+          "zh": "要不要握手言和？",
+          "en": "How about we call it even?"
+        },
+        {
+          "key": "content.chess.gomoku.playful.drawoffer.30",
+          "zh": "这盘算我们打平好不好？",
+          "en": "Shall we call this one a tie?"
+        }
+      ],
+      "result": [
+        {
+          "key": "content.chess.gomoku.playful.result.31",
+          "zh": "真好玩！再来一盘吧！",
+          "en": "That was fun! Let us play again!"
+        },
+        {
+          "key": "content.chess.gomoku.playful.result.32",
+          "zh": "这局我会记住的！",
+          "en": "I am going to remember this game!"
+        }
+      ],
+      "fish": [
+        {
+          "key": "content.chess.gomoku.playful.fish.35",
+          "zh": "想到鱼儿我就坐不住！",
+          "en": "Thinking of fish makes me fidget!"
+        },
+        {
+          "key": "content.chess.gomoku.playful.fish.36",
+          "zh": "说不定鱼儿也想下棋！",
+          "en": "Maybe the fish want to play too!"
+        }
+      ],
+      "food": [
+        {
+          "key": "content.chess.gomoku.playful.food.37",
+          "zh": "一提吃的我就来精神！",
+          "en": "Mention food and I perk right up!"
+        },
+        {
+          "key": "content.chess.gomoku.playful.food.38",
+          "zh": "我已经开始猜菜单啦！",
+          "en": "I am already guessing what is on the menu!"
+        }
+      ],
+      "result_win": [
+        {
+          "key": "content.chess.gomoku.playful.result_win.1",
+          "zh": "耶！这盘我抱走啦！",
+          "en": "Ha! This one is coming home with me!"
+        },
+        {
+          "key": "content.chess.gomoku.playful.result_win.2",
+          "zh": "看见没，我的小妙招奏效啦！",
+          "en": "See? My tiny master plan actually worked!"
+        }
+      ],
+      "result_lose": [
+        {
+          "key": "content.chess.gomoku.playful.result_lose.1",
+          "zh": "哼，我刚刚才热身呢！",
+          "en": "Hmph. I was only just warming up!"
+        },
+        {
+          "key": "content.chess.gomoku.playful.result_lose.2",
+          "zh": "好吧好吧，这盘归你，下盘等着！",
+          "en": "All right, take this one. Rematch, though!"
+        }
+      ],
+      "result_draw": [
+        {
+          "key": "content.chess.gomoku.playful.result_draw.1",
+          "zh": "谁也不让谁，真有我们的！",
+          "en": "Neither of us budged. That is so us!"
+        },
+        {
+          "key": "content.chess.gomoku.playful.result_draw.2",
+          "zh": "平手也能这么惊险呀！",
+          "en": "Who knew a tie could be such a ride?"
+        }
+      ]
+    },
+    "gentle": {
+      "start": [
+        {
+          "key": "content.chess.gomoku.gentle.start.1",
+          "zh": "我们坐下来，慢慢开始吧。",
+          "en": "Let us sit together and begin gently."
+        },
+        {
+          "key": "content.chess.gomoku.gentle.start.2",
+          "zh": "和你一起下棋，我很期待。",
+          "en": "I have been looking forward to playing with you."
+        },
+        {
+          "key": "content.chess.gomoku.gentle.start.3",
+          "zh": "棋子摆好了，真整齐。",
+          "en": "The pieces are set out so neatly."
+        }
+      ],
+      "thinking": [
+        {
+          "key": "content.chess.gomoku.gentle.thinking.4",
+          "zh": "让我仔细看看这里。",
+          "en": "Let me look carefully at this place."
+        },
+        {
+          "key": "content.chess.gomoku.gentle.thinking.5",
+          "zh": "我想再考虑一会儿。",
+          "en": "I would like a little more time to think."
+        },
+        {
+          "key": "content.chess.gomoku.gentle.thinking.6",
+          "zh": "这一步需要温柔地斟酌。",
+          "en": "This move deserves some gentle thought."
+        }
+      ],
+      "idle": [
+        {
+          "key": "content.chess.gomoku.gentle.idle.7",
+          "zh": "这样安静地坐着真好。",
+          "en": "It is lovely to sit quietly together."
+        },
+        {
+          "key": "content.chess.gomoku.gentle.idle.8",
+          "zh": "有你在，对局也很温暖。",
+          "en": "Your company makes the game feel warm."
+        },
+        {
+          "key": "content.chess.gomoku.gentle.idle.39",
+          "zh": "我会认真陪你走每一步。",
+          "en": "I will give every move my attention."
+        },
+        {
+          "key": "content.chess.gomoku.gentle.idle.40",
+          "zh": "棋局慢慢展开了呢。",
+          "en": "The game is unfolding little by little."
+        },
+        {
+          "key": "content.chess.gomoku.gentle.idle.extra1",
+          "zh": "每一步都有自己的节奏。",
+          "en": "Every move has its own rhythm."
+        },
+        {
+          "key": "content.chess.gomoku.gentle.idle.extra2",
+          "zh": "棋盘上还有许多可能。",
+          "en": "There are still many possibilities on the board."
+        },
+        {
+          "key": "content.chess.gomoku.gentle.idle.extra3",
+          "zh": "我喜欢这样一起思考。",
+          "en": "I like thinking things through together."
+        }
+      ],
+      "slowplayer": [
+        {
+          "key": "content.chess.gomoku.gentle.slowplayer.9",
+          "zh": "别着急，我会等你。",
+          "en": "There is no hurry. I will wait."
+        },
+        {
+          "key": "content.chess.gomoku.gentle.slowplayer.10",
+          "zh": "你可以好好想，我陪着你。",
+          "en": "Take the time you need; I am here."
+        }
+      ],
+      "goodmove": [
+        {
+          "key": "content.chess.gomoku.gentle.goodmove.11",
+          "zh": "你看得真仔细。",
+          "en": "You have such a thoughtful eye."
+        },
+        {
+          "key": "content.chess.gomoku.gentle.goodmove.12",
+          "zh": "这一手走得很巧呢。",
+          "en": "That was a beautifully considered move."
+        }
+      ],
+      "regret": [
+        {
+          "key": "content.chess.gomoku.gentle.regret.13",
+          "zh": "啊，我刚才疏忽了。",
+          "en": "Oh, I overlooked that just now."
+        },
+        {
+          "key": "content.chess.gomoku.gentle.regret.14",
+          "zh": "我应该再多看一眼的。",
+          "en": "I should have taken another look."
+        }
+      ],
+      "weather": [
+        {
+          "key": "content.chess.gomoku.gentle.weather.17",
+          "zh": "陪你在这里，时间过得很轻。",
+          "en": "Time feels gentle when I am here with you."
+        },
+        {
+          "key": "content.chess.gomoku.gentle.weather.18",
+          "zh": "我喜欢棋子轻轻落下的声音。",
+          "en": "I like the soft sound of a piece being placed."
+        }
+      ],
+      "hunger": [
+        {
+          "key": "content.chess.gomoku.gentle.hunger.19",
+          "zh": "肚子轻轻叫了一声。",
+          "en": "My stomach gave a little rumble."
+        },
+        {
+          "key": "content.chess.gomoku.gentle.hunger.20",
+          "zh": "结束以后吃点热的吧。",
+          "en": "Perhaps we can have something warm afterwards."
+        }
+      ],
+      "tap": [
+        {
+          "key": "content.chess.gomoku.gentle.tap.21",
+          "zh": "嗯？我在这里。",
+          "en": "Hm? I am right here."
+        },
+        {
+          "key": "content.chess.gomoku.gentle.tap.22",
+          "zh": "你找我吗？",
+          "en": "Were you looking for me?"
+        }
+      ],
+      "nearwin": [
+        {
+          "key": "content.chess.gomoku.gentle.nearwin.23",
+          "zh": "好像有一条路可以试试。",
+          "en": "I think there may be a path to try."
+        },
+        {
+          "key": "content.chess.gomoku.gentle.nearwin.24",
+          "zh": "这一步让我有了一点希望。",
+          "en": "This move gives me a little hope."
+        }
+      ],
+      "nearlose": [
+        {
+          "key": "content.chess.gomoku.gentle.nearlose.25",
+          "zh": "我得耐心找找出路。",
+          "en": "I will patiently look for a way through."
+        },
+        {
+          "key": "content.chess.gomoku.gentle.nearlose.26",
+          "zh": "你给我出了一个难题。",
+          "en": "You have given me a difficult puzzle."
+        }
+      ],
+      "resign": [
+        {
+          "key": "content.chess.gomoku.gentle.resign.27",
+          "zh": "停在这里也没有关系。",
+          "en": "It is all right to stop here."
+        },
+        {
+          "key": "content.chess.gomoku.gentle.resign.28",
+          "zh": "我认输了，谢谢你陪我。",
+          "en": "I concede. Thank you for playing with me."
+        }
+      ],
+      "drawoffer": [
+        {
+          "key": "content.chess.gomoku.gentle.drawoffer.29",
+          "zh": "我们和棋，好吗？",
+          "en": "Would you like to call it a draw?"
+        },
+        {
+          "key": "content.chess.gomoku.gentle.drawoffer.30",
+          "zh": "就让这一局平平静静结束吧。",
+          "en": "Shall we let this game end peacefully as a draw?"
+        }
+      ],
+      "result": [
+        {
+          "key": "content.chess.gomoku.gentle.result.31",
+          "zh": "谢谢你陪我下完这一局。",
+          "en": "Thank you for sharing this game with me."
+        },
+        {
+          "key": "content.chess.gomoku.gentle.result.32",
+          "zh": "这段一起下棋的时间真好。",
+          "en": "I enjoyed this time together."
+        }
+      ],
+      "fish": [
+        {
+          "key": "content.chess.gomoku.gentle.fish.35",
+          "zh": "想到鱼儿，心里也安静下来。",
+          "en": "Thinking of fish makes me feel calm."
+        },
+        {
+          "key": "content.chess.gomoku.gentle.fish.36",
+          "zh": "鱼儿游动的样子很温柔。",
+          "en": "Fish move so gently through the water."
+        }
+      ],
+      "food": [
+        {
+          "key": "content.chess.gomoku.gentle.food.37",
+          "zh": "热乎乎的食物让人安心。",
+          "en": "Warm food is comforting."
+        },
+        {
+          "key": "content.chess.gomoku.gentle.food.38",
+          "zh": "一起吃饭的时候也像现在这样温暖。",
+          "en": "Sharing a meal feels warm like this too."
+        }
+      ],
+      "result_win": [
+        {
+          "key": "content.chess.gomoku.gentle.result_win.1",
+          "zh": "这次恰好是我赢了，谢谢你陪我下。",
+          "en": "This one fell my way. Thank you for sitting with me."
+        },
+        {
+          "key": "content.chess.gomoku.gentle.result_win.2",
+          "zh": "慢慢想的那一步，原来真的有用。",
+          "en": "That quiet little move mattered after all."
+        }
+      ],
+      "result_lose": [
+        {
+          "key": "content.chess.gomoku.gentle.result_lose.1",
+          "zh": "你下得很好，我记住这一盘了。",
+          "en": "You played that beautifully. I will remember the shape of it."
+        },
+        {
+          "key": "content.chess.gomoku.gentle.result_lose.2",
+          "zh": "嗯，我输了，心里倒还是暖暖的。",
+          "en": "Mm. I lost, but it was a lovely game to share."
+        }
+      ],
+      "result_draw": [
+        {
+          "key": "content.chess.gomoku.gentle.result_draw.1",
+          "zh": "我们一起走到这里，就很好。",
+          "en": "We arrived at the same place. I rather like that."
+        },
+        {
+          "key": "content.chess.gomoku.gentle.result_draw.2",
+          "zh": "这盘没有输赢，也很值得呢。",
+          "en": "No winner this time. Still time well spent."
+        }
+      ]
+    },
+    "diligent": {
+      "start": [
+        {
+          "key": "content.chess.gomoku.diligent.start.1",
+          "zh": "棋盘摆稳了，我们开始吧。",
+          "en": "The board is steady. Let us begin."
+        },
+        {
+          "key": "content.chess.gomoku.diligent.start.2",
+          "zh": "先检查一下棋子的位置。",
+          "en": "First, let us check the pieces."
+        },
+        {
+          "key": "content.chess.gomoku.diligent.start.3",
+          "zh": "我准备好了，你也坐稳些。",
+          "en": "I am ready. Make yourself comfortable too."
+        }
+      ],
+      "thinking": [
+        {
+          "key": "content.chess.gomoku.diligent.thinking.4",
+          "zh": "先把附近的位置检查一遍。",
+          "en": "I will inspect the nearby positions first."
+        },
+        {
+          "key": "content.chess.gomoku.diligent.thinking.5",
+          "zh": "这一步要想周全。",
+          "en": "I need to consider this move thoroughly."
+        },
+        {
+          "key": "content.chess.gomoku.diligent.thinking.6",
+          "zh": "让我算算接下来怎么走。",
+          "en": "Let me work out what comes next."
+        }
+      ],
+      "idle": [
+        {
+          "key": "content.chess.gomoku.diligent.idle.7",
+          "zh": "坐久了记得活动一下手。",
+          "en": "Remember to stretch your hands after sitting."
+        },
+        {
+          "key": "content.chess.gomoku.diligent.idle.8",
+          "zh": "棋盘上的空位也要留心。",
+          "en": "Empty spaces deserve attention too."
+        },
+        {
+          "key": "content.chess.gomoku.diligent.idle.39",
+          "zh": "先把这边的棋子照顾好。",
+          "en": "I will make sure these pieces are covered."
+        },
+        {
+          "key": "content.chess.gomoku.diligent.idle.40",
+          "zh": "每一步都要留意后路。",
+          "en": "Each move should leave a way forward."
+        },
+        {
+          "key": "content.chess.gomoku.diligent.idle.extra1",
+          "zh": "棋盘边缘也不能忽略。",
+          "en": "I should not overlook the edge of the board."
+        },
+        {
+          "key": "content.chess.gomoku.diligent.idle.extra2",
+          "zh": "我再整理一下思路。",
+          "en": "Let me put my thoughts in order."
+        },
+        {
+          "key": "content.chess.gomoku.diligent.idle.extra3",
+          "zh": "稳稳地走好每一步。",
+          "en": "I will take each move steadily."
+        }
+      ],
+      "slowplayer": [
+        {
+          "key": "content.chess.gomoku.diligent.slowplayer.9",
+          "zh": "仔细想好再落子，不急。",
+          "en": "Make sure you are happy with your choice."
+        },
+        {
+          "key": "content.chess.gomoku.diligent.slowplayer.10",
+          "zh": "需要时间就多看一会儿。",
+          "en": "Take another look if you need time."
+        }
+      ],
+      "goodmove": [
+        {
+          "key": "content.chess.gomoku.diligent.goodmove.11",
+          "zh": "这一步考虑得很周全。",
+          "en": "You planned that move thoroughly."
+        },
+        {
+          "key": "content.chess.gomoku.diligent.goodmove.12",
+          "zh": "你把前后的位置都照顾到了。",
+          "en": "You accounted for the whole position."
+        }
+      ],
+      "regret": [
+        {
+          "key": "content.chess.gomoku.diligent.regret.13",
+          "zh": "我刚才检查得不够仔细。",
+          "en": "I did not check carefully enough."
+        },
+        {
+          "key": "content.chess.gomoku.diligent.regret.14",
+          "zh": "这一处漏洞是我留下的。",
+          "en": "I left that opening myself."
+        }
+      ],
+      "weather": [
+        {
+          "key": "content.chess.gomoku.diligent.weather.17",
+          "zh": "下棋也得有条理。",
+          "en": "A little order helps in a game too."
+        },
+        {
+          "key": "content.chess.gomoku.diligent.weather.18",
+          "zh": "我把眼前的几步理一理。",
+          "en": "I am sorting through the next few moves."
+        }
+      ],
+      "hunger": [
+        {
+          "key": "content.chess.gomoku.diligent.hunger.19",
+          "zh": "下完棋记得去吃饭。",
+          "en": "Remember to eat when we are finished."
+        },
+        {
+          "key": "content.chess.gomoku.diligent.hunger.20",
+          "zh": "饿了也要先把这一步看清。",
+          "en": "Even hungry, I should think this move through."
+        }
+      ],
+      "tap": [
+        {
+          "key": "content.chess.gomoku.diligent.tap.21",
+          "zh": "怎么了，要我看哪里？",
+          "en": "What is it? Where should I look?"
+        },
+        {
+          "key": "content.chess.gomoku.diligent.tap.22",
+          "zh": "我在，有事就告诉我。",
+          "en": "I am here. Tell me what you need."
+        }
+      ],
+      "nearwin": [
+        {
+          "key": "content.chess.gomoku.diligent.nearwin.23",
+          "zh": "有机会也要把后面守好。",
+          "en": "Even with an opening, I must guard what follows."
+        },
+        {
+          "key": "content.chess.gomoku.diligent.nearwin.24",
+          "zh": "这一处值得认真经营。",
+          "en": "This position is worth developing carefully."
+        }
+      ],
+      "nearlose": [
+        {
+          "key": "content.chess.gomoku.diligent.nearlose.25",
+          "zh": "先别慌，我还要检查一遍。",
+          "en": "No need to panic. I will check again."
+        },
+        {
+          "key": "content.chess.gomoku.diligent.nearlose.26",
+          "zh": "局面紧了，更要稳住。",
+          "en": "The position is tight; I must stay steady."
+        }
+      ],
+      "resign": [
+        {
+          "key": "content.chess.gomoku.diligent.resign.27",
+          "zh": "这局先到这里，棋子收好。",
+          "en": "We can stop here and put the pieces away."
+        },
+        {
+          "key": "content.chess.gomoku.diligent.resign.28",
+          "zh": "我认输，这次你安排得更好。",
+          "en": "I concede. You planned better this time."
+        }
+      ],
+      "drawoffer": [
+        {
+          "key": "content.chess.gomoku.diligent.drawoffer.29",
+          "zh": "双方都不容易前进，考虑和棋吧。",
+          "en": "Neither side has an easy path. Shall we draw?"
+        },
+        {
+          "key": "content.chess.gomoku.diligent.drawoffer.30",
+          "zh": "继续僵持不如握手言和。",
+          "en": "Rather than stay stuck, shall we agree to a draw?"
+        }
+      ],
+      "result": [
+        {
+          "key": "content.chess.gomoku.diligent.result.31",
+          "zh": "棋局结束了，我来整理思路。",
+          "en": "The game is over. Let me review my thinking."
+        },
+        {
+          "key": "content.chess.gomoku.diligent.result.32",
+          "zh": "这一局有不少值得记住的地方。",
+          "en": "There is plenty to learn from this game."
+        }
+      ],
+      "fish": [
+        {
+          "key": "content.chess.gomoku.diligent.fish.35",
+          "zh": "下完棋再去看看鱼儿吧。",
+          "en": "Let us check on the fish after the game."
+        },
+        {
+          "key": "content.chess.gomoku.diligent.fish.36",
+          "zh": "鱼儿也需要人照看。",
+          "en": "The fish need looking after too."
+        }
+      ],
+      "food": [
+        {
+          "key": "content.chess.gomoku.diligent.food.37",
+          "zh": "吃饭的事也要记着。",
+          "en": "We should remember to eat."
+        },
+        {
+          "key": "content.chess.gomoku.diligent.food.38",
+          "zh": "做好的饭趁热吃才好。",
+          "en": "A prepared meal is best eaten warm."
+        }
+      ],
+      "result_win": [
+        {
+          "key": "content.chess.gomoku.diligent.result_win.1",
+          "zh": "总算守到最后，下一盘也别大意。",
+          "en": "Held it together to the end. No getting careless next time."
+        },
+        {
+          "key": "content.chess.gomoku.diligent.result_win.2",
+          "zh": "收好棋子，这次算我赢了。",
+          "en": "Let us put the pieces in order. This round is mine."
+        }
+      ],
+      "result_lose": [
+        {
+          "key": "content.chess.gomoku.diligent.result_lose.1",
+          "zh": "是我漏看了，下次会记得检查。",
+          "en": "I missed that. One more thing to check next time."
+        },
+        {
+          "key": "content.chess.gomoku.diligent.result_lose.2",
+          "zh": "这盘你赢了，我得把那一步想明白。",
+          "en": "You earned this one. I need to understand that last turn."
+        }
+      ],
+      "result_draw": [
+        {
+          "key": "content.chess.gomoku.diligent.result_draw.1",
+          "zh": "双方都没松懈，平手很公平。",
+          "en": "Neither side slipped. A draw is a fair result."
+        },
+        {
+          "key": "content.chess.gomoku.diligent.result_draw.2",
+          "zh": "先整理一下棋子，再决定下不下。",
+          "en": "Pieces tidy first. Then we can decide about another game."
+        }
+      ]
+    },
+    "quiet": {
+      "start": [
+        {
+          "key": "content.chess.gomoku.quiet.start.1",
+          "zh": "棋盘归你一半。",
+          "en": "Half the board is yours."
+        },
+        {
+          "key": "content.chess.gomoku.quiet.start.2",
+          "zh": "开始吧。",
+          "en": "Let us begin."
+        },
+        {
+          "key": "content.chess.gomoku.quiet.start.3",
+          "zh": "这局，我陪你。",
+          "en": "I will play this one with you."
+        }
+      ],
+      "thinking": [
+        {
+          "key": "content.chess.gomoku.quiet.thinking.4",
+          "zh": "这里还有变化。",
+          "en": "There is another possibility here."
+        },
+        {
+          "key": "content.chess.gomoku.quiet.thinking.5",
+          "zh": "我再看看。",
+          "en": "I will take another look."
+        },
+        {
+          "key": "content.chess.gomoku.quiet.thinking.6",
+          "zh": "不能急。",
+          "en": "No need to rush."
+        }
+      ],
+      "idle": [
+        {
+          "key": "content.chess.gomoku.quiet.idle.7",
+          "zh": "听，棋子落下的声音。",
+          "en": "Listen to the piece settle."
+        },
+        {
+          "key": "content.chess.gomoku.quiet.idle.8",
+          "zh": "这里很安静。",
+          "en": "It is quiet here."
+        },
+        {
+          "key": "content.chess.gomoku.quiet.idle.39",
+          "zh": "我看着这边。",
+          "en": "I am watching this side."
+        },
+        {
+          "key": "content.chess.gomoku.quiet.idle.40",
+          "zh": "轮到你了。",
+          "en": "Your turn."
+        },
+        {
+          "key": "content.chess.gomoku.quiet.idle.extra1",
+          "zh": "还可以再看看。",
+          "en": "There is more to consider."
+        },
+        {
+          "key": "content.chess.gomoku.quiet.idle.extra2",
+          "zh": "棋局还长。",
+          "en": "There is more game ahead."
+        },
+        {
+          "key": "content.chess.gomoku.quiet.idle.extra3",
+          "zh": "这里有空位。",
+          "en": "There is space here."
+        }
+      ],
+      "slowplayer": [
+        {
+          "key": "content.chess.gomoku.quiet.slowplayer.9",
+          "zh": "你看了很久。",
+          "en": "You have been studying it a while."
+        },
+        {
+          "key": "content.chess.gomoku.quiet.slowplayer.10",
+          "zh": "我等你。",
+          "en": "I can wait."
+        }
+      ],
+      "goodmove": [
+        {
+          "key": "content.chess.gomoku.quiet.goodmove.11",
+          "zh": "这一手，我记住了。",
+          "en": "I will remember that move."
+        },
+        {
+          "key": "content.chess.gomoku.quiet.goodmove.12",
+          "zh": "走得不错。",
+          "en": "Well played."
+        }
+      ],
+      "regret": [
+        {
+          "key": "content.chess.gomoku.quiet.regret.13",
+          "zh": "失算了。",
+          "en": "A miscalculation."
+        },
+        {
+          "key": "content.chess.gomoku.quiet.regret.14",
+          "zh": "这里是我的疏漏。",
+          "en": "I missed that opening."
+        }
+      ],
+      "weather": [
+        {
+          "key": "content.chess.gomoku.quiet.weather.17",
+          "zh": "棋盘很小，路不少。",
+          "en": "A small board, with many paths."
+        },
+        {
+          "key": "content.chess.gomoku.quiet.weather.18",
+          "zh": "我还在看。",
+          "en": "I am still watching."
+        }
+      ],
+      "hunger": [
+        {
+          "key": "content.chess.gomoku.quiet.hunger.19",
+          "zh": "肚子提醒我了。",
+          "en": "My stomach just reminded me."
+        },
+        {
+          "key": "content.chess.gomoku.quiet.hunger.20",
+          "zh": "有点饿。",
+          "en": "A little hungry."
+        }
+      ],
+      "tap": [
+        {
+          "key": "content.chess.gomoku.quiet.tap.21",
+          "zh": "嗯？",
+          "en": "Yes?"
+        },
+        {
+          "key": "content.chess.gomoku.quiet.tap.22",
+          "zh": "我在。",
+          "en": "I am here."
+        }
+      ],
+      "nearwin": [
+        {
+          "key": "content.chess.gomoku.quiet.nearwin.23",
+          "zh": "有一线机会。",
+          "en": "There is an opening."
+        },
+        {
+          "key": "content.chess.gomoku.quiet.nearwin.24",
+          "zh": "还差一点。",
+          "en": "Nearly there."
+        }
+      ],
+      "nearlose": [
+        {
+          "key": "content.chess.gomoku.quiet.nearlose.25",
+          "zh": "局面不太好。",
+          "en": "The position is difficult."
+        },
+        {
+          "key": "content.chess.gomoku.quiet.nearlose.26",
+          "zh": "还有路吗。",
+          "en": "Is there a way out?"
+        }
+      ],
+      "resign": [
+        {
+          "key": "content.chess.gomoku.quiet.resign.27",
+          "zh": "这盘到此为止。",
+          "en": "This game ends here."
+        },
+        {
+          "key": "content.chess.gomoku.quiet.resign.28",
+          "zh": "我认输。",
+          "en": "I concede."
+        }
+      ],
+      "drawoffer": [
+        {
+          "key": "content.chess.gomoku.quiet.drawoffer.29",
+          "zh": "和棋如何？",
+          "en": "A draw?"
+        },
+        {
+          "key": "content.chess.gomoku.quiet.drawoffer.30",
+          "zh": "就此握手吧。",
+          "en": "Shall we shake on a draw?"
+        }
+      ],
+      "result": [
+        {
+          "key": "content.chess.gomoku.quiet.result.31",
+          "zh": "下完了。",
+          "en": "The game is finished."
+        },
+        {
+          "key": "content.chess.gomoku.quiet.result.32",
+          "zh": "这局不错。",
+          "en": "A good game."
+        }
+      ],
+      "fish": [
+        {
+          "key": "content.chess.gomoku.quiet.fish.35",
+          "zh": "鱼啊。",
+          "en": "Fish."
+        },
+        {
+          "key": "content.chess.gomoku.quiet.fish.36",
+          "zh": "鱼在水里很安静。",
+          "en": "Fish are quiet in the water."
+        }
+      ],
+      "food": [
+        {
+          "key": "content.chess.gomoku.quiet.food.37",
+          "zh": "说到吃的，饿了。",
+          "en": "Food. Now I am hungry."
+        },
+        {
+          "key": "content.chess.gomoku.quiet.food.38",
+          "zh": "热饭不错。",
+          "en": "A warm meal sounds good."
+        }
+      ],
+      "result_win": [
+        {
+          "key": "content.chess.gomoku.quiet.result_win.1",
+          "zh": "赢了。最后那步，险。",
+          "en": "Mine. That last move was close."
+        },
+        {
+          "key": "content.chess.gomoku.quiet.result_win.2",
+          "zh": "这回是我。再来？",
+          "en": "My round. Again?"
+        }
+      ],
+      "result_lose": [
+        {
+          "key": "content.chess.gomoku.quiet.result_lose.1",
+          "zh": "嗯，输了。你看得准。",
+          "en": "Lost. Good eye."
+        },
+        {
+          "key": "content.chess.gomoku.quiet.result_lose.2",
+          "zh": "那一步，我没守住。",
+          "en": "I left that one open."
+        }
+      ],
+      "result_draw": [
+        {
+          "key": "content.chess.gomoku.quiet.result_draw.1",
+          "zh": "平手。谁也不欠。",
+          "en": "Even. Nothing owed."
+        },
+        {
+          "key": "content.chess.gomoku.quiet.result_draw.2",
+          "zh": "停在这里，也好。",
+          "en": "A good place to stop."
+        }
+      ]
+    }
+  }
+}

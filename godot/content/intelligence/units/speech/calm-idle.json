@@ -1,0 +1,9 @@
+{
+  "id": "calm-idle",
+  "context": "ambient",
+  "lines": [
+    "慢慢来，今天也不赶路。",
+    "发一小会儿呆，也很好。"
+  ],
+  "autonomy_output": false
+}

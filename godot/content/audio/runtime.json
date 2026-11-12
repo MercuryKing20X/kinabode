@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "default_enabled": true,
+  "default_mute_unfocused": false,
+  "default_master": 1.0,
+  "bus_levels": {
+    "Music": 1.0,
+    "Ambience": 1.0,
+    "Effects": 1.0,
+    "Voices": 1.0
+  },
+  "duck_db": -4.0,
+  "duck_release_seconds": 0.65,
+  "crossfade_seconds": 4.0,
+  "step_walk_tiles": 1.5,
+  "step_run_tiles": 1.7,
+  "step_global_gap_seconds": 0.075,
+  "hunger_intervals_seconds": [
+    95.0,
+    60.0,
+    35.0
+  ],
+  "voice_default": {
+    "event": "voice.soft",
+    "pitch": 1.0,
+    "max_blips": 1
+  },
+  "global_oneshot_limit": 5,
+  "environment_refresh_seconds": 0.25,
+  "run_step_gain": 1.18,
+  "main_waves_gain": 0.7,
+  "moon_waves_gain": 1.0,
+  "targets_dbfs": {
+    "voice": [
+      -18,
+      -14
+    ],
+    "ui": [
+      -22,
+      -18
+    ],
+    "ambience": [
+      -26,
+      -22
+    ],
+    "music": [
+      -24,
+      -20
+    ],
+    "duck_floor": -28,
+    "peak_max": -3
+  },
+  "speech_gap_seconds": 8,
+  "speech_max_blips": 1,
+  "speech_near_tiles": 12,
+  "wind": {
+    "home_base": 0.3,
+    "home_peak": 0.6,
+    "interval_min": 25,
+    "interval_max": 60,
+    "duration_min": 4,
+    "duration_max": 6
+  },
+  "nature": {
+    "bird_interval_min": 35,
+    "bird_interval_max": 65
+  }
+}

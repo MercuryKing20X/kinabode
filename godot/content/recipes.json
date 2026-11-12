@@ -1,0 +1,375 @@
+{
+  "version": 1,
+  "station": {
+    "id": "home.barbecue",
+    "region_id": "home",
+    "position": [
+      24,
+      45
+    ],
+    "artwork_id": "camp-grill"
+  },
+  "job_timeout": 300,
+  "fish_portions": {
+    "person": 1,
+    "large": 2,
+    "huge": 4,
+    "giant": 8
+  },
+  "recipe_locks": {
+    "blueberry-jam": "home.homestead.flowerbed"
+  },
+  "recipes": [
+    {
+      "id": "turnip-soup",
+      "name": "萝卜汤",
+      "ingredients": {
+        "turnip": 3
+      },
+      "portions": 3,
+      "fish": false,
+      "seconds": 12
+    },
+    {
+      "id": "roast-pumpkin",
+      "name": "烤南瓜",
+      "ingredients": {
+        "pumpkin": 1
+      },
+      "portions": 2,
+      "fish": false,
+      "seconds": 12
+    },
+    {
+      "id": "tomato-salad",
+      "name": "番茄沙拉",
+      "ingredients": {
+        "tomato": 2
+      },
+      "portions": 2,
+      "fish": false,
+      "seconds": 6
+    },
+    {
+      "id": "grilled-fish",
+      "name": "烤鱼",
+      "ingredients": {
+        "mushroom": 1
+      },
+      "portions": 1,
+      "fish": true,
+      "seconds": 16
+    },
+    {
+      "id": "blueberry-jam",
+      "name": "蓝莓果酱",
+      "ingredients": {
+        "blueberry": 2
+      },
+      "portions": 2,
+      "fish": false,
+      "seconds": 12
+    },
+    {
+      "id": "honey-berry-apple",
+      "name": "蜂蜜蓝莓烤苹果",
+      "ingredients": {
+        "honey": 1,
+        "blueberry": 1,
+        "apple": 1
+      },
+      "portions": 2,
+      "fish": false,
+      "seconds": 12
+    },
+    {
+      "id": "sea-land-skewers",
+      "name": "海陆豪华烤串",
+      "ingredients": {
+        "chestnut": 1,
+        "kelp": 1,
+        "herb": 1
+      },
+      "portions": 2,
+      "fish": true,
+      "seconds": 12
+    },
+    {
+      "id": "harvest-stew",
+      "name": "一锅丰收大炖菜",
+      "ingredients": {
+        "potato": 1,
+        "corn": 1,
+        "clam": 1,
+        "herb": 1,
+        "chestnut": 1,
+        "mushroom": 1
+      },
+      "portions": 2,
+      "fish": false,
+      "seconds": 12
+    },
+    {
+      "id": "dark-truffle-soup",
+      "name": "黑松露发光蘑菇汤",
+      "ingredients": {
+        "black_truffle": 1,
+        "glow_mushroom": 1,
+        "herb": 1
+      },
+      "portions": 2,
+      "fish": false,
+      "seconds": 12
+    },
+    {
+      "id": "moon-clam-chowder",
+      "name": "月湾蛤蜊浓汤",
+      "ingredients": {
+        "clam": 1,
+        "potato": 1
+      },
+      "portions": 2,
+      "fish": false,
+      "seconds": 12
+    },
+    {
+      "id": "crab-corn-pot",
+      "name": "蟹蟹玉米煲",
+      "ingredients": {
+        "crab": 1,
+        "corn": 1
+      },
+      "portions": 2,
+      "fish": false,
+      "seconds": 12
+    },
+    {
+      "id": "kelp-potato",
+      "name": "海带烤土豆",
+      "ingredients": {
+        "kelp": 1,
+        "potato": 1
+      },
+      "portions": 2,
+      "fish": false,
+      "seconds": 12
+    },
+    {
+      "id": "moon-honey-cup",
+      "name": "月见花蜜盏",
+      "ingredients": {
+        "moonflower": 1,
+        "honey": 1
+      },
+      "portions": 2,
+      "fish": false,
+      "seconds": 12
+    },
+    {
+      "id": "berry-flower-skewer",
+      "name": "野莓花瓣串",
+      "ingredients": {
+        "wild_berry": 1,
+        "petals": 1
+      },
+      "portions": 2,
+      "fish": false,
+      "seconds": 12
+    },
+    {
+      "id": "chestnut-honey",
+      "name": "蜂蜜烤栗子",
+      "ingredients": {
+        "chestnut": 1,
+        "honey": 1
+      },
+      "portions": 2,
+      "fish": false,
+      "seconds": 12
+    },
+    {
+      "id": "glow-corn",
+      "name": "萤菇玉米串",
+      "ingredients": {
+        "glow_mushroom": 1,
+        "corn": 1
+      },
+      "portions": 2,
+      "fish": false,
+      "seconds": 12
+    },
+    {
+      "id": "truffle-potato",
+      "name": "松露烤土豆",
+      "ingredients": {
+        "black_truffle": 1,
+        "potato": 1
+      },
+      "portions": 2,
+      "fish": false,
+      "seconds": 12
+    },
+    {
+      "id": "herb-clam",
+      "name": "香草烤蛤蜊",
+      "ingredients": {
+        "herb": 1,
+        "clam": 1
+      },
+      "portions": 2,
+      "fish": false,
+      "seconds": 12
+    },
+    {
+      "id": "star-moon-dessert",
+      "name": "星月莓花羹",
+      "ingredients": {
+        "star_berry": 1,
+        "moonflower": 1,
+        "wild_berry": 1
+      },
+      "portions": 2,
+      "fish": false,
+      "seconds": 12
+    },
+    {
+      "id": "dried-fish-corn",
+      "name": "鱼干玉米羹",
+      "ingredients": {
+        "dried_fish": 1,
+        "corn": 1
+      },
+      "portions": 2,
+      "fish": false,
+      "seconds": 12
+    },
+    {
+      "id": "petal-pumpkin",
+      "name": "花瓣烤南瓜",
+      "ingredients": {
+        "petals": 1,
+        "pumpkin": 1
+      },
+      "portions": 2,
+      "fish": false,
+      "seconds": 12
+    },
+    {
+      "id": "eel-herb",
+      "name": "香草炭烤鳗鱼",
+      "ingredients": {
+        "herb": 1,
+        "kelp": 1
+      },
+      "portions": 2,
+      "fish": true,
+      "seconds": 12
+    },
+    {
+      "id": "cutlass-chestnut",
+      "name": "栗香烤带鱼",
+      "ingredients": {
+        "chestnut": 1,
+        "herb": 1
+      },
+      "portions": 2,
+      "fish": true,
+      "seconds": 12
+    },
+    {
+      "id": "noodle-moon-soup",
+      "name": "月见面条鱼汤",
+      "ingredients": {
+        "moonflower": 1,
+        "potato": 1
+      },
+      "portions": 2,
+      "fish": true,
+      "seconds": 12
+    },
+    {
+      "id": "kite-berry-skewer",
+      "name": "野莓风筝鱼串",
+      "ingredients": {
+        "wild_berry": 1,
+        "herb": 1
+      },
+      "portions": 2,
+      "fish": true,
+      "seconds": 12
+    },
+    {
+      "id": "glow-clam-soup",
+      "name": "萤光海湾汤",
+      "ingredients": {
+        "glow_mushroom": 1,
+        "clam": 1
+      },
+      "portions": 2,
+      "fish": false,
+      "seconds": 12
+    },
+    {
+      "id": "island-berry-jam",
+      "name": "群岛蜂蜜莓酱",
+      "ingredients": {
+        "star_berry": 1,
+        "wild_berry": 1,
+        "honey": 1
+      },
+      "portions": 2,
+      "fish": false,
+      "seconds": 12
+    },
+    {
+      "id": "catfish-herb-pot",
+      "name": "香草鲶鱼煲",
+      "ingredients": {
+        "herb": 1
+      },
+      "portions": 1,
+      "fish": true,
+      "seconds": 16
+    },
+    {
+      "id": "moonfish-chowder",
+      "name": "月光鱼浓汤",
+      "ingredients": {
+        "clam": 1
+      },
+      "portions": 1,
+      "fish": true,
+      "seconds": 16
+    },
+    {
+      "id": "butterfly-skewer",
+      "name": "蝴蝶鱼烤串",
+      "ingredients": {
+        "kelp": 1
+      },
+      "portions": 1,
+      "fish": true,
+      "seconds": 16
+    },
+    {
+      "id": "tuna-steak",
+      "name": "香煎金枪鱼",
+      "ingredients": {
+        "mushroom": 1
+      },
+      "portions": 1,
+      "fish": true,
+      "seconds": 16
+    },
+    {
+      "id": "clownfish-skewer",
+      "name": "小丑鱼香菇串",
+      "ingredients": {
+        "mushroom": 1
+      },
+      "portions": 1,
+      "fish": true,
+      "seconds": 16
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "calm-fishing-nibble",
+  "context": "fishing_nibble",
+  "lines": [
+    "轻轻动了一下……再等等。",
+    "嘘，先别急着收。"
+  ],
+  "autonomy_output": false
+}

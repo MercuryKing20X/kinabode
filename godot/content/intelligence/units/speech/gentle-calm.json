@@ -1,0 +1,11 @@
+{
+  "id": "gentle-calm",
+  "context": "calm",
+  "lines": [
+    "现在想慢悠悠地待着。",
+    "平静的时候，看看近处就好。",
+    "我先在这里轻轻歇一会儿。",
+    "这会儿的心情很平和。"
+  ],
+  "autonomy_output": false
+}

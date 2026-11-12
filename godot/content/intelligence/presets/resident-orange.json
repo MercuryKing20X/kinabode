@@ -1,0 +1,11 @@
+{
+  "id": "resident-orange",
+  "name": "智能小橙",
+  "main_trait": "laborious",
+  "context_traits": [
+    "serious",
+    "glutton-minor"
+  ],
+  "speech_style": "根据真实状态，简短自然地说话。",
+  "mode": "local"
+}

@@ -1,0 +1,4 @@
+keys,zh,en
+buildall.action,一键建好（所有岛屿）,Finish buildings on all islands
+buildall.done,已建好 %d 座建筑，原有物资和投入保留。,Finished %d buildings. Existing materials and investments are preserved.
+buildall.busy,请先结束现有建造安排，再一键建好。,Finish or cancel existing construction orders first.

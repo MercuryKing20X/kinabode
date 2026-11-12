@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "barbecue": {
+    "seat_offsets": [[-2.8,3.8],[2.8,3.8],[-5.6,6.6],[0,7.8],[2.8,10.4],[-2.8,10.4]],
+    "arrival_timeout": 120,
+    "job_timeout": 180,
+    "host_radius": 12,
+    "decision_timeout": 300
+  }
+}

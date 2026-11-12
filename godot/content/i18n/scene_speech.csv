@@ -1,0 +1,649 @@
+keys,zh,en
+content.speech.scene.idle.gentle.0,你站得好安静，我陪你。,You've gone quiet. I can stay with you.
+content.speech.scene.idle.gentle.1,这会儿不用赶路，慢一点也好。,Nothing is chasing us. No hurry from me.
+content.speech.scene.idle.gentle.2,脚边的影子也停了，留一点时间看吧。,Even your shadow has stopped. We can give it a moment.
+content.speech.scene.idle.gentle.3,陪你发会儿呆，不说话也可以。,A little daydreaming company. We need not fill the silence.
+content.speech.scene.idle.lively.0,你站得好安静！哎，你看你看。,"You've gone quiet! Oh, look, look!"
+content.speech.scene.idle.lively.1,这会儿不用赶路，嘿嘿，我注意到了！,"Nothing is chasing us — yep, I spotted it!"
+content.speech.scene.idle.lively.2,脚边的影子也停了！这个我要多看两眼。,"Even your shadow has stopped! Hang on, I want another look."
+content.speech.scene.idle.lively.3,陪你发会儿呆，你也看到了吧？,"A little daydreaming company! You caught that too, right?"
+content.speech.scene.idle.lively.4,你站得好安静，我可没走神哦！,You've gone quiet! Who says I was daydreaming?
+content.speech.scene.idle.lively.5,这会儿不用赶路！好啦，我不嚷那么大声。,"Nothing is chasing us! Okay, okay, indoor voice."
+content.speech.scene.idle.laborious.0,你站得好安静，脚下留点神。,You've gone quiet. Mind where you put your feet.
+content.speech.scene.idle.laborious.1,这会儿不用赶路，别急，稳当点。,Nothing is chasing us. Steady; no need to rush it.
+content.speech.scene.idle.laborious.2,脚边的影子也停了，手边的事慢慢理。,Even your shadow has stopped. We can sort things one at a time.
+content.speech.scene.idle.laborious.3,陪你发会儿呆，我看着呢。,"A little daydreaming company. Yes, I am keeping an eye on it."
+content.speech.scene.idle.quiet.0,你站得好安静。,You've gone quiet.
+content.speech.scene.idle.quiet.1,这会儿不用赶路。嗯。,Nothing is chasing us. Mm.
+content.speech.scene.idle.quiet.2,脚边的影子也停了。看见了。,Even your shadow has stopped. Saw it.
+content.speech.scene.idle.quiet.3,陪你发会儿呆。不赖。,A little daydreaming company. Could be worse.
+content.speech.scene.loops.gentle.0,你又绕回来了，我陪你。,Back around again. I can stay with you.
+content.speech.scene.loops.gentle.1,这条路认得你的脚步了，慢一点也好。,This path knows your footsteps. No hurry from me.
+content.speech.scene.loops.gentle.2,左边右边又走一遍，留一点时间看吧。,"Left, right, and back again. We can give it a moment."
+content.speech.scene.loops.gentle.3,你来回跑得真认真，不说话也可以。,That is a very determined lap. We need not fill the silence.
+content.speech.scene.loops.lively.0,你又绕回来了！哎，你看你看。,"Back around again! Oh, look, look!"
+content.speech.scene.loops.lively.1,这条路认得你的脚步了，嘿嘿，我注意到了！,"This path knows your footsteps — yep, I spotted it!"
+content.speech.scene.loops.lively.2,左边右边又走一遍！这个我要多看两眼。,"Left, right, and back again! Hang on, I want another look."
+content.speech.scene.loops.lively.3,你来回跑得真认真，你也看到了吧？,"That is a very determined lap! You caught that too, right?"
+content.speech.scene.loops.lively.4,你又绕回来了，我可没走神哦！,Back around again! Who says I was daydreaming?
+content.speech.scene.loops.lively.5,这条路认得你的脚步了！好啦，我不嚷那么大声。,"This path knows your footsteps! Okay, okay, indoor voice."
+content.speech.scene.loops.laborious.0,你又绕回来了，脚下留点神。,Back around again. Mind where you put your feet.
+content.speech.scene.loops.laborious.1,这条路认得你的脚步了，别急，稳当点。,This path knows your footsteps. Steady; no need to rush it.
+content.speech.scene.loops.laborious.2,左边右边又走一遍，手边的事慢慢理。,"Left, right, and back again. We can sort things one at a time."
+content.speech.scene.loops.laborious.3,你来回跑得真认真，我看着呢。,"That is a very determined lap. Yes, I am keeping an eye on it."
+content.speech.scene.loops.quiet.0,你又绕回来了。,Back around again.
+content.speech.scene.loops.quiet.1,这条路认得你的脚步了。嗯。,This path knows your footsteps. Mm.
+content.speech.scene.loops.quiet.2,左边右边又走一遍。看见了。,"Left, right, and back again. Saw it."
+content.speech.scene.loops.quiet.3,你来回跑得真认真。不赖。,That is a very determined lap. Could be worse.
+content.speech.scene.water.gentle.0,水就停在脚边，我陪你。,Water right by our feet. I can stay with you.
+content.speech.scene.water.gentle.1,浪花快碰到鞋尖了，慢一点也好。,Foam almost touching your shoes. No hurry from me.
+content.speech.scene.water.gentle.2,岸边比路上凉，留一点时间看吧。,Cooler here by the bank. We can give it a moment.
+content.speech.scene.water.gentle.3,水面一直在动，不说话也可以。,The surface never quite settles. We need not fill the silence.
+content.speech.scene.water.lively.0,水就停在脚边！哎，你看你看。,"Water right by our feet! Oh, look, look!"
+content.speech.scene.water.lively.1,浪花快碰到鞋尖了，嘿嘿，我注意到了！,"Foam almost touching your shoes — yep, I spotted it!"
+content.speech.scene.water.lively.2,岸边比路上凉！这个我要多看两眼。,"Cooler here by the bank! Hang on, I want another look."
+content.speech.scene.water.lively.3,水面一直在动，你也看到了吧？,"The surface never quite settles! You caught that too, right?"
+content.speech.scene.water.lively.4,水就停在脚边，我可没走神哦！,Water right by our feet! Who says I was daydreaming?
+content.speech.scene.water.lively.5,浪花快碰到鞋尖了！好啦，我不嚷那么大声。,"Foam almost touching your shoes! Okay, okay, indoor voice."
+content.speech.scene.water.laborious.0,水就停在脚边，脚下留点神。,Water right by our feet. Mind where you put your feet.
+content.speech.scene.water.laborious.1,浪花快碰到鞋尖了，别急，稳当点。,Foam almost touching your shoes. Steady; no need to rush it.
+content.speech.scene.water.laborious.2,岸边比路上凉，手边的事慢慢理。,Cooler here by the bank. We can sort things one at a time.
+content.speech.scene.water.laborious.3,水面一直在动，我看着呢。,"The surface never quite settles. Yes, I am keeping an eye on it."
+content.speech.scene.water.quiet.0,水就停在脚边。,Water right by our feet.
+content.speech.scene.water.quiet.1,浪花快碰到鞋尖了。嗯。,Foam almost touching your shoes. Mm.
+content.speech.scene.water.quiet.2,岸边比路上凉。看见了。,Cooler here by the bank. Saw it.
+content.speech.scene.water.quiet.3,水面一直在动。不赖。,The surface never quite settles. Could be worse.
+content.speech.scene.sprint.gentle.0,你突然跑快了，我陪你。,"Oh, you've picked up speed. I can stay with you."
+content.speech.scene.sprint.gentle.1,刚才还是慢慢走呢，慢一点也好。,We were strolling a moment ago. No hurry from me.
+content.speech.scene.sprint.gentle.2,脚步一下轻快起来，留一点时间看吧。,Those footsteps suddenly got lively. We can give it a moment.
+content.speech.scene.sprint.gentle.3,你这一跑带起了风，不说话也可以。,You've made your own little breeze. We need not fill the silence.
+content.speech.scene.sprint.lively.0,你突然跑快了！哎，你看你看。,"Oh, you've picked up speed! Oh, look, look!"
+content.speech.scene.sprint.lively.1,刚才还是慢慢走呢，嘿嘿，我注意到了！,"We were strolling a moment ago — yep, I spotted it!"
+content.speech.scene.sprint.lively.2,脚步一下轻快起来！这个我要多看两眼。,"Those footsteps suddenly got lively! Hang on, I want another look."
+content.speech.scene.sprint.lively.3,你这一跑带起了风，你也看到了吧？,"You've made your own little breeze! You caught that too, right?"
+content.speech.scene.sprint.lively.4,你突然跑快了，我可没走神哦！,"Oh, you've picked up speed! Who says I was daydreaming?"
+content.speech.scene.sprint.lively.5,刚才还是慢慢走呢！好啦，我不嚷那么大声。,"We were strolling a moment ago! Okay, okay, indoor voice."
+content.speech.scene.sprint.laborious.0,你突然跑快了，脚下留点神。,"Oh, you've picked up speed. Mind where you put your feet."
+content.speech.scene.sprint.laborious.1,刚才还是慢慢走呢，别急，稳当点。,We were strolling a moment ago. Steady; no need to rush it.
+content.speech.scene.sprint.laborious.2,脚步一下轻快起来，手边的事慢慢理。,Those footsteps suddenly got lively. We can sort things one at a time.
+content.speech.scene.sprint.laborious.3,你这一跑带起了风，我看着呢。,"You've made your own little breeze. Yes, I am keeping an eye on it."
+content.speech.scene.sprint.quiet.0,你突然跑快了。,"Oh, you've picked up speed."
+content.speech.scene.sprint.quiet.1,刚才还是慢慢走呢。嗯。,We were strolling a moment ago. Mm.
+content.speech.scene.sprint.quiet.2,脚步一下轻快起来。看见了。,Those footsteps suddenly got lively. Saw it.
+content.speech.scene.sprint.quiet.3,你这一跑带起了风。不赖。,You've made your own little breeze. Could be worse.
+content.speech.scene.no_work.gentle.0,今天没给我派活呢，我陪你。,No errands from you today. I can stay with you.
+content.speech.scene.no_work.gentle.1,今天这一段全归自己，慢一点也好。,A whole day of my own. No hurry from me.
+content.speech.scene.no_work.gentle.2,没接活的一天也过去了，留一点时间看吧。,An unassigned day still counts. We can give it a moment.
+content.speech.scene.no_work.gentle.3,今天没等来你的差事，不说话也可以。,No little job with my name on it. We need not fill the silence.
+content.speech.scene.no_work.lively.0,今天没给我派活呢！哎，你看你看。,"No errands from you today! Oh, look, look!"
+content.speech.scene.no_work.lively.1,今天这一段全归自己，嘿嘿，我注意到了！,"A whole day of my own — yep, I spotted it!"
+content.speech.scene.no_work.lively.2,没接活的一天也过去了！这个我要多看两眼。,"An unassigned day still counts! Hang on, I want another look."
+content.speech.scene.no_work.lively.3,今天没等来你的差事，你也看到了吧？,"No little job with my name on it! You caught that too, right?"
+content.speech.scene.no_work.lively.4,今天没给我派活呢，我可没走神哦！,No errands from you today! Who says I was daydreaming?
+content.speech.scene.no_work.lively.5,今天这一段全归自己！好啦，我不嚷那么大声。,"A whole day of my own! Okay, okay, indoor voice."
+content.speech.scene.no_work.laborious.0,今天没给我派活呢，脚下留点神。,No errands from you today. Mind where you put your feet.
+content.speech.scene.no_work.laborious.1,今天这一段全归自己，别急，稳当点。,A whole day of my own. Steady; no need to rush it.
+content.speech.scene.no_work.laborious.2,没接活的一天也过去了，手边的事慢慢理。,An unassigned day still counts. We can sort things one at a time.
+content.speech.scene.no_work.laborious.3,今天没等来你的差事，我看着呢。,"No little job with my name on it. Yes, I am keeping an eye on it."
+content.speech.scene.no_work.quiet.0,没派活。挺好。,No jobs. Fine by me.
+content.speech.scene.no_work.quiet.1,一天没叫我干活。难得。,A day without errands. Rare treat.
+content.speech.scene.no_work.quiet.2,今天没接你的差事。不急。,No errands from you today. No rush.
+content.speech.scene.no_work.quiet.3,闲了一天。没浪费。,A day off. Not wasted.
+content.speech.scene.morning.gentle.0,清晨见到你了，我陪你。,There you are this morning. I can stay with you.
+content.speech.scene.morning.gentle.1,今天第一次看见你，慢一点也好。,My first hello to you today. No hurry from me.
+content.speech.scene.morning.gentle.2,新一天的脚步还很轻，留一点时间看吧。,The day is still on tiptoe. We can give it a moment.
+content.speech.scene.morning.gentle.3,早上的光落到你肩上，不说话也可以。,Morning light on your shoulder. We need not fill the silence.
+content.speech.scene.morning.lively.0,清晨见到你了！哎，你看你看。,"There you are this morning! Oh, look, look!"
+content.speech.scene.morning.lively.1,今天第一次看见你，嘿嘿，我注意到了！,"My first hello to you today — yep, I spotted it!"
+content.speech.scene.morning.lively.2,新一天的脚步还很轻！这个我要多看两眼。,"The day is still on tiptoe! Hang on, I want another look."
+content.speech.scene.morning.lively.3,早上的光落到你肩上，你也看到了吧？,"Morning light on your shoulder! You caught that too, right?"
+content.speech.scene.morning.lively.4,清晨见到你了，我可没走神哦！,There you are this morning! Who says I was daydreaming?
+content.speech.scene.morning.lively.5,今天第一次看见你！好啦，我不嚷那么大声。,"My first hello to you today! Okay, okay, indoor voice."
+content.speech.scene.morning.laborious.0,清晨见到你了，脚下留点神。,There you are this morning. Mind where you put your feet.
+content.speech.scene.morning.laborious.1,今天第一次看见你，别急，稳当点。,My first hello to you today. Steady; no need to rush it.
+content.speech.scene.morning.laborious.2,新一天的脚步还很轻，手边的事慢慢理。,The day is still on tiptoe. We can sort things one at a time.
+content.speech.scene.morning.laborious.3,早上的光落到你肩上，我看着呢。,"Morning light on your shoulder. Yes, I am keeping an eye on it."
+content.speech.scene.morning.quiet.0,清晨见到你了。,There you are this morning.
+content.speech.scene.morning.quiet.1,今天第一次看见你。嗯。,My first hello to you today. Mm.
+content.speech.scene.morning.quiet.2,新一天的脚步还很轻。看见了。,The day is still on tiptoe. Saw it.
+content.speech.scene.morning.quiet.3,早上的光落到你肩上。不赖。,Morning light on your shoulder. Could be worse.
+content.speech.scene.noon.gentle.0,日头升高了，我陪你。,Sun climbing overhead. I can stay with you.
+content.speech.scene.noon.gentle.1,现在的影子短短的，慢一点也好。,Little short shadows now. No hurry from me.
+content.speech.scene.noon.gentle.2,午后的光有点暖，留一点时间看吧。,Some warmth in the afternoon light. We can give it a moment.
+content.speech.scene.noon.gentle.3,一天走到中间了，不说话也可以。,Halfway through the daylight. We need not fill the silence.
+content.speech.scene.noon.lively.0,日头升高了！哎，你看你看。,"Sun climbing overhead! Oh, look, look!"
+content.speech.scene.noon.lively.1,现在的影子短短的，嘿嘿，我注意到了！,"Little short shadows now — yep, I spotted it!"
+content.speech.scene.noon.lively.2,午后的光有点暖！这个我要多看两眼。,"Some warmth in the afternoon light! Hang on, I want another look."
+content.speech.scene.noon.lively.3,一天走到中间了，你也看到了吧？,"Halfway through the daylight! You caught that too, right?"
+content.speech.scene.noon.lively.4,日头升高了，我可没走神哦！,Sun climbing overhead! Who says I was daydreaming?
+content.speech.scene.noon.lively.5,现在的影子短短的！好啦，我不嚷那么大声。,"Little short shadows now! Okay, okay, indoor voice."
+content.speech.scene.noon.laborious.0,日头升高了，脚下留点神。,Sun climbing overhead. Mind where you put your feet.
+content.speech.scene.noon.laborious.1,现在的影子短短的，别急，稳当点。,Little short shadows now. Steady; no need to rush it.
+content.speech.scene.noon.laborious.2,午后的光有点暖，手边的事慢慢理。,Some warmth in the afternoon light. We can sort things one at a time.
+content.speech.scene.noon.laborious.3,一天走到中间了，我看着呢。,"Halfway through the daylight. Yes, I am keeping an eye on it."
+content.speech.scene.noon.quiet.0,日头升高了。,Sun climbing overhead.
+content.speech.scene.noon.quiet.1,现在的影子短短的。嗯。,Little short shadows now. Mm.
+content.speech.scene.noon.quiet.2,午后的光有点暖。看见了。,Some warmth in the afternoon light. Saw it.
+content.speech.scene.noon.quiet.3,一天走到中间了。不赖。,Halfway through the daylight. Could be worse.
+content.speech.scene.dusk.gentle.0,天边慢慢变暖色了，我陪你。,Warm colour at the horizon. I can stay with you.
+content.speech.scene.dusk.gentle.1,傍晚的影子拉长了，慢一点也好。,Evening stretching our shadows. No hurry from me.
+content.speech.scene.dusk.gentle.2,白天快把路交给夜晚了，留一点时间看吧。,Day is handing the paths to night. We can give it a moment.
+content.speech.scene.dusk.gentle.3,这会儿光线软下来，不说话也可以。,The light has softened. We need not fill the silence.
+content.speech.scene.dusk.lively.0,天边慢慢变暖色了！哎，你看你看。,"Warm colour at the horizon! Oh, look, look!"
+content.speech.scene.dusk.lively.1,傍晚的影子拉长了，嘿嘿，我注意到了！,"Evening stretching our shadows — yep, I spotted it!"
+content.speech.scene.dusk.lively.2,白天快把路交给夜晚了！这个我要多看两眼。,"Day is handing the paths to night! Hang on, I want another look."
+content.speech.scene.dusk.lively.3,这会儿光线软下来，你也看到了吧？,"The light has softened! You caught that too, right?"
+content.speech.scene.dusk.lively.4,天边慢慢变暖色了，我可没走神哦！,Warm colour at the horizon! Who says I was daydreaming?
+content.speech.scene.dusk.lively.5,傍晚的影子拉长了！好啦，我不嚷那么大声。,"Evening stretching our shadows! Okay, okay, indoor voice."
+content.speech.scene.dusk.laborious.0,天边慢慢变暖色了，脚下留点神。,Warm colour at the horizon. Mind where you put your feet.
+content.speech.scene.dusk.laborious.1,傍晚的影子拉长了，别急，稳当点。,Evening stretching our shadows. Steady; no need to rush it.
+content.speech.scene.dusk.laborious.2,白天快把路交给夜晚了，手边的事慢慢理。,Day is handing the paths to night. We can sort things one at a time.
+content.speech.scene.dusk.laborious.3,这会儿光线软下来，我看着呢。,"The light has softened. Yes, I am keeping an eye on it."
+content.speech.scene.dusk.quiet.0,天边慢慢变暖色了。,Warm colour at the horizon.
+content.speech.scene.dusk.quiet.1,傍晚的影子拉长了。嗯。,Evening stretching our shadows. Mm.
+content.speech.scene.dusk.quiet.2,白天快把路交给夜晚了。看见了。,Day is handing the paths to night. Saw it.
+content.speech.scene.dusk.quiet.3,这会儿光线软下来。不赖。,The light has softened. Could be worse.
+content.speech.scene.night.gentle.0,夜已经深了，我陪你。,Properly late now. I can stay with you.
+content.speech.scene.night.gentle.1,岛上的暗处更多了，慢一点也好。,More dark corners on the island. No hurry from me.
+content.speech.scene.night.gentle.2,现在连脚步都听得清，留一点时间看吧。,You can hear each footstep. We can give it a moment.
+content.speech.scene.night.gentle.3,深夜的海声更近，不说话也可以。,The sea sounds closer at night. We need not fill the silence.
+content.speech.scene.night.lively.0,夜已经深了！哎，你看你看。,"Properly late now! Oh, look, look!"
+content.speech.scene.night.lively.1,岛上的暗处更多了，嘿嘿，我注意到了！,"More dark corners on the island — yep, I spotted it!"
+content.speech.scene.night.lively.2,现在连脚步都听得清！这个我要多看两眼。,"You can hear each footstep! Hang on, I want another look."
+content.speech.scene.night.lively.3,深夜的海声更近，你也看到了吧？,"The sea sounds closer at night! You caught that too, right?"
+content.speech.scene.night.lively.4,夜已经深了，我可没走神哦！,Properly late now! Who says I was daydreaming?
+content.speech.scene.night.lively.5,岛上的暗处更多了！好啦，我不嚷那么大声。,"More dark corners on the island! Okay, okay, indoor voice."
+content.speech.scene.night.laborious.0,这么晚了，眼睛还撑得住吗？,This late? Give those eyes a break.
+content.speech.scene.night.laborious.1,夜路别光顾着跑，看脚下。,Watch your footing on the night path.
+content.speech.scene.night.laborious.2,该歇会儿了，我不是催你干活。,Time for a breather. I'm not assigning you chores.
+content.speech.scene.night.laborious.3,夜里凉，别在水边站太久。,Night air's cool. Don't linger by the water.
+content.speech.scene.night.quiet.0,夜深了。现在才清静。,Late. Finally quiet.
+content.speech.scene.night.quiet.1,不困。你困就先歇着。,Not sleepy. You can rest if you want.
+content.speech.scene.night.quiet.2,夜里的海，比白天好听。,Sea sounds better at night.
+content.speech.scene.night.quiet.3,还醒着。陪你一会儿。,Still awake. I'll stay a bit.
+content.speech.scene.rain.gentle.0,雨落下来了，我陪你。,Rain coming down. I can stay with you.
+content.speech.scene.rain.gentle.1,雨点敲着这条路，慢一点也好。,Drops tapping on the path. No hurry from me.
+content.speech.scene.rain.gentle.2,空气里有雨水味，留一点时间看吧。,That clean wet smell. We can give it a moment.
+content.speech.scene.rain.gentle.3,衣角接到雨点了，不说话也可以。,Rain catching our hems. We need not fill the silence.
+content.speech.scene.rain.lively.0,雨落下来了！哎，你看你看。,"Rain coming down! Oh, look, look!"
+content.speech.scene.rain.lively.1,雨点敲着这条路，嘿嘿，我注意到了！,"Drops tapping on the path — yep, I spotted it!"
+content.speech.scene.rain.lively.2,空气里有雨水味！这个我要多看两眼。,"That clean wet smell! Hang on, I want another look."
+content.speech.scene.rain.lively.3,衣角接到雨点了，你也看到了吧？,"Rain catching our hems! You caught that too, right?"
+content.speech.scene.rain.lively.4,雨落下来了，我可没走神哦！,Rain coming down! Who says I was daydreaming?
+content.speech.scene.rain.lively.5,雨点敲着这条路！好啦，我不嚷那么大声。,"Drops tapping on the path! Okay, okay, indoor voice."
+content.speech.scene.rain.laborious.0,雨落下来了，脚下留点神。,Rain coming down. Mind where you put your feet.
+content.speech.scene.rain.laborious.1,雨点敲着这条路，别急，稳当点。,Drops tapping on the path. Steady; no need to rush it.
+content.speech.scene.rain.laborious.2,空气里有雨水味，手边的事慢慢理。,That clean wet smell. We can sort things one at a time.
+content.speech.scene.rain.laborious.3,衣角接到雨点了，我看着呢。,"Rain catching our hems. Yes, I am keeping an eye on it."
+content.speech.scene.rain.quiet.0,雨落下来了。,Rain coming down.
+content.speech.scene.rain.quiet.1,雨点敲着这条路。嗯。,Drops tapping on the path. Mm.
+content.speech.scene.rain.quiet.2,空气里有雨水味。看见了。,That clean wet smell. Saw it.
+content.speech.scene.rain.quiet.3,衣角接到雨点了。不赖。,Rain catching our hems. Could be worse.
+content.speech.scene.rain_stop.gentle.0,雨停了，我陪你。,Rain's let up. I can stay with you.
+content.speech.scene.rain_stop.gentle.1,雨点的声音退下去了，慢一点也好。,The tapping has faded. No hurry from me.
+content.speech.scene.rain_stop.gentle.2,雨后的路还亮着，留一点时间看吧。,A shine left on the wet path. We can give it a moment.
+content.speech.scene.rain_stop.gentle.3,云下透出一点干净的光，不说话也可以。,A little clear light under the clouds. We need not fill the silence.
+content.speech.scene.rain_stop.lively.0,雨停了！哎，你看你看。,"Rain's let up! Oh, look, look!"
+content.speech.scene.rain_stop.lively.1,雨点的声音退下去了，嘿嘿，我注意到了！,"The tapping has faded — yep, I spotted it!"
+content.speech.scene.rain_stop.lively.2,雨后的路还亮着！这个我要多看两眼。,"A shine left on the wet path! Hang on, I want another look."
+content.speech.scene.rain_stop.lively.3,云下透出一点干净的光，你也看到了吧？,"A little clear light under the clouds! You caught that too, right?"
+content.speech.scene.rain_stop.lively.4,雨停了，我可没走神哦！,Rain's let up! Who says I was daydreaming?
+content.speech.scene.rain_stop.lively.5,雨点的声音退下去了！好啦，我不嚷那么大声。,"The tapping has faded! Okay, okay, indoor voice."
+content.speech.scene.rain_stop.laborious.0,雨停了，脚下留点神。,Rain's let up. Mind where you put your feet.
+content.speech.scene.rain_stop.laborious.1,雨点的声音退下去了，别急，稳当点。,The tapping has faded. Steady; no need to rush it.
+content.speech.scene.rain_stop.laborious.2,雨后的路还亮着，手边的事慢慢理。,A shine left on the wet path. We can sort things one at a time.
+content.speech.scene.rain_stop.laborious.3,云下透出一点干净的光，我看着呢。,"A little clear light under the clouds. Yes, I am keeping an eye on it."
+content.speech.scene.rain_stop.quiet.0,雨停了。,Rain's let up.
+content.speech.scene.rain_stop.quiet.1,雨点的声音退下去了。嗯。,The tapping has faded. Mm.
+content.speech.scene.rain_stop.quiet.2,雨后的路还亮着。看见了。,A shine left on the wet path. Saw it.
+content.speech.scene.rain_stop.quiet.3,云下透出一点干净的光。不赖。,A little clear light under the clouds. Could be worse.
+content.speech.scene.wind_home.gentle.0,主岛这阵风起来了，我陪你。,A gust through home island. I can stay with you.
+content.speech.scene.wind_home.gentle.1,树叶突然响起来，慢一点也好。,Leaves suddenly rattling. No hurry from me.
+content.speech.scene.wind_home.gentle.2,风从屋子之间穿过去，留一点时间看吧。,Wind threading between the houses. We can give it a moment.
+content.speech.scene.wind_home.gentle.3,衣角被风掀了一下，不说话也可以。,A tug at the hem. We need not fill the silence.
+content.speech.scene.wind_home.lively.0,主岛这阵风起来了！哎，你看你看。,"A gust through home island! Oh, look, look!"
+content.speech.scene.wind_home.lively.1,树叶突然响起来，嘿嘿，我注意到了！,"Leaves suddenly rattling — yep, I spotted it!"
+content.speech.scene.wind_home.lively.2,风从屋子之间穿过去！这个我要多看两眼。,"Wind threading between the houses! Hang on, I want another look."
+content.speech.scene.wind_home.lively.3,衣角被风掀了一下，你也看到了吧？,"A tug at the hem! You caught that too, right?"
+content.speech.scene.wind_home.lively.4,主岛这阵风起来了，我可没走神哦！,A gust through home island! Who says I was daydreaming?
+content.speech.scene.wind_home.lively.5,树叶突然响起来！好啦，我不嚷那么大声。,"Leaves suddenly rattling! Okay, okay, indoor voice."
+content.speech.scene.wind_home.laborious.0,主岛这阵风起来了，脚下留点神。,A gust through home island. Mind where you put your feet.
+content.speech.scene.wind_home.laborious.1,树叶突然响起来，别急，稳当点。,Leaves suddenly rattling. Steady; no need to rush it.
+content.speech.scene.wind_home.laborious.2,风从屋子之间穿过去，手边的事慢慢理。,Wind threading between the houses. We can sort things one at a time.
+content.speech.scene.wind_home.laborious.3,衣角被风掀了一下，我看着呢。,"A tug at the hem. Yes, I am keeping an eye on it."
+content.speech.scene.wind_home.quiet.0,主岛这阵风起来了。,A gust through home island.
+content.speech.scene.wind_home.quiet.1,树叶突然响起来。嗯。,Leaves suddenly rattling. Mm.
+content.speech.scene.wind_home.quiet.2,风从屋子之间穿过去。看见了。,Wind threading between the houses. Saw it.
+content.speech.scene.wind_home.quiet.3,衣角被风掀了一下。不赖。,A tug at the hem. Could be worse.
+content.speech.scene.wind_dark.gentle.0,黑暗岛的风又响了，我陪你。,Wind up on the dark island. I can stay with you.
+content.speech.scene.wind_dark.gentle.1,风声从暗处绕过来，慢一点也好。,A gust coming out of the dark. No hurry from me.
+content.speech.scene.wind_dark.gentle.2,这里的风听着更空，留一点时间看吧。,A hollow sound to this wind. We can give it a moment.
+content.speech.scene.wind_dark.gentle.3,暗处这阵风贴着人过，不说话也可以。,That breeze passed very close. We need not fill the silence.
+content.speech.scene.wind_dark.lively.0,黑暗岛的风又响了！哎，你看你看。,"Wind up on the dark island! Oh, look, look!"
+content.speech.scene.wind_dark.lively.1,风声从暗处绕过来，嘿嘿，我注意到了！,"A gust coming out of the dark — yep, I spotted it!"
+content.speech.scene.wind_dark.lively.2,这里的风听着更空！这个我要多看两眼。,"A hollow sound to this wind! Hang on, I want another look."
+content.speech.scene.wind_dark.lively.3,暗处这阵风贴着人过，你也看到了吧？,"That breeze passed very close! You caught that too, right?"
+content.speech.scene.wind_dark.lively.4,黑暗岛的风又响了，我可没走神哦！,Wind up on the dark island! Who says I was daydreaming?
+content.speech.scene.wind_dark.lively.5,风声从暗处绕过来！好啦，我不嚷那么大声。,"A gust coming out of the dark! Okay, okay, indoor voice."
+content.speech.scene.wind_dark.laborious.0,黑暗岛的风又响了，脚下留点神。,Wind up on the dark island. Mind where you put your feet.
+content.speech.scene.wind_dark.laborious.1,风声从暗处绕过来，别急，稳当点。,A gust coming out of the dark. Steady; no need to rush it.
+content.speech.scene.wind_dark.laborious.2,这里的风听着更空，手边的事慢慢理。,A hollow sound to this wind. We can sort things one at a time.
+content.speech.scene.wind_dark.laborious.3,暗处这阵风贴着人过，我看着呢。,"That breeze passed very close. Yes, I am keeping an eye on it."
+content.speech.scene.wind_dark.quiet.0,黑暗岛的风又响了。,Wind up on the dark island.
+content.speech.scene.wind_dark.quiet.1,风声从暗处绕过来。嗯。,A gust coming out of the dark. Mm.
+content.speech.scene.wind_dark.quiet.2,这里的风听着更空。看见了。,A hollow sound to this wind. Saw it.
+content.speech.scene.wind_dark.quiet.3,暗处这阵风贴着人过。不赖。,That breeze passed very close. Could be worse.
+content.speech.scene.wind_south.gentle.0,南岛桥边起风了，我陪你。,Wind by the southern bridge. I can stay with you.
+content.speech.scene.wind_south.gentle.1,她们的岛上风吹过来了，慢一点也好。,A gust across Their Island. No hurry from me.
+content.speech.scene.wind_south.gentle.2,这边的风绕着地块走，留一点时间看吧。,Wind moving over these plots. We can give it a moment.
+content.speech.scene.wind_south.gentle.3,南边的草被风压弯了，不说话也可以。,Southern grass bowing to a gust. We need not fill the silence.
+content.speech.scene.wind_south.lively.0,南岛桥边起风了！哎，你看你看。,"Wind by the southern bridge! Oh, look, look!"
+content.speech.scene.wind_south.lively.1,她们的岛上风吹过来了，嘿嘿，我注意到了！,"A gust across Their Island — yep, I spotted it!"
+content.speech.scene.wind_south.lively.2,这边的风绕着地块走！这个我要多看两眼。,"Wind moving over these plots! Hang on, I want another look."
+content.speech.scene.wind_south.lively.3,南边的草被风压弯了，你也看到了吧？,"Southern grass bowing to a gust! You caught that too, right?"
+content.speech.scene.wind_south.lively.4,南岛桥边起风了，我可没走神哦！,Wind by the southern bridge! Who says I was daydreaming?
+content.speech.scene.wind_south.lively.5,她们的岛上风吹过来了！好啦，我不嚷那么大声。,"A gust across Their Island! Okay, okay, indoor voice."
+content.speech.scene.wind_south.laborious.0,南岛桥边起风了，脚下留点神。,Wind by the southern bridge. Mind where you put your feet.
+content.speech.scene.wind_south.laborious.1,她们的岛上风吹过来了，别急，稳当点。,A gust across Their Island. Steady; no need to rush it.
+content.speech.scene.wind_south.laborious.2,这边的风绕着地块走，手边的事慢慢理。,Wind moving over these plots. We can sort things one at a time.
+content.speech.scene.wind_south.laborious.3,南边的草被风压弯了，我看着呢。,"Southern grass bowing to a gust. Yes, I am keeping an eye on it."
+content.speech.scene.wind_south.quiet.0,南岛桥边起风了。,Wind by the southern bridge.
+content.speech.scene.wind_south.quiet.1,她们的岛上风吹过来了。嗯。,A gust across Their Island. Mm.
+content.speech.scene.wind_south.quiet.2,这边的风绕着地块走。看见了。,Wind moving over these plots. Saw it.
+content.speech.scene.wind_south.quiet.3,南边的草被风压弯了。不赖。,Southern grass bowing to a gust. Could be worse.
+content.speech.scene.sea.gentle.0,面前就是海，我陪你。,Sea ahead of us. I can stay with you.
+content.speech.scene.sea.gentle.1,海面有一层碎光，慢一点也好。,Small pieces of light on the water. No hurry from me.
+content.speech.scene.sea.gentle.2,远处的水连在一起，留一点时间看吧。,Water meeting water out there. We can give it a moment.
+content.speech.scene.sea.gentle.3,浪一层层往这边来，不说话也可以。,Waves arriving in layers. We need not fill the silence.
+content.speech.scene.sea.lively.0,面前就是海！哎，你看你看。,"Sea ahead of us! Oh, look, look!"
+content.speech.scene.sea.lively.1,海面有一层碎光，嘿嘿，我注意到了！,"Small pieces of light on the water — yep, I spotted it!"
+content.speech.scene.sea.lively.2,远处的水连在一起！这个我要多看两眼。,"Water meeting water out there! Hang on, I want another look."
+content.speech.scene.sea.lively.3,浪一层层往这边来，你也看到了吧？,"Waves arriving in layers! You caught that too, right?"
+content.speech.scene.sea.lively.4,面前就是海，我可没走神哦！,Sea ahead of us! Who says I was daydreaming?
+content.speech.scene.sea.lively.5,海面有一层碎光！好啦，我不嚷那么大声。,"Small pieces of light on the water! Okay, okay, indoor voice."
+content.speech.scene.sea.laborious.0,面前就是海，脚下留点神。,Sea ahead of us. Mind where you put your feet.
+content.speech.scene.sea.laborious.1,海面有一层碎光，别急，稳当点。,Small pieces of light on the water. Steady; no need to rush it.
+content.speech.scene.sea.laborious.2,远处的水连在一起，手边的事慢慢理。,Water meeting water out there. We can sort things one at a time.
+content.speech.scene.sea.laborious.3,浪一层层往这边来，我看着呢。,"Waves arriving in layers. Yes, I am keeping an eye on it."
+content.speech.scene.sea.quiet.0,面前就是海。,Sea ahead of us.
+content.speech.scene.sea.quiet.1,海面有一层碎光。嗯。,Small pieces of light on the water. Mm.
+content.speech.scene.sea.quiet.2,远处的水连在一起。看见了。,Water meeting water out there. Saw it.
+content.speech.scene.sea.quiet.3,浪一层层往这边来。不赖。,Waves arriving in layers. Could be worse.
+content.speech.scene.mountain.gentle.0,远处的山在那儿，我陪你。,Mountains out there. I can stay with you.
+content.speech.scene.mountain.gentle.1,山的轮廓很安静，慢一点也好。,Such a still outline. No hurry from me.
+content.speech.scene.mountain.gentle.2,山影压在天边，留一点时间看吧。,A ridge against the sky. We can give it a moment.
+content.speech.scene.mountain.gentle.3,朝山那边看了一会儿，不说话也可以。,A moment looking toward the hills. We need not fill the silence.
+content.speech.scene.mountain.lively.0,远处的山在那儿！哎，你看你看。,"Mountains out there! Oh, look, look!"
+content.speech.scene.mountain.lively.1,山的轮廓很安静，嘿嘿，我注意到了！,"Such a still outline — yep, I spotted it!"
+content.speech.scene.mountain.lively.2,山影压在天边！这个我要多看两眼。,"A ridge against the sky! Hang on, I want another look."
+content.speech.scene.mountain.lively.3,朝山那边看了一会儿，你也看到了吧？,"A moment looking toward the hills! You caught that too, right?"
+content.speech.scene.mountain.lively.4,远处的山在那儿，我可没走神哦！,Mountains out there! Who says I was daydreaming?
+content.speech.scene.mountain.lively.5,山的轮廓很安静！好啦，我不嚷那么大声。,"Such a still outline! Okay, okay, indoor voice."
+content.speech.scene.mountain.laborious.0,远处的山在那儿，脚下留点神。,Mountains out there. Mind where you put your feet.
+content.speech.scene.mountain.laborious.1,山的轮廓很安静，别急，稳当点。,Such a still outline. Steady; no need to rush it.
+content.speech.scene.mountain.laborious.2,山影压在天边，手边的事慢慢理。,A ridge against the sky. We can sort things one at a time.
+content.speech.scene.mountain.laborious.3,朝山那边看了一会儿，我看着呢。,"A moment looking toward the hills. Yes, I am keeping an eye on it."
+content.speech.scene.mountain.quiet.0,远处的山在那儿。,Mountains out there.
+content.speech.scene.mountain.quiet.1,山的轮廓很安静。嗯。,Such a still outline. Mm.
+content.speech.scene.mountain.quiet.2,山影压在天边。看见了。,A ridge against the sky. Saw it.
+content.speech.scene.mountain.quiet.3,朝山那边看了一会儿。不赖。,A moment looking toward the hills. Could be worse.
+content.speech.scene.moon.gentle.0,月牙岛的夜空就在头顶，我陪你。,Crescent Island's night above us. I can stay with you.
+content.speech.scene.moon.gentle.1,朝月亮这边望一会儿，慢一点也好。,A moment facing the moon. No hurry from me.
+content.speech.scene.moon.gentle.2,月色落在这边的水上，留一点时间看吧。,Moonlight across this water. We can give it a moment.
+content.speech.scene.moon.gentle.3,这里看夜空很开阔，不说话也可以。,A wide piece of night sky here. We need not fill the silence.
+content.speech.scene.moon.lively.0,月牙岛的夜空就在头顶！哎，你看你看。,"Crescent Island's night above us! Oh, look, look!"
+content.speech.scene.moon.lively.1,朝月亮这边望一会儿，嘿嘿，我注意到了！,"A moment facing the moon — yep, I spotted it!"
+content.speech.scene.moon.lively.2,月色落在这边的水上！这个我要多看两眼。,"Moonlight across this water! Hang on, I want another look."
+content.speech.scene.moon.lively.3,这里看夜空很开阔，你也看到了吧？,"A wide piece of night sky here! You caught that too, right?"
+content.speech.scene.moon.lively.4,月牙岛的夜空就在头顶，我可没走神哦！,Crescent Island's night above us! Who says I was daydreaming?
+content.speech.scene.moon.lively.5,朝月亮这边望一会儿！好啦，我不嚷那么大声。,"A moment facing the moon! Okay, okay, indoor voice."
+content.speech.scene.moon.laborious.0,月牙岛的夜空就在头顶，脚下留点神。,Crescent Island's night above us. Mind where you put your feet.
+content.speech.scene.moon.laborious.1,朝月亮这边望一会儿，别急，稳当点。,A moment facing the moon. Steady; no need to rush it.
+content.speech.scene.moon.laborious.2,月色落在这边的水上，手边的事慢慢理。,Moonlight across this water. We can sort things one at a time.
+content.speech.scene.moon.laborious.3,这里看夜空很开阔，我看着呢。,"A wide piece of night sky here. Yes, I am keeping an eye on it."
+content.speech.scene.moon.quiet.0,月牙岛的夜空就在头顶。,Crescent Island's night above us.
+content.speech.scene.moon.quiet.1,朝月亮这边望一会儿。嗯。,A moment facing the moon. Mm.
+content.speech.scene.moon.quiet.2,月色落在这边的水上。看见了。,Moonlight across this water. Saw it.
+content.speech.scene.moon.quiet.3,这里看夜空很开阔。不赖。,A wide piece of night sky here. Could be worse.
+content.speech.scene.bridge.gentle.0,南边的桥就在这儿，我陪你。,Here is the southern bridge. I can stay with you.
+content.speech.scene.bridge.gentle.1,桥把两边的路接起来了，慢一点也好。,A path joining two shores. No hurry from me.
+content.speech.scene.bridge.gentle.2,桥下还是流动的水，留一点时间看吧。,Water moving under the bridge. We can give it a moment.
+content.speech.scene.bridge.gentle.3,沿着桥能看见另一边，不说话也可以。,The far side in view along the boards. We need not fill the silence.
+content.speech.scene.bridge.lively.0,南边的桥就在这儿！哎，你看你看。,"Here is the southern bridge! Oh, look, look!"
+content.speech.scene.bridge.lively.1,桥把两边的路接起来了，嘿嘿，我注意到了！,"A path joining two shores — yep, I spotted it!"
+content.speech.scene.bridge.lively.2,桥下还是流动的水！这个我要多看两眼。,"Water moving under the bridge! Hang on, I want another look."
+content.speech.scene.bridge.lively.3,沿着桥能看见另一边，你也看到了吧？,"The far side in view along the boards! You caught that too, right?"
+content.speech.scene.bridge.lively.4,南边的桥就在这儿，我可没走神哦！,Here is the southern bridge! Who says I was daydreaming?
+content.speech.scene.bridge.lively.5,桥把两边的路接起来了！好啦，我不嚷那么大声。,"A path joining two shores! Okay, okay, indoor voice."
+content.speech.scene.bridge.laborious.0,南边的桥就在这儿，脚下留点神。,Here is the southern bridge. Mind where you put your feet.
+content.speech.scene.bridge.laborious.1,桥把两边的路接起来了，别急，稳当点。,A path joining two shores. Steady; no need to rush it.
+content.speech.scene.bridge.laborious.2,桥下还是流动的水，手边的事慢慢理。,Water moving under the bridge. We can sort things one at a time.
+content.speech.scene.bridge.laborious.3,沿着桥能看见另一边，我看着呢。,"The far side in view along the boards. Yes, I am keeping an eye on it."
+content.speech.scene.bridge.quiet.0,南边的桥就在这儿。,Here is the southern bridge.
+content.speech.scene.bridge.quiet.1,桥把两边的路接起来了。嗯。,A path joining two shores. Mm.
+content.speech.scene.bridge.quiet.2,桥下还是流动的水。看见了。,Water moving under the bridge. Saw it.
+content.speech.scene.bridge.quiet.3,沿着桥能看见另一边。不赖。,The far side in view along the boards. Could be worse.
+content.speech.scene.quiet_company.gentle.0,你不说话，我也知道你在呢。,You don't have to speak for me to notice you're here.
+content.speech.scene.quiet_company.gentle.1,就这样站一会儿吧。,We can simply stand here a while.
+content.speech.scene.quiet_company.gentle.2,旁边有你，安静也暖一点。,The silence feels warmer with you beside me.
+content.speech.scene.quiet_company.gentle.3,想说话的时候，我在听。,"Whenever you feel like talking, I'm listening."
+content.speech.scene.quiet_company.lively.0,你在我旁边站了好一会儿！哎，你看你看。,"You've stayed beside me a while! Oh, look, look!"
+content.speech.scene.quiet_company.lively.1,你没说话也没走开，嘿嘿，我注意到了！,"No words, and you haven't left — yep, I spotted it!"
+content.speech.scene.quiet_company.lively.2,我们并排停在这里！这个我要多看两眼。,"Both of us paused right here! Hang on, I want another look."
+content.speech.scene.quiet_company.lively.3,这段安静有人陪着，你也看到了吧？,"Quiet, with company in it! You caught that too, right?"
+content.speech.scene.quiet_company.lively.4,你在我旁边站了好一会儿，我可没走神哦！,You've stayed beside me a while! Who says I was daydreaming?
+content.speech.scene.quiet_company.lively.5,你没说话也没走开！好啦，我不嚷那么大声。,"No words, and you haven't left! Okay, okay, indoor voice."
+content.speech.scene.quiet_company.laborious.0,你在我旁边站了好一会儿，脚下留点神。,You've stayed beside me a while. Mind where you put your feet.
+content.speech.scene.quiet_company.laborious.1,你没说话也没走开，别急，稳当点。,"No words, and you haven't left. Steady; no need to rush it."
+content.speech.scene.quiet_company.laborious.2,我们并排停在这里，手边的事慢慢理。,Both of us paused right here. We can sort things one at a time.
+content.speech.scene.quiet_company.laborious.3,这段安静有人陪着，我看着呢。,"Quiet, with company in it. Yes, I am keeping an eye on it."
+content.speech.scene.quiet_company.quiet.0,你在我旁边站了好一会儿。,You've stayed beside me a while.
+content.speech.scene.quiet_company.quiet.1,你没说话也没走开。嗯。,"No words, and you haven't left. Mm."
+content.speech.scene.quiet_company.quiet.2,我们并排停在这里。看见了。,Both of us paused right here. Saw it.
+content.speech.scene.quiet_company.quiet.3,这段安静有人陪着。不赖。,"Quiet, with company in it. Could be worse."
+content.speech.scene.reunion.gentle.0,你从远处回来了，我陪你。,Back from over there. I can stay with you.
+content.speech.scene.reunion.gentle.1,又看见你走近了，慢一点也好。,Here you come again. No hurry from me.
+content.speech.scene.reunion.gentle.2,你的脚步回到这边了，留一点时间看吧。,Your footsteps back this way. We can give it a moment.
+content.speech.scene.reunion.gentle.3,刚才离得远，现在近了，不说话也可以。,"Far a moment ago, close now. We need not fill the silence."
+content.speech.scene.reunion.lively.0,你从远处回来了！哎，你看你看。,"Back from over there! Oh, look, look!"
+content.speech.scene.reunion.lively.1,又看见你走近了，嘿嘿，我注意到了！,"Here you come again — yep, I spotted it!"
+content.speech.scene.reunion.lively.2,你的脚步回到这边了！这个我要多看两眼。,"Your footsteps back this way! Hang on, I want another look."
+content.speech.scene.reunion.lively.3,刚才离得远，现在近了，你也看到了吧？,"Far a moment ago, close now! You caught that too, right?"
+content.speech.scene.reunion.lively.4,你从远处回来了，我可没走神哦！,Back from over there! Who says I was daydreaming?
+content.speech.scene.reunion.lively.5,又看见你走近了！好啦，我不嚷那么大声。,"Here you come again! Okay, okay, indoor voice."
+content.speech.scene.reunion.laborious.0,你从远处回来了，脚下留点神。,Back from over there. Mind where you put your feet.
+content.speech.scene.reunion.laborious.1,又看见你走近了，别急，稳当点。,Here you come again. Steady; no need to rush it.
+content.speech.scene.reunion.laborious.2,你的脚步回到这边了，手边的事慢慢理。,Your footsteps back this way. We can sort things one at a time.
+content.speech.scene.reunion.laborious.3,刚才离得远，现在近了，我看着呢。,"Far a moment ago, close now. Yes, I am keeping an eye on it."
+content.speech.scene.reunion.quiet.0,你从远处回来了。,Back from over there.
+content.speech.scene.reunion.quiet.1,又看见你走近了。嗯。,Here you come again. Mm.
+content.speech.scene.reunion.quiet.2,你的脚步回到这边了。看见了。,Your footsteps back this way. Saw it.
+content.speech.scene.reunion.quiet.3,刚才离得远，现在近了。不赖。,"Far a moment ago, close now. Could be worse."
+content.speech.scene.exit_house.gentle.0,你从屋里出来了，我陪你。,Out of the house again. I can stay with you.
+content.speech.scene.exit_house.gentle.1,门外又见到你了，慢一点也好。,There you are at the door. No hurry from me.
+content.speech.scene.exit_house.gentle.2,你把屋里的安静带出来了，留一点时间看吧。,Bringing a little indoor quiet out. We can give it a moment.
+content.speech.scene.exit_house.gentle.3,门口多了你的脚步，不说话也可以。,Your steps on the doorstep. We need not fill the silence.
+content.speech.scene.exit_house.lively.0,你从屋里出来了！哎，你看你看。,"Out of the house again! Oh, look, look!"
+content.speech.scene.exit_house.lively.1,门外又见到你了，嘿嘿，我注意到了！,"There you are at the door — yep, I spotted it!"
+content.speech.scene.exit_house.lively.2,你把屋里的安静带出来了！这个我要多看两眼。,"Bringing a little indoor quiet out! Hang on, I want another look."
+content.speech.scene.exit_house.lively.3,门口多了你的脚步，你也看到了吧？,"Your steps on the doorstep! You caught that too, right?"
+content.speech.scene.exit_house.lively.4,你从屋里出来了，我可没走神哦！,Out of the house again! Who says I was daydreaming?
+content.speech.scene.exit_house.lively.5,门外又见到你了！好啦，我不嚷那么大声。,"There you are at the door! Okay, okay, indoor voice."
+content.speech.scene.exit_house.laborious.0,你从屋里出来了，脚下留点神。,Out of the house again. Mind where you put your feet.
+content.speech.scene.exit_house.laborious.1,门外又见到你了，别急，稳当点。,There you are at the door. Steady; no need to rush it.
+content.speech.scene.exit_house.laborious.2,你把屋里的安静带出来了，手边的事慢慢理。,Bringing a little indoor quiet out. We can sort things one at a time.
+content.speech.scene.exit_house.laborious.3,门口多了你的脚步，我看着呢。,"Your steps on the doorstep. Yes, I am keeping an eye on it."
+content.speech.scene.exit_house.quiet.0,你从屋里出来了。,Out of the house again.
+content.speech.scene.exit_house.quiet.1,门外又见到你了。嗯。,There you are at the door. Mm.
+content.speech.scene.exit_house.quiet.2,你把屋里的安静带出来了。看见了。,Bringing a little indoor quiet out. Saw it.
+content.speech.scene.exit_house.quiet.3,门口多了你的脚步。不赖。,Your steps on the doorstep. Could be worse.
+content.speech.scene.her_door.gentle.0,你停在我家门口了，我陪你。,"At my door, are you. I can stay with you."
+content.speech.scene.her_door.gentle.1,我家门前有人等着呢，慢一点也好。,Someone waiting by my doorstep. No hurry from me.
+content.speech.scene.her_door.gentle.2,在我门边歇会儿吧，留一点时间看吧。,A pause beside my door. We can give it a moment.
+content.speech.scene.her_door.gentle.3,你在看我家的门呀，不说话也可以。,Having a look at my doorway. We need not fill the silence.
+content.speech.scene.her_door.lively.0,你停在我家门口了！哎，你看你看。,"At my door, are you! Oh, look, look!"
+content.speech.scene.her_door.lively.1,我家门前有人等着呢，嘿嘿，我注意到了！,"Someone waiting by my doorstep — yep, I spotted it!"
+content.speech.scene.her_door.lively.2,在我门边歇会儿吧！这个我要多看两眼。,"A pause beside my door! Hang on, I want another look."
+content.speech.scene.her_door.lively.3,你在看我家的门呀，你也看到了吧？,"Having a look at my doorway! You caught that too, right?"
+content.speech.scene.her_door.lively.4,你停在我家门口了，我可没走神哦！,"At my door, are you! Who says I was daydreaming?"
+content.speech.scene.her_door.lively.5,我家门前有人等着呢！好啦，我不嚷那么大声。,"Someone waiting by my doorstep! Okay, okay, indoor voice."
+content.speech.scene.her_door.laborious.0,你停在我家门口了，脚下留点神。,"At my door, are you. Mind where you put your feet."
+content.speech.scene.her_door.laborious.1,我家门前有人等着呢，别急，稳当点。,Someone waiting by my doorstep. Steady; no need to rush it.
+content.speech.scene.her_door.laborious.2,在我门边歇会儿吧，手边的事慢慢理。,A pause beside my door. We can sort things one at a time.
+content.speech.scene.her_door.laborious.3,你在看我家的门呀，我看着呢。,"Having a look at my doorway. Yes, I am keeping an eye on it."
+content.speech.scene.her_door.quiet.0,你停在我家门口了。,"At my door, are you."
+content.speech.scene.her_door.quiet.1,我家门前有人等着呢。嗯。,Someone waiting by my doorstep. Mm.
+content.speech.scene.her_door.quiet.2,在我门边歇会儿吧。看见了。,A pause beside my door. Saw it.
+content.speech.scene.her_door.quiet.3,你在看我家的门呀。不赖。,Having a look at my doorway. Could be worse.
+content.speech.scene.peer_chop.gentle.0,刚才那棵树真的砍倒了，我陪你。,That tree really came down. I can stay with you.
+content.speech.scene.peer_chop.gentle.1,那边的砍树声停了，慢一点也好。,The chopping over there has stopped. No hurry from me.
+content.speech.scene.peer_chop.gentle.2,有人刚忙完砍树，留一点时间看吧。,Someone's finished that tree. We can give it a moment.
+content.speech.scene.peer_chop.gentle.3,最后一下我看见了，不说话也可以。,I saw the final cut. We need not fill the silence.
+content.speech.scene.peer_chop.lively.0,刚才那棵树真的砍倒了！哎，你看你看。,"That tree really came down! Oh, look, look!"
+content.speech.scene.peer_chop.lively.1,那边的砍树声停了，嘿嘿，我注意到了！,"The chopping over there has stopped — yep, I spotted it!"
+content.speech.scene.peer_chop.lively.2,有人刚忙完砍树！这个我要多看两眼。,"Someone's finished that tree! Hang on, I want another look."
+content.speech.scene.peer_chop.lively.3,最后一下我看见了，你也看到了吧？,"I saw the final cut! You caught that too, right?"
+content.speech.scene.peer_chop.lively.4,刚才那棵树真的砍倒了，我可没走神哦！,That tree really came down! Who says I was daydreaming?
+content.speech.scene.peer_chop.lively.5,那边的砍树声停了！好啦，我不嚷那么大声。,"The chopping over there has stopped! Okay, okay, indoor voice."
+content.speech.scene.peer_chop.laborious.0,刚才那棵树真的砍倒了，脚下留点神。,That tree really came down. Mind where you put your feet.
+content.speech.scene.peer_chop.laborious.1,那边的砍树声停了，别急，稳当点。,The chopping over there has stopped. Steady; no need to rush it.
+content.speech.scene.peer_chop.laborious.2,有人刚忙完砍树，手边的事慢慢理。,Someone's finished that tree. We can sort things one at a time.
+content.speech.scene.peer_chop.laborious.3,最后一下我看见了，我看着呢。,"I saw the final cut. Yes, I am keeping an eye on it."
+content.speech.scene.peer_chop.quiet.0,刚才那棵树真的砍倒了。,That tree really came down.
+content.speech.scene.peer_chop.quiet.1,那边的砍树声停了。嗯。,The chopping over there has stopped. Mm.
+content.speech.scene.peer_chop.quiet.2,有人刚忙完砍树。看见了。,Someone's finished that tree. Saw it.
+content.speech.scene.peer_chop.quiet.3,最后一下我看见了。不赖。,I saw the final cut. Could be worse.
+content.speech.scene.peer_fish.gentle.0,刚才那条鱼钓上来了，我陪你。,A fish brought up just now. I can stay with you.
+content.speech.scene.peer_fish.gentle.1,那边的鱼线有了结果，慢一点也好。,That line finally had an answer. No hurry from me.
+content.speech.scene.peer_fish.gentle.2,有人刚钓到了鱼，留一点时间看吧。,Someone has a fresh catch. We can give it a moment.
+content.speech.scene.peer_fish.gentle.3,鱼离开水面那下真明显，不说话也可以。,Saw that flash out of the water. We need not fill the silence.
+content.speech.scene.peer_fish.lively.0,刚才那条鱼钓上来了！哎，你看你看。,"A fish brought up just now! Oh, look, look!"
+content.speech.scene.peer_fish.lively.1,那边的鱼线有了结果，嘿嘿，我注意到了！,"That line finally had an answer — yep, I spotted it!"
+content.speech.scene.peer_fish.lively.2,有人刚钓到了鱼！这个我要多看两眼。,"Someone has a fresh catch! Hang on, I want another look."
+content.speech.scene.peer_fish.lively.3,鱼离开水面那下真明显，你也看到了吧？,"Saw that flash out of the water! You caught that too, right?"
+content.speech.scene.peer_fish.lively.4,刚才那条鱼钓上来了，我可没走神哦！,A fish brought up just now! Who says I was daydreaming?
+content.speech.scene.peer_fish.lively.5,那边的鱼线有了结果！好啦，我不嚷那么大声。,"That line finally had an answer! Okay, okay, indoor voice."
+content.speech.scene.peer_fish.laborious.0,刚才那条鱼钓上来了，脚下留点神。,A fish brought up just now. Mind where you put your feet.
+content.speech.scene.peer_fish.laborious.1,那边的鱼线有了结果，别急，稳当点。,That line finally had an answer. Steady; no need to rush it.
+content.speech.scene.peer_fish.laborious.2,有人刚钓到了鱼，手边的事慢慢理。,Someone has a fresh catch. We can sort things one at a time.
+content.speech.scene.peer_fish.laborious.3,鱼离开水面那下真明显，我看着呢。,"Saw that flash out of the water. Yes, I am keeping an eye on it."
+content.speech.scene.peer_fish.quiet.0,刚才那条鱼钓上来了。,A fish brought up just now.
+content.speech.scene.peer_fish.quiet.1,那边的鱼线有了结果。嗯。,That line finally had an answer. Mm.
+content.speech.scene.peer_fish.quiet.2,有人刚钓到了鱼。看见了。,Someone has a fresh catch. Saw it.
+content.speech.scene.peer_fish.quiet.3,鱼离开水面那下真明显。不赖。,Saw that flash out of the water. Could be worse.
+content.speech.scene.peer_stop.gentle.0,她也在你身边停下了，我陪你。,She's stopped beside you too. I can stay with you.
+content.speech.scene.peer_stop.gentle.1,又有人走到这里了，慢一点也好。,Someone else arrived here. No hurry from me.
+content.speech.scene.peer_stop.gentle.2,她的脚步停在你面前，留一点时间看吧。,Her footsteps ended right in front of you. We can give it a moment.
+content.speech.scene.peer_stop.gentle.3,我们这边又近了一点，不说话也可以。,Our little group has drawn closer. We need not fill the silence.
+content.speech.scene.peer_stop.lively.0,她也在你身边停下了！哎，你看你看。,"She's stopped beside you too! Oh, look, look!"
+content.speech.scene.peer_stop.lively.1,又有人走到这里了，嘿嘿，我注意到了！,"Someone else arrived here — yep, I spotted it!"
+content.speech.scene.peer_stop.lively.2,她的脚步停在你面前！这个我要多看两眼。,"Her footsteps ended right in front of you! Hang on, I want another look."
+content.speech.scene.peer_stop.lively.3,我们这边又近了一点，你也看到了吧？,"Our little group has drawn closer! You caught that too, right?"
+content.speech.scene.peer_stop.lively.4,她也在你身边停下了，我可没走神哦！,She's stopped beside you too! Who says I was daydreaming?
+content.speech.scene.peer_stop.lively.5,又有人走到这里了！好啦，我不嚷那么大声。,"Someone else arrived here! Okay, okay, indoor voice."
+content.speech.scene.peer_stop.laborious.0,她也在你身边停下了，脚下留点神。,She's stopped beside you too. Mind where you put your feet.
+content.speech.scene.peer_stop.laborious.1,又有人走到这里了，别急，稳当点。,Someone else arrived here. Steady; no need to rush it.
+content.speech.scene.peer_stop.laborious.2,她的脚步停在你面前，手边的事慢慢理。,Her footsteps ended right in front of you. We can sort things one at a time.
+content.speech.scene.peer_stop.laborious.3,我们这边又近了一点，我看着呢。,"Our little group has drawn closer. Yes, I am keeping an eye on it."
+content.speech.scene.peer_stop.quiet.0,她也在你身边停下了。,She's stopped beside you too.
+content.speech.scene.peer_stop.quiet.1,又有人走到这里了。嗯。,Someone else arrived here. Mm.
+content.speech.scene.peer_stop.quiet.2,她的脚步停在你面前。看见了。,Her footsteps ended right in front of you. Saw it.
+content.speech.scene.peer_stop.quiet.3,我们这边又近了一点。不赖。,Our little group has drawn closer. Could be worse.
+content.speech.scene.peer_farm.gentle.0,她还在田里忙着，我陪你。,She's busy in the field. I can stay with you.
+content.speech.scene.peer_farm.gentle.1,那边有人在照看田，慢一点也好。,Someone tending those plots. No hurry from me.
+content.speech.scene.peer_farm.gentle.2,她正沿着田格走，留一点时间看吧。,Moving along the planting rows. We can give it a moment.
+content.speech.scene.peer_farm.gentle.3,田边那双脚一直没闲着，不说话也可以。,Those feet haven't stopped by the field. We need not fill the silence.
+content.speech.scene.peer_farm.lively.0,她还在田里忙着！哎，你看你看。,"She's busy in the field! Oh, look, look!"
+content.speech.scene.peer_farm.lively.1,那边有人在照看田，嘿嘿，我注意到了！,"Someone tending those plots — yep, I spotted it!"
+content.speech.scene.peer_farm.lively.2,她正沿着田格走！这个我要多看两眼。,"Moving along the planting rows! Hang on, I want another look."
+content.speech.scene.peer_farm.lively.3,田边那双脚一直没闲着，你也看到了吧？,"Those feet haven't stopped by the field! You caught that too, right?"
+content.speech.scene.peer_farm.lively.4,她还在田里忙着，我可没走神哦！,She's busy in the field! Who says I was daydreaming?
+content.speech.scene.peer_farm.lively.5,那边有人在照看田！好啦，我不嚷那么大声。,"Someone tending those plots! Okay, okay, indoor voice."
+content.speech.scene.peer_farm.laborious.0,她还在田里忙着，脚下留点神。,She's busy in the field. Mind where you put your feet.
+content.speech.scene.peer_farm.laborious.1,那边有人在照看田，别急，稳当点。,Someone tending those plots. Steady; no need to rush it.
+content.speech.scene.peer_farm.laborious.2,她正沿着田格走，手边的事慢慢理。,Moving along the planting rows. We can sort things one at a time.
+content.speech.scene.peer_farm.laborious.3,田边那双脚一直没闲着，我看着呢。,"Those feet haven't stopped by the field. Yes, I am keeping an eye on it."
+content.speech.scene.peer_farm.quiet.0,她还在田里忙着。,She's busy in the field.
+content.speech.scene.peer_farm.quiet.1,那边有人在照看田。嗯。,Someone tending those plots. Mm.
+content.speech.scene.peer_farm.quiet.2,她正沿着田格走。看见了。,Moving along the planting rows. Saw it.
+content.speech.scene.peer_farm.quiet.3,田边那双脚一直没闲着。不赖。,Those feet haven't stopped by the field. Could be worse.
+content.speech.scene.cat_rub.gentle.0,柚柚在蹭腿呢，我陪你。,Yuzu rubbing against a leg. I can stay with you.
+content.speech.scene.cat_rub.gentle.1,小家伙贴着腿绕了一下，慢一点也好。,A small furry circle at our feet. No hurry from me.
+content.speech.scene.cat_rub.gentle.2,柚柚把自己蹭过来了，留一点时间看吧。,Yuzu leaning right in. We can give it a moment.
+content.speech.scene.cat_rub.gentle.3,脚边来了个毛绒绒的，不说话也可以。,Something fluffy down by the shoes. We need not fill the silence.
+content.speech.scene.cat_rub.lively.0,柚柚在蹭腿呢！哎，你看你看。,"Yuzu rubbing against a leg! Oh, look, look!"
+content.speech.scene.cat_rub.lively.1,小家伙贴着腿绕了一下，嘿嘿，我注意到了！,"A small furry circle at our feet — yep, I spotted it!"
+content.speech.scene.cat_rub.lively.2,柚柚把自己蹭过来了！这个我要多看两眼。,"Yuzu leaning right in! Hang on, I want another look."
+content.speech.scene.cat_rub.lively.3,脚边来了个毛绒绒的，你也看到了吧？,"Something fluffy down by the shoes! You caught that too, right?"
+content.speech.scene.cat_rub.lively.4,柚柚在蹭腿呢，我可没走神哦！,Yuzu rubbing against a leg! Who says I was daydreaming?
+content.speech.scene.cat_rub.lively.5,小家伙贴着腿绕了一下！好啦，我不嚷那么大声。,"A small furry circle at our feet! Okay, okay, indoor voice."
+content.speech.scene.cat_rub.laborious.0,柚柚在蹭腿呢，脚下留点神。,Yuzu rubbing against a leg. Mind where you put your feet.
+content.speech.scene.cat_rub.laborious.1,小家伙贴着腿绕了一下，别急，稳当点。,A small furry circle at our feet. Steady; no need to rush it.
+content.speech.scene.cat_rub.laborious.2,柚柚把自己蹭过来了，手边的事慢慢理。,Yuzu leaning right in. We can sort things one at a time.
+content.speech.scene.cat_rub.laborious.3,脚边来了个毛绒绒的，我看着呢。,"Something fluffy down by the shoes. Yes, I am keeping an eye on it."
+content.speech.scene.cat_rub.quiet.0,柚柚在蹭腿呢。,Yuzu rubbing against a leg.
+content.speech.scene.cat_rub.quiet.1,小家伙贴着腿绕了一下。嗯。,A small furry circle at our feet. Mm.
+content.speech.scene.cat_rub.quiet.2,柚柚把自己蹭过来了。看见了。,Yuzu leaning right in. Saw it.
+content.speech.scene.cat_rub.quiet.3,脚边来了个毛绒绒的。不赖。,Something fluffy down by the shoes. Could be worse.
+content.speech.scene.cat_hold.gentle.0,柚柚被抱起来了，我陪你。,Yuzu getting a lift. I can stay with you.
+content.speech.scene.cat_hold.gentle.1,怀里多了一只小猫，慢一点也好。,An armful of small cat. No hurry from me.
+content.speech.scene.cat_hold.gentle.2,柚柚离地面高了一点，留一点时间看吧。,A little higher off the ground. We can give it a moment.
+content.speech.scene.cat_hold.gentle.3,小家伙现在有怀抱坐了，不说话也可以。,Someone's turned into a cat seat. We need not fill the silence.
+content.speech.scene.cat_hold.lively.0,柚柚被抱起来了！哎，你看你看。,"Yuzu getting a lift! Oh, look, look!"
+content.speech.scene.cat_hold.lively.1,怀里多了一只小猫，嘿嘿，我注意到了！,"An armful of small cat — yep, I spotted it!"
+content.speech.scene.cat_hold.lively.2,柚柚离地面高了一点！这个我要多看两眼。,"A little higher off the ground! Hang on, I want another look."
+content.speech.scene.cat_hold.lively.3,小家伙现在有怀抱坐了，你也看到了吧？,"Someone's turned into a cat seat! You caught that too, right?"
+content.speech.scene.cat_hold.lively.4,柚柚被抱起来了，我可没走神哦！,Yuzu getting a lift! Who says I was daydreaming?
+content.speech.scene.cat_hold.lively.5,怀里多了一只小猫！好啦，我不嚷那么大声。,"An armful of small cat! Okay, okay, indoor voice."
+content.speech.scene.cat_hold.laborious.0,柚柚被抱起来了，脚下留点神。,Yuzu getting a lift. Mind where you put your feet.
+content.speech.scene.cat_hold.laborious.1,怀里多了一只小猫，别急，稳当点。,An armful of small cat. Steady; no need to rush it.
+content.speech.scene.cat_hold.laborious.2,柚柚离地面高了一点，手边的事慢慢理。,A little higher off the ground. We can sort things one at a time.
+content.speech.scene.cat_hold.laborious.3,小家伙现在有怀抱坐了，我看着呢。,"Someone's turned into a cat seat. Yes, I am keeping an eye on it."
+content.speech.scene.cat_hold.quiet.0,柚柚被抱起来了。,Yuzu getting a lift.
+content.speech.scene.cat_hold.quiet.1,怀里多了一只小猫。嗯。,An armful of small cat. Mm.
+content.speech.scene.cat_hold.quiet.2,柚柚离地面高了一点。看见了。,A little higher off the ground. Saw it.
+content.speech.scene.cat_hold.quiet.3,小家伙现在有怀抱坐了。不赖。,Someone's turned into a cat seat. Could be worse.
+content.speech.scene.cat_sleep.gentle.0,柚柚就在旁边睡着，我陪你。,Yuzu asleep nearby. I can stay with you.
+content.speech.scene.cat_sleep.gentle.1,脚边有一小团睡意，慢一点也好。,A small bundle of sleep at our feet. No hurry from me.
+content.speech.scene.cat_sleep.gentle.2,小家伙睡得团团的，留一点时间看吧。,Curled right up. We can give it a moment.
+content.speech.scene.cat_sleep.gentle.3,柚柚把这里当床了，不说话也可以。,Yuzu has declared this a bed. We need not fill the silence.
+content.speech.scene.cat_sleep.lively.0,柚柚就在旁边睡着！哎，你看你看。,"Yuzu asleep nearby! Oh, look, look!"
+content.speech.scene.cat_sleep.lively.1,脚边有一小团睡意，嘿嘿，我注意到了！,"A small bundle of sleep at our feet — yep, I spotted it!"
+content.speech.scene.cat_sleep.lively.2,小家伙睡得团团的！这个我要多看两眼。,"Curled right up! Hang on, I want another look."
+content.speech.scene.cat_sleep.lively.3,柚柚把这里当床了，你也看到了吧？,"Yuzu has declared this a bed! You caught that too, right?"
+content.speech.scene.cat_sleep.lively.4,柚柚就在旁边睡着，我可没走神哦！,Yuzu asleep nearby! Who says I was daydreaming?
+content.speech.scene.cat_sleep.lively.5,脚边有一小团睡意！好啦，我不嚷那么大声。,"A small bundle of sleep at our feet! Okay, okay, indoor voice."
+content.speech.scene.cat_sleep.laborious.0,柚柚就在旁边睡着，脚下留点神。,Yuzu asleep nearby. Mind where you put your feet.
+content.speech.scene.cat_sleep.laborious.1,脚边有一小团睡意，别急，稳当点。,A small bundle of sleep at our feet. Steady; no need to rush it.
+content.speech.scene.cat_sleep.laborious.2,小家伙睡得团团的，手边的事慢慢理。,Curled right up. We can sort things one at a time.
+content.speech.scene.cat_sleep.laborious.3,柚柚把这里当床了，我看着呢。,"Yuzu has declared this a bed. Yes, I am keeping an eye on it."
+content.speech.scene.cat_sleep.quiet.0,柚柚就在旁边睡着。,Yuzu asleep nearby.
+content.speech.scene.cat_sleep.quiet.1,脚边有一小团睡意。嗯。,A small bundle of sleep at our feet. Mm.
+content.speech.scene.cat_sleep.quiet.2,小家伙睡得团团的。看见了。,Curled right up. Saw it.
+content.speech.scene.cat_sleep.quiet.3,柚柚把这里当床了。不赖。,Yuzu has declared this a bed. Could be worse.
+content.speech.scene.cat_run.gentle.0,柚柚从旁边跑过去了，我陪你。,Yuzu darting past. I can stay with you.
+content.speech.scene.cat_run.gentle.1,小猫的尾巴一闪就过去了，慢一点也好。,A flick of tail and gone. No hurry from me.
+content.speech.scene.cat_run.gentle.2,刚才过去的是柚柚呀，留一点时间看吧。,That was Yuzu just now. We can give it a moment.
+content.speech.scene.cat_run.gentle.3,脚边嗖地窜过一只猫，不说话也可以。,A cat-shaped streak by our feet. We need not fill the silence.
+content.speech.scene.cat_run.lively.0,柚柚从旁边跑过去了！哎，你看你看。,"Yuzu darting past! Oh, look, look!"
+content.speech.scene.cat_run.lively.1,小猫的尾巴一闪就过去了，嘿嘿，我注意到了！,"A flick of tail and gone — yep, I spotted it!"
+content.speech.scene.cat_run.lively.2,刚才过去的是柚柚呀！这个我要多看两眼。,"That was Yuzu just now! Hang on, I want another look."
+content.speech.scene.cat_run.lively.3,脚边嗖地窜过一只猫，你也看到了吧？,"A cat-shaped streak by our feet! You caught that too, right?"
+content.speech.scene.cat_run.lively.4,柚柚从旁边跑过去了，我可没走神哦！,Yuzu darting past! Who says I was daydreaming?
+content.speech.scene.cat_run.lively.5,小猫的尾巴一闪就过去了！好啦，我不嚷那么大声。,"A flick of tail and gone! Okay, okay, indoor voice."
+content.speech.scene.cat_run.laborious.0,柚柚从旁边跑过去了，脚下留点神。,Yuzu darting past. Mind where you put your feet.
+content.speech.scene.cat_run.laborious.1,小猫的尾巴一闪就过去了，别急，稳当点。,A flick of tail and gone. Steady; no need to rush it.
+content.speech.scene.cat_run.laborious.2,刚才过去的是柚柚呀，手边的事慢慢理。,That was Yuzu just now. We can sort things one at a time.
+content.speech.scene.cat_run.laborious.3,脚边嗖地窜过一只猫，我看着呢。,"A cat-shaped streak by our feet. Yes, I am keeping an eye on it."
+content.speech.scene.cat_run.quiet.0,柚柚从旁边跑过去了。,Yuzu darting past.
+content.speech.scene.cat_run.quiet.1,小猫的尾巴一闪就过去了。嗯。,A flick of tail and gone. Mm.
+content.speech.scene.cat_run.quiet.2,刚才过去的是柚柚呀。看见了。,That was Yuzu just now. Saw it.
+content.speech.scene.cat_run.quiet.3,脚边嗖地窜过一只猫。不赖。,A cat-shaped streak by our feet. Could be worse.
+content.speech.scene.new_ingredient.gentle.0,第一次采到这种食材呢，我陪你。,Our first gathering of that ingredient. I can stay with you.
+content.speech.scene.new_ingredient.gentle.1,这回采到了新东西，慢一点也好。,Something new from gathering. No hurry from me.
+content.speech.scene.new_ingredient.gentle.2,食材里多了一个新面孔，留一点时间看吧。,A new face among the ingredients. We can give it a moment.
+content.speech.scene.new_ingredient.gentle.3,刚到手的这份还挺新鲜，不说话也可以。,A fresh little find just gathered. We need not fill the silence.
+content.speech.scene.new_ingredient.lively.0,第一次采到这种食材呢！哎，你看你看。,"Our first gathering of that ingredient! Oh, look, look!"
+content.speech.scene.new_ingredient.lively.1,这回采到了新东西，嘿嘿，我注意到了！,"Something new from gathering — yep, I spotted it!"
+content.speech.scene.new_ingredient.lively.2,食材里多了一个新面孔！这个我要多看两眼。,"A new face among the ingredients! Hang on, I want another look."
+content.speech.scene.new_ingredient.lively.3,刚到手的这份还挺新鲜，你也看到了吧？,"A fresh little find just gathered! You caught that too, right?"
+content.speech.scene.new_ingredient.lively.4,第一次采到这种食材呢，我可没走神哦！,Our first gathering of that ingredient! Who says I was daydreaming?
+content.speech.scene.new_ingredient.lively.5,这回采到了新东西！好啦，我不嚷那么大声。,"Something new from gathering! Okay, okay, indoor voice."
+content.speech.scene.new_ingredient.laborious.0,第一次采到这种食材呢，脚下留点神。,Our first gathering of that ingredient. Mind where you put your feet.
+content.speech.scene.new_ingredient.laborious.1,这回采到了新东西，别急，稳当点。,Something new from gathering. Steady; no need to rush it.
+content.speech.scene.new_ingredient.laborious.2,食材里多了一个新面孔，手边的事慢慢理。,A new face among the ingredients. We can sort things one at a time.
+content.speech.scene.new_ingredient.laborious.3,刚到手的这份还挺新鲜，我看着呢。,"A fresh little find just gathered. Yes, I am keeping an eye on it."
+content.speech.scene.new_ingredient.quiet.0,第一次采到这种食材呢。,Our first gathering of that ingredient.
+content.speech.scene.new_ingredient.quiet.1,这回采到了新东西。嗯。,Something new from gathering. Mm.
+content.speech.scene.new_ingredient.quiet.2,食材里多了一个新面孔。看见了。,A new face among the ingredients. Saw it.
+content.speech.scene.new_ingredient.quiet.3,刚到手的这份还挺新鲜。不赖。,A fresh little find just gathered. Could be worse.
+content.speech.scene.new_fish.gentle.0,这次是第一次见的鱼，我陪你。,A first catch of that kind. I can stay with you.
+content.speech.scene.new_fish.gentle.1,刚钓到的是新记录呢，慢一点也好。,A new fishing entry just now. No hurry from me.
+content.speech.scene.new_fish.gentle.2,鱼图鉴里有新发现了，留一点时间看吧。,Something new for the fish journal. We can give it a moment.
+content.speech.scene.new_fish.gentle.3,刚才的钓获添了个新样子，不说话也可以。,A new shape on the end of that line. We need not fill the silence.
+content.speech.scene.new_fish.lively.0,这次是第一次见的鱼！哎，你看你看。,"A first catch of that kind! Oh, look, look!"
+content.speech.scene.new_fish.lively.1,刚钓到的是新记录呢，嘿嘿，我注意到了！,"A new fishing entry just now — yep, I spotted it!"
+content.speech.scene.new_fish.lively.2,鱼图鉴里有新发现了！这个我要多看两眼。,"Something new for the fish journal! Hang on, I want another look."
+content.speech.scene.new_fish.lively.3,刚才的钓获添了个新样子，你也看到了吧？,"A new shape on the end of that line! You caught that too, right?"
+content.speech.scene.new_fish.lively.4,这次是第一次见的鱼，我可没走神哦！,A first catch of that kind! Who says I was daydreaming?
+content.speech.scene.new_fish.lively.5,刚钓到的是新记录呢！好啦，我不嚷那么大声。,"A new fishing entry just now! Okay, okay, indoor voice."
+content.speech.scene.new_fish.laborious.0,这次是第一次见的鱼，脚下留点神。,A first catch of that kind. Mind where you put your feet.
+content.speech.scene.new_fish.laborious.1,刚钓到的是新记录呢，别急，稳当点。,A new fishing entry just now. Steady; no need to rush it.
+content.speech.scene.new_fish.laborious.2,鱼图鉴里有新发现了，手边的事慢慢理。,Something new for the fish journal. We can sort things one at a time.
+content.speech.scene.new_fish.laborious.3,刚才的钓获添了个新样子，我看着呢。,"A new shape on the end of that line. Yes, I am keeping an eye on it."
+content.speech.scene.new_fish.quiet.0,这次是第一次见的鱼。,A first catch of that kind.
+content.speech.scene.new_fish.quiet.1,刚钓到的是新记录呢。嗯。,A new fishing entry just now. Mm.
+content.speech.scene.new_fish.quiet.2,鱼图鉴里有新发现了。看见了。,Something new for the fish journal. Saw it.
+content.speech.scene.new_fish.quiet.3,刚才的钓获添了个新样子。不赖。,A new shape on the end of that line. Could be worse.
+content.speech.scene.meal_close.gentle.0,吃完还坐在这里，我陪你。,Still sitting after our meal. I can stay with you.
+content.speech.scene.meal_close.gentle.1,这一顿的热气还没散，慢一点也好。,A little warmth left from dinner. No hurry from me.
+content.speech.scene.meal_close.gentle.2,围着火再待一小会儿，留一点时间看吧。,A moment longer around the fire. We can give it a moment.
+content.speech.scene.meal_close.gentle.3,饭后这会儿很松快，不说话也可以。,That easy pause after eating. We need not fill the silence.
+content.speech.scene.meal_close.lively.0,吃完还坐在这里！哎，你看你看。,"Still sitting after our meal! Oh, look, look!"
+content.speech.scene.meal_close.lively.1,这一顿的热气还没散，嘿嘿，我注意到了！,"A little warmth left from dinner — yep, I spotted it!"
+content.speech.scene.meal_close.lively.2,围着火再待一小会儿！这个我要多看两眼。,"A moment longer around the fire! Hang on, I want another look."
+content.speech.scene.meal_close.lively.3,饭后这会儿很松快，你也看到了吧？,"That easy pause after eating! You caught that too, right?"
+content.speech.scene.meal_close.lively.4,吃完还坐在这里，我可没走神哦！,Still sitting after our meal! Who says I was daydreaming?
+content.speech.scene.meal_close.lively.5,这一顿的热气还没散！好啦，我不嚷那么大声。,"A little warmth left from dinner! Okay, okay, indoor voice."
+content.speech.scene.meal_close.laborious.0,吃完还坐在这里，脚下留点神。,Still sitting after our meal. Mind where you put your feet.
+content.speech.scene.meal_close.laborious.1,这一顿的热气还没散，别急，稳当点。,A little warmth left from dinner. Steady; no need to rush it.
+content.speech.scene.meal_close.laborious.2,围着火再待一小会儿，手边的事慢慢理。,A moment longer around the fire. We can sort things one at a time.
+content.speech.scene.meal_close.laborious.3,饭后这会儿很松快，我看着呢。,"That easy pause after eating. Yes, I am keeping an eye on it."
+content.speech.scene.meal_close.quiet.0,吃完还坐在这里。,Still sitting after our meal.
+content.speech.scene.meal_close.quiet.1,这一顿的热气还没散。嗯。,A little warmth left from dinner. Mm.
+content.speech.scene.meal_close.quiet.2,围着火再待一小会儿。看见了。,A moment longer around the fire. Saw it.
+content.speech.scene.meal_close.quiet.3,饭后这会儿很松快。不赖。,That easy pause after eating. Could be worse.
+content.speech.scene.cross_bridge.gentle.0,我们刚走过桥了，我陪你。,We've just crossed the bridge. I can stay with you.
+content.speech.scene.cross_bridge.gentle.1,脚下换回了岸边的路，慢一点也好。,Solid shore beneath our feet again. No hurry from me.
+content.speech.scene.cross_bridge.gentle.2,桥已经在身后了，留一点时间看吧。,Bridge behind us now. We can give it a moment.
+content.speech.scene.cross_bridge.gentle.3,两边的路真的连起来了，不说话也可以。,Those two paths really do connect. We need not fill the silence.
+content.speech.scene.cross_bridge.lively.0,我们刚走过桥了！哎，你看你看。,"We've just crossed the bridge! Oh, look, look!"
+content.speech.scene.cross_bridge.lively.1,脚下换回了岸边的路，嘿嘿，我注意到了！,"Solid shore beneath our feet again — yep, I spotted it!"
+content.speech.scene.cross_bridge.lively.2,桥已经在身后了！这个我要多看两眼。,"Bridge behind us now! Hang on, I want another look."
+content.speech.scene.cross_bridge.lively.3,两边的路真的连起来了，你也看到了吧？,"Those two paths really do connect! You caught that too, right?"
+content.speech.scene.cross_bridge.lively.4,我们刚走过桥了，我可没走神哦！,We've just crossed the bridge! Who says I was daydreaming?
+content.speech.scene.cross_bridge.lively.5,脚下换回了岸边的路！好啦，我不嚷那么大声。,"Solid shore beneath our feet again! Okay, okay, indoor voice."
+content.speech.scene.cross_bridge.laborious.0,我们刚走过桥了，脚下留点神。,We've just crossed the bridge. Mind where you put your feet.
+content.speech.scene.cross_bridge.laborious.1,脚下换回了岸边的路，别急，稳当点。,Solid shore beneath our feet again. Steady; no need to rush it.
+content.speech.scene.cross_bridge.laborious.2,桥已经在身后了，手边的事慢慢理。,Bridge behind us now. We can sort things one at a time.
+content.speech.scene.cross_bridge.laborious.3,两边的路真的连起来了，我看着呢。,"Those two paths really do connect. Yes, I am keeping an eye on it."
+content.speech.scene.cross_bridge.quiet.0,我们刚走过桥了。,We've just crossed the bridge.
+content.speech.scene.cross_bridge.quiet.1,脚下换回了岸边的路。嗯。,Solid shore beneath our feet again. Mm.
+content.speech.scene.cross_bridge.quiet.2,桥已经在身后了。看见了。,Bridge behind us now. Saw it.
+content.speech.scene.cross_bridge.quiet.3,两边的路真的连起来了。不赖。,Those two paths really do connect. Could be worse.
+content.speech.scene.back_home.gentle.0,又回到主岛了，我陪你。,Back on the main island. I can stay with you.
+content.speech.scene.back_home.gentle.1,这边是熟悉的小路，慢一点也好。,The familiar paths again. No hurry from me.
+content.speech.scene.back_home.gentle.2,主岛的屋子又近了，留一点时间看吧。,Home island's houses close again. We can give it a moment.
+content.speech.scene.back_home.gentle.3,脚步走回了家这一边，不说话也可以。,Our footsteps on the home side. We need not fill the silence.
+content.speech.scene.back_home.lively.0,又回到主岛了！哎，你看你看。,"Back on the main island! Oh, look, look!"
+content.speech.scene.back_home.lively.1,这边是熟悉的小路，嘿嘿，我注意到了！,"The familiar paths again — yep, I spotted it!"
+content.speech.scene.back_home.lively.2,主岛的屋子又近了！这个我要多看两眼。,"Home island's houses close again! Hang on, I want another look."
+content.speech.scene.back_home.lively.3,脚步走回了家这一边，你也看到了吧？,"Our footsteps on the home side! You caught that too, right?"
+content.speech.scene.back_home.lively.4,又回到主岛了，我可没走神哦！,Back on the main island! Who says I was daydreaming?
+content.speech.scene.back_home.lively.5,这边是熟悉的小路！好啦，我不嚷那么大声。,"The familiar paths again! Okay, okay, indoor voice."
+content.speech.scene.back_home.laborious.0,又回到主岛了，脚下留点神。,Back on the main island. Mind where you put your feet.
+content.speech.scene.back_home.laborious.1,这边是熟悉的小路，别急，稳当点。,The familiar paths again. Steady; no need to rush it.
+content.speech.scene.back_home.laborious.2,主岛的屋子又近了，手边的事慢慢理。,Home island's houses close again. We can sort things one at a time.
+content.speech.scene.back_home.laborious.3,脚步走回了家这一边，我看着呢。,"Our footsteps on the home side. Yes, I am keeping an eye on it."
+content.speech.scene.back_home.quiet.0,又回到主岛了。,Back on the main island.
+content.speech.scene.back_home.quiet.1,这边是熟悉的小路。嗯。,The familiar paths again. Mm.
+content.speech.scene.back_home.quiet.2,主岛的屋子又近了。看见了。,Home island's houses close again. Saw it.
+content.speech.scene.back_home.quiet.3,脚步走回了家这一边。不赖。,Our footsteps on the home side. Could be worse.
+content.speech.scene.arrive_south.gentle.0,刚到她们的岛了，我陪你。,Here on Their Island. I can stay with you.
+content.speech.scene.arrive_south.gentle.1,南边这片地就在脚下，慢一点也好。,Southern ground under our feet. No hurry from me.
+content.speech.scene.arrive_south.gentle.2,这回走到桥的另一边了，留一点时间看吧。,Made it to the far end of the bridge. We can give it a moment.
+content.speech.scene.arrive_south.gentle.3,南岛的路接住我们了，不说话也可以。,The southern path has us now. We need not fill the silence.
+content.speech.scene.arrive_south.lively.0,刚到她们的岛了！哎，你看你看。,"Here on Their Island! Oh, look, look!"
+content.speech.scene.arrive_south.lively.1,南边这片地就在脚下，嘿嘿，我注意到了！,"Southern ground under our feet — yep, I spotted it!"
+content.speech.scene.arrive_south.lively.2,这回走到桥的另一边了！这个我要多看两眼。,"Made it to the far end of the bridge! Hang on, I want another look."
+content.speech.scene.arrive_south.lively.3,南岛的路接住我们了，你也看到了吧？,"The southern path has us now! You caught that too, right?"
+content.speech.scene.arrive_south.lively.4,刚到她们的岛了，我可没走神哦！,Here on Their Island! Who says I was daydreaming?
+content.speech.scene.arrive_south.lively.5,南边这片地就在脚下！好啦，我不嚷那么大声。,"Southern ground under our feet! Okay, okay, indoor voice."
+content.speech.scene.arrive_south.laborious.0,刚到她们的岛了，脚下留点神。,Here on Their Island. Mind where you put your feet.
+content.speech.scene.arrive_south.laborious.1,南边这片地就在脚下，别急，稳当点。,Southern ground under our feet. Steady; no need to rush it.
+content.speech.scene.arrive_south.laborious.2,这回走到桥的另一边了，手边的事慢慢理。,Made it to the far end of the bridge. We can sort things one at a time.
+content.speech.scene.arrive_south.laborious.3,南岛的路接住我们了，我看着呢。,"The southern path has us now. Yes, I am keeping an eye on it."
+content.speech.scene.arrive_south.quiet.0,刚到她们的岛了。,Here on Their Island.
+content.speech.scene.arrive_south.quiet.1,南边这片地就在脚下。嗯。,Southern ground under our feet. Mm.
+content.speech.scene.arrive_south.quiet.2,这回走到桥的另一边了。看见了。,Made it to the far end of the bridge. Saw it.
+content.speech.scene.arrive_south.quiet.3,南岛的路接住我们了。不赖。,The southern path has us now. Could be worse.

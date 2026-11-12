@@ -1,0 +1,95 @@
+{
+  "unfollow": [
+    "stop following",
+    "unfollow",
+    "free time"
+  ],
+  "follow": [
+    "follow me",
+    "come with me",
+    "stay with me",
+    "keep up with me",
+    "come here",
+    "come over"
+  ],
+  "barbecue": [
+    "barbecue",
+    "bbq",
+    "grill together",
+    "come eat",
+    "dinner time",
+    "come to dinner"
+  ],
+  "gather": [
+    "gather",
+    "assemble",
+    "meet at"
+  ],
+  "ready": [
+    "harvest"
+  ],
+  "plant": [
+    "plant",
+    "sow"
+  ],
+  "stop": [
+    "stop working",
+    "cancel work",
+    "stop",
+    "cancel"
+  ],
+  "query_state": [
+    "what are you doing",
+    "are you hungry",
+    "how much wood"
+  ],
+  "chop": [
+    "chop",
+    "cut wood",
+    "cut trees",
+    "get wood"
+  ],
+  "hand_over": [
+    "hand over",
+    "give me your items",
+    "deposit items"
+  ],
+  "fish": [
+    "fish",
+    "go fishing",
+    "catch fish"
+  ],
+  "water": [
+    "water",
+    "irrigate"
+  ],
+  "forage": [
+    "gather mushrooms",
+    "gather ingredients",
+    "collect mushrooms",
+    "forage"
+  ],
+  "open_chess": [
+    "play chess",
+    "play gomoku"
+  ],
+  "start_project": [
+    "build a",
+    "build me a",
+    "construct a"
+  ],
+  "build_stage": [
+    "finish this stage",
+    "build this stage"
+  ],
+  "vacation": [
+    "lie down",
+    "sunbathe",
+    "swim",
+    "play in the pool",
+    "use the swings",
+    "rest in hammocks",
+    "watch the sea",
+    "watch the stars"
+  ]
+}

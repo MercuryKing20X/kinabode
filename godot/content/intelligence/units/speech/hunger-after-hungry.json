@@ -1,0 +1,11 @@
+{
+  "id": "hunger-after-hungry",
+  "context": "hunger_after_hungry",
+  "lines": [
+    "终于吃饱啦，好满足。",
+    "刚刚还在咕咕叫，现在安静啦。",
+    "热乎乎的一餐把我哄好了。",
+    "谢谢你陪我吃这顿饭。"
+  ],
+  "autonomy_output": false
+}

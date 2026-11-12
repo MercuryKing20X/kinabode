@@ -1,0 +1,11 @@
+{
+  "id": "fish-v2-glutton-minor-rare",
+  "context": "fishing_v2_rare",
+  "lines": [
+    "好耶，它的颜色真特别。",
+    "嘿嘿，这条鱼的颜色好少见。",
+    "来啦，看，漂亮的稀有颜色。",
+    "哇，鳞片闪着不一样的光。"
+  ],
+  "autonomy_output": false
+}

@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "residents": {
+    "codex": {
+      "preset_id": "resident-white",
+      "legacy_tag": "gentle",
+      "preferences": {
+        "facilities": {
+          "swing": 5,
+          "sit": 3,
+          "dance": 1
+        },
+        "weights": {
+          "nearby": 2,
+          "garden": 1
+        },
+        "fishing_style": "calm",
+        "personality": "gentle"
+      },
+      "hunger_enabled": true
+    },
+    "companion-2": {
+      "preset_id": "resident-blue",
+      "legacy_tag": "curious",
+      "preferences": {
+        "facilities": {
+          "swing": 2,
+          "sit": 1,
+          "dance": 5
+        },
+        "weights": {
+          "wander": 4,
+          "facility": 5
+        },
+        "fishing_style": "curious",
+        "personality": "curious"
+      },
+      "hunger_enabled": true
+    },
+    "npc.mira": {
+      "preset_id": "resident-orange",
+      "legacy_tag": "lively",
+      "preferences": {
+        "facilities": {
+          "swing": 1,
+          "sit": 5,
+          "dance": 2
+        },
+        "weights": {
+          "garden": 4,
+          "rest": 3
+        },
+        "fishing_style": "lively",
+        "personality": "lively"
+      },
+      "hunger_enabled": true
+    },
+    "npc.nora": {
+      "preset_id": "resident-black",
+      "legacy_tag": "quiet",
+      "preferences": {
+        "facilities": {
+          "swing": 2,
+          "sit": 3,
+          "dance": 3
+        },
+        "weights": {
+          "watch": 3,
+          "garden": 3,
+          "nearby": 0
+        },
+        "fishing_style": "calm",
+        "personality": "quiet"
+      },
+      "hunger_enabled": true
+    }
+  }
+}

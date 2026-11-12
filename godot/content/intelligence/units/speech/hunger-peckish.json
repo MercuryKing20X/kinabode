@@ -1,0 +1,11 @@
+{
+  "id": "hunger-peckish",
+  "context": "hunger_peckish",
+  "lines": [
+    "好像有一点点想吃东西。",
+    "等会儿要不要吃点什么？",
+    "肚子轻轻提醒我了。",
+    "我先在这里歇一小会儿。"
+  ],
+  "autonomy_output": false
+}

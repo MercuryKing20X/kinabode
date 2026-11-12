@@ -1,0 +1,9 @@
+{
+  "id": "calm-rest",
+  "action": "rest",
+  "conditions": {},
+  "cooldown_seconds": 40,
+  "requires_target": true,
+  "weight": 1,
+  "aspect": "rest"
+}

@@ -1,0 +1,11 @@
+{
+  "id": "hunger-after-peckish",
+  "context": "hunger_after_peckish",
+  "lines": [
+    "谢谢你，这顿饭吃得刚刚好。",
+    "肚子暖暖的，可以慢慢逛了。",
+    "一起吃饭真舒服。",
+    "现在又有精神陪你啦。"
+  ],
+  "autonomy_output": false
+}

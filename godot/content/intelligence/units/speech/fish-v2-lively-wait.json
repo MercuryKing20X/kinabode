@@ -1,0 +1,11 @@
+{
+  "id": "fish-v2-lively-wait",
+  "context": "fishing_v2_wait",
+  "lines": [
+    "好耶，海面静静的，再等等。",
+    "嘿嘿，还没有动静，不着急。",
+    "来啦，浮漂还在水面上。",
+    "哇，也许鱼儿正在附近。"
+  ],
+  "autonomy_output": false
+}

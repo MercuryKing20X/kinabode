@@ -1,0 +1,11 @@
+{
+  "id": "curious-gomoku-player-wait",
+  "context": "gomoku_player_wait",
+  "lines": [
+    "咦，你慢慢想，我在这儿。",
+    "我注意到，想久一点也没关系。",
+    "让我瞧瞧，棋盘还在，不用着急。",
+    "有意思，我陪你坐着，等你决定。"
+  ],
+  "autonomy_output": false
+}

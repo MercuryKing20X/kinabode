@@ -1,0 +1,11 @@
+{
+  "id": "bbq-gentle-food-roast-pumpkin",
+  "context": "bbq_food_roast_pumpkin",
+  "lines": [
+    "烤南瓜温温的，慢慢吃。",
+    "能在火边吃烤南瓜，心里也暖了。",
+    "这份烤南瓜，我会好好尝。",
+    "烤南瓜的香气很柔和呢。"
+  ],
+  "autonomy_output": false
+}

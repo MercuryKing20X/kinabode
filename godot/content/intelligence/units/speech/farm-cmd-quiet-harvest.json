@@ -1,0 +1,11 @@
+{
+  "id": "farm-cmd-quiet-harvest",
+  "context": "farm_command_harvest",
+  "lines": [
+    "……嗯，我去收。",
+    "好，我去收菜。",
+    "……我去看看。",
+    "嗯。"
+  ],
+  "autonomy_output": false
+}

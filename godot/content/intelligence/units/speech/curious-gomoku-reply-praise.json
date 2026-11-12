@@ -1,0 +1,11 @@
+{
+  "id": "curious-gomoku-reply-praise",
+  "context": "gomoku_reply_praise",
+  "lines": [
+    "咦，谢谢，这一步我也看了好一会儿。",
+    "我注意到，被你夸得有点开心。",
+    "让我瞧瞧，这句夸奖我收下啦。",
+    "有意思，我会继续认真下的。"
+  ],
+  "autonomy_output": false
+}

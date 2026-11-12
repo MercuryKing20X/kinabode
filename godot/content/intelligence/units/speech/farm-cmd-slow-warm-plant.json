@@ -1,0 +1,11 @@
+{
+  "id": "farm-cmd-slow-warm-plant",
+  "context": "farm_command_plant",
+  "lines": [
+    "……好，我去试试。",
+    "嗯，我去种，慢一点。",
+    "我去吧，种好了说一声。",
+    "好，我去。"
+  ],
+  "autonomy_output": false
+}

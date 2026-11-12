@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://qr51f021wun4"
+
+[deps]
+
+files=["res://content/i18n/connection-simple.zh.translation", "res://content/i18n/connection-simple.en.translation"]
+
+source_file="res://content/i18n/connection-simple.csv"
+dest_files=["res://content/i18n/connection-simple.zh.translation", "res://content/i18n/connection-simple.en.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

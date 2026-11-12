@@ -1,0 +1,11 @@
+{
+  "id": "farm-cmd-laborious-harvest",
+  "context": "farm_command_harvest",
+  "lines": [
+    "好，我去收，收完放进箱子。",
+    "交给我，熟的全收回来。",
+    "行，我去收菜。",
+    "好，收完整理好。"
+  ],
+  "autonomy_output": false
+}

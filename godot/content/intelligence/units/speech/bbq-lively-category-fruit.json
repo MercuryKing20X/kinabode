@@ -1,0 +1,11 @@
+{
+  "id": "bbq-lively-category-fruit",
+  "context": "bbq_category_fruit",
+  "lines": [
+    "水果烤暖了耶！",
+    "甜甜的一口，嘿嘿。",
+    "这份果香我也要尝！",
+    "饭后水果，现在就吃！"
+  ],
+  "autonomy_output": false
+}

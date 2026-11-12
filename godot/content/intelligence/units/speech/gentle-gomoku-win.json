@@ -1,0 +1,11 @@
+{
+  "id": "gentle-gomoku-win",
+  "context": "gomoku_win",
+  "lines": [
+    "嗯，这盘我赢啦，谢谢你陪我下。",
+    "轻轻说，这一局赢了，还想在这儿坐坐。",
+    "我想，这次是我赢，下一盘再来吧。",
+    "慢慢来，赢下这一盘，心里有点高兴。"
+  ],
+  "autonomy_output": false
+}

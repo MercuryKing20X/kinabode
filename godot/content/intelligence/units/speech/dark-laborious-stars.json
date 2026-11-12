@@ -1,0 +1,13 @@
+{
+  "id": "dark-laborious-stars",
+  "context": "dark_stars",
+  "lines": [
+    "你看，星星好多。",
+    "你看，坐在你旁边真好。",
+    "你看，海上也有一条银河。",
+    "你看，不点灯也没关系。",
+    "你看，今晚的风很轻。",
+    "你看，再看一会儿吧。"
+  ],
+  "autonomy_output": false
+}

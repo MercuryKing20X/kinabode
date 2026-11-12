@@ -1,0 +1,11 @@
+{
+  "id": "gentle-greet",
+  "context": "greet",
+  "lines": [
+    "嗨，我往旁边站一点陪你。",
+    "看见你啦，慢慢来就好。",
+    "在这里和你打个小招呼。",
+    "有空的话，陪你坐一会儿。"
+  ],
+  "autonomy_output": false
+}

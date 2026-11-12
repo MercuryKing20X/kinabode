@@ -1,0 +1,11 @@
+{
+  "id": "curious-gomoku-lose",
+  "context": "gomoku_lose",
+  "lines": [
+    "咦，这盘你赢了，下得真好。",
+    "我注意到，这次我输了，还挺尽兴。",
+    "让我瞧瞧，赢的是你，我记住这盘了。",
+    "有意思，这一局我输了，再学一点。"
+  ],
+  "autonomy_output": false
+}

@@ -1,0 +1,104 @@
+keys,zh,en
+title.memory,记忆,Memories
+memory.ack,好～,Okay!
+memory.thinking,嗯，我想想～,"Hmm, let me think."
+memory.reunion,又见面了，还记得我们一起的日子。,Here we are again. I remember our days together.
+memory.first_fish,第一次钓到：{fish},First catch: {fish}
+memory.chat_summary,你那天说：{quote},You said that day: {quote}
+memory.album,回忆册,Memory album
+memory.days,我们的日子,Our days
+memory.about,关于你,About you
+memory.mail,信箱,Letters
+memory.close,关闭,Close
+memory.previous,上一页,Previous
+memory.next,下一页,Next
+memory.exclude,不含我的聊天原话,Exclude my chat quotes
+memory.export_html,导出回忆册,Export album
+memory.export_data,导出数据,Export data
+memory.import,导入数据,Import data
+memory.empty,还没有记忆,No memories yet
+memory.delete,删除,Delete
+memory.done,已导出,Exported
+memory.failed,未能导出,Export failed
+memory.recall.0,我记得你说过：{memory},I remember you said: {memory}
+memory.recall.1,那天的话我还记着：{memory},Your words stayed with me: {memory}
+memory.recall.2,说起来，你告诉过我：{memory},You once told me: {memory}
+memory.recall.3,和你待着时，我想起：{memory},Being here reminds me: {memory}
+memory.like_prefix,我喜欢,I like
+memory.imported,已合并记忆,Memories merged
+memory.invalid_data,导入失败：格式、签名或文件写入校验未通过,"Import failed: invalid format, signature, or file write"
+memory.recall.gentle.facts.0,我还记得：{memory},I still remember: {memory}
+memory.recall.gentle.facts.1,我还记得。那时：{memory},"I still remember: back then, {memory}"
+memory.recall.gentle.facts.2,我还记得，和你有关的事：{memory},"I still remember, something about us: {memory}"
+memory.recall.gentle.facts.3,我还记得，今天又想起了：{memory},"I still remember, it came back to me today: {memory}"
+memory.recall.gentle.about_you.0,我还记得：{memory},I still remember: {memory}
+memory.recall.gentle.about_you.1,我还记得。那时：{memory},"I still remember: back then, {memory}"
+memory.recall.gentle.about_you.2,我还记得，和你有关的事：{memory},"I still remember, something about us: {memory}"
+memory.recall.gentle.about_you.3,我还记得，今天又想起了：{memory},"I still remember, it came back to me today: {memory}"
+memory.recall.lively.facts.0,欸，我记着呢：{memory},"Hey, I remember: {memory}"
+memory.recall.lively.facts.1,欸，我记着呢。那时：{memory},"Hey, I remember: back then, {memory}"
+memory.recall.lively.facts.2,欸，我记着呢，和你有关的事：{memory},"Hey, I remember, something about us: {memory}"
+memory.recall.lively.facts.3,欸，我记着呢，今天又想起了：{memory},"Hey, I remember, it came back to me today: {memory}"
+memory.recall.lively.about_you.0,欸，我记着呢：{memory},"Hey, I remember: {memory}"
+memory.recall.lively.about_you.1,欸，我记着呢。那时：{memory},"Hey, I remember: back then, {memory}"
+memory.recall.lively.about_you.2,欸，我记着呢，和你有关的事：{memory},"Hey, I remember, something about us: {memory}"
+memory.recall.lively.about_you.3,欸，我记着呢，今天又想起了：{memory},"Hey, I remember, it came back to me today: {memory}"
+memory.recall.laborious.facts.0,这件事我好好记着：{memory},I kept this close: {memory}
+memory.recall.laborious.facts.1,这件事我好好记着。那时：{memory},"I kept this close: back then, {memory}"
+memory.recall.laborious.facts.2,这件事我好好记着，和你有关的事：{memory},"I kept this close, something about us: {memory}"
+memory.recall.laborious.facts.3,这件事我好好记着，今天又想起了：{memory},"I kept this close, it came back to me today: {memory}"
+memory.recall.laborious.about_you.0,这件事我好好记着：{memory},I kept this close: {memory}
+memory.recall.laborious.about_you.1,这件事我好好记着。那时：{memory},"I kept this close: back then, {memory}"
+memory.recall.laborious.about_you.2,这件事我好好记着，和你有关的事：{memory},"I kept this close, something about us: {memory}"
+memory.recall.laborious.about_you.3,这件事我好好记着，今天又想起了：{memory},"I kept this close, it came back to me today: {memory}"
+memory.recall.quiet.facts.0,记得：{memory},I remember: {memory}
+memory.recall.quiet.facts.1,记得。那时：{memory},"I remember: back then, {memory}"
+memory.recall.quiet.facts.2,记得，和你有关的事：{memory},"I remember, something about us: {memory}"
+memory.recall.quiet.facts.3,记得，今天又想起了：{memory},"I remember, it came back to me today: {memory}"
+memory.recall.quiet.about_you.0,记得：{memory},I remember: {memory}
+memory.recall.quiet.about_you.1,记得。那时：{memory},"I remember: back then, {memory}"
+memory.recall.quiet.about_you.2,记得，和你有关的事：{memory},"I remember, something about us: {memory}"
+memory.recall.quiet.about_you.3,记得，今天又想起了：{memory},"I remember, it came back to me today: {memory}"
+memory.ack.gentle,好～,Okay.
+memory.thinking.gentle,嗯，我想想～,"Hmm, let me think."
+memory.ack.lively,好嘞，这就来！,On it!
+memory.thinking.lively,欸，让我想想！,"Ooh, let me think!"
+memory.ack.laborious,好，我来。,I will take care of it.
+memory.thinking.laborious,我想一想。,Let me think it through.
+memory.ack.quiet,好。,Okay.
+memory.thinking.quiet,嗯……,Hmm…
+memory.notebook,记忆本,Memory books
+memory.localized_fact,{text},{text}
+memory.daily_chat,这天聊过{count}句话,We exchanged {count} messages that day
+title.connections,连接,Connections
+memory.connections,伙伴连接,Resident connections
+memory.new_mail,信箱,Mailbox
+memory.last_connection,上次连接,Last connected
+memory.today_tokens,今日 token（未知不计零）,Today’s tokens (unknown is not zero)
+memory.test_connection,测试连接,Test connection
+memory.anniversary,我们认识{days}天啦。,We have known each other for {days} days.
+memory.portrait,她眼里的你,Through her eyes
+memory.portrait_local,我记得你说过：{notes},I remember you saying: {notes}
+memory.rain_recall,下雨了。你说过：{memory},It’s raining. You once said: {memory}
+memory.learned,记下啦。以后仍按原来的规则帮你。,I’ll remember. We’ll still follow our usual rules.
+memory.water_help,{helper}帮{receiver}给{plot}浇过水。,{helper} helped {receiver} water {plot}.
+memory.goal_offer,这几天一起把{farm}种满，好吗？,Shall we fill {farm} with crops over the next few days?
+memory.goal_accepted,记下的心愿：{farm},Our agreed wish: {farm}
+memory.goal_completed,我们把{farm}种满并浇好水了。,We filled {farm} with crops and watered them.
+memory.agree,好呀,Let’s do it
+memory.decline,下次吧,Maybe later
+memory.signature,—— {name},— {name}
+memory.state.local,本地,Local
+memory.state.unconnected,未连接,Not connected
+memory.state.connecting,连接中,Connecting
+memory.state.ready,已连接,Connected
+memory.state.disconnected,已断开,Disconnected
+memory.state.error,连接出错,Connection error
+memory.teach_prefix,以后我说,When I say
+memory.teach_pattern,"^以后我说(.{1,16})就是(.{1,60})[。！!]?$|^When I say (.{1,16}),? I mean (.{1,60})[.!]?$","^When I say (.{1,16}),? I mean (.{1,60})[.!]?$"
+memory.rain_word,雨,rain
+memory.event_anniversary,那件事过去{days}天了：{memory},It has been {days} days since: {memory}
+memory.fishing_together,{first}和{second}一起钓鱼时有了真实钓获。,{first} and {second} were fishing together when a real fish was caught.
+memory.handshake_ok,握手成功（无对话）,Handshake succeeded (no dialogue)
+memory.letter_system_terms,引用id|原话id|笔记|系统,citationid|quoteid|notes|system
+memory.letter_voice_instruction,像你本人写给对方的短信。,Write like a personal text message from yourself to the recipient.

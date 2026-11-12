@@ -1,0 +1,13 @@
+{
+  "id": "dark-lively-beacon",
+  "context": "dark_beacon",
+  "lines": [
+    "哇，灯醒过来了呀！",
+    "哇，这一片都亮了呀！",
+    "哇，以后回来就认得路了呀！",
+    "哇，大家都在这里呀！",
+    "哇，这盏灯等到人了呀！",
+    "哇，给夜里回家的船看看呀！"
+  ],
+  "autonomy_output": false
+}

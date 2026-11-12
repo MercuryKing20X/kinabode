@@ -1,0 +1,11 @@
+{
+  "id": "fish-v2-gentle-large",
+  "context": "fishing_v2_large",
+  "lines": [
+    "轻轻地，好大一条鱼！",
+    "嗯，这条鱼可真有分量。",
+    "好呀，哇，鱼比想象中大。",
+    "慢慢来，要稳稳托住这条大鱼。"
+  ],
+  "autonomy_output": false
+}

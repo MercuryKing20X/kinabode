@@ -1,0 +1,9 @@
+{
+  "id": "lively-fishing-nibble",
+  "context": "fishing_nibble",
+  "lines": [
+    "动了动了……欸，又安静了！",
+    "好像有谁碰了碰！"
+  ],
+  "autonomy_output": false
+}

@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://csgdlmffw5rb0"
+
+[deps]
+
+files=["res://content/i18n/barbecue_repair.zh.translation", "res://content/i18n/barbecue_repair.en.translation"]
+
+source_file="res://content/i18n/barbecue_repair.csv"
+dest_files=["res://content/i18n/barbecue_repair.zh.translation", "res://content/i18n/barbecue_repair.en.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

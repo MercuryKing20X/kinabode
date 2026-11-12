@@ -1,0 +1,2470 @@
+{
+  "schema_version": 1,
+  "id": "core",
+  "version": 2,
+  "name": "有栖 · 初始群岛",
+  "regions": [
+    {
+      "id": "home",
+      "name": "初晴岛",
+      "origin": [
+        4048,
+        4048
+      ],
+      "size": [
+        160,
+        128
+      ],
+      "land": [
+        [
+          7.875,
+          32.375
+        ],
+        [
+          9.125,
+          28.625
+        ],
+        [
+          10.812,
+          25.5
+        ],
+        [
+          12.938,
+          23.0
+        ],
+        [
+          15.5,
+          21.125
+        ],
+        [
+          18.5,
+          19.875
+        ],
+        [
+          20.938,
+          18.375
+        ],
+        [
+          22.812,
+          16.625
+        ],
+        [
+          24.125,
+          14.625
+        ],
+        [
+          24.875,
+          12.375
+        ],
+        [
+          26.438,
+          10.438
+        ],
+        [
+          28.812,
+          8.812
+        ],
+        [
+          32.0,
+          7.5
+        ],
+        [
+          36.0,
+          6.5
+        ],
+        [
+          39.812,
+          6.0
+        ],
+        [
+          43.438,
+          6.0
+        ],
+        [
+          46.875,
+          6.5
+        ],
+        [
+          52.994,
+          7.5
+        ],
+        [
+          60.925,
+          8.125
+        ],
+        [
+          69.15,
+          8.375
+        ],
+        [
+          77.669,
+          8.25
+        ],
+        [
+          86.481,
+          7.75
+        ],
+        [
+          95.294,
+          7.938
+        ],
+        [
+          104.106,
+          8.812
+        ],
+        [
+          112.919,
+          10.375
+        ],
+        [
+          121.731,
+          12.625
+        ],
+        [
+          129.221,
+          15.188
+        ],
+        [
+          135.392,
+          18.062
+        ],
+        [
+          140.238,
+          21.25
+        ],
+        [
+          143.762,
+          24.75
+        ],
+        [
+          146.554,
+          28.312
+        ],
+        [
+          148.608,
+          31.938
+        ],
+        [
+          149.931,
+          35.625
+        ],
+        [
+          150.519,
+          39.375
+        ],
+        [
+          150.225,
+          46.43
+        ],
+        [
+          149.05,
+          54.045
+        ],
+        [
+          146.994,
+          61.525
+        ],
+        [
+          144.056,
+          68.875
+        ],
+        [
+          139.944,
+          75.7
+        ],
+        [
+          140,
+          83
+        ],
+        [
+          140,
+          92
+        ],
+        [
+          137,
+          101
+        ],
+        [
+          131,
+          110
+        ],
+        [
+          120,
+          116
+        ],
+        [
+          105,
+          119
+        ],
+        [
+          88,
+          117
+        ],
+        [
+          70.619,
+          109.825
+        ],
+        [
+          60.631,
+          111.925
+        ],
+        [
+          51.231,
+          113.763
+        ],
+        [
+          45.625,
+          115.338
+        ],
+        [
+          41.75,
+          115.47
+        ],
+        [
+          37.75,
+          114.155
+        ],
+        [
+          33.625,
+          111.4
+        ],
+        [
+          29.375,
+          107.2
+        ],
+        [
+          25.375,
+          102.605
+        ],
+        [
+          21.625,
+          97.62
+        ],
+        [
+          18.125,
+          92.238
+        ],
+        [
+          14.875,
+          86.463
+        ],
+        [
+          12.188,
+          79.505
+        ],
+        [
+          10.062,
+          71.37
+        ],
+        [
+          8.5,
+          62.05
+        ],
+        [
+          7.5,
+          51.55
+        ],
+        [
+          7.062,
+          41.705
+        ],
+        [
+          7.188,
+          36.438
+        ]
+      ],
+      "zones": [
+        {
+          "id": "home.court",
+          "name": "家园宅地",
+          "purpose": "housing",
+          "rect": [
+            28,
+            26,
+            25,
+            18
+          ],
+          "planned_actions": [
+            "build",
+            "furnish"
+          ]
+        },
+        {
+          "id": "home.garden",
+          "name": "固定菜园",
+          "purpose": "farming",
+          "rect": [
+            28.5,
+            49.1,
+            17.3,
+            13.5
+          ],
+          "planned_actions": [
+            "plant",
+            "water",
+            "harvest"
+          ]
+        },
+        {
+          "id": "home.forest",
+          "name": "资源林",
+          "purpose": "resources",
+          "rect": [
+            59,
+            24,
+            26,
+            30
+          ],
+          "planned_actions": [
+            "chop",
+            "gather"
+          ]
+        },
+        {
+          "id": "home.orchard",
+          "name": "果园预留地",
+          "purpose": "orchard",
+          "rect": [
+            59,
+            57,
+            21,
+            12
+          ],
+          "planned_actions": [
+            "plant_tree",
+            "harvest"
+          ]
+        },
+        {
+          "id": "home.shore",
+          "name": "家园南庭",
+          "purpose": "scenery",
+          "rect": [
+            33,
+            65,
+            14,
+            8
+          ],
+          "planned_actions": []
+        },
+        {
+          "id": "home.meadow",
+          "name": "公共草地",
+          "purpose": "scenery",
+          "rect": [
+            13,
+            34,
+            14.6,
+            20
+          ],
+          "planned_actions": []
+        },
+        {
+          "id": "home.north_grove",
+          "name": "北部松林",
+          "purpose": "resources",
+          "rect": [
+            92,
+            20,
+            38,
+            23
+          ],
+          "planned_actions": [
+            "chop"
+          ]
+        },
+        {
+          "id": "home.east_grove",
+          "name": "东部阔叶林",
+          "purpose": "resources",
+          "rect": [
+            99,
+            46,
+            29,
+            27
+          ],
+          "planned_actions": [
+            "chop"
+          ]
+        },
+        {
+          "id": "home.storage",
+          "name": "林间仓储",
+          "purpose": "storage",
+          "rect": [
+            85,
+            50,
+            12,
+            13
+          ],
+          "planned_actions": [
+            "store"
+          ]
+        },
+        {
+          "id": "home.second_court",
+          "name": "南部宅地",
+          "purpose": "housing",
+          "rect": [
+            56,
+            77,
+            26,
+            19
+          ],
+          "planned_actions": [
+            "build"
+          ]
+        },
+        {
+          "id": "home.east_orchard",
+          "name": "东部果园预留地",
+          "purpose": "orchard",
+          "rect": [
+            86,
+            83,
+            16,
+            12
+          ],
+          "planned_actions": [
+            "plant_tree"
+          ]
+        },
+        {
+          "id": "home.pond",
+          "name": "林间池塘",
+          "purpose": "scenery",
+          "rect": [
+            104,
+            76,
+            18,
+            10
+          ],
+          "planned_actions": []
+        },
+        {
+          "id": "home.south_beach",
+          "name": "南部沙岸",
+          "purpose": "shore",
+          "rect": [
+            51,
+            100,
+            20,
+            8
+          ],
+          "planned_actions": []
+        },
+        {
+          "id": "home.lookout",
+          "name": "北坡花径",
+          "purpose": "scenery",
+          "rect": [
+            45,
+            12,
+            22,
+            10
+          ],
+          "planned_actions": []
+        },
+        {
+          "id": "home.east_farm",
+          "name": "东岸农场",
+          "purpose": "farming",
+          "rect": [
+            112,
+            90,
+            19,
+            14
+          ]
+        }
+      ],
+      "objects": [
+        {
+          "id": "home.house.01",
+          "kind": "construction_site",
+          "zone_id": "home.court",
+          "position": [
+            38,
+            37
+          ],
+          "name": "第一座共同的家",
+          "status": "planned",
+          "footprint": [
+            8,
+            7
+          ],
+          "stage": "foundation",
+          "delivered": {},
+          "required": {
+            "wood": 12
+          },
+          "stage_index": 0,
+          "invested": 0
+        },
+        {
+          "id": "home.tree.01",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            61.0,
+            27.1
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6
+        },
+        {
+          "id": "home.tree.02",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            65.48470838791486,
+            25.644381476450146
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6
+        },
+        {
+          "id": "home.tree.03",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            68.35410084763825,
+            25.129935516894143
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6
+        },
+        {
+          "id": "home.tree.04",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            73.37598584685233,
+            26.918184063323075
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6
+        },
+        {
+          "id": "home.tree.05",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            77.14487844416516,
+            26.27638582684048
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6
+        },
+        {
+          "id": "home.tree.06",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            80.43095608645253,
+            24.903110628183985
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6
+        },
+        {
+          "id": "home.tree.07",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            61.61340218513867,
+            33.432839952982675
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6
+        },
+        {
+          "id": "home.tree.08",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            64.7516535788304,
+            33.81702408997404
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6
+        },
+        {
+          "id": "home.tree.09",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            68.71753234565327,
+            32.038889318687815
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6
+        },
+        {
+          "id": "home.tree.10",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            73.62474927092637,
+            32.80441002176457
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6
+        },
+        {
+          "id": "home.tree.11",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            76.44995673728614,
+            34.08757508000534
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6
+        },
+        {
+          "id": "home.tree.12",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            81.10821200229915,
+            32.4923866251425
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6
+        },
+        {
+          "id": "home.tree.13",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            61.40584513802066,
+            39.240637136178265
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6
+        },
+        {
+          "id": "home.tree.14",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            64.35097823006852,
+            40.99860155753181
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6
+        },
+        {
+          "id": "home.tree.15",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            69.45901014716722,
+            40.11368793381437
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6
+        },
+        {
+          "id": "home.tree.16",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            73.0373668607682,
+            38.927890196707274
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6
+        },
+        {
+          "id": "home.tree.17",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            76.49119656619207,
+            40.57951589405887
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6
+        },
+        {
+          "id": "home.tree.18",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            81.64064019421392,
+            40.69740691853111
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6
+        },
+        {
+          "id": "home.tree.19",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            60.655117034462364,
+            45.969555344702066
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6
+        },
+        {
+          "id": "home.tree.20",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            64.81893430595728,
+            46.968857094045056
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6
+        },
+        {
+          "id": "home.tree.21",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            69.58616242597172,
+            48.05058100845203
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6
+        },
+        {
+          "id": "home.tree.22",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            72.39997375604237,
+            46.35185914759999
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6
+        },
+        {
+          "id": "home.tree.23",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            77.21340377100341,
+            46.36849334242586
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6
+        },
+        {
+          "id": "home.tree.24",
+          "kind": "tree",
+          "zone_id": "home.forest",
+          "position": [
+            81.3156546130171,
+            48.056459879997135
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6
+        },
+        {
+          "id": "home.plot.01",
+          "kind": "farm_plot",
+          "zone_id": "home.garden",
+          "position": [
+            32,
+            52
+          ],
+          "name": "菜畦",
+          "status": "empty",
+          "crop": null
+        },
+        {
+          "id": "home.plot.02",
+          "kind": "farm_plot",
+          "zone_id": "home.garden",
+          "position": [
+            35,
+            52
+          ],
+          "name": "菜畦",
+          "status": "empty",
+          "crop": null
+        },
+        {
+          "id": "home.plot.03",
+          "kind": "farm_plot",
+          "zone_id": "home.garden",
+          "position": [
+            38,
+            52
+          ],
+          "name": "菜畦",
+          "status": "empty",
+          "crop": null
+        },
+        {
+          "id": "home.plot.04",
+          "kind": "farm_plot",
+          "zone_id": "home.garden",
+          "position": [
+            41,
+            52
+          ],
+          "name": "菜畦",
+          "status": "empty",
+          "crop": null
+        },
+        {
+          "id": "home.plot.05",
+          "kind": "farm_plot",
+          "zone_id": "home.garden",
+          "position": [
+            32,
+            55
+          ],
+          "name": "菜畦",
+          "status": "empty",
+          "crop": null
+        },
+        {
+          "id": "home.plot.06",
+          "kind": "farm_plot",
+          "zone_id": "home.garden",
+          "position": [
+            35,
+            55
+          ],
+          "name": "菜畦",
+          "status": "empty",
+          "crop": null
+        },
+        {
+          "id": "home.plot.07",
+          "kind": "farm_plot",
+          "zone_id": "home.garden",
+          "position": [
+            38,
+            55
+          ],
+          "name": "菜畦",
+          "status": "empty",
+          "crop": null
+        },
+        {
+          "id": "home.plot.08",
+          "kind": "farm_plot",
+          "zone_id": "home.garden",
+          "position": [
+            41,
+            55
+          ],
+          "name": "菜畦",
+          "status": "empty",
+          "crop": null
+        },
+        {
+          "id": "home.plot.09",
+          "kind": "farm_plot",
+          "zone_id": "home.garden",
+          "position": [
+            32,
+            58
+          ],
+          "name": "菜畦",
+          "status": "empty",
+          "crop": null
+        },
+        {
+          "id": "home.plot.10",
+          "kind": "farm_plot",
+          "zone_id": "home.garden",
+          "position": [
+            35,
+            58
+          ],
+          "name": "菜畦",
+          "status": "empty",
+          "crop": null
+        },
+        {
+          "id": "home.plot.11",
+          "kind": "farm_plot",
+          "zone_id": "home.garden",
+          "position": [
+            38,
+            58
+          ],
+          "name": "菜畦",
+          "status": "empty",
+          "crop": null
+        },
+        {
+          "id": "home.plot.12",
+          "kind": "farm_plot",
+          "zone_id": "home.garden",
+          "position": [
+            41,
+            58
+          ],
+          "name": "菜畦",
+          "status": "empty",
+          "crop": null
+        },
+        {
+          "id": "home.tree.101",
+          "kind": "tree",
+          "zone_id": "home.north_grove",
+          "position": [
+            95.03,
+            24.1
+          ],
+          "name": "松林木",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.102",
+          "kind": "tree",
+          "zone_id": "home.north_grove",
+          "position": [
+            95.41,
+            29.48
+          ],
+          "name": "松林木",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.103",
+          "kind": "tree",
+          "zone_id": "home.north_grove",
+          "position": [
+            95.46,
+            33.84
+          ],
+          "name": "松林木",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.104",
+          "kind": "tree",
+          "zone_id": "home.north_grove",
+          "position": [
+            95.54,
+            38.91
+          ],
+          "name": "松林木",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.105",
+          "kind": "tree",
+          "zone_id": "home.north_grove",
+          "position": [
+            99.77,
+            23.51
+          ],
+          "name": "松林木",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.106",
+          "kind": "tree",
+          "zone_id": "home.north_grove",
+          "position": [
+            100.01,
+            28.59
+          ],
+          "name": "松林木",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.107",
+          "kind": "tree",
+          "zone_id": "home.north_grove",
+          "position": [
+            99.73,
+            34.13
+          ],
+          "name": "松林木",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.109",
+          "kind": "tree",
+          "zone_id": "home.north_grove",
+          "position": [
+            104.5,
+            23.47
+          ],
+          "name": "松林木",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.110",
+          "kind": "tree",
+          "zone_id": "home.north_grove",
+          "position": [
+            104.71,
+            29.06
+          ],
+          "name": "松林木",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.111",
+          "kind": "tree",
+          "zone_id": "home.north_grove",
+          "position": [
+            105.41,
+            34.36
+          ],
+          "name": "松林木",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.113",
+          "kind": "tree",
+          "zone_id": "home.north_grove",
+          "position": [
+            110.16,
+            23.75
+          ],
+          "name": "松林木",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.114",
+          "kind": "tree",
+          "zone_id": "home.north_grove",
+          "position": [
+            109.78,
+            28.65
+          ],
+          "name": "松林木",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.116",
+          "kind": "tree",
+          "zone_id": "home.north_grove",
+          "position": [
+            110.09,
+            38.87
+          ],
+          "name": "松林木",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.117",
+          "kind": "tree",
+          "zone_id": "home.north_grove",
+          "position": [
+            114.91,
+            23.7
+          ],
+          "name": "松林木",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.118",
+          "kind": "tree",
+          "zone_id": "home.north_grove",
+          "position": [
+            115.38,
+            29.1
+          ],
+          "name": "松林木",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.120",
+          "kind": "tree",
+          "zone_id": "home.north_grove",
+          "position": [
+            114.74,
+            38.54
+          ],
+          "name": "松林木",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.121",
+          "kind": "tree",
+          "zone_id": "home.north_grove",
+          "position": [
+            119.74,
+            24.49
+          ],
+          "name": "松林木",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.122",
+          "kind": "tree",
+          "zone_id": "home.north_grove",
+          "position": [
+            120.35,
+            28.89
+          ],
+          "name": "松林木",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.123",
+          "kind": "tree",
+          "zone_id": "home.north_grove",
+          "position": [
+            120.33,
+            33.81
+          ],
+          "name": "松林木",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.124",
+          "kind": "tree",
+          "zone_id": "home.north_grove",
+          "position": [
+            120.44,
+            38.51
+          ],
+          "name": "松林木",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.125",
+          "kind": "tree",
+          "zone_id": "home.north_grove",
+          "position": [
+            125.29,
+            24.58
+          ],
+          "name": "松林木",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.126",
+          "kind": "tree",
+          "zone_id": "home.north_grove",
+          "position": [
+            124.9,
+            28.95
+          ],
+          "name": "松林木",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.127",
+          "kind": "tree",
+          "zone_id": "home.north_grove",
+          "position": [
+            124.56,
+            33.73
+          ],
+          "name": "松林木",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.128",
+          "kind": "tree",
+          "zone_id": "home.north_grove",
+          "position": [
+            124.68,
+            38.76
+          ],
+          "name": "松林木",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.129",
+          "kind": "tree",
+          "zone_id": "home.east_grove",
+          "position": [
+            101.48,
+            47.76
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.130",
+          "kind": "tree",
+          "zone_id": "home.east_grove",
+          "position": [
+            101.53,
+            53.03
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.131",
+          "kind": "tree",
+          "zone_id": "home.east_grove",
+          "position": [
+            101.89,
+            57.67
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.132",
+          "kind": "tree",
+          "zone_id": "home.east_grove",
+          "position": [
+            102.53,
+            62.77
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.133",
+          "kind": "tree",
+          "zone_id": "home.east_grove",
+          "position": [
+            102.04,
+            68.47
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.134",
+          "kind": "tree",
+          "zone_id": "home.east_grove",
+          "position": [
+            107.31,
+            48.56
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.135",
+          "kind": "tree",
+          "zone_id": "home.east_grove",
+          "position": [
+            107.13,
+            53.44
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.136",
+          "kind": "tree",
+          "zone_id": "home.east_grove",
+          "position": [
+            106.48,
+            58.28
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.138",
+          "kind": "tree",
+          "zone_id": "home.east_grove",
+          "position": [
+            107.32,
+            68.29
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.139",
+          "kind": "tree",
+          "zone_id": "home.east_grove",
+          "position": [
+            111.81,
+            47.84
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.140",
+          "kind": "tree",
+          "zone_id": "home.east_grove",
+          "position": [
+            111.73,
+            53.52
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.141",
+          "kind": "tree",
+          "zone_id": "home.east_grove",
+          "position": [
+            112.14,
+            57.71
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.143",
+          "kind": "tree",
+          "zone_id": "home.east_grove",
+          "position": [
+            111.72,
+            68.0
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.144",
+          "kind": "tree",
+          "zone_id": "home.east_grove",
+          "position": [
+            117.57,
+            48.43
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.145",
+          "kind": "tree",
+          "zone_id": "home.east_grove",
+          "position": [
+            117.06,
+            53.32
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.146",
+          "kind": "tree",
+          "zone_id": "home.east_grove",
+          "position": [
+            116.7,
+            58.23
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.147",
+          "kind": "tree",
+          "zone_id": "home.east_grove",
+          "position": [
+            117.6,
+            62.58
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.148",
+          "kind": "tree",
+          "zone_id": "home.east_grove",
+          "position": [
+            117.52,
+            68.58
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.149",
+          "kind": "tree",
+          "zone_id": "home.east_grove",
+          "position": [
+            121.84,
+            48.38
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.150",
+          "kind": "tree",
+          "zone_id": "home.east_grove",
+          "position": [
+            122.59,
+            52.58
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.151",
+          "kind": "tree",
+          "zone_id": "home.east_grove",
+          "position": [
+            121.96,
+            58.11
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.152",
+          "kind": "tree",
+          "zone_id": "home.east_grove",
+          "position": [
+            122.35,
+            62.72
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.153",
+          "kind": "tree",
+          "zone_id": "home.east_grove",
+          "position": [
+            122.3,
+            68.24
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.154",
+          "kind": "tree",
+          "zone_id": "home.east_grove",
+          "position": [
+            127.43,
+            48.28
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.155",
+          "kind": "tree",
+          "zone_id": "home.east_grove",
+          "position": [
+            127.43,
+            53.12
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.156",
+          "kind": "tree",
+          "zone_id": "home.east_grove",
+          "position": [
+            127.05,
+            57.95
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.157",
+          "kind": "tree",
+          "zone_id": "home.east_grove",
+          "position": [
+            126.89,
+            62.96
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.tree.158",
+          "kind": "tree",
+          "zone_id": "home.east_grove",
+          "position": [
+            126.99,
+            67.87
+          ],
+          "name": "阔叶树",
+          "status": "mature",
+          "wood_yield": 8,
+          "health": 6,
+          "introduced_in": 2
+        },
+        {
+          "id": "home.house.02",
+          "kind": "construction_site",
+          "zone_id": "home.second_court",
+          "position": [
+            68,
+            84
+          ],
+          "name": "南庭小屋",
+          "status": "planned",
+          "footprint": [
+            8,
+            7
+          ],
+          "stage": "foundation",
+          "delivered": {},
+          "required": {
+            "wood": 12
+          },
+          "stage_index": 0,
+          "invested": 0,
+          "introduced_in": 2
+        }
+      ],
+      "legacy_land": [
+        [
+          7.875,
+          32.375
+        ],
+        [
+          9.125,
+          28.625
+        ],
+        [
+          10.812,
+          25.5
+        ],
+        [
+          12.938,
+          23.0
+        ],
+        [
+          15.5,
+          21.125
+        ],
+        [
+          18.5,
+          19.875
+        ],
+        [
+          20.938,
+          18.375
+        ],
+        [
+          22.812,
+          16.625
+        ],
+        [
+          24.125,
+          14.625
+        ],
+        [
+          24.875,
+          12.375
+        ],
+        [
+          26.438,
+          10.438
+        ],
+        [
+          28.812,
+          8.812
+        ],
+        [
+          32.0,
+          7.5
+        ],
+        [
+          36.0,
+          6.5
+        ],
+        [
+          39.812,
+          6.0
+        ],
+        [
+          43.438,
+          6.0
+        ],
+        [
+          46.875,
+          6.5
+        ],
+        [
+          50.125,
+          7.5
+        ],
+        [
+          53.5,
+          8.125
+        ],
+        [
+          57.0,
+          8.375
+        ],
+        [
+          60.625,
+          8.25
+        ],
+        [
+          64.375,
+          7.75
+        ],
+        [
+          68.125,
+          7.938
+        ],
+        [
+          71.875,
+          8.812
+        ],
+        [
+          75.625,
+          10.375
+        ],
+        [
+          79.375,
+          12.625
+        ],
+        [
+          82.562,
+          15.188
+        ],
+        [
+          85.188,
+          18.062
+        ],
+        [
+          87.25,
+          21.25
+        ],
+        [
+          88.75,
+          24.75
+        ],
+        [
+          89.938,
+          28.312
+        ],
+        [
+          90.812,
+          31.938
+        ],
+        [
+          91.375,
+          35.625
+        ],
+        [
+          91.625,
+          39.375
+        ],
+        [
+          91.5,
+          43.062
+        ],
+        [
+          91.0,
+          46.688
+        ],
+        [
+          90.125,
+          50.25
+        ],
+        [
+          88.875,
+          53.75
+        ],
+        [
+          87.125,
+          57.0
+        ],
+        [
+          84.875,
+          60.0
+        ],
+        [
+          82.125,
+          62.75
+        ],
+        [
+          78.875,
+          65.25
+        ],
+        [
+          75.25,
+          67.438
+        ],
+        [
+          71.25,
+          69.312
+        ],
+        [
+          66.875,
+          70.875
+        ],
+        [
+          62.125,
+          72.125
+        ],
+        [
+          57.625,
+          73.25
+        ],
+        [
+          53.375,
+          74.25
+        ],
+        [
+          49.375,
+          75.125
+        ],
+        [
+          45.625,
+          75.875
+        ],
+        [
+          41.75,
+          75.938
+        ],
+        [
+          37.75,
+          75.312
+        ],
+        [
+          33.625,
+          74.0
+        ],
+        [
+          29.375,
+          72.0
+        ],
+        [
+          25.375,
+          69.812
+        ],
+        [
+          21.625,
+          67.438
+        ],
+        [
+          18.125,
+          64.875
+        ],
+        [
+          14.875,
+          62.125
+        ],
+        [
+          12.188,
+          58.812
+        ],
+        [
+          10.062,
+          54.938
+        ],
+        [
+          8.5,
+          50.5
+        ],
+        [
+          7.5,
+          45.5
+        ],
+        [
+          7.062,
+          40.812
+        ],
+        [
+          7.188,
+          36.438
+        ]
+      ],
+      "content_version": 2,
+      "layout": {
+        "roads": [
+          {
+            "points": [
+              [
+                38,
+                42
+              ],
+              [
+                38,
+                45
+              ],
+              [
+                43,
+                45
+              ],
+              [
+                51,
+                45
+              ],
+              [
+                59,
+                44
+              ],
+              [
+                63,
+                42
+              ]
+            ],
+            "width": 1.05
+          },
+          {
+            "points": [
+              [
+                45,
+                45
+              ],
+              [
+                48,
+                51
+              ],
+              [
+                48,
+                61
+              ],
+              [
+                43,
+                68
+              ],
+              [
+                41,
+                74
+              ]
+            ],
+            "width": 0.9
+          },
+          {
+            "points": [
+              [
+                48,
+                56
+              ],
+              [
+                43,
+                56
+              ],
+              [
+                41.9,
+                56
+              ]
+            ],
+            "width": 0.65
+          },
+          {
+            "points": [
+              [
+                38,
+                45
+              ],
+              [
+                30,
+                45
+              ],
+              [
+                24,
+                47
+              ]
+            ],
+            "width": 0.8
+          },
+          {
+            "points": [
+              [
+                51,
+                45
+              ],
+              [
+                54,
+                30
+              ],
+              [
+                52,
+                24
+              ],
+              [
+                55,
+                19
+              ]
+            ],
+            "width": 0.8
+          },
+          {
+            "points": [
+              [
+                59,
+                44
+              ],
+              [
+                85,
+                44
+              ],
+              [
+                94,
+                43
+              ],
+              [
+                106,
+                38
+              ],
+              [
+                115,
+                32
+              ]
+            ],
+            "width": 1.0
+          },
+          {
+            "points": [
+              [
+                85,
+                44
+              ],
+              [
+                90,
+                48
+              ],
+              [
+                90,
+                56
+              ],
+              [
+                95,
+                60
+              ],
+              [
+                111,
+                61
+              ]
+            ],
+            "width": 0.95
+          },
+          {
+            "points": [
+              [
+                48,
+                61
+              ],
+              [
+                52,
+                68
+              ],
+              [
+                54,
+                74
+              ],
+              [
+                68,
+                75
+              ],
+              [
+                80,
+                76
+              ],
+              [
+                92,
+                78
+              ],
+              [
+                103,
+                89
+              ],
+              [
+                114,
+                94
+              ]
+            ],
+            "width": 1.1
+          },
+          {
+            "points": [
+              [
+                68,
+                75
+              ],
+              [
+                70,
+                96
+              ],
+              [
+                67,
+                108
+              ]
+            ],
+            "width": 1.05
+          },
+          {
+            "points": [
+              [
+                68,
+                89
+              ],
+              [
+                70,
+                92
+              ]
+            ],
+            "width": 0.85
+          },
+          {
+            "points": [
+              [
+                92,
+                78
+              ],
+              [
+                102.8,
+                87
+              ],
+              [
+                103,
+                96
+              ]
+            ],
+            "width": 0.65
+          },
+          {
+            "points": [
+              [
+                103,
+                89
+              ],
+              [
+                109,
+                90
+              ],
+              [
+                112,
+                94
+              ],
+              [
+                112,
+                103
+              ],
+              [
+                123,
+                105
+              ]
+            ],
+            "width": 0.9
+          },
+          {
+            "points": [
+              [
+                73,
+                67.8
+              ],
+              [
+                76,
+                69
+              ],
+              [
+                80,
+                76
+              ]
+            ],
+            "width": 0.7
+          }
+        ],
+        "garden": {
+          "soil_rect": [
+            30.3,
+            50.6,
+            12.4,
+            8.8
+          ],
+          "bed_size": [
+            2.4,
+            1.8
+          ],
+          "fences": [],
+          "gate": [
+            44.3,
+            56.5
+          ],
+          "apron_rect": [
+            29.6,
+            50.1,
+            14.1,
+            10.8
+          ]
+        },
+        "ponds": [
+          {
+            "center": [
+              113,
+              81
+            ],
+            "radius": [
+              7,
+              3.4
+            ]
+          }
+        ],
+        "landmarks": [
+          {
+            "name": "家园",
+            "position": [
+              38,
+              43
+            ]
+          },
+          {
+            "name": "菜园",
+            "position": [
+              44.3,
+              56
+            ]
+          },
+          {
+            "name": "烧烤草地",
+            "position": [
+              24,
+              47
+            ]
+          },
+          {
+            "name": "林间木箱",
+            "position": [
+              90,
+              58
+            ]
+          },
+          {
+            "name": "南庭宅地",
+            "position": [
+              68,
+              90
+            ]
+          },
+          {
+            "name": "池塘",
+            "position": [
+              113,
+              87
+            ]
+          },
+          {
+            "name": "沙岸",
+            "position": [
+              67,
+              108
+            ]
+          }
+        ]
+      },
+      "initial_storage": {}
+    },
+    {
+      "id": "pine",
+      "name": "远松岛",
+      "origin": [
+        4330,
+        3900
+      ],
+      "size": [
+        100,
+        80
+      ],
+      "land": [
+        [
+          12,
+          39
+        ],
+        [
+          21,
+          21
+        ],
+        [
+          43,
+          11
+        ],
+        [
+          62,
+          17
+        ],
+        [
+          80,
+          28
+        ],
+        [
+          88,
+          46
+        ],
+        [
+          68,
+          64
+        ],
+        [
+          41,
+          71
+        ],
+        [
+          19,
+          61
+        ]
+      ],
+      "zones": [],
+      "objects": [],
+      "initial_storage": {}
+    },
+    {
+      "id": "moon",
+      "name": "月牙礁",
+      "origin": [
+        3850,
+        4290
+      ],
+      "size": [
+        80,
+        64
+      ],
+      "land": [
+        [
+          9,
+          30
+        ],
+        [
+          21,
+          13
+        ],
+        [
+          45,
+          8
+        ],
+        [
+          65,
+          20
+        ],
+        [
+          68,
+          36
+        ],
+        [
+          56,
+          51
+        ],
+        [
+          39,
+          55
+        ],
+        [
+          27,
+          42
+        ],
+        [
+          42,
+          38
+        ],
+        [
+          48,
+          29
+        ],
+        [
+          36,
+          22
+        ],
+        [
+          24,
+          29
+        ],
+        [
+          20,
+          43
+        ]
+      ],
+      "zones": [],
+      "objects": [],
+      "initial_storage": {}
+    }
+  ]
+}

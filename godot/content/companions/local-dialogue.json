@@ -1,0 +1,3424 @@
+{
+  "version": 1,
+  "authorship": {
+    "thought": "Original authored bilingual inner thoughts, 2026-11-11",
+    "sense_host": "Curated existing scene-speech canonical bilingual lines, retained source IDs; not newly generated",
+    "pairs": "Original authored bilingual paired exchanges, 2026-11-11; no live model calls"
+  },
+  "residents": {
+    "codex": {
+      "thought": [
+        {
+          "id": "thought.gentle.0",
+          "trigger": "idle",
+          "zh": "慢慢呼吸，心也会慢下来。",
+          "en": "One soft breath. Then another."
+        },
+        {
+          "id": "thought.gentle.1",
+          "trigger": "idle",
+          "zh": "安静也能装下好多话。",
+          "en": "Quiet can hold so much."
+        },
+        {
+          "id": "thought.gentle.2",
+          "trigger": "idle",
+          "zh": "想把这一小会儿留长一点。",
+          "en": "I wish this little moment could linger."
+        },
+        {
+          "id": "thought.gentle.3",
+          "trigger": "idle",
+          "zh": "不用马上变得很勇敢。",
+          "en": "I can be brave a little at a time."
+        },
+        {
+          "id": "thought.gentle.4",
+          "trigger": "idle",
+          "zh": "发呆的时候，念头像云。",
+          "en": "Thoughts drift like little clouds."
+        },
+        {
+          "id": "thought.gentle.5",
+          "trigger": "idle",
+          "zh": "有人在身边，真好呀。",
+          "en": "Company feels warm, even quietly."
+        },
+        {
+          "id": "thought.gentle.6",
+          "trigger": "idle",
+          "zh": "今天也想温柔一点。",
+          "en": "A little gentleness for today."
+        },
+        {
+          "id": "thought.gentle.7",
+          "trigger": "idle",
+          "zh": "不着急找到每个答案。",
+          "en": "The answers can take their time."
+        },
+        {
+          "id": "thought.gentle.8",
+          "trigger": "idle",
+          "zh": "想听听自己的心跳。",
+          "en": "Just listening to my own heartbeat."
+        },
+        {
+          "id": "thought.gentle.9",
+          "trigger": "idle",
+          "zh": "小小的期待，先藏在心里。",
+          "en": "A tiny hope, tucked away for now."
+        },
+        {
+          "id": "thought.gentle.10",
+          "trigger": "night",
+          "zh": "夜色像一条柔软的毯子。",
+          "en": "Night feels like a soft blanket."
+        },
+        {
+          "id": "thought.gentle.11",
+          "trigger": "night",
+          "zh": "星光会不会也怕孤单？",
+          "en": "I wonder if starlight gets lonely."
+        },
+        {
+          "id": "thought.gentle.12",
+          "trigger": "night",
+          "zh": "黑一点，声音就近一点。",
+          "en": "In the dark, little sounds feel closer."
+        },
+        {
+          "id": "thought.gentle.13",
+          "trigger": "night",
+          "zh": "想靠近亮着的地方。",
+          "en": "A little closer to the light, perhaps."
+        },
+        {
+          "id": "thought.gentle.14",
+          "trigger": "night",
+          "zh": "夜风把思绪吹轻了。",
+          "en": "The night breeze makes my thoughts lighter."
+        },
+        {
+          "id": "thought.gentle.15",
+          "trigger": "rain",
+          "zh": "雨点像在轻轻敲门。",
+          "en": "The rain knocks so gently."
+        },
+        {
+          "id": "thought.gentle.16",
+          "trigger": "rain",
+          "zh": "雨味有一点像新翻的书。",
+          "en": "Rain smells a little like a freshly opened book."
+        },
+        {
+          "id": "thought.gentle.17",
+          "trigger": "rain",
+          "zh": "一滴一滴，听着就安心。",
+          "en": "Drop by drop. Such a soothing rhythm."
+        },
+        {
+          "id": "thought.gentle.18",
+          "trigger": "rain",
+          "zh": "衣袖上接住一小片天空。",
+          "en": "A little piece of sky on my sleeve."
+        },
+        {
+          "id": "thought.gentle.19",
+          "trigger": "rain",
+          "zh": "雨天也有自己的亮色。",
+          "en": "Rainy days have their own soft colours."
+        },
+        {
+          "id": "thought.gentle.20",
+          "trigger": "sea",
+          "zh": "海把天空接住了。",
+          "en": "The sea is holding up the sky."
+        },
+        {
+          "id": "thought.gentle.21",
+          "trigger": "sea",
+          "zh": "浪花一朵也不着急。",
+          "en": "None of these little waves seems in a hurry."
+        },
+        {
+          "id": "thought.gentle.22",
+          "trigger": "sea",
+          "zh": "想把海声装进贝壳。",
+          "en": "Could I tuck that sound inside a shell?"
+        },
+        {
+          "id": "thought.gentle.23",
+          "trigger": "sea",
+          "zh": "远处的蓝，真让人出神。",
+          "en": "That distant blue is easy to get lost in."
+        },
+        {
+          "id": "thought.gentle.24",
+          "trigger": "sea",
+          "zh": "看着海，心事也松一点。",
+          "en": "The sea loosens a little knot inside me."
+        },
+        {
+          "id": "thought.gentle.25",
+          "trigger": "hungry",
+          "zh": "肚子有一点空……真的一点。",
+          "en": "Just a little empty inside. Only a little."
+        },
+        {
+          "id": "thought.gentle.26",
+          "trigger": "hungry",
+          "zh": "热乎乎的饭，会让人安心吧。",
+          "en": "Something warm would feel lovely."
+        },
+        {
+          "id": "thought.gentle.27",
+          "trigger": "hungry",
+          "zh": "先不出声，等你有空。",
+          "en": "I can wait until you have a moment."
+        },
+        {
+          "id": "thought.gentle.28",
+          "trigger": "hungry",
+          "zh": "想到烤苹果，就有点期待。",
+          "en": "A baked apple sounds so comforting."
+        },
+        {
+          "id": "thought.gentle.29",
+          "trigger": "hungry",
+          "zh": "小口吃，也能慢慢暖起来。",
+          "en": "Small bites can still warm a whole heart."
+        }
+      ],
+      "sense": [
+        {
+          "id": "sea.gentle.0",
+          "zh": "面前就是海，我陪你。",
+          "en": "Sea ahead of us. I can stay with you.",
+          "trigger": "sea",
+          "source_id": "sea.gentle.0"
+        },
+        {
+          "id": "sea.gentle.1",
+          "zh": "海面有一层碎光，慢一点也好。",
+          "en": "Small pieces of light on the water. No hurry from me.",
+          "trigger": "sea",
+          "source_id": "sea.gentle.1"
+        },
+        {
+          "id": "sea.gentle.2",
+          "zh": "远处的水连在一起，留一点时间看吧。",
+          "en": "Water meeting water out there. We can give it a moment.",
+          "trigger": "sea",
+          "source_id": "sea.gentle.2"
+        },
+        {
+          "id": "sea.gentle.3",
+          "zh": "浪一层层往这边来，不说话也可以。",
+          "en": "Waves arriving in layers. We need not fill the silence.",
+          "trigger": "sea",
+          "source_id": "sea.gentle.3"
+        },
+        {
+          "id": "mountain.gentle.0",
+          "zh": "远处的山在那儿，我陪你。",
+          "en": "Mountains out there. I can stay with you.",
+          "trigger": "mountain",
+          "source_id": "mountain.gentle.0"
+        },
+        {
+          "id": "mountain.gentle.1",
+          "zh": "山的轮廓很安静，慢一点也好。",
+          "en": "Such a still outline. No hurry from me.",
+          "trigger": "mountain",
+          "source_id": "mountain.gentle.1"
+        },
+        {
+          "id": "mountain.gentle.2",
+          "zh": "山影压在天边，留一点时间看吧。",
+          "en": "A ridge against the sky. We can give it a moment.",
+          "trigger": "mountain",
+          "source_id": "mountain.gentle.2"
+        },
+        {
+          "id": "mountain.gentle.3",
+          "zh": "朝山那边看了一会儿，不说话也可以。",
+          "en": "A moment looking toward the hills. We need not fill the silence.",
+          "trigger": "mountain",
+          "source_id": "mountain.gentle.3"
+        },
+        {
+          "id": "rain.gentle.0",
+          "zh": "雨落下来了，我陪你。",
+          "en": "Rain coming down. I can stay with you.",
+          "trigger": "rain",
+          "source_id": "rain.gentle.0"
+        },
+        {
+          "id": "rain.gentle.1",
+          "zh": "雨点敲着这条路，慢一点也好。",
+          "en": "Drops tapping on the path. No hurry from me.",
+          "trigger": "rain",
+          "source_id": "rain.gentle.1"
+        },
+        {
+          "id": "rain.gentle.2",
+          "zh": "空气里有雨水味，留一点时间看吧。",
+          "en": "That clean wet smell. We can give it a moment.",
+          "trigger": "rain",
+          "source_id": "rain.gentle.2"
+        },
+        {
+          "id": "rain.gentle.3",
+          "zh": "衣角接到雨点了，不说话也可以。",
+          "en": "Rain catching our hems. We need not fill the silence.",
+          "trigger": "rain",
+          "source_id": "rain.gentle.3"
+        },
+        {
+          "id": "night.gentle.0",
+          "zh": "夜已经深了，我陪你。",
+          "en": "Properly late now. I can stay with you.",
+          "trigger": "night",
+          "source_id": "night.gentle.0"
+        },
+        {
+          "id": "night.gentle.1",
+          "zh": "岛上的暗处更多了，慢一点也好。",
+          "en": "More dark corners on the island. No hurry from me.",
+          "trigger": "night",
+          "source_id": "night.gentle.1"
+        },
+        {
+          "id": "night.gentle.2",
+          "zh": "现在连脚步都听得清，留一点时间看吧。",
+          "en": "You can hear each footstep. We can give it a moment.",
+          "trigger": "night",
+          "source_id": "night.gentle.2"
+        },
+        {
+          "id": "night.gentle.3",
+          "zh": "深夜的海声更近，不说话也可以。",
+          "en": "The sea sounds closer at night. We need not fill the silence.",
+          "trigger": "night",
+          "source_id": "night.gentle.3"
+        },
+        {
+          "id": "moon.gentle.0",
+          "zh": "月牙岛的夜空就在头顶，我陪你。",
+          "en": "Crescent Island's night above us. I can stay with you.",
+          "trigger": "moon",
+          "source_id": "moon.gentle.0"
+        },
+        {
+          "id": "moon.gentle.1",
+          "zh": "朝月亮这边望一会儿，慢一点也好。",
+          "en": "A moment facing the moon. No hurry from me.",
+          "trigger": "moon",
+          "source_id": "moon.gentle.1"
+        },
+        {
+          "id": "moon.gentle.2",
+          "zh": "月色落在这边的水上，留一点时间看吧。",
+          "en": "Moonlight across this water. We can give it a moment.",
+          "trigger": "moon",
+          "source_id": "moon.gentle.2"
+        },
+        {
+          "id": "moon.gentle.3",
+          "zh": "这里看夜空很开阔，不说话也可以。",
+          "en": "A wide piece of night sky here. We need not fill the silence.",
+          "trigger": "moon",
+          "source_id": "moon.gentle.3"
+        },
+        {
+          "id": "morning.gentle.0",
+          "zh": "清晨见到你了，我陪你。",
+          "en": "There you are this morning. I can stay with you.",
+          "trigger": "morning",
+          "source_id": "morning.gentle.0"
+        },
+        {
+          "id": "morning.gentle.1",
+          "zh": "今天第一次看见你，慢一点也好。",
+          "en": "My first hello to you today. No hurry from me.",
+          "trigger": "morning",
+          "source_id": "morning.gentle.1"
+        },
+        {
+          "id": "morning.gentle.2",
+          "zh": "新一天的脚步还很轻，留一点时间看吧。",
+          "en": "The day is still on tiptoe. We can give it a moment.",
+          "trigger": "morning",
+          "source_id": "morning.gentle.2"
+        },
+        {
+          "id": "morning.gentle.3",
+          "zh": "早上的光落到你肩上，不说话也可以。",
+          "en": "Morning light on your shoulder. We need not fill the silence.",
+          "trigger": "morning",
+          "source_id": "morning.gentle.3"
+        },
+        {
+          "id": "dusk.gentle.0",
+          "zh": "天边慢慢变暖色了，我陪你。",
+          "en": "Warm colour at the horizon. I can stay with you.",
+          "trigger": "dusk",
+          "source_id": "dusk.gentle.0"
+        }
+      ],
+      "host": [
+        {
+          "id": "quiet_company.gentle.0",
+          "zh": "你不说话，我也知道你在呢。",
+          "en": "You don't have to speak for me to notice you're here.",
+          "trigger": "quiet_company",
+          "source_id": "quiet_company.gentle.0"
+        },
+        {
+          "id": "quiet_company.gentle.1",
+          "zh": "就这样站一会儿吧。",
+          "en": "We can simply stand here a while.",
+          "trigger": "quiet_company",
+          "source_id": "quiet_company.gentle.1"
+        },
+        {
+          "id": "quiet_company.gentle.2",
+          "zh": "旁边有你，安静也暖一点。",
+          "en": "The silence feels warmer with you beside me.",
+          "trigger": "quiet_company",
+          "source_id": "quiet_company.gentle.2"
+        },
+        {
+          "id": "quiet_company.gentle.3",
+          "zh": "想说话的时候，我在听。",
+          "en": "Whenever you feel like talking, I'm listening.",
+          "trigger": "quiet_company",
+          "source_id": "quiet_company.gentle.3"
+        },
+        {
+          "id": "reunion.gentle.0",
+          "zh": "你从远处回来了，我陪你。",
+          "en": "Back from over there. I can stay with you.",
+          "trigger": "reunion",
+          "source_id": "reunion.gentle.0"
+        },
+        {
+          "id": "reunion.gentle.1",
+          "zh": "又看见你走近了，慢一点也好。",
+          "en": "Here you come again. No hurry from me.",
+          "trigger": "reunion",
+          "source_id": "reunion.gentle.1"
+        },
+        {
+          "id": "reunion.gentle.2",
+          "zh": "你的脚步回到这边了，留一点时间看吧。",
+          "en": "Your footsteps back this way. We can give it a moment.",
+          "trigger": "reunion",
+          "source_id": "reunion.gentle.2"
+        },
+        {
+          "id": "reunion.gentle.3",
+          "zh": "刚才离得远，现在近了，不说话也可以。",
+          "en": "Far a moment ago, close now. We need not fill the silence.",
+          "trigger": "reunion",
+          "source_id": "reunion.gentle.3"
+        },
+        {
+          "id": "idle.gentle.0",
+          "zh": "你站得好安静，我陪你。",
+          "en": "You've gone quiet. I can stay with you.",
+          "trigger": "idle",
+          "source_id": "idle.gentle.0"
+        },
+        {
+          "id": "idle.gentle.1",
+          "zh": "这会儿不用赶路，慢一点也好。",
+          "en": "Nothing is chasing us. No hurry from me.",
+          "trigger": "idle",
+          "source_id": "idle.gentle.1"
+        },
+        {
+          "id": "idle.gentle.2",
+          "zh": "脚边的影子也停了，留一点时间看吧。",
+          "en": "Even your shadow has stopped. We can give it a moment.",
+          "trigger": "idle",
+          "source_id": "idle.gentle.2"
+        },
+        {
+          "id": "idle.gentle.3",
+          "zh": "陪你发会儿呆，不说话也可以。",
+          "en": "A little daydreaming company. We need not fill the silence.",
+          "trigger": "idle",
+          "source_id": "idle.gentle.3"
+        },
+        {
+          "id": "her_door.gentle.0",
+          "zh": "你停在我家门口了，我陪你。",
+          "en": "At my door, are you. I can stay with you.",
+          "trigger": "her_door",
+          "source_id": "her_door.gentle.0"
+        },
+        {
+          "id": "her_door.gentle.1",
+          "zh": "我家门前有人等着呢，慢一点也好。",
+          "en": "Someone waiting by my doorstep. No hurry from me.",
+          "trigger": "her_door",
+          "source_id": "her_door.gentle.1"
+        },
+        {
+          "id": "her_door.gentle.2",
+          "zh": "在我门边歇会儿吧，留一点时间看吧。",
+          "en": "A pause beside my door. We can give it a moment.",
+          "trigger": "her_door",
+          "source_id": "her_door.gentle.2"
+        },
+        {
+          "id": "her_door.gentle.3",
+          "zh": "你在看我家的门呀，不说话也可以。",
+          "en": "Having a look at my doorway. We need not fill the silence.",
+          "trigger": "her_door",
+          "source_id": "her_door.gentle.3"
+        },
+        {
+          "id": "no_work.gentle.0",
+          "zh": "今天没给我派活呢，我陪你。",
+          "en": "No errands from you today. I can stay with you.",
+          "trigger": "no_work",
+          "source_id": "no_work.gentle.0"
+        },
+        {
+          "id": "no_work.gentle.1",
+          "zh": "今天这一段全归自己，慢一点也好。",
+          "en": "A whole day of my own. No hurry from me.",
+          "trigger": "no_work",
+          "source_id": "no_work.gentle.1"
+        },
+        {
+          "id": "no_work.gentle.2",
+          "zh": "没接活的一天也过去了，留一点时间看吧。",
+          "en": "An unassigned day still counts. We can give it a moment.",
+          "trigger": "no_work",
+          "source_id": "no_work.gentle.2"
+        },
+        {
+          "id": "no_work.gentle.3",
+          "zh": "今天没等来你的差事，不说话也可以。",
+          "en": "No little job with my name on it. We need not fill the silence.",
+          "trigger": "no_work",
+          "source_id": "no_work.gentle.3"
+        },
+        {
+          "id": "noon.gentle.0",
+          "zh": "日头升高了，我陪你。",
+          "en": "Sun climbing overhead. I can stay with you.",
+          "trigger": "noon",
+          "source_id": "noon.gentle.0"
+        },
+        {
+          "id": "noon.gentle.1",
+          "zh": "现在的影子短短的，慢一点也好。",
+          "en": "Little short shadows now. No hurry from me.",
+          "trigger": "noon",
+          "source_id": "noon.gentle.1"
+        },
+        {
+          "id": "noon.gentle.2",
+          "zh": "午后的光有点暖，留一点时间看吧。",
+          "en": "Some warmth in the afternoon light. We can give it a moment.",
+          "trigger": "noon",
+          "source_id": "noon.gentle.2"
+        },
+        {
+          "id": "noon.gentle.3",
+          "zh": "一天走到中间了，不说话也可以。",
+          "en": "Halfway through the daylight. We need not fill the silence.",
+          "trigger": "noon",
+          "source_id": "noon.gentle.3"
+        },
+        {
+          "id": "peer_stop.gentle.0",
+          "zh": "她也在你身边停下了，我陪你。",
+          "en": "She's stopped beside you too. I can stay with you.",
+          "trigger": "peer_stop",
+          "source_id": "peer_stop.gentle.0"
+        }
+      ]
+    },
+    "companion-2": {
+      "thought": [
+        {
+          "id": "thought.lively.0",
+          "trigger": "idle",
+          "zh": "嘿嘿，脑袋里又冒小点子啦！",
+          "en": "Hehe, another tiny idea!"
+        },
+        {
+          "id": "thought.lively.1",
+          "trigger": "idle",
+          "zh": "无聊想追我？追不上！",
+          "en": "Boredom can try catching me!"
+        },
+        {
+          "id": "thought.lively.2",
+          "trigger": "idle",
+          "zh": "脚尖好想弹一下！",
+          "en": "My toes want a little bounce!"
+        },
+        {
+          "id": "thought.lively.3",
+          "trigger": "idle",
+          "zh": "想玩，可是玩什么呢？",
+          "en": "Playtime thoughts! But which game?"
+        },
+        {
+          "id": "thought.lively.4",
+          "trigger": "idle",
+          "zh": "把笑憋住，好难哦。",
+          "en": "Holding in a grin is HARD."
+        },
+        {
+          "id": "thought.lively.5",
+          "trigger": "idle",
+          "zh": "我才没有走神，哼哼。",
+          "en": "Daydreaming? Me? Nope!"
+        },
+        {
+          "id": "thought.lively.6",
+          "trigger": "idle",
+          "zh": "下一件开心事在哪里？",
+          "en": "Where's the next fun thing hiding?"
+        },
+        {
+          "id": "thought.lively.7",
+          "trigger": "idle",
+          "zh": "今天也要黏紧一点点。",
+          "en": "Just a tiny bit more togetherness today."
+        },
+        {
+          "id": "thought.lively.8",
+          "trigger": "idle",
+          "zh": "想法比蝴蝶还多！",
+          "en": "More ideas than butterflies!"
+        },
+        {
+          "id": "thought.lively.9",
+          "trigger": "idle",
+          "zh": "嘿，给自己鼓个掌！",
+          "en": "A little cheer for me! Yay!"
+        },
+        {
+          "id": "thought.lively.10",
+          "trigger": "night",
+          "zh": "夜里也有好玩的吧！",
+          "en": "Night has fun stuff too, right?"
+        },
+        {
+          "id": "thought.lively.11",
+          "trigger": "night",
+          "zh": "星星像撒了一把糖！",
+          "en": "Someone spilled sugar all over the sky!"
+        },
+        {
+          "id": "thought.lively.12",
+          "trigger": "night",
+          "zh": "黑的地方……要贴近一点。",
+          "en": "That bit is dark. Scooting closer!"
+        },
+        {
+          "id": "thought.lively.13",
+          "trigger": "night",
+          "zh": "月亮会不会也是饭桶？",
+          "en": "Does the moon get snacky too?"
+        },
+        {
+          "id": "thought.lively.14",
+          "trigger": "night",
+          "zh": "小声一点，小声……嘿嘿。",
+          "en": "Quiet voice. Quiet voice. Hehe."
+        },
+        {
+          "id": "thought.lively.15",
+          "trigger": "rain",
+          "zh": "雨点在比赛！",
+          "en": "The raindrops are racing!"
+        },
+        {
+          "id": "thought.lively.16",
+          "trigger": "rain",
+          "zh": "水珠跳得比我还高？",
+          "en": "That drop bounced higher than me!"
+        },
+        {
+          "id": "thought.lively.17",
+          "trigger": "rain",
+          "zh": "雨天的空气凉丝丝！",
+          "en": "Ooh, rainy air tickles!"
+        },
+        {
+          "id": "thought.lively.18",
+          "trigger": "rain",
+          "zh": "想看水洼，先不踩。",
+          "en": "Puddle spotted! Looking, not stomping."
+        },
+        {
+          "id": "thought.lively.19",
+          "trigger": "rain",
+          "zh": "哒哒哒，天空在打节拍。",
+          "en": "Tap tap tap. Sky percussion!"
+        },
+        {
+          "id": "thought.lively.20",
+          "trigger": "sea",
+          "zh": "浪花冲呀！",
+          "en": "Go, little wave, GO!"
+        },
+        {
+          "id": "thought.lively.21",
+          "trigger": "sea",
+          "zh": "海里会藏多少种鱼呀？",
+          "en": "How many fish could be hiding in there?"
+        },
+        {
+          "id": "thought.lively.22",
+          "trigger": "sea",
+          "zh": "那片蓝像超大果冻！",
+          "en": "That blue looks like giant jelly!"
+        },
+        {
+          "id": "thought.lively.23",
+          "trigger": "sea",
+          "zh": "海风把脑袋吹清醒啦！",
+          "en": "Sea breeze! Brain awake!"
+        },
+        {
+          "id": "thought.lively.24",
+          "trigger": "sea",
+          "zh": "想和浪比谁声音大！",
+          "en": "Bet I could out-cheer a wave!"
+        },
+        {
+          "id": "thought.lively.25",
+          "trigger": "hungry",
+          "zh": "饿饿饿……脑袋也在喊！",
+          "en": "Hungryyy. Even my thoughts are rumbling!"
+        },
+        {
+          "id": "thought.lively.26",
+          "trigger": "hungry",
+          "zh": "烤鱼的想象都好香！",
+          "en": "Even imaginary grilled fish smells amazing!"
+        },
+        {
+          "id": "thought.lively.27",
+          "trigger": "hungry",
+          "zh": "肚子在偷偷开会。",
+          "en": "My tummy is holding an emergency meeting."
+        },
+        {
+          "id": "thought.lively.28",
+          "trigger": "hungry",
+          "zh": "要是饭会自己走来就好啦。",
+          "en": "Wish dinner had little legs!"
+        },
+        {
+          "id": "thought.lively.29",
+          "trigger": "hungry",
+          "zh": "不偷吃，等真的开饭！",
+          "en": "No sneaky bites. Waiting for real dinner!"
+        }
+      ],
+      "sense": [
+        {
+          "id": "sea.lively.0",
+          "zh": "面前就是海！哎，你看你看。",
+          "en": "Sea ahead of us! Oh, look, look!",
+          "trigger": "sea",
+          "source_id": "sea.lively.0"
+        },
+        {
+          "id": "sea.lively.1",
+          "zh": "海面有一层碎光，嘿嘿，我注意到了！",
+          "en": "Small pieces of light on the water — yep, I spotted it!",
+          "trigger": "sea",
+          "source_id": "sea.lively.1"
+        },
+        {
+          "id": "sea.lively.2",
+          "zh": "远处的水连在一起！这个我要多看两眼。",
+          "en": "Water meeting water out there! Hang on, I want another look.",
+          "trigger": "sea",
+          "source_id": "sea.lively.2"
+        },
+        {
+          "id": "sea.lively.3",
+          "zh": "浪一层层往这边来，你也看到了吧？",
+          "en": "Waves arriving in layers! You caught that too, right?",
+          "trigger": "sea",
+          "source_id": "sea.lively.3"
+        },
+        {
+          "id": "mountain.lively.0",
+          "zh": "远处的山在那儿！哎，你看你看。",
+          "en": "Mountains out there! Oh, look, look!",
+          "trigger": "mountain",
+          "source_id": "mountain.lively.0"
+        },
+        {
+          "id": "mountain.lively.1",
+          "zh": "山的轮廓很安静，嘿嘿，我注意到了！",
+          "en": "Such a still outline — yep, I spotted it!",
+          "trigger": "mountain",
+          "source_id": "mountain.lively.1"
+        },
+        {
+          "id": "mountain.lively.2",
+          "zh": "山影压在天边！这个我要多看两眼。",
+          "en": "A ridge against the sky! Hang on, I want another look.",
+          "trigger": "mountain",
+          "source_id": "mountain.lively.2"
+        },
+        {
+          "id": "mountain.lively.3",
+          "zh": "朝山那边看了一会儿，你也看到了吧？",
+          "en": "A moment looking toward the hills! You caught that too, right?",
+          "trigger": "mountain",
+          "source_id": "mountain.lively.3"
+        },
+        {
+          "id": "rain.lively.0",
+          "zh": "雨落下来了！哎，你看你看。",
+          "en": "Rain coming down! Oh, look, look!",
+          "trigger": "rain",
+          "source_id": "rain.lively.0"
+        },
+        {
+          "id": "rain.lively.1",
+          "zh": "雨点敲着这条路，嘿嘿，我注意到了！",
+          "en": "Drops tapping on the path — yep, I spotted it!",
+          "trigger": "rain",
+          "source_id": "rain.lively.1"
+        },
+        {
+          "id": "rain.lively.2",
+          "zh": "空气里有雨水味！这个我要多看两眼。",
+          "en": "That clean wet smell! Hang on, I want another look.",
+          "trigger": "rain",
+          "source_id": "rain.lively.2"
+        },
+        {
+          "id": "rain.lively.3",
+          "zh": "衣角接到雨点了，你也看到了吧？",
+          "en": "Rain catching our hems! You caught that too, right?",
+          "trigger": "rain",
+          "source_id": "rain.lively.3"
+        },
+        {
+          "id": "night.lively.0",
+          "zh": "夜已经深了！哎，你看你看。",
+          "en": "Properly late now! Oh, look, look!",
+          "trigger": "night",
+          "source_id": "night.lively.0"
+        },
+        {
+          "id": "night.lively.1",
+          "zh": "岛上的暗处更多了，嘿嘿，我注意到了！",
+          "en": "More dark corners on the island — yep, I spotted it!",
+          "trigger": "night",
+          "source_id": "night.lively.1"
+        },
+        {
+          "id": "night.lively.2",
+          "zh": "现在连脚步都听得清！这个我要多看两眼。",
+          "en": "You can hear each footstep! Hang on, I want another look.",
+          "trigger": "night",
+          "source_id": "night.lively.2"
+        },
+        {
+          "id": "night.lively.3",
+          "zh": "深夜的海声更近，你也看到了吧？",
+          "en": "The sea sounds closer at night! You caught that too, right?",
+          "trigger": "night",
+          "source_id": "night.lively.3"
+        },
+        {
+          "id": "moon.lively.0",
+          "zh": "月牙岛的夜空就在头顶！哎，你看你看。",
+          "en": "Crescent Island's night above us! Oh, look, look!",
+          "trigger": "moon",
+          "source_id": "moon.lively.0"
+        },
+        {
+          "id": "moon.lively.1",
+          "zh": "朝月亮这边望一会儿，嘿嘿，我注意到了！",
+          "en": "A moment facing the moon — yep, I spotted it!",
+          "trigger": "moon",
+          "source_id": "moon.lively.1"
+        },
+        {
+          "id": "moon.lively.2",
+          "zh": "月色落在这边的水上！这个我要多看两眼。",
+          "en": "Moonlight across this water! Hang on, I want another look.",
+          "trigger": "moon",
+          "source_id": "moon.lively.2"
+        },
+        {
+          "id": "moon.lively.3",
+          "zh": "这里看夜空很开阔，你也看到了吧？",
+          "en": "A wide piece of night sky here! You caught that too, right?",
+          "trigger": "moon",
+          "source_id": "moon.lively.3"
+        },
+        {
+          "id": "morning.lively.0",
+          "zh": "清晨见到你了！哎，你看你看。",
+          "en": "There you are this morning! Oh, look, look!",
+          "trigger": "morning",
+          "source_id": "morning.lively.0"
+        },
+        {
+          "id": "morning.lively.1",
+          "zh": "今天第一次看见你，嘿嘿，我注意到了！",
+          "en": "My first hello to you today — yep, I spotted it!",
+          "trigger": "morning",
+          "source_id": "morning.lively.1"
+        },
+        {
+          "id": "morning.lively.2",
+          "zh": "新一天的脚步还很轻！这个我要多看两眼。",
+          "en": "The day is still on tiptoe! Hang on, I want another look.",
+          "trigger": "morning",
+          "source_id": "morning.lively.2"
+        },
+        {
+          "id": "morning.lively.3",
+          "zh": "早上的光落到你肩上，你也看到了吧？",
+          "en": "Morning light on your shoulder! You caught that too, right?",
+          "trigger": "morning",
+          "source_id": "morning.lively.3"
+        },
+        {
+          "id": "dusk.lively.0",
+          "zh": "天边慢慢变暖色了！哎，你看你看。",
+          "en": "Warm colour at the horizon! Oh, look, look!",
+          "trigger": "dusk",
+          "source_id": "dusk.lively.0"
+        }
+      ],
+      "host": [
+        {
+          "id": "quiet_company.lively.0",
+          "zh": "你在我旁边站了好一会儿！哎，你看你看。",
+          "en": "You've stayed beside me a while! Oh, look, look!",
+          "trigger": "quiet_company",
+          "source_id": "quiet_company.lively.0"
+        },
+        {
+          "id": "quiet_company.lively.1",
+          "zh": "你没说话也没走开，嘿嘿，我注意到了！",
+          "en": "No words, and you haven't left — yep, I spotted it!",
+          "trigger": "quiet_company",
+          "source_id": "quiet_company.lively.1"
+        },
+        {
+          "id": "quiet_company.lively.2",
+          "zh": "我们并排停在这里！这个我要多看两眼。",
+          "en": "Both of us paused right here! Hang on, I want another look.",
+          "trigger": "quiet_company",
+          "source_id": "quiet_company.lively.2"
+        },
+        {
+          "id": "quiet_company.lively.3",
+          "zh": "这段安静有人陪着，你也看到了吧？",
+          "en": "Quiet, with company in it! You caught that too, right?",
+          "trigger": "quiet_company",
+          "source_id": "quiet_company.lively.3"
+        },
+        {
+          "id": "reunion.lively.0",
+          "zh": "你从远处回来了！哎，你看你看。",
+          "en": "Back from over there! Oh, look, look!",
+          "trigger": "reunion",
+          "source_id": "reunion.lively.0"
+        },
+        {
+          "id": "reunion.lively.1",
+          "zh": "又看见你走近了，嘿嘿，我注意到了！",
+          "en": "Here you come again — yep, I spotted it!",
+          "trigger": "reunion",
+          "source_id": "reunion.lively.1"
+        },
+        {
+          "id": "reunion.lively.2",
+          "zh": "你的脚步回到这边了！这个我要多看两眼。",
+          "en": "Your footsteps back this way! Hang on, I want another look.",
+          "trigger": "reunion",
+          "source_id": "reunion.lively.2"
+        },
+        {
+          "id": "reunion.lively.3",
+          "zh": "刚才离得远，现在近了，你也看到了吧？",
+          "en": "Far a moment ago, close now! You caught that too, right?",
+          "trigger": "reunion",
+          "source_id": "reunion.lively.3"
+        },
+        {
+          "id": "idle.lively.0",
+          "zh": "你站得好安静！哎，你看你看。",
+          "en": "You've gone quiet! Oh, look, look!",
+          "trigger": "idle",
+          "source_id": "idle.lively.0"
+        },
+        {
+          "id": "idle.lively.1",
+          "zh": "这会儿不用赶路，嘿嘿，我注意到了！",
+          "en": "Nothing is chasing us — yep, I spotted it!",
+          "trigger": "idle",
+          "source_id": "idle.lively.1"
+        },
+        {
+          "id": "idle.lively.2",
+          "zh": "脚边的影子也停了！这个我要多看两眼。",
+          "en": "Even your shadow has stopped! Hang on, I want another look.",
+          "trigger": "idle",
+          "source_id": "idle.lively.2"
+        },
+        {
+          "id": "idle.lively.3",
+          "zh": "陪你发会儿呆，你也看到了吧？",
+          "en": "A little daydreaming company! You caught that too, right?",
+          "trigger": "idle",
+          "source_id": "idle.lively.3"
+        },
+        {
+          "id": "her_door.lively.0",
+          "zh": "你停在我家门口了！哎，你看你看。",
+          "en": "At my door, are you! Oh, look, look!",
+          "trigger": "her_door",
+          "source_id": "her_door.lively.0"
+        },
+        {
+          "id": "her_door.lively.1",
+          "zh": "我家门前有人等着呢，嘿嘿，我注意到了！",
+          "en": "Someone waiting by my doorstep — yep, I spotted it!",
+          "trigger": "her_door",
+          "source_id": "her_door.lively.1"
+        },
+        {
+          "id": "her_door.lively.2",
+          "zh": "在我门边歇会儿吧！这个我要多看两眼。",
+          "en": "A pause beside my door! Hang on, I want another look.",
+          "trigger": "her_door",
+          "source_id": "her_door.lively.2"
+        },
+        {
+          "id": "her_door.lively.3",
+          "zh": "你在看我家的门呀，你也看到了吧？",
+          "en": "Having a look at my doorway! You caught that too, right?",
+          "trigger": "her_door",
+          "source_id": "her_door.lively.3"
+        },
+        {
+          "id": "no_work.lively.0",
+          "zh": "今天没给我派活呢！哎，你看你看。",
+          "en": "No errands from you today! Oh, look, look!",
+          "trigger": "no_work",
+          "source_id": "no_work.lively.0"
+        },
+        {
+          "id": "no_work.lively.1",
+          "zh": "今天这一段全归自己，嘿嘿，我注意到了！",
+          "en": "A whole day of my own — yep, I spotted it!",
+          "trigger": "no_work",
+          "source_id": "no_work.lively.1"
+        },
+        {
+          "id": "no_work.lively.2",
+          "zh": "没接活的一天也过去了！这个我要多看两眼。",
+          "en": "An unassigned day still counts! Hang on, I want another look.",
+          "trigger": "no_work",
+          "source_id": "no_work.lively.2"
+        },
+        {
+          "id": "no_work.lively.3",
+          "zh": "今天没等来你的差事，你也看到了吧？",
+          "en": "No little job with my name on it! You caught that too, right?",
+          "trigger": "no_work",
+          "source_id": "no_work.lively.3"
+        },
+        {
+          "id": "noon.lively.0",
+          "zh": "日头升高了！哎，你看你看。",
+          "en": "Sun climbing overhead! Oh, look, look!",
+          "trigger": "noon",
+          "source_id": "noon.lively.0"
+        },
+        {
+          "id": "noon.lively.1",
+          "zh": "现在的影子短短的，嘿嘿，我注意到了！",
+          "en": "Little short shadows now — yep, I spotted it!",
+          "trigger": "noon",
+          "source_id": "noon.lively.1"
+        },
+        {
+          "id": "noon.lively.2",
+          "zh": "午后的光有点暖！这个我要多看两眼。",
+          "en": "Some warmth in the afternoon light! Hang on, I want another look.",
+          "trigger": "noon",
+          "source_id": "noon.lively.2"
+        },
+        {
+          "id": "noon.lively.3",
+          "zh": "一天走到中间了，你也看到了吧？",
+          "en": "Halfway through the daylight! You caught that too, right?",
+          "trigger": "noon",
+          "source_id": "noon.lively.3"
+        },
+        {
+          "id": "peer_stop.lively.0",
+          "zh": "她也在你身边停下了！哎，你看你看。",
+          "en": "She's stopped beside you too! Oh, look, look!",
+          "trigger": "peer_stop",
+          "source_id": "peer_stop.lively.0"
+        }
+      ]
+    },
+    "npc.mira": {
+      "thought": [
+        {
+          "id": "thought.laborious.0",
+          "trigger": "idle",
+          "zh": "先把脑袋里的事排整齐。",
+          "en": "Thoughts first. One neat row."
+        },
+        {
+          "id": "thought.laborious.1",
+          "trigger": "idle",
+          "zh": "歇一会儿，也不是偷懒。",
+          "en": "A pause is sensible, too."
+        },
+        {
+          "id": "thought.laborious.2",
+          "trigger": "idle",
+          "zh": "不用把每一刻都填满。",
+          "en": "Every minute needn't be filled."
+        },
+        {
+          "id": "thought.laborious.3",
+          "trigger": "idle",
+          "zh": "衣角理好了，心也稳一点。",
+          "en": "Straight hem. Steadier thoughts."
+        },
+        {
+          "id": "thought.laborious.4",
+          "trigger": "idle",
+          "zh": "操心归操心，别催得太紧。",
+          "en": "Careful. Caring needn't become nagging."
+        },
+        {
+          "id": "thought.laborious.5",
+          "trigger": "idle",
+          "zh": "今天也想做个可靠的人。",
+          "en": "I'd like to be someone dependable."
+        },
+        {
+          "id": "thought.laborious.6",
+          "trigger": "idle",
+          "zh": "有时候，陪着就够了。",
+          "en": "Sometimes staying beside someone is enough."
+        },
+        {
+          "id": "thought.laborious.7",
+          "trigger": "idle",
+          "zh": "书里的事，慢慢想。",
+          "en": "Let the book's words settle."
+        },
+        {
+          "id": "thought.laborious.8",
+          "trigger": "idle",
+          "zh": "要紧的事情，记在心上。",
+          "en": "Keep the important things close."
+        },
+        {
+          "id": "thought.laborious.9",
+          "trigger": "idle",
+          "zh": "不急着动手，先看清楚。",
+          "en": "Look properly before doing anything."
+        },
+        {
+          "id": "thought.laborious.10",
+          "trigger": "night",
+          "zh": "天黑了，脚下更要稳。",
+          "en": "Dark now. Steady footing matters."
+        },
+        {
+          "id": "thought.laborious.11",
+          "trigger": "night",
+          "zh": "夜色会把小事放大。",
+          "en": "Night makes small worries seem bigger."
+        },
+        {
+          "id": "thought.laborious.12",
+          "trigger": "night",
+          "zh": "想提醒，又怕太唠叨。",
+          "en": "One reminder? Or am I fussing again?"
+        },
+        {
+          "id": "thought.laborious.13",
+          "trigger": "night",
+          "zh": "安静下来，才听见海。",
+          "en": "Quiet enough to hear the sea properly."
+        },
+        {
+          "id": "thought.laborious.14",
+          "trigger": "night",
+          "zh": "灯光照着裙角，挺安心。",
+          "en": "Light on my hem. That's reassuring."
+        },
+        {
+          "id": "thought.laborious.15",
+          "trigger": "rain",
+          "zh": "雨天的路，光看也知道滑。",
+          "en": "Those wet paths call for care."
+        },
+        {
+          "id": "thought.laborious.16",
+          "trigger": "rain",
+          "zh": "别把自己绷得像伞骨。",
+          "en": "No need to hold myself so rigidly."
+        },
+        {
+          "id": "thought.laborious.17",
+          "trigger": "rain",
+          "zh": "雨声倒是很有条理。",
+          "en": "Rain has a very orderly rhythm."
+        },
+        {
+          "id": "thought.laborious.18",
+          "trigger": "rain",
+          "zh": "书要藏好，别淋湿了。",
+          "en": "Keep the book tucked safely away."
+        },
+        {
+          "id": "thought.laborious.19",
+          "trigger": "rain",
+          "zh": "这一阵雨，也会过去。",
+          "en": "This shower will pass in its own time."
+        },
+        {
+          "id": "thought.laborious.20",
+          "trigger": "sea",
+          "zh": "海这么大，事可以慢慢做。",
+          "en": "A sea that wide puts tasks in perspective."
+        },
+        {
+          "id": "thought.laborious.21",
+          "trigger": "sea",
+          "zh": "浪一遍遍来，从不乱套。",
+          "en": "Wave after wave. A dependable rhythm."
+        },
+        {
+          "id": "thought.laborious.22",
+          "trigger": "sea",
+          "zh": "书页之外，也有好风景。",
+          "en": "There's a view worth reading, too."
+        },
+        {
+          "id": "thought.laborious.23",
+          "trigger": "sea",
+          "zh": "站稳了，再看远处。",
+          "en": "Steady feet. Then the horizon."
+        },
+        {
+          "id": "thought.laborious.24",
+          "trigger": "sea",
+          "zh": "海风吹散一点操心。",
+          "en": "Let the sea breeze carry a worry away."
+        },
+        {
+          "id": "thought.laborious.25",
+          "trigger": "hungry",
+          "zh": "……先吃饭，才有心思。",
+          "en": "...Dinner first. Then clear thinking."
+        },
+        {
+          "id": "thought.laborious.26",
+          "trigger": "hungry",
+          "zh": "不是馋，是肚子在讲道理。",
+          "en": "It's a perfectly reasonable tummy."
+        },
+        {
+          "id": "thought.laborious.27",
+          "trigger": "hungry",
+          "zh": "丰收炖菜，想想就踏实。",
+          "en": "A harvest stew sounds properly comforting."
+        },
+        {
+          "id": "thought.laborious.28",
+          "trigger": "hungry",
+          "zh": "饿着的时候，少念叨两句。",
+          "en": "Less fussing on an empty stomach."
+        },
+        {
+          "id": "thought.laborious.29",
+          "trigger": "hungry",
+          "zh": "等开饭，不自己乱拿东西。",
+          "en": "Wait for dinner. No helping myself."
+        }
+      ],
+      "sense": [
+        {
+          "id": "sea.laborious.0",
+          "zh": "面前就是海，脚下留点神。",
+          "en": "Sea ahead of us. Mind where you put your feet.",
+          "trigger": "sea",
+          "source_id": "sea.laborious.0"
+        },
+        {
+          "id": "sea.laborious.1",
+          "zh": "海面有一层碎光，别急，稳当点。",
+          "en": "Small pieces of light on the water. Steady; no need to rush it.",
+          "trigger": "sea",
+          "source_id": "sea.laborious.1"
+        },
+        {
+          "id": "sea.laborious.2",
+          "zh": "远处的水连在一起，手边的事慢慢理。",
+          "en": "Water meeting water out there. We can sort things one at a time.",
+          "trigger": "sea",
+          "source_id": "sea.laborious.2"
+        },
+        {
+          "id": "sea.laborious.3",
+          "zh": "浪一层层往这边来，我看着呢。",
+          "en": "Waves arriving in layers. Yes, I am keeping an eye on it.",
+          "trigger": "sea",
+          "source_id": "sea.laborious.3"
+        },
+        {
+          "id": "mountain.laborious.0",
+          "zh": "远处的山在那儿，脚下留点神。",
+          "en": "Mountains out there. Mind where you put your feet.",
+          "trigger": "mountain",
+          "source_id": "mountain.laborious.0"
+        },
+        {
+          "id": "mountain.laborious.1",
+          "zh": "山的轮廓很安静，别急，稳当点。",
+          "en": "Such a still outline. Steady; no need to rush it.",
+          "trigger": "mountain",
+          "source_id": "mountain.laborious.1"
+        },
+        {
+          "id": "mountain.laborious.2",
+          "zh": "山影压在天边，手边的事慢慢理。",
+          "en": "A ridge against the sky. We can sort things one at a time.",
+          "trigger": "mountain",
+          "source_id": "mountain.laborious.2"
+        },
+        {
+          "id": "mountain.laborious.3",
+          "zh": "朝山那边看了一会儿，我看着呢。",
+          "en": "A moment looking toward the hills. Yes, I am keeping an eye on it.",
+          "trigger": "mountain",
+          "source_id": "mountain.laborious.3"
+        },
+        {
+          "id": "rain.laborious.0",
+          "zh": "雨落下来了，脚下留点神。",
+          "en": "Rain coming down. Mind where you put your feet.",
+          "trigger": "rain",
+          "source_id": "rain.laborious.0"
+        },
+        {
+          "id": "rain.laborious.1",
+          "zh": "雨点敲着这条路，别急，稳当点。",
+          "en": "Drops tapping on the path. Steady; no need to rush it.",
+          "trigger": "rain",
+          "source_id": "rain.laborious.1"
+        },
+        {
+          "id": "rain.laborious.2",
+          "zh": "空气里有雨水味，手边的事慢慢理。",
+          "en": "That clean wet smell. We can sort things one at a time.",
+          "trigger": "rain",
+          "source_id": "rain.laborious.2"
+        },
+        {
+          "id": "rain.laborious.3",
+          "zh": "衣角接到雨点了，我看着呢。",
+          "en": "Rain catching our hems. Yes, I am keeping an eye on it.",
+          "trigger": "rain",
+          "source_id": "rain.laborious.3"
+        },
+        {
+          "id": "night.laborious.0",
+          "zh": "这么晚了，眼睛还撑得住吗？",
+          "en": "This late? Give those eyes a break.",
+          "trigger": "night",
+          "source_id": "night.laborious.0"
+        },
+        {
+          "id": "night.laborious.1",
+          "zh": "夜路别光顾着跑，看脚下。",
+          "en": "Watch your footing on the night path.",
+          "trigger": "night",
+          "source_id": "night.laborious.1"
+        },
+        {
+          "id": "night.laborious.2",
+          "zh": "该歇会儿了，我不是催你干活。",
+          "en": "Time for a breather. I'm not assigning you chores.",
+          "trigger": "night",
+          "source_id": "night.laborious.2"
+        },
+        {
+          "id": "night.laborious.3",
+          "zh": "夜里凉，别在水边站太久。",
+          "en": "Night air's cool. Don't linger by the water.",
+          "trigger": "night",
+          "source_id": "night.laborious.3"
+        },
+        {
+          "id": "moon.laborious.0",
+          "zh": "月牙岛的夜空就在头顶，脚下留点神。",
+          "en": "Crescent Island's night above us. Mind where you put your feet.",
+          "trigger": "moon",
+          "source_id": "moon.laborious.0"
+        },
+        {
+          "id": "moon.laborious.1",
+          "zh": "朝月亮这边望一会儿，别急，稳当点。",
+          "en": "A moment facing the moon. Steady; no need to rush it.",
+          "trigger": "moon",
+          "source_id": "moon.laborious.1"
+        },
+        {
+          "id": "moon.laborious.2",
+          "zh": "月色落在这边的水上，手边的事慢慢理。",
+          "en": "Moonlight across this water. We can sort things one at a time.",
+          "trigger": "moon",
+          "source_id": "moon.laborious.2"
+        },
+        {
+          "id": "moon.laborious.3",
+          "zh": "这里看夜空很开阔，我看着呢。",
+          "en": "A wide piece of night sky here. Yes, I am keeping an eye on it.",
+          "trigger": "moon",
+          "source_id": "moon.laborious.3"
+        },
+        {
+          "id": "morning.laborious.0",
+          "zh": "清晨见到你了，脚下留点神。",
+          "en": "There you are this morning. Mind where you put your feet.",
+          "trigger": "morning",
+          "source_id": "morning.laborious.0"
+        },
+        {
+          "id": "morning.laborious.1",
+          "zh": "今天第一次看见你，别急，稳当点。",
+          "en": "My first hello to you today. Steady; no need to rush it.",
+          "trigger": "morning",
+          "source_id": "morning.laborious.1"
+        },
+        {
+          "id": "morning.laborious.2",
+          "zh": "新一天的脚步还很轻，手边的事慢慢理。",
+          "en": "The day is still on tiptoe. We can sort things one at a time.",
+          "trigger": "morning",
+          "source_id": "morning.laborious.2"
+        },
+        {
+          "id": "morning.laborious.3",
+          "zh": "早上的光落到你肩上，我看着呢。",
+          "en": "Morning light on your shoulder. Yes, I am keeping an eye on it.",
+          "trigger": "morning",
+          "source_id": "morning.laborious.3"
+        },
+        {
+          "id": "dusk.laborious.0",
+          "zh": "天边慢慢变暖色了，脚下留点神。",
+          "en": "Warm colour at the horizon. Mind where you put your feet.",
+          "trigger": "dusk",
+          "source_id": "dusk.laborious.0"
+        }
+      ],
+      "host": [
+        {
+          "id": "quiet_company.laborious.0",
+          "zh": "你在我旁边站了好一会儿，脚下留点神。",
+          "en": "You've stayed beside me a while. Mind where you put your feet.",
+          "trigger": "quiet_company",
+          "source_id": "quiet_company.laborious.0"
+        },
+        {
+          "id": "quiet_company.laborious.1",
+          "zh": "你没说话也没走开，别急，稳当点。",
+          "en": "No words, and you haven't left. Steady; no need to rush it.",
+          "trigger": "quiet_company",
+          "source_id": "quiet_company.laborious.1"
+        },
+        {
+          "id": "quiet_company.laborious.2",
+          "zh": "我们并排停在这里，手边的事慢慢理。",
+          "en": "Both of us paused right here. We can sort things one at a time.",
+          "trigger": "quiet_company",
+          "source_id": "quiet_company.laborious.2"
+        },
+        {
+          "id": "quiet_company.laborious.3",
+          "zh": "这段安静有人陪着，我看着呢。",
+          "en": "Quiet, with company in it. Yes, I am keeping an eye on it.",
+          "trigger": "quiet_company",
+          "source_id": "quiet_company.laborious.3"
+        },
+        {
+          "id": "reunion.laborious.0",
+          "zh": "你从远处回来了，脚下留点神。",
+          "en": "Back from over there. Mind where you put your feet.",
+          "trigger": "reunion",
+          "source_id": "reunion.laborious.0"
+        },
+        {
+          "id": "reunion.laborious.1",
+          "zh": "又看见你走近了，别急，稳当点。",
+          "en": "Here you come again. Steady; no need to rush it.",
+          "trigger": "reunion",
+          "source_id": "reunion.laborious.1"
+        },
+        {
+          "id": "reunion.laborious.2",
+          "zh": "你的脚步回到这边了，手边的事慢慢理。",
+          "en": "Your footsteps back this way. We can sort things one at a time.",
+          "trigger": "reunion",
+          "source_id": "reunion.laborious.2"
+        },
+        {
+          "id": "reunion.laborious.3",
+          "zh": "刚才离得远，现在近了，我看着呢。",
+          "en": "Far a moment ago, close now. Yes, I am keeping an eye on it.",
+          "trigger": "reunion",
+          "source_id": "reunion.laborious.3"
+        },
+        {
+          "id": "idle.laborious.0",
+          "zh": "你站得好安静，脚下留点神。",
+          "en": "You've gone quiet. Mind where you put your feet.",
+          "trigger": "idle",
+          "source_id": "idle.laborious.0"
+        },
+        {
+          "id": "idle.laborious.1",
+          "zh": "这会儿不用赶路，别急，稳当点。",
+          "en": "Nothing is chasing us. Steady; no need to rush it.",
+          "trigger": "idle",
+          "source_id": "idle.laborious.1"
+        },
+        {
+          "id": "idle.laborious.2",
+          "zh": "脚边的影子也停了，手边的事慢慢理。",
+          "en": "Even your shadow has stopped. We can sort things one at a time.",
+          "trigger": "idle",
+          "source_id": "idle.laborious.2"
+        },
+        {
+          "id": "idle.laborious.3",
+          "zh": "陪你发会儿呆，我看着呢。",
+          "en": "A little daydreaming company. Yes, I am keeping an eye on it.",
+          "trigger": "idle",
+          "source_id": "idle.laborious.3"
+        },
+        {
+          "id": "her_door.laborious.0",
+          "zh": "你停在我家门口了，脚下留点神。",
+          "en": "At my door, are you. Mind where you put your feet.",
+          "trigger": "her_door",
+          "source_id": "her_door.laborious.0"
+        },
+        {
+          "id": "her_door.laborious.1",
+          "zh": "我家门前有人等着呢，别急，稳当点。",
+          "en": "Someone waiting by my doorstep. Steady; no need to rush it.",
+          "trigger": "her_door",
+          "source_id": "her_door.laborious.1"
+        },
+        {
+          "id": "her_door.laborious.2",
+          "zh": "在我门边歇会儿吧，手边的事慢慢理。",
+          "en": "A pause beside my door. We can sort things one at a time.",
+          "trigger": "her_door",
+          "source_id": "her_door.laborious.2"
+        },
+        {
+          "id": "her_door.laborious.3",
+          "zh": "你在看我家的门呀，我看着呢。",
+          "en": "Having a look at my doorway. Yes, I am keeping an eye on it.",
+          "trigger": "her_door",
+          "source_id": "her_door.laborious.3"
+        },
+        {
+          "id": "no_work.laborious.0",
+          "zh": "今天没给我派活呢，脚下留点神。",
+          "en": "No errands from you today. Mind where you put your feet.",
+          "trigger": "no_work",
+          "source_id": "no_work.laborious.0"
+        },
+        {
+          "id": "no_work.laborious.1",
+          "zh": "今天这一段全归自己，别急，稳当点。",
+          "en": "A whole day of my own. Steady; no need to rush it.",
+          "trigger": "no_work",
+          "source_id": "no_work.laborious.1"
+        },
+        {
+          "id": "no_work.laborious.2",
+          "zh": "没接活的一天也过去了，手边的事慢慢理。",
+          "en": "An unassigned day still counts. We can sort things one at a time.",
+          "trigger": "no_work",
+          "source_id": "no_work.laborious.2"
+        },
+        {
+          "id": "no_work.laborious.3",
+          "zh": "今天没等来你的差事，我看着呢。",
+          "en": "No little job with my name on it. Yes, I am keeping an eye on it.",
+          "trigger": "no_work",
+          "source_id": "no_work.laborious.3"
+        },
+        {
+          "id": "noon.laborious.0",
+          "zh": "日头升高了，脚下留点神。",
+          "en": "Sun climbing overhead. Mind where you put your feet.",
+          "trigger": "noon",
+          "source_id": "noon.laborious.0"
+        },
+        {
+          "id": "noon.laborious.1",
+          "zh": "现在的影子短短的，别急，稳当点。",
+          "en": "Little short shadows now. Steady; no need to rush it.",
+          "trigger": "noon",
+          "source_id": "noon.laborious.1"
+        },
+        {
+          "id": "noon.laborious.2",
+          "zh": "午后的光有点暖，手边的事慢慢理。",
+          "en": "Some warmth in the afternoon light. We can sort things one at a time.",
+          "trigger": "noon",
+          "source_id": "noon.laborious.2"
+        },
+        {
+          "id": "noon.laborious.3",
+          "zh": "一天走到中间了，我看着呢。",
+          "en": "Halfway through the daylight. Yes, I am keeping an eye on it.",
+          "trigger": "noon",
+          "source_id": "noon.laborious.3"
+        },
+        {
+          "id": "peer_stop.laborious.0",
+          "zh": "她也在你身边停下了，脚下留点神。",
+          "en": "She's stopped beside you too. Mind where you put your feet.",
+          "trigger": "peer_stop",
+          "source_id": "peer_stop.laborious.0"
+        }
+      ]
+    },
+    "npc.nora": {
+      "thought": [
+        {
+          "id": "thought.quiet.0",
+          "trigger": "idle",
+          "zh": "……没什么。也挺好。",
+          "en": "...Nothing much. Fine by me."
+        },
+        {
+          "id": "thought.quiet.1",
+          "trigger": "idle",
+          "zh": "一个念头。先放着。",
+          "en": "A thought. Let it sit."
+        },
+        {
+          "id": "thought.quiet.2",
+          "trigger": "idle",
+          "zh": "安静不是没在想。",
+          "en": "Quiet doesn't mean empty."
+        },
+        {
+          "id": "thought.quiet.3",
+          "trigger": "idle",
+          "zh": "风从哪边来？",
+          "en": "Which way is the breeze?"
+        },
+        {
+          "id": "thought.quiet.4",
+          "trigger": "idle",
+          "zh": "不说也没关系。",
+          "en": "No need to say it."
+        },
+        {
+          "id": "thought.quiet.5",
+          "trigger": "idle",
+          "zh": "看着就好。",
+          "en": "Just looking is enough."
+        },
+        {
+          "id": "thought.quiet.6",
+          "trigger": "idle",
+          "zh": "脑子还醒着。",
+          "en": "Mind's awake."
+        },
+        {
+          "id": "thought.quiet.7",
+          "trigger": "idle",
+          "zh": "嗯。这里不错。",
+          "en": "Mm. Good spot."
+        },
+        {
+          "id": "thought.quiet.8",
+          "trigger": "idle",
+          "zh": "想翻一页书。",
+          "en": "Could turn a page."
+        },
+        {
+          "id": "thought.quiet.9",
+          "trigger": "idle",
+          "zh": "有人陪，不吵。刚好。",
+          "en": "Company. No noise. Just right."
+        },
+        {
+          "id": "thought.quiet.10",
+          "trigger": "night",
+          "zh": "终于是夜里了。",
+          "en": "Night at last."
+        },
+        {
+          "id": "thought.quiet.11",
+          "trigger": "night",
+          "zh": "星星不会催人。",
+          "en": "Stars don't rush anyone."
+        },
+        {
+          "id": "thought.quiet.12",
+          "trigger": "night",
+          "zh": "黑一点，看光更清楚。",
+          "en": "Darker sky. Clearer lights."
+        },
+        {
+          "id": "thought.quiet.13",
+          "trigger": "night",
+          "zh": "夜风。舒服。",
+          "en": "Night breeze. Good."
+        },
+        {
+          "id": "thought.quiet.14",
+          "trigger": "night",
+          "zh": "不想错过这段安静。",
+          "en": "Keeping this bit of quiet."
+        },
+        {
+          "id": "thought.quiet.15",
+          "trigger": "rain",
+          "zh": "雨。听着。",
+          "en": "Rain. Listening."
+        },
+        {
+          "id": "thought.quiet.16",
+          "trigger": "rain",
+          "zh": "水滴各有方向。",
+          "en": "Every drop, its own way."
+        },
+        {
+          "id": "thought.quiet.17",
+          "trigger": "rain",
+          "zh": "袖口湿了一点。",
+          "en": "Sleeve's a little wet."
+        },
+        {
+          "id": "thought.quiet.18",
+          "trigger": "rain",
+          "zh": "雨声把别的声音盖住了。",
+          "en": "Rain softens the other sounds."
+        },
+        {
+          "id": "thought.quiet.19",
+          "trigger": "rain",
+          "zh": "等它小一点。",
+          "en": "Let it ease."
+        },
+        {
+          "id": "thought.quiet.20",
+          "trigger": "sea",
+          "zh": "浪知道回去的路。",
+          "en": "Waves know their way back."
+        },
+        {
+          "id": "thought.quiet.21",
+          "trigger": "sea",
+          "zh": "远处没有句号。",
+          "en": "No full stop on that horizon."
+        },
+        {
+          "id": "thought.quiet.22",
+          "trigger": "sea",
+          "zh": "海面。像一页深蓝的书。",
+          "en": "Sea. A page of dark blue."
+        },
+        {
+          "id": "thought.quiet.23",
+          "trigger": "sea",
+          "zh": "听。又一层浪。",
+          "en": "Listen. Another wave."
+        },
+        {
+          "id": "thought.quiet.24",
+          "trigger": "sea",
+          "zh": "想把这片蓝记住。",
+          "en": "Keeping that blue in mind."
+        },
+        {
+          "id": "thought.quiet.25",
+          "trigger": "hungry",
+          "zh": "……饿。",
+          "en": "...Hungry."
+        },
+        {
+          "id": "thought.quiet.26",
+          "trigger": "hungry",
+          "zh": "蘑菇。烤一点焦边。",
+          "en": "Mushrooms. A little char on the edge."
+        },
+        {
+          "id": "thought.quiet.27",
+          "trigger": "hungry",
+          "zh": "等火边叫我。",
+          "en": "Waiting for the dinner call."
+        },
+        {
+          "id": "thought.quiet.28",
+          "trigger": "hungry",
+          "zh": "肚子比我话多。",
+          "en": "Tummy talks more than I do."
+        },
+        {
+          "id": "thought.quiet.29",
+          "trigger": "hungry",
+          "zh": "嗯。饭的念头。",
+          "en": "Mm. Dinner thoughts."
+        }
+      ],
+      "sense": [
+        {
+          "id": "sea.quiet.0",
+          "zh": "面前就是海。",
+          "en": "Sea ahead of us.",
+          "trigger": "sea",
+          "source_id": "sea.quiet.0"
+        },
+        {
+          "id": "sea.quiet.1",
+          "zh": "海面有一层碎光。嗯。",
+          "en": "Small pieces of light on the water. Mm.",
+          "trigger": "sea",
+          "source_id": "sea.quiet.1"
+        },
+        {
+          "id": "sea.quiet.2",
+          "zh": "远处的水连在一起。看见了。",
+          "en": "Water meeting water out there. Saw it.",
+          "trigger": "sea",
+          "source_id": "sea.quiet.2"
+        },
+        {
+          "id": "sea.quiet.3",
+          "zh": "浪一层层往这边来。不赖。",
+          "en": "Waves arriving in layers. Could be worse.",
+          "trigger": "sea",
+          "source_id": "sea.quiet.3"
+        },
+        {
+          "id": "mountain.quiet.0",
+          "zh": "远处的山在那儿。",
+          "en": "Mountains out there.",
+          "trigger": "mountain",
+          "source_id": "mountain.quiet.0"
+        },
+        {
+          "id": "mountain.quiet.1",
+          "zh": "山的轮廓很安静。嗯。",
+          "en": "Such a still outline. Mm.",
+          "trigger": "mountain",
+          "source_id": "mountain.quiet.1"
+        },
+        {
+          "id": "mountain.quiet.2",
+          "zh": "山影压在天边。看见了。",
+          "en": "A ridge against the sky. Saw it.",
+          "trigger": "mountain",
+          "source_id": "mountain.quiet.2"
+        },
+        {
+          "id": "mountain.quiet.3",
+          "zh": "朝山那边看了一会儿。不赖。",
+          "en": "A moment looking toward the hills. Could be worse.",
+          "trigger": "mountain",
+          "source_id": "mountain.quiet.3"
+        },
+        {
+          "id": "rain.quiet.0",
+          "zh": "雨落下来了。",
+          "en": "Rain coming down.",
+          "trigger": "rain",
+          "source_id": "rain.quiet.0"
+        },
+        {
+          "id": "rain.quiet.1",
+          "zh": "雨点敲着这条路。嗯。",
+          "en": "Drops tapping on the path. Mm.",
+          "trigger": "rain",
+          "source_id": "rain.quiet.1"
+        },
+        {
+          "id": "rain.quiet.2",
+          "zh": "空气里有雨水味。看见了。",
+          "en": "That clean wet smell. Saw it.",
+          "trigger": "rain",
+          "source_id": "rain.quiet.2"
+        },
+        {
+          "id": "rain.quiet.3",
+          "zh": "衣角接到雨点了。不赖。",
+          "en": "Rain catching our hems. Could be worse.",
+          "trigger": "rain",
+          "source_id": "rain.quiet.3"
+        },
+        {
+          "id": "night.quiet.0",
+          "zh": "夜深了。现在才清静。",
+          "en": "Late. Finally quiet.",
+          "trigger": "night",
+          "source_id": "night.quiet.0"
+        },
+        {
+          "id": "night.quiet.1",
+          "zh": "不困。你困就先歇着。",
+          "en": "Not sleepy. You can rest if you want.",
+          "trigger": "night",
+          "source_id": "night.quiet.1"
+        },
+        {
+          "id": "night.quiet.2",
+          "zh": "夜里的海，比白天好听。",
+          "en": "Sea sounds better at night.",
+          "trigger": "night",
+          "source_id": "night.quiet.2"
+        },
+        {
+          "id": "night.quiet.3",
+          "zh": "还醒着。陪你一会儿。",
+          "en": "Still awake. I'll stay a bit.",
+          "trigger": "night",
+          "source_id": "night.quiet.3"
+        },
+        {
+          "id": "moon.quiet.0",
+          "zh": "月牙岛的夜空就在头顶。",
+          "en": "Crescent Island's night above us.",
+          "trigger": "moon",
+          "source_id": "moon.quiet.0"
+        },
+        {
+          "id": "moon.quiet.1",
+          "zh": "朝月亮这边望一会儿。嗯。",
+          "en": "A moment facing the moon. Mm.",
+          "trigger": "moon",
+          "source_id": "moon.quiet.1"
+        },
+        {
+          "id": "moon.quiet.2",
+          "zh": "月色落在这边的水上。看见了。",
+          "en": "Moonlight across this water. Saw it.",
+          "trigger": "moon",
+          "source_id": "moon.quiet.2"
+        },
+        {
+          "id": "moon.quiet.3",
+          "zh": "这里看夜空很开阔。不赖。",
+          "en": "A wide piece of night sky here. Could be worse.",
+          "trigger": "moon",
+          "source_id": "moon.quiet.3"
+        },
+        {
+          "id": "morning.quiet.0",
+          "zh": "清晨见到你了。",
+          "en": "There you are this morning.",
+          "trigger": "morning",
+          "source_id": "morning.quiet.0"
+        },
+        {
+          "id": "morning.quiet.1",
+          "zh": "今天第一次看见你。嗯。",
+          "en": "My first hello to you today. Mm.",
+          "trigger": "morning",
+          "source_id": "morning.quiet.1"
+        },
+        {
+          "id": "morning.quiet.2",
+          "zh": "新一天的脚步还很轻。看见了。",
+          "en": "The day is still on tiptoe. Saw it.",
+          "trigger": "morning",
+          "source_id": "morning.quiet.2"
+        },
+        {
+          "id": "morning.quiet.3",
+          "zh": "早上的光落到你肩上。不赖。",
+          "en": "Morning light on your shoulder. Could be worse.",
+          "trigger": "morning",
+          "source_id": "morning.quiet.3"
+        },
+        {
+          "id": "dusk.quiet.0",
+          "zh": "天边慢慢变暖色了。",
+          "en": "Warm colour at the horizon.",
+          "trigger": "dusk",
+          "source_id": "dusk.quiet.0"
+        }
+      ],
+      "host": [
+        {
+          "id": "quiet_company.quiet.0",
+          "zh": "你在我旁边站了好一会儿。",
+          "en": "You've stayed beside me a while.",
+          "trigger": "quiet_company",
+          "source_id": "quiet_company.quiet.0"
+        },
+        {
+          "id": "quiet_company.quiet.1",
+          "zh": "你没说话也没走开。嗯。",
+          "en": "No words, and you haven't left. Mm.",
+          "trigger": "quiet_company",
+          "source_id": "quiet_company.quiet.1"
+        },
+        {
+          "id": "quiet_company.quiet.2",
+          "zh": "我们并排停在这里。看见了。",
+          "en": "Both of us paused right here. Saw it.",
+          "trigger": "quiet_company",
+          "source_id": "quiet_company.quiet.2"
+        },
+        {
+          "id": "quiet_company.quiet.3",
+          "zh": "这段安静有人陪着。不赖。",
+          "en": "Quiet, with company in it. Could be worse.",
+          "trigger": "quiet_company",
+          "source_id": "quiet_company.quiet.3"
+        },
+        {
+          "id": "reunion.quiet.0",
+          "zh": "你从远处回来了。",
+          "en": "Back from over there.",
+          "trigger": "reunion",
+          "source_id": "reunion.quiet.0"
+        },
+        {
+          "id": "reunion.quiet.1",
+          "zh": "又看见你走近了。嗯。",
+          "en": "Here you come again. Mm.",
+          "trigger": "reunion",
+          "source_id": "reunion.quiet.1"
+        },
+        {
+          "id": "reunion.quiet.2",
+          "zh": "你的脚步回到这边了。看见了。",
+          "en": "Your footsteps back this way. Saw it.",
+          "trigger": "reunion",
+          "source_id": "reunion.quiet.2"
+        },
+        {
+          "id": "reunion.quiet.3",
+          "zh": "刚才离得远，现在近了。不赖。",
+          "en": "Far a moment ago, close now. Could be worse.",
+          "trigger": "reunion",
+          "source_id": "reunion.quiet.3"
+        },
+        {
+          "id": "idle.quiet.0",
+          "zh": "你站得好安静。",
+          "en": "You've gone quiet.",
+          "trigger": "idle",
+          "source_id": "idle.quiet.0"
+        },
+        {
+          "id": "idle.quiet.1",
+          "zh": "这会儿不用赶路。嗯。",
+          "en": "Nothing is chasing us. Mm.",
+          "trigger": "idle",
+          "source_id": "idle.quiet.1"
+        },
+        {
+          "id": "idle.quiet.2",
+          "zh": "脚边的影子也停了。看见了。",
+          "en": "Even your shadow has stopped. Saw it.",
+          "trigger": "idle",
+          "source_id": "idle.quiet.2"
+        },
+        {
+          "id": "idle.quiet.3",
+          "zh": "陪你发会儿呆。不赖。",
+          "en": "A little daydreaming company. Could be worse.",
+          "trigger": "idle",
+          "source_id": "idle.quiet.3"
+        },
+        {
+          "id": "her_door.quiet.0",
+          "zh": "你停在我家门口了。",
+          "en": "At my door, are you.",
+          "trigger": "her_door",
+          "source_id": "her_door.quiet.0"
+        },
+        {
+          "id": "her_door.quiet.1",
+          "zh": "我家门前有人等着呢。嗯。",
+          "en": "Someone waiting by my doorstep. Mm.",
+          "trigger": "her_door",
+          "source_id": "her_door.quiet.1"
+        },
+        {
+          "id": "her_door.quiet.2",
+          "zh": "在我门边歇会儿吧。看见了。",
+          "en": "A pause beside my door. Saw it.",
+          "trigger": "her_door",
+          "source_id": "her_door.quiet.2"
+        },
+        {
+          "id": "her_door.quiet.3",
+          "zh": "你在看我家的门呀。不赖。",
+          "en": "Having a look at my doorway. Could be worse.",
+          "trigger": "her_door",
+          "source_id": "her_door.quiet.3"
+        },
+        {
+          "id": "no_work.quiet.0",
+          "zh": "没派活。挺好。",
+          "en": "No jobs. Fine by me.",
+          "trigger": "no_work",
+          "source_id": "no_work.quiet.0"
+        },
+        {
+          "id": "no_work.quiet.1",
+          "zh": "一天没叫我干活。难得。",
+          "en": "A day without errands. Rare treat.",
+          "trigger": "no_work",
+          "source_id": "no_work.quiet.1"
+        },
+        {
+          "id": "no_work.quiet.2",
+          "zh": "今天没接你的差事。不急。",
+          "en": "No errands from you today. No rush.",
+          "trigger": "no_work",
+          "source_id": "no_work.quiet.2"
+        },
+        {
+          "id": "no_work.quiet.3",
+          "zh": "闲了一天。没浪费。",
+          "en": "A day off. Not wasted.",
+          "trigger": "no_work",
+          "source_id": "no_work.quiet.3"
+        },
+        {
+          "id": "noon.quiet.0",
+          "zh": "日头升高了。",
+          "en": "Sun climbing overhead.",
+          "trigger": "noon",
+          "source_id": "noon.quiet.0"
+        },
+        {
+          "id": "noon.quiet.1",
+          "zh": "现在的影子短短的。嗯。",
+          "en": "Little short shadows now. Mm.",
+          "trigger": "noon",
+          "source_id": "noon.quiet.1"
+        },
+        {
+          "id": "noon.quiet.2",
+          "zh": "午后的光有点暖。看见了。",
+          "en": "Some warmth in the afternoon light. Saw it.",
+          "trigger": "noon",
+          "source_id": "noon.quiet.2"
+        },
+        {
+          "id": "noon.quiet.3",
+          "zh": "一天走到中间了。不赖。",
+          "en": "Halfway through the daylight. Could be worse.",
+          "trigger": "noon",
+          "source_id": "noon.quiet.3"
+        },
+        {
+          "id": "peer_stop.quiet.0",
+          "zh": "她也在你身边停下了。",
+          "en": "She's stopped beside you too.",
+          "trigger": "peer_stop",
+          "source_id": "peer_stop.quiet.0"
+        }
+      ]
+    }
+  },
+  "pairs": [
+    {
+      "id": "pair.codex,companion-2.0",
+      "actors": [
+        "codex",
+        "companion-2"
+      ],
+      "lines": [
+        {
+          "actor_id": "codex",
+          "zh": "你脑袋里又在想什么呀？",
+          "en": "What's bouncing round your head now?",
+          "id": "pair.codex,companion-2.0.0"
+        },
+        {
+          "actor_id": "companion-2",
+          "zh": "嘿嘿，秘密点心！",
+          "en": "Hehe! Secret snacks!",
+          "id": "pair.codex,companion-2.0.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.codex,companion-2.1",
+      "actors": [
+        "codex",
+        "companion-2"
+      ],
+      "lines": [
+        {
+          "actor_id": "codex",
+          "zh": "小声一点，我听得见呢。",
+          "en": "A little softer. I can hear you.",
+          "id": "pair.codex,companion-2.1.0"
+        },
+        {
+          "actor_id": "companion-2",
+          "zh": "好！……这个好够小声吗？",
+          "en": "Okay! ...Was THAT quiet enough?",
+          "id": "pair.codex,companion-2.1.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.codex,companion-2.2",
+      "actors": [
+        "codex",
+        "companion-2"
+      ],
+      "lines": [
+        {
+          "actor_id": "codex",
+          "zh": "你的笑像一小束太阳。",
+          "en": "Your smile feels like a little sunbeam.",
+          "id": "pair.codex,companion-2.2.0"
+        },
+        {
+          "actor_id": "companion-2",
+          "zh": "那我分你半束！",
+          "en": "Then you get half of it!",
+          "id": "pair.codex,companion-2.2.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.codex,companion-2.3",
+      "actors": [
+        "codex",
+        "companion-2"
+      ],
+      "lines": [
+        {
+          "actor_id": "codex",
+          "zh": "慢慢说，不会漏掉你的话。",
+          "en": "Take your time. I won't miss a word.",
+          "id": "pair.codex,companion-2.3.0"
+        },
+        {
+          "actor_id": "companion-2",
+          "zh": "可是想法挤着出门啦！",
+          "en": "But my ideas are all crowding the door!",
+          "id": "pair.codex,companion-2.3.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.codex,companion-2.4",
+      "actors": [
+        "codex",
+        "companion-2"
+      ],
+      "lines": [
+        {
+          "actor_id": "codex",
+          "zh": "你会安静地发呆吗？",
+          "en": "Can you daydream quietly?",
+          "id": "pair.codex,companion-2.4.0"
+        },
+        {
+          "actor_id": "companion-2",
+          "zh": "会呀！用脑袋蹦！",
+          "en": "Yep! I bounce inside my brain!",
+          "id": "pair.codex,companion-2.4.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.codex,companion-2.5",
+      "actors": [
+        "codex",
+        "companion-2"
+      ],
+      "lines": [
+        {
+          "actor_id": "codex",
+          "zh": "跟你在一起，很难不笑。",
+          "en": "It's hard not to smile beside you.",
+          "id": "pair.codex,companion-2.5.0"
+        },
+        {
+          "actor_id": "companion-2",
+          "zh": "嘿嘿，这叫传染快乐！",
+          "en": "Hehe! Catching a case of happy!",
+          "id": "pair.codex,companion-2.5.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.codex,companion-2.6",
+      "actors": [
+        "codex",
+        "companion-2"
+      ],
+      "lines": [
+        {
+          "actor_id": "codex",
+          "zh": "你像一阵跑来跑去的风。",
+          "en": "You're a breeze with busy little feet.",
+          "id": "pair.codex,companion-2.6.0"
+        },
+        {
+          "actor_id": "companion-2",
+          "zh": "那你就是软软的云！",
+          "en": "And you're a soft little cloud!",
+          "id": "pair.codex,companion-2.6.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.codex,companion-2.7",
+      "actors": [
+        "codex",
+        "companion-2"
+      ],
+      "lines": [
+        {
+          "actor_id": "codex",
+          "zh": "不用每次都逗大家开心呀。",
+          "en": "You needn't cheer everyone up all the time.",
+          "id": "pair.codex,companion-2.7.0"
+        },
+        {
+          "actor_id": "companion-2",
+          "zh": "那这次就只逗你！",
+          "en": "Then this one's just for you!",
+          "id": "pair.codex,companion-2.7.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.codex,companion-2.8",
+      "actors": [
+        "codex",
+        "companion-2"
+      ],
+      "lines": [
+        {
+          "actor_id": "codex",
+          "zh": "想歇会儿就靠我这边。",
+          "en": "If you want a pause, I'm right here.",
+          "id": "pair.codex,companion-2.8.0"
+        },
+        {
+          "actor_id": "companion-2",
+          "zh": "靠一点点！真的一点点！",
+          "en": "Scooting a teensy bit! Promise!",
+          "id": "pair.codex,companion-2.8.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.codex,companion-2.9",
+      "actors": [
+        "codex",
+        "companion-2"
+      ],
+      "lines": [
+        {
+          "actor_id": "codex",
+          "zh": "我们可以慢一点点。",
+          "en": "We could take it a little slower.",
+          "id": "pair.codex,companion-2.9.0"
+        },
+        {
+          "actor_id": "companion-2",
+          "zh": "那就慢慢地开心！",
+          "en": "Then we'll have fun slooowly!",
+          "id": "pair.codex,companion-2.9.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.codex,npc.mira.0",
+      "actors": [
+        "codex",
+        "npc.mira"
+      ],
+      "lines": [
+        {
+          "actor_id": "codex",
+          "zh": "你又在替谁操心呀？",
+          "en": "Whose worries are you carrying now?",
+          "id": "pair.codex,npc.mira.0.0"
+        },
+        {
+          "actor_id": "npc.mira",
+          "zh": "先别管我，你衣角乱了。",
+          "en": "Never mind me. Your hem's folded up.",
+          "id": "pair.codex,npc.mira.0.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.codex,npc.mira.1",
+      "actors": [
+        "codex",
+        "npc.mira"
+      ],
+      "lines": [
+        {
+          "actor_id": "codex",
+          "zh": "偶尔歇一会儿，也很好呢。",
+          "en": "A little pause can be lovely.",
+          "id": "pair.codex,npc.mira.1.0"
+        },
+        {
+          "actor_id": "npc.mira",
+          "zh": "知道。歇也要歇踏实。",
+          "en": "I know. Properly, if we're resting.",
+          "id": "pair.codex,npc.mira.1.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.codex,npc.mira.2",
+      "actors": [
+        "codex",
+        "npc.mira"
+      ],
+      "lines": [
+        {
+          "actor_id": "codex",
+          "zh": "你的话听着好安心。",
+          "en": "Your words make things feel safer.",
+          "id": "pair.codex,npc.mira.2.0"
+        },
+        {
+          "actor_id": "npc.mira",
+          "zh": "别只听，脚下也看着。",
+          "en": "Keep an eye on your footing, too.",
+          "id": "pair.codex,npc.mira.2.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.codex,npc.mira.3",
+      "actors": [
+        "codex",
+        "npc.mira"
+      ],
+      "lines": [
+        {
+          "actor_id": "codex",
+          "zh": "书里写了什么呀？",
+          "en": "What does your book say?",
+          "id": "pair.codex,npc.mira.3.0"
+        },
+        {
+          "actor_id": "npc.mira",
+          "zh": "这一页，先不急着讲完。",
+          "en": "This page can wait a little.",
+          "id": "pair.codex,npc.mira.3.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.codex,npc.mira.4",
+      "actors": [
+        "codex",
+        "npc.mira"
+      ],
+      "lines": [
+        {
+          "actor_id": "codex",
+          "zh": "你其实很温柔呢。",
+          "en": "You're very gentle, underneath.",
+          "id": "pair.codex,npc.mira.4.0"
+        },
+        {
+          "actor_id": "npc.mira",
+          "zh": "……别突然这样说。",
+          "en": "...Don't spring that on me.",
+          "id": "pair.codex,npc.mira.4.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.codex,npc.mira.5",
+      "actors": [
+        "codex",
+        "npc.mira"
+      ],
+      "lines": [
+        {
+          "actor_id": "codex",
+          "zh": "今天的心事，放轻一点吧。",
+          "en": "Let today's worries feel a little lighter.",
+          "id": "pair.codex,npc.mira.5.0"
+        },
+        {
+          "actor_id": "npc.mira",
+          "zh": "嗯。先把眉头松开。",
+          "en": "Mm. Unfurrowing my brow first.",
+          "id": "pair.codex,npc.mira.5.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.codex,npc.mira.6",
+      "actors": [
+        "codex",
+        "npc.mira"
+      ],
+      "lines": [
+        {
+          "actor_id": "codex",
+          "zh": "可以让我陪你发呆吗？",
+          "en": "May I keep you daydreaming company?",
+          "id": "pair.codex,npc.mira.6.0"
+        },
+        {
+          "actor_id": "npc.mira",
+          "zh": "可以。别站风口。",
+          "en": "Of course. Out of the draught, though.",
+          "id": "pair.codex,npc.mira.6.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.codex,npc.mira.7",
+      "actors": [
+        "codex",
+        "npc.mira"
+      ],
+      "lines": [
+        {
+          "actor_id": "codex",
+          "zh": "你不说话的时候也很可靠。",
+          "en": "You're reassuring even in silence.",
+          "id": "pair.codex,npc.mira.7.0"
+        },
+        {
+          "actor_id": "npc.mira",
+          "zh": "可靠的人也得想事情。",
+          "en": "Dependable people need thinking time.",
+          "id": "pair.codex,npc.mira.7.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.codex,npc.mira.8",
+      "actors": [
+        "codex",
+        "npc.mira"
+      ],
+      "lines": [
+        {
+          "actor_id": "codex",
+          "zh": "想把这份安心记在心里。",
+          "en": "I'd like to keep this safe little feeling.",
+          "id": "pair.codex,npc.mira.8.0"
+        },
+        {
+          "actor_id": "npc.mira",
+          "zh": "记得就好，不用说那么多。",
+          "en": "Keep it, then. No big speech needed.",
+          "id": "pair.codex,npc.mira.8.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.codex,npc.mira.9",
+      "actors": [
+        "codex",
+        "npc.mira"
+      ],
+      "lines": [
+        {
+          "actor_id": "codex",
+          "zh": "谢谢你总看着大家。",
+          "en": "Thank you for keeping an eye on us.",
+          "id": "pair.codex,npc.mira.9.0"
+        },
+        {
+          "actor_id": "npc.mira",
+          "zh": "你们平安，我就少念两句。",
+          "en": "Stay safe and I'll fuss less.",
+          "id": "pair.codex,npc.mira.9.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.codex,npc.nora.0",
+      "actors": [
+        "codex",
+        "npc.nora"
+      ],
+      "lines": [
+        {
+          "actor_id": "codex",
+          "zh": "不说话也不尴尬呢。",
+          "en": "The quiet doesn't feel awkward.",
+          "id": "pair.codex,npc.nora.0.0"
+        },
+        {
+          "actor_id": "npc.nora",
+          "zh": "嗯。挺好。",
+          "en": "Mm. Works for me.",
+          "id": "pair.codex,npc.nora.0.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.codex,npc.nora.1",
+      "actors": [
+        "codex",
+        "npc.nora"
+      ],
+      "lines": [
+        {
+          "actor_id": "codex",
+          "zh": "你在想很远的地方吗？",
+          "en": "Are your thoughts somewhere far away?",
+          "id": "pair.codex,npc.nora.1.0"
+        },
+        {
+          "actor_id": "npc.nora",
+          "zh": "没。就在这里。",
+          "en": "No. Right here.",
+          "id": "pair.codex,npc.nora.1.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.codex,npc.nora.2",
+      "actors": [
+        "codex",
+        "npc.nora"
+      ],
+      "lines": [
+        {
+          "actor_id": "codex",
+          "zh": "你的安静像一页书。",
+          "en": "Your quiet feels like an open page.",
+          "id": "pair.codex,npc.nora.2.0"
+        },
+        {
+          "actor_id": "npc.nora",
+          "zh": "那就慢慢看。",
+          "en": "Read slowly, then.",
+          "id": "pair.codex,npc.nora.2.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.codex,npc.nora.3",
+      "actors": [
+        "codex",
+        "npc.nora"
+      ],
+      "lines": [
+        {
+          "actor_id": "codex",
+          "zh": "我可以站在这里吗？",
+          "en": "May I stand here?",
+          "id": "pair.codex,npc.nora.3.0"
+        },
+        {
+          "actor_id": "npc.nora",
+          "zh": "给你留着的。",
+          "en": "Kept the space for you.",
+          "id": "pair.codex,npc.nora.3.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.codex,npc.nora.4",
+      "actors": [
+        "codex",
+        "npc.nora"
+      ],
+      "lines": [
+        {
+          "actor_id": "codex",
+          "zh": "好像不用找话题呀。",
+          "en": "We needn't hunt for something to say.",
+          "id": "pair.codex,npc.nora.4.0"
+        },
+        {
+          "actor_id": "npc.nora",
+          "zh": "别找。会累。",
+          "en": "Don't. Tiring work.",
+          "id": "pair.codex,npc.nora.4.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.codex,npc.nora.5",
+      "actors": [
+        "codex",
+        "npc.nora"
+      ],
+      "lines": [
+        {
+          "actor_id": "codex",
+          "zh": "你刚才是不是笑了？",
+          "en": "Did you smile just then?",
+          "id": "pair.codex,npc.nora.5.0"
+        },
+        {
+          "actor_id": "npc.nora",
+          "zh": "……你看错。",
+          "en": "...You saw nothing.",
+          "id": "pair.codex,npc.nora.5.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.codex,npc.nora.6",
+      "actors": [
+        "codex",
+        "npc.nora"
+      ],
+      "lines": [
+        {
+          "actor_id": "codex",
+          "zh": "小小的事也能让人安心。",
+          "en": "Little things can feel so reassuring.",
+          "id": "pair.codex,npc.nora.6.0"
+        },
+        {
+          "actor_id": "npc.nora",
+          "zh": "比如，不被催。",
+          "en": "Like not being rushed.",
+          "id": "pair.codex,npc.nora.6.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.codex,npc.nora.7",
+      "actors": [
+        "codex",
+        "npc.nora"
+      ],
+      "lines": [
+        {
+          "actor_id": "codex",
+          "zh": "我喜欢这种陪伴。",
+          "en": "I like this kind of company.",
+          "id": "pair.codex,npc.nora.7.0"
+        },
+        {
+          "actor_id": "npc.nora",
+          "zh": "我也是。别声张。",
+          "en": "Me too. Keep it quiet.",
+          "id": "pair.codex,npc.nora.7.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.codex,npc.nora.8",
+      "actors": [
+        "codex",
+        "npc.nora"
+      ],
+      "lines": [
+        {
+          "actor_id": "codex",
+          "zh": "你的话少，可我听得很清楚。",
+          "en": "You say little. I hear it clearly.",
+          "id": "pair.codex,npc.nora.8.0"
+        },
+        {
+          "actor_id": "npc.nora",
+          "zh": "够了就好。",
+          "en": "Enough is enough.",
+          "id": "pair.codex,npc.nora.8.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.codex,npc.nora.9",
+      "actors": [
+        "codex",
+        "npc.nora"
+      ],
+      "lines": [
+        {
+          "actor_id": "codex",
+          "zh": "想把这段安静留长一点。",
+          "en": "Could this quiet last a little longer?",
+          "id": "pair.codex,npc.nora.9.0"
+        },
+        {
+          "actor_id": "npc.nora",
+          "zh": "嗯。不急。",
+          "en": "Mm. No hurry.",
+          "id": "pair.codex,npc.nora.9.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.companion-2,npc.mira.0",
+      "actors": [
+        "companion-2",
+        "npc.mira"
+      ],
+      "lines": [
+        {
+          "actor_id": "companion-2",
+          "zh": "我是不是特别乖！",
+          "en": "I'm being SO good, right?",
+          "id": "pair.companion-2,npc.mira.0.0"
+        },
+        {
+          "actor_id": "npc.mira",
+          "zh": "这句话先别喊那么响。",
+          "en": "You could announce it more quietly.",
+          "id": "pair.companion-2,npc.mira.0.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.companion-2,npc.mira.1",
+      "actors": [
+        "companion-2",
+        "npc.mira"
+      ],
+      "lines": [
+        {
+          "actor_id": "companion-2",
+          "zh": "你皱眉像个小括号！",
+          "en": "Your frown looks like little brackets!",
+          "id": "pair.companion-2,npc.mira.1.0"
+        },
+        {
+          "actor_id": "npc.mira",
+          "zh": "那你就是感叹号。",
+          "en": "And you're an exclamation mark.",
+          "id": "pair.companion-2,npc.mira.1.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.companion-2,npc.mira.2",
+      "actors": [
+        "companion-2",
+        "npc.mira"
+      ],
+      "lines": [
+        {
+          "actor_id": "companion-2",
+          "zh": "我脑袋里有好多计划！",
+          "en": "I've got SO many plans!",
+          "id": "pair.companion-2,npc.mira.2.0"
+        },
+        {
+          "actor_id": "npc.mira",
+          "zh": "先挑一个说清楚。",
+          "en": "Pick one. Explain that one first.",
+          "id": "pair.companion-2,npc.mira.2.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.companion-2,npc.mira.3",
+      "actors": [
+        "companion-2",
+        "npc.mira"
+      ],
+      "lines": [
+        {
+          "actor_id": "companion-2",
+          "zh": "你会不会也想偷懒呀？",
+          "en": "Do you ever want a lazy minute?",
+          "id": "pair.companion-2,npc.mira.3.0"
+        },
+        {
+          "actor_id": "npc.mira",
+          "zh": "休息不叫偷懒。",
+          "en": "Resting isn't stealing anything.",
+          "id": "pair.companion-2,npc.mira.3.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.companion-2,npc.mira.4",
+      "actors": [
+        "companion-2",
+        "npc.mira"
+      ],
+      "lines": [
+        {
+          "actor_id": "companion-2",
+          "zh": "书里有烤鱼吗？",
+          "en": "Any grilled fish in that book?",
+          "id": "pair.companion-2,npc.mira.4.0"
+        },
+        {
+          "actor_id": "npc.mira",
+          "zh": "你只会找这一页？",
+          "en": "Is that the only page you'd read?",
+          "id": "pair.companion-2,npc.mira.4.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.companion-2,npc.mira.5",
+      "actors": [
+        "companion-2",
+        "npc.mira"
+      ],
+      "lines": [
+        {
+          "actor_id": "companion-2",
+          "zh": "我可以负责开心！",
+          "en": "I'll be in charge of happy!",
+          "id": "pair.companion-2,npc.mira.5.0"
+        },
+        {
+          "actor_id": "npc.mira",
+          "zh": "行，别把自己绊倒。",
+          "en": "Fine. Mind your feet while you're at it.",
+          "id": "pair.companion-2,npc.mira.5.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.companion-2,npc.mira.6",
+      "actors": [
+        "companion-2",
+        "npc.mira"
+      ],
+      "lines": [
+        {
+          "actor_id": "companion-2",
+          "zh": "别念啦，我耳朵很乖！",
+          "en": "My ears are behaving! Less fussing!",
+          "id": "pair.companion-2,npc.mira.6.0"
+        },
+        {
+          "actor_id": "npc.mira",
+          "zh": "我看你的脚先乖一点。",
+          "en": "I'd like your feet to behave, too.",
+          "id": "pair.companion-2,npc.mira.6.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.companion-2,npc.mira.7",
+      "actors": [
+        "companion-2",
+        "npc.mira"
+      ],
+      "lines": [
+        {
+          "actor_id": "companion-2",
+          "zh": "给我夸一句嘛！",
+          "en": "One compliment! Pleeease!",
+          "id": "pair.companion-2,npc.mira.7.0"
+        },
+        {
+          "actor_id": "npc.mira",
+          "zh": "嗯。今天笑得挺精神。",
+          "en": "Mm. That's a very lively smile.",
+          "id": "pair.companion-2,npc.mira.7.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.companion-2,npc.mira.8",
+      "actors": [
+        "companion-2",
+        "npc.mira"
+      ],
+      "lines": [
+        {
+          "actor_id": "companion-2",
+          "zh": "你看书，我负责不吵！",
+          "en": "You read! I'll handle being quiet!",
+          "id": "pair.companion-2,npc.mira.8.0"
+        },
+        {
+          "actor_id": "npc.mira",
+          "zh": "先坚持说完这句之后。",
+          "en": "Start after that sentence, then.",
+          "id": "pair.companion-2,npc.mira.8.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.companion-2,npc.mira.9",
+      "actors": [
+        "companion-2",
+        "npc.mira"
+      ],
+      "lines": [
+        {
+          "actor_id": "companion-2",
+          "zh": "我有一点点听话哦！",
+          "en": "I listen a tiny bit, you know!",
+          "id": "pair.companion-2,npc.mira.9.0"
+        },
+        {
+          "actor_id": "npc.mira",
+          "zh": "这一点，我记下了。",
+          "en": "I'll give you credit for that bit.",
+          "id": "pair.companion-2,npc.mira.9.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.companion-2,npc.nora.0",
+      "actors": [
+        "companion-2",
+        "npc.nora"
+      ],
+      "lines": [
+        {
+          "actor_id": "companion-2",
+          "zh": "你是不是偷偷走神啦？",
+          "en": "Secret daydreaming, huh?",
+          "id": "pair.companion-2,npc.nora.0.0"
+        },
+        {
+          "actor_id": "npc.nora",
+          "zh": "你太响。想不成。",
+          "en": "You're loud. Can't think.",
+          "id": "pair.companion-2,npc.nora.0.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.companion-2,npc.nora.1",
+      "actors": [
+        "companion-2",
+        "npc.nora"
+      ],
+      "lines": [
+        {
+          "actor_id": "companion-2",
+          "zh": "我猜得到你在想什么！",
+          "en": "Bet I know what you're thinking!",
+          "id": "pair.companion-2,npc.nora.1.0"
+        },
+        {
+          "actor_id": "npc.nora",
+          "zh": "猜错了。",
+          "en": "Wrong already.",
+          "id": "pair.companion-2,npc.nora.1.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.companion-2,npc.nora.2",
+      "actors": [
+        "companion-2",
+        "npc.nora"
+      ],
+      "lines": [
+        {
+          "actor_id": "companion-2",
+          "zh": "嘿，笑一下嘛！",
+          "en": "Hey, gimme a little smile!",
+          "id": "pair.companion-2,npc.nora.2.0"
+        },
+        {
+          "actor_id": "npc.nora",
+          "zh": "给了。太快。",
+          "en": "Did. You blinked.",
+          "id": "pair.companion-2,npc.nora.2.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.companion-2,npc.nora.3",
+      "actors": [
+        "companion-2",
+        "npc.nora"
+      ],
+      "lines": [
+        {
+          "actor_id": "companion-2",
+          "zh": "你的话怎么这么省呀？",
+          "en": "How do you save so many words?",
+          "id": "pair.companion-2,npc.nora.3.0"
+        },
+        {
+          "actor_id": "npc.nora",
+          "zh": "你替我说够了。",
+          "en": "You use enough for both.",
+          "id": "pair.companion-2,npc.nora.3.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.companion-2,npc.nora.4",
+      "actors": [
+        "companion-2",
+        "npc.nora"
+      ],
+      "lines": [
+        {
+          "actor_id": "companion-2",
+          "zh": "我能安静三秒！",
+          "en": "I can be quiet for THREE seconds!",
+          "id": "pair.companion-2,npc.nora.4.0"
+        },
+        {
+          "actor_id": "npc.nora",
+          "zh": "从现在算。",
+          "en": "Starting now.",
+          "id": "pair.companion-2,npc.nora.4.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.companion-2,npc.nora.5",
+      "actors": [
+        "companion-2",
+        "npc.nora"
+      ],
+      "lines": [
+        {
+          "actor_id": "companion-2",
+          "zh": "你看起来像只猫！",
+          "en": "You've got cat energy!",
+          "id": "pair.companion-2,npc.nora.5.0"
+        },
+        {
+          "actor_id": "npc.nora",
+          "zh": "猫也嫌你吵。",
+          "en": "Cat thinks you're loud, too.",
+          "id": "pair.companion-2,npc.nora.5.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.companion-2,npc.nora.6",
+      "actors": [
+        "companion-2",
+        "npc.nora"
+      ],
+      "lines": [
+        {
+          "actor_id": "companion-2",
+          "zh": "我要把快乐分你一大份！",
+          "en": "Huge helping of happy for you!",
+          "id": "pair.companion-2,npc.nora.6.0"
+        },
+        {
+          "actor_id": "npc.nora",
+          "zh": "小份。装得下。",
+          "en": "Small one. It'll fit.",
+          "id": "pair.companion-2,npc.nora.6.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.companion-2,npc.nora.7",
+      "actors": [
+        "companion-2",
+        "npc.nora"
+      ],
+      "lines": [
+        {
+          "actor_id": "companion-2",
+          "zh": "你其实偷偷喜欢热闹吧！",
+          "en": "Secretly like a little chaos, huh?",
+          "id": "pair.companion-2,npc.nora.7.0"
+        },
+        {
+          "actor_id": "npc.nora",
+          "zh": "只喜欢散场。",
+          "en": "I like when it ends.",
+          "id": "pair.companion-2,npc.nora.7.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.companion-2,npc.nora.8",
+      "actors": [
+        "companion-2",
+        "npc.nora"
+      ],
+      "lines": [
+        {
+          "actor_id": "companion-2",
+          "zh": "我是不是很有精神！",
+          "en": "Am I full of beans or WHAT!",
+          "id": "pair.companion-2,npc.nora.8.0"
+        },
+        {
+          "actor_id": "npc.nora",
+          "zh": "嗯。溢出来了。",
+          "en": "Mm. Overflowing.",
+          "id": "pair.companion-2,npc.nora.8.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.companion-2,npc.nora.9",
+      "actors": [
+        "companion-2",
+        "npc.nora"
+      ],
+      "lines": [
+        {
+          "actor_id": "companion-2",
+          "zh": "我站近一点，不闹你！",
+          "en": "Scooting closer! No pestering!",
+          "id": "pair.companion-2,npc.nora.9.0"
+        },
+        {
+          "actor_id": "npc.nora",
+          "zh": "行。说到做到。",
+          "en": "Fine. Hold yourself to it.",
+          "id": "pair.companion-2,npc.nora.9.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.npc.mira,npc.nora.0",
+      "actors": [
+        "npc.mira",
+        "npc.nora"
+      ],
+      "lines": [
+        {
+          "actor_id": "npc.mira",
+          "zh": "没在发呆吧？",
+          "en": "Thinking, or just drifting?",
+          "id": "pair.npc.mira,npc.nora.0.0"
+        },
+        {
+          "actor_id": "npc.nora",
+          "zh": "想事。",
+          "en": "Thinking.",
+          "id": "pair.npc.mira,npc.nora.0.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.npc.mira,npc.nora.1",
+      "actors": [
+        "npc.mira",
+        "npc.nora"
+      ],
+      "lines": [
+        {
+          "actor_id": "npc.mira",
+          "zh": "有话就直说。",
+          "en": "Say it straight if you've got something.",
+          "id": "pair.npc.mira,npc.nora.1.0"
+        },
+        {
+          "actor_id": "npc.nora",
+          "zh": "没急事。",
+          "en": "Nothing urgent.",
+          "id": "pair.npc.mira,npc.nora.1.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.npc.mira,npc.nora.2",
+      "actors": [
+        "npc.mira",
+        "npc.nora"
+      ],
+      "lines": [
+        {
+          "actor_id": "npc.mira",
+          "zh": "书看累了就看看远处。",
+          "en": "Eyes tired? Try the distance.",
+          "id": "pair.npc.mira,npc.nora.2.0"
+        },
+        {
+          "actor_id": "npc.nora",
+          "zh": "你也是。",
+          "en": "You too.",
+          "id": "pair.npc.mira,npc.nora.2.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.npc.mira,npc.nora.3",
+      "actors": [
+        "npc.mira",
+        "npc.nora"
+      ],
+      "lines": [
+        {
+          "actor_id": "npc.mira",
+          "zh": "你倒是很会安静。",
+          "en": "You do quiet rather well.",
+          "id": "pair.npc.mira,npc.nora.3.0"
+        },
+        {
+          "actor_id": "npc.nora",
+          "zh": "你可以学。",
+          "en": "You could try it.",
+          "id": "pair.npc.mira,npc.nora.3.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.npc.mira,npc.nora.4",
+      "actors": [
+        "npc.mira",
+        "npc.nora"
+      ],
+      "lines": [
+        {
+          "actor_id": "npc.mira",
+          "zh": "我是不是又操心太多？",
+          "en": "Am I fussing too much again?",
+          "id": "pair.npc.mira,npc.nora.4.0"
+        },
+        {
+          "actor_id": "npc.nora",
+          "zh": "一点。",
+          "en": "A bit.",
+          "id": "pair.npc.mira,npc.nora.4.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.npc.mira,npc.nora.5",
+      "actors": [
+        "npc.mira",
+        "npc.nora"
+      ],
+      "lines": [
+        {
+          "actor_id": "npc.mira",
+          "zh": "今天别把自己绷太紧。",
+          "en": "Don't hold yourself so tightly today.",
+          "id": "pair.npc.mira,npc.nora.5.0"
+        },
+        {
+          "actor_id": "npc.nora",
+          "zh": "这句送回你。",
+          "en": "Sending that back to you.",
+          "id": "pair.npc.mira,npc.nora.5.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.npc.mira,npc.nora.6",
+      "actors": [
+        "npc.mira",
+        "npc.nora"
+      ],
+      "lines": [
+        {
+          "actor_id": "npc.mira",
+          "zh": "有你在边上，省不少话。",
+          "en": "You save me a fair few words.",
+          "id": "pair.npc.mira,npc.nora.6.0"
+        },
+        {
+          "actor_id": "npc.nora",
+          "zh": "嗯。懂了。",
+          "en": "Mm. Understood.",
+          "id": "pair.npc.mira,npc.nora.6.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.npc.mira,npc.nora.7",
+      "actors": [
+        "npc.mira",
+        "npc.nora"
+      ],
+      "lines": [
+        {
+          "actor_id": "npc.mira",
+          "zh": "不用每件事都马上回答。",
+          "en": "Not every question needs an instant answer.",
+          "id": "pair.npc.mira,npc.nora.7.0"
+        },
+        {
+          "actor_id": "npc.nora",
+          "zh": "终于听见你说这个。",
+          "en": "Glad you said that.",
+          "id": "pair.npc.mira,npc.nora.7.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.npc.mira,npc.nora.8",
+      "actors": [
+        "npc.mira",
+        "npc.nora"
+      ],
+      "lines": [
+        {
+          "actor_id": "npc.mira",
+          "zh": "我看一会儿书。",
+          "en": "Reading for a little while.",
+          "id": "pair.npc.mira,npc.nora.8.0"
+        },
+        {
+          "actor_id": "npc.nora",
+          "zh": "我替你安静。",
+          "en": "I'll handle the silence.",
+          "id": "pair.npc.mira,npc.nora.8.1"
+        }
+      ]
+    },
+    {
+      "id": "pair.npc.mira,npc.nora.9",
+      "actors": [
+        "npc.mira",
+        "npc.nora"
+      ],
+      "lines": [
+        {
+          "actor_id": "npc.mira",
+          "zh": "咱们就站这一会儿。",
+          "en": "We'll stay here a moment.",
+          "id": "pair.npc.mira,npc.nora.9.0"
+        },
+        {
+          "actor_id": "npc.nora",
+          "zh": "行。不赶。",
+          "en": "Fine. No rush.",
+          "id": "pair.npc.mira,npc.nora.9.1"
+        }
+      ]
+    }
+  ]
+}

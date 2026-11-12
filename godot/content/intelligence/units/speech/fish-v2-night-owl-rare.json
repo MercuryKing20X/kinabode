@@ -1,0 +1,11 @@
+{
+  "id": "fish-v2-night-owl-rare",
+  "context": "fishing_v2_rare",
+  "lines": [
+    "嗯，它的颜色真特别。",
+    "……这条鱼的颜色好少见。",
+    "看，看，漂亮的稀有颜色。",
+    "好，鳞片闪着不一样的光。"
+  ],
+  "autonomy_output": false
+}

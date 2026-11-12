@@ -1,0 +1,11 @@
+{
+  "id": "farm-cmd-glutton-plant",
+  "context": "farm_command_plant",
+  "lines": [
+    "种好了是不是就能吃了？我去！",
+    "好，我去种，以后烤着吃！",
+    "种菜我去，想想都香。",
+    "我去种，种多一点！"
+  ],
+  "autonomy_output": false
+}

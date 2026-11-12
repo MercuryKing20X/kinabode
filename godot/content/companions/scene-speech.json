@@ -1,0 +1,3606 @@
+{
+  "version": 1,
+  "scenes": {
+    "idle": {
+      "gentle": [
+        {
+          "id": "idle.gentle.0",
+          "zh": "你站得好安静，我陪你。",
+          "en": "You've gone quiet. I can stay with you."
+        },
+        {
+          "id": "idle.gentle.1",
+          "zh": "这会儿不用赶路，慢一点也好。",
+          "en": "Nothing is chasing us. No hurry from me."
+        },
+        {
+          "id": "idle.gentle.2",
+          "zh": "脚边的影子也停了，留一点时间看吧。",
+          "en": "Even your shadow has stopped. We can give it a moment."
+        },
+        {
+          "id": "idle.gentle.3",
+          "zh": "陪你发会儿呆，不说话也可以。",
+          "en": "A little daydreaming company. We need not fill the silence."
+        }
+      ],
+      "lively": [
+        {
+          "id": "idle.lively.0",
+          "zh": "你站得好安静！哎，你看你看。",
+          "en": "You've gone quiet! Oh, look, look!"
+        },
+        {
+          "id": "idle.lively.1",
+          "zh": "这会儿不用赶路，嘿嘿，我注意到了！",
+          "en": "Nothing is chasing us — yep, I spotted it!"
+        },
+        {
+          "id": "idle.lively.2",
+          "zh": "脚边的影子也停了！这个我要多看两眼。",
+          "en": "Even your shadow has stopped! Hang on, I want another look."
+        },
+        {
+          "id": "idle.lively.3",
+          "zh": "陪你发会儿呆，你也看到了吧？",
+          "en": "A little daydreaming company! You caught that too, right?"
+        },
+        {
+          "id": "idle.lively.4",
+          "zh": "你站得好安静，我可没走神哦！",
+          "en": "You've gone quiet! Who says I was daydreaming?"
+        },
+        {
+          "id": "idle.lively.5",
+          "zh": "这会儿不用赶路！好啦，我不嚷那么大声。",
+          "en": "Nothing is chasing us! Okay, okay, indoor voice."
+        }
+      ],
+      "laborious": [
+        {
+          "id": "idle.laborious.0",
+          "zh": "你站得好安静，脚下留点神。",
+          "en": "You've gone quiet. Mind where you put your feet."
+        },
+        {
+          "id": "idle.laborious.1",
+          "zh": "这会儿不用赶路，别急，稳当点。",
+          "en": "Nothing is chasing us. Steady; no need to rush it."
+        },
+        {
+          "id": "idle.laborious.2",
+          "zh": "脚边的影子也停了，手边的事慢慢理。",
+          "en": "Even your shadow has stopped. We can sort things one at a time."
+        },
+        {
+          "id": "idle.laborious.3",
+          "zh": "陪你发会儿呆，我看着呢。",
+          "en": "A little daydreaming company. Yes, I am keeping an eye on it."
+        }
+      ],
+      "quiet": [
+        {
+          "id": "idle.quiet.0",
+          "zh": "你站得好安静。",
+          "en": "You've gone quiet."
+        },
+        {
+          "id": "idle.quiet.1",
+          "zh": "这会儿不用赶路。嗯。",
+          "en": "Nothing is chasing us. Mm."
+        },
+        {
+          "id": "idle.quiet.2",
+          "zh": "脚边的影子也停了。看见了。",
+          "en": "Even your shadow has stopped. Saw it."
+        },
+        {
+          "id": "idle.quiet.3",
+          "zh": "陪你发会儿呆。不赖。",
+          "en": "A little daydreaming company. Could be worse."
+        }
+      ]
+    },
+    "loops": {
+      "gentle": [
+        {
+          "id": "loops.gentle.0",
+          "zh": "你又绕回来了，我陪你。",
+          "en": "Back around again. I can stay with you."
+        },
+        {
+          "id": "loops.gentle.1",
+          "zh": "这条路认得你的脚步了，慢一点也好。",
+          "en": "This path knows your footsteps. No hurry from me."
+        },
+        {
+          "id": "loops.gentle.2",
+          "zh": "左边右边又走一遍，留一点时间看吧。",
+          "en": "Left, right, and back again. We can give it a moment."
+        },
+        {
+          "id": "loops.gentle.3",
+          "zh": "你来回跑得真认真，不说话也可以。",
+          "en": "That is a very determined lap. We need not fill the silence."
+        }
+      ],
+      "lively": [
+        {
+          "id": "loops.lively.0",
+          "zh": "你又绕回来了！哎，你看你看。",
+          "en": "Back around again! Oh, look, look!"
+        },
+        {
+          "id": "loops.lively.1",
+          "zh": "这条路认得你的脚步了，嘿嘿，我注意到了！",
+          "en": "This path knows your footsteps — yep, I spotted it!"
+        },
+        {
+          "id": "loops.lively.2",
+          "zh": "左边右边又走一遍！这个我要多看两眼。",
+          "en": "Left, right, and back again! Hang on, I want another look."
+        },
+        {
+          "id": "loops.lively.3",
+          "zh": "你来回跑得真认真，你也看到了吧？",
+          "en": "That is a very determined lap! You caught that too, right?"
+        },
+        {
+          "id": "loops.lively.4",
+          "zh": "你又绕回来了，我可没走神哦！",
+          "en": "Back around again! Who says I was daydreaming?"
+        },
+        {
+          "id": "loops.lively.5",
+          "zh": "这条路认得你的脚步了！好啦，我不嚷那么大声。",
+          "en": "This path knows your footsteps! Okay, okay, indoor voice."
+        }
+      ],
+      "laborious": [
+        {
+          "id": "loops.laborious.0",
+          "zh": "你又绕回来了，脚下留点神。",
+          "en": "Back around again. Mind where you put your feet."
+        },
+        {
+          "id": "loops.laborious.1",
+          "zh": "这条路认得你的脚步了，别急，稳当点。",
+          "en": "This path knows your footsteps. Steady; no need to rush it."
+        },
+        {
+          "id": "loops.laborious.2",
+          "zh": "左边右边又走一遍，手边的事慢慢理。",
+          "en": "Left, right, and back again. We can sort things one at a time."
+        },
+        {
+          "id": "loops.laborious.3",
+          "zh": "你来回跑得真认真，我看着呢。",
+          "en": "That is a very determined lap. Yes, I am keeping an eye on it."
+        }
+      ],
+      "quiet": [
+        {
+          "id": "loops.quiet.0",
+          "zh": "你又绕回来了。",
+          "en": "Back around again."
+        },
+        {
+          "id": "loops.quiet.1",
+          "zh": "这条路认得你的脚步了。嗯。",
+          "en": "This path knows your footsteps. Mm."
+        },
+        {
+          "id": "loops.quiet.2",
+          "zh": "左边右边又走一遍。看见了。",
+          "en": "Left, right, and back again. Saw it."
+        },
+        {
+          "id": "loops.quiet.3",
+          "zh": "你来回跑得真认真。不赖。",
+          "en": "That is a very determined lap. Could be worse."
+        }
+      ]
+    },
+    "water": {
+      "gentle": [
+        {
+          "id": "water.gentle.0",
+          "zh": "水就停在脚边，我陪你。",
+          "en": "Water right by our feet. I can stay with you."
+        },
+        {
+          "id": "water.gentle.1",
+          "zh": "浪花快碰到鞋尖了，慢一点也好。",
+          "en": "Foam almost touching your shoes. No hurry from me."
+        },
+        {
+          "id": "water.gentle.2",
+          "zh": "岸边比路上凉，留一点时间看吧。",
+          "en": "Cooler here by the bank. We can give it a moment."
+        },
+        {
+          "id": "water.gentle.3",
+          "zh": "水面一直在动，不说话也可以。",
+          "en": "The surface never quite settles. We need not fill the silence."
+        }
+      ],
+      "lively": [
+        {
+          "id": "water.lively.0",
+          "zh": "水就停在脚边！哎，你看你看。",
+          "en": "Water right by our feet! Oh, look, look!"
+        },
+        {
+          "id": "water.lively.1",
+          "zh": "浪花快碰到鞋尖了，嘿嘿，我注意到了！",
+          "en": "Foam almost touching your shoes — yep, I spotted it!"
+        },
+        {
+          "id": "water.lively.2",
+          "zh": "岸边比路上凉！这个我要多看两眼。",
+          "en": "Cooler here by the bank! Hang on, I want another look."
+        },
+        {
+          "id": "water.lively.3",
+          "zh": "水面一直在动，你也看到了吧？",
+          "en": "The surface never quite settles! You caught that too, right?"
+        },
+        {
+          "id": "water.lively.4",
+          "zh": "水就停在脚边，我可没走神哦！",
+          "en": "Water right by our feet! Who says I was daydreaming?"
+        },
+        {
+          "id": "water.lively.5",
+          "zh": "浪花快碰到鞋尖了！好啦，我不嚷那么大声。",
+          "en": "Foam almost touching your shoes! Okay, okay, indoor voice."
+        }
+      ],
+      "laborious": [
+        {
+          "id": "water.laborious.0",
+          "zh": "水就停在脚边，脚下留点神。",
+          "en": "Water right by our feet. Mind where you put your feet."
+        },
+        {
+          "id": "water.laborious.1",
+          "zh": "浪花快碰到鞋尖了，别急，稳当点。",
+          "en": "Foam almost touching your shoes. Steady; no need to rush it."
+        },
+        {
+          "id": "water.laborious.2",
+          "zh": "岸边比路上凉，手边的事慢慢理。",
+          "en": "Cooler here by the bank. We can sort things one at a time."
+        },
+        {
+          "id": "water.laborious.3",
+          "zh": "水面一直在动，我看着呢。",
+          "en": "The surface never quite settles. Yes, I am keeping an eye on it."
+        }
+      ],
+      "quiet": [
+        {
+          "id": "water.quiet.0",
+          "zh": "水就停在脚边。",
+          "en": "Water right by our feet."
+        },
+        {
+          "id": "water.quiet.1",
+          "zh": "浪花快碰到鞋尖了。嗯。",
+          "en": "Foam almost touching your shoes. Mm."
+        },
+        {
+          "id": "water.quiet.2",
+          "zh": "岸边比路上凉。看见了。",
+          "en": "Cooler here by the bank. Saw it."
+        },
+        {
+          "id": "water.quiet.3",
+          "zh": "水面一直在动。不赖。",
+          "en": "The surface never quite settles. Could be worse."
+        }
+      ]
+    },
+    "sprint": {
+      "gentle": [
+        {
+          "id": "sprint.gentle.0",
+          "zh": "你突然跑快了，我陪你。",
+          "en": "Oh, you've picked up speed. I can stay with you."
+        },
+        {
+          "id": "sprint.gentle.1",
+          "zh": "刚才还是慢慢走呢，慢一点也好。",
+          "en": "We were strolling a moment ago. No hurry from me."
+        },
+        {
+          "id": "sprint.gentle.2",
+          "zh": "脚步一下轻快起来，留一点时间看吧。",
+          "en": "Those footsteps suddenly got lively. We can give it a moment."
+        },
+        {
+          "id": "sprint.gentle.3",
+          "zh": "你这一跑带起了风，不说话也可以。",
+          "en": "You've made your own little breeze. We need not fill the silence."
+        }
+      ],
+      "lively": [
+        {
+          "id": "sprint.lively.0",
+          "zh": "你突然跑快了！哎，你看你看。",
+          "en": "Oh, you've picked up speed! Oh, look, look!"
+        },
+        {
+          "id": "sprint.lively.1",
+          "zh": "刚才还是慢慢走呢，嘿嘿，我注意到了！",
+          "en": "We were strolling a moment ago — yep, I spotted it!"
+        },
+        {
+          "id": "sprint.lively.2",
+          "zh": "脚步一下轻快起来！这个我要多看两眼。",
+          "en": "Those footsteps suddenly got lively! Hang on, I want another look."
+        },
+        {
+          "id": "sprint.lively.3",
+          "zh": "你这一跑带起了风，你也看到了吧？",
+          "en": "You've made your own little breeze! You caught that too, right?"
+        },
+        {
+          "id": "sprint.lively.4",
+          "zh": "你突然跑快了，我可没走神哦！",
+          "en": "Oh, you've picked up speed! Who says I was daydreaming?"
+        },
+        {
+          "id": "sprint.lively.5",
+          "zh": "刚才还是慢慢走呢！好啦，我不嚷那么大声。",
+          "en": "We were strolling a moment ago! Okay, okay, indoor voice."
+        }
+      ],
+      "laborious": [
+        {
+          "id": "sprint.laborious.0",
+          "zh": "你突然跑快了，脚下留点神。",
+          "en": "Oh, you've picked up speed. Mind where you put your feet."
+        },
+        {
+          "id": "sprint.laborious.1",
+          "zh": "刚才还是慢慢走呢，别急，稳当点。",
+          "en": "We were strolling a moment ago. Steady; no need to rush it."
+        },
+        {
+          "id": "sprint.laborious.2",
+          "zh": "脚步一下轻快起来，手边的事慢慢理。",
+          "en": "Those footsteps suddenly got lively. We can sort things one at a time."
+        },
+        {
+          "id": "sprint.laborious.3",
+          "zh": "你这一跑带起了风，我看着呢。",
+          "en": "You've made your own little breeze. Yes, I am keeping an eye on it."
+        }
+      ],
+      "quiet": [
+        {
+          "id": "sprint.quiet.0",
+          "zh": "你突然跑快了。",
+          "en": "Oh, you've picked up speed."
+        },
+        {
+          "id": "sprint.quiet.1",
+          "zh": "刚才还是慢慢走呢。嗯。",
+          "en": "We were strolling a moment ago. Mm."
+        },
+        {
+          "id": "sprint.quiet.2",
+          "zh": "脚步一下轻快起来。看见了。",
+          "en": "Those footsteps suddenly got lively. Saw it."
+        },
+        {
+          "id": "sprint.quiet.3",
+          "zh": "你这一跑带起了风。不赖。",
+          "en": "You've made your own little breeze. Could be worse."
+        }
+      ]
+    },
+    "no_work": {
+      "gentle": [
+        {
+          "id": "no_work.gentle.0",
+          "zh": "今天没给我派活呢，我陪你。",
+          "en": "No errands from you today. I can stay with you."
+        },
+        {
+          "id": "no_work.gentle.1",
+          "zh": "今天这一段全归自己，慢一点也好。",
+          "en": "A whole day of my own. No hurry from me."
+        },
+        {
+          "id": "no_work.gentle.2",
+          "zh": "没接活的一天也过去了，留一点时间看吧。",
+          "en": "An unassigned day still counts. We can give it a moment."
+        },
+        {
+          "id": "no_work.gentle.3",
+          "zh": "今天没等来你的差事，不说话也可以。",
+          "en": "No little job with my name on it. We need not fill the silence."
+        }
+      ],
+      "lively": [
+        {
+          "id": "no_work.lively.0",
+          "zh": "今天没给我派活呢！哎，你看你看。",
+          "en": "No errands from you today! Oh, look, look!"
+        },
+        {
+          "id": "no_work.lively.1",
+          "zh": "今天这一段全归自己，嘿嘿，我注意到了！",
+          "en": "A whole day of my own — yep, I spotted it!"
+        },
+        {
+          "id": "no_work.lively.2",
+          "zh": "没接活的一天也过去了！这个我要多看两眼。",
+          "en": "An unassigned day still counts! Hang on, I want another look."
+        },
+        {
+          "id": "no_work.lively.3",
+          "zh": "今天没等来你的差事，你也看到了吧？",
+          "en": "No little job with my name on it! You caught that too, right?"
+        },
+        {
+          "id": "no_work.lively.4",
+          "zh": "今天没给我派活呢，我可没走神哦！",
+          "en": "No errands from you today! Who says I was daydreaming?"
+        },
+        {
+          "id": "no_work.lively.5",
+          "zh": "今天这一段全归自己！好啦，我不嚷那么大声。",
+          "en": "A whole day of my own! Okay, okay, indoor voice."
+        }
+      ],
+      "laborious": [
+        {
+          "id": "no_work.laborious.0",
+          "zh": "今天没给我派活呢，脚下留点神。",
+          "en": "No errands from you today. Mind where you put your feet."
+        },
+        {
+          "id": "no_work.laborious.1",
+          "zh": "今天这一段全归自己，别急，稳当点。",
+          "en": "A whole day of my own. Steady; no need to rush it."
+        },
+        {
+          "id": "no_work.laborious.2",
+          "zh": "没接活的一天也过去了，手边的事慢慢理。",
+          "en": "An unassigned day still counts. We can sort things one at a time."
+        },
+        {
+          "id": "no_work.laborious.3",
+          "zh": "今天没等来你的差事，我看着呢。",
+          "en": "No little job with my name on it. Yes, I am keeping an eye on it."
+        }
+      ],
+      "quiet": [
+        {
+          "id": "no_work.quiet.0",
+          "zh": "没派活。挺好。",
+          "en": "No jobs. Fine by me."
+        },
+        {
+          "id": "no_work.quiet.1",
+          "zh": "一天没叫我干活。难得。",
+          "en": "A day without errands. Rare treat."
+        },
+        {
+          "id": "no_work.quiet.2",
+          "zh": "今天没接你的差事。不急。",
+          "en": "No errands from you today. No rush."
+        },
+        {
+          "id": "no_work.quiet.3",
+          "zh": "闲了一天。没浪费。",
+          "en": "A day off. Not wasted."
+        }
+      ]
+    },
+    "morning": {
+      "gentle": [
+        {
+          "id": "morning.gentle.0",
+          "zh": "清晨见到你了，我陪你。",
+          "en": "There you are this morning. I can stay with you."
+        },
+        {
+          "id": "morning.gentle.1",
+          "zh": "今天第一次看见你，慢一点也好。",
+          "en": "My first hello to you today. No hurry from me."
+        },
+        {
+          "id": "morning.gentle.2",
+          "zh": "新一天的脚步还很轻，留一点时间看吧。",
+          "en": "The day is still on tiptoe. We can give it a moment."
+        },
+        {
+          "id": "morning.gentle.3",
+          "zh": "早上的光落到你肩上，不说话也可以。",
+          "en": "Morning light on your shoulder. We need not fill the silence."
+        }
+      ],
+      "lively": [
+        {
+          "id": "morning.lively.0",
+          "zh": "清晨见到你了！哎，你看你看。",
+          "en": "There you are this morning! Oh, look, look!"
+        },
+        {
+          "id": "morning.lively.1",
+          "zh": "今天第一次看见你，嘿嘿，我注意到了！",
+          "en": "My first hello to you today — yep, I spotted it!"
+        },
+        {
+          "id": "morning.lively.2",
+          "zh": "新一天的脚步还很轻！这个我要多看两眼。",
+          "en": "The day is still on tiptoe! Hang on, I want another look."
+        },
+        {
+          "id": "morning.lively.3",
+          "zh": "早上的光落到你肩上，你也看到了吧？",
+          "en": "Morning light on your shoulder! You caught that too, right?"
+        },
+        {
+          "id": "morning.lively.4",
+          "zh": "清晨见到你了，我可没走神哦！",
+          "en": "There you are this morning! Who says I was daydreaming?"
+        },
+        {
+          "id": "morning.lively.5",
+          "zh": "今天第一次看见你！好啦，我不嚷那么大声。",
+          "en": "My first hello to you today! Okay, okay, indoor voice."
+        }
+      ],
+      "laborious": [
+        {
+          "id": "morning.laborious.0",
+          "zh": "清晨见到你了，脚下留点神。",
+          "en": "There you are this morning. Mind where you put your feet."
+        },
+        {
+          "id": "morning.laborious.1",
+          "zh": "今天第一次看见你，别急，稳当点。",
+          "en": "My first hello to you today. Steady; no need to rush it."
+        },
+        {
+          "id": "morning.laborious.2",
+          "zh": "新一天的脚步还很轻，手边的事慢慢理。",
+          "en": "The day is still on tiptoe. We can sort things one at a time."
+        },
+        {
+          "id": "morning.laborious.3",
+          "zh": "早上的光落到你肩上，我看着呢。",
+          "en": "Morning light on your shoulder. Yes, I am keeping an eye on it."
+        }
+      ],
+      "quiet": [
+        {
+          "id": "morning.quiet.0",
+          "zh": "清晨见到你了。",
+          "en": "There you are this morning."
+        },
+        {
+          "id": "morning.quiet.1",
+          "zh": "今天第一次看见你。嗯。",
+          "en": "My first hello to you today. Mm."
+        },
+        {
+          "id": "morning.quiet.2",
+          "zh": "新一天的脚步还很轻。看见了。",
+          "en": "The day is still on tiptoe. Saw it."
+        },
+        {
+          "id": "morning.quiet.3",
+          "zh": "早上的光落到你肩上。不赖。",
+          "en": "Morning light on your shoulder. Could be worse."
+        }
+      ]
+    },
+    "noon": {
+      "gentle": [
+        {
+          "id": "noon.gentle.0",
+          "zh": "日头升高了，我陪你。",
+          "en": "Sun climbing overhead. I can stay with you."
+        },
+        {
+          "id": "noon.gentle.1",
+          "zh": "现在的影子短短的，慢一点也好。",
+          "en": "Little short shadows now. No hurry from me."
+        },
+        {
+          "id": "noon.gentle.2",
+          "zh": "午后的光有点暖，留一点时间看吧。",
+          "en": "Some warmth in the afternoon light. We can give it a moment."
+        },
+        {
+          "id": "noon.gentle.3",
+          "zh": "一天走到中间了，不说话也可以。",
+          "en": "Halfway through the daylight. We need not fill the silence."
+        }
+      ],
+      "lively": [
+        {
+          "id": "noon.lively.0",
+          "zh": "日头升高了！哎，你看你看。",
+          "en": "Sun climbing overhead! Oh, look, look!"
+        },
+        {
+          "id": "noon.lively.1",
+          "zh": "现在的影子短短的，嘿嘿，我注意到了！",
+          "en": "Little short shadows now — yep, I spotted it!"
+        },
+        {
+          "id": "noon.lively.2",
+          "zh": "午后的光有点暖！这个我要多看两眼。",
+          "en": "Some warmth in the afternoon light! Hang on, I want another look."
+        },
+        {
+          "id": "noon.lively.3",
+          "zh": "一天走到中间了，你也看到了吧？",
+          "en": "Halfway through the daylight! You caught that too, right?"
+        },
+        {
+          "id": "noon.lively.4",
+          "zh": "日头升高了，我可没走神哦！",
+          "en": "Sun climbing overhead! Who says I was daydreaming?"
+        },
+        {
+          "id": "noon.lively.5",
+          "zh": "现在的影子短短的！好啦，我不嚷那么大声。",
+          "en": "Little short shadows now! Okay, okay, indoor voice."
+        }
+      ],
+      "laborious": [
+        {
+          "id": "noon.laborious.0",
+          "zh": "日头升高了，脚下留点神。",
+          "en": "Sun climbing overhead. Mind where you put your feet."
+        },
+        {
+          "id": "noon.laborious.1",
+          "zh": "现在的影子短短的，别急，稳当点。",
+          "en": "Little short shadows now. Steady; no need to rush it."
+        },
+        {
+          "id": "noon.laborious.2",
+          "zh": "午后的光有点暖，手边的事慢慢理。",
+          "en": "Some warmth in the afternoon light. We can sort things one at a time."
+        },
+        {
+          "id": "noon.laborious.3",
+          "zh": "一天走到中间了，我看着呢。",
+          "en": "Halfway through the daylight. Yes, I am keeping an eye on it."
+        }
+      ],
+      "quiet": [
+        {
+          "id": "noon.quiet.0",
+          "zh": "日头升高了。",
+          "en": "Sun climbing overhead."
+        },
+        {
+          "id": "noon.quiet.1",
+          "zh": "现在的影子短短的。嗯。",
+          "en": "Little short shadows now. Mm."
+        },
+        {
+          "id": "noon.quiet.2",
+          "zh": "午后的光有点暖。看见了。",
+          "en": "Some warmth in the afternoon light. Saw it."
+        },
+        {
+          "id": "noon.quiet.3",
+          "zh": "一天走到中间了。不赖。",
+          "en": "Halfway through the daylight. Could be worse."
+        }
+      ]
+    },
+    "dusk": {
+      "gentle": [
+        {
+          "id": "dusk.gentle.0",
+          "zh": "天边慢慢变暖色了，我陪你。",
+          "en": "Warm colour at the horizon. I can stay with you."
+        },
+        {
+          "id": "dusk.gentle.1",
+          "zh": "傍晚的影子拉长了，慢一点也好。",
+          "en": "Evening stretching our shadows. No hurry from me."
+        },
+        {
+          "id": "dusk.gentle.2",
+          "zh": "白天快把路交给夜晚了，留一点时间看吧。",
+          "en": "Day is handing the paths to night. We can give it a moment."
+        },
+        {
+          "id": "dusk.gentle.3",
+          "zh": "这会儿光线软下来，不说话也可以。",
+          "en": "The light has softened. We need not fill the silence."
+        }
+      ],
+      "lively": [
+        {
+          "id": "dusk.lively.0",
+          "zh": "天边慢慢变暖色了！哎，你看你看。",
+          "en": "Warm colour at the horizon! Oh, look, look!"
+        },
+        {
+          "id": "dusk.lively.1",
+          "zh": "傍晚的影子拉长了，嘿嘿，我注意到了！",
+          "en": "Evening stretching our shadows — yep, I spotted it!"
+        },
+        {
+          "id": "dusk.lively.2",
+          "zh": "白天快把路交给夜晚了！这个我要多看两眼。",
+          "en": "Day is handing the paths to night! Hang on, I want another look."
+        },
+        {
+          "id": "dusk.lively.3",
+          "zh": "这会儿光线软下来，你也看到了吧？",
+          "en": "The light has softened! You caught that too, right?"
+        },
+        {
+          "id": "dusk.lively.4",
+          "zh": "天边慢慢变暖色了，我可没走神哦！",
+          "en": "Warm colour at the horizon! Who says I was daydreaming?"
+        },
+        {
+          "id": "dusk.lively.5",
+          "zh": "傍晚的影子拉长了！好啦，我不嚷那么大声。",
+          "en": "Evening stretching our shadows! Okay, okay, indoor voice."
+        }
+      ],
+      "laborious": [
+        {
+          "id": "dusk.laborious.0",
+          "zh": "天边慢慢变暖色了，脚下留点神。",
+          "en": "Warm colour at the horizon. Mind where you put your feet."
+        },
+        {
+          "id": "dusk.laborious.1",
+          "zh": "傍晚的影子拉长了，别急，稳当点。",
+          "en": "Evening stretching our shadows. Steady; no need to rush it."
+        },
+        {
+          "id": "dusk.laborious.2",
+          "zh": "白天快把路交给夜晚了，手边的事慢慢理。",
+          "en": "Day is handing the paths to night. We can sort things one at a time."
+        },
+        {
+          "id": "dusk.laborious.3",
+          "zh": "这会儿光线软下来，我看着呢。",
+          "en": "The light has softened. Yes, I am keeping an eye on it."
+        }
+      ],
+      "quiet": [
+        {
+          "id": "dusk.quiet.0",
+          "zh": "天边慢慢变暖色了。",
+          "en": "Warm colour at the horizon."
+        },
+        {
+          "id": "dusk.quiet.1",
+          "zh": "傍晚的影子拉长了。嗯。",
+          "en": "Evening stretching our shadows. Mm."
+        },
+        {
+          "id": "dusk.quiet.2",
+          "zh": "白天快把路交给夜晚了。看见了。",
+          "en": "Day is handing the paths to night. Saw it."
+        },
+        {
+          "id": "dusk.quiet.3",
+          "zh": "这会儿光线软下来。不赖。",
+          "en": "The light has softened. Could be worse."
+        }
+      ]
+    },
+    "night": {
+      "gentle": [
+        {
+          "id": "night.gentle.0",
+          "zh": "夜已经深了，我陪你。",
+          "en": "Properly late now. I can stay with you."
+        },
+        {
+          "id": "night.gentle.1",
+          "zh": "岛上的暗处更多了，慢一点也好。",
+          "en": "More dark corners on the island. No hurry from me."
+        },
+        {
+          "id": "night.gentle.2",
+          "zh": "现在连脚步都听得清，留一点时间看吧。",
+          "en": "You can hear each footstep. We can give it a moment."
+        },
+        {
+          "id": "night.gentle.3",
+          "zh": "深夜的海声更近，不说话也可以。",
+          "en": "The sea sounds closer at night. We need not fill the silence."
+        }
+      ],
+      "lively": [
+        {
+          "id": "night.lively.0",
+          "zh": "夜已经深了！哎，你看你看。",
+          "en": "Properly late now! Oh, look, look!"
+        },
+        {
+          "id": "night.lively.1",
+          "zh": "岛上的暗处更多了，嘿嘿，我注意到了！",
+          "en": "More dark corners on the island — yep, I spotted it!"
+        },
+        {
+          "id": "night.lively.2",
+          "zh": "现在连脚步都听得清！这个我要多看两眼。",
+          "en": "You can hear each footstep! Hang on, I want another look."
+        },
+        {
+          "id": "night.lively.3",
+          "zh": "深夜的海声更近，你也看到了吧？",
+          "en": "The sea sounds closer at night! You caught that too, right?"
+        },
+        {
+          "id": "night.lively.4",
+          "zh": "夜已经深了，我可没走神哦！",
+          "en": "Properly late now! Who says I was daydreaming?"
+        },
+        {
+          "id": "night.lively.5",
+          "zh": "岛上的暗处更多了！好啦，我不嚷那么大声。",
+          "en": "More dark corners on the island! Okay, okay, indoor voice."
+        }
+      ],
+      "laborious": [
+        {
+          "id": "night.laborious.0",
+          "zh": "这么晚了，眼睛还撑得住吗？",
+          "en": "This late? Give those eyes a break."
+        },
+        {
+          "id": "night.laborious.1",
+          "zh": "夜路别光顾着跑，看脚下。",
+          "en": "Watch your footing on the night path."
+        },
+        {
+          "id": "night.laborious.2",
+          "zh": "该歇会儿了，我不是催你干活。",
+          "en": "Time for a breather. I'm not assigning you chores."
+        },
+        {
+          "id": "night.laborious.3",
+          "zh": "夜里凉，别在水边站太久。",
+          "en": "Night air's cool. Don't linger by the water."
+        }
+      ],
+      "quiet": [
+        {
+          "id": "night.quiet.0",
+          "zh": "夜深了。现在才清静。",
+          "en": "Late. Finally quiet."
+        },
+        {
+          "id": "night.quiet.1",
+          "zh": "不困。你困就先歇着。",
+          "en": "Not sleepy. You can rest if you want."
+        },
+        {
+          "id": "night.quiet.2",
+          "zh": "夜里的海，比白天好听。",
+          "en": "Sea sounds better at night."
+        },
+        {
+          "id": "night.quiet.3",
+          "zh": "还醒着。陪你一会儿。",
+          "en": "Still awake. I'll stay a bit."
+        }
+      ]
+    },
+    "rain": {
+      "gentle": [
+        {
+          "id": "rain.gentle.0",
+          "zh": "雨落下来了，我陪你。",
+          "en": "Rain coming down. I can stay with you."
+        },
+        {
+          "id": "rain.gentle.1",
+          "zh": "雨点敲着这条路，慢一点也好。",
+          "en": "Drops tapping on the path. No hurry from me."
+        },
+        {
+          "id": "rain.gentle.2",
+          "zh": "空气里有雨水味，留一点时间看吧。",
+          "en": "That clean wet smell. We can give it a moment."
+        },
+        {
+          "id": "rain.gentle.3",
+          "zh": "衣角接到雨点了，不说话也可以。",
+          "en": "Rain catching our hems. We need not fill the silence."
+        }
+      ],
+      "lively": [
+        {
+          "id": "rain.lively.0",
+          "zh": "雨落下来了！哎，你看你看。",
+          "en": "Rain coming down! Oh, look, look!"
+        },
+        {
+          "id": "rain.lively.1",
+          "zh": "雨点敲着这条路，嘿嘿，我注意到了！",
+          "en": "Drops tapping on the path — yep, I spotted it!"
+        },
+        {
+          "id": "rain.lively.2",
+          "zh": "空气里有雨水味！这个我要多看两眼。",
+          "en": "That clean wet smell! Hang on, I want another look."
+        },
+        {
+          "id": "rain.lively.3",
+          "zh": "衣角接到雨点了，你也看到了吧？",
+          "en": "Rain catching our hems! You caught that too, right?"
+        },
+        {
+          "id": "rain.lively.4",
+          "zh": "雨落下来了，我可没走神哦！",
+          "en": "Rain coming down! Who says I was daydreaming?"
+        },
+        {
+          "id": "rain.lively.5",
+          "zh": "雨点敲着这条路！好啦，我不嚷那么大声。",
+          "en": "Drops tapping on the path! Okay, okay, indoor voice."
+        }
+      ],
+      "laborious": [
+        {
+          "id": "rain.laborious.0",
+          "zh": "雨落下来了，脚下留点神。",
+          "en": "Rain coming down. Mind where you put your feet."
+        },
+        {
+          "id": "rain.laborious.1",
+          "zh": "雨点敲着这条路，别急，稳当点。",
+          "en": "Drops tapping on the path. Steady; no need to rush it."
+        },
+        {
+          "id": "rain.laborious.2",
+          "zh": "空气里有雨水味，手边的事慢慢理。",
+          "en": "That clean wet smell. We can sort things one at a time."
+        },
+        {
+          "id": "rain.laborious.3",
+          "zh": "衣角接到雨点了，我看着呢。",
+          "en": "Rain catching our hems. Yes, I am keeping an eye on it."
+        }
+      ],
+      "quiet": [
+        {
+          "id": "rain.quiet.0",
+          "zh": "雨落下来了。",
+          "en": "Rain coming down."
+        },
+        {
+          "id": "rain.quiet.1",
+          "zh": "雨点敲着这条路。嗯。",
+          "en": "Drops tapping on the path. Mm."
+        },
+        {
+          "id": "rain.quiet.2",
+          "zh": "空气里有雨水味。看见了。",
+          "en": "That clean wet smell. Saw it."
+        },
+        {
+          "id": "rain.quiet.3",
+          "zh": "衣角接到雨点了。不赖。",
+          "en": "Rain catching our hems. Could be worse."
+        }
+      ]
+    },
+    "rain_stop": {
+      "gentle": [
+        {
+          "id": "rain_stop.gentle.0",
+          "zh": "雨停了，我陪你。",
+          "en": "Rain's let up. I can stay with you."
+        },
+        {
+          "id": "rain_stop.gentle.1",
+          "zh": "雨点的声音退下去了，慢一点也好。",
+          "en": "The tapping has faded. No hurry from me."
+        },
+        {
+          "id": "rain_stop.gentle.2",
+          "zh": "雨后的路还亮着，留一点时间看吧。",
+          "en": "A shine left on the wet path. We can give it a moment."
+        },
+        {
+          "id": "rain_stop.gentle.3",
+          "zh": "云下透出一点干净的光，不说话也可以。",
+          "en": "A little clear light under the clouds. We need not fill the silence."
+        }
+      ],
+      "lively": [
+        {
+          "id": "rain_stop.lively.0",
+          "zh": "雨停了！哎，你看你看。",
+          "en": "Rain's let up! Oh, look, look!"
+        },
+        {
+          "id": "rain_stop.lively.1",
+          "zh": "雨点的声音退下去了，嘿嘿，我注意到了！",
+          "en": "The tapping has faded — yep, I spotted it!"
+        },
+        {
+          "id": "rain_stop.lively.2",
+          "zh": "雨后的路还亮着！这个我要多看两眼。",
+          "en": "A shine left on the wet path! Hang on, I want another look."
+        },
+        {
+          "id": "rain_stop.lively.3",
+          "zh": "云下透出一点干净的光，你也看到了吧？",
+          "en": "A little clear light under the clouds! You caught that too, right?"
+        },
+        {
+          "id": "rain_stop.lively.4",
+          "zh": "雨停了，我可没走神哦！",
+          "en": "Rain's let up! Who says I was daydreaming?"
+        },
+        {
+          "id": "rain_stop.lively.5",
+          "zh": "雨点的声音退下去了！好啦，我不嚷那么大声。",
+          "en": "The tapping has faded! Okay, okay, indoor voice."
+        }
+      ],
+      "laborious": [
+        {
+          "id": "rain_stop.laborious.0",
+          "zh": "雨停了，脚下留点神。",
+          "en": "Rain's let up. Mind where you put your feet."
+        },
+        {
+          "id": "rain_stop.laborious.1",
+          "zh": "雨点的声音退下去了，别急，稳当点。",
+          "en": "The tapping has faded. Steady; no need to rush it."
+        },
+        {
+          "id": "rain_stop.laborious.2",
+          "zh": "雨后的路还亮着，手边的事慢慢理。",
+          "en": "A shine left on the wet path. We can sort things one at a time."
+        },
+        {
+          "id": "rain_stop.laborious.3",
+          "zh": "云下透出一点干净的光，我看着呢。",
+          "en": "A little clear light under the clouds. Yes, I am keeping an eye on it."
+        }
+      ],
+      "quiet": [
+        {
+          "id": "rain_stop.quiet.0",
+          "zh": "雨停了。",
+          "en": "Rain's let up."
+        },
+        {
+          "id": "rain_stop.quiet.1",
+          "zh": "雨点的声音退下去了。嗯。",
+          "en": "The tapping has faded. Mm."
+        },
+        {
+          "id": "rain_stop.quiet.2",
+          "zh": "雨后的路还亮着。看见了。",
+          "en": "A shine left on the wet path. Saw it."
+        },
+        {
+          "id": "rain_stop.quiet.3",
+          "zh": "云下透出一点干净的光。不赖。",
+          "en": "A little clear light under the clouds. Could be worse."
+        }
+      ]
+    },
+    "wind_home": {
+      "gentle": [
+        {
+          "id": "wind_home.gentle.0",
+          "zh": "主岛这阵风起来了，我陪你。",
+          "en": "A gust through home island. I can stay with you."
+        },
+        {
+          "id": "wind_home.gentle.1",
+          "zh": "树叶突然响起来，慢一点也好。",
+          "en": "Leaves suddenly rattling. No hurry from me."
+        },
+        {
+          "id": "wind_home.gentle.2",
+          "zh": "风从屋子之间穿过去，留一点时间看吧。",
+          "en": "Wind threading between the houses. We can give it a moment."
+        },
+        {
+          "id": "wind_home.gentle.3",
+          "zh": "衣角被风掀了一下，不说话也可以。",
+          "en": "A tug at the hem. We need not fill the silence."
+        }
+      ],
+      "lively": [
+        {
+          "id": "wind_home.lively.0",
+          "zh": "主岛这阵风起来了！哎，你看你看。",
+          "en": "A gust through home island! Oh, look, look!"
+        },
+        {
+          "id": "wind_home.lively.1",
+          "zh": "树叶突然响起来，嘿嘿，我注意到了！",
+          "en": "Leaves suddenly rattling — yep, I spotted it!"
+        },
+        {
+          "id": "wind_home.lively.2",
+          "zh": "风从屋子之间穿过去！这个我要多看两眼。",
+          "en": "Wind threading between the houses! Hang on, I want another look."
+        },
+        {
+          "id": "wind_home.lively.3",
+          "zh": "衣角被风掀了一下，你也看到了吧？",
+          "en": "A tug at the hem! You caught that too, right?"
+        },
+        {
+          "id": "wind_home.lively.4",
+          "zh": "主岛这阵风起来了，我可没走神哦！",
+          "en": "A gust through home island! Who says I was daydreaming?"
+        },
+        {
+          "id": "wind_home.lively.5",
+          "zh": "树叶突然响起来！好啦，我不嚷那么大声。",
+          "en": "Leaves suddenly rattling! Okay, okay, indoor voice."
+        }
+      ],
+      "laborious": [
+        {
+          "id": "wind_home.laborious.0",
+          "zh": "主岛这阵风起来了，脚下留点神。",
+          "en": "A gust through home island. Mind where you put your feet."
+        },
+        {
+          "id": "wind_home.laborious.1",
+          "zh": "树叶突然响起来，别急，稳当点。",
+          "en": "Leaves suddenly rattling. Steady; no need to rush it."
+        },
+        {
+          "id": "wind_home.laborious.2",
+          "zh": "风从屋子之间穿过去，手边的事慢慢理。",
+          "en": "Wind threading between the houses. We can sort things one at a time."
+        },
+        {
+          "id": "wind_home.laborious.3",
+          "zh": "衣角被风掀了一下，我看着呢。",
+          "en": "A tug at the hem. Yes, I am keeping an eye on it."
+        }
+      ],
+      "quiet": [
+        {
+          "id": "wind_home.quiet.0",
+          "zh": "主岛这阵风起来了。",
+          "en": "A gust through home island."
+        },
+        {
+          "id": "wind_home.quiet.1",
+          "zh": "树叶突然响起来。嗯。",
+          "en": "Leaves suddenly rattling. Mm."
+        },
+        {
+          "id": "wind_home.quiet.2",
+          "zh": "风从屋子之间穿过去。看见了。",
+          "en": "Wind threading between the houses. Saw it."
+        },
+        {
+          "id": "wind_home.quiet.3",
+          "zh": "衣角被风掀了一下。不赖。",
+          "en": "A tug at the hem. Could be worse."
+        }
+      ]
+    },
+    "wind_dark": {
+      "gentle": [
+        {
+          "id": "wind_dark.gentle.0",
+          "zh": "黑暗岛的风又响了，我陪你。",
+          "en": "Wind up on the dark island. I can stay with you."
+        },
+        {
+          "id": "wind_dark.gentle.1",
+          "zh": "风声从暗处绕过来，慢一点也好。",
+          "en": "A gust coming out of the dark. No hurry from me."
+        },
+        {
+          "id": "wind_dark.gentle.2",
+          "zh": "这里的风听着更空，留一点时间看吧。",
+          "en": "A hollow sound to this wind. We can give it a moment."
+        },
+        {
+          "id": "wind_dark.gentle.3",
+          "zh": "暗处这阵风贴着人过，不说话也可以。",
+          "en": "That breeze passed very close. We need not fill the silence."
+        }
+      ],
+      "lively": [
+        {
+          "id": "wind_dark.lively.0",
+          "zh": "黑暗岛的风又响了！哎，你看你看。",
+          "en": "Wind up on the dark island! Oh, look, look!"
+        },
+        {
+          "id": "wind_dark.lively.1",
+          "zh": "风声从暗处绕过来，嘿嘿，我注意到了！",
+          "en": "A gust coming out of the dark — yep, I spotted it!"
+        },
+        {
+          "id": "wind_dark.lively.2",
+          "zh": "这里的风听着更空！这个我要多看两眼。",
+          "en": "A hollow sound to this wind! Hang on, I want another look."
+        },
+        {
+          "id": "wind_dark.lively.3",
+          "zh": "暗处这阵风贴着人过，你也看到了吧？",
+          "en": "That breeze passed very close! You caught that too, right?"
+        },
+        {
+          "id": "wind_dark.lively.4",
+          "zh": "黑暗岛的风又响了，我可没走神哦！",
+          "en": "Wind up on the dark island! Who says I was daydreaming?"
+        },
+        {
+          "id": "wind_dark.lively.5",
+          "zh": "风声从暗处绕过来！好啦，我不嚷那么大声。",
+          "en": "A gust coming out of the dark! Okay, okay, indoor voice."
+        }
+      ],
+      "laborious": [
+        {
+          "id": "wind_dark.laborious.0",
+          "zh": "黑暗岛的风又响了，脚下留点神。",
+          "en": "Wind up on the dark island. Mind where you put your feet."
+        },
+        {
+          "id": "wind_dark.laborious.1",
+          "zh": "风声从暗处绕过来，别急，稳当点。",
+          "en": "A gust coming out of the dark. Steady; no need to rush it."
+        },
+        {
+          "id": "wind_dark.laborious.2",
+          "zh": "这里的风听着更空，手边的事慢慢理。",
+          "en": "A hollow sound to this wind. We can sort things one at a time."
+        },
+        {
+          "id": "wind_dark.laborious.3",
+          "zh": "暗处这阵风贴着人过，我看着呢。",
+          "en": "That breeze passed very close. Yes, I am keeping an eye on it."
+        }
+      ],
+      "quiet": [
+        {
+          "id": "wind_dark.quiet.0",
+          "zh": "黑暗岛的风又响了。",
+          "en": "Wind up on the dark island."
+        },
+        {
+          "id": "wind_dark.quiet.1",
+          "zh": "风声从暗处绕过来。嗯。",
+          "en": "A gust coming out of the dark. Mm."
+        },
+        {
+          "id": "wind_dark.quiet.2",
+          "zh": "这里的风听着更空。看见了。",
+          "en": "A hollow sound to this wind. Saw it."
+        },
+        {
+          "id": "wind_dark.quiet.3",
+          "zh": "暗处这阵风贴着人过。不赖。",
+          "en": "That breeze passed very close. Could be worse."
+        }
+      ]
+    },
+    "wind_south": {
+      "gentle": [
+        {
+          "id": "wind_south.gentle.0",
+          "zh": "南岛桥边起风了，我陪你。",
+          "en": "Wind by the southern bridge. I can stay with you."
+        },
+        {
+          "id": "wind_south.gentle.1",
+          "zh": "她们的岛上风吹过来了，慢一点也好。",
+          "en": "A gust across Their Island. No hurry from me."
+        },
+        {
+          "id": "wind_south.gentle.2",
+          "zh": "这边的风绕着地块走，留一点时间看吧。",
+          "en": "Wind moving over these plots. We can give it a moment."
+        },
+        {
+          "id": "wind_south.gentle.3",
+          "zh": "南边的草被风压弯了，不说话也可以。",
+          "en": "Southern grass bowing to a gust. We need not fill the silence."
+        }
+      ],
+      "lively": [
+        {
+          "id": "wind_south.lively.0",
+          "zh": "南岛桥边起风了！哎，你看你看。",
+          "en": "Wind by the southern bridge! Oh, look, look!"
+        },
+        {
+          "id": "wind_south.lively.1",
+          "zh": "她们的岛上风吹过来了，嘿嘿，我注意到了！",
+          "en": "A gust across Their Island — yep, I spotted it!"
+        },
+        {
+          "id": "wind_south.lively.2",
+          "zh": "这边的风绕着地块走！这个我要多看两眼。",
+          "en": "Wind moving over these plots! Hang on, I want another look."
+        },
+        {
+          "id": "wind_south.lively.3",
+          "zh": "南边的草被风压弯了，你也看到了吧？",
+          "en": "Southern grass bowing to a gust! You caught that too, right?"
+        },
+        {
+          "id": "wind_south.lively.4",
+          "zh": "南岛桥边起风了，我可没走神哦！",
+          "en": "Wind by the southern bridge! Who says I was daydreaming?"
+        },
+        {
+          "id": "wind_south.lively.5",
+          "zh": "她们的岛上风吹过来了！好啦，我不嚷那么大声。",
+          "en": "A gust across Their Island! Okay, okay, indoor voice."
+        }
+      ],
+      "laborious": [
+        {
+          "id": "wind_south.laborious.0",
+          "zh": "南岛桥边起风了，脚下留点神。",
+          "en": "Wind by the southern bridge. Mind where you put your feet."
+        },
+        {
+          "id": "wind_south.laborious.1",
+          "zh": "她们的岛上风吹过来了，别急，稳当点。",
+          "en": "A gust across Their Island. Steady; no need to rush it."
+        },
+        {
+          "id": "wind_south.laborious.2",
+          "zh": "这边的风绕着地块走，手边的事慢慢理。",
+          "en": "Wind moving over these plots. We can sort things one at a time."
+        },
+        {
+          "id": "wind_south.laborious.3",
+          "zh": "南边的草被风压弯了，我看着呢。",
+          "en": "Southern grass bowing to a gust. Yes, I am keeping an eye on it."
+        }
+      ],
+      "quiet": [
+        {
+          "id": "wind_south.quiet.0",
+          "zh": "南岛桥边起风了。",
+          "en": "Wind by the southern bridge."
+        },
+        {
+          "id": "wind_south.quiet.1",
+          "zh": "她们的岛上风吹过来了。嗯。",
+          "en": "A gust across Their Island. Mm."
+        },
+        {
+          "id": "wind_south.quiet.2",
+          "zh": "这边的风绕着地块走。看见了。",
+          "en": "Wind moving over these plots. Saw it."
+        },
+        {
+          "id": "wind_south.quiet.3",
+          "zh": "南边的草被风压弯了。不赖。",
+          "en": "Southern grass bowing to a gust. Could be worse."
+        }
+      ]
+    },
+    "sea": {
+      "gentle": [
+        {
+          "id": "sea.gentle.0",
+          "zh": "面前就是海，我陪你。",
+          "en": "Sea ahead of us. I can stay with you."
+        },
+        {
+          "id": "sea.gentle.1",
+          "zh": "海面有一层碎光，慢一点也好。",
+          "en": "Small pieces of light on the water. No hurry from me."
+        },
+        {
+          "id": "sea.gentle.2",
+          "zh": "远处的水连在一起，留一点时间看吧。",
+          "en": "Water meeting water out there. We can give it a moment."
+        },
+        {
+          "id": "sea.gentle.3",
+          "zh": "浪一层层往这边来，不说话也可以。",
+          "en": "Waves arriving in layers. We need not fill the silence."
+        }
+      ],
+      "lively": [
+        {
+          "id": "sea.lively.0",
+          "zh": "面前就是海！哎，你看你看。",
+          "en": "Sea ahead of us! Oh, look, look!"
+        },
+        {
+          "id": "sea.lively.1",
+          "zh": "海面有一层碎光，嘿嘿，我注意到了！",
+          "en": "Small pieces of light on the water — yep, I spotted it!"
+        },
+        {
+          "id": "sea.lively.2",
+          "zh": "远处的水连在一起！这个我要多看两眼。",
+          "en": "Water meeting water out there! Hang on, I want another look."
+        },
+        {
+          "id": "sea.lively.3",
+          "zh": "浪一层层往这边来，你也看到了吧？",
+          "en": "Waves arriving in layers! You caught that too, right?"
+        },
+        {
+          "id": "sea.lively.4",
+          "zh": "面前就是海，我可没走神哦！",
+          "en": "Sea ahead of us! Who says I was daydreaming?"
+        },
+        {
+          "id": "sea.lively.5",
+          "zh": "海面有一层碎光！好啦，我不嚷那么大声。",
+          "en": "Small pieces of light on the water! Okay, okay, indoor voice."
+        }
+      ],
+      "laborious": [
+        {
+          "id": "sea.laborious.0",
+          "zh": "面前就是海，脚下留点神。",
+          "en": "Sea ahead of us. Mind where you put your feet."
+        },
+        {
+          "id": "sea.laborious.1",
+          "zh": "海面有一层碎光，别急，稳当点。",
+          "en": "Small pieces of light on the water. Steady; no need to rush it."
+        },
+        {
+          "id": "sea.laborious.2",
+          "zh": "远处的水连在一起，手边的事慢慢理。",
+          "en": "Water meeting water out there. We can sort things one at a time."
+        },
+        {
+          "id": "sea.laborious.3",
+          "zh": "浪一层层往这边来，我看着呢。",
+          "en": "Waves arriving in layers. Yes, I am keeping an eye on it."
+        }
+      ],
+      "quiet": [
+        {
+          "id": "sea.quiet.0",
+          "zh": "面前就是海。",
+          "en": "Sea ahead of us."
+        },
+        {
+          "id": "sea.quiet.1",
+          "zh": "海面有一层碎光。嗯。",
+          "en": "Small pieces of light on the water. Mm."
+        },
+        {
+          "id": "sea.quiet.2",
+          "zh": "远处的水连在一起。看见了。",
+          "en": "Water meeting water out there. Saw it."
+        },
+        {
+          "id": "sea.quiet.3",
+          "zh": "浪一层层往这边来。不赖。",
+          "en": "Waves arriving in layers. Could be worse."
+        }
+      ]
+    },
+    "mountain": {
+      "gentle": [
+        {
+          "id": "mountain.gentle.0",
+          "zh": "远处的山在那儿，我陪你。",
+          "en": "Mountains out there. I can stay with you."
+        },
+        {
+          "id": "mountain.gentle.1",
+          "zh": "山的轮廓很安静，慢一点也好。",
+          "en": "Such a still outline. No hurry from me."
+        },
+        {
+          "id": "mountain.gentle.2",
+          "zh": "山影压在天边，留一点时间看吧。",
+          "en": "A ridge against the sky. We can give it a moment."
+        },
+        {
+          "id": "mountain.gentle.3",
+          "zh": "朝山那边看了一会儿，不说话也可以。",
+          "en": "A moment looking toward the hills. We need not fill the silence."
+        }
+      ],
+      "lively": [
+        {
+          "id": "mountain.lively.0",
+          "zh": "远处的山在那儿！哎，你看你看。",
+          "en": "Mountains out there! Oh, look, look!"
+        },
+        {
+          "id": "mountain.lively.1",
+          "zh": "山的轮廓很安静，嘿嘿，我注意到了！",
+          "en": "Such a still outline — yep, I spotted it!"
+        },
+        {
+          "id": "mountain.lively.2",
+          "zh": "山影压在天边！这个我要多看两眼。",
+          "en": "A ridge against the sky! Hang on, I want another look."
+        },
+        {
+          "id": "mountain.lively.3",
+          "zh": "朝山那边看了一会儿，你也看到了吧？",
+          "en": "A moment looking toward the hills! You caught that too, right?"
+        },
+        {
+          "id": "mountain.lively.4",
+          "zh": "远处的山在那儿，我可没走神哦！",
+          "en": "Mountains out there! Who says I was daydreaming?"
+        },
+        {
+          "id": "mountain.lively.5",
+          "zh": "山的轮廓很安静！好啦，我不嚷那么大声。",
+          "en": "Such a still outline! Okay, okay, indoor voice."
+        }
+      ],
+      "laborious": [
+        {
+          "id": "mountain.laborious.0",
+          "zh": "远处的山在那儿，脚下留点神。",
+          "en": "Mountains out there. Mind where you put your feet."
+        },
+        {
+          "id": "mountain.laborious.1",
+          "zh": "山的轮廓很安静，别急，稳当点。",
+          "en": "Such a still outline. Steady; no need to rush it."
+        },
+        {
+          "id": "mountain.laborious.2",
+          "zh": "山影压在天边，手边的事慢慢理。",
+          "en": "A ridge against the sky. We can sort things one at a time."
+        },
+        {
+          "id": "mountain.laborious.3",
+          "zh": "朝山那边看了一会儿，我看着呢。",
+          "en": "A moment looking toward the hills. Yes, I am keeping an eye on it."
+        }
+      ],
+      "quiet": [
+        {
+          "id": "mountain.quiet.0",
+          "zh": "远处的山在那儿。",
+          "en": "Mountains out there."
+        },
+        {
+          "id": "mountain.quiet.1",
+          "zh": "山的轮廓很安静。嗯。",
+          "en": "Such a still outline. Mm."
+        },
+        {
+          "id": "mountain.quiet.2",
+          "zh": "山影压在天边。看见了。",
+          "en": "A ridge against the sky. Saw it."
+        },
+        {
+          "id": "mountain.quiet.3",
+          "zh": "朝山那边看了一会儿。不赖。",
+          "en": "A moment looking toward the hills. Could be worse."
+        }
+      ]
+    },
+    "moon": {
+      "gentle": [
+        {
+          "id": "moon.gentle.0",
+          "zh": "月牙岛的夜空就在头顶，我陪你。",
+          "en": "Crescent Island's night above us. I can stay with you."
+        },
+        {
+          "id": "moon.gentle.1",
+          "zh": "朝月亮这边望一会儿，慢一点也好。",
+          "en": "A moment facing the moon. No hurry from me."
+        },
+        {
+          "id": "moon.gentle.2",
+          "zh": "月色落在这边的水上，留一点时间看吧。",
+          "en": "Moonlight across this water. We can give it a moment."
+        },
+        {
+          "id": "moon.gentle.3",
+          "zh": "这里看夜空很开阔，不说话也可以。",
+          "en": "A wide piece of night sky here. We need not fill the silence."
+        }
+      ],
+      "lively": [
+        {
+          "id": "moon.lively.0",
+          "zh": "月牙岛的夜空就在头顶！哎，你看你看。",
+          "en": "Crescent Island's night above us! Oh, look, look!"
+        },
+        {
+          "id": "moon.lively.1",
+          "zh": "朝月亮这边望一会儿，嘿嘿，我注意到了！",
+          "en": "A moment facing the moon — yep, I spotted it!"
+        },
+        {
+          "id": "moon.lively.2",
+          "zh": "月色落在这边的水上！这个我要多看两眼。",
+          "en": "Moonlight across this water! Hang on, I want another look."
+        },
+        {
+          "id": "moon.lively.3",
+          "zh": "这里看夜空很开阔，你也看到了吧？",
+          "en": "A wide piece of night sky here! You caught that too, right?"
+        },
+        {
+          "id": "moon.lively.4",
+          "zh": "月牙岛的夜空就在头顶，我可没走神哦！",
+          "en": "Crescent Island's night above us! Who says I was daydreaming?"
+        },
+        {
+          "id": "moon.lively.5",
+          "zh": "朝月亮这边望一会儿！好啦，我不嚷那么大声。",
+          "en": "A moment facing the moon! Okay, okay, indoor voice."
+        }
+      ],
+      "laborious": [
+        {
+          "id": "moon.laborious.0",
+          "zh": "月牙岛的夜空就在头顶，脚下留点神。",
+          "en": "Crescent Island's night above us. Mind where you put your feet."
+        },
+        {
+          "id": "moon.laborious.1",
+          "zh": "朝月亮这边望一会儿，别急，稳当点。",
+          "en": "A moment facing the moon. Steady; no need to rush it."
+        },
+        {
+          "id": "moon.laborious.2",
+          "zh": "月色落在这边的水上，手边的事慢慢理。",
+          "en": "Moonlight across this water. We can sort things one at a time."
+        },
+        {
+          "id": "moon.laborious.3",
+          "zh": "这里看夜空很开阔，我看着呢。",
+          "en": "A wide piece of night sky here. Yes, I am keeping an eye on it."
+        }
+      ],
+      "quiet": [
+        {
+          "id": "moon.quiet.0",
+          "zh": "月牙岛的夜空就在头顶。",
+          "en": "Crescent Island's night above us."
+        },
+        {
+          "id": "moon.quiet.1",
+          "zh": "朝月亮这边望一会儿。嗯。",
+          "en": "A moment facing the moon. Mm."
+        },
+        {
+          "id": "moon.quiet.2",
+          "zh": "月色落在这边的水上。看见了。",
+          "en": "Moonlight across this water. Saw it."
+        },
+        {
+          "id": "moon.quiet.3",
+          "zh": "这里看夜空很开阔。不赖。",
+          "en": "A wide piece of night sky here. Could be worse."
+        }
+      ]
+    },
+    "bridge": {
+      "gentle": [
+        {
+          "id": "bridge.gentle.0",
+          "zh": "南边的桥就在这儿，我陪你。",
+          "en": "Here is the southern bridge. I can stay with you."
+        },
+        {
+          "id": "bridge.gentle.1",
+          "zh": "桥把两边的路接起来了，慢一点也好。",
+          "en": "A path joining two shores. No hurry from me."
+        },
+        {
+          "id": "bridge.gentle.2",
+          "zh": "桥下还是流动的水，留一点时间看吧。",
+          "en": "Water moving under the bridge. We can give it a moment."
+        },
+        {
+          "id": "bridge.gentle.3",
+          "zh": "沿着桥能看见另一边，不说话也可以。",
+          "en": "The far side in view along the boards. We need not fill the silence."
+        }
+      ],
+      "lively": [
+        {
+          "id": "bridge.lively.0",
+          "zh": "南边的桥就在这儿！哎，你看你看。",
+          "en": "Here is the southern bridge! Oh, look, look!"
+        },
+        {
+          "id": "bridge.lively.1",
+          "zh": "桥把两边的路接起来了，嘿嘿，我注意到了！",
+          "en": "A path joining two shores — yep, I spotted it!"
+        },
+        {
+          "id": "bridge.lively.2",
+          "zh": "桥下还是流动的水！这个我要多看两眼。",
+          "en": "Water moving under the bridge! Hang on, I want another look."
+        },
+        {
+          "id": "bridge.lively.3",
+          "zh": "沿着桥能看见另一边，你也看到了吧？",
+          "en": "The far side in view along the boards! You caught that too, right?"
+        },
+        {
+          "id": "bridge.lively.4",
+          "zh": "南边的桥就在这儿，我可没走神哦！",
+          "en": "Here is the southern bridge! Who says I was daydreaming?"
+        },
+        {
+          "id": "bridge.lively.5",
+          "zh": "桥把两边的路接起来了！好啦，我不嚷那么大声。",
+          "en": "A path joining two shores! Okay, okay, indoor voice."
+        }
+      ],
+      "laborious": [
+        {
+          "id": "bridge.laborious.0",
+          "zh": "南边的桥就在这儿，脚下留点神。",
+          "en": "Here is the southern bridge. Mind where you put your feet."
+        },
+        {
+          "id": "bridge.laborious.1",
+          "zh": "桥把两边的路接起来了，别急，稳当点。",
+          "en": "A path joining two shores. Steady; no need to rush it."
+        },
+        {
+          "id": "bridge.laborious.2",
+          "zh": "桥下还是流动的水，手边的事慢慢理。",
+          "en": "Water moving under the bridge. We can sort things one at a time."
+        },
+        {
+          "id": "bridge.laborious.3",
+          "zh": "沿着桥能看见另一边，我看着呢。",
+          "en": "The far side in view along the boards. Yes, I am keeping an eye on it."
+        }
+      ],
+      "quiet": [
+        {
+          "id": "bridge.quiet.0",
+          "zh": "南边的桥就在这儿。",
+          "en": "Here is the southern bridge."
+        },
+        {
+          "id": "bridge.quiet.1",
+          "zh": "桥把两边的路接起来了。嗯。",
+          "en": "A path joining two shores. Mm."
+        },
+        {
+          "id": "bridge.quiet.2",
+          "zh": "桥下还是流动的水。看见了。",
+          "en": "Water moving under the bridge. Saw it."
+        },
+        {
+          "id": "bridge.quiet.3",
+          "zh": "沿着桥能看见另一边。不赖。",
+          "en": "The far side in view along the boards. Could be worse."
+        }
+      ]
+    },
+    "quiet_company": {
+      "gentle": [
+        {
+          "id": "quiet_company.gentle.0",
+          "zh": "你不说话，我也知道你在呢。",
+          "en": "You don't have to speak for me to notice you're here."
+        },
+        {
+          "id": "quiet_company.gentle.1",
+          "zh": "就这样站一会儿吧。",
+          "en": "We can simply stand here a while."
+        },
+        {
+          "id": "quiet_company.gentle.2",
+          "zh": "旁边有你，安静也暖一点。",
+          "en": "The silence feels warmer with you beside me."
+        },
+        {
+          "id": "quiet_company.gentle.3",
+          "zh": "想说话的时候，我在听。",
+          "en": "Whenever you feel like talking, I'm listening."
+        }
+      ],
+      "lively": [
+        {
+          "id": "quiet_company.lively.0",
+          "zh": "你在我旁边站了好一会儿！哎，你看你看。",
+          "en": "You've stayed beside me a while! Oh, look, look!"
+        },
+        {
+          "id": "quiet_company.lively.1",
+          "zh": "你没说话也没走开，嘿嘿，我注意到了！",
+          "en": "No words, and you haven't left — yep, I spotted it!"
+        },
+        {
+          "id": "quiet_company.lively.2",
+          "zh": "我们并排停在这里！这个我要多看两眼。",
+          "en": "Both of us paused right here! Hang on, I want another look."
+        },
+        {
+          "id": "quiet_company.lively.3",
+          "zh": "这段安静有人陪着，你也看到了吧？",
+          "en": "Quiet, with company in it! You caught that too, right?"
+        },
+        {
+          "id": "quiet_company.lively.4",
+          "zh": "你在我旁边站了好一会儿，我可没走神哦！",
+          "en": "You've stayed beside me a while! Who says I was daydreaming?"
+        },
+        {
+          "id": "quiet_company.lively.5",
+          "zh": "你没说话也没走开！好啦，我不嚷那么大声。",
+          "en": "No words, and you haven't left! Okay, okay, indoor voice."
+        }
+      ],
+      "laborious": [
+        {
+          "id": "quiet_company.laborious.0",
+          "zh": "你在我旁边站了好一会儿，脚下留点神。",
+          "en": "You've stayed beside me a while. Mind where you put your feet."
+        },
+        {
+          "id": "quiet_company.laborious.1",
+          "zh": "你没说话也没走开，别急，稳当点。",
+          "en": "No words, and you haven't left. Steady; no need to rush it."
+        },
+        {
+          "id": "quiet_company.laborious.2",
+          "zh": "我们并排停在这里，手边的事慢慢理。",
+          "en": "Both of us paused right here. We can sort things one at a time."
+        },
+        {
+          "id": "quiet_company.laborious.3",
+          "zh": "这段安静有人陪着，我看着呢。",
+          "en": "Quiet, with company in it. Yes, I am keeping an eye on it."
+        }
+      ],
+      "quiet": [
+        {
+          "id": "quiet_company.quiet.0",
+          "zh": "你在我旁边站了好一会儿。",
+          "en": "You've stayed beside me a while."
+        },
+        {
+          "id": "quiet_company.quiet.1",
+          "zh": "你没说话也没走开。嗯。",
+          "en": "No words, and you haven't left. Mm."
+        },
+        {
+          "id": "quiet_company.quiet.2",
+          "zh": "我们并排停在这里。看见了。",
+          "en": "Both of us paused right here. Saw it."
+        },
+        {
+          "id": "quiet_company.quiet.3",
+          "zh": "这段安静有人陪着。不赖。",
+          "en": "Quiet, with company in it. Could be worse."
+        }
+      ]
+    },
+    "reunion": {
+      "gentle": [
+        {
+          "id": "reunion.gentle.0",
+          "zh": "你从远处回来了，我陪你。",
+          "en": "Back from over there. I can stay with you."
+        },
+        {
+          "id": "reunion.gentle.1",
+          "zh": "又看见你走近了，慢一点也好。",
+          "en": "Here you come again. No hurry from me."
+        },
+        {
+          "id": "reunion.gentle.2",
+          "zh": "你的脚步回到这边了，留一点时间看吧。",
+          "en": "Your footsteps back this way. We can give it a moment."
+        },
+        {
+          "id": "reunion.gentle.3",
+          "zh": "刚才离得远，现在近了，不说话也可以。",
+          "en": "Far a moment ago, close now. We need not fill the silence."
+        }
+      ],
+      "lively": [
+        {
+          "id": "reunion.lively.0",
+          "zh": "你从远处回来了！哎，你看你看。",
+          "en": "Back from over there! Oh, look, look!"
+        },
+        {
+          "id": "reunion.lively.1",
+          "zh": "又看见你走近了，嘿嘿，我注意到了！",
+          "en": "Here you come again — yep, I spotted it!"
+        },
+        {
+          "id": "reunion.lively.2",
+          "zh": "你的脚步回到这边了！这个我要多看两眼。",
+          "en": "Your footsteps back this way! Hang on, I want another look."
+        },
+        {
+          "id": "reunion.lively.3",
+          "zh": "刚才离得远，现在近了，你也看到了吧？",
+          "en": "Far a moment ago, close now! You caught that too, right?"
+        },
+        {
+          "id": "reunion.lively.4",
+          "zh": "你从远处回来了，我可没走神哦！",
+          "en": "Back from over there! Who says I was daydreaming?"
+        },
+        {
+          "id": "reunion.lively.5",
+          "zh": "又看见你走近了！好啦，我不嚷那么大声。",
+          "en": "Here you come again! Okay, okay, indoor voice."
+        }
+      ],
+      "laborious": [
+        {
+          "id": "reunion.laborious.0",
+          "zh": "你从远处回来了，脚下留点神。",
+          "en": "Back from over there. Mind where you put your feet."
+        },
+        {
+          "id": "reunion.laborious.1",
+          "zh": "又看见你走近了，别急，稳当点。",
+          "en": "Here you come again. Steady; no need to rush it."
+        },
+        {
+          "id": "reunion.laborious.2",
+          "zh": "你的脚步回到这边了，手边的事慢慢理。",
+          "en": "Your footsteps back this way. We can sort things one at a time."
+        },
+        {
+          "id": "reunion.laborious.3",
+          "zh": "刚才离得远，现在近了，我看着呢。",
+          "en": "Far a moment ago, close now. Yes, I am keeping an eye on it."
+        }
+      ],
+      "quiet": [
+        {
+          "id": "reunion.quiet.0",
+          "zh": "你从远处回来了。",
+          "en": "Back from over there."
+        },
+        {
+          "id": "reunion.quiet.1",
+          "zh": "又看见你走近了。嗯。",
+          "en": "Here you come again. Mm."
+        },
+        {
+          "id": "reunion.quiet.2",
+          "zh": "你的脚步回到这边了。看见了。",
+          "en": "Your footsteps back this way. Saw it."
+        },
+        {
+          "id": "reunion.quiet.3",
+          "zh": "刚才离得远，现在近了。不赖。",
+          "en": "Far a moment ago, close now. Could be worse."
+        }
+      ]
+    },
+    "exit_house": {
+      "gentle": [
+        {
+          "id": "exit_house.gentle.0",
+          "zh": "你从屋里出来了，我陪你。",
+          "en": "Out of the house again. I can stay with you."
+        },
+        {
+          "id": "exit_house.gentle.1",
+          "zh": "门外又见到你了，慢一点也好。",
+          "en": "There you are at the door. No hurry from me."
+        },
+        {
+          "id": "exit_house.gentle.2",
+          "zh": "你把屋里的安静带出来了，留一点时间看吧。",
+          "en": "Bringing a little indoor quiet out. We can give it a moment."
+        },
+        {
+          "id": "exit_house.gentle.3",
+          "zh": "门口多了你的脚步，不说话也可以。",
+          "en": "Your steps on the doorstep. We need not fill the silence."
+        }
+      ],
+      "lively": [
+        {
+          "id": "exit_house.lively.0",
+          "zh": "你从屋里出来了！哎，你看你看。",
+          "en": "Out of the house again! Oh, look, look!"
+        },
+        {
+          "id": "exit_house.lively.1",
+          "zh": "门外又见到你了，嘿嘿，我注意到了！",
+          "en": "There you are at the door — yep, I spotted it!"
+        },
+        {
+          "id": "exit_house.lively.2",
+          "zh": "你把屋里的安静带出来了！这个我要多看两眼。",
+          "en": "Bringing a little indoor quiet out! Hang on, I want another look."
+        },
+        {
+          "id": "exit_house.lively.3",
+          "zh": "门口多了你的脚步，你也看到了吧？",
+          "en": "Your steps on the doorstep! You caught that too, right?"
+        },
+        {
+          "id": "exit_house.lively.4",
+          "zh": "你从屋里出来了，我可没走神哦！",
+          "en": "Out of the house again! Who says I was daydreaming?"
+        },
+        {
+          "id": "exit_house.lively.5",
+          "zh": "门外又见到你了！好啦，我不嚷那么大声。",
+          "en": "There you are at the door! Okay, okay, indoor voice."
+        }
+      ],
+      "laborious": [
+        {
+          "id": "exit_house.laborious.0",
+          "zh": "你从屋里出来了，脚下留点神。",
+          "en": "Out of the house again. Mind where you put your feet."
+        },
+        {
+          "id": "exit_house.laborious.1",
+          "zh": "门外又见到你了，别急，稳当点。",
+          "en": "There you are at the door. Steady; no need to rush it."
+        },
+        {
+          "id": "exit_house.laborious.2",
+          "zh": "你把屋里的安静带出来了，手边的事慢慢理。",
+          "en": "Bringing a little indoor quiet out. We can sort things one at a time."
+        },
+        {
+          "id": "exit_house.laborious.3",
+          "zh": "门口多了你的脚步，我看着呢。",
+          "en": "Your steps on the doorstep. Yes, I am keeping an eye on it."
+        }
+      ],
+      "quiet": [
+        {
+          "id": "exit_house.quiet.0",
+          "zh": "你从屋里出来了。",
+          "en": "Out of the house again."
+        },
+        {
+          "id": "exit_house.quiet.1",
+          "zh": "门外又见到你了。嗯。",
+          "en": "There you are at the door. Mm."
+        },
+        {
+          "id": "exit_house.quiet.2",
+          "zh": "你把屋里的安静带出来了。看见了。",
+          "en": "Bringing a little indoor quiet out. Saw it."
+        },
+        {
+          "id": "exit_house.quiet.3",
+          "zh": "门口多了你的脚步。不赖。",
+          "en": "Your steps on the doorstep. Could be worse."
+        }
+      ]
+    },
+    "her_door": {
+      "gentle": [
+        {
+          "id": "her_door.gentle.0",
+          "zh": "你停在我家门口了，我陪你。",
+          "en": "At my door, are you. I can stay with you."
+        },
+        {
+          "id": "her_door.gentle.1",
+          "zh": "我家门前有人等着呢，慢一点也好。",
+          "en": "Someone waiting by my doorstep. No hurry from me."
+        },
+        {
+          "id": "her_door.gentle.2",
+          "zh": "在我门边歇会儿吧，留一点时间看吧。",
+          "en": "A pause beside my door. We can give it a moment."
+        },
+        {
+          "id": "her_door.gentle.3",
+          "zh": "你在看我家的门呀，不说话也可以。",
+          "en": "Having a look at my doorway. We need not fill the silence."
+        }
+      ],
+      "lively": [
+        {
+          "id": "her_door.lively.0",
+          "zh": "你停在我家门口了！哎，你看你看。",
+          "en": "At my door, are you! Oh, look, look!"
+        },
+        {
+          "id": "her_door.lively.1",
+          "zh": "我家门前有人等着呢，嘿嘿，我注意到了！",
+          "en": "Someone waiting by my doorstep — yep, I spotted it!"
+        },
+        {
+          "id": "her_door.lively.2",
+          "zh": "在我门边歇会儿吧！这个我要多看两眼。",
+          "en": "A pause beside my door! Hang on, I want another look."
+        },
+        {
+          "id": "her_door.lively.3",
+          "zh": "你在看我家的门呀，你也看到了吧？",
+          "en": "Having a look at my doorway! You caught that too, right?"
+        },
+        {
+          "id": "her_door.lively.4",
+          "zh": "你停在我家门口了，我可没走神哦！",
+          "en": "At my door, are you! Who says I was daydreaming?"
+        },
+        {
+          "id": "her_door.lively.5",
+          "zh": "我家门前有人等着呢！好啦，我不嚷那么大声。",
+          "en": "Someone waiting by my doorstep! Okay, okay, indoor voice."
+        }
+      ],
+      "laborious": [
+        {
+          "id": "her_door.laborious.0",
+          "zh": "你停在我家门口了，脚下留点神。",
+          "en": "At my door, are you. Mind where you put your feet."
+        },
+        {
+          "id": "her_door.laborious.1",
+          "zh": "我家门前有人等着呢，别急，稳当点。",
+          "en": "Someone waiting by my doorstep. Steady; no need to rush it."
+        },
+        {
+          "id": "her_door.laborious.2",
+          "zh": "在我门边歇会儿吧，手边的事慢慢理。",
+          "en": "A pause beside my door. We can sort things one at a time."
+        },
+        {
+          "id": "her_door.laborious.3",
+          "zh": "你在看我家的门呀，我看着呢。",
+          "en": "Having a look at my doorway. Yes, I am keeping an eye on it."
+        }
+      ],
+      "quiet": [
+        {
+          "id": "her_door.quiet.0",
+          "zh": "你停在我家门口了。",
+          "en": "At my door, are you."
+        },
+        {
+          "id": "her_door.quiet.1",
+          "zh": "我家门前有人等着呢。嗯。",
+          "en": "Someone waiting by my doorstep. Mm."
+        },
+        {
+          "id": "her_door.quiet.2",
+          "zh": "在我门边歇会儿吧。看见了。",
+          "en": "A pause beside my door. Saw it."
+        },
+        {
+          "id": "her_door.quiet.3",
+          "zh": "你在看我家的门呀。不赖。",
+          "en": "Having a look at my doorway. Could be worse."
+        }
+      ]
+    },
+    "peer_chop": {
+      "gentle": [
+        {
+          "id": "peer_chop.gentle.0",
+          "zh": "刚才那棵树真的砍倒了，我陪你。",
+          "en": "That tree really came down. I can stay with you."
+        },
+        {
+          "id": "peer_chop.gentle.1",
+          "zh": "那边的砍树声停了，慢一点也好。",
+          "en": "The chopping over there has stopped. No hurry from me."
+        },
+        {
+          "id": "peer_chop.gentle.2",
+          "zh": "有人刚忙完砍树，留一点时间看吧。",
+          "en": "Someone's finished that tree. We can give it a moment."
+        },
+        {
+          "id": "peer_chop.gentle.3",
+          "zh": "最后一下我看见了，不说话也可以。",
+          "en": "I saw the final cut. We need not fill the silence."
+        }
+      ],
+      "lively": [
+        {
+          "id": "peer_chop.lively.0",
+          "zh": "刚才那棵树真的砍倒了！哎，你看你看。",
+          "en": "That tree really came down! Oh, look, look!"
+        },
+        {
+          "id": "peer_chop.lively.1",
+          "zh": "那边的砍树声停了，嘿嘿，我注意到了！",
+          "en": "The chopping over there has stopped — yep, I spotted it!"
+        },
+        {
+          "id": "peer_chop.lively.2",
+          "zh": "有人刚忙完砍树！这个我要多看两眼。",
+          "en": "Someone's finished that tree! Hang on, I want another look."
+        },
+        {
+          "id": "peer_chop.lively.3",
+          "zh": "最后一下我看见了，你也看到了吧？",
+          "en": "I saw the final cut! You caught that too, right?"
+        },
+        {
+          "id": "peer_chop.lively.4",
+          "zh": "刚才那棵树真的砍倒了，我可没走神哦！",
+          "en": "That tree really came down! Who says I was daydreaming?"
+        },
+        {
+          "id": "peer_chop.lively.5",
+          "zh": "那边的砍树声停了！好啦，我不嚷那么大声。",
+          "en": "The chopping over there has stopped! Okay, okay, indoor voice."
+        }
+      ],
+      "laborious": [
+        {
+          "id": "peer_chop.laborious.0",
+          "zh": "刚才那棵树真的砍倒了，脚下留点神。",
+          "en": "That tree really came down. Mind where you put your feet."
+        },
+        {
+          "id": "peer_chop.laborious.1",
+          "zh": "那边的砍树声停了，别急，稳当点。",
+          "en": "The chopping over there has stopped. Steady; no need to rush it."
+        },
+        {
+          "id": "peer_chop.laborious.2",
+          "zh": "有人刚忙完砍树，手边的事慢慢理。",
+          "en": "Someone's finished that tree. We can sort things one at a time."
+        },
+        {
+          "id": "peer_chop.laborious.3",
+          "zh": "最后一下我看见了，我看着呢。",
+          "en": "I saw the final cut. Yes, I am keeping an eye on it."
+        }
+      ],
+      "quiet": [
+        {
+          "id": "peer_chop.quiet.0",
+          "zh": "刚才那棵树真的砍倒了。",
+          "en": "That tree really came down."
+        },
+        {
+          "id": "peer_chop.quiet.1",
+          "zh": "那边的砍树声停了。嗯。",
+          "en": "The chopping over there has stopped. Mm."
+        },
+        {
+          "id": "peer_chop.quiet.2",
+          "zh": "有人刚忙完砍树。看见了。",
+          "en": "Someone's finished that tree. Saw it."
+        },
+        {
+          "id": "peer_chop.quiet.3",
+          "zh": "最后一下我看见了。不赖。",
+          "en": "I saw the final cut. Could be worse."
+        }
+      ]
+    },
+    "peer_fish": {
+      "gentle": [
+        {
+          "id": "peer_fish.gentle.0",
+          "zh": "刚才那条鱼钓上来了，我陪你。",
+          "en": "A fish brought up just now. I can stay with you."
+        },
+        {
+          "id": "peer_fish.gentle.1",
+          "zh": "那边的鱼线有了结果，慢一点也好。",
+          "en": "That line finally had an answer. No hurry from me."
+        },
+        {
+          "id": "peer_fish.gentle.2",
+          "zh": "有人刚钓到了鱼，留一点时间看吧。",
+          "en": "Someone has a fresh catch. We can give it a moment."
+        },
+        {
+          "id": "peer_fish.gentle.3",
+          "zh": "鱼离开水面那下真明显，不说话也可以。",
+          "en": "Saw that flash out of the water. We need not fill the silence."
+        }
+      ],
+      "lively": [
+        {
+          "id": "peer_fish.lively.0",
+          "zh": "刚才那条鱼钓上来了！哎，你看你看。",
+          "en": "A fish brought up just now! Oh, look, look!"
+        },
+        {
+          "id": "peer_fish.lively.1",
+          "zh": "那边的鱼线有了结果，嘿嘿，我注意到了！",
+          "en": "That line finally had an answer — yep, I spotted it!"
+        },
+        {
+          "id": "peer_fish.lively.2",
+          "zh": "有人刚钓到了鱼！这个我要多看两眼。",
+          "en": "Someone has a fresh catch! Hang on, I want another look."
+        },
+        {
+          "id": "peer_fish.lively.3",
+          "zh": "鱼离开水面那下真明显，你也看到了吧？",
+          "en": "Saw that flash out of the water! You caught that too, right?"
+        },
+        {
+          "id": "peer_fish.lively.4",
+          "zh": "刚才那条鱼钓上来了，我可没走神哦！",
+          "en": "A fish brought up just now! Who says I was daydreaming?"
+        },
+        {
+          "id": "peer_fish.lively.5",
+          "zh": "那边的鱼线有了结果！好啦，我不嚷那么大声。",
+          "en": "That line finally had an answer! Okay, okay, indoor voice."
+        }
+      ],
+      "laborious": [
+        {
+          "id": "peer_fish.laborious.0",
+          "zh": "刚才那条鱼钓上来了，脚下留点神。",
+          "en": "A fish brought up just now. Mind where you put your feet."
+        },
+        {
+          "id": "peer_fish.laborious.1",
+          "zh": "那边的鱼线有了结果，别急，稳当点。",
+          "en": "That line finally had an answer. Steady; no need to rush it."
+        },
+        {
+          "id": "peer_fish.laborious.2",
+          "zh": "有人刚钓到了鱼，手边的事慢慢理。",
+          "en": "Someone has a fresh catch. We can sort things one at a time."
+        },
+        {
+          "id": "peer_fish.laborious.3",
+          "zh": "鱼离开水面那下真明显，我看着呢。",
+          "en": "Saw that flash out of the water. Yes, I am keeping an eye on it."
+        }
+      ],
+      "quiet": [
+        {
+          "id": "peer_fish.quiet.0",
+          "zh": "刚才那条鱼钓上来了。",
+          "en": "A fish brought up just now."
+        },
+        {
+          "id": "peer_fish.quiet.1",
+          "zh": "那边的鱼线有了结果。嗯。",
+          "en": "That line finally had an answer. Mm."
+        },
+        {
+          "id": "peer_fish.quiet.2",
+          "zh": "有人刚钓到了鱼。看见了。",
+          "en": "Someone has a fresh catch. Saw it."
+        },
+        {
+          "id": "peer_fish.quiet.3",
+          "zh": "鱼离开水面那下真明显。不赖。",
+          "en": "Saw that flash out of the water. Could be worse."
+        }
+      ]
+    },
+    "peer_stop": {
+      "gentle": [
+        {
+          "id": "peer_stop.gentle.0",
+          "zh": "她也在你身边停下了，我陪你。",
+          "en": "She's stopped beside you too. I can stay with you."
+        },
+        {
+          "id": "peer_stop.gentle.1",
+          "zh": "又有人走到这里了，慢一点也好。",
+          "en": "Someone else arrived here. No hurry from me."
+        },
+        {
+          "id": "peer_stop.gentle.2",
+          "zh": "她的脚步停在你面前，留一点时间看吧。",
+          "en": "Her footsteps ended right in front of you. We can give it a moment."
+        },
+        {
+          "id": "peer_stop.gentle.3",
+          "zh": "我们这边又近了一点，不说话也可以。",
+          "en": "Our little group has drawn closer. We need not fill the silence."
+        }
+      ],
+      "lively": [
+        {
+          "id": "peer_stop.lively.0",
+          "zh": "她也在你身边停下了！哎，你看你看。",
+          "en": "She's stopped beside you too! Oh, look, look!"
+        },
+        {
+          "id": "peer_stop.lively.1",
+          "zh": "又有人走到这里了，嘿嘿，我注意到了！",
+          "en": "Someone else arrived here — yep, I spotted it!"
+        },
+        {
+          "id": "peer_stop.lively.2",
+          "zh": "她的脚步停在你面前！这个我要多看两眼。",
+          "en": "Her footsteps ended right in front of you! Hang on, I want another look."
+        },
+        {
+          "id": "peer_stop.lively.3",
+          "zh": "我们这边又近了一点，你也看到了吧？",
+          "en": "Our little group has drawn closer! You caught that too, right?"
+        },
+        {
+          "id": "peer_stop.lively.4",
+          "zh": "她也在你身边停下了，我可没走神哦！",
+          "en": "She's stopped beside you too! Who says I was daydreaming?"
+        },
+        {
+          "id": "peer_stop.lively.5",
+          "zh": "又有人走到这里了！好啦，我不嚷那么大声。",
+          "en": "Someone else arrived here! Okay, okay, indoor voice."
+        }
+      ],
+      "laborious": [
+        {
+          "id": "peer_stop.laborious.0",
+          "zh": "她也在你身边停下了，脚下留点神。",
+          "en": "She's stopped beside you too. Mind where you put your feet."
+        },
+        {
+          "id": "peer_stop.laborious.1",
+          "zh": "又有人走到这里了，别急，稳当点。",
+          "en": "Someone else arrived here. Steady; no need to rush it."
+        },
+        {
+          "id": "peer_stop.laborious.2",
+          "zh": "她的脚步停在你面前，手边的事慢慢理。",
+          "en": "Her footsteps ended right in front of you. We can sort things one at a time."
+        },
+        {
+          "id": "peer_stop.laborious.3",
+          "zh": "我们这边又近了一点，我看着呢。",
+          "en": "Our little group has drawn closer. Yes, I am keeping an eye on it."
+        }
+      ],
+      "quiet": [
+        {
+          "id": "peer_stop.quiet.0",
+          "zh": "她也在你身边停下了。",
+          "en": "She's stopped beside you too."
+        },
+        {
+          "id": "peer_stop.quiet.1",
+          "zh": "又有人走到这里了。嗯。",
+          "en": "Someone else arrived here. Mm."
+        },
+        {
+          "id": "peer_stop.quiet.2",
+          "zh": "她的脚步停在你面前。看见了。",
+          "en": "Her footsteps ended right in front of you. Saw it."
+        },
+        {
+          "id": "peer_stop.quiet.3",
+          "zh": "我们这边又近了一点。不赖。",
+          "en": "Our little group has drawn closer. Could be worse."
+        }
+      ]
+    },
+    "peer_farm": {
+      "gentle": [
+        {
+          "id": "peer_farm.gentle.0",
+          "zh": "她还在田里忙着，我陪你。",
+          "en": "She's busy in the field. I can stay with you."
+        },
+        {
+          "id": "peer_farm.gentle.1",
+          "zh": "那边有人在照看田，慢一点也好。",
+          "en": "Someone tending those plots. No hurry from me."
+        },
+        {
+          "id": "peer_farm.gentle.2",
+          "zh": "她正沿着田格走，留一点时间看吧。",
+          "en": "Moving along the planting rows. We can give it a moment."
+        },
+        {
+          "id": "peer_farm.gentle.3",
+          "zh": "田边那双脚一直没闲着，不说话也可以。",
+          "en": "Those feet haven't stopped by the field. We need not fill the silence."
+        }
+      ],
+      "lively": [
+        {
+          "id": "peer_farm.lively.0",
+          "zh": "她还在田里忙着！哎，你看你看。",
+          "en": "She's busy in the field! Oh, look, look!"
+        },
+        {
+          "id": "peer_farm.lively.1",
+          "zh": "那边有人在照看田，嘿嘿，我注意到了！",
+          "en": "Someone tending those plots — yep, I spotted it!"
+        },
+        {
+          "id": "peer_farm.lively.2",
+          "zh": "她正沿着田格走！这个我要多看两眼。",
+          "en": "Moving along the planting rows! Hang on, I want another look."
+        },
+        {
+          "id": "peer_farm.lively.3",
+          "zh": "田边那双脚一直没闲着，你也看到了吧？",
+          "en": "Those feet haven't stopped by the field! You caught that too, right?"
+        },
+        {
+          "id": "peer_farm.lively.4",
+          "zh": "她还在田里忙着，我可没走神哦！",
+          "en": "She's busy in the field! Who says I was daydreaming?"
+        },
+        {
+          "id": "peer_farm.lively.5",
+          "zh": "那边有人在照看田！好啦，我不嚷那么大声。",
+          "en": "Someone tending those plots! Okay, okay, indoor voice."
+        }
+      ],
+      "laborious": [
+        {
+          "id": "peer_farm.laborious.0",
+          "zh": "她还在田里忙着，脚下留点神。",
+          "en": "She's busy in the field. Mind where you put your feet."
+        },
+        {
+          "id": "peer_farm.laborious.1",
+          "zh": "那边有人在照看田，别急，稳当点。",
+          "en": "Someone tending those plots. Steady; no need to rush it."
+        },
+        {
+          "id": "peer_farm.laborious.2",
+          "zh": "她正沿着田格走，手边的事慢慢理。",
+          "en": "Moving along the planting rows. We can sort things one at a time."
+        },
+        {
+          "id": "peer_farm.laborious.3",
+          "zh": "田边那双脚一直没闲着，我看着呢。",
+          "en": "Those feet haven't stopped by the field. Yes, I am keeping an eye on it."
+        }
+      ],
+      "quiet": [
+        {
+          "id": "peer_farm.quiet.0",
+          "zh": "她还在田里忙着。",
+          "en": "She's busy in the field."
+        },
+        {
+          "id": "peer_farm.quiet.1",
+          "zh": "那边有人在照看田。嗯。",
+          "en": "Someone tending those plots. Mm."
+        },
+        {
+          "id": "peer_farm.quiet.2",
+          "zh": "她正沿着田格走。看见了。",
+          "en": "Moving along the planting rows. Saw it."
+        },
+        {
+          "id": "peer_farm.quiet.3",
+          "zh": "田边那双脚一直没闲着。不赖。",
+          "en": "Those feet haven't stopped by the field. Could be worse."
+        }
+      ]
+    },
+    "cat_rub": {
+      "gentle": [
+        {
+          "id": "cat_rub.gentle.0",
+          "zh": "柚柚在蹭腿呢，我陪你。",
+          "en": "Yuzu rubbing against a leg. I can stay with you."
+        },
+        {
+          "id": "cat_rub.gentle.1",
+          "zh": "小家伙贴着腿绕了一下，慢一点也好。",
+          "en": "A small furry circle at our feet. No hurry from me."
+        },
+        {
+          "id": "cat_rub.gentle.2",
+          "zh": "柚柚把自己蹭过来了，留一点时间看吧。",
+          "en": "Yuzu leaning right in. We can give it a moment."
+        },
+        {
+          "id": "cat_rub.gentle.3",
+          "zh": "脚边来了个毛绒绒的，不说话也可以。",
+          "en": "Something fluffy down by the shoes. We need not fill the silence."
+        }
+      ],
+      "lively": [
+        {
+          "id": "cat_rub.lively.0",
+          "zh": "柚柚在蹭腿呢！哎，你看你看。",
+          "en": "Yuzu rubbing against a leg! Oh, look, look!"
+        },
+        {
+          "id": "cat_rub.lively.1",
+          "zh": "小家伙贴着腿绕了一下，嘿嘿，我注意到了！",
+          "en": "A small furry circle at our feet — yep, I spotted it!"
+        },
+        {
+          "id": "cat_rub.lively.2",
+          "zh": "柚柚把自己蹭过来了！这个我要多看两眼。",
+          "en": "Yuzu leaning right in! Hang on, I want another look."
+        },
+        {
+          "id": "cat_rub.lively.3",
+          "zh": "脚边来了个毛绒绒的，你也看到了吧？",
+          "en": "Something fluffy down by the shoes! You caught that too, right?"
+        },
+        {
+          "id": "cat_rub.lively.4",
+          "zh": "柚柚在蹭腿呢，我可没走神哦！",
+          "en": "Yuzu rubbing against a leg! Who says I was daydreaming?"
+        },
+        {
+          "id": "cat_rub.lively.5",
+          "zh": "小家伙贴着腿绕了一下！好啦，我不嚷那么大声。",
+          "en": "A small furry circle at our feet! Okay, okay, indoor voice."
+        }
+      ],
+      "laborious": [
+        {
+          "id": "cat_rub.laborious.0",
+          "zh": "柚柚在蹭腿呢，脚下留点神。",
+          "en": "Yuzu rubbing against a leg. Mind where you put your feet."
+        },
+        {
+          "id": "cat_rub.laborious.1",
+          "zh": "小家伙贴着腿绕了一下，别急，稳当点。",
+          "en": "A small furry circle at our feet. Steady; no need to rush it."
+        },
+        {
+          "id": "cat_rub.laborious.2",
+          "zh": "柚柚把自己蹭过来了，手边的事慢慢理。",
+          "en": "Yuzu leaning right in. We can sort things one at a time."
+        },
+        {
+          "id": "cat_rub.laborious.3",
+          "zh": "脚边来了个毛绒绒的，我看着呢。",
+          "en": "Something fluffy down by the shoes. Yes, I am keeping an eye on it."
+        }
+      ],
+      "quiet": [
+        {
+          "id": "cat_rub.quiet.0",
+          "zh": "柚柚在蹭腿呢。",
+          "en": "Yuzu rubbing against a leg."
+        },
+        {
+          "id": "cat_rub.quiet.1",
+          "zh": "小家伙贴着腿绕了一下。嗯。",
+          "en": "A small furry circle at our feet. Mm."
+        },
+        {
+          "id": "cat_rub.quiet.2",
+          "zh": "柚柚把自己蹭过来了。看见了。",
+          "en": "Yuzu leaning right in. Saw it."
+        },
+        {
+          "id": "cat_rub.quiet.3",
+          "zh": "脚边来了个毛绒绒的。不赖。",
+          "en": "Something fluffy down by the shoes. Could be worse."
+        }
+      ]
+    },
+    "cat_hold": {
+      "gentle": [
+        {
+          "id": "cat_hold.gentle.0",
+          "zh": "柚柚被抱起来了，我陪你。",
+          "en": "Yuzu getting a lift. I can stay with you."
+        },
+        {
+          "id": "cat_hold.gentle.1",
+          "zh": "怀里多了一只小猫，慢一点也好。",
+          "en": "An armful of small cat. No hurry from me."
+        },
+        {
+          "id": "cat_hold.gentle.2",
+          "zh": "柚柚离地面高了一点，留一点时间看吧。",
+          "en": "A little higher off the ground. We can give it a moment."
+        },
+        {
+          "id": "cat_hold.gentle.3",
+          "zh": "小家伙现在有怀抱坐了，不说话也可以。",
+          "en": "Someone's turned into a cat seat. We need not fill the silence."
+        }
+      ],
+      "lively": [
+        {
+          "id": "cat_hold.lively.0",
+          "zh": "柚柚被抱起来了！哎，你看你看。",
+          "en": "Yuzu getting a lift! Oh, look, look!"
+        },
+        {
+          "id": "cat_hold.lively.1",
+          "zh": "怀里多了一只小猫，嘿嘿，我注意到了！",
+          "en": "An armful of small cat — yep, I spotted it!"
+        },
+        {
+          "id": "cat_hold.lively.2",
+          "zh": "柚柚离地面高了一点！这个我要多看两眼。",
+          "en": "A little higher off the ground! Hang on, I want another look."
+        },
+        {
+          "id": "cat_hold.lively.3",
+          "zh": "小家伙现在有怀抱坐了，你也看到了吧？",
+          "en": "Someone's turned into a cat seat! You caught that too, right?"
+        },
+        {
+          "id": "cat_hold.lively.4",
+          "zh": "柚柚被抱起来了，我可没走神哦！",
+          "en": "Yuzu getting a lift! Who says I was daydreaming?"
+        },
+        {
+          "id": "cat_hold.lively.5",
+          "zh": "怀里多了一只小猫！好啦，我不嚷那么大声。",
+          "en": "An armful of small cat! Okay, okay, indoor voice."
+        }
+      ],
+      "laborious": [
+        {
+          "id": "cat_hold.laborious.0",
+          "zh": "柚柚被抱起来了，脚下留点神。",
+          "en": "Yuzu getting a lift. Mind where you put your feet."
+        },
+        {
+          "id": "cat_hold.laborious.1",
+          "zh": "怀里多了一只小猫，别急，稳当点。",
+          "en": "An armful of small cat. Steady; no need to rush it."
+        },
+        {
+          "id": "cat_hold.laborious.2",
+          "zh": "柚柚离地面高了一点，手边的事慢慢理。",
+          "en": "A little higher off the ground. We can sort things one at a time."
+        },
+        {
+          "id": "cat_hold.laborious.3",
+          "zh": "小家伙现在有怀抱坐了，我看着呢。",
+          "en": "Someone's turned into a cat seat. Yes, I am keeping an eye on it."
+        }
+      ],
+      "quiet": [
+        {
+          "id": "cat_hold.quiet.0",
+          "zh": "柚柚被抱起来了。",
+          "en": "Yuzu getting a lift."
+        },
+        {
+          "id": "cat_hold.quiet.1",
+          "zh": "怀里多了一只小猫。嗯。",
+          "en": "An armful of small cat. Mm."
+        },
+        {
+          "id": "cat_hold.quiet.2",
+          "zh": "柚柚离地面高了一点。看见了。",
+          "en": "A little higher off the ground. Saw it."
+        },
+        {
+          "id": "cat_hold.quiet.3",
+          "zh": "小家伙现在有怀抱坐了。不赖。",
+          "en": "Someone's turned into a cat seat. Could be worse."
+        }
+      ]
+    },
+    "cat_sleep": {
+      "gentle": [
+        {
+          "id": "cat_sleep.gentle.0",
+          "zh": "柚柚就在旁边睡着，我陪你。",
+          "en": "Yuzu asleep nearby. I can stay with you."
+        },
+        {
+          "id": "cat_sleep.gentle.1",
+          "zh": "脚边有一小团睡意，慢一点也好。",
+          "en": "A small bundle of sleep at our feet. No hurry from me."
+        },
+        {
+          "id": "cat_sleep.gentle.2",
+          "zh": "小家伙睡得团团的，留一点时间看吧。",
+          "en": "Curled right up. We can give it a moment."
+        },
+        {
+          "id": "cat_sleep.gentle.3",
+          "zh": "柚柚把这里当床了，不说话也可以。",
+          "en": "Yuzu has declared this a bed. We need not fill the silence."
+        }
+      ],
+      "lively": [
+        {
+          "id": "cat_sleep.lively.0",
+          "zh": "柚柚就在旁边睡着！哎，你看你看。",
+          "en": "Yuzu asleep nearby! Oh, look, look!"
+        },
+        {
+          "id": "cat_sleep.lively.1",
+          "zh": "脚边有一小团睡意，嘿嘿，我注意到了！",
+          "en": "A small bundle of sleep at our feet — yep, I spotted it!"
+        },
+        {
+          "id": "cat_sleep.lively.2",
+          "zh": "小家伙睡得团团的！这个我要多看两眼。",
+          "en": "Curled right up! Hang on, I want another look."
+        },
+        {
+          "id": "cat_sleep.lively.3",
+          "zh": "柚柚把这里当床了，你也看到了吧？",
+          "en": "Yuzu has declared this a bed! You caught that too, right?"
+        },
+        {
+          "id": "cat_sleep.lively.4",
+          "zh": "柚柚就在旁边睡着，我可没走神哦！",
+          "en": "Yuzu asleep nearby! Who says I was daydreaming?"
+        },
+        {
+          "id": "cat_sleep.lively.5",
+          "zh": "脚边有一小团睡意！好啦，我不嚷那么大声。",
+          "en": "A small bundle of sleep at our feet! Okay, okay, indoor voice."
+        }
+      ],
+      "laborious": [
+        {
+          "id": "cat_sleep.laborious.0",
+          "zh": "柚柚就在旁边睡着，脚下留点神。",
+          "en": "Yuzu asleep nearby. Mind where you put your feet."
+        },
+        {
+          "id": "cat_sleep.laborious.1",
+          "zh": "脚边有一小团睡意，别急，稳当点。",
+          "en": "A small bundle of sleep at our feet. Steady; no need to rush it."
+        },
+        {
+          "id": "cat_sleep.laborious.2",
+          "zh": "小家伙睡得团团的，手边的事慢慢理。",
+          "en": "Curled right up. We can sort things one at a time."
+        },
+        {
+          "id": "cat_sleep.laborious.3",
+          "zh": "柚柚把这里当床了，我看着呢。",
+          "en": "Yuzu has declared this a bed. Yes, I am keeping an eye on it."
+        }
+      ],
+      "quiet": [
+        {
+          "id": "cat_sleep.quiet.0",
+          "zh": "柚柚就在旁边睡着。",
+          "en": "Yuzu asleep nearby."
+        },
+        {
+          "id": "cat_sleep.quiet.1",
+          "zh": "脚边有一小团睡意。嗯。",
+          "en": "A small bundle of sleep at our feet. Mm."
+        },
+        {
+          "id": "cat_sleep.quiet.2",
+          "zh": "小家伙睡得团团的。看见了。",
+          "en": "Curled right up. Saw it."
+        },
+        {
+          "id": "cat_sleep.quiet.3",
+          "zh": "柚柚把这里当床了。不赖。",
+          "en": "Yuzu has declared this a bed. Could be worse."
+        }
+      ]
+    },
+    "cat_run": {
+      "gentle": [
+        {
+          "id": "cat_run.gentle.0",
+          "zh": "柚柚从旁边跑过去了，我陪你。",
+          "en": "Yuzu darting past. I can stay with you."
+        },
+        {
+          "id": "cat_run.gentle.1",
+          "zh": "小猫的尾巴一闪就过去了，慢一点也好。",
+          "en": "A flick of tail and gone. No hurry from me."
+        },
+        {
+          "id": "cat_run.gentle.2",
+          "zh": "刚才过去的是柚柚呀，留一点时间看吧。",
+          "en": "That was Yuzu just now. We can give it a moment."
+        },
+        {
+          "id": "cat_run.gentle.3",
+          "zh": "脚边嗖地窜过一只猫，不说话也可以。",
+          "en": "A cat-shaped streak by our feet. We need not fill the silence."
+        }
+      ],
+      "lively": [
+        {
+          "id": "cat_run.lively.0",
+          "zh": "柚柚从旁边跑过去了！哎，你看你看。",
+          "en": "Yuzu darting past! Oh, look, look!"
+        },
+        {
+          "id": "cat_run.lively.1",
+          "zh": "小猫的尾巴一闪就过去了，嘿嘿，我注意到了！",
+          "en": "A flick of tail and gone — yep, I spotted it!"
+        },
+        {
+          "id": "cat_run.lively.2",
+          "zh": "刚才过去的是柚柚呀！这个我要多看两眼。",
+          "en": "That was Yuzu just now! Hang on, I want another look."
+        },
+        {
+          "id": "cat_run.lively.3",
+          "zh": "脚边嗖地窜过一只猫，你也看到了吧？",
+          "en": "A cat-shaped streak by our feet! You caught that too, right?"
+        },
+        {
+          "id": "cat_run.lively.4",
+          "zh": "柚柚从旁边跑过去了，我可没走神哦！",
+          "en": "Yuzu darting past! Who says I was daydreaming?"
+        },
+        {
+          "id": "cat_run.lively.5",
+          "zh": "小猫的尾巴一闪就过去了！好啦，我不嚷那么大声。",
+          "en": "A flick of tail and gone! Okay, okay, indoor voice."
+        }
+      ],
+      "laborious": [
+        {
+          "id": "cat_run.laborious.0",
+          "zh": "柚柚从旁边跑过去了，脚下留点神。",
+          "en": "Yuzu darting past. Mind where you put your feet."
+        },
+        {
+          "id": "cat_run.laborious.1",
+          "zh": "小猫的尾巴一闪就过去了，别急，稳当点。",
+          "en": "A flick of tail and gone. Steady; no need to rush it."
+        },
+        {
+          "id": "cat_run.laborious.2",
+          "zh": "刚才过去的是柚柚呀，手边的事慢慢理。",
+          "en": "That was Yuzu just now. We can sort things one at a time."
+        },
+        {
+          "id": "cat_run.laborious.3",
+          "zh": "脚边嗖地窜过一只猫，我看着呢。",
+          "en": "A cat-shaped streak by our feet. Yes, I am keeping an eye on it."
+        }
+      ],
+      "quiet": [
+        {
+          "id": "cat_run.quiet.0",
+          "zh": "柚柚从旁边跑过去了。",
+          "en": "Yuzu darting past."
+        },
+        {
+          "id": "cat_run.quiet.1",
+          "zh": "小猫的尾巴一闪就过去了。嗯。",
+          "en": "A flick of tail and gone. Mm."
+        },
+        {
+          "id": "cat_run.quiet.2",
+          "zh": "刚才过去的是柚柚呀。看见了。",
+          "en": "That was Yuzu just now. Saw it."
+        },
+        {
+          "id": "cat_run.quiet.3",
+          "zh": "脚边嗖地窜过一只猫。不赖。",
+          "en": "A cat-shaped streak by our feet. Could be worse."
+        }
+      ]
+    },
+    "new_ingredient": {
+      "gentle": [
+        {
+          "id": "new_ingredient.gentle.0",
+          "zh": "第一次采到这种食材呢，我陪你。",
+          "en": "Our first gathering of that ingredient. I can stay with you."
+        },
+        {
+          "id": "new_ingredient.gentle.1",
+          "zh": "这回采到了新东西，慢一点也好。",
+          "en": "Something new from gathering. No hurry from me."
+        },
+        {
+          "id": "new_ingredient.gentle.2",
+          "zh": "食材里多了一个新面孔，留一点时间看吧。",
+          "en": "A new face among the ingredients. We can give it a moment."
+        },
+        {
+          "id": "new_ingredient.gentle.3",
+          "zh": "刚到手的这份还挺新鲜，不说话也可以。",
+          "en": "A fresh little find just gathered. We need not fill the silence."
+        }
+      ],
+      "lively": [
+        {
+          "id": "new_ingredient.lively.0",
+          "zh": "第一次采到这种食材呢！哎，你看你看。",
+          "en": "Our first gathering of that ingredient! Oh, look, look!"
+        },
+        {
+          "id": "new_ingredient.lively.1",
+          "zh": "这回采到了新东西，嘿嘿，我注意到了！",
+          "en": "Something new from gathering — yep, I spotted it!"
+        },
+        {
+          "id": "new_ingredient.lively.2",
+          "zh": "食材里多了一个新面孔！这个我要多看两眼。",
+          "en": "A new face among the ingredients! Hang on, I want another look."
+        },
+        {
+          "id": "new_ingredient.lively.3",
+          "zh": "刚到手的这份还挺新鲜，你也看到了吧？",
+          "en": "A fresh little find just gathered! You caught that too, right?"
+        },
+        {
+          "id": "new_ingredient.lively.4",
+          "zh": "第一次采到这种食材呢，我可没走神哦！",
+          "en": "Our first gathering of that ingredient! Who says I was daydreaming?"
+        },
+        {
+          "id": "new_ingredient.lively.5",
+          "zh": "这回采到了新东西！好啦，我不嚷那么大声。",
+          "en": "Something new from gathering! Okay, okay, indoor voice."
+        }
+      ],
+      "laborious": [
+        {
+          "id": "new_ingredient.laborious.0",
+          "zh": "第一次采到这种食材呢，脚下留点神。",
+          "en": "Our first gathering of that ingredient. Mind where you put your feet."
+        },
+        {
+          "id": "new_ingredient.laborious.1",
+          "zh": "这回采到了新东西，别急，稳当点。",
+          "en": "Something new from gathering. Steady; no need to rush it."
+        },
+        {
+          "id": "new_ingredient.laborious.2",
+          "zh": "食材里多了一个新面孔，手边的事慢慢理。",
+          "en": "A new face among the ingredients. We can sort things one at a time."
+        },
+        {
+          "id": "new_ingredient.laborious.3",
+          "zh": "刚到手的这份还挺新鲜，我看着呢。",
+          "en": "A fresh little find just gathered. Yes, I am keeping an eye on it."
+        }
+      ],
+      "quiet": [
+        {
+          "id": "new_ingredient.quiet.0",
+          "zh": "第一次采到这种食材呢。",
+          "en": "Our first gathering of that ingredient."
+        },
+        {
+          "id": "new_ingredient.quiet.1",
+          "zh": "这回采到了新东西。嗯。",
+          "en": "Something new from gathering. Mm."
+        },
+        {
+          "id": "new_ingredient.quiet.2",
+          "zh": "食材里多了一个新面孔。看见了。",
+          "en": "A new face among the ingredients. Saw it."
+        },
+        {
+          "id": "new_ingredient.quiet.3",
+          "zh": "刚到手的这份还挺新鲜。不赖。",
+          "en": "A fresh little find just gathered. Could be worse."
+        }
+      ]
+    },
+    "new_fish": {
+      "gentle": [
+        {
+          "id": "new_fish.gentle.0",
+          "zh": "这次是第一次见的鱼，我陪你。",
+          "en": "A first catch of that kind. I can stay with you."
+        },
+        {
+          "id": "new_fish.gentle.1",
+          "zh": "刚钓到的是新记录呢，慢一点也好。",
+          "en": "A new fishing entry just now. No hurry from me."
+        },
+        {
+          "id": "new_fish.gentle.2",
+          "zh": "鱼图鉴里有新发现了，留一点时间看吧。",
+          "en": "Something new for the fish journal. We can give it a moment."
+        },
+        {
+          "id": "new_fish.gentle.3",
+          "zh": "刚才的钓获添了个新样子，不说话也可以。",
+          "en": "A new shape on the end of that line. We need not fill the silence."
+        }
+      ],
+      "lively": [
+        {
+          "id": "new_fish.lively.0",
+          "zh": "这次是第一次见的鱼！哎，你看你看。",
+          "en": "A first catch of that kind! Oh, look, look!"
+        },
+        {
+          "id": "new_fish.lively.1",
+          "zh": "刚钓到的是新记录呢，嘿嘿，我注意到了！",
+          "en": "A new fishing entry just now — yep, I spotted it!"
+        },
+        {
+          "id": "new_fish.lively.2",
+          "zh": "鱼图鉴里有新发现了！这个我要多看两眼。",
+          "en": "Something new for the fish journal! Hang on, I want another look."
+        },
+        {
+          "id": "new_fish.lively.3",
+          "zh": "刚才的钓获添了个新样子，你也看到了吧？",
+          "en": "A new shape on the end of that line! You caught that too, right?"
+        },
+        {
+          "id": "new_fish.lively.4",
+          "zh": "这次是第一次见的鱼，我可没走神哦！",
+          "en": "A first catch of that kind! Who says I was daydreaming?"
+        },
+        {
+          "id": "new_fish.lively.5",
+          "zh": "刚钓到的是新记录呢！好啦，我不嚷那么大声。",
+          "en": "A new fishing entry just now! Okay, okay, indoor voice."
+        }
+      ],
+      "laborious": [
+        {
+          "id": "new_fish.laborious.0",
+          "zh": "这次是第一次见的鱼，脚下留点神。",
+          "en": "A first catch of that kind. Mind where you put your feet."
+        },
+        {
+          "id": "new_fish.laborious.1",
+          "zh": "刚钓到的是新记录呢，别急，稳当点。",
+          "en": "A new fishing entry just now. Steady; no need to rush it."
+        },
+        {
+          "id": "new_fish.laborious.2",
+          "zh": "鱼图鉴里有新发现了，手边的事慢慢理。",
+          "en": "Something new for the fish journal. We can sort things one at a time."
+        },
+        {
+          "id": "new_fish.laborious.3",
+          "zh": "刚才的钓获添了个新样子，我看着呢。",
+          "en": "A new shape on the end of that line. Yes, I am keeping an eye on it."
+        }
+      ],
+      "quiet": [
+        {
+          "id": "new_fish.quiet.0",
+          "zh": "这次是第一次见的鱼。",
+          "en": "A first catch of that kind."
+        },
+        {
+          "id": "new_fish.quiet.1",
+          "zh": "刚钓到的是新记录呢。嗯。",
+          "en": "A new fishing entry just now. Mm."
+        },
+        {
+          "id": "new_fish.quiet.2",
+          "zh": "鱼图鉴里有新发现了。看见了。",
+          "en": "Something new for the fish journal. Saw it."
+        },
+        {
+          "id": "new_fish.quiet.3",
+          "zh": "刚才的钓获添了个新样子。不赖。",
+          "en": "A new shape on the end of that line. Could be worse."
+        }
+      ]
+    },
+    "meal_close": {
+      "gentle": [
+        {
+          "id": "meal_close.gentle.0",
+          "zh": "吃完还坐在这里，我陪你。",
+          "en": "Still sitting after our meal. I can stay with you."
+        },
+        {
+          "id": "meal_close.gentle.1",
+          "zh": "这一顿的热气还没散，慢一点也好。",
+          "en": "A little warmth left from dinner. No hurry from me."
+        },
+        {
+          "id": "meal_close.gentle.2",
+          "zh": "围着火再待一小会儿，留一点时间看吧。",
+          "en": "A moment longer around the fire. We can give it a moment."
+        },
+        {
+          "id": "meal_close.gentle.3",
+          "zh": "饭后这会儿很松快，不说话也可以。",
+          "en": "That easy pause after eating. We need not fill the silence."
+        }
+      ],
+      "lively": [
+        {
+          "id": "meal_close.lively.0",
+          "zh": "吃完还坐在这里！哎，你看你看。",
+          "en": "Still sitting after our meal! Oh, look, look!"
+        },
+        {
+          "id": "meal_close.lively.1",
+          "zh": "这一顿的热气还没散，嘿嘿，我注意到了！",
+          "en": "A little warmth left from dinner — yep, I spotted it!"
+        },
+        {
+          "id": "meal_close.lively.2",
+          "zh": "围着火再待一小会儿！这个我要多看两眼。",
+          "en": "A moment longer around the fire! Hang on, I want another look."
+        },
+        {
+          "id": "meal_close.lively.3",
+          "zh": "饭后这会儿很松快，你也看到了吧？",
+          "en": "That easy pause after eating! You caught that too, right?"
+        },
+        {
+          "id": "meal_close.lively.4",
+          "zh": "吃完还坐在这里，我可没走神哦！",
+          "en": "Still sitting after our meal! Who says I was daydreaming?"
+        },
+        {
+          "id": "meal_close.lively.5",
+          "zh": "这一顿的热气还没散！好啦，我不嚷那么大声。",
+          "en": "A little warmth left from dinner! Okay, okay, indoor voice."
+        }
+      ],
+      "laborious": [
+        {
+          "id": "meal_close.laborious.0",
+          "zh": "吃完还坐在这里，脚下留点神。",
+          "en": "Still sitting after our meal. Mind where you put your feet."
+        },
+        {
+          "id": "meal_close.laborious.1",
+          "zh": "这一顿的热气还没散，别急，稳当点。",
+          "en": "A little warmth left from dinner. Steady; no need to rush it."
+        },
+        {
+          "id": "meal_close.laborious.2",
+          "zh": "围着火再待一小会儿，手边的事慢慢理。",
+          "en": "A moment longer around the fire. We can sort things one at a time."
+        },
+        {
+          "id": "meal_close.laborious.3",
+          "zh": "饭后这会儿很松快，我看着呢。",
+          "en": "That easy pause after eating. Yes, I am keeping an eye on it."
+        }
+      ],
+      "quiet": [
+        {
+          "id": "meal_close.quiet.0",
+          "zh": "吃完还坐在这里。",
+          "en": "Still sitting after our meal."
+        },
+        {
+          "id": "meal_close.quiet.1",
+          "zh": "这一顿的热气还没散。嗯。",
+          "en": "A little warmth left from dinner. Mm."
+        },
+        {
+          "id": "meal_close.quiet.2",
+          "zh": "围着火再待一小会儿。看见了。",
+          "en": "A moment longer around the fire. Saw it."
+        },
+        {
+          "id": "meal_close.quiet.3",
+          "zh": "饭后这会儿很松快。不赖。",
+          "en": "That easy pause after eating. Could be worse."
+        }
+      ]
+    },
+    "cross_bridge": {
+      "gentle": [
+        {
+          "id": "cross_bridge.gentle.0",
+          "zh": "我们刚走过桥了，我陪你。",
+          "en": "We've just crossed the bridge. I can stay with you."
+        },
+        {
+          "id": "cross_bridge.gentle.1",
+          "zh": "脚下换回了岸边的路，慢一点也好。",
+          "en": "Solid shore beneath our feet again. No hurry from me."
+        },
+        {
+          "id": "cross_bridge.gentle.2",
+          "zh": "桥已经在身后了，留一点时间看吧。",
+          "en": "Bridge behind us now. We can give it a moment."
+        },
+        {
+          "id": "cross_bridge.gentle.3",
+          "zh": "两边的路真的连起来了，不说话也可以。",
+          "en": "Those two paths really do connect. We need not fill the silence."
+        }
+      ],
+      "lively": [
+        {
+          "id": "cross_bridge.lively.0",
+          "zh": "我们刚走过桥了！哎，你看你看。",
+          "en": "We've just crossed the bridge! Oh, look, look!"
+        },
+        {
+          "id": "cross_bridge.lively.1",
+          "zh": "脚下换回了岸边的路，嘿嘿，我注意到了！",
+          "en": "Solid shore beneath our feet again — yep, I spotted it!"
+        },
+        {
+          "id": "cross_bridge.lively.2",
+          "zh": "桥已经在身后了！这个我要多看两眼。",
+          "en": "Bridge behind us now! Hang on, I want another look."
+        },
+        {
+          "id": "cross_bridge.lively.3",
+          "zh": "两边的路真的连起来了，你也看到了吧？",
+          "en": "Those two paths really do connect! You caught that too, right?"
+        },
+        {
+          "id": "cross_bridge.lively.4",
+          "zh": "我们刚走过桥了，我可没走神哦！",
+          "en": "We've just crossed the bridge! Who says I was daydreaming?"
+        },
+        {
+          "id": "cross_bridge.lively.5",
+          "zh": "脚下换回了岸边的路！好啦，我不嚷那么大声。",
+          "en": "Solid shore beneath our feet again! Okay, okay, indoor voice."
+        }
+      ],
+      "laborious": [
+        {
+          "id": "cross_bridge.laborious.0",
+          "zh": "我们刚走过桥了，脚下留点神。",
+          "en": "We've just crossed the bridge. Mind where you put your feet."
+        },
+        {
+          "id": "cross_bridge.laborious.1",
+          "zh": "脚下换回了岸边的路，别急，稳当点。",
+          "en": "Solid shore beneath our feet again. Steady; no need to rush it."
+        },
+        {
+          "id": "cross_bridge.laborious.2",
+          "zh": "桥已经在身后了，手边的事慢慢理。",
+          "en": "Bridge behind us now. We can sort things one at a time."
+        },
+        {
+          "id": "cross_bridge.laborious.3",
+          "zh": "两边的路真的连起来了，我看着呢。",
+          "en": "Those two paths really do connect. Yes, I am keeping an eye on it."
+        }
+      ],
+      "quiet": [
+        {
+          "id": "cross_bridge.quiet.0",
+          "zh": "我们刚走过桥了。",
+          "en": "We've just crossed the bridge."
+        },
+        {
+          "id": "cross_bridge.quiet.1",
+          "zh": "脚下换回了岸边的路。嗯。",
+          "en": "Solid shore beneath our feet again. Mm."
+        },
+        {
+          "id": "cross_bridge.quiet.2",
+          "zh": "桥已经在身后了。看见了。",
+          "en": "Bridge behind us now. Saw it."
+        },
+        {
+          "id": "cross_bridge.quiet.3",
+          "zh": "两边的路真的连起来了。不赖。",
+          "en": "Those two paths really do connect. Could be worse."
+        }
+      ]
+    },
+    "back_home": {
+      "gentle": [
+        {
+          "id": "back_home.gentle.0",
+          "zh": "又回到主岛了，我陪你。",
+          "en": "Back on the main island. I can stay with you."
+        },
+        {
+          "id": "back_home.gentle.1",
+          "zh": "这边是熟悉的小路，慢一点也好。",
+          "en": "The familiar paths again. No hurry from me."
+        },
+        {
+          "id": "back_home.gentle.2",
+          "zh": "主岛的屋子又近了，留一点时间看吧。",
+          "en": "Home island's houses close again. We can give it a moment."
+        },
+        {
+          "id": "back_home.gentle.3",
+          "zh": "脚步走回了家这一边，不说话也可以。",
+          "en": "Our footsteps on the home side. We need not fill the silence."
+        }
+      ],
+      "lively": [
+        {
+          "id": "back_home.lively.0",
+          "zh": "又回到主岛了！哎，你看你看。",
+          "en": "Back on the main island! Oh, look, look!"
+        },
+        {
+          "id": "back_home.lively.1",
+          "zh": "这边是熟悉的小路，嘿嘿，我注意到了！",
+          "en": "The familiar paths again — yep, I spotted it!"
+        },
+        {
+          "id": "back_home.lively.2",
+          "zh": "主岛的屋子又近了！这个我要多看两眼。",
+          "en": "Home island's houses close again! Hang on, I want another look."
+        },
+        {
+          "id": "back_home.lively.3",
+          "zh": "脚步走回了家这一边，你也看到了吧？",
+          "en": "Our footsteps on the home side! You caught that too, right?"
+        },
+        {
+          "id": "back_home.lively.4",
+          "zh": "又回到主岛了，我可没走神哦！",
+          "en": "Back on the main island! Who says I was daydreaming?"
+        },
+        {
+          "id": "back_home.lively.5",
+          "zh": "这边是熟悉的小路！好啦，我不嚷那么大声。",
+          "en": "The familiar paths again! Okay, okay, indoor voice."
+        }
+      ],
+      "laborious": [
+        {
+          "id": "back_home.laborious.0",
+          "zh": "又回到主岛了，脚下留点神。",
+          "en": "Back on the main island. Mind where you put your feet."
+        },
+        {
+          "id": "back_home.laborious.1",
+          "zh": "这边是熟悉的小路，别急，稳当点。",
+          "en": "The familiar paths again. Steady; no need to rush it."
+        },
+        {
+          "id": "back_home.laborious.2",
+          "zh": "主岛的屋子又近了，手边的事慢慢理。",
+          "en": "Home island's houses close again. We can sort things one at a time."
+        },
+        {
+          "id": "back_home.laborious.3",
+          "zh": "脚步走回了家这一边，我看着呢。",
+          "en": "Our footsteps on the home side. Yes, I am keeping an eye on it."
+        }
+      ],
+      "quiet": [
+        {
+          "id": "back_home.quiet.0",
+          "zh": "又回到主岛了。",
+          "en": "Back on the main island."
+        },
+        {
+          "id": "back_home.quiet.1",
+          "zh": "这边是熟悉的小路。嗯。",
+          "en": "The familiar paths again. Mm."
+        },
+        {
+          "id": "back_home.quiet.2",
+          "zh": "主岛的屋子又近了。看见了。",
+          "en": "Home island's houses close again. Saw it."
+        },
+        {
+          "id": "back_home.quiet.3",
+          "zh": "脚步走回了家这一边。不赖。",
+          "en": "Our footsteps on the home side. Could be worse."
+        }
+      ]
+    },
+    "arrive_south": {
+      "gentle": [
+        {
+          "id": "arrive_south.gentle.0",
+          "zh": "刚到她们的岛了，我陪你。",
+          "en": "Here on Their Island. I can stay with you."
+        },
+        {
+          "id": "arrive_south.gentle.1",
+          "zh": "南边这片地就在脚下，慢一点也好。",
+          "en": "Southern ground under our feet. No hurry from me."
+        },
+        {
+          "id": "arrive_south.gentle.2",
+          "zh": "这回走到桥的另一边了，留一点时间看吧。",
+          "en": "Made it to the far end of the bridge. We can give it a moment."
+        },
+        {
+          "id": "arrive_south.gentle.3",
+          "zh": "南岛的路接住我们了，不说话也可以。",
+          "en": "The southern path has us now. We need not fill the silence."
+        }
+      ],
+      "lively": [
+        {
+          "id": "arrive_south.lively.0",
+          "zh": "刚到她们的岛了！哎，你看你看。",
+          "en": "Here on Their Island! Oh, look, look!"
+        },
+        {
+          "id": "arrive_south.lively.1",
+          "zh": "南边这片地就在脚下，嘿嘿，我注意到了！",
+          "en": "Southern ground under our feet — yep, I spotted it!"
+        },
+        {
+          "id": "arrive_south.lively.2",
+          "zh": "这回走到桥的另一边了！这个我要多看两眼。",
+          "en": "Made it to the far end of the bridge! Hang on, I want another look."
+        },
+        {
+          "id": "arrive_south.lively.3",
+          "zh": "南岛的路接住我们了，你也看到了吧？",
+          "en": "The southern path has us now! You caught that too, right?"
+        },
+        {
+          "id": "arrive_south.lively.4",
+          "zh": "刚到她们的岛了，我可没走神哦！",
+          "en": "Here on Their Island! Who says I was daydreaming?"
+        },
+        {
+          "id": "arrive_south.lively.5",
+          "zh": "南边这片地就在脚下！好啦，我不嚷那么大声。",
+          "en": "Southern ground under our feet! Okay, okay, indoor voice."
+        }
+      ],
+      "laborious": [
+        {
+          "id": "arrive_south.laborious.0",
+          "zh": "刚到她们的岛了，脚下留点神。",
+          "en": "Here on Their Island. Mind where you put your feet."
+        },
+        {
+          "id": "arrive_south.laborious.1",
+          "zh": "南边这片地就在脚下，别急，稳当点。",
+          "en": "Southern ground under our feet. Steady; no need to rush it."
+        },
+        {
+          "id": "arrive_south.laborious.2",
+          "zh": "这回走到桥的另一边了，手边的事慢慢理。",
+          "en": "Made it to the far end of the bridge. We can sort things one at a time."
+        },
+        {
+          "id": "arrive_south.laborious.3",
+          "zh": "南岛的路接住我们了，我看着呢。",
+          "en": "The southern path has us now. Yes, I am keeping an eye on it."
+        }
+      ],
+      "quiet": [
+        {
+          "id": "arrive_south.quiet.0",
+          "zh": "刚到她们的岛了。",
+          "en": "Here on Their Island."
+        },
+        {
+          "id": "arrive_south.quiet.1",
+          "zh": "南边这片地就在脚下。嗯。",
+          "en": "Southern ground under our feet. Mm."
+        },
+        {
+          "id": "arrive_south.quiet.2",
+          "zh": "这回走到桥的另一边了。看见了。",
+          "en": "Made it to the far end of the bridge. Saw it."
+        },
+        {
+          "id": "arrive_south.quiet.3",
+          "zh": "南岛的路接住我们了。不赖。",
+          "en": "The southern path has us now. Could be worse."
+        }
+      ]
+    }
+  },
+  "authorship": "Scene observations with four separately authored personality response sets; English voices independently phrased."
+}

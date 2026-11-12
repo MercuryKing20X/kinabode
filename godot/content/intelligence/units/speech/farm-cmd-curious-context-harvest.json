@@ -1,0 +1,11 @@
+{
+  "id": "farm-cmd-curious-context-harvest",
+  "context": "farm_command_harvest",
+  "lines": [
+    "我去收，看看结了多少。",
+    "好呀，去看看熟没熟。",
+    "收菜我去，顺便数数。",
+    "好，我去把熟的收好。"
+  ],
+  "autonomy_output": false
+}

@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "day_seconds": 1500,
+  "greeting_after": 30,
+  "small_after": 180,
+  "personal_gap": 22.5,
+  "village_gap": 22.5,
+  "radius": 8,
+  "phases": [
+    {
+      "id": "morning",
+      "name": "清晨",
+      "start": 0,
+      "lines": [
+        "新的一天慢慢开始了，今天也不用赶。",
+        "晨风很轻，我们慢慢来吧。"
+      ]
+    },
+    {
+      "id": "afternoon",
+      "name": "午后",
+      "start": 0.28,
+      "lines": [
+        "午后的风暖暖的，想在这里多待一会儿。",
+        "今天已经一起待了好一会儿了，真好。"
+      ]
+    },
+    {
+      "id": "dusk",
+      "name": "傍晚",
+      "start": 0.58,
+      "lines": [
+        "到傍晚了，海风的声音好像更清楚了。",
+        "傍晚也不催人，手里的事可以慢慢做。"
+      ]
+    },
+    {
+      "id": "night",
+      "name": "夜晚",
+      "start": 0.8,
+      "lines": [
+        "夜风也很温柔，想继续做什么都可以。",
+        "夜晚到了，我们还可以在这里待一会儿。"
+      ]
+    }
+  ],
+  "small_events": [
+    {
+      "id": "breeze_wave",
+      "gesture": "wave",
+      "line": "今天的海风刚刚好，和你打个招呼。"
+    },
+    {
+      "id": "breeze_stretch",
+      "gesture": "stretch",
+      "line": "一起伸个懒腰，把今天过得松快一点。"
+    }
+  ]
+}

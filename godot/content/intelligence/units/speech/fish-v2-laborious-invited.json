@@ -1,0 +1,11 @@
+{
+  "id": "fish-v2-laborious-invited",
+  "context": "fishing_v2_invited",
+  "lines": [
+    "好，一起到海边钓鱼吧。",
+    "稳住，我也来陪你钓鱼。",
+    "接着，收到邀请，我这就来。",
+    "认真一点，找个岸边坐一会儿。"
+  ],
+  "autonomy_output": false
+}

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "columns": 6,
+  "works": {
+    "suit-hulk": {
+      "status": "independent",
+      "asset": "suit-hulk.png",
+      "base_frame_sha256": "29ccb8b7fe9c02e7f31412957a1806b1c74fd4c7ea23c4fdd1d7dafa51666f1d",
+      "base_palette_sha256": "11c991c118769b3206091e3e74752db3f73be94d015bbd12726972b2ae31f060",
+      "provenance": "production/art/suit-hulk-v2-20261106/provenance.json"
+    },
+    "orange-sunflower-girl": {
+      "base_frame_sha256": "a4e5a655538ac5a78722be8c6b72f84a21d5268e1209b2a3d24ecb686a78c741",
+      "base_palette_sha256": "d08f948100854ec6bc44a07d92ea1aa7dc20ed47d2108b5e5ff99519417d42ae",
+      "status": "independent",
+      "asset": "orange-sunflower-girl.png",
+      "frames": 24,
+      "method": "new whole-body illustrated pose source, uniform pixel downsample; no limb assembly, body transplant or palette swap",
+      "provenance": "production/art/orange-cohesive-20261111/provenance.json"
+    }
+  }
+}

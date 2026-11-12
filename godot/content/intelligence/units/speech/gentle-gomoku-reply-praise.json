@@ -1,0 +1,11 @@
+{
+  "id": "gentle-gomoku-reply-praise",
+  "context": "gomoku_reply_praise",
+  "lines": [
+    "嗯，谢谢，这一步我也看了好一会儿。",
+    "轻轻说，被你夸得有点开心。",
+    "我想，这句夸奖我收下啦。",
+    "慢慢来，我会继续认真下的。"
+  ],
+  "autonomy_output": false
+}

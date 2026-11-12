@@ -1,0 +1,11 @@
+{
+  "id": "bbq-lively-food-fish",
+  "context": "bbq_food_fish",
+  "lines": [
+    "烤鱼！这一份我要认真吃！",
+    "闻到烤鱼的香味啦 (^▽^)",
+    "让我先尝一口烤鱼，就一口！",
+    "烤鱼烤好啦，筷子准备！"
+  ],
+  "autonomy_output": false
+}

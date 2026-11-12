@@ -1,0 +1,11 @@
+{
+  "id": "bbq-gentle-category-dish",
+  "context": "bbq_category_dish",
+  "lines": [
+    "一整道热菜，辛苦你准备了。",
+    "有热饭可以一起吃，真好。",
+    "这道菜我想细细尝。",
+    "坐在这里，好好吃完这道菜吧。"
+  ],
+  "autonomy_output": false
+}

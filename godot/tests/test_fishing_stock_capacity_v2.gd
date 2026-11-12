@@ -1,0 +1,39 @@
+# DIRECTION 2026-11-07: 主角鱼直接入库；以原真实实例验证后续流程。
+extends SceneTree
+const Fixture=preload("res://tests/fishing_fixture.gd")
+var checks:=0
+var failed:=false
+func check(ok:bool,msg:String)->void:
+	checks+=1
+	if not ok:failed=true;push_error(msg)
+func _initialize()->void:call_deferred("run")
+func run()->void:
+	assert(OS.get_environment("HABITAT_DATA_DIR").contains("youqi-test-"))
+	var world:=preload("res://scripts/world_state.gd").new();world.director.set_all_enabled(false)
+	check(Fixture.coast(world,"human"),"real route to sea")
+	var fish_ids:Dictionary={};var first_pen:="";var changed:=false
+	for n in range(49):
+		var result:Dictionary=world.command("human",{"intent":"fish"})
+		for retry in range(200):
+			if result.ok:break
+			world.advance(10.0);result=world.command("human",{"intent":"fish"})
+		check(result.ok,"real catch starts "+str(n))
+		if not result.ok:break
+		for tick in range(200):
+			world.advance(1.0)
+			if not world.work.jobs.has("human"):break
+		var entry:Dictionary=preload("res://tests/fishing_fixture.gd").unplaced(world)
+		check(not entry.is_empty() and not fish_ids.has(entry.id),"real unique caught fish "+str(n))
+		if entry.is_empty():break
+		fish_ids[entry.id]=true
+		var stock:Dictionary=world.fishing.host_stock_nearest(entry.id)
+		if n<48:
+			check(stock.ok and world.fishing.fish[entry.id].location!="pending","stock actual fish "+str(n))
+			var pen_id:String=world.fishing.fish[entry.id].location
+			if first_pen.is_empty():first_pen=pen_id
+			elif pen_id!=first_pen:changed=true
+		else:
+			check(not stock.ok and world.fishing.fish[entry.id].location=="storage","all pens full preserves the last real fish")
+	check(changed,"full nearest pen automatically selects another")
+	check(world.fishing.fish.size()==49 and fish_ids.size()==49,"all 49 actual catches remain unique and conserved")
+	print("Fishing stock capacity v2: ",checks," checks, failed=",failed);quit(1 if failed else 0)
