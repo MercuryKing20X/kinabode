@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://dhgcp00uaa40r"
+
+[deps]
+
+files=["res://content/i18n/barbecue-scenes.zh.translation", "res://content/i18n/barbecue-scenes.en.translation"]
+
+source_file="res://content/i18n/barbecue-scenes.csv"
+dest_files=["res://content/i18n/barbecue-scenes.zh.translation", "res://content/i18n/barbecue-scenes.en.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

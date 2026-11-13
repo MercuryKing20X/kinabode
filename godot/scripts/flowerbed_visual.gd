@@ -24,7 +24,7 @@ static func texture(planted:bool=true)->Texture2D:
 			if radius>.95 and y>66:c=c.darkened(.13)
 			image.set_pixel(x,y,c)
 	if planted:
-		var flowers:=Image.load_from_file("res://assets/island/flowers.png")
+		var flowers:=preload("res://scripts/bundled_image.gd").read("res://assets/island/flowers.png")
 		flowers.resize(46,46,Image.INTERPOLATE_NEAREST)
 		for at in [Vector2i(26,30),Vector2i(62,19),Vector2i(99,26),Vector2i(139,22),Vector2i(54,53),Vector2i(95,56),Vector2i(134,50)]:
 			image.blend_rect(flowers,Rect2i(0,0,46,46),at)

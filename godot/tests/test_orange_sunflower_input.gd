@@ -1,8 +1,9 @@
 extends "res://tests/test_dialogue_bar_input.gd"
 func run()->void:
 	OS.set_environment("HABITAT_OPENING","showcase")
-	var game:Node=load("res://scenes/main_v3.tscn").instantiate();root.add_child(game);game.save_enabled=false;game.set_process(false)
-	root.size=Vector2i(1280,800);await frames()
+	var game:Node=load("res://scenes/main_v3.tscn").instantiate();game.dialogue_adapter_factory=func(_id,_scope):return preload("res://tests/test_intent_input.gd").IntentFake.new()
+	root.add_child(game);game.save_enabled=false;game.set_process(false)
+	root.size=Vector2i(1280,800);root.content_scale_size=Vector2i.ZERO;await frames()
 	var w:RefCounted=game.world;var id:String="orange-sunflower-girl"
 	check(w.actors["npc.mira"].appearance_id==id,"new default appearance")
 	check(game.library.artworks.has("orange-haired-girl"),"previous editable work retained")

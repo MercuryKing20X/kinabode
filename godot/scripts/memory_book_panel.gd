@@ -80,7 +80,7 @@ func refresh()->void:
 		button(row,T("delete"),func():books.remove(entry.id);refresh())
 		var photo:String=books.photo_path(str(entry.photo_id if not entry.photo_id.is_empty() else entry.params.get("attachment","")))
 		if not photo.is_empty() and FileAccess.file_exists(photo):
-			var image:=Image.load_from_file(photo)
+			var image:=preload("res://scripts/bundled_image.gd").read(photo)
 			if image!=null:
 				var picture:=TextureRect.new();picture.texture=ImageTexture.create_from_image(image);picture.custom_minimum_size=Vector2(320,200);picture.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;picture.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED;rows.add_child(picture)
 		if entry.layer=="letters":

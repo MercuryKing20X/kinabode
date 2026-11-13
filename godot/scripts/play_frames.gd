@@ -11,7 +11,7 @@ func texture(library:RefCounted,actor:Dictionary,column:int)->Texture2D:
 		var source:Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://content/characters/"+id+".json"))
 		valid[key]=work.frames==source.frames and work.palette==source.palette and work.anchor==source.anchor and work.width==96 and work.height==128
 	if not valid[key]:return null
-	if not textures.has(id):textures[id]=ImageTexture.create_from_image(Image.load_from_file("res://content/play-animations/"+manifest.works[id].asset))
+	if not textures.has(id):textures[id]=ImageTexture.create_from_image(preload("res://scripts/bundled_image.gd").read("res://content/play-animations/"+manifest.works[id].asset))
 	var result:=AtlasTexture.new();result.atlas=textures[id];result.region=Rect2(clampi(column,0,34)*96,0,96,128);return result
 static func turn_column(phase:float)->int:return [15,14,13,14][int(fposmod(phase,1)*4)]
 static var hand_manifest:Dictionary={}

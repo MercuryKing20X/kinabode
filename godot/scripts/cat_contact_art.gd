@@ -4,18 +4,18 @@ extends RefCounted
 var cache:Dictionary={}
 func redrawn(library:RefCounted,actor:Dictionary)->bool:
 	var visual:String=library.visual_appearance(actor)
-	return int(library.artworks[visual].get("revision",1))==1 and FileAccess.file_exists("res://assets/cat-contact-redraw/"+visual+"-hold-down-0.png")
+	return int(library.artworks[visual].get("revision",1))==1 and preload("res://scripts/bundled_image.gd").exists("res://assets/cat-contact-redraw/"+visual+"-hold-down-0.png")
 func texture(library:RefCounted,actor:Dictionary,action:String,column:int)->Texture2D:
 	var visual:String=library.visual_appearance(actor)
 	var facing:String=str(actor.get("facing","down"))
 	var redraw:String="res://assets/cat-contact-redraw/%s-%s-%s-%d.png"%[visual,action,facing,column]
-	if int(library.artworks[visual].get("revision",1))==1 and FileAccess.file_exists(redraw):
-		if not cache.has(redraw):cache[redraw]=ImageTexture.create_from_image(Image.load_from_file(redraw))
+	if int(library.artworks[visual].get("revision",1))==1 and preload("res://scripts/bundled_image.gd").exists(redraw):
+		if not cache.has(redraw):cache[redraw]=ImageTexture.create_from_image(preload("res://scripts/bundled_image.gd").read(redraw))
 		return cache[redraw]
 	column=column%2
 	var asset_path:String="res://assets/cat-contact/%s-%s-%s-%d.png"%[visual,action,facing,column]
-	if int(library.artworks[visual].get("revision",1))==1 and FileAccess.file_exists(asset_path):
-		if not cache.has(asset_path):cache[asset_path]=ImageTexture.create_from_image(Image.load_from_file(asset_path))
+	if int(library.artworks[visual].get("revision",1))==1 and preload("res://scripts/bundled_image.gd").exists(asset_path):
+		if not cache.has(asset_path):cache[asset_path]=ImageTexture.create_from_image(preload("res://scripts/bundled_image.gd").read(asset_path))
 		return cache[asset_path]
 	var base:Texture2D=library.texture(visual,facing+"_0")
 	if base==null:return null

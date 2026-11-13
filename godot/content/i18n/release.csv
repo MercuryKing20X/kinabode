@@ -1,0 +1,2 @@
+keys,zh,en
+release.optional_python,"本地玩法不需要 Python。可选 AI 连接需要 Python 3；未安装时会提示，仍可继续本地游玩。","Local play needs no Python. Optional AI connections require Python 3; if it is missing, you can keep playing locally."

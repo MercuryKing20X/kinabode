@@ -8,6 +8,7 @@ func fresh()->void:
 	root.size=Vector2i(1280,800);root.content_scale_size=Vector2i.ZERO
 	game=load("res://scenes/main_v3.tscn").instantiate()
 	game.world=preload("res://scripts/world_state.gd").new("res://content/home-v3/world.json")
+	game.dialogue_adapter_factory=func(_id,_scope):return Fake.new()
 	root.add_child(game)
 	game.save_enabled=false;game.set_process(false);game.view.set_process(false);game.island_hud.set_process(false);game.chat.hide()
 	await process_frame;await process_frame

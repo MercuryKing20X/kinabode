@@ -1,0 +1,1101 @@
+{
+  "version": 1,
+  "scenes": {
+    "gentle": {
+      "seat": [
+        {
+          "zh": "这里的火光刚刚好。",
+          "en": "This little patch of firelight is lovely."
+        },
+        {
+          "zh": "我坐这边，给你留些地方。 (o_o)",
+          "en": "I'll settle here. There's room beside me. (o_o)"
+        },
+        {
+          "zh": "靠近一点，衣角别碰着火。",
+          "en": "Come closer, but mind your hem."
+        },
+        {
+          "zh": "坐稳了，心也慢慢安静下来。",
+          "en": "There. Sitting down helps the day settle."
+        },
+        {
+          "zh": "这张座位看得见大家。 (*_*)",
+          "en": "I can see everyone from this seat. (*_*)"
+        },
+        {
+          "zh": "火边有你们，便不觉得空。",
+          "en": "A circle of familiar faces. That's enough."
+        },
+        {
+          "zh": "先坐好，今天不赶路。",
+          "en": "Let's get comfortable. Nothing needs hurrying."
+        },
+        {
+          "zh": "我在这儿陪你们等。 (o_o)",
+          "en": "I'll keep you company here. (o_o)"
+        }
+      ],
+      "wait": [
+        {
+          "zh": "等一等，热气还在慢慢升。",
+          "en": "A little longer. The heat is still finding its way through."
+        },
+        {
+          "zh": "不用急，火有自己的节奏。",
+          "en": "Let the fire take its time."
+        },
+        {
+          "zh": "等饭的这会儿也很舒服。 (>_<)",
+          "en": "Even this quiet wait feels nice. (>_<)"
+        },
+        {
+          "zh": "先把手暖一暖吧。",
+          "en": "We can warm our hands meanwhile."
+        },
+        {
+          "zh": "我愿意再等一小会儿。",
+          "en": "I'm happy to wait another moment."
+        },
+        {
+          "zh": "坐着听木头轻轻响。",
+          "en": "Hear that soft crackle? We have a little time."
+        },
+        {
+          "zh": "还没好，我们聊点轻松的。 (o_o)",
+          "en": "While it cooks, tell me something small. (o_o)"
+        },
+        {
+          "zh": "有大家一起等，时间便软了。",
+          "en": "Waiting feels gentler with company."
+        }
+      ],
+      "smell": [
+        {
+          "zh": "香气绕着火光过来了。",
+          "en": "The lovely smell has found our side of the fire."
+        },
+        {
+          "zh": "闻着就让人心里暖。 (>_<)",
+          "en": "That aroma feels like a blanket. (>_<)"
+        },
+        {
+          "zh": "这一阵香，轻轻的。",
+          "en": "Such a delicate little waft."
+        },
+        {
+          "zh": "烟散开以后更香了。",
+          "en": "There it is again, beyond the smoke."
+        },
+        {
+          "zh": "我忍不住又闻了一下。 (^_^)",
+          "en": "I caught myself leaning toward that smell. (^_^)"
+        },
+        {
+          "zh": "空气里都是暖暖的味道。",
+          "en": "The air smells warm and welcoming."
+        },
+        {
+          "zh": "闻到香气，等着也不难了。",
+          "en": "That makes the waiting rather pleasant."
+        },
+        {
+          "zh": "香味像在叫我们别走远。 (>_<)",
+          "en": "The smell is asking us to stay nearby. (>_<)"
+        }
+      ],
+      "first_bite": [
+        {
+          "zh": "第一口，先慢慢尝。",
+          "en": "One small bite to begin with."
+        },
+        {
+          "zh": "唔，热乎乎的。",
+          "en": "Oh, that's beautifully warm."
+        },
+        {
+          "zh": "这一口要小心烫。 :-)",
+          "en": "Careful now. This first bite is hot. :-)"
+        },
+        {
+          "zh": "尝到了，心里也亮了一点。",
+          "en": "There. A little brightness with that bite."
+        },
+        {
+          "zh": "先吹凉，再好好尝。",
+          "en": "A gentle breath, then a proper taste."
+        },
+        {
+          "zh": "这一小口，我很喜欢。",
+          "en": "I like this little beginning."
+        },
+        {
+          "zh": "第一口吃到了，真安心。 (>_<)",
+          "en": "That first warm bite feels comforting. (>_<)"
+        },
+        {
+          "zh": "我先尝一口，不着急。",
+          "en": "I'll take a small bite. There's plenty of time."
+        }
+      ],
+      "taste": [
+        {
+          "zh": "火烤出来的味道很温柔。",
+          "en": "The fire has given it such a gentle flavor."
+        },
+        {
+          "zh": "这一口留着淡淡的香。 :-)",
+          "en": "There's a soft fragrance after that bite. :-)"
+        },
+        {
+          "zh": "热着尝，滋味很清楚。",
+          "en": "I can taste the little details while it's warm."
+        },
+        {
+          "zh": "这份味道适合慢慢吃。",
+          "en": "This deserves a few unhurried bites."
+        },
+        {
+          "zh": "不必多说，细细尝就好。 (-_-)",
+          "en": "We can let a quiet mouthful speak for itself. (-_-)"
+        },
+        {
+          "zh": "我喜欢这口暖暖的滋味。",
+          "en": "I do like that warm, mellow taste."
+        },
+        {
+          "zh": "越慢越能尝到里面的香。",
+          "en": "A slower bite brings out more of the flavor."
+        },
+        {
+          "zh": "这口吃着很妥帖。 :-)",
+          "en": "That tastes wonderfully comforting. :-)"
+        }
+      ],
+      "satisfied": [
+        {
+          "zh": "吃好了，谢谢这一顿。",
+          "en": "I'm nicely full. Thank you for dinner."
+        },
+        {
+          "zh": "胃里暖了，肩膀也松下来。",
+          "en": "A warm stomach, and my shoulders have relaxed."
+        },
+        {
+          "zh": "这一顿吃得安安稳稳。 (o_o)",
+          "en": "That was a peaceful little meal. (o_o)"
+        },
+        {
+          "zh": "不再惦记吃的了，坐会儿吧。",
+          "en": "I'm content now. Shall we sit a while?"
+        },
+        {
+          "zh": "吃饱以后，火光更柔和了。",
+          "en": "The fire seems softer after a meal."
+        },
+        {
+          "zh": "我已经满足啦。",
+          "en": "I'm quite content, truly."
+        },
+        {
+          "zh": "这顿饭，我好好吃完了。 :-)",
+          "en": "I enjoyed that right to the last bite. :-)"
+        },
+        {
+          "zh": "饱饱的，心也踏实。",
+          "en": "Warm and full. A good feeling."
+        }
+      ],
+      "chat": [
+        {
+          "zh": "不用找话题，坐在一起就好。",
+          "en": "We needn't fill every quiet moment."
+        },
+        {
+          "zh": "火光落在大家脸上，真好。 (o_o)",
+          "en": "I like seeing everyone's faces in the firelight. (o_o)"
+        },
+        {
+          "zh": "这一小圈地方，很让人安心。",
+          "en": "This little circle feels welcoming."
+        },
+        {
+          "zh": "你们说，我听着呢。",
+          "en": "Go on. I'm listening."
+        },
+        {
+          "zh": "听见木柴轻响，便想多坐会儿。 (*_*)",
+          "en": "That crackle makes me want to linger. (*_*)"
+        },
+        {
+          "zh": "今天的小事，也可以慢慢讲。",
+          "en": "The small bits of your day are welcome too."
+        },
+        {
+          "zh": "坐在这里，声音都轻了一点。",
+          "en": "Even our voices feel softer here."
+        },
+        {
+          "zh": "这会儿不用忙，陪着就好。 (o_o)",
+          "en": "For this moment, company is enough. (o_o)"
+        }
+      ],
+      "depart": [
+        {
+          "zh": "差不多该起身啦，慢慢来。",
+          "en": "Nearly time to get up. Take your time."
+        },
+        {
+          "zh": "这一圈暖意，带着走吧。",
+          "en": "Let's carry a little of this warmth with us."
+        },
+        {
+          "zh": "离开火边前，看看脚下。 (>_<)",
+          "en": "Mind your footing as we leave the fire. (>_<)"
+        },
+        {
+          "zh": "坐得很舒服，也该伸伸腿了。",
+          "en": "That was lovely. My legs could use a stretch."
+        },
+        {
+          "zh": "谢谢陪我围着火坐。",
+          "en": "Thank you for sitting here with me."
+        },
+        {
+          "zh": "准备走啦，衣角收好。",
+          "en": "Getting ready to go? Mind those hems."
+        },
+        {
+          "zh": "起身也不用着急。 (o_o)",
+          "en": "There's no rush getting to our feet. (o_o)"
+        },
+        {
+          "zh": "这一顿就好好收在心里。",
+          "en": "I'll keep this quiet dinner close."
+        }
+      ]
+    },
+    "lively": {
+      "seat": [
+        {
+          "zh": "我来啦，火边第一排！",
+          "en": "Made it! Front row for dinner!"
+        },
+        {
+          "zh": "这位置好，谁都看得见！ (o_o)",
+          "en": "Perfect seat. I can see the whole crew! (o_o)"
+        },
+        {
+          "zh": "坐好了，我的肚子也到场了！",
+          "en": "Me and my stomach are officially seated!"
+        },
+        {
+          "zh": "挪一点点，我也要围进来！",
+          "en": "Scoot over a tiny bit. I'm joining the circle!"
+        },
+        {
+          "zh": "今天的快乐从这个座位开始！ (*_*)",
+          "en": "This seat looks like the start of a good time! (*_*)"
+        },
+        {
+          "zh": "好耶，大家凑成一圈了！",
+          "en": "Yes! A proper little circle!"
+        },
+        {
+          "zh": "我要坐得离香味近一点！",
+          "en": "I picked the seat closest to the good smells!"
+        },
+        {
+          "zh": "终于能把脚歇一下啦！ (o_o)",
+          "en": "Feet parked. Dinner mode on! (o_o)"
+        }
+      ],
+      "wait": [
+        {
+          "zh": "等饭也是一项集体活动！",
+          "en": "Waiting for dinner is a team sport!"
+        },
+        {
+          "zh": "我没有催，我只是看得很认真！",
+          "en": "I'm not rushing it. I'm supervising enthusiastically!"
+        },
+        {
+          "zh": "再等等，我跟肚子商量好了！ (>_<)",
+          "en": "My stomach and I have agreed to wait! (>_<)"
+        },
+        {
+          "zh": "谁能让这几秒走快一点呀！",
+          "en": "Could these seconds please pick up the pace?"
+        },
+        {
+          "zh": "先坐住，不能被香气拐走！",
+          "en": "Stay seated. Don't let the smell carry you away!"
+        },
+        {
+          "zh": "我在心里数火星呢！",
+          "en": "I'm counting sparks to pass the time!"
+        },
+        {
+          "zh": "等着等着，期待值又涨啦！ (o_o)",
+          "en": "Somehow I'm getting more excited just waiting! (o_o)"
+        },
+        {
+          "zh": "好饭值得等，我努力值得！",
+          "en": "Good food takes patience. I'm practicing!"
+        }
+      ],
+      "smell": [
+        {
+          "zh": "哇，香味先扑过来啦！",
+          "en": "Whoa! The smell got here before dinner!"
+        },
+        {
+          "zh": "鼻子已经替我举手了！ (>_<)",
+          "en": "My nose would like to volunteer! (>_<)"
+        },
+        {
+          "zh": "这香气，是冲着我来的吧！",
+          "en": "That delicious smell knows exactly where I'm sitting!"
+        },
+        {
+          "zh": "闻到啦，我整个人都精神了！",
+          "en": "One whiff and I'm fully awake!"
+        },
+        {
+          "zh": "空气都快变好吃了！ (^_^)",
+          "en": "Even the air is getting tasty! (^_^)"
+        },
+        {
+          "zh": "香得我坐姿都端正啦！",
+          "en": "That smell just made me sit up straight!"
+        },
+        {
+          "zh": "别看我，是鼻子在往前凑！",
+          "en": "That's my nose leaning forward, not me!"
+        },
+        {
+          "zh": "这一阵香，必须大声表扬！ (>_<)",
+          "en": "That aroma deserves a round of applause! (>_<)"
+        }
+      ],
+      "first_bite": [
+        {
+          "zh": "开吃！第一口归我自己尝！",
+          "en": "Here we go! First bite, full attention!"
+        },
+        {
+          "zh": "啊呜，好烫也好开心！",
+          "en": "Ooh, hot! Happy! Both!"
+        },
+        {
+          "zh": "吃到了！等饭选手成功啦！ :-)",
+          "en": "A bite at last! The waiting champion wins! :-)"
+        },
+        {
+          "zh": "第一口到位，快乐到位！",
+          "en": "First bite landed. Happiness confirmed!"
+        },
+        {
+          "zh": "让我先认真咬一小口！",
+          "en": "Hang on. This first nibble needs focus!"
+        },
+        {
+          "zh": "哇，这口一来就有精神！",
+          "en": "Well, hello there, delicious first bite!"
+        },
+        {
+          "zh": "开场这一口，我接住啦！ (>_<)",
+          "en": "Opening bite caught and appreciated! (>_<)"
+        },
+        {
+          "zh": "我先吃一口再说话！",
+          "en": "One bite first. Words later!"
+        }
+      ],
+      "taste": [
+        {
+          "zh": "这一口香得很有存在感！",
+          "en": "Now that's a flavor that makes an entrance!"
+        },
+        {
+          "zh": "嘴里热闹起来啦！ :-)",
+          "en": "There's a whole party in this bite! :-)"
+        },
+        {
+          "zh": "火烤的香，果然很会招人！",
+          "en": "Grilled flavor really knows how to make friends!"
+        },
+        {
+          "zh": "这滋味让我想认真点头！",
+          "en": "That deserves a very serious happy nod!"
+        },
+        {
+          "zh": "好吃得我都顾不上比划啦！ (-_-)",
+          "en": "Too busy enjoying this to wave my arms! (-_-)"
+        },
+        {
+          "zh": "这一口值得我坐直了夸！",
+          "en": "Let me sit up properly to praise this bite!"
+        },
+        {
+          "zh": "香味在嘴里绕圈圈！",
+          "en": "The flavor is doing little laps in my mouth!"
+        },
+        {
+          "zh": "我宣布，这口很有精神！ :-)",
+          "en": "Verdict: this bite has excellent energy! :-)"
+        }
+      ],
+      "satisfied": [
+        {
+          "zh": "吃饱啦，快乐也装满啦！",
+          "en": "Full stomach, full happiness meter!"
+        },
+        {
+          "zh": "肚子终于不跟我抢话了！",
+          "en": "My stomach has finally stopped interrupting!"
+        },
+        {
+          "zh": "这顿饭，圆满落肚！ (o_o)",
+          "en": "Dinner has reached its happy destination! (o_o)"
+        },
+        {
+          "zh": "我现在是一只满足的小团子！",
+          "en": "I am now a very content little dumpling!"
+        },
+        {
+          "zh": "吃完啦，能量满满地坐着！",
+          "en": "Meal finished. Fully powered sitting begins!"
+        },
+        {
+          "zh": "好满足，先让我笑一会儿！",
+          "en": "So content. Give me a moment to grin!"
+        },
+        {
+          "zh": "这一顿吃得心花都开啦！ :-)",
+          "en": "That dinner has me blooming with happiness! :-)"
+        },
+        {
+          "zh": "饱了饱了，我的表情已经说明一切！",
+          "en": "My grin tells the whole delicious story!"
+        }
+      ],
+      "chat": [
+        {
+          "zh": "来嘛，谁讲个小小的趣事！",
+          "en": "Who's got a tiny story for the circle?"
+        },
+        {
+          "zh": "火星一跳，我也想跟着点头！ (o_o)",
+          "en": "Every little spark makes me want to bob along! (o_o)"
+        },
+        {
+          "zh": "我们这一圈，看着就很热闹！",
+          "en": "Just look at our excellent little gathering!"
+        },
+        {
+          "zh": "你们不说话，我也能开心坐着！",
+          "en": "I can enjoy a quiet circle too. Honestly!"
+        },
+        {
+          "zh": "要不每人说一个今天喜欢的东西！ (*_*)",
+          "en": "Name one thing you liked today. I'll listen! (*_*)"
+        },
+        {
+          "zh": "我喜欢这种凑在一起的感觉！",
+          "en": "I like this whole being-together business!"
+        },
+        {
+          "zh": "这会儿连发呆都很有气氛！",
+          "en": "Even daydreaming feels festive here!"
+        },
+        {
+          "zh": "我在听呢，耳朵也吃饱精神啦！ (o_o)",
+          "en": "I'm listening! My ears have plenty of energy! (o_o)"
+        }
+      ],
+      "depart": [
+        {
+          "zh": "好啦，准备起身活动一下！",
+          "en": "All right! Nearly time to unpark ourselves!"
+        },
+        {
+          "zh": "这场火边聚会，给个笑脸！",
+          "en": "A big grin for this little fireside gathering!"
+        },
+        {
+          "zh": "大家起身时别踩到自己裙角！ (>_<)",
+          "en": "Watch those hems when you stand up! (>_<)"
+        },
+        {
+          "zh": "让我先伸个超级小懒腰！",
+          "en": "One spectacularly small stretch before we go!"
+        },
+        {
+          "zh": "散场也要开开心心的！",
+          "en": "Let's leave with the same happy energy!"
+        },
+        {
+          "zh": "站起来以后，脚可别还在偷懒！",
+          "en": "Feet, get ready. Sitting duty is almost over!"
+        },
+        {
+          "zh": "这一圈真不错，我记住这份热闹啦！ (o_o)",
+          "en": "That was an excellent circle. Lovely company! (o_o)"
+        },
+        {
+          "zh": "准备撤离座位，笑容继续营业！",
+          "en": "Seat closing soon. Grin staying open!"
+        }
+      ]
+    },
+    "laborious": {
+      "seat": [
+        {
+          "zh": "坐下吧，活儿先放一边。",
+          "en": "Tools down for a moment. Let's sit."
+        },
+        {
+          "zh": "这个位置稳当，我坐这里。 (o_o)",
+          "en": "Good, steady spot. This will do. (o_o)"
+        },
+        {
+          "zh": "先安顿好，吃饭也要认真。",
+          "en": "Get settled. A meal deserves attention too."
+        },
+        {
+          "zh": "大家都有位置就好。",
+          "en": "Good. There's a place for everyone."
+        },
+        {
+          "zh": "坐稳一点，别碰着火。 (*_*)",
+          "en": "Sit securely and give the fire some room. (*_*)"
+        },
+        {
+          "zh": "这一会儿可以踏实歇脚。",
+          "en": "We can give our feet a proper rest here."
+        },
+        {
+          "zh": "火边坐齐了，挺好。",
+          "en": "A full circle by the fire. Good to see."
+        },
+        {
+          "zh": "我也坐下，今天不站着吃。 (o_o)",
+          "en": "I'll sit too. No eating on my feet. (o_o)"
+        }
+      ],
+      "wait": [
+        {
+          "zh": "还在烤，急也不会更快。",
+          "en": "Still cooking. Fussing won't help it along."
+        },
+        {
+          "zh": "等熟透了再吃，稳妥。",
+          "en": "Let it cook through. Better that way."
+        },
+        {
+          "zh": "歇这几分钟，正好。 (>_<)",
+          "en": "A few minutes' rest is useful too. (>_<)"
+        },
+        {
+          "zh": "先坐住，不必来回忙。",
+          "en": "Stay settled. No need to keep getting up."
+        },
+        {
+          "zh": "火候要时间，慢慢等。",
+          "en": "Heat needs time to do its work."
+        },
+        {
+          "zh": "这会儿歇着，手也松一松。",
+          "en": "Rest your hands while we wait."
+        },
+        {
+          "zh": "没到时候，再耐心一点。 (o_o)",
+          "en": "Not quite ready. A little patience. (o_o)"
+        },
+        {
+          "zh": "能安心等饭，也挺好。",
+          "en": "It's good to wait for a meal in peace."
+        }
+      ],
+      "smell": [
+        {
+          "zh": "香味出来了，等得值。",
+          "en": "There's the aroma. Worth the wait."
+        },
+        {
+          "zh": "闻着不错，火没白烧。 (>_<)",
+          "en": "Smells good. The fire is doing its job. (>_<)"
+        },
+        {
+          "zh": "这一阵香，挺扎实。",
+          "en": "That's a good, hearty smell."
+        },
+        {
+          "zh": "坐在这儿也闻得清楚。",
+          "en": "Even from this seat, I can smell it well."
+        },
+        {
+          "zh": "火烤的味道，实在。 (^_^)",
+          "en": "Grilled food has an honest smell. (^_^)"
+        },
+        {
+          "zh": "这香气让人想好好吃饭。",
+          "en": "That smell deserves a proper appetite."
+        },
+        {
+          "zh": "闻到热饭味，人就踏实。",
+          "en": "A hot meal in the air. Reassuring."
+        },
+        {
+          "zh": "鼻子倒比嘴先知道了。 (>_<)",
+          "en": "My nose has the news before my mouth. (>_<)"
+        }
+      ],
+      "first_bite": [
+        {
+          "zh": "先尝一口，吃饭不急。",
+          "en": "First bite. No need to rush a meal."
+        },
+        {
+          "zh": "嗯，热食落肚才踏实。",
+          "en": "A warm bite. That's reassuring."
+        },
+        {
+          "zh": "这一口先吃稳当。 :-)",
+          "en": "One careful mouthful to start. :-)"
+        },
+        {
+          "zh": "尝到了，温度正好。",
+          "en": "There. A comfortably warm bite."
+        },
+        {
+          "zh": "我先认真吃这一口。",
+          "en": "Let me give this mouthful my attention."
+        },
+        {
+          "zh": "开吃了，话待会儿再说。",
+          "en": "Eating now. We can talk in a moment."
+        },
+        {
+          "zh": "先吹一下，别烫着。 (>_<)",
+          "en": "A quick breath first. Mind the heat. (>_<)"
+        },
+        {
+          "zh": "第一口吃到了，挺好。",
+          "en": "First bite taken. Good."
+        }
+      ],
+      "taste": [
+        {
+          "zh": "这口味道很实在。",
+          "en": "A good, honest mouthful."
+        },
+        {
+          "zh": "细细嚼，比急着吃好。 :-)",
+          "en": "Chew properly. It's better than hurrying. :-)"
+        },
+        {
+          "zh": "热热的，吃着有着落。",
+          "en": "Warm and substantial. Just right."
+        },
+        {
+          "zh": "火烤的香气，吃得出来。",
+          "en": "You can taste what the fire has added."
+        },
+        {
+          "zh": "这滋味不用花哨话。 (-_-)",
+          "en": "That flavor needs no fancy description. (-_-)"
+        },
+        {
+          "zh": "一口一口吃，挺满足。",
+          "en": "Taking it mouthful by mouthful suits me."
+        },
+        {
+          "zh": "吃着顺口，心里也稳。",
+          "en": "Good flavor. Settles you down nicely."
+        },
+        {
+          "zh": "认真吃，才不辜负这一份。 :-)",
+          "en": "Give a good meal the attention it deserves. :-)"
+        }
+      ],
+      "satisfied": [
+        {
+          "zh": "吃好了，歇够再起身。",
+          "en": "Finished. Take a proper rest before getting up."
+        },
+        {
+          "zh": "肚子有底了，人也踏实。",
+          "en": "A full stomach makes things feel steadier."
+        },
+        {
+          "zh": "这一顿吃得很实在。 (o_o)",
+          "en": "That was a good, substantial meal. (o_o)"
+        },
+        {
+          "zh": "吃饱了，不用急着找事做。",
+          "en": "I'm full. Work can wait another moment."
+        },
+        {
+          "zh": "这一餐，好好落肚了。",
+          "en": "A proper meal, properly enjoyed."
+        },
+        {
+          "zh": "饱了，肩背也能放松一下。",
+          "en": "Full now. Time to ease my shoulders."
+        },
+        {
+          "zh": "这顿饭没有白等。 :-)",
+          "en": "That dinner was worth sitting down for. :-)"
+        },
+        {
+          "zh": "吃完了，先把这口气歇匀。",
+          "en": "Meal finished. Let's catch our breath."
+        }
+      ],
+      "chat": [
+        {
+          "zh": "火边这会儿，先不谈活。",
+          "en": "For once, let's leave work out of the conversation."
+        },
+        {
+          "zh": "大家坐得安稳，我就放心。 (o_o)",
+          "en": "Everyone looks settled. Good. (o_o)"
+        },
+        {
+          "zh": "听着木头响，脑子也歇一歇。",
+          "en": "Let the wood crackle. Give your thoughts a rest."
+        },
+        {
+          "zh": "这圈人坐在一起，挺像样。",
+          "en": "We make a decent little gathering."
+        },
+        {
+          "zh": "闲话也可以慢慢说。 (*_*)",
+          "en": "No need to hurry a conversation either. (*_*)"
+        },
+        {
+          "zh": "有事明天再想，这会儿歇着。",
+          "en": "Later things can wait. This is a rest."
+        },
+        {
+          "zh": "我听着呢，不用急着讲完。",
+          "en": "I'm listening. Take your time finishing."
+        },
+        {
+          "zh": "火暖，人齐，这样就不错。 (o_o)",
+          "en": "Warm fire, good company. That'll do. (o_o)"
+        }
+      ],
+      "depart": [
+        {
+          "zh": "差不多了，起身慢些。",
+          "en": "Nearly time. Get up carefully."
+        },
+        {
+          "zh": "歇过了，准备活动活动腿。",
+          "en": "A decent rest. Time to ease our legs soon."
+        },
+        {
+          "zh": "离座前看看脚边，别绊着。 (>_<)",
+          "en": "Check your footing before leaving your seat. (>_<)"
+        },
+        {
+          "zh": "这顿吃得踏实，谢谢。",
+          "en": "A solid meal. Thank you."
+        },
+        {
+          "zh": "准备散场，衣角别碰火。",
+          "en": "When we leave, keep those hems clear of the fire."
+        },
+        {
+          "zh": "坐久了，先伸展一下。",
+          "en": "We've been sitting a while. Stretch first."
+        },
+        {
+          "zh": "要起身了，不必抢着走。 (o_o)",
+          "en": "Getting up soon. No need to rush ahead. (o_o)"
+        },
+        {
+          "zh": "这会儿歇得不错，够踏实。",
+          "en": "That was a proper, welcome rest."
+        }
+      ]
+    },
+    "quiet": {
+      "seat": [
+        {
+          "zh": "我坐这里。火光没那么晃眼。",
+          "en": "This seat. The light is softer here."
+        },
+        {
+          "zh": "这一角，刚好。 (o_o)",
+          "en": "This corner suits me. (o_o)"
+        },
+        {
+          "zh": "给我留一点安静就好。",
+          "en": "A little quiet space is all I need."
+        },
+        {
+          "zh": "坐下了。听得见木柴响。",
+          "en": "Settled. I can hear the wood crackling."
+        },
+        {
+          "zh": "不必招呼，我已经在了。 (*_*)",
+          "en": "No need to call. I'm here. (*_*)"
+        },
+        {
+          "zh": "火边有个位置，就够了。",
+          "en": "A place by the fire is enough."
+        },
+        {
+          "zh": "这边能看见大家。",
+          "en": "I can see everyone from here."
+        },
+        {
+          "zh": "嗯，这里暖。 (o_o)",
+          "en": "Mm. Warm here. (o_o)"
+        }
+      ],
+      "wait": [
+        {
+          "zh": "再等一会儿。",
+          "en": "Another moment."
+        },
+        {
+          "zh": "火在忙，我们歇着。",
+          "en": "The fire is busy. We can rest."
+        },
+        {
+          "zh": "等着，也没什么不好。 (>_<)",
+          "en": "Waiting is all right. (>_<)"
+        },
+        {
+          "zh": "不急。听一会儿火声。",
+          "en": "No rush. Listen to the fire."
+        },
+        {
+          "zh": "这点空白，挺舒服。",
+          "en": "This little pause is comfortable."
+        },
+        {
+          "zh": "我有耐心。",
+          "en": "I can be patient."
+        },
+        {
+          "zh": "还没好，就多坐一会儿。 (o_o)",
+          "en": "Not ready. A reason to sit a little longer. (o_o)"
+        },
+        {
+          "zh": "让火慢慢来。",
+          "en": "Let the fire take its time."
+        }
+      ],
+      "smell": [
+        {
+          "zh": "闻到了。很暖的香气。",
+          "en": "I smell it. A warm scent."
+        },
+        {
+          "zh": "香味飘到这边了。 (>_<)",
+          "en": "The smell reached this side. (>_<)"
+        },
+        {
+          "zh": "嗯，鼻子先发现了。",
+          "en": "Mm. My nose noticed first."
+        },
+        {
+          "zh": "不用靠近，也很香。",
+          "en": "No need to lean closer."
+        },
+        {
+          "zh": "烟后面，是好闻的味道。 (^_^)",
+          "en": "Something lovely behind the smoke. (^_^)"
+        },
+        {
+          "zh": "空气里有热饭的意思。",
+          "en": "The air hints at dinner."
+        },
+        {
+          "zh": "这一阵香，留得很轻。",
+          "en": "A faint aroma. It lingers."
+        },
+        {
+          "zh": "闻着，就想安静等。 (>_<)",
+          "en": "That smell makes waiting easy. (>_<)"
+        }
+      ],
+      "first_bite": [
+        {
+          "zh": "先尝一小口。",
+          "en": "Just a small first bite."
+        },
+        {
+          "zh": "嗯，吃到了。",
+          "en": "Mm. There it is."
+        },
+        {
+          "zh": "热的。慢一点。 :-)",
+          "en": "Hot. Slowly. :-)"
+        },
+        {
+          "zh": "这一口，安静吃。",
+          "en": "A quiet mouthful."
+        },
+        {
+          "zh": "我先不说话。",
+          "en": "Give me a moment with this bite."
+        },
+        {
+          "zh": "第一口……不错。",
+          "en": "First bite... good."
+        },
+        {
+          "zh": "吹凉一点，再咬。 (>_<)",
+          "en": "A little cooler. Then a bite. (>_<)"
+        },
+        {
+          "zh": "唔，暖起来了。",
+          "en": "Oh. Warmth spreading."
+        }
+      ],
+      "taste": [
+        {
+          "zh": "这口香，慢慢留着。",
+          "en": "Let that flavor linger."
+        },
+        {
+          "zh": "味道很清楚。 :-)",
+          "en": "A clear, simple taste. :-)"
+        },
+        {
+          "zh": "嗯，火烤的香。",
+          "en": "Mm. The flavor of the fire."
+        },
+        {
+          "zh": "不说话，也尝得明白。",
+          "en": "No words needed to appreciate it."
+        },
+        {
+          "zh": "这一口，挺好。 (-_-)",
+          "en": "A good mouthful. (-_-)"
+        },
+        {
+          "zh": "热着吃，刚好。",
+          "en": "Warm. Just right."
+        },
+        {
+          "zh": "嚼慢一点。香气还在。",
+          "en": "Slowly. The flavor is still there."
+        },
+        {
+          "zh": "喜欢这点余味。 :-)",
+          "en": "I like the quiet aftertaste. :-)"
+        }
+      ],
+      "satisfied": [
+        {
+          "zh": "吃好了。",
+          "en": "Finished. Content."
+        },
+        {
+          "zh": "肚子暖了。",
+          "en": "Warm inside now."
+        },
+        {
+          "zh": "嗯，够了，很满足。 (o_o)",
+          "en": "Mm. Enough. Quite enough. (o_o)"
+        },
+        {
+          "zh": "这会儿，什么也不缺。",
+          "en": "Nothing missing in this moment."
+        },
+        {
+          "zh": "饱了。再坐坐。",
+          "en": "Full. I'll sit a little longer."
+        },
+        {
+          "zh": "好好吃完了，谢谢。",
+          "en": "A lovely meal. Thank you."
+        },
+        {
+          "zh": "胃里很安稳。 :-)",
+          "en": "A settled, comfortable feeling. :-)"
+        },
+        {
+          "zh": "吃饱后，话更少了。",
+          "en": "Full stomach. Even fewer words."
+        }
+      ],
+      "chat": [
+        {
+          "zh": "不用一直说话。",
+          "en": "We don't have to keep talking."
+        },
+        {
+          "zh": "火声，够热闹了。 (o_o)",
+          "en": "The crackle is company enough. (o_o)"
+        },
+        {
+          "zh": "你们聊。我听。",
+          "en": "You talk. I'll listen."
+        },
+        {
+          "zh": "这一圈，没有空。",
+          "en": "This circle doesn't feel empty."
+        },
+        {
+          "zh": "安静一点，也很好。 (*_*)",
+          "en": "A little quiet is good too. (*_*)"
+        },
+        {
+          "zh": "坐着就行。",
+          "en": "Just sitting is fine."
+        },
+        {
+          "zh": "火星飘上去，又不见了。",
+          "en": "A spark rises. Then it's gone."
+        },
+        {
+          "zh": "嗯，我还在听。 (o_o)",
+          "en": "Mm. Still listening. (o_o)"
+        }
+      ],
+      "depart": [
+        {
+          "zh": "快散了。慢慢起身。",
+          "en": "Nearly over. Stand up slowly."
+        },
+        {
+          "zh": "暖意还在。",
+          "en": "The warmth will linger."
+        },
+        {
+          "zh": "准备走了。谢谢陪着。 (>_<)",
+          "en": "Getting ready to go. Thanks for the company. (>_<)"
+        },
+        {
+          "zh": "起身前，再看一眼火。",
+          "en": "One last look at the fire before standing."
+        },
+        {
+          "zh": "腿该伸一下了。",
+          "en": "Time to stretch my legs."
+        },
+        {
+          "zh": "这一会儿，很安静。很好。",
+          "en": "A quiet while. A good while."
+        },
+        {
+          "zh": "离开座位，也不用急。 (o_o)",
+          "en": "No hurry leaving this seat. (o_o)"
+        },
+        {
+          "zh": "嗯，收好这一点暖。",
+          "en": "Mm. Keep a little warmth."
+        }
+      ]
+    }
+  }
+}

@@ -6,6 +6,7 @@ import json
 import os
 from pathlib import Path
 from godot_runtime import godot_executable
+from deterministic_godot import materialize
 import subprocess
 import sys
 import tempfile
@@ -15,6 +16,8 @@ import fcntl
 
 ROOT = Path(__file__).resolve().parents[1]
 os.environ["HABITAT_OPENING"] = "legacy"
+os.environ.setdefault("HABITAT_DETERMINISTIC_TESTS", "1")
+os.environ.setdefault("HABITAT_TEST_SEED", "1027")
 # Offline is the suite default, including an accidentally unreplaced native
 # adapter. A test can still select its own explicit fake executable locally.
 os.environ.setdefault("HABITAT_CODEX", "habitat-offline-model-disabled")
@@ -54,7 +57,7 @@ except ValueError:
 def identity(command):
     return tuple(command[1:])
 
-weights = {identity(r["command"]): r.get("seconds", 0) for r in previous}
+weights = {} if os.environ['HABITAT_DETERMINISTIC_TESTS'] == '1' else {identity(r["command"]): r.get("seconds", 0) for r in previous}
 failed_keys = {identity(r["command"]) for r in previous if not r["passed"]}
 pending = []
 results = []
@@ -76,10 +79,21 @@ shadow = runtime / "workspace"
 shadow.mkdir()
 for source in ROOT.iterdir():
     if source.name != "godot": (shadow / source.name).symlink_to(source, target_is_directory=source.is_dir())
+private_fixtures = os.environ.get("HABITAT_PRIVATE_TEST_FIXTURES")
+if private_fixtures:
+    fixture_root = Path(private_fixtures).resolve()
+    if not (fixture_root / "production").is_dir(): parser.error("HABITAT_PRIVATE_TEST_FIXTURES must contain production/")
+    (shadow / "production").symlink_to(fixture_root / "production", target_is_directory=True)
+    print("PRIVATE_TEST_FIXTURES enabled (read-only historical inputs; excluded from public source)", flush=True)
 project = shadow / "godot"
 project.mkdir()
 for source in (ROOT / "godot").iterdir():
-    if source.name != "project.godot": (project / source.name).symlink_to(source, target_is_directory=source.is_dir())
+    if source.name not in {"project.godot", "scripts", "tests"}: (project / source.name).symlink_to(source, target_is_directory=source.is_dir())
+if os.environ["HABITAT_DETERMINISTIC_TESTS"] == "1":
+    injection_counts = materialize(ROOT / "godot", project)
+    print("TEST_ENVIRONMENT " + json.dumps(dict(seed=os.environ["HABITAT_TEST_SEED"], epoch=1794542400, injections=injection_counts)), flush=True)
+else:
+    for folder in ["scripts", "tests"]: (project / folder).symlink_to(ROOT / "godot" / folder, target_is_directory=True)
 user_name = runtime.name
 engine_user = Path.home() / "Library/Application Support" / user_name
 stack.callback(lambda: __import__('shutil').rmtree(engine_user, ignore_errors=True))
@@ -91,20 +105,20 @@ config = config.replace('[application]', '[application]\nconfig/use_custom_user_
 wrapper = runtime / "godot-test-engine"
 wrapper.write_text("#!" + sys.executable + "\nimport os,sys,tempfile\n"
     + "fd,p=tempfile.mkstemp(prefix='engine-',suffix='.log',dir=" + repr(str(runtime)) + ");os.close(fd)\n"
-    + "args=sys.argv[1:]\nif '--path' in args: args[args.index('--path')+1]=" + repr(str(project)) + "\n"
-    + "os.execv(" + repr(ENGINE) + ",[" + repr(ENGINE) + ",'--audio-driver','Dummy','--log-file',p]+args)\n")
+    + "args=sys.argv[1:]\nif '--path' in args: args[args.index('--path')+1]=os.environ.get('HABITAT_TEST_PROJECT'," + repr(str(project)) + ")\n"
+    + "os.execv(" + repr(ENGINE) + ",[" + repr(ENGINE) + ",'--audio-driver','Dummy','--rendering-method','gl_compatibility','--rendering-driver','opengl3','--log-file',p]+args)\n")
 wrapper.chmod(0o700)
 
 def run(command, env=None):
     if args.failed_only and identity(command) not in failed_keys: return
-    if args.only and Path(command[-1]).name not in args.only: return
+    if args.only and "--import" not in command and Path(command[-1]).name not in args.only: return
     pending.append((command, env))
 
 visible_lock = threading.Lock()
 
 @contextmanager
 def visible_session():
-    with visible_lock, open(Path(tempfile.gettempdir()) / "youqi-godot-visible-check.lock", "a") as lock:
+    with visible_lock, open(Path(os.environ.get("HABITAT_TEST_VISIBLE_LOCK", "/tmp/youqi-godot-visible-check.lock")), "a") as lock:
         fcntl.flock(lock, fcntl.LOCK_EX)
         try: yield
         finally: fcntl.flock(lock, fcntl.LOCK_UN)
@@ -118,7 +132,17 @@ def execute(item):
     if "tests/probe_one_line_execution.gd" in command: timeout = 1800
     if "tests/test_intention_catalog.gd" in command or "tests/test_steward_async.gd" in command: timeout = 300
     with tempfile.TemporaryDirectory(prefix="youqi-check-", dir=runtime) as directory:
-        child_env = dict(env or os.environ, HABITAT_GODOT=str(wrapper))
+        # Give every engine process tree its own user:// as well as game data.
+        # Source/imports are shared, writable user preferences are not.
+        case_project = Path(directory) / "godot"
+        for source in shadow.iterdir():
+            if source.name != "godot": (Path(directory) / source.name).symlink_to(source, target_is_directory=source.is_dir())
+        case_project.mkdir()
+        for source in project.iterdir():
+            if source.name != "project.godot": (case_project / source.name).symlink_to(source, target_is_directory=source.is_dir())
+        case_user_name = user_name + "-" + Path(directory).name
+        (case_project / "project.godot").write_text(config.replace(user_name, case_user_name))
+        child_env = dict(env or os.environ, HABITAT_GODOT=str(wrapper), HABITAT_TEST_PROJECT=str(case_project))
         child_env.setdefault("HABITAT_DATA_DIR", directory)
         child_env["HABITAT_TEST_SUITE"] = "1"
         child_env["HABITAT_LIVE_TEST"] = "0"
@@ -127,8 +151,8 @@ def execute(item):
             child_env.setdefault("HABITAT_LOCAL_LIFE_SIMULATION_OUTPUT", str((report_path.parent / ("local-life-15d-" + report_path.stem + ".json")).resolve()))
         actual = command
         if command[0] == ENGINE:
-            actual = [ENGINE, '--audio-driver', 'Dummy', '--log-file', str(Path(directory) / 'engine.log'), *command[1:]]
-            if '--path' in actual: actual[actual.index('--path')+1] = str(project)
+            actual = [ENGINE, '--audio-driver', 'Dummy', '--rendering-method', 'gl_compatibility', '--rendering-driver', 'opengl3', '--log-file', str(Path(directory) / 'engine.log'), *command[1:]]
+            if '--path' in actual: actual[actual.index('--path')+1] = str(case_project)
             if (os.environ.get('HABITAT_TEST_VISIBLE') == '1' or command[-1].split('/')[-1] in {'test_local_dialogue.gd','test_life_archive.gd','test_daily_quota.gd','test_orange_sunflower_input.gd','test_orange_talk_input.gd','test_fish_v3_input.gd','test_two_villa_input.gd','test_home_island_input.gd','test_their_island_story_input.gd','capture_playtest_camera.gd','test_playtest_invitation_input.gd','test_playtest_gomoku_input.gd','test_speech_quiet_input.gd','test_island_recipe_input.gd','test_island_recipe_meals_input.gd','test_playtest_fishing_invitation_input.gd'}) and '--headless' in actual: actual.remove('--headless')
         try:
             with (visible_session() if command[0] == ENGINE and "--headless" not in actual and "--editor" not in actual else nullcontext()):
@@ -144,8 +168,10 @@ def execute(item):
         except OSError as error:
             output = str(error) + '\n'
             record = {'command': command, 'passed': False, 'error': str(error)}
+    __import__('shutil').rmtree(Path.home() / 'Library/Application Support' / case_user_name, ignore_errors=True)
     if env and 'HABITAT_COVERAGE_START' in env:record['coverage_range']=[int(env['HABITAT_COVERAGE_START']),int(env['HABITAT_COVERAGE_END'])]
     record['seconds'] = round(time.monotonic() - started, 3)
+    record['test_environment'] = {'deterministic': child_env.get('HABITAT_DETERMINISTIC_TESTS') == '1', 'seed': child_env.get('HABITAT_TEST_SEED')}
     if not record['passed']: record['failure_output'] = output
     return record, output
 
@@ -175,7 +201,7 @@ for storage_script in sorted((ROOT / "godot/tests").glob("test_chess*.gd")) + so
 
 with temporary_directory(prefix="youqi-test-") as directory:
     run([ENGINE,"--headless","--path","godot","--script","tests/test_system_storage.gd"],dict(os.environ,HABITAT_DATA_DIR=directory))
-for script in ['test_foundation.gd','test_slice.gd','test_editor.gd','test_shared_life.gd','test_barbecue_v2.gd','test_barbecue_v3.gd','test_barbecue_v3_resources.gd','test_barbecue_v3_ui.gd','test_barbecue_v4.gd','test_cat_companion.gd','test_lively_observation.gd','test_barbecue_invite_routes.gd','test_barbecue_ui_v4.gd','test_gait_v4.gd','test_campfire_v4_study.gd','test_fireside_tastes.gd','test_fireside_rng_v4.gd','test_fireside_chat.gd','test_fireside_glyphs.gd','test_fireside_motion.gd','test_fireside_controller.gd','test_fireside_receipts.gd','test_moon_barbecue_audit.gd','test_moon_map.gd','test_moon_viewing.gd','test_multiple_barbecues.gd','test_moon_controller.gd','test_moon_schedule.gd','test_moon_coast.gd','test_motion.gd','test_walk_v2.gd','test_motion_v4.gd','test_route_corner_v3.gd','test_fractional_chess_arrival.gd','test_camp_binding_v4.gd','test_camp_click_approach.gd','test_camp_remote_actions.gd','test_glm_legacy_direction.gd','test_glm_nondefault_motion.gd','test_character_directions.gd','test_think_motion.gd','test_run.gd','test_camp_motion.gd','test_intelligence_migration.gd','test_intelligence_activation.gd','test_hunger.gd','test_hunger_follow.gd','test_hunger_food.gd','test_hunger_tuning.gd','test_standard_opening.gd','test_standard_controller.gd','test_standard_polish.gd','test_intelligence_ui.gd','test_local_companion.gd','test_home_expansion.gd','test_workshop.gd','test_workshop_menu.gd','test_appearance_protection.gd','test_appearance_startup.gd','test_wardrobe.gd','test_ui_size.gd','test_spare_appearances.gd','test_outfit_rules.gd','test_outfit_editor.gd','test_character_assembler.gd','test_interior.gd','test_work_orders.gd','test_construction_projects.gd','test_farms.gd','test_farm_controller.gd','test_village.gd','test_recreation.gd','test_resident_director.gd']:
+for script in ['test_foundation.gd','test_slice.gd','test_editor.gd','test_shared_life.gd','test_barbecue_v2.gd','test_barbecue_v3.gd','test_barbecue_v3_resources.gd','test_barbecue_v3_ui.gd','test_barbecue_v4.gd','test_cat_companion.gd','test_lively_observation.gd','test_barbecue_invite_routes.gd','test_barbecue_ui_v4.gd','test_gait_v4.gd','test_campfire_v4_study.gd','test_fireside_tastes.gd','test_fireside_rng_v4.gd','test_fireside_chat.gd','test_fireside_glyphs.gd','test_barbecue_scenes.gd','test_fireside_motion.gd','test_fireside_controller.gd','test_fireside_receipts.gd','test_moon_barbecue_audit.gd','test_moon_map.gd','test_moon_viewing.gd','test_multiple_barbecues.gd','test_moon_controller.gd','test_moon_schedule.gd','test_moon_coast.gd','test_motion.gd','test_walk_v2.gd','test_motion_v4.gd','test_route_corner_v3.gd','test_fractional_chess_arrival.gd','test_camp_binding_v4.gd','test_camp_click_approach.gd','test_camp_remote_actions.gd','test_glm_legacy_direction.gd','test_glm_nondefault_motion.gd','test_character_directions.gd','test_think_motion.gd','test_run.gd','test_camp_motion.gd','test_intelligence_migration.gd','test_intelligence_activation.gd','test_hunger.gd','test_hunger_follow.gd','test_hunger_food.gd','test_hunger_tuning.gd','test_standard_opening.gd','test_standard_controller.gd','test_standard_polish.gd','test_intelligence_ui.gd','test_local_companion.gd','test_home_expansion.gd','test_workshop.gd','test_workshop_menu.gd','test_appearance_protection.gd','test_appearance_startup.gd','test_wardrobe.gd','test_ui_size.gd','test_spare_appearances.gd','test_outfit_rules.gd','test_outfit_editor.gd','test_character_assembler.gd','test_interior.gd','test_work_orders.gd','test_construction_projects.gd','test_farms.gd','test_farm_controller.gd','test_village.gd','test_recreation.gd','test_resident_director.gd']:
     with temporary_directory(prefix='youqi-test-') as directory:
         run([ENGINE,'--headless','--path','godot','--script','tests/'+script],dict(os.environ,HABITAT_DATA_DIR=directory))
 with temporary_directory(prefix='youqi-test-') as directory:
@@ -298,7 +324,7 @@ try:
     def needs_exclusive(c):
         measured_heavy = weights.get(identity(c), 0) >= 40 and Path(c[-1]).name != 'probe_one_line_execution.gd'
         return ('--import' in c or c[0] != ENGINE or 'tests/test_moon_map.gd' in c
-                or measured_heavy or Path(c[-1]).name in {'test_local_life_15d.gd','test_home_v3_simulation.gd','test_companion_return.gd','test_intention_catalog.gd'}
+                or measured_heavy or Path(c[-1]).name in {'test_local_life_15d.gd','test_home_v3_simulation.gd','test_companion_return.gd','test_intention_catalog.gd','test_camp_click_approach.gd'}
                 or Path(c[-1]).name.startswith('test_overnight_player_'))
     exclusive = [i for i,(c,_) in enumerate(pending) if results[i] is None and needs_exclusive(c)]
     imports = [i for i in exclusive if '--import' in pending[i][0]]

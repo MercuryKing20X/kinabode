@@ -6,7 +6,7 @@ func run()->void:
 	pool.factory=func(_id):return Stub.new()
 	var title:Node=load("res://scenes/title.tscn").instantiate();root.add_child(title);current_scene=title
 	await frames()
-	check(title.version_label.text=="v0.6" and preload("res://scripts/game_version.gd").VERSION=="0.6.0","single release version")
+	check(title.version_label.text=="v0.6.1" and preload("res://scripts/game_version.gd").VERSION=="0.6.1","single release version")
 	for dimensions in [Vector2i(960,640),Vector2i(1366,768),Vector2i(1920,1080),Vector2i(2560,1440),Vector2i(3840,2160),Vector2i(2560,1080),Vector2i(1440,900)]:
 		if OS.get_environment("HABITAT_UI_LARGE_ONLY")=="1" and dimensions not in [Vector2i(2560,1440),Vector2i(3840,2160)]:continue
 		root.content_scale_mode=Window.CONTENT_SCALE_MODE_VIEWPORT;root.content_scale_size=dimensions;root.size=dimensions

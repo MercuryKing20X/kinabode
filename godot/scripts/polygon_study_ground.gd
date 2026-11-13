@@ -9,12 +9,12 @@ var visual_plaza:=PackedVector2Array()
 func load_textures()->void:
 	if not textures.is_empty():return
 	for material in ["grass","sand","soil"]:
-		for i in range(3):textures[material+str(i)]=ImageTexture.create_from_image(Image.load_from_file("res://content/art-studies/textures/"+material+"-"+str(i)+".png"))
+		for i in range(3):textures[material+str(i)]=ImageTexture.create_from_image(preload("res://scripts/bundled_image.gd").read("res://content/art-studies/textures/"+material+"-"+str(i)+".png"))
 	for family in ["transition","coast"]:
-		for i in range(3):textures[family+str(i)]=ImageTexture.create_from_image(Image.load_from_file("res://content/art-studies/textures/"+family+"-"+str(i)+".png"))
-	textures.stone=ImageTexture.create_from_image(Image.load_from_file("res://content/art-studies/textures/stone.png"))
-	for i in range(3):textures["slab"+str(i)]=ImageTexture.create_from_image(Image.load_from_file("res://content/home-v3/textures/stone-"+str(i)+".png"))
-	textures.water=ImageTexture.create_from_image(Image.load_from_file("res://assets/island/water.png"))
+		for i in range(3):textures[family+str(i)]=ImageTexture.create_from_image(preload("res://scripts/bundled_image.gd").read("res://content/art-studies/textures/"+family+"-"+str(i)+".png"))
+	textures.stone=ImageTexture.create_from_image(preload("res://scripts/bundled_image.gd").read("res://content/art-studies/textures/stone.png"))
+	for i in range(3):textures["slab"+str(i)]=ImageTexture.create_from_image(preload("res://scripts/bundled_image.gd").read("res://content/home-v3/textures/stone-"+str(i)+".png"))
+	textures.water=ImageTexture.create_from_image(preload("res://scripts/bundled_image.gd").read("res://assets/island/water.png"))
 func surface(shape:PackedVector2Array,material:String,color:Color)->void:
 	var pixels:=PackedVector2Array();var uv:=PackedVector2Array();var size:Vector2=textures[material].get_size()
 	for point in shape:pixels.append((point*32).round());uv.append(point*32/size)

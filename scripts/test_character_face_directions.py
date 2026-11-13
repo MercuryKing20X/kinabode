@@ -1,3 +1,4 @@
+import os
 import ast
 import json
 import unittest
@@ -22,7 +23,7 @@ class Directions(unittest.TestCase):
     def test_glm_import_uses_reviewed_source_orientation(self):
         # Both keyed source sheets have two right-facing side rows. Their
         # left-facing output must explicitly mirror a reviewed right-facing row.
-        base=Path(__file__).resolve().parents[1]/'production/art/ai-girls-studies'
+        base=Path(os.environ.get('HABITAT_PRIVATE_TEST_FIXTURES',Path(__file__).resolve().parents[1]))/'production/art/ai-girls-studies'
         for filename, name in [('import_studies.py','SOURCE_ROWS'),('import_actions_v2.py','ACTION_SOURCE_ROWS')]:
             tree=ast.parse((base/filename).read_text())
             value=next(ast.literal_eval(node.value) for node in tree.body if isinstance(node,ast.Assign) and any(isinstance(target,ast.Name) and target.id==name for target in node.targets))

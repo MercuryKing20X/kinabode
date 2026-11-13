@@ -42,6 +42,7 @@ func refresh()->void:
 	banner=Label.new();banner.text=banner_text if Time.get_ticks_msec()<banner_until else "";banner.add_theme_color_override("font_color",Color("ffdfa0"));rows.add_child(banner)
 	if advanced:_api_controls()
 	var title:=Label.new();title.text=Text.text("memory.connections");rows.add_child(title)
+	var python_note:=Label.new();python_note.text=Text.text("release.optional_python");python_note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;rows.add_child(python_note)
 	for id in records:
 		var state:Dictionary=records[id];var row:=HBoxContainer.new();rows.add_child(row)
 		if not str(state.get("error","")).is_empty():state.state="error"

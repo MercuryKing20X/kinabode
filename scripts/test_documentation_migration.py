@@ -1,8 +1,9 @@
+import os
 # -*- coding: utf-8 -*-
 """Check lossless rule relocation, scope and player/developer documentation boundaries."""
 import hashlib,json,re,unittest
 from pathlib import Path
-ROOT=Path(__file__).resolve().parents[1]
+ROOT=Path(os.environ.get("HABITAT_PRIVATE_TEST_FIXTURES", Path(__file__).resolve().parents[1]))
 OUT=ROOT/'production/evidence/2026-10-27-polish'
 
 class DocumentationMigration(unittest.TestCase):

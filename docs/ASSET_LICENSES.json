@@ -13234,10 +13234,10 @@
   },
   {
     "file": "godot/content/run-animations/orange-sunflower-girl.png",
-    "sha256": "4ff6d8314ddcbb09b742dd91deffc549da7bef016650d85367e145dac50f00ef",
+    "sha256": "549310f99dc373de3780b499031ada28f3749c6fb4939db48915918a08b76996",
     "group": "godot/content/run-animations",
     "author": "Kinabode contributors",
-    "source": "人物独立动作/原帧派生；以manifest status/method为准",
+    "source": "人物独立动作/原帧派生；以manifest status/method为准；v0.6.1手工像素修图：侧跑首帧杂线清除、身体抬高6像素，原靴脚与脚锚保留，未生图",
     "license": "MIT（仅本项目新增部分；用户2026-11-12授权）",
     "attribution": "建议保留来源",
     "status": "known_project_source",

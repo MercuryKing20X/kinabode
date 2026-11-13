@@ -433,7 +433,7 @@ func detailed_texture(species:String,color_id:String,rules:Dictionary,frame:int,
 	if textures.has(key):return textures[key]
 	var spec:Dictionary=art.standard_v3.species[species]
 	var filename:String=spec.atlas if frame>=0 else spec.get(purpose,spec.card)
-	var source:Image=Image.load_from_file("res://content/fish-v3/"+filename)
+	var source:Image=preload("res://scripts/bundled_image.gd").read("res://content/fish-v3/"+filename)
 	if frame>=0:source=source.get_region(Rect2i(posmod(frame,4)*128,64 if purpose=="pen" else 0,128,64))
 	var rect:Array=spec.get("rect",[0,0,128,64])
 	source=source.get_region(Rect2i(rect[0],rect[1],rect[2],rect[3]))

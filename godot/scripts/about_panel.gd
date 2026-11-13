@@ -32,7 +32,9 @@ func _layout()->void:
 	var font_size:=mini(int(18*factor),int((bounds.x-100)/40))
 	body.add_theme_font_size_override("normal_font_size",int(18*factor));body.add_theme_font_size_override("bold_font_size",int(18*factor));close_button.add_theme_font_size_override("font_size",font_size)
 func document_path(english:bool)->String:
-	return ProjectSettings.globalize_path("res://").path_join("../docs/about"+(".en" if english else "")+".md").simplify_path()
+	var name:="about"+(".en" if english else "")+".md"
+	if not OS.has_feature("editor"):return "res://content/about/"+name
+	return ProjectSettings.globalize_path("res://").path_join("../docs/"+name).simplify_path()
 func show_document()->void:
 	if body==null:return
 	var english:=Text.revision().begins_with("en")
@@ -55,7 +57,7 @@ func show_document()->void:
 				var image_path:=path.get_base_dir().path_join(match.get_string(1)).simplify_path()
 				# Optional local images only, inside the about document directory.
 				if image_path.begins_with(path.get_base_dir()+"/") and FileAccess.file_exists(image_path):
-					var image:=Image.load_from_file(image_path)
+					var image:=preload("res://scripts/bundled_image.gd").read(image_path)
 					if image!=null:
 						var width:=mini(image.get_width(),int(panel.size.x-64));body.add_image(ImageTexture.create_from_image(image),width,int(float(width)*image.get_height()/image.get_width()));body.append_text("\n")
 			continue

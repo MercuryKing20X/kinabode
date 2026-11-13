@@ -4514,7 +4514,79 @@
       "source_file": "run-source.png",
       "source_sha256": "dd5562c08c04caf610663ed021574aafba03865d1ccedaf5ddeac81e1aec5d7d",
       "review_file": "run-review.json",
-      "atlas_sha256": "4ff6d8314ddcbb09b742dd91deffc549da7bef016650d85367e145dac50f00ef"
+      "atlas_sha256": "549310f99dc373de3780b499031ada28f3749c6fb4939db48915918a08b76996",
+      "retouch": {
+        "version": "0.6.1",
+        "base_atlas_sha256": "4ff6d8314ddcbb09b742dd91deffc549da7bef016650d85367e145dac50f00ef",
+        "method": "Removed the dangling under-skirt dark fragment in side frame 0; raised the existing body 6 pixels with a nearest-pixel skirt-band extension. Original boot rows y>=100, support/ground anchors, pose order and palette remain unchanged. No image generation.",
+        "body_raise_pixels": 6,
+        "fixed_boot_rows": [
+          100,
+          127
+        ],
+        "skirt_source_rows": [
+          86,
+          99
+        ],
+        "skirt_output_rows": [
+          80,
+          99
+        ],
+        "removed_fragments": {
+          "1": {
+            "109": [
+              35,
+              38
+            ],
+            "110": [
+              36,
+              38
+            ],
+            "111": [
+              36,
+              39
+            ],
+            "112": [
+              37,
+              39
+            ],
+            "113": [
+              38,
+              40
+            ],
+            "114": [
+              39,
+              40
+            ]
+          },
+          "2": {
+            "108": [
+              58,
+              61
+            ],
+            "109": [
+              57,
+              60
+            ],
+            "110": [
+              56,
+              59
+            ],
+            "111": [
+              56,
+              59
+            ],
+            "112": [
+              56,
+              58
+            ],
+            "113": [
+              56,
+              58
+            ]
+          }
+        }
+      }
     }
   }
 }

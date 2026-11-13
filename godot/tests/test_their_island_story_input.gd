@@ -21,7 +21,8 @@ func run()->void:
 		w.director.routines[id].rng.seed=1027+seed_index;seed_index+=1
 	# Appearance assignments are the user's explicitly permitted temporary fixture.
 	for pair in [["codex","ai-gpt"],["companion-2","ai-deepseek"],["npc.mira","ai-claude"],["npc.nora","ai-glm"]]:w.actors[pair[0]].appearance_id=pair[1]
-	game=load("res://scenes/main_v3.tscn").instantiate();game.world=w;root.add_child(game)
+	game=load("res://scenes/main_v3.tscn").instantiate();game.world=w;game.dialogue_adapter_factory=func(_id,_scope):return preload("res://tests/test_intent_input.gd").IntentFake.new()
+	root.add_child(game)
 	game.save_enabled=false;game.set_process(false);game.view.set_process(false);game.island_hud.set_process(false)
 	ui=UI.new();ui.game=game;ui.w=w
 	await process_frame;await process_frame;game.chat.hide()
