@@ -6,8 +6,8 @@ static func texture(style:String,night:bool)->Texture2D:
 	var key:String=style+("-night" if night else "-day")
 	if not textures.has(key):
 		var path:String="res://assets/resort-v2/"+key+".png"
-		if not FileAccess.file_exists(path):return null
-		textures[key]=ImageTexture.create_from_image(Image.load_from_file(path))
+		if not preload("res://scripts/bundled_image.gd").exists(path):return null
+		textures[key]=ImageTexture.create_from_image(preload("res://scripts/bundled_image.gd").read(path))
 	return textures[key]
 static func rect(v:Node,at:Vector2,size:Vector2,color:Color)->void:v.draw_rect(Rect2(v.screen(at-size/2),size*32*v.zoom),color)
 static func ground(v:Node)->void:

@@ -89,6 +89,6 @@
 ## 联系与参与
 
 - **抖音**：MercuryFantasy
-- **GitHub**：（公开后填仓库地址）
+- **GitHub**：https://github.com/shuixingking/kinabode
 - 欢迎提问题、提建议，也欢迎直接来改代码，详见 `CONTRIBUTING.md`。
                                                                            2026年11月    水星

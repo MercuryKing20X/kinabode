@@ -41,7 +41,7 @@ func _draw()->void:
 func _ready()->void:
 	super._ready()
 	props.build(JSON.parse_string(FileAccess.get_file_as_string("res://content/island-v3-style.json")))
-	boardwalk=ImageTexture.create_from_image(Image.load_from_file("res://assets/home-v3/boardwalk.png"))
+	boardwalk=ImageTexture.create_from_image(preload("res://scripts/bundled_image.gd").read("res://assets/home-v3/boardwalk.png"))
 	# Reuse the existing authored stone/log ring, excluding its flame layers.
 	var b=props.base
 	b.image=Image.create(96,72,false,Image.FORMAT_RGBA8);b.image.fill(Color.TRANSPARENT)

@@ -15,7 +15,7 @@ static func texture(site:Dictionary,library:RefCounted,night:bool=false)->Textur
 	if site.get("house_appearance","personal")!="personal_legacy":
 		var names:Array=["human","white","blue","orange","black"]
 		var path:String="res://assets/houses-redraw/"+str(names[OWNERS.find(id)])+("-night.png" if night else "-day.png")
-		if not cache.has(path):cache[path]=ImageTexture.create_from_image(Image.load_from_file(path))
+		if not cache.has(path):cache[path]=ImageTexture.create_from_image(preload("res://scripts/bundled_image.gd").read(path))
 		return cache[path]
 	var key:String=id+str(night)
 	if cache.has(key):return cache[key]

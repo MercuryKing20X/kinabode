@@ -8,10 +8,10 @@ var hands:Dictionary={}
 var textures:Dictionary={}
 func ensure_assets()->void:
 	if not textures.is_empty():return
-	textures["bridge"]=ImageTexture.create_from_image(Image.load_from_file("res://assets/home-v3/boardwalk.png"))
+	textures["bridge"]=ImageTexture.create_from_image(preload("res://scripts/bundled_image.gd").read("res://assets/home-v3/boardwalk.png"))
 	for name in ["dark-grass","dark-soil","dark-sand","dark-water","tree","mushroom-dim","mushroom-bright","fireflies","fire-off","fire-0","fire-1","fire-2","beacon-off","beacon-0","beacon-1","beacon-2","dock-h","dock-v","boat","torch-planted"]:
 		var path:String="res://assets/dark/"+name+".png"
-		if FileAccess.file_exists(path):textures[name]=ImageTexture.create_from_image(Image.load_from_file(path))
+		if preload("res://scripts/bundled_image.gd").exists(path):textures[name]=ImageTexture.create_from_image(preload("res://scripts/bundled_image.gd").read(path))
 func asset(v:Node,name:String,at:Vector2,scale:float=1.0,tint:Color=Color.WHITE,canvas:Node2D=null)->void:
 	if not textures.has(name):return
 	var texture:Texture2D=textures[name];var size:Vector2=texture.get_size()*scale*v.zoom
@@ -22,9 +22,9 @@ func setup(v:Node)->void:
 	ensure_assets()
 	if is_instance_valid(overlay):return
 	overlay=preload("res://scripts/dark_overlay.gd").new();v.add_child(overlay);overlay.configure(v,self)
-	if FileAccess.file_exists("res://assets/dark/torch.png"):torch_sheet=ImageTexture.create_from_image(Image.load_from_file("res://assets/dark/torch.png"))
-	if FileAccess.file_exists("res://assets/dark/torch-warning.png"):torch_warning_sheet=ImageTexture.create_from_image(Image.load_from_file("res://assets/dark/torch-warning.png"))
-	if FileAccess.file_exists("res://content/torch-hands.json"):hands=JSON.parse_string(FileAccess.get_file_as_string("res://content/torch-hands.json"))
+	if preload("res://scripts/bundled_image.gd").exists("res://assets/dark/torch.png"):torch_sheet=ImageTexture.create_from_image(preload("res://scripts/bundled_image.gd").read("res://assets/dark/torch.png"))
+	if preload("res://scripts/bundled_image.gd").exists("res://assets/dark/torch-warning.png"):torch_warning_sheet=ImageTexture.create_from_image(preload("res://scripts/bundled_image.gd").read("res://assets/dark/torch-warning.png"))
+	if preload("res://scripts/bundled_image.gd").exists("res://content/torch-hands.json"):hands=JSON.parse_string(FileAccess.get_file_as_string("res://content/torch-hands.json"))
 func update(v:Node)->void:
 	if not is_instance_valid(overlay):setup(v)
 	overlay.update()

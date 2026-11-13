@@ -89,7 +89,7 @@ Some optional appearances are based on fan designs shared online. This project i
 ## Contact and contribute
 
 - **Douyin:** MercuryFantasy
-- **GitHub:** (repository address to be added after the public release)
+- **GitHub:** https://github.com/shuixingking/kinabode
 - Questions, ideas, and code contributions are welcome. See `CONTRIBUTING.md`.
 
 November 2026 · Mercury

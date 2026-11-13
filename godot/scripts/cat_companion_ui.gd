@@ -70,7 +70,7 @@ static func hits(view:Node,mouse:Vector2)->bool:
 	var rect:=Rect2(view.screen(cat.position)-Vector2(24,44)*view.zoom,Vector2(48,48)*view.zoom)
 	if not rect.has_point(mouse):return false
 	var key:String=cat.pose+"_"+cat.facing+"_"+str(int(cat.clock*3)%2)
-	if not hit_images.has(key):hit_images[key]=Image.load_from_file("res://assets/cat/"+key+".png")
+	if not hit_images.has(key):hit_images[key]=preload("res://scripts/bundled_image.gd").read("res://assets/cat/"+key+".png")
 	var pixels:Image=hit_images[key]
 	if pixels.is_empty():return false
 	var at:Vector2i=Vector2i((mouse-rect.position)/(2*view.zoom))

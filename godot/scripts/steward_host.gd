@@ -624,7 +624,7 @@ func show_summary(day:int)->void:
 		photos.append(entry.photo_id)
 		var path:String=game.memory_books.directory.path_join(entry.photo_id)
 		if FileAccess.file_exists(path):
-			var image:=Image.load_from_file(path)
+			var image:=preload("res://scripts/bundled_image.gd").read(path)
 			if not image.is_empty():
 				var picture:=TextureRect.new();picture.texture=ImageTexture.create_from_image(image);picture.custom_minimum_size=Vector2(130,82);picture.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;picture.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED;pictures.add_child(picture)
 		if photos.size()>=3:break

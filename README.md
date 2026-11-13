@@ -1,4 +1,4 @@
-# 有栖 / Kinabode · v0.6.0
+# 有栖 / Kinabode · v0.6.1
 
 一个人带着四个饭桶在海岛上生活。种菜、钓鱼、烧烤、下棋、玩小游戏，慢慢把岛变成家。
 
@@ -13,9 +13,9 @@ A quiet island home for you and four hungry companions. Grow crops, fish, share 
 
 ## 运行 / Run
 
-安装 **Godot 4.7.2**，导入并运行 `godot/project.godot`。首次打开会导入资源。点击编辑器右上角运行项目（F6 是运行当前场景，F5 是运行整个项目）；项目从 `scenes/title.tscn` 开始，岛上场景为 `scenes/main_v3.tscn`。这是源码仓库，没有打包应用。
+安装 **Godot 4.7.2**，导入并运行 `godot/project.godot`。首次打开会导入资源。点击编辑器右上角运行项目（F6 是运行当前场景，F5 是运行整个项目）；项目从 `scenes/title.tscn` 开始，岛上场景为 `scenes/main_v3.tscn`。下载游戏包可直接打开；源码开发需安装 Godot。
 
-Install **Godot 4.7.2**, import `godot/project.godot` and run the project. The first launch imports its resources. Use Run Project (F5), starting at `scenes/title.tscn`; the island scene is `scenes/main_v3.tscn`. This repository ships source, not an application build.
+Install **Godot 4.7.2**, import `godot/project.godot` and run the project. The first launch imports its resources. Use Run Project (F5), starting at `scenes/title.tscn`; the island scene is `scenes/main_v3.tscn`. Download a release package to play directly; Godot is needed only for source development.
 
 **不接 AI 也能完整游玩。** 新游戏默认正式开局；人物、物资和路线遵守同一套真实规则。开始页“关于有栖”可阅读完整玩法与作者的话，也可直接阅读[关于有栖](docs/about.md)。
 
@@ -47,4 +47,4 @@ Project-authored code, content and new artwork are under [MIT](LICENSE). Third-p
 
 Eight appearance designs derive from Chinese community fan art. This project is a tribute and is unaffiliated with the relevant companies. Original artists may contact us with concerns; we will remove the material immediately. Artist identities and original redistribution permissions are not fully documented; see CREDITS.
 
-联系方式 / Contact: **抖音 / Douyin: MercuryFantasy**。仓库地址公开后填写。 / Repository link will be added after publication.
+联系方式 / Contact: **抖音 / Douyin: MercuryFantasy**。[GitHub](https://github.com/shuixingking/kinabode)。
