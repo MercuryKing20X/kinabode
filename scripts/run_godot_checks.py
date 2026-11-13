@@ -324,7 +324,7 @@ try:
     def needs_exclusive(c):
         measured_heavy = weights.get(identity(c), 0) >= 40 and Path(c[-1]).name != 'probe_one_line_execution.gd'
         return ('--import' in c or c[0] != ENGINE or 'tests/test_moon_map.gd' in c
-                or measured_heavy or Path(c[-1]).name in {'test_local_life_15d.gd','test_home_v3_simulation.gd','test_companion_return.gd','test_intention_catalog.gd'}
+                or measured_heavy or Path(c[-1]).name in {'test_local_life_15d.gd','test_home_v3_simulation.gd','test_companion_return.gd','test_intention_catalog.gd','test_camp_click_approach.gd'}
                 or Path(c[-1]).name.startswith('test_overnight_player_'))
     exclusive = [i for i,(c,_) in enumerate(pending) if results[i] is None and needs_exclusive(c)]
     imports = [i for i in exclusive if '--import' in pending[i][0]]

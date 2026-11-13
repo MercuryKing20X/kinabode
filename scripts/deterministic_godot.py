@@ -10,7 +10,7 @@ import re
 CLOCK = 'preload("res://tests/deterministic_environment.gd")'
 
 def materialize(source: Path, destination: Path) -> dict:
-    counts = {"clock_reads": 0, "crypto_reads": 0, "rng_initializers": 0, "rng_constructors": 0, "global_rng_reads": 0, "calendar_reads": 0, "protocol_clock_reads_retained": 0}
+    counts = {"clock_reads": 0, "crypto_reads": 0, "rng_initializers": 0, "rng_constructors": 0, "global_rng_reads": 0, "calendar_reads": 0, "protocol_clock_reads_retained": 0, "archive_clock_reads_retained": 0, "archive_calendar_reads_retained": 0}
     for path in sorted([*(source / 'scripts').rglob('*.gd'), *(source / 'tests').rglob('*.gd')]):
         relative = path.relative_to(source)
         if relative.as_posix() == 'tests/deterministic_environment.gd':
@@ -32,10 +32,18 @@ def materialize(source: Path, destination: Path) -> dict:
             'scripts/read_endpoint.gd', 'scripts/companion_link.gd',
             'scripts/conversation_link.gd',
         }
+        # Backup order/deduplication is wall-clock filesystem behavior, like
+        # transport freshness. Keep archive creation/calendar reads coherent
+        # with the real archive fixture, without changing simulation time.
+        archive_wall_clock = relative.as_posix() in {
+            'scripts/save_backup.gd', 'tests/test_save_backup.gd',
+        }
         lines = []
         for line in value.splitlines(keepends=True):
             count = line.count('Time.get_unix_time_from_system()')
-            if transport or '"expires"' in line:
+            if archive_wall_clock:
+                counts['archive_clock_reads_retained'] += count
+            elif transport or '"expires"' in line:
                 counts['protocol_clock_reads_retained'] += count
             else:
                 line = line.replace('Time.get_unix_time_from_system()', CLOCK + '.wall_time()')
@@ -44,8 +52,11 @@ def materialize(source: Path, destination: Path) -> dict:
         value = ''.join(lines)
         for api, method in [('get_date_string_from_system', 'system_date'), ('get_datetime_string_from_system', 'system_datetime'), ('get_time_zone_from_system', 'time_zone')]:
             count = value.count('Time.' + api + '(')
-            value = value.replace('Time.' + api + '(', CLOCK + '.' + method + '(')
-            counts['calendar_reads'] += count
+            if archive_wall_clock:
+                counts['archive_calendar_reads_retained'] += count
+            else:
+                value = value.replace('Time.' + api + '(', CLOCK + '.' + method + '(')
+                counts['calendar_reads'] += count
         value, count = re.subn(r'Crypto\.new\(\)\.generate_random_bytes\((\d+)\)',
             lambda m: CLOCK + '.random_bytes(' + m[1] + ',"' + relative.as_posix() + '")', value)
         counts['crypto_reads'] += count

@@ -9,7 +9,7 @@ A quiet island home for you and four hungry companions. Grow crops, fish, share 
 ![托管与岛主 / Steward and island host](docs/images/steward.png)
 ![关于有栖 / About Kinabode](docs/images/about.png)
 
-开始页、关于与正式开局为本次导出验证的真实 Godot viewport 截图；托管图来自 v0.6 开发验证。 / Start, About and standard-opening captures are from this release verification; the stewardship capture is from v0.6 development.
+上图开始页、关于与正式开局来自 v0.6.0 导出验证；托管图来自 v0.6 开发验证。v0.6.1 游戏包与验证结果见 [CHANGELOG](CHANGELOG.md)。 / These start, About and standard-opening captures are from v0.6.0 verification; the stewardship capture is from v0.6 development. See [CHANGELOG](CHANGELOG.md) for v0.6.1 packages and validation.
 
 ## 运行 / Run
 

@@ -26,15 +26,94 @@ func check(ok:bool, label:String)->void:
 	check_rows.append({"passed":ok,"label":label})
 	if not ok:failures=true;push_error(label)
 func _initialize()->void:call_deferred("run")
+func _fire_diag_fields(value:Dictionary,keys:Array)->Dictionary:
+	var result:Dictionary={}
+	for key in keys:
+		if not value.has(key):continue
+		var v:Variant=value[key]
+		if v is Vector2:result[key]=[v.x,v.y]
+		elif typeof(v) in [TYPE_NIL,TYPE_BOOL,TYPE_INT,TYPE_FLOAT,TYPE_STRING]:result[key]=v
+	return result
+func _fire_diag_visible(node:Node)->bool:
+	return is_instance_valid(node) and not node.is_queued_for_deletion() and (node is CanvasItem or node is Window) and bool(node.get("visible"))
+func _fire_diag_snapshot(pos:Vector2,station_id:String)->Dictionary:
+	var result:Dictionary={"point":[pos.x,pos.y],"station_id":station_id,"game_live":is_instance_valid(game),"world_live":is_instance_valid(w)}
+	if not is_instance_valid(game) or game.is_queued_for_deletion() or not is_instance_valid(w):return result
+	var view:Node=game.get("view")
+	if not is_instance_valid(view) or view.is_queued_for_deletion():return result
+	result["world_id"]=w.world_id;result["view_region"]=view.region_id;result["world_hit"]=view.hit(pos)
+	var human:Dictionary=w.actors.get("human",{})
+	result["human"]=_fire_diag_fields(human,["id","region_id","activity"])
+	if human.get("position") is Array:result.human["position"]=human.position.duplicate()
+	result["job"]=_fire_diag_fields(w.work.jobs.get("human",{}),["id","intent","source","target_id","phase","step","status","station_id","shared_activity_id","region_id"])
+	var points:Array=[]
+	for at in w._routes.get("human",[]):
+		if at is Vector2:points.append([at.x,at.y])
+	result["route"]={"size":points.size(),"first":points[0] if not points.is_empty() else null,"last":points[-1] if not points.is_empty() else null,"first_points":points.slice(0,32)}
+	result["pending_camp"]=_fire_diag_fields(game.pending_camp,["station_id","action","target"])
+	result["pending_fish"]=[]
+	if is_instance_valid(w.fishing):
+		for fish in w.fishing.fish.values():
+			if fish.get("owner_id")=="human" and fish.get("location")=="pending":result.pending_fish.append(_fire_diag_fields(fish,["id","owner_id","location","species_id","size_id","color_id","source_id"]))
+	result["speech_hits"]=[]
+	var layout:Array=view.speech_layout();result["speech_layout_count"]=layout.size()
+	for entry in layout:
+		var box:Rect2=entry.box
+		if not box.has_point(pos):continue
+		var actor_id:String=str(entry.get("actor_id",""));var context:String=str(view.speech_by_actor.get(actor_id,{}).get("context",""))
+		result.speech_hits.append({"actor_id":actor_id,"context":context,"need":context.begins_with("need_"),"box":[box.position.x,box.position.y,box.size.x,box.size.y]})
+	var status_node:Node=game.get("status")
+	if is_instance_valid(status_node) and not status_node.is_queued_for_deletion():result["status"]=str(status_node.get("text"))
+	result["chat_visible"]=_fire_diag_visible(game.get("chat"))
+	var hud:Node=game.get("island_hud")
+	if is_instance_valid(hud) and not hud.is_queued_for_deletion():result["resident_card_visible"]=_fire_diag_visible(hud.get("resident_card"))
+	result["camp_panels"]=[];result["visible_windows"]=[]
+	for child in game.get_children():
+		if not is_instance_valid(child) or child.is_queued_for_deletion():continue
+		if child is Window and child.visible:result.visible_windows.append({"name":str(child.name),"title":child.title})
+		var script:Script=child.get_script()
+		if script==null or script.resource_path!="res://scripts/fireside_panel.gd":continue
+		var bound:RefCounted=child.get("life");var bound_station:String=""
+		if is_instance_valid(bound):bound_station=str(bound.station.get("id",""))
+		result.camp_panels.append({"name":str(child.name),"visible":_fire_diag_visible(child),"station_id":bound_station})
+	if w.barbecues.has(station_id) and not human.is_empty():
+		var life:RefCounted=w.barbecues[station_id]
+		result["human_fire_distance"]=w.point(human).distance_to(w.point(life.station)) if human.get("region_id")==life.station.region_id else null
+	return result
 func mouse(pos:Vector2,button:int=MOUSE_BUTTON_LEFT)->void:
+	# Observe only fire-body entries; the existing input sequence is unchanged.
+	var station_id:String="";var signal_owner:WeakRef
+	var observed:Dictionary={"clicked":0,"need_clicked":0,"events":[]}
+	var clicked_counter:Callable;var need_counter:Callable
+	if is_instance_valid(game) and not game.is_queued_for_deletion() and is_instance_valid(w):
+		var candidate:Node=game.get("view")
+		if is_instance_valid(candidate) and not candidate.is_queued_for_deletion():
+			var hit:String=candidate.hit(pos)
+			if w.barbecues.has(hit):
+				station_id=hit;signal_owner=weakref(candidate)
+				clicked_counter=func(object_id:String,at:Vector2):observed.clicked+=1;observed.events.append({"kind":"clicked","id":object_id,"position":[at.x,at.y]})
+				need_counter=func(actor_id:String,kind:String):observed.need_clicked+=1;observed.events.append({"kind":"need_clicked","actor_id":actor_id,"need":kind})
+				candidate.connect("clicked",clicked_counter);candidate.connect("need_clicked",need_counter)
+				print("FIRE_CLICK_OBSERVE ",JSON.stringify({"phase":"before_motion","state":_fire_diag_snapshot(pos,station_id),"signals":observed}))
 	var motion:=InputEventMouseMotion.new();motion.position=pos;motion.global_position=pos;root.push_input(motion,true)
 	await process_frame
 	var hovered:Control=root.gui_get_hovered_control()
-	print("WORLD_CLICK_DIAGNOSTIC ",{"point":pos,"world_hit":game.view.hit(pos) if game!=null else "","hovered":str(hovered.get_path()) if hovered!=null else "none","upper":game.island_hud.upper_status.get_global_rect() if game!=null else Rect2()})
+	var live_game:bool=is_instance_valid(game) and not game.is_queued_for_deletion()
+	var diagnostic_view:Node=game.get("view") if live_game else null
+	var diagnostic_hud:Node=game.get("island_hud") if live_game else null
+	var diagnostic_upper:Control=diagnostic_hud.get("upper_status") if is_instance_valid(diagnostic_hud) and not diagnostic_hud.is_queued_for_deletion() else null
+	print("WORLD_CLICK_DIAGNOSTIC ",{"point":pos,"world_hit":diagnostic_view.hit(pos) if is_instance_valid(diagnostic_view) and not diagnostic_view.is_queued_for_deletion() else "unavailable","hovered":str(hovered.get_path()) if is_instance_valid(hovered) else "none","upper":diagnostic_upper.get_global_rect() if is_instance_valid(diagnostic_upper) and not diagnostic_upper.is_queued_for_deletion() else Rect2()})
+	if not station_id.is_empty():print("FIRE_CLICK_OBSERVE ",JSON.stringify({"phase":"before_press","state":_fire_diag_snapshot(pos,station_id),"signals":observed}))
 	for pressed in [true,false]:
 		var event:=InputEventMouseButton.new();event.button_index=button;event.pressed=pressed
 		event.button_mask=MOUSE_BUTTON_MASK_LEFT if pressed else 0;event.position=pos;event.global_position=pos
 		root.push_input(event,true);await process_frame
+		if not station_id.is_empty():print("FIRE_CLICK_OBSERVE ",JSON.stringify({"phase":"after_press" if pressed else "after_release","state":_fire_diag_snapshot(pos,station_id),"signals":observed}))
+	if signal_owner!=null:
+		var emitter:Node=signal_owner.get_ref()
+		if is_instance_valid(emitter) and not emitter.is_queued_for_deletion():
+			if emitter.is_connected("clicked",clicked_counter):emitter.disconnect("clicked",clicked_counter)
+			if emitter.is_connected("need_clicked",need_counter):emitter.disconnect("need_clicked",need_counter)
 func click_button(button:Button)->bool:
 	if button==null:return false
 	await WardrobeUI.reveal(self,button)
