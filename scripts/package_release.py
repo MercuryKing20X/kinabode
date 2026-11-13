@@ -58,6 +58,14 @@ for preset,slug,exe in [('Windows','windows','Kinabode.exe'),('macOS','macos','K
   if len(apps)!=1:raise RuntimeError('Expected one macOS app')
   app=apps[0]
   if app.name!='Kinabode.app':app.rename(folder/'Kinabode.app')
+  # Official Rust dependency panic strings include the CI runner's home path.
+  # Replace only that exact prefix with an equal-length neutral build path;
+  # offsets and executable instructions stay unchanged. Never edit templates.
+  for binary in (folder/'Kinabode.app/Contents/MacOS').iterdir():
+   data=binary.read_bytes();old=b'/' + b'Users/runner/';new=b'/build/runner/'
+   assert len(old)==len(new)
+   count=data.count(old);binary.write_bytes(data.replace(old,new));binary.chmod(0o755)
+   print('Neutralized official CI diagnostic path prefixes:',count,flush=True)
   subprocess.run(['codesign','--force','--deep','--sign','-',str(folder/'Kinabode.app')],check=True)
  elif preset=='Linux':(folder/exe).chmod(0o755)
  for name in ['LICENSE','CREDITS.md']:shutil.copy2(ROOT/name,folder/name)
