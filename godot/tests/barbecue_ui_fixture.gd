@@ -115,6 +115,9 @@ static func click(tree:SceneTree,button:BaseButton)->bool:
 	# between button-down and button-up. No direct signal or callback dispatch.
 	for down in [true,false]:
 		var event:=InputEventMouseButton.new();event.button_index=MOUSE_BUTTON_LEFT;event.pressed=down;event.button_mask=MOUSE_BUTTON_MASK_LEFT if down else 0;event.position=at;event.global_position=at;viewport.push_input(event,true)
+		# MenuButton opens on down. Let its existing deferred popup placement
+		# run before release, so the release stays over the opener.
+		if down and button is MenuButton:await tree.process_frame
 	await tree.process_frame
 	if is_instance_valid(button):button.pressed.disconnect(received)
 	if count.pressed!=1:
