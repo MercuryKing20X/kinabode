@@ -4,8 +4,10 @@ func step(seconds:float)->void:
 	for tick in range(ceili(seconds/.1)):game._process(.1);game.view._process(.1)
 	await frames(2)
 func mouse(at:Vector2)->void:
+	if DisplayServer.get_name()!="headless":root.warp_mouse(at)
+	var motion:=InputEventMouseMotion.new();motion.position=at;motion.global_position=at;root.push_input(motion,true);await process_frame
 	for down in [true,false]:
-		var event:=InputEventMouseButton.new();event.button_index=MOUSE_BUTTON_LEFT;event.pressed=down;event.button_mask=MOUSE_BUTTON_MASK_LEFT if down else 0;event.position=at;event.global_position=at;root.push_input(event,true)
+		var event:=InputEventMouseButton.new();event.button_index=MOUSE_BUTTON_LEFT;event.pressed=down;event.button_mask=MOUSE_BUTTON_MASK_LEFT if down else 0;event.position=at;event.global_position=at;root.push_input(event,true);await process_frame
 	await frames(2)
 func matching(node:Node,key:String)->Array:
 	var label:String=preload("res://scripts/localization.gd").text(key)
@@ -82,7 +84,8 @@ func fish_diagnostics(entries:Array)->void:
 func run()->void:
 	assert(OS.get_environment("HABITAT_DATA_DIR").contains("youqi-"))
 	OS.set_environment("HABITAT_OPENING","showcase");root.size=Vector2i(1280,800);root.content_scale_size=Vector2i.ZERO
-	game=load("res://scenes/main_v3.tscn").instantiate();root.add_child(game);game.save_enabled=false;game.set_process(false);game.view.set_process(false);await frames(3)
+	game=load("res://scenes/main_v3.tscn").instantiate();game.dialogue_adapter_factory=func(_id,_scope):return preload("res://tests/test_intent_input.gd").IntentFake.new()
+	root.add_child(game);game.save_enabled=false;game.set_process(false);game.view.set_process(false);await frames(3)
 	var w:RefCounted=game.world
 	check(w.fishing.rules.species.size()==23 and w.journal.config.species.size()==23,"23 species in rules and journal")
 	check(await UI.click(self,game.actions_button),"mouse actions to journal")

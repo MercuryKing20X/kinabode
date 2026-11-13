@@ -25,3 +25,9 @@ Do not tune personality, relationships, hunger, schedules, weather, budgets or m
 不许为过测试改性格、关系、饥饿、日程、天气、预算或速度，不许放宽/删除断言。人物动作要真画，不许整图旋转冒充。renderer 不控制路线/物资。不要提交凭据、私人接口、个人路径、存档与模型会话。
 
 By contributing, you confirm you can submit the material under the project's license. Preserve all third-party notices, and identify generated or adapted assets with reproducible source information.
+
+## Reproducible test fixtures / 确定性夹具
+
+The isolated runners use seed `1027`, a fixed noon epoch and timezone, deterministic Crypto bytes and RNG initialization in a temporary source overlay. Shipped sources retain normal randomness. Monotonic timeouts and simulation advance remain real. Set `HABITAT_DETERMINISTIC_TESTS=0` for a random-world comparison, or `HABITAT_TEST_SEED` for another reproducible seed. Each case has separate game data and `user://`; native mouse checks share an exclusive window lock.
+
+隔离测试默认固定种子、墙钟、时区与随机初始化，仅覆盖临时工程的熵来源，不改正式游戏或任何底线断言。`HABITAT_DETERMINISTIC_TESTS=0` 可作随机对照，`HABITAT_TEST_SEED` 可指定其它种子。保留真实模拟推进与超时；每项独立数据和 user 目录，可视鼠标检查互斥。保留的旧历史审计可用 `HABITAT_PRIVATE_TEST_FIXTURES` 指定外部只读夹具根目录，私有报告和提示词不随公开仓库发布。

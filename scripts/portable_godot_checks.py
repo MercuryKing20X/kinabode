@@ -12,6 +12,7 @@ import subprocess
 import tempfile
 import uuid
 from godot_runtime import godot_executable
+from deterministic_godot import materialize
 
 ROOT = Path(__file__).resolve().parents[1]
 p = argparse.ArgumentParser(description=__doc__)
@@ -27,6 +28,9 @@ with tempfile.TemporaryDirectory(prefix='youqi-test-portable-') as directory:
     runtime = Path(directory)
     project = runtime / 'godot'
     shutil.copytree(ROOT / 'godot', project, ignore=shutil.ignore_patterns('.godot', '*.tmp'))
+    deterministic = os.environ.get('HABITAT_DETERMINISTIC_TESTS', '1')
+    if deterministic == '1':
+        print('TEST_ENVIRONMENT ' + str(materialize(ROOT / 'godot', project)), flush=True)
     # About documents are outside res:// by design.
     (runtime / 'docs').mkdir()
     for source in (ROOT / 'docs').glob('about*.md'):
@@ -38,11 +42,11 @@ with tempfile.TemporaryDirectory(prefix='youqi-test-portable-') as directory:
         (project / 'project.godot').write_text(config, encoding='utf-8')
         data = runtime / name
         data.mkdir()
-        env = dict(os.environ, HABITAT_DATA_DIR=str(data), HABITAT_TEST_SUITE='1', HABITAT_LIVE_TEST='0', HABITAT_OPENING='legacy', HABITAT_CODEX='habitat-offline-model-disabled')
+        env = dict(os.environ, HABITAT_DATA_DIR=str(data), HABITAT_TEST_SUITE='1', HABITAT_DETERMINISTIC_TESTS=deterministic, HABITAT_TEST_SEED=os.environ.get('HABITAT_TEST_SEED','1027'), HABITAT_LIVE_TEST='0', HABITAT_OPENING='legacy', HABITAT_CODEX='habitat-offline-model-disabled')
         for key in ['HTTP_PROXY', 'HTTPS_PROXY', 'ALL_PROXY', 'http_proxy', 'https_proxy', 'all_proxy']:
             env[key] = 'http://127.0.0.1:1'
         env['NO_PROXY'] = env['no_proxy'] = '127.0.0.1,localhost,::1'
-        command = [engine, '--headless', '--audio-driver', 'Dummy', '--log-file', str(data / 'engine.log'), '--path', str(project)]
+        command = [engine, '--headless', '--audio-driver', 'Dummy', '--rendering-method', 'gl_compatibility', '--rendering-driver', 'opengl3', '--log-file', str(data / 'engine.log'), '--path', str(project)]
         command += ['--editor', '--import', '--quit'] if script == 'IMPORT' else ['--script', 'tests/' + script]
         try:
             result = subprocess.run(command, env=env, capture_output=True, text=True, encoding='utf-8', errors='replace', timeout=300)

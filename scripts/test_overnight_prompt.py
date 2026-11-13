@@ -1,3 +1,4 @@
+import os
 """Offline fake-adapter replay of the actual native prompt shape, no server process."""
 import sys,json,math,tempfile,unittest
 from pathlib import Path
@@ -18,13 +19,13 @@ def measure(context):
     return {'characters':len(text),'ascii_characters':ascii_chars,'non_ascii_characters':other,'estimated_input_tokens':math.ceil(ascii_chars/4+other/1.5)+64,'estimated_output_tokens':256,'estimated_tokens_per_turn':math.ceil(ascii_chars/4+other/1.5)+64+256,'method':'ASCII/4 + non-ASCII/1.5, ceil + 64 protocol tokens + 256 output tokens; estimate only','real_model_calls':0}
 class PromptReplay(unittest.TestCase):
     def test_complete_prompt_estimate_replaces_placeholder(self):
-        path=ROOT/'production/evidence/overnight-2026-10-27/prompt-context.json'
+        path=Path(os.environ.get('HABITAT_PRIVATE_TEST_FIXTURES',ROOT))/'production/evidence/overnight-2026-10-27/prompt-context.json'
         context=json.loads(path.read_text())
         self.assertLessEqual(len(json.dumps(context,ensure_ascii=False).encode()),4096)
         actual=measure(context)
-        saved=json.loads((ROOT/'production/evidence/autonomy/ultra-30min.json').read_text())
+        saved=json.loads((Path(os.environ.get('HABITAT_PRIVATE_TEST_FIXTURES',ROOT))/'production/evidence/autonomy/ultra-30min.json').read_text())
         self.assertEqual(saved['reference_prompt_tokens'],saved['prompt_measurement']['estimated_tokens_per_turn'])
-        reference=json.loads((ROOT/'production/evidence/2026-11-08-对话合一与AI放权/prompt-reference.json').read_text())
+        reference=json.loads((Path(os.environ.get('HABITAT_PRIVATE_TEST_FIXTURES',ROOT))/'production/evidence/2026-11-08-对话合一与AI放权/prompt-reference.json').read_text())
         self.assertEqual(reference,actual)
         self.assertGreater(actual['characters'],len(companion.INSTRUCTIONS))
 if __name__=='__main__':unittest.main()

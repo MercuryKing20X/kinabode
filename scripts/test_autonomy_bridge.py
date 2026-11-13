@@ -1,3 +1,4 @@
+import os
 """Zero inference: fake protocol callbacks, real transport and driver validation."""
 import importlib.util
 import json
@@ -102,6 +103,6 @@ class AutonomyBridge(unittest.TestCase):
         self.client.server({'id':request['id'],'error':{'message':'metadata unavailable'}})
         self.assertEqual(self.events[-1]['turn_key'],'new');self.assertFalse(self.client.active)
     def test_new_driver_keeps_dynamic_tool_schema_identical(self):
-        frozen=json.loads((ROOT/'production/evidence/autonomy/native-tools-0.3.0.json').read_text())
+        frozen=json.loads((Path(os.environ.get('HABITAT_PRIVATE_TEST_FIXTURES',ROOT))/'production/evidence/autonomy/native-tools-0.3.0.json').read_text())
         self.assertEqual(helper.DYNAMIC_TOOLS,frozen)
 if __name__=='__main__':unittest.main()

@@ -48,13 +48,34 @@ static func click(tree:SceneTree,button:BaseButton)->bool:
 	if not is_instance_valid(button):return false
 	await reveal(tree,button)
 	if not is_instance_valid(button):return false
-	var count:Dictionary={"pressed":0};button.pressed.connect(func():count.pressed+=1,CONNECT_ONE_SHOT)
-	var viewport:Viewport=button.get_viewport();var at:Vector2=button.get_global_rect().get_center()
-	if viewport is Window and viewport.is_embedded():at+=Vector2(viewport.position);viewport=tree.root
-	var motion:=InputEventMouseMotion.new();motion.position=at;motion.global_position=at;viewport.push_input(motion,true)
+	# A real window can receive native mouse motion between injected events.
+	# Put that mouse at the target too, then wait for queued container layouts.
+	# This sends exactly one press/release and never emits pressed directly.
+	var viewport:Viewport=button.get_viewport()
+	var at:Vector2
+	var last_rect:=Rect2()
+	var stable:=0
+	for frame in range(12):
+		var rect:Rect2=button.get_global_rect()
+		stable=stable+1 if rect==last_rect else 0
+		last_rect=rect;at=rect.get_center()
+		viewport=button.get_viewport()
+		if viewport is Window and viewport.is_embedded():at+=Vector2(viewport.position);viewport=tree.root
+		if DisplayServer.get_name()!="headless":
+			if viewport is Window:viewport.grab_focus()
+			viewport.warp_mouse(at)
+		var motion:=InputEventMouseMotion.new();motion.position=at;motion.global_position=at;viewport.push_input(motion,true)
+		await tree.process_frame
+		if stable>=2:break
+	var count:Dictionary={"pressed":0}
+	var received:Callable=func():count.pressed+=1
+	button.pressed.connect(received)
 	for down in [true,false]:
 		var event:=InputEventMouseButton.new();event.button_index=MOUSE_BUTTON_LEFT;event.pressed=down;event.button_mask=MOUSE_BUTTON_MASK_LEFT if down else 0;event.position=at;event.global_position=at;viewport.push_input(event,true);await tree.process_frame
-	if count.pressed!=1:print("UI real input rejected ",button.text," rect=",button.get_global_rect()," viewport=",viewport," root_size=",tree.root.size," disabled=",button.disabled," hovered=",viewport.gui_get_hovered_control())
+	if is_instance_valid(button):button.pressed.disconnect(received)
+	if count.pressed!=1:
+		var hover:Control=viewport.gui_get_hovered_control()
+		print("UI real input rejected ",button.text," path=",button.get_path()," point=",at," before=",last_rect," after=",button.get_global_rect()," visible=",button.is_visible_in_tree()," viewport=",viewport," root_size=",tree.root.size," disabled=",button.disabled," hovered=",hover.get_path() if hover!=null else "none")
 	return count.pressed==1
 static func init_game(tree:SceneTree)->Node:
 	OS.set_environment("HABITAT_OPENING","legacy");tree.root.size=Vector2i(1280,800);tree.root.content_scale_size=Vector2i.ZERO
