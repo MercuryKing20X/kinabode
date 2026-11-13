@@ -10,7 +10,7 @@ import re
 CLOCK = 'preload("res://tests/deterministic_environment.gd")'
 
 def materialize(source: Path, destination: Path) -> dict:
-    counts = {"clock_reads": 0, "crypto_reads": 0, "rng_initializers": 0, "rng_constructors": 0, "global_rng_reads": 0, "calendar_reads": 0}
+    counts = {"clock_reads": 0, "crypto_reads": 0, "rng_initializers": 0, "rng_constructors": 0, "global_rng_reads": 0, "calendar_reads": 0, "protocol_clock_reads_retained": 0}
     for path in sorted([*(source / 'scripts').rglob('*.gd'), *(source / 'tests').rglob('*.gd')]):
         relative = path.relative_to(source)
         if relative.as_posix() == 'tests/deterministic_environment.gd':
@@ -25,9 +25,23 @@ def materialize(source: Path, destination: Path) -> dict:
         value, count = re.subn(r'(?<![\w.])(?<!func )(randi|randf|randi_range|randf_range|randfn|seed)\(',
             lambda m: CLOCK + ('.global_seed(' if m[1] == 'seed' else '.global_rng().' + m[1] + '('), value)
         counts['global_rng_reads'] += count
-        count = value.count('Time.get_unix_time_from_system()')
-        value = value.replace('Time.get_unix_time_from_system()', CLOCK + '.wall_time()')
-        counts['clock_reads'] += count
+        # IPC leases and file mtimes share the host's real wall clock with
+        # Python clients. Freezing these would invalidate every bridge request
+        # or suppress genuine expiry; they are not simulation randomness.
+        transport = relative.as_posix() in {
+            'scripts/read_endpoint.gd', 'scripts/companion_link.gd',
+            'scripts/conversation_link.gd',
+        }
+        lines = []
+        for line in value.splitlines(keepends=True):
+            count = line.count('Time.get_unix_time_from_system()')
+            if transport or '"expires"' in line:
+                counts['protocol_clock_reads_retained'] += count
+            else:
+                line = line.replace('Time.get_unix_time_from_system()', CLOCK + '.wall_time()')
+                counts['clock_reads'] += count
+            lines.append(line)
+        value = ''.join(lines)
         for api, method in [('get_date_string_from_system', 'system_date'), ('get_datetime_string_from_system', 'system_datetime'), ('get_time_zone_from_system', 'time_zone')]:
             count = value.count('Time.' + api + '(')
             value = value.replace('Time.' + api + '(', CLOCK + '.' + method + '(')
