@@ -1,3 +1,15 @@
+# v0.6.1 烧烤短句 / Fireside dialogue
+
+`content/barbecue-scenes.json` 为温柔、活泼、爱劳动、安静四种主性格各提供入座、等待、闻香、第一口、口味、吃完满足、围炉闲聊、散场八个场景；每场景八组独立中英句，256组中80组带字体可显示的颜文字。原食物专属句与吃完场景句继续保留。
+
+句子只观察真实就座、烹饪、第一口、实吃完毕与即将结束的围炉，不新增任务或模型调用；仍走原 Director 出口，个人间隔、气泡间隔/数量、held、停止、集合、chatter 等限制不变。短暂烹饪期间从三种真实到场语境中选句，不为播完场景加速或延长一餐。
+
+已交付文本才写入会话内去重：同一围炉全员同句不重复（换烤批不清零），同人同游戏日不重复，相邻两次发言使用不同的标准场景。重载不重播队列。`test_fireside_glyphs.gd` 逐字检查中英全部新句与颜文字使用的 NotoSansSC 字形；`test_barbecue_scenes.gd` 经真实 World 路线与实吃核对去重及多烤批边界。
+
+Eight bilingual lines for each of eight real meal scenes and four current personality traits. Only delivered speech counts toward repetition guards. Existing speech gates, resource rules, movement and meal timing remain authoritative; a short meal need not play every scene. Font coverage checks include every character of every new kaomoji.
+
+---
+
 # 2026-11-10 烧烤计时与伙伴默认跑步
 
 用户确认：蘑菇整场60秒、普通料理90秒、鱼料理120秒；底部按钮上方倒计时，到点结束围炉、保留真实实吃/浪费结算，后续安排解除围炉占用。新计时餐存档保留实际食物/剩余秒数，读档暂停、不续任务，火边明确“继续这顿烧烤”后恢复，不再扣料；旧无计时档沿原兼容。
