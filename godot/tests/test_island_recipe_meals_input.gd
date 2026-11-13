@@ -36,7 +36,8 @@ func run_case(recipe_id:String,guest:String,signature:bool)->void:
 		w.fishing.fish["fish-000000000000000000000000"]={"id":"fish-000000000000000000000000","owner_id":"human","location":"pending","source_id":"home.sea.east","species_id":"eel","size_id":"person","color_id":"cream","scale":1}
 
 	for id in w.director.routines:w.director.routines[id].rng.seed=hash("speech-input:"+str(id))
-	var g:Node=load("res://scenes/main_v3.tscn").instantiate();g.world=w;root.add_child(g);g.save_enabled=false;g.set_process(false);g.view.set_process(false);g.island_hud.set_process(false);g.chat.hide();print("speech input init");await process_frame;await process_frame
+	var g:Node=load("res://scenes/main_v3.tscn").instantiate();g.world=w;g.dialogue_adapter_factory=func(_id,_scope):return preload("res://tests/test_intent_input.gd").IntentFake.new()
+	root.add_child(g);g.save_enabled=false;g.set_process(false);g.view.set_process(false);g.island_hud.set_process(false);g.chat.hide();print("speech input init");await process_frame;await process_frame
 	if recipe_id=="dark-truffle-soup":await book_capture(g,recipe_id,"unknown",false)
 	for ingredient in costs:w.storage.add({ingredient:20})
 	w.storage.add({"wood":20})

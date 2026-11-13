@@ -61,23 +61,28 @@ func selection(id:String,food:Dictionary,rank:int)->Dictionary:
 	return {"pool":selected,"favorite":favorite,"first_time":bool(food.get("first_time",false)),"extra":extras.map(func(c):return pool(id,c)),"dish":food.category=="dish"}
 func ate(id:String,food:Dictionary,previous_rank:int)->void:
 	if id=="human":return
-	pending.append({"actor_id":id,"scene":"first_bite","proof":fire.state.current.id,"expires":world.director.time+180})
-	pending.append({"actor_id":id,"scene":"taste","proof":fire.state.current.id,"expires":world.director.time+180})
 	var selected:=selection(id,food,previous_rank)
 	var species:String=str(food.get("fish",{}).get("species_id",""))
 	var special:Dictionary=world.recipes.metadata.get(food.food_id,{})
 	if special.get("signature_trait","")==trait_id(id) and special.has("signature_line"):
-		pending.append({"actor_id":id,"text":LocalText.content(special.signature_line),"proof":fire.state.current.id,"expires":world.director.time+180})
+		pending.append({"actor_id":id,"text":LocalText.content(special.signature_line),"speech_scene":"first_bite","proof":fire.state.current.id,"expires":world.director.time+180})
 		reactions[id]={"until":world.director.time+8,"kind":"happy"}
 	if food.get("first_time",false) and special.get("first_lines",{}).has(trait_id(id)):
-		pending.append({"actor_id":id,"text":LocalText.content(special.first_lines[trait_id(id)]),"proof":fire.state.current.id,"expires":world.director.time+180})
-	if food.get("first_species",false) and species_lines.has(species):pending.append({"actor_id":id,"text":species_lines[species],"proof":fire.state.current.id,"expires":world.director.time+180})
+		pending.append({"actor_id":id,"text":LocalText.content(special.first_lines[trait_id(id)]),"speech_scene":"first_bite","proof":fire.state.current.id,"expires":world.director.time+180})
+	if food.get("first_species",false) and species_lines.has(species):pending.append({"actor_id":id,"text":species_lines[species],"speech_scene":"first_bite","proof":fire.state.current.id,"expires":world.director.time+180})
 	if special.get("normal_lines",{}).has(trait_id(id)):
-		pending.append({"actor_id":id,"text":LocalText.content(special.normal_lines[trait_id(id)]),"proof":fire.state.current.id,"expires":world.director.time+180})
+		pending.append({"actor_id":id,"text":LocalText.content(special.normal_lines[trait_id(id)]),"speech_scene":"taste","proof":fire.state.current.id,"expires":world.director.time+180})
 	elif not selected.pool.is_empty():pending.append({"actor_id":id,"pool":selected.pool,"proof":fire.state.current.id,"expires":world.director.time+180})
 	for extra in selected.extra:pending.append({"actor_id":id,"pool":extra,"proof":fire.state.current.id,"expires":world.director.time+180})
 	if selected.dish:pending.append({"actor_id":id,"pool":pool(id,"category_dish"),"proof":fire.state.current.id,"expires":world.director.time+180})
-	if pending.size()>32:pending=pending.slice(-32)
+	# Existing factual food reactions keep their original opportunity. Optional
+	# scene variety yields both queue space and speech slots to those true facts.
+	pending.append({"actor_id":id,"scene":"first_bite","proof":fire.state.current.id,"expires":world.director.time+180})
+	pending.append({"actor_id":id,"scene":"taste","proof":fire.state.current.id,"expires":world.director.time+180})
+	while pending.size()>32:
+		var optional:int=pending.find_custom(func(p):return p.has("scene"))
+		if optional<0:pending=pending.slice(-32);break
+		pending.remove_at(optional)
 	if selected.favorite or selected.first_time or not food.get("fish",{}).is_empty() and food.fish.get("size_id")=="giant":reactions[id]={"until":world.director.time+(8 if special.get("signature_trait","")==trait_id(id) else 5),"kind":"happy"}
 func clear()->void:
 	pending.clear();visible.clear();reactions.clear();scene_deliveries.clear();mini_left=0
@@ -109,6 +114,7 @@ func scene_key(id:String,scene:String)->String:return str(fire.state.current.get
 func scene_done(id:String,scene:String)->bool:return scene_deliveries.has(scene_key(id,scene))
 func delivered(id:String,line:String,context:String)->void:
 	note_line(id,line,context)
+	scene_deliveries[scene_key(id,context)]=true
 	recent.append(line)
 	if recent.size()>24:recent.pop_front()
 	visible[id]=world.director.time+float(fire.config.bubble_seconds);last_speaker=id
@@ -162,6 +168,19 @@ func deliver(id:String,pool_id:String,values:Dictionary)->bool:
 		delivered(id,line,canonical_scene(pool_id))
 		return true
 	return false
+func deliver_food_fact(id:String)->bool:
+	for p in pending:
+		if p.actor_id!=id or not p.has("text"):continue
+		var context:String=p.get("speech_scene","taste")
+		if not fresh_line(id,p.text,context):continue
+		if not world.director.say_fireside(id,p.text,"fireside_fish_first",fire.life.station.id):continue
+		delivered(id,p.text,context);pending.erase(p)
+		if context=="first_bite":
+			# This is the actual first-bite scene. Do not replay a generic version
+			# under another technical pool name after the exclusive reaction.
+			pending=pending.filter(func(q):return q.actor_id!=id or not (q.get("scene","")=="first_bite" or q.has("pool") and canonical_scene(q.pool)=="first_bite"))
+		return true
+	return false
 func tick()->void:
 	# Independent local presentation RNG: reproducible for a retained world and camp.
 	if rng_world!=world.world_id:
@@ -178,6 +197,8 @@ func tick()->void:
 	var actors:Array=fire.jobs.keys().filter(func(id):return id!="human" and id in fire.state.attended)
 	if last_speaker in actors:actors.erase(last_speaker);actors.append(last_speaker)
 	for id in actors:
+		if deliver_food_fact(id):return
+	for id in actors:
 		var scene:String=lifecycle_scene(id)
 		if scene in ["seat","wait","smell","depart"] and deliver_scene(id,scene):return
 		if scene=="satisfied" and scene_done(id,"first_bite") and deliver_scene(id,scene):return
@@ -185,10 +206,7 @@ func tick()->void:
 			if p.actor_id==id and p.has("scene"):
 				if deliver_scene(id,p.scene):pending.erase(p);return
 				continue
-			if p.actor_id==id and p.has("text"):
-				if fresh_line(id,p.text,"taste") and world.director.say_fireside(id,p.text,"fireside_fish_first",fire.life.station.id):
-					delivered(id,p.text,"taste");pending.erase(p);return
-				continue
+			if p.has("text"):continue
 			if p.actor_id==id and deliver(id,p.pool,{}):pending.erase(p);return
 		if scene in ["satisfied","chat"] and deliver_scene(id,scene):return
 		var topics:Array=[mini_topic,"food","weather","phase","emoji"]
