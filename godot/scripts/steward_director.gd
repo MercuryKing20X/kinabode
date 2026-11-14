@@ -88,6 +88,7 @@ func task(g:Node,id:String,action:String,source:String="")->Dictionary:
 	serial+=1
 	var row:Dictionary={"id":serial,"action":action,"source":source,"start":g.world.forest.clock,"last_move":g.world.forest.clock,"position":g.world.point(g.world.actors[id]),"points":[],"goal":batch.get("goal",{}).get("id",""),"traveling":false}
 	if not batch.is_empty():batch.last_progress=g.world.forest.clock
+	if g.world.director.brains.has(id):g.world.director.brains[id].begin_external("steward",action)
 	tasks[id]=row;note(g,"task_start",row.merged({"actor":id}));return row
 func release(g:Node,id:String,reason:String)->void:
 	var w:RefCounted=g.world
@@ -387,6 +388,7 @@ func dispatch_team(g:Node)->void:
 	batch.members=[]
 	if action in ["plant","harvest","water"]:
 		var preview:Dictionary=w.farms.preview_host_orders(ids,"ready" if action=="harvest" else "plant",batch.step.target_id,str(batch.step.get("crop_id","mixed")))
+		for who in ids:w.director.brains[who].begin_external("steward",action)
 		var result:Dictionary=w.farms.confirm_host_orders(preview,ids)
 		for row in result.get("rows",[]):
 			if row.get("ok",false):

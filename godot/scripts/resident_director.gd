@@ -10,6 +10,8 @@ var _owner: WeakRef
 var world: RefCounted:
 	get: return _owner.get_ref()
 var routines: Dictionary = {}
+var brains:Dictionary={}
+var brain_trace_directory:=""
 var destinations: Dictionary = {}
 var seen: Dictionary = {}
 var events: Array = []
@@ -36,6 +38,8 @@ func _init(source: RefCounted) -> void:
 func register(id: String) -> void:
 	if id == "human" or routines.has(id): return
 	routines[id] = Routine.new(world, id)
+	brains[id]=preload("res://scripts/resident_brain.gd").new(world,id)
+	brains[id].trace_directory=brain_trace_directory
 
 func model_controlled(id: String) -> bool:
 	return world.actors.has(id) and world.actors[id].get("controller", "local") == "model"
@@ -87,7 +91,7 @@ func state(id: String) -> Dictionary:
 	elif world.projects.active(id) or world.farms.active(id) or (world.work.jobs.has(id) and not routine.owns_job()): effective = "task"
 	elif world.activities.following.has(id):effective="following"
 	elif world._routes.has(id) and not routine.owns_route and not routine.owns_job(): effective = "command"
-	elif not routine.kind.is_empty(): effective = "local_rules"
+	elif not routine.kind.is_empty() or (brains.has(id) and brains[id].active() and brains[id].current.get("source","")=="local"): effective = "local_rules"
 	return {"controller": world.actors[id].controller, "effective": effective, "capabilities": world.residents.capabilities(world.actors[id]), "local_life": routine.state()}
 
 var steward_speech_pending:=false
@@ -154,6 +158,7 @@ func say_fireside(id:String,text:String,context:String,station_id:String)->bool:
 func advance(delta: float) -> void:
 	time += delta
 	moods.advance(delta)
+	for brain in brains.values():brain.advance(delta)
 	idle_candidates.clear();collecting_idle=true
 	for id in routines:
 		var routine: RefCounted = routines[id]

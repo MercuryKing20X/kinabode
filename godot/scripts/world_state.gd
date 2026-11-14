@@ -318,6 +318,10 @@ func host_text_command(actor_id:String,args:Dictionary)->Dictionary:
 	return result
 
 func command(actor_id: String, args: Dictionary) -> Dictionary:
+	if director!=null and director.brains.has(actor_id):return director.brains[actor_id].command(args)
+	return _command_body(actor_id,args)
+
+func _command_body(actor_id: String, args: Dictionary) -> Dictionary:
 	if ingredients!=null and ingredients.resident_pending.has(actor_id) and str(args.get("intent",""))!="query_state" and not str(args.get("intent","")).ends_with("_read"):ingredients.resident_pending.erase(actor_id)
 	if actor_id=="human" and dark!=null:dark.cancel()
 	if not actors.has(actor_id): return _error("unknown_resident")

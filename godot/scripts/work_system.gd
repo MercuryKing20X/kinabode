@@ -114,6 +114,7 @@ func record_event(actor_id: String, job: Dictionary, status: String, message: St
 func _finish(actor_id: String, message: String, ok: bool = true, status: String = "") -> void:
 	var job: Dictionary = jobs.get(actor_id, {}).duplicate(true)
 	var outcome := status if not status.is_empty() else "completed" if ok else "blocked"
+	if world.director!=null and world.director.brains.has(actor_id):world.director.brains[actor_id].job_outcome(job,outcome)
 	if world.days!=null:world.days.job_finished(actor_id,job,outcome)
 	if not job.has("project_id") and job.get("source")!="local_rules": record_event(actor_id, job, outcome, message)
 	stop(actor_id, false)

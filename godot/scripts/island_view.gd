@@ -1,6 +1,7 @@
 class_name IslandView
 extends Node2D
 signal need_clicked(actor_id:String,kind:String)
+signal mind_clicked(actor_id:String)
 var play_frames=preload("res://scripts/play_frames.gd").new()
 var play_stage:Node
 var play_rendered:Dictionary={}
@@ -148,6 +149,10 @@ var run_click := false
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
+		if event.pressed and event.button_index==MOUSE_BUTTON_RIGHT:
+			for actor in world.actors.values():
+				if actor.id!="human" and actor.region_id==region_id and Rect2(screen(world.point(actor))+Vector2(-22,-85)*zoom,Vector2(44,90)*zoom).has_point(event.position):
+					mind_clicked.emit(actor.id);get_viewport().set_input_as_handled();return
 		if event.button_index in [MOUSE_BUTTON_RIGHT, MOUSE_BUTTON_MIDDLE]:
 			dragging = event.pressed
 			if dragging: peek_elapsed=0; follow_player = false; placement_recipe = ""

@@ -139,6 +139,9 @@ func abandon(id:String)->void:
 		statistics.abandoned.append({"actor_id":id,"job_id":job.id,"intent":job.intent,"at":world.director.time})
 		if statistics.abandoned.size()>256:statistics.abandoned.pop_front()
 func follow(id:String,dark_fear:bool=false)->void:
+	if world.director.brains.has(id) and world.director.brains[id].active():world.director.brains[id].follow(dark_fear);return
+	_follow_body(id,dark_fear)
+func _follow_body(id:String,dark_fear:bool=false)->void:
 	if not world.activities.squad_leader.is_empty():return
 	if world.activities.suspended_follow.has(id) or world.farms.active(id) or world.work.jobs.has(id):clear_follow(id);return
 	if rank(id)<3 and world.director.routines.has(id) and world.director.routines[id].kind in ["island_intro","island_arrival"]:return

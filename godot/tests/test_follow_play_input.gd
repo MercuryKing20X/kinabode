@@ -20,7 +20,8 @@ func run()->void:
 	var file:=FileAccess.open(OS.get_environment("HABITAT_DATA_DIR").path_join("intent-card.json"),FileAccess.WRITE);file.store_string(JSON.stringify(card));file.close()
 	game.playground.stop();game.chat.hide();game.chat_input.release_focus()
 	game.steward.manager="codex"
-	game.world.command("codex",{"intent":"move","region_id":"home","x":game.world.actors.human.position[0]+2,"y":game.world.actors.human.position[1]})
+	# C: this fixture is an explicit host preparation; keep model follow protection.
+	game.world.host_command("codex",{"intent":"move","region_id":"home","x":game.world.actors.human.position[0]+2,"y":game.world.actors.human.position[1]})
 	for step in range(1000):
 		game.world.advance(.1)
 		if not game.world._routes.has("codex"):break

@@ -112,6 +112,11 @@ func advance(delta: float) -> void:
 	world.director.local_speech_window.emit(ID)
 	if not world.intelligence.compatibility and intelligence_preset_id!=world.intelligence.preset_id(ID):apply_intelligence_preferences()
 	if not enabled or not world.residents.supports(world.actors[ID],"move"):return
+	if world.director.brains.has(ID) and world.director.brains[ID].active():
+		# The brain chooses; this legacy routine retains only the shared speech outlet.
+		if not held and not world.work.jobs.has(ID) and time>=next_speech and not world.activities.blocked(ID,false):
+			if not world.director.memory_reminders.try_speak(ID) and not world.relationships.try_event(ID) and not world.wishes.try_event(ID) and not world.personality.try_event(ID):_speak("near")
+		return
 	# DIRECTION: 托管时其它系统不能直接让人走或打断。
 	if not world.activities.squad_leader.is_empty():return
 	if world.dark!=null and world.dark.companions.tick(self,delta):return
@@ -217,16 +222,23 @@ func _choose() -> void:
 	next_decision = time + decision_rng.randf_range(3, 6)*world.director.moods.interval(ID,"action")
 
 func _move_to(destination: Vector2) -> bool:
+	if world.director.brains.has(ID) and world.director.brains[ID].active() and not world.director.brains[ID].executing:return false
 	# The same move validation and authoritative movement as human/model commands.
 	if not world.director.available_position(ID, world.actors[ID].region_id, destination): return false
 	issuing = true
+	var brain_move:bool=world.director.brains.has(ID) and world.director.brains[ID].active() and world.director.brains[ID].executing and world.director.brains[ID].current.get("source","")=="local"
+	var already_host:bool=world.host_issuing.has(ID)
+	if brain_move:world.host_issuing[ID]=true
 	var result: Dictionary = world.command(ID, {"intent": "move", "x": destination.x, "y": destination.y})
 	issuing = false
+	if brain_move and not already_host:world.host_issuing.erase(ID)
 	owns_route = result.ok
 	if result.ok: world.director.destinations[ID] = {"region":world.actors[ID].region_id, "point":destination}
 	return result.ok
 
 func _start(choice: String) -> bool:
+	if world.director.brains.has(ID) and world.director.brains[ID].active() and not world.director.brains[ID].executing:
+		world.director.brains[ID].offer(choice,func():return _start(choice));return false
 	if blocked(): return false
 	interrupt(8)
 	var actor: Dictionary = world.actors[ID]
@@ -416,3 +428,41 @@ func authored_reaction(choice: String) -> bool:
 	# Short local feedback may be delivered while seated; never rise just to speak.
 	if kind=="rest" and not owns_route:return true
 	return _start(choice)
+
+func advance_brain_executor(delta:float)->void:
+	if kind == "flower_gift":
+		world.flower_gifts.advance(self, delta)
+		return
+	if kind in ["facility","daily_gesture"]:
+		elapsed += delta
+		if not owns_job() or elapsed > (6 if kind=="daily_gesture" else 120): interrupt(decision_rng.randf_range(5, 9)*world.director.moods.interval(ID,"action"))
+		return
+	if not kind.is_empty():
+		elapsed += delta
+		if owns_route:
+			if world._routes.has(ID):
+				if elapsed > (route_timeout if kind=="schedule" else 24.0): interrupt(12)
+				return
+			owns_route = false; elapsed = 0.0
+			if kind=="relationship_sit_approach":
+				if _start("rest"):duration=float(world.relationships.config.rewards.stay_seconds)
+				return
+			if kind == "rest":
+				world.actors[ID].activity = "local_sit"
+				if world.interior.furniture.has(seat_id): world.actors[ID].facing = world.interior.furniture[seat_id].facing
+			else:
+				world.actors[ID].activity = "local_look"
+				if kind in ["garden","relationship_sea"]: _face(focus_point)
+				else: _face_human()
+				if kind == "nearby": _speak("arrive")
+				if kind == "schedule":world.schedules.arrived(ID)
+			world.revision += 1
+		if kind == "rest":
+			var activity := "local_sit" if elapsed < .55 else "local_rest" if elapsed < duration else "local_rise"
+			if world.actors[ID].activity != activity:
+				world.actors[ID].activity = activity; world.revision += 1
+		elif kind == "look":
+			var facing: String = ["left", "down", "right", "down"][mini(3, int(elapsed / 1.1))]
+			if world.actors[ID].facing != facing: world.actors[ID].facing = facing; world.revision += 1
+		if elapsed >= duration + (.5 if kind == "rest" else 0.0):
+			interrupt(decision_rng.randf_range(config.decision_interval[0], config.decision_interval[1])*world.director.moods.interval(ID,"action"))

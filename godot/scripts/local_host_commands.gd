@@ -278,7 +278,7 @@ func decide(id:String,accepted:bool,selected:Array)->void:
 		for actor in ids:
 			if plan.action=="follow" and actor not in followers:followers.append(actor)
 			if plan.action=="unfollow":followers.erase(actor)
-			if plan.action=="follow":world.activities.release_follow(actor)
+			if plan.action=="follow" and not (world.director.brains.has(actor) and world.director.brains[actor].continuing_follow()):world.activities.release_follow(actor)
 		if world.activities.set_followers(followers).get("ok",false):successful=ids
 	elif plan.action=="gather":
 		var result:Dictionary=world.activities.gather_selected(ids,fresh.destination.region_id,Vector2(fresh.destination.position[0],fresh.destination.position[1]))

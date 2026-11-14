@@ -41,3 +41,9 @@ The home island is the main place to build and live. Crescent Island offers moon
 Only committed canonical facts become gameplay memories. Private and group histories stay bound to their channel. Model outputs require exact resident, world, session, generation and request identity; stale replies are rejected. Local routines do not imply inference or resource authority. Lifeblood is optional and costly; actual use and unknown usage must be shown honestly.
 
 记忆来自已提交真实事实；私聊/群聊分离，输出精确绑定身份与回合，拒绝迟到结果。本地生活不等于模型推理。生命孕育可选，用量和未知状态如实显示。
+
+## Local brain / 本地大脑
+
+Each resident has one utility brain. Needs and authored preferences choose existing local activities; player commands and steward assignments take priority through the same entry point. Right-click a companion or click their detail portrait to see what they want and why. Hunger is read from the existing system, and local choices grant no work or food authority. See [Resident brain](RESIDENT_BRAIN.md).
+
+每位伙伴用同一个大脑选择已有活动；玩家命令和托管派活优先。右键伙伴或点击居民详情头像可看“我现在想……因为……”。需要不显示数字，也不改变原饥饿、劳动和物资规则。

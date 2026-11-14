@@ -104,6 +104,8 @@ func defer_idle(id: String,for_action: bool=false) -> bool:
 	var part:=phase()
 	return (marked_day!=day() or part.id not in spoken) and within_day()-float(part.start)*day_seconds>=float(config.greeting_after)
 func _start_small(id: String) -> void:
+	if world.director.brains.has(id) and world.director.brains[id].active() and not world.director.brains[id].executing:
+		world.director.brains[id].offer("day_event",func():_start_small(id);return not owned_job_id.is_empty());return
 	var event: Dictionary=config.small_events[posmod((world.world_id+str(marked_day)+"small").hash(),config.small_events.size())]
 	var routine: RefCounted=world.director.routines[id]
 	routine.issuing=true

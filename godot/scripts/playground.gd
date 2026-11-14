@@ -375,6 +375,7 @@ func rope_tick(delta:float)->void:
 
 # Cosmetic session state; World remains the sole movement owner.
 func nearby_tick(delta:float)->void:
+	if not game.world.intelligence.compatibility:return
 	var w:RefCounted=game.world
 	for id in game.steward.Pool.IDS:
 		var routine:RefCounted=w.director.routines.get(id)

@@ -45,6 +45,7 @@ func release_follow(id:String)->void:
 	explicit_selected.erase(id)
 	if not following.has(id):return
 	world.hunger.clear_follow(id);following.erase(id);world.revision+=1
+	if world.director.brains.has(id):world.director.brains[id].preference_changed(false)
 func set_followers(ids:Array,selection_scope:Array=[])->Dictionary:
 	if ids.any(func(id):return id=="human" or not world.actors.has(id) or not world.residents.supports(world.actors[id],"move")):return world._error("invalid_participant")
 	# A full host selection is authoritative. A resident's own follow/unfollow
@@ -71,6 +72,8 @@ func set_followers(ids:Array,selection_scope:Array=[])->Dictionary:
 		if not selection_scope.is_empty() and id not in selection_scope:continue
 		if id in ids:explicit_selected[id]=true
 		else:explicit_selected.erase(id)
+	for id in ids:
+		if world.director.brains.has(id):world.director.brains[id].preference_changed(true)
 	for id in added:
 		world.hunger.follow_after.erase(id);world.hunger.follow(id)
 	world.revision+=1

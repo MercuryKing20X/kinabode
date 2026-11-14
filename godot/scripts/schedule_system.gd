@@ -40,17 +40,18 @@ func options(id: String) -> Array:
 	for place in preferred:
 		preferred[place]=float(preferred[place])*float(world.personality.profile(id).schedule_weights.get(place,1))
 		var anchors: Array=[]
-		match str(place):
-			"sea":
-				for entry in world.fishing.nearby_shores(id,6):anchors.append({"id":str(entry.water_id) if entry.has("water_id") else "coast","point":Vector2(entry.position[0],entry.position[1])})
-			"garden":
-				for farm in world.farms.farms.values():
-					var rect: Rect2=world.farms.bounds(farm);anchors.append({"id":farm.id,"point":Vector2(rect.get_center().x,rect.end.y+2)})
-			"camp":anchors.append({"id":world.life.station.id,"point":world.point(world.life.station)})
-			"shelter":
-				for room_id in world.interior.rooms():anchors.append({"id":room_id,"point":world.interior.outside(room_id)})
-				for site in world.leisure.sites.values():
-					if site.complete and world.leisure.art(site).get("recreation",{}).get("behavior")=="sit":anchors.append({"id":site.id,"point":world.point(site)})
+		if not world.locations.v3():
+			match str(place):
+				"sea":
+					for entry in world.fishing.nearby_shores(id,6):anchors.append({"id":str(entry.water_id) if entry.has("water_id") else "coast","point":Vector2(entry.position[0],entry.position[1])})
+				"garden":
+					for farm in world.farms.farms.values():
+						var rect: Rect2=world.farms.bounds(farm);anchors.append({"id":farm.id,"point":Vector2(rect.get_center().x,rect.end.y+2)})
+				"camp":anchors.append({"id":world.life.station.id,"point":world.point(world.life.station)})
+				"shelter":
+					for room_id in world.interior.rooms():anchors.append({"id":room_id,"point":world.interior.outside(room_id)})
+					for site in world.leisure.sites.values():
+						if site.complete and world.leisure.art(site).get("recreation",{}).get("behavior")=="sit":anchors.append({"id":site.id,"point":world.point(site)})
 		if world.locations.v3():
 			anchors.clear()
 			if place=="shelter" and world.days.phase().id=="night":

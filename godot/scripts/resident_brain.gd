@@ -1,0 +1,386 @@
+extends RefCounted
+## One decision owner per stable identity. Executors retain all physical validation.
+var owner:WeakRef
+var world:RefCounted:
+	get:return owner.get_ref()
+var id:String
+var config:Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://content/brain.json"))
+var rng:=RandomNumberGenerator.new()
+var needs:Dictionary={"tired":0.0,"bored":.25,"missing":0.0,"curious":.5}
+var current:Dictionary={}
+var history:Array=[]
+var recent:Dictionary={}
+var invitation:Dictionary={}
+var top:Array=[]
+var next_decision:=0.0
+var clock:=0.0
+var executing:=false
+var route:Variant=null
+var last_position:=Vector2.ZERO
+var still:=0.0
+var last_near:=0.0
+var seen_places:Dictionary={}
+var generation:=-1
+var external_busy:Callable
+var external_cancel:Callable
+var trace_directory:=""
+var trace_date:=""
+var schedule_options:Array=[]
+var schedule_due:=0.0
+var offers:Dictionary={}
+var provider_running:=false
+var next_visit:=0.0
+var special_provider:=""
+var free_since:=-100000.0
+func _init(w:RefCounted,who:String)->void:
+	owner=weakref(w);id=who;reset()
+func active()->bool:return world.intelligence!=null and not world.intelligence.compatibility
+func reset()->void:
+	current.clear();history.clear();recent.clear();invitation.clear();top.clear();route=null;still=0;next_decision=0;clock=0;last_near=0;seen_places.clear();schedule_due=0;next_visit=0;offers.clear();provider_running=false;special_provider=""
+	needs={"tired":0.0,"bored":.25,"missing":0.0,"curious":.5}
+	generation=world.session_generation
+	var seed_text:String=OS.get_environment("HABITAT_BRAIN_SEED")
+	rng.seed=(int(seed_text) if not seed_text.is_empty() else int(config.seed))+int(id.hash())
+func text(key:String,language:String="")->String:
+	var lang:String=language if not language.is_empty() else ("en" if TranslationServer.get_locale().begins_with("en") else "zh")
+	var voice:Dictionary=config.voices.get(tag(),config.voices.gentle)
+	return str(voice.get(key,config.text.get(key,[key,key]))[1 if lang=="en" else 0])
+func tag()->String:return world.intelligence.tag(id)
+func action_name(key:String,language:String="")->String:
+	if config.command_labels.has(key):return str(config.command_labels[key][1 if (language=="en" or (language.is_empty() and TranslationServer.get_locale().begins_with("en"))) else 0])
+	if key not in config.actions and not config.text.has(key):key="command_activity"
+	var lang:String=language if not language.is_empty() else ("en" if TranslationServer.get_locale().begins_with("en") else "zh")
+	return str(config.actions.get(key,{}).get(lang,text(key,lang)))
+func finish(outcome:String,reason:String="")->void:
+	if current.is_empty():return
+	var row:Dictionary={"actor":id,"at":clock,"day":world.days.day(),"event":"outcome","choice":current.action,"source":current.source,"outcome":outcome,"reason":reason}
+	trace(row)
+	if not history.is_empty():history[-1].outcome=outcome;history[-1].reason=reason
+	if current.source=="local":
+		if current.action=="hold_cat" and world.cat.carrier==id:world.cat.interact(id,"release")
+		if provider_running:world.director.routines[id].interrupt(0);provider_running=false;special_provider=""
+		if route!=null and is_same(route,world._routes.get(id)):world._routes.erase(id)
+		world.lively.active.erase(id)
+		world.director.destinations.erase(id)
+		world.director.routines[id].owns_route=false
+		if not world.work.jobs.has(id) and not world._routes.has(id):world.actors[id].activity="idle"
+	current.clear();route=null;still=0;next_decision=clock
+func begin_external(source:String,action:String)->void:
+	if not active() or executing:return
+	if source=="steward" and current.get("source","")==source and current.get("action","")==action:return
+	finish("interrupted","higher_priority")
+	world.hunger.clear_follow(id)
+	world.director.routines[id].interrupt(0)
+	current={"action":action,"source":source,"start":clock,"duration":float(config.external_timeout),"reasons":[source],"score":float(config.scores.mandatory)}
+	record([{ "action":action,"score":float(config.scores.mandatory),"reasons":[source]}])
+func mandate(source:String,action:String,body:Callable)->Dictionary:
+	if not active() or executing:return body.call()
+	begin_external(source,action)
+	executing=true
+	var result:Dictionary=body.call()
+	executing=false
+	if not current.is_empty():
+		current["job_id"]=world.work.jobs.get(id,{}).get("id","")
+		last_position=world.point(world.actors[id]);still=0
+	if not result.get("ok",false):finish("failed",str(result.get("error","rejected")))
+	elif result.get("status")=="completed" and not busy() and not world._routes.has(id):finish("completed")
+	return result
+func command(args:Dictionary)->Dictionary:
+	var intent:String=str(args.get("intent",""))
+	if intent=="move" and world.activities.explicit_selected.has(id) and not world.host_issuing.has(id) and not world.activities.suspended_follow.has(id) and not world.activities.commanded(id):return world._command_body(id,args)
+	if not active() or executing or intent.ends_with("_read") or intent in ["query_state","propose","promise","promise_cancel","journal_read"]:return world._command_body(id,args)
+	return mandate("steward" if not world.activities.squad_leader.is_empty() else "command",intent,func():return world._command_body(id,args))
+func follow(dark_fear:bool=false)->void:
+	if not active() or executing:world.hunger._follow_body(id,dark_fear);return
+	# Other providers request follow; only the brain may grant it while idle.
+	if current.get("source","") in ["command","steward"] or busy():return
+	if current.get("source","")=="local" and not world._routes.has("human") and (current.action in ["follow","food"] or distance()<=float(config.follow_max)):return
+	if current.get("source","")=="local":finish("interrupted","host_moved")
+	executing=true;world.hunger._follow_body(id,dark_fear);executing=false
+	if current.is_empty() and world._routes.has(id):
+		current={"action":"food" if world.hunger.rank(id)>=3 else "follow","source":"local","start":clock,"arrived":-1.0,"duration":float(config.actions.follow.duration),"score":float(config.scores.return),"reasons":["hunger" if world.hunger.rank(id)>=3 else "follow"],"partner":""}
+		route=world._routes[id];world.director.routines[id].owns_route=true;last_position=world.point(world.actors[id]);record([{ "action":current.action,"score":float(config.scores.return),"reasons":current.reasons}])
+func continuing_follow()->bool:
+	return active() and current.get("source","")=="local" and current.get("action","")=="follow" and route!=null and is_same(route,world._routes.get(id)) and not world.director.routines[id].held and not busy()
+func preference_changed(following:bool)->void:
+	if not active() or (following and continuing_follow()):return
+	if current.get("source","")=="local":finish("interrupted","follow_preference")
+	if not following:
+		free_since=clock
+		next_visit=clock+float(world.director.routines[id].return_visit.options(world.director.routines[id]).interval_seconds)
+	next_decision=clock
+func distance()->float:
+	return world.point(world.actors[id]).distance_to(world.point(world.actors.human)) if world.actors[id].region_id==world.actors.human.region_id else INF
+func busy()->bool:
+	if provider_running:return false
+	return world.activities.suspended_follow.has(id) or world.work.jobs.has(id) or world.farms.active(id) or world.projects.active(id) or world.homestead.active(id) or world.deliveries.active(id) or world.activities.blocked(id,false) or world.activities.commanded(id) or (external_busy.is_valid() and external_busy.call())
+func eligible()->bool:
+	var r:RefCounted=world.director.routines[id]
+	return r.enabled and not r.held and (clock>=r.visual_quiet_until or (world.hunger.rank(id)>=3 and world.hunger.can_follow(id))) and not r.transporting() and world.fishing.held(id).is_empty() and not world.hunger.rushes.has(id)
+func update_needs(delta:float)->void:
+	var rates:Dictionary=config.rates.get(tag(),config.rates.gentle)
+	for key in needs:needs[key]=clampf(float(needs[key])+float(rates[key])*delta,0,1)
+	if distance()<=float(config.needs_context.near_distance):
+		last_near=clock;needs.missing=maxf(0,float(needs.missing)-float(rates.satisfy)*delta)
+	if not current.is_empty() and current.source=="local":
+		var need:String=config.actions.get(current.action,{}).get("need","bored")
+		if needs.has(need):needs[need]=maxf(0,float(needs[need])-float(rates.satisfy)*delta)
+		if need=="tired":needs.tired=maxf(0,float(needs.tired)-float(rates.rest)*delta)
+	var p:Vector2=world.point(world.actors[id])
+	var place:String=world.actors[id].region_id+":"+str(Vector2i(p/float(config.needs_context.place_cell)))
+	if not seen_places.has(place):
+		seen_places[place]=true;needs.curious=minf(1,float(needs.curious)+float(config.needs_context.new_place_boost))
+		if seen_places.size()>256:seen_places.erase(seen_places.keys()[0])
+func candidates()->Array:
+	var result:Array=[]
+	var hungry:bool=world.hunger.rank(id)>=3
+	var following:bool=world.activities.following.has(id)
+	var dark_fear:bool=world.dark!=null and world.dark.here() and world.actors[id].region_id=="dark" and not world.dark.permanent(world.point(world.actors.human))
+	var peer:String=""
+	var ids:Array=world.director.brains.keys();ids.sort()
+	for who in ids:
+		if who!=id and world.actors[who].region_id==world.actors[id].region_id and world.point(world.actors[who]).distance_to(world.point(world.actors[id]))<=5:peer=who;break
+	var return_due:bool=clock-last_near>=float(world.director.routines[id].return_visit.options(world.director.routines[id]).interval_seconds)
+	if clock>=schedule_due:
+		schedule_due=clock+float(world.schedules.config.retry)
+		schedule_options=world.schedules.options(id) if clock>=float(world.schedules.config.first_after) and rng.randf()<float(world.schedules.config.chance) else []
+	for key in config.actions:
+		var a:Dictionary=config.actions[key]
+		var scheduled:Dictionary={}
+		if a.requires=="dark" and (world.dark==null or not world.dark.here() or world.actors[id].region_id!="dark"):continue
+		if a.requires=="story":
+			var story:RefCounted=world.their_island
+			if story==null or world.actors[id].region_id!="home" or not story.config.presets.has(id) or story.story_busy(world.director.routines[id]):continue
+			var arrival:bool=world.home_island.here() and world.home_island.contains(world.point(world.actors[id])) and id not in story.arrivals
+			var intro:bool=world.opening_id=="standard" and not story.introduced and not world.home_island.here()
+			if not (story.unlocked or world.opening_id=="showcase") or not (arrival or intro):continue
+		if a.requires=="schedule":
+			for option in schedule_options:
+				if key!="schedule_"+str(option.place):continue
+				if following and world.point(world.actors.human).distance_to(option.point)>float(config.follow_max):continue
+				if scheduled.is_empty() or option.weight>scheduled.weight:scheduled=option
+			if scheduled.is_empty():continue
+		if a.requires=="pet" and (not world.cat.discovered or world.cat.region!=world.actors[id].region_id or world.cat.position.distance_to(world.point(world.actors[id]))>3 or not world.cat.carrier.is_empty()):continue
+		if a.requires=="flower_gift" and (not world.flower_gifts.eligible(id) or not world.flower_gifts.patches.any(func(patch):return patch.point.distance_to(world.point(world.actors.human))<=float(config.follow_max))):continue
+		if a.requires=="facility" and not world.leisure.sites.values().any(func(site):return site.complete and site.region_id==world.actors[id].region_id and world.point(site).distance_to(world.point(world.actors.human))<=float(config.follow_max)):continue
+		if hungry and key!="food":continue
+		if dark_fear and not hungry and key!="dark_life":continue
+		if key=="food" and world.hunger.rank(id)<2:continue
+		if key=="follow" and not following and (clock-free_since<float(world.director.routines[id].return_visit.options(world.director.routines[id]).far_seconds) or (not return_due and clock<next_visit)):continue
+		if a.requires=="night_clear" and (world.days.phase().id!="night" or world.weather.current().id in ["rain","fog"]):continue
+		if a.requires=="near_cat" and (not world.cat.discovered or world.cat.region!=world.actors[id].region_id or world.cat.position.distance_to(world.point(world.actors[id]))>8):continue
+		if a.requires=="peer" and peer.is_empty():continue
+		if a.requires=="near_coast":
+			var sea:Array=world.catalog.regions.home.get("layout",{}).get("schedule_anchors",{}).get("sea",[])
+			if sea.is_empty() or not sea.any(func(anchor):var p:Array=world.map_anchor(anchor);return Vector2(p[0],p[1]).distance_to(world.point(world.actors[id]))<=32):continue
+		var preference:float=float(config.preferences.get(tag(),{}).get(key,0))
+		var n:float=float(world.hunger.rank(id))/3.0 if a.need=="hunger" else float(needs.get(a.need,0))
+		var components:Array=[{"key":"personality","value":preference},{"key":a.need,"value":n*float(a.need_weight)*(1+preference/float(config.needs_context.personality_need_scale))}]
+		if following:components.append({"key":"follow","value":float(config.scores.follow)})
+		if key in ["follow","food"] and (distance()>float(config.follow_max) or return_due or hungry or (key=="follow" and not following and clock>=next_visit)):components.append({"key":"hunger" if hungry else "missing","value":float(config.scores.return)})
+		if a.requires in ["dark","story"]:components.append({"key":"curious","value":float(config.special_score)})
+		if key=="stars":components.append({"key":"night","value":float(config.scores.night)})
+		if key in ["chat","back_to_back"]:components.append({"key":"social","value":float(config.scores.social)+float(world.relationships.index(id))*float(config.social_relation_weight)})
+		if not scheduled.is_empty():components.append({"key":"weather","value":float(scheduled.weight)*float(config.schedule_weight)})
+		if world.weather.current().id in ["rain","fog"] and a.need=="tired":components.append({"key":"weather","value":float(config.scores.weather)})
+		if invitation.get("action")==key and clock<float(invitation.get("until",0)):components.append({"key":"invite","value":float(config.invite_bonus)})
+		var score:float=float(a.base)+rng.randf_range(-float(config.jitter),float(config.jitter))
+		for component in components:score+=float(component.value)
+		if recent.has(key):score-=float(config.novelty_penalty)*maxf(0,1-(clock-float(recent[key]))/float(config.novelty_seconds))
+		components.sort_custom(func(x,y):return x.value>y.value)
+		var candidate:Dictionary={"action":key,"score":score,"reasons":components.filter(func(c):return float(c.value)>0).slice(0,3).map(func(c):return c.key),"partner":peer if a.requires=="peer" else ""}
+		if not scheduled.is_empty():candidate["scheduled"]=scheduled
+		result.append(candidate)
+	for action in offers.keys():
+		if float(offers[action].until)<clock:offers.erase(action);continue
+		if not hungry:result.append({"action":action,"score":float(config.providers.reaction_score),"reasons":["social"],"partner":""})
+	result.sort_custom(func(a,b):return a.score>b.score if a.score!=b.score else str(a.action)<str(b.action))
+	return result
+func offer(action:String,body:Callable)->void:
+	if not offers.has(action):offers[action]={"body":body,"until":clock+float(config.decision_seconds)*2}
+
+func record(options:Array)->void:
+	top=options.slice(0,3).duplicate(true)
+	var row:Dictionary={"actor":id,"at":clock,"day":world.days.day(),"event":"choice","choice":current.action,"source":current.source,"top":top.duplicate(true),"reasons":current.reasons.duplicate(),"outcome":"running"}
+	history.append(row.duplicate(true))
+	if history.size()>int(config.history_limit):history.pop_front()
+	trace(row)
+func job_outcome(job:Dictionary,status:String)->void:
+	if not active() or current.is_empty():return
+	trace({"actor":id,"at":clock,"day":world.days.day(),"event":"job_outcome","job_id":job.get("id",""),"intent":job.get("intent",""),"outcome":status})
+	if current.get("job_id","")==job.get("id","missing"):current["job_result"]=status
+
+func trace(row:Dictionary)->void:
+	# A trace contains only local choices, no dialogue, provider or configuration data.
+	if trace_directory.is_empty():return
+	var date:String=Time.get_date_string_from_system()
+	if date!=trace_date:
+		trace_date=date;DirAccess.make_dir_recursive_absolute(trace_directory)
+		var files:Array=Array(DirAccess.get_files_at(trace_directory)).filter(func(f):return f.begins_with("brain-trace-") and f.ends_with(".jsonl"));files.sort()
+		var cutoff:int=int(Time.get_unix_time_from_datetime_string(date))-int(config.trace_days-1)*86400
+		for f in files:
+			if int(Time.get_unix_time_from_datetime_string(str(f).trim_prefix("brain-trace-").trim_suffix(".jsonl")))<cutoff:DirAccess.remove_absolute(trace_directory.path_join(f))
+	var path:String=trace_directory.path_join("brain-trace-"+date+".jsonl")
+	var file:=FileAccess.open(path,FileAccess.READ_WRITE if FileAccess.file_exists(path) else FileAccess.WRITE)
+	if file!=null:file.seek_end();file.store_line(JSON.stringify(row));file.close()
+func invite(who:String,action:String)->bool:
+	if not world.director.brains.has(who) or who==id:return false
+	var other:RefCounted=world.director.brains[who]
+	var reason:String="refuse_hunger" if world.hunger.rank(who)>=2 else "refuse_command" if other.busy() or other.current.get("source","") in ["command","steward"] else "refuse_tired" if float(other.needs.tired)>=float(config.tired_refusal) else ""
+	if not reason.is_empty():world.director.say_local(who,other.text(reason),"brain_invite",float(world.hunger.config.personal_gap),float(world.hunger.config.village_gap));return false
+	other.invitation={"from":id,"action":action,"until":clock+float(config.invite_seconds)};other.next_decision=clock
+	return true
+func destination(action:String)->Vector2:
+	var a:Dictionary=world.actors[id];var same:bool=a.region_id==world.actors.human.region_id
+	var center:Vector2=world.point(world.actors.human) if same and (world.activities.following.has(id) or action in ["follow","food"]) else world.point(a)
+	var radius:float=float(config.follow_max) if world.activities.following.has(id) or action in ["follow","food"] else float(config.free_radius)
+	for attempt in int(config.destination_attempts):
+		var p:Vector2=center+Vector2.from_angle(rng.randf()*TAU)*rng.randf_range(float(config.follow_min),radius)
+		if world.walkable(a.region_id,p) and world.director.available_position(id,a.region_id,p):return p
+	return Vector2.INF
+func start(choice:Dictionary,options:Array)->void:
+	finish("interrupted","better_choice")
+	world.hunger.clear_follow(id)
+	var action:String=choice.action;var a:Dictionary=config.actions.get(action,{"duration":20})
+	current=choice.duplicate(true);current.merge({"source":"local","start":clock,"arrived":clock,"duration":float(a.duration)})
+	recent[action]=clock;record(options)
+	if action=="follow":next_visit=clock+float(world.director.routines[id].return_visit.options(world.director.routines[id]).interval_seconds)
+	if action in ["dark_life","island_story"]:
+		provider_running=true;special_provider=action
+		if not advance_special(0.01):finish("failed","special_unavailable")
+		return
+	if offers.has(action):
+		executing=true;var accepted:bool=offers[action].body.call();executing=false;offers.erase(action)
+		if not accepted:finish("failed","provider_rejected");return
+		provider_running=true;route=world._routes.get(id);current["job_id"]=world.work.jobs.get(id,{}).get("id","");return
+	if action in ["flower_gift","facility"]:
+		executing=true;var accepted:bool=world.director.routines[id]._start(action);executing=false
+		if not accepted:finish("failed","provider_rejected");return
+		provider_running=true;route=world._routes.get(id);current["job_id"]=world.work.jobs.get(id,{}).get("id","");return
+	if action in ["hold_cat","pet_cat"]:
+		if not world.cat.interact(id,"hold" if action=="hold_cat" else "pet"):finish("failed","cat_busy");return
+	if choice.has("scheduled"):
+		current.duration=float(world.schedules.config.stay_seconds)
+		world.schedules.next_after[id]=clock+float(world.schedules.config.interval)
+		world.schedules.statistics.started[id]=int(world.schedules.statistics.started.get(id,0))+1
+		world.schedules.targets[id]=choice.scheduled.merged({"phase":world.days.phase().id,"arrived":false})
+		schedule_options.clear();schedule_due=float(world.schedules.next_after[id])
+	if action=="food" and world.hunger.rank(id)>=3:
+		executing=true;world.hunger.follow_after.erase(id);world.hunger._follow_body(id);executing=false
+		route=world._routes.get(id);world.director.routines[id].owns_route=route!=null;last_position=world.point(world.actors[id]);current.arrived=-1.0 if route!=null else clock
+		return
+	if not str(choice.partner).is_empty():invite(choice.partner,action)
+	var move:bool=choice.has("scheduled") or action in ["wander","follow","food"] or distance()>float(config.follow_max) or distance()<float(config.follow_min)
+	if move:
+		var p:Vector2=choice.scheduled.point if choice.has("scheduled") else destination(action)
+		if not p.is_finite():finish("failed","no_reachable_position");return
+		executing=true
+		world.host_issuing[id]=true;world.director.routines[id].issuing=true
+		var result:Dictionary=world.command(id,{"intent":"move","x":p.x,"y":p.y,"region_id":world.actors[id].region_id})
+		world.director.routines[id].issuing=false;world.host_issuing.erase(id);executing=false
+		if not result.get("ok",false):finish("failed",str(result.get("error","unreachable")));return
+		route=world._routes.get(id);world.director.routines[id].owns_route=route!=null;last_position=world.point(world.actors[id]);current.arrived=-1.0
+		world.director.destinations[id]={"region":world.actors[id].region_id,"point":p}
+	world.intelligence.note_behavior(id,action)
+	pose()
+func advance_special(delta:float)->bool:
+	executing=true
+	var r:RefCounted=world.director.routines[id]
+	var running:bool=world.dark.companions.tick(r,delta) if special_provider=="dark_life" else world.their_island.story_tick(r,delta)
+	executing=false
+	return running
+func pose()->void:
+	if current.is_empty() or current.source!="local" or world._routes.has(id):return
+	var a:Dictionary=config.actions.get(current.action,config.actions.daydream)
+	world.actors[id].activity=str(a.pose) if a.pose in ["play_cute","play_squat","play_lie","local_sit"] else "local_look"
+	world.lively.active[id]={"action":a.pose,"start":float(current.arrived),"until":clock+float(current.duration)}
+	world.lively.time=clock
+	if current.action=="play_cute":world.actors[id].activity="play_cute"
+func advance(delta:float)->void:
+	if not active() or delta<=0:return
+	if generation!=world.session_generation:reset();generation=world.session_generation
+	clock=world.director.time;update_needs(delta)
+	if not world.activities.squad_leader.is_empty():
+		if not current.is_empty() and current.source=="steward" and not busy() and not world._routes.has(id):finish("completed")
+		if current.get("source","")=="local":finish("interrupted","steward")
+		return
+	if not eligible():
+		if current.get("source","")=="local":finish("interrupted","held_or_quiet")
+		return
+	if world.hunger.rank(id)>=3 and current.get("source","")=="local" and current.action!="food":finish("interrupted","very_hungry")
+	if current.get("source","")=="local" and world.dark!=null and world.dark.here() and world.actors[id].region_id=="dark" and not world.dark.permanent(world.point(world.actors.human)) and current.action!="dark_life" and not (world.hunger.rank(id)>=3 and current.action=="food"):finish("interrupted","dark_fear")
+	if not current.is_empty() and current.source!="local" and world._routes.has(id):
+		var p:Vector2=world.point(world.actors[id]);still=still+delta if p.distance_to(last_position)<.001 else 0.0;last_position=p
+		if still>=float(config.stall_seconds):
+			var job:String=str(current.get("job_id",""))
+			if not job.is_empty() and world.work.jobs.get(id,{}).get("id")==job:world.work.stop(id,false)
+			elif not busy():world._routes.erase(id)
+			finish("timeout","route_stalled");return
+	if provider_running:
+		if not special_provider.is_empty():
+			if not advance_special(delta):finish("completed")
+			elif clock-float(current.start)>float(config.external_timeout):finish("timeout","special_timeout")
+			return
+		if world._routes.has(id):
+			var p:Vector2=world.point(world.actors[id]);still=still+delta if p.distance_to(last_position)<.001 else 0.0;last_position=p
+			if still>=float(config.stall_seconds):finish("timeout","provider_stalled");return
+		executing=true;world.director.routines[id].advance_brain_executor(delta);executing=false
+		if world.director.routines[id].kind.is_empty():finish("completed" if current.get("job_result","completed")=="completed" else "failed",str(current.get("job_result","")));return
+		if clock-float(current.start)>float(config.external_timeout):finish("timeout","provider_timeout")
+		return
+	if busy():
+		if not current.is_empty() and current.source!="local" and clock-float(current.start)>float(config.external_timeout):
+			if external_cancel.is_valid():external_cancel.call()
+			var job:String=str(current.get("job_id",""))
+			if not job.is_empty() and world.work.jobs.get(id,{}).get("id")==job:world.work.stop(id,false)
+			finish("timeout","executor_timeout");return
+		if current.get("source","")=="local":finish("interrupted","real_activity")
+		if current.is_empty():begin_external("command","blocked")
+		return
+	if not current.is_empty() and current.source!="local":
+		if not world._routes.has(id):finish("completed" if current.get("job_result","completed")=="completed" else "failed",str(current.get("job_result","")))
+		elif clock-float(current.start)>float(config.external_timeout):finish("timeout","executor_timeout")
+		else:return
+	if not world.activities.following.has(id) and not world.activities.default_follow_excluded.has(id):world.activities.following[id]=true
+	if not current.is_empty():
+		if not str(current.get("partner","")).is_empty():
+			var peer:Dictionary=world.actors.get(current.partner,{})
+			if peer.is_empty() or peer.region_id!=world.actors[id].region_id or world.point(peer).distance_to(world.point(world.actors[id]))>float(world.lively.config.pair_distance):finish("failed","partner_left");return
+		if current.action=="stars" and (world.days.phase().id!="night" or world.weather.current().id in ["rain","fog"]):finish("completed","conditions_changed");return
+		if route!=null and world._routes.has(id):
+			if not is_same(route,world._routes[id]):finish("interrupted","route_replaced");return
+			var p:Vector2=world.point(world.actors[id]);still=still+delta if p.distance_to(last_position)<.001 else 0.0;last_position=p
+			if still>=float(config.stall_seconds) or clock-float(current.start)>=float(config.route_timeout):finish("timeout","route_stalled");return
+		elif float(current.arrived)<0:
+			current.arrived=clock;route=null;world.director.routines[id].owns_route=false
+			if current.action=="follow" and distance()<=8:
+				var visits:Array=world.director.routines[id].return_visit.arrivals
+				visits.append({"at":clock,"distance":distance(),"travel_seconds":clock-float(current.start)})
+				if visits.size()>64:visits.pop_front()
+			if current.has("scheduled"):world.schedules.targets[id].arrived=true;world.schedules.statistics.arrived[id]=int(world.schedules.statistics.arrived.get(id,0))+1
+		if not current.is_empty() and float(current.arrived)>=0:
+			pose()
+			if clock-float(current.arrived)>=float(current.duration):finish("completed")
+	if clock<next_decision:return
+	next_decision=clock+float(config.decision_seconds)
+	var choices:Array=candidates()
+	if choices.is_empty():return
+	if current.is_empty():start(choices[0],choices);return
+	if world.activities.following.has(id) and (distance()>float(config.follow_max)+1 or world._routes.has("human")):
+		finish("interrupted","host_moved");follow();return
+	if choices[0].action!=current.action and float(choices[0].score)>float(current.score)+float(config.persistence)+float(config.switch_margin):start(choices[0],choices)
+func summary(language:String="")->Dictionary:
+	var lang:String=language if not language.is_empty() else ("en" if TranslationServer.get_locale().begins_with("en") else "zh")
+	var action:String=str(current.get("action","held" if world.director.routines[id].held else "quiet"))
+	if current.get("source","")=="command" and not config.command_labels.has(action):action="command_activity"
+	elif current.get("source","")=="steward" and not config.command_labels.has(action):action="steward_activity"
+	var reasons:Array=current.get("reasons",["follow"])
+	var lines:Array=[]
+	for reason in reasons.slice(0,3):
+		lines.append(str(config.voices.get(tag(),config.voices.gentle).personality[1 if lang=="en" else 0]) if reason=="personality" else text(reason,lang))
+	var words:Dictionary={}
+	for key in needs:words[key]=config.need_words[key][1 if float(needs[key])>=float(config.needs_context.word_thresholds[0]) and float(needs[key])<float(config.needs_context.word_thresholds[1]) else 2 if float(needs[key])>=float(config.needs_context.word_thresholds[1]) else 0][1 if lang=="en" else 0]
+	words.hunger=preload("res://scripts/localization.gd").text(world.hunger.NAMES[world.hunger.rank(id)])
+	var voice:Dictionary=config.voices.get(tag(),config.voices.gentle)
+	var sentence:String=str(voice.prefix[1 if lang=="en" else 0])+ (" " if lang=="en" else "")+action_name(action,lang)+( ", " if lang=="en" else "，")+str(voice.because[1 if lang=="en" else 0])+(" " if lang=="en" else "")+("; " if lang=="en" else "、").join(lines)+("." if lang=="en" else "。")
+	return {"action":action,"sentence":sentence,"needs":words,"recent":history.slice(-int(config.panel_history)).duplicate(true)}

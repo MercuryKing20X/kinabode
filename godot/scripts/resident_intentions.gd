@@ -12,6 +12,11 @@ var last_failure:Dictionary={}
 const ACTIONS=["assemble","fish","light","roast","invite","plant","harvest","water","chop","gather","build","chess","go_to","wander","sit","lounge","pool","swing","hold_cat","pet_cat","stars","home","follow","unfollow","hand_over","stop"]
 func setup(source:Node)->void:
 	host=weakref(source)
+	for who in world.director.brains:
+		var actor_id:String=who
+		world.director.brains[who].external_busy=func():return plans.has(actor_id)
+		world.director.brains[who].external_cancel=func():
+			if plans.has(actor_id):_fail(actor_id,"brain_timeout")
 	for station_id in world.barbecues:
 		var bound_station:String=station_id
 		world.barbecues[station_id].fireside.steward_human_authority=func(id):
@@ -69,6 +74,10 @@ func cancel(id:String)->void:
 		if world._routes.has(who) and owned.has("route") and is_same(world._routes[who],owned.route):world._routes.erase(who)
 	plans.erase(id)
 func submit(id:String,steps:Array,channel:String,adopt:Dictionary={},sponsor:String="",material_account:Dictionary={})->Dictionary:
+	if world.director.brains.has(id) and world.director.brains[id].active():
+		return world.director.brains[id].mandate("steward" if game.steward.active else "command",str(steps[0].get("action","blocked")) if not steps.is_empty() and steps[0] is Dictionary else "blocked",func():return _submit_body(id,steps,channel,adopt,sponsor,material_account))
+	return _submit_body(id,steps,channel,adopt,sponsor,material_account)
+func _submit_body(id:String,steps:Array,channel:String,adopt:Dictionary={},sponsor:String="",material_account:Dictionary={})->Dictionary:
 	if id=="human" or (not world.director.model_controlled(id) and (sponsor.is_empty() or not game.steward.authorized(sponsor))):return world._error("model_required")
 	if sponsor.is_empty() and (game.steward.authorized(id) or steps.any(func(step):return step is Dictionary and (step.has("actor_ids") or step.has("assignments")))):return game.steward.assign(id,steps,channel)
 	if steps.is_empty() or steps.size()>5:return world._error("invalid_intent_count")
@@ -102,6 +111,7 @@ func _note(id:String,action:String,result:String,channel_override:String="")->vo
 	if action=="fish" and result=="completed" and not world.fishing.held(id).is_empty():outcome=Text.text("intent.caught")%Text.content(str(world.fishing.describe(world.fishing.held(id)).species_name))
 	game.call_deferred("_record_chat",channel,"",Text.resident(world,id)+" "+outcome,"execution")
 func _fail(id:String,reason:String)->void:
+	if world.director.brains.has(id) and world.director.brains[id].active():world.director.brains[id].finish("failed",reason)
 	if game.steward.active:game.steward.body_director.failure(game,id,reason,plans.get(id,{}))
 	last_failure[id]=reason
 	var p:Dictionary=plans.get(id,{})

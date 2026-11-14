@@ -1,0 +1,1019 @@
+{
+  "version": 1,
+  "seed": 701,
+  "decision_seconds": 4,
+  "switch_margin": 18,
+  "persistence": 10,
+  "stall_seconds": 10,
+  "route_timeout": 90,
+  "external_timeout": 600,
+  "jitter": 4,
+  "novelty_penalty": 19,
+  "novelty_seconds": 220,
+  "follow_min": 2,
+  "follow_max": 6,
+  "free_radius": 12,
+  "history_limit": 256,
+  "trace_days": 3,
+  "invite_seconds": 24,
+  "invite_bonus": 35,
+  "tired_refusal": 0.8,
+  "rates": {
+    "lively": {
+      "tired": 0.0010400000000000001,
+      "bored": 0.0039000000000000003,
+      "missing": 0.0039000000000000003,
+      "curious": 0.0019500000000000001,
+      "rest": 0.012,
+      "satisfy": 0.018
+    },
+    "gentle": {
+      "tired": 0.00072,
+      "bored": 0.0027,
+      "missing": 0.0027,
+      "curious": 0.00135,
+      "rest": 0.012,
+      "satisfy": 0.018
+    },
+    "laborious": {
+      "tired": 0.0008,
+      "bored": 0.003,
+      "missing": 0.003,
+      "curious": 0.0015,
+      "rest": 0.012,
+      "satisfy": 0.018
+    },
+    "quiet": {
+      "tired": 0.0005200000000000001,
+      "bored": 0.0019500000000000001,
+      "missing": 0.0019500000000000001,
+      "curious": 0.0009750000000000001,
+      "rest": 0.012,
+      "satisfy": 0.018
+    }
+  },
+  "preferences": {
+    "lively": {
+      "play_cute": 24,
+      "spin": 22,
+      "hop": 20,
+      "butterfly": 15,
+      "chat": 12,
+      "cat_watch": 10,
+      "food": 15
+    },
+    "gentle": {
+      "flower_scent": 24,
+      "sea_watch": 23,
+      "cloud_watch": 21,
+      "cat_watch": 12,
+      "chat": 10
+    },
+    "laborious": {
+      "sweep": 24,
+      "wood_tidy": 23,
+      "dust": 21,
+      "stretch": 15,
+      "wander": 10
+    },
+    "quiet": {
+      "read": 24,
+      "stars": 28,
+      "play_lie": 22,
+      "local_sit": 20,
+      "daydream": 16,
+      "sea_watch": 12
+    }
+  },
+  "actions": {
+    "play_cute": {
+      "zh": "可爱跳",
+      "en": "a big happy hop",
+      "pose": "play_cute",
+      "need": "bored",
+      "duration": 14,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "host_or_same_region",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "spin": {
+      "zh": "转圈",
+      "en": "a little twirl",
+      "pose": "spin",
+      "need": "bored",
+      "duration": 12,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "host_or_same_region",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "hop": {
+      "zh": "蹦跳",
+      "en": "hop about",
+      "pose": "hop",
+      "need": "bored",
+      "duration": 12,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "host_or_same_region",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "butterfly": {
+      "zh": "追蝴蝶",
+      "en": "follow a butterfly",
+      "pose": "butterfly",
+      "need": "curious",
+      "duration": 16,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "host_or_same_region",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "flower_scent": {
+      "zh": "闻闻路边花",
+      "en": "smell the roadside flowers",
+      "pose": "flower_scent",
+      "need": "curious",
+      "duration": 20,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "host_or_same_region",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "cloud_watch": {
+      "zh": "看云",
+      "en": "watch the clouds",
+      "pose": "cloud_watch",
+      "need": "curious",
+      "duration": 25,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "host_or_same_region",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "sea_watch": {
+      "zh": "看海",
+      "en": "watch the sea",
+      "pose": "sea_watch",
+      "need": "curious",
+      "duration": 25,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "near_coast",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "cat_watch": {
+      "zh": "看看柚柚",
+      "en": "watch Yoyo",
+      "pose": "cat_watch",
+      "need": "bored",
+      "duration": 18,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "near_cat",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "stretch": {
+      "zh": "伸懒腰",
+      "en": "stretch a little",
+      "pose": "stretch",
+      "need": "tired",
+      "duration": 12,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "host_or_same_region",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "wave": {
+      "zh": "向你招手",
+      "en": "wave to you",
+      "pose": "wave",
+      "need": "missing",
+      "duration": 12,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "host_or_same_region",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "sweep": {
+      "zh": "扫扫身边的地",
+      "en": "brush the ground beside me",
+      "pose": "sweep",
+      "need": "bored",
+      "duration": 16,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "host_or_same_region",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "dust": {
+      "zh": "拍拍衣服",
+      "en": "brush off my clothes",
+      "pose": "dust",
+      "need": "bored",
+      "duration": 16,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "host_or_same_region",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "wood_tidy": {
+      "zh": "比划怎么摆木头",
+      "en": "think about stacking wood",
+      "pose": "wood_tidy",
+      "need": "curious",
+      "duration": 18,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "host_or_same_region",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "read": {
+      "zh": "安静看书",
+      "en": "read quietly",
+      "pose": "read",
+      "need": "tired",
+      "duration": 28,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "host_or_same_region",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "daydream": {
+      "zh": "发会儿呆",
+      "en": "let my thoughts drift",
+      "pose": "daydream",
+      "need": "tired",
+      "duration": 22,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "host_or_same_region",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "play_squat": {
+      "zh": "蹲一会儿",
+      "en": "crouch for a moment",
+      "pose": "play_squat",
+      "need": "tired",
+      "duration": 18,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "host_or_same_region",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "play_lie": {
+      "zh": "躺一会儿",
+      "en": "lie back a while",
+      "pose": "play_lie",
+      "need": "tired",
+      "duration": 20,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "host_or_same_region",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "local_sit": {
+      "zh": "坐着歇歇",
+      "en": "sit and rest",
+      "pose": "local_sit",
+      "need": "tired",
+      "duration": 24,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "host_or_same_region",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "chat": {
+      "zh": "找伙伴聊聊",
+      "en": "chat with a friend",
+      "pose": "chat",
+      "need": "missing",
+      "duration": 22,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "peer",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "back_to_back": {
+      "zh": "和伙伴一起歇歇",
+      "en": "rest beside a friend",
+      "pose": "back_to_back",
+      "need": "tired",
+      "duration": 22,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "peer",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "stars": {
+      "zh": "看星星",
+      "en": "watch the stars",
+      "pose": "sea_watch",
+      "need": "curious",
+      "duration": 30,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "night_clear",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "wander": {
+      "zh": "在附近走走",
+      "en": "take a little walk",
+      "pose": "local_look",
+      "need": "curious",
+      "duration": 20,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "host_or_same_region",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "follow": {
+      "zh": "回你身边",
+      "en": "come back to you",
+      "pose": "local_look",
+      "need": "missing",
+      "duration": 20,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "host_or_same_region",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "food": {
+      "zh": "去你身边等开饭",
+      "en": "stay with you for dinner",
+      "pose": "local_look",
+      "need": "hunger",
+      "duration": 24,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "host_or_same_region",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "schedule_sea": {
+      "zh": "去海边看看",
+      "en": "take a look at the sea",
+      "pose": "local_look",
+      "need": "curious",
+      "duration": 16,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "schedule",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "schedule_garden": {
+      "zh": "去看看菜地",
+      "en": "look at the garden",
+      "pose": "local_look",
+      "need": "curious",
+      "duration": 16,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "schedule",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "schedule_camp": {
+      "zh": "去火边坐坐",
+      "en": "sit by the fire",
+      "pose": "local_look",
+      "need": "curious",
+      "duration": 16,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "schedule",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "schedule_shelter": {
+      "zh": "去遮雨处歇歇",
+      "en": "rest under cover",
+      "pose": "local_look",
+      "need": "curious",
+      "duration": 16,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "schedule",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "schedule_moon": {
+      "zh": "去月台看星星",
+      "en": "watch the stars at the lookout",
+      "pose": "local_look",
+      "need": "curious",
+      "duration": 16,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "schedule",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "schedule_our_place": {
+      "zh": "去我们的地方",
+      "en": "visit our special place",
+      "pose": "local_look",
+      "need": "curious",
+      "duration": 16,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "schedule",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "flower_gift": {
+      "zh": "摘朵花给你",
+      "en": "bring you a flower",
+      "pose": "local_look",
+      "need": "missing",
+      "duration": 22,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "flower_gift",
+      "completion": "original_executor",
+      "labor": false
+    },
+    "facility": {
+      "zh": "玩一会儿设施",
+      "en": "enjoy a place we built",
+      "pose": "local_look",
+      "need": "bored",
+      "duration": 22,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "facility",
+      "completion": "original_executor",
+      "labor": false
+    },
+    "pet_cat": {
+      "zh": "摸摸柚柚",
+      "en": "give Yoyo a stroke",
+      "pose": "cat_watch",
+      "need": "bored",
+      "duration": 22,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "pet",
+      "completion": "original_executor",
+      "labor": false
+    },
+    "hold_cat": {
+      "zh": "抱抱柚柚",
+      "en": "hold Yoyo for a moment",
+      "pose": "cat_watch",
+      "need": "missing",
+      "duration": 22,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "pet",
+      "completion": "original_executor",
+      "labor": false
+    },
+    "dark_life": {
+      "zh": "在亮光旁陪着你",
+      "en": "stay with you by the light",
+      "pose": "local_look",
+      "need": "curious",
+      "duration": 120,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "dark",
+      "completion": "original_executor",
+      "labor": false
+    },
+    "island_story": {
+      "zh": "聊聊我们的岛",
+      "en": "tell you about our island",
+      "pose": "local_look",
+      "need": "curious",
+      "duration": 120,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "story",
+      "completion": "original_executor",
+      "labor": false
+    }
+  },
+  "text": {
+    "title": [
+      "心里话",
+      "On my mind"
+    ],
+    "now": [
+      "我现在想{action}，因为{reasons}。",
+      "I want to {action}, because {reasons}."
+    ],
+    "recent": [
+      "最近五次选择",
+      "My last five choices"
+    ],
+    "needs": [
+      "现在的感觉",
+      "How I feel"
+    ],
+    "empty": [
+      "先看看身边有什么。",
+      "Let me see what is around us."
+    ],
+    "command": [
+      "你刚刚叫我做这件事",
+      "you asked me to do this"
+    ],
+    "steward": [
+      "总管安排我做这件事",
+      "this is my part of our plan"
+    ],
+    "follow": [
+      "想待在你身边",
+      "I want to stay close to you"
+    ],
+    "personality": [
+      "这正是我喜欢的事",
+      "this feels like my kind of thing"
+    ],
+    "novelty": [
+      "想换件事试试",
+      "I fancy something different"
+    ],
+    "social": [
+      "身边有伙伴陪我",
+      "a friend is here with me"
+    ],
+    "night": [
+      "夜色适合安静看星星",
+      "the night is good for stargazing"
+    ],
+    "weather": [
+      "这里的天气正合适",
+      "the weather suits this"
+    ],
+    "curious": [
+      "身边还有值得看的东西",
+      "there is still something to discover"
+    ],
+    "tired": [
+      "想慢下来歇一会儿",
+      "I could use a quiet moment"
+    ],
+    "bored": [
+      "想找点乐子",
+      "I could use a little fun"
+    ],
+    "missing": [
+      "有点想你了",
+      "I have missed being near you"
+    ],
+    "hunger": [
+      "肚子饿了，想等你开饭",
+      "I am hungry and want to join you for dinner"
+    ],
+    "invite": [
+      "伙伴邀请了我",
+      "a friend invited me"
+    ],
+    "refuse_hunger": [
+      "我饿了，先等开饭。",
+      "Food first for me. We can play after."
+    ],
+    "refuse_tired": [
+      "我想先歇一会儿。",
+      "A little rest first. I will catch up."
+    ],
+    "refuse_command": [
+      "等我做完你交代的事。",
+      "Let me finish what I was asked to do."
+    ],
+    "low": [
+      "还好",
+      "comfortable"
+    ],
+    "mid": [
+      "有一点",
+      "a little"
+    ],
+    "high": [
+      "很明显",
+      "quite a bit"
+    ],
+    "need_tired": [
+      "累",
+      "tired"
+    ],
+    "need_bored": [
+      "无聊",
+      "restless"
+    ],
+    "need_missing": [
+      "想你",
+      "missing you"
+    ],
+    "need_curious": [
+      "好奇",
+      "curious"
+    ],
+    "need_hunger": [
+      "饿",
+      "hungry"
+    ],
+    "completed": [
+      "做完了",
+      "finished"
+    ],
+    "failed": [
+      "没做成",
+      "could not finish"
+    ],
+    "timeout": [
+      "等得太久了",
+      "took too long"
+    ],
+    "interrupted": [
+      "先做更要紧的事",
+      "something needs me first"
+    ],
+    "held": [
+      "陪你说话",
+      "talk with you"
+    ],
+    "quiet": [
+      "安静陪着你",
+      "stay quietly beside you"
+    ],
+    "blocked": [
+      "先等眼前的事办完",
+      "wait for my current activity"
+    ],
+    "command_activity": [
+      "完成你的安排",
+      "finish what you asked"
+    ],
+    "steward_activity": [
+      "完成总管的安排",
+      "do my part of the plan"
+    ],
+    "facility": [
+      "玩一会儿设施",
+      "enjoy a place we built"
+    ],
+    "flower_gift": [
+      "摘朵路边花给你",
+      "bring you a roadside flower"
+    ],
+    "watch": [
+      "看看你",
+      "watch you for a moment"
+    ],
+    "rest": [
+      "坐下歇歇",
+      "take a seat"
+    ],
+    "garden": [
+      "看看菜地",
+      "look at the garden"
+    ],
+    "nearby": [
+      "回你身边",
+      "come over to you"
+    ],
+    "schedule": [
+      "看看风景",
+      "take in the view"
+    ],
+    "day_event": [
+      "做个小动作",
+      "share a little moment"
+    ]
+  },
+  "voices": {
+    "lively": {
+      "prefix": [
+        "我现在想",
+        "I wanna"
+      ],
+      "because": [
+        "因为",
+        "because"
+      ],
+      "personality": [
+        "这个最好玩啦",
+        "that sounds like fun!"
+      ],
+      "refuse_hunger": [
+        "我饿了，先等开饭。",
+        "My tummy votes for dinner first!"
+      ],
+      "refuse_tired": [
+        "我想先歇一会儿。",
+        "Tiny breather, then I am back!"
+      ],
+      "refuse_command": [
+        "等我做完你交代的事。",
+        "Lemme finish this first!"
+      ]
+    },
+    "gentle": {
+      "prefix": [
+        "我现在想",
+        "I would like to"
+      ],
+      "because": [
+        "因为",
+        "because"
+      ],
+      "personality": [
+        "我喜欢慢慢看看这些",
+        "I like taking in these little things"
+      ],
+      "refuse_hunger": [
+        "我饿了，先等开饭。",
+        "May I wait for dinner first?"
+      ],
+      "refuse_tired": [
+        "我想先歇一会儿。",
+        "I would like a little quiet first."
+      ],
+      "refuse_command": [
+        "等我做完你交代的事。",
+        "I promised to finish this first."
+      ]
+    },
+    "laborious": {
+      "prefix": [
+        "我现在想",
+        "I would rather"
+      ],
+      "because": [
+        "因为",
+        "because"
+      ],
+      "personality": [
+        "这样待着也有点小事情做",
+        "it is nice to keep my hands busy"
+      ],
+      "refuse_hunger": [
+        "我饿了，先等开饭。",
+        "Dinner first, then I can join in."
+      ],
+      "refuse_tired": [
+        "我想先歇一会儿。",
+        "Let me take a short break first."
+      ],
+      "refuse_command": [
+        "等我做完你交代的事。",
+        "I will join once this job is done."
+      ]
+    },
+    "quiet": {
+      "prefix": [
+        "我现在想",
+        "I think I will"
+      ],
+      "because": [
+        "因为",
+        "because"
+      ],
+      "personality": [
+        "这样安安静静挺好",
+        "a quiet moment suits me"
+      ],
+      "refuse_hunger": [
+        "我饿了，先等开饭。",
+        "Hungry. I will wait for dinner."
+      ],
+      "refuse_tired": [
+        "我想先歇一会儿。",
+        "A little rest first."
+      ],
+      "refuse_command": [
+        "等我做完你交代的事。",
+        "After I finish this."
+      ]
+    }
+  },
+  "social_relation_weight": 1.0,
+  "schedule_weight": 3.0,
+  "external_stall_seconds": 10,
+  "providers": {
+    "flower_score": 16,
+    "facility_score": 14,
+    "reaction_score": 12
+  },
+  "need_words": {
+    "tired": [
+      [
+        "精神还好",
+        "rested"
+      ],
+      [
+        "有点累",
+        "a little tired"
+      ],
+      [
+        "想歇一会儿",
+        "ready for a rest"
+      ]
+    ],
+    "bored": [
+      [
+        "挺自在",
+        "content"
+      ],
+      [
+        "有点无聊",
+        "a little restless"
+      ],
+      [
+        "想找乐子",
+        "keen for some fun"
+      ]
+    ],
+    "missing": [
+      [
+        "你就在身边",
+        "happy you are near"
+      ],
+      [
+        "有点想你",
+        "missing you a little"
+      ],
+      [
+        "很想见见你",
+        "longing to see you"
+      ]
+    ],
+    "curious": [
+      [
+        "慢慢看看",
+        "taking things in"
+      ],
+      [
+        "有点好奇",
+        "a little curious"
+      ],
+      [
+        "很想看看新东西",
+        "keen to explore"
+      ]
+    ]
+  },
+  "special_score": 60,
+  "command_labels": {
+    "plant": [
+      "种菜",
+      "plant the garden"
+    ],
+    "manage_farm": [
+      "照料你交代的菜地",
+      "look after the garden you chose"
+    ],
+    "harvest": [
+      "收成熟的菜",
+      "harvest ripe crops"
+    ],
+    "water": [
+      "浇水",
+      "water the plants"
+    ],
+    "chop": [
+      "砍树",
+      "chop a tree"
+    ],
+    "gather_wood": [
+      "收集木头",
+      "gather wood"
+    ],
+    "forage": [
+      "采集",
+      "gather what we need"
+    ],
+    "gather": [
+      "采集",
+      "gather what we need"
+    ],
+    "build": [
+      "施工",
+      "work on the building"
+    ],
+    "build_house": [
+      "建屋",
+      "build the house"
+    ],
+    "build_facility": [
+      "建游玩设施",
+      "build the place we planned"
+    ],
+    "fish": [
+      "钓鱼",
+      "go fishing"
+    ],
+    "roast": [
+      "准备烧烤",
+      "get the barbecue ready"
+    ],
+    "light": [
+      "生火",
+      "light the fire"
+    ],
+    "invite": [
+      "叫伙伴来吃饭",
+      "invite everyone for dinner"
+    ],
+    "move": [
+      "走到你说的地方",
+      "go where you asked"
+    ],
+    "go_to": [
+      "去你说的地方",
+      "go where you asked"
+    ],
+    "stars": [
+      "看星星",
+      "watch the stars"
+    ],
+    "follow": [
+      "跟着你",
+      "follow you"
+    ],
+    "unfollow": [
+      "自由活动",
+      "enjoy some free time"
+    ],
+    "stop": [
+      "停下歇歇",
+      "stop for a moment"
+    ],
+    "play": [
+      "和大家玩",
+      "play with everyone"
+    ],
+    "gesture": [
+      "做个小动作",
+      "share a little moment"
+    ],
+    "watch": [
+      "看看你",
+      "watch you"
+    ],
+    "sit": [
+      "坐下",
+      "take a seat"
+    ],
+    "hand_over": [
+      "把东西递给你",
+      "bring you what I am carrying"
+    ],
+    "give": [
+      "送东西",
+      "give a gift"
+    ],
+    "chess": [
+      "下棋",
+      "play a board game"
+    ]
+  },
+  "scores": {
+    "mandatory": 1000000,
+    "return": 100,
+    "follow": 12,
+    "night": 16,
+    "social": 6,
+    "weather": 5
+  },
+  "needs_context": {
+    "near_distance": 8,
+    "place_cell": 12,
+    "new_place_boost": 0.15,
+    "word_thresholds": [
+      0.3,
+      0.7
+    ],
+    "personality_need_scale": 50
+  },
+  "destination_attempts": 16,
+  "panel_history": 5
+}

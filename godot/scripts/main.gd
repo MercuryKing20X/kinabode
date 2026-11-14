@@ -83,6 +83,7 @@ var ai_connect_panel: AcceptDialog
 var external_residents: Dictionary={}
 var playground:Node
 var watch_ui:Node
+var brain_panel:Control
 var steward:Node
 var action_dock: Control
 var actions_button: Button
@@ -306,6 +307,8 @@ func _ready() -> void:
 	if Opening.v3(world) and not loaded.get("loaded",false):
 		var initial:Dictionary=Opening.apply(world,library,opening_choice)
 		if not initial.ok:save_enabled=false;push_error(str(initial));get_tree().quit(1);return
+	world.director.brain_trace_directory=data_dir.path_join("brain-traces")
+	for brain in world.director.brains.values():brain.trace_directory=world.director.brain_trace_directory
 	world.activities.persist_follow=true
 	local_settings.load(data_dir.path_join("local-life.cfg"))
 	world.intelligence.setup(data_dir.path_join("intelligence-preferences.cfg"))
@@ -525,6 +528,8 @@ func _ready() -> void:
 	local_host_commands=preload("res://scripts/local_host_commands.gd").new(self);add_child(local_host_commands)
 	intentions=preload("res://scripts/resident_intentions.gd").new();add_child(intentions);intentions.setup(self)
 	steward=preload("res://scripts/steward_host.gd").new();add_child(steward);steward.setup(self)
+	brain_panel=preload("res://scripts/brain_panel.gd").new();root.add_child(brain_panel);brain_panel.setup(world,library)
+	view.mind_clicked.connect(func(id):brain_panel.open(id))
 	endpoint.resident_context=func(id):return {"management":steward.authorized(id),"managed_by":steward.manager if steward.active else "","work_options":steward.work_context() if steward.authorized(id) else []}
 	local_host_commands.feedback.connect(_local_command_feedback)
 	local_host_commands.completed.connect(_local_command_feedback)

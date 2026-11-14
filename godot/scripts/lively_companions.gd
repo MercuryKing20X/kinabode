@@ -18,6 +18,7 @@ var time:=0.0
 var rng:=RandomNumberGenerator.new()
 func _init(w:RefCounted)->void:owner=weakref(w);rng.seed=28043
 func eligible(id:String)->bool:
+	if world.director.brains.has(id) and world.director.brains[id].active():return world.director.brains[id].current.get("source","")=="local" and not world._routes.has(id)
 	if not world.director.routines.has(id):return false
 	var r:RefCounted=world.director.routines[id]
 	if not r.enabled or r.held or r.blocked() or r.time<r.visual_quiet_until or (not r.kind.is_empty() and r.kind!="lively_pair") or world.activities.following.has(id):return false
@@ -36,6 +37,7 @@ func socially_idle(id:String)->bool:
 		if id in camp.fireside.selected_guests or id in camp.fireside.state.get("invited",[]):return false
 	return not r.blocked()
 func advance(delta:float)->void:
+	if not world.intelligence.compatibility:return
 	if delta<=0 or not enabled or not world.activities.squad_leader.is_empty():return
 	time+=delta
 	for id in world.director.routines:

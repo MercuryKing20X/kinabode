@@ -150,6 +150,7 @@ static func load_world(world: RefCounted, directory: String) -> Dictionary:
 	world.memories.sync()
 	world.promises.restore(data.get("promises",{}));world.promises.reconcile_load()
 	world.director.moods.reset()
+	for brain in world.director.brains.values():brain.reset()
 	world.relationships.restore(data.get("relationships",{}))
 	world.wishes.restore(data.get("wishes",{}))
 	world.weather.restore(data.get("weather",{}));world.schedules.reset();world.personality.reset()
