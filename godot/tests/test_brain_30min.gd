@@ -57,10 +57,23 @@ func sample(index:int)->Dictionary:
 		var stats:Dictionary=day_report.actors[id]
 		if stats.ranks.has("0") and float(stats.ranks["0"].seconds)>0:check(float(stats.ranks["0"].food)/float(stats.ranks["0"].seconds)<=.1,"full food time share <=10% "+id)
 		check(int(stats.banter)+int(stats.cooperation)>=2,"at least two completed banter or cooperation episodes "+id)
+	var village_total:=0.0;var banter_seconds:=0.0;var coop_seconds:=0.0
+	for stats in day_report.actors.values():
+		for seconds in stats.seconds.values():village_total+=float(seconds)
+		banter_seconds+=float(stats.seconds.get("social_banter",0));coop_seconds+=float(stats.seconds.get("small_coop",0))
+		if stats.ranks.has("1"):
+			check(float(stats.ranks["1"].seconds)>0,"nonempty slightly hungry observation")
+			check(float(stats.ranks["1"].food)/float(stats.ranks["1"].seconds)<=.2,"slightly hungry food time <=20%")
+	check(banter_seconds/village_total<=.1,"village banter time <=10%")
+	check(coop_seconds/village_total<=.1,"village small cooperation time <=10%")
 	var clear_night:Array=day_report.trace.filter(func(row):return row.get("event")=="choice" and row.get("phase")=="night" and row.get("weather") not in ["rain","fog"])
 	check(not clear_night.is_empty(),"fixed source seed includes actual clear night observations")
 	if not clear_night.is_empty():check(clear_night.any(func(row):return row.choice=="stars"),"a resident really chooses stars during a clear night")
 	var first_day:Dictionary=JSON.parse_string(FileAccess.get_file_as_string(evidence.path_join("one-day-"+str(index)).path_join("report.json")))
+	for activity in ["social_banter","small_coop"]:
+		var day_seconds:=0.0
+		for stats in first_day.actors.values():day_seconds+=float(stats.seconds.get(activity,0))
+		check(day_seconds/(1500*first_day.actors.size())<=.1,"one day village time <=10% "+activity)
 	var expected:Dictionary={"morning":["morning_hello","weather_watch","stretch","garden_watch"],"afternoon":["sea_watch","read","sweep","wood_tidy","play_cute","spin","small_coop"],"dusk":["evening_chat"],"night":["stars","night_rest","fireflies"]}
 	for phase in expected:
 		var totals:Dictionary={}
@@ -93,6 +106,7 @@ func sample(index:int)->Dictionary:
 		var ranking:Array=counts[id].keys();ranking.sort_custom(func(a,b):return counts[id][a]>counts[id][b])
 		# Authored preference: lively enjoys hopping, twirling and chasing butterflies.
 		var signatures:Array={"gentle":["flower_scent","sea_watch","cloud_watch"],"lively":["play_cute","spin","hop","butterfly"],"laborious":["sweep","wood_tidy","dust"],"quiet":["read","stars","play_lie"]}.get(b.tag(),[])
+		check(ranking.slice(0,5).filter(func(a):return a in b.config.balance.signatures[b.tag()]).size()>=2,"two signature activities in top five "+id)
 		check(ranking.slice(0,3).any(func(a):return a in signatures),"signature preference among top three "+id)
 	for a in counts:
 		for b in counts:

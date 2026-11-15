@@ -10,6 +10,9 @@ var needs:Dictionary={"tired":0.0,"bored":.25,"missing":0.0,"curious":.5}
 var current:Dictionary={}
 var history:Array=[]
 var recent:Dictionary={}
+var balance_events:Array=[]
+var category_recent:Dictionary={}
+var last_host_busy:=-100000.0
 var invitation:Dictionary={}
 var top:Array=[]
 var next_decision:=0.0
@@ -39,6 +42,7 @@ func _init(w:RefCounted,who:String)->void:
 	owner=weakref(w);id=who;reset()
 func active()->bool:return world.intelligence!=null and not world.intelligence.compatibility
 func reset()->void:
+	balance_events.clear();category_recent.clear();last_host_busy=-100000.0
 	current.clear();history.clear();recent.clear();invitation.clear();top.clear();route=null;still=0;next_decision=0;clock=0;last_near=0;seen_places.clear();schedule_due=0;next_visit=0;offers.clear();provider_running=false;special_provider=""
 	needs={"tired":0.0,"bored":.25,"missing":0.0,"curious":.5}
 	generation=world.session_generation
@@ -90,9 +94,37 @@ func mandate(source:String,action:String,body:Callable)->Dictionary:
 	if not result.get("ok",false):finish("failed",str(result.get("error","rejected")))
 	elif result.get("status")=="completed" and not busy() and not world._routes.has(id):finish("completed")
 	return result
+# Session-only scoring history. Commands and very-hungry behavior bypass balance.
+func category(action:String)->String:
+	for group in config.balance.groups:
+		if action in config.balance.groups[group]:return group
+	return action
+func balance_penalty(action:String)->float:
+	var group:String=category(action)
+	return float(config.balance.freshness_penalty)*maxf(0,1-(clock-float(category_recent.get(group,-100000)))/float(config.balance.freshness_seconds))
+func social_allowed(action:String,peer:String="")->bool:
+	if clock-last_host_busy<float(config.balance.host_activity_quiet_seconds):return false
+	var count:=0;var pairs:=0;var total:=0;var village:=0
+	for brain in world.director.brains.values():
+		for row in brain.balance_events:
+			if row.action==action and clock-float(row.at)<float(config.balance.window_seconds):village+=1
+	if village>=2*int(config.balance.social_village_limits[action]):return false
+	for row in balance_events:
+		if clock-float(row.at)>=float(config.balance.window_seconds):continue
+		if clock-float(row.at)<float(config.balance.social_cooldown_seconds):return false
+		total+=1
+		if row.action==action:
+			count+=1
+			if row.peer==peer:pairs+=1
+	return total<int(config.balance.social_total_limit) and count<int(config.balance.social_actor_limit) and (peer.is_empty() or pairs<int(config.balance.social_pair_limit))
 func effect(source:String,action:String,body:Callable)->Variant:
+	if source=="local" and action=="social_banter" and not social_allowed(action):return false
 	trace({"actor":id,"at":clock,"event":"candidate","choice":action,"source":source,"score":float(config.scores.mandatory),"reasons":[source]})
 	var result:Variant=body.call()
+	if source=="local" and action=="social_banter" and social_ledger().by_actor.has(id):
+		var session:Dictionary=social_ledger().sessions[social_ledger().by_actor[id]]
+		if session.members.any(func(who):return not world.director.brains[who].social_allowed(action,session.members[1] if who==session.members[0] else session.members[0])):
+			social_ledger().end(session,"frequency_limit");return false
 	var row:Dictionary={"actor":id,"at":clock,"day":world.days.day(),"event":"dispatch","choice":action,"source":source,"via":"ResidentBrain","reasons":[source],"outcome":"completed" if result==null or result else "deferred"}
 	trace(row)
 	if result==null or result:
@@ -220,6 +252,12 @@ func candidates()->Array:
 		var score:float=float(a.base)+rng.randf_range(-float(config.jitter),float(config.jitter))
 		for component in components:score+=float(component.value)
 		if recent.has(key):score-=float(config.novelty_penalty)*maxf(0,1-(clock-float(recent[key]))/float(config.novelty_seconds))
+		if not hungry:
+			score-=balance_penalty(key)
+			if world.days.phase().id=="morning" and key in config.balance.morning_actions:score+=float(config.balance.morning_rhythm_bonus)
+			if key in config.balance.signatures.get(tag(),[]):score+=float(config.balance.signature_bonus)
+			if key=="food":score-=float(config.balance.food_penalty_by_rank[world.hunger.rank(id)])
+			if key=="follow" and following and last_host_busy>0 and not sheltering() and distance()>float(config.follow_max):score+=float(config.balance.return_score)
 		components.sort_custom(func(x,y):return x.value>y.value)
 		var candidate:Dictionary={"action":key,"score":score,"reasons":components.filter(func(c):return float(c.value)>0).slice(0,3).map(func(c):return c.key),"partner":peer if a.requires=="peer" else ""}
 		if not scheduled.is_empty():candidate["scheduled"]=scheduled
@@ -230,9 +268,11 @@ func candidates()->Array:
 	if not hungry and invitation.has("point") and clock<float(invitation.until):
 		result.append({"action":invitation.action,"score":float(config.invite_bonus)+100,"reasons":["invite","social"],"partner":invitation.from,"paired":true,"point":invitation.point,"coop":invitation.get("coop","")})
 	var cooperative:Dictionary=social_ledger().candidate(self)
-	if not cooperative.is_empty() and not hungry:result.append(cooperative)
+	if not cooperative.is_empty() and not hungry and social_allowed("small_coop",cooperative.partner) and world.director.brains[cooperative.partner].social_allowed("small_coop",id):result.append(cooperative)
 	var interaction:Dictionary=interactions.candidate()
-	if not interaction.is_empty() and not hungry:result.append(interaction)
+	if not interaction.is_empty() and not hungry:
+		if interaction.get("interaction",{}).get("kind","")!="host_reply":interaction.score-=balance_penalty(interaction.action)
+		result.append(interaction)
 	result.sort_custom(func(a,b):return a.score>b.score if a.score!=b.score else str(a.action)<str(b.action))
 	return result
 func offer(action:String,body:Callable)->void:
@@ -281,7 +321,11 @@ func start(choice:Dictionary,options:Array)->void:
 	world.hunger.clear_follow(id)
 	var action:String=choice.action;var a:Dictionary=config.actions.get(action,{"duration":20})
 	current=choice.duplicate(true);current.merge({"source":"local","start":clock,"arrived":clock,"duration":float(a.duration)})
-	recent[action]=clock;record(options)
+	recent[action]=clock;category_recent[category(action)]=clock
+	if action in ["social_banter","small_coop"]:
+		balance_events=balance_events.filter(func(row):return clock-float(row.at)<float(config.balance.window_seconds))
+		balance_events.append({"at":clock,"action":action,"peer":choice.get("partner","")})
+	record(options)
 	if a.get("requires","")=="rhythm":
 		var at:Vector2=rhythm.target(action)
 		if at.is_finite():choice["point"]=at
@@ -371,7 +415,9 @@ func advance(delta:float)->void:
 	if not active() or delta<=0:return
 	if generation!=world.session_generation:reset();generation=world.session_generation
 	clock=world.director.time;update_needs(delta)
-	interactions.observe();interactions.refusal_tick();social_ledger().observe(self)
+	if world.work.jobs.has("human") or world._routes.has("human"):last_host_busy=clock
+	interactions.observe();interactions.refusal_tick()
+	if social_ledger().by_actor.has(id) or social_allowed("social_banter"):social_ledger().observe(self)
 	if not interactions.pending.is_empty() and distance()<=float(interactions.data.near_distance) and current.get("action","")!="host_interaction" and (busy() or world.hunger.rank(id)>=2):
 		if interactions.deliver_pending():trace({"actor":id,"at":clock,"event":"candidate","choice":"host_interaction","source":"local","reasons":["observed_event"],"outcome":"delivered_without_interrupt"})
 	interactions.tick_current()

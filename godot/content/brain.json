@@ -1635,5 +1635,69 @@
     "seed": 701,
     "world_seed": 701,
     "report_version": 1
+  },
+  "balance": {
+    "window_seconds": 1800,
+    "social_actor_limit": 2,
+    "social_pair_limit": 2,
+    "social_cooldown_seconds": 120,
+    "freshness_seconds": 180,
+    "freshness_penalty": 38,
+    "signature_bonus": 24,
+    "signatures": {
+      "gentle": [
+        "flower_scent",
+        "sea_watch",
+        "cat_watch"
+      ],
+      "lively": [
+        "butterfly",
+        "play_cute",
+        "spin"
+      ],
+      "laborious": [
+        "sweep",
+        "wood_tidy",
+        "dust"
+      ],
+      "quiet": [
+        "read",
+        "stars",
+        "play_lie"
+      ]
+    },
+    "groups": {
+      "host": [
+        "follow",
+        "food",
+        "host_interaction",
+        "evening_chat",
+        "morning_hello"
+      ],
+      "social": [
+        "chat",
+        "back_to_back",
+        "pair_sea",
+        "social_banter",
+        "small_coop"
+      ]
+    },
+    "food_penalty_by_rank": [
+      0,
+      18,
+      0,
+      0
+    ],
+    "social_total_limit": 2,
+    "social_village_limits": {
+      "social_banter": 2,
+      "small_coop": 3
+    },
+    "morning_rhythm_bonus": 8,
+    "morning_actions": [
+      "stretch"
+    ],
+    "host_activity_quiet_seconds": 60,
+    "return_score": 220
   }
 }

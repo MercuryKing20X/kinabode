@@ -1,5 +1,53 @@
 # Changelog / 更新记录
 
+## Unreleased — v0.7 polish 4 / 未发布
+
+- Balance local banter, small cooperation and activity freshness; bring signature activities back while preserving hunger and authored rules. / 调整本地拌嘴、小合作与分类新鲜度，让招牌活动回到前五；原饥饿及内容规则保留。
+- Deterministic standard-opening checks now cover time shares by hunger rank and signature activities; two complete 30-minute traces match. / 新增分饥饿档等饭、社交时间占比与招牌验收，两次完整30分钟trace一致。
+
+### Known issues / 已知问题
+
+Full suite: 369/405 passed; 36 failed. Original assertions retained. / 完整全套369/405通过，36失败，原断言保留。
+
+| Test | Class / 分类 | Status / 状态 |
+|---|---|---|
+| `test_follow_play_input.gd` | D | Maximum distance 11.011 tiles exceeds six; reproduced unchanged at the previous commit too; cause unconfirmed. / 最大11.011格超过6格，前一提交亦精确复现，原因待查。 |
+| `test_local_dialogue.gd` | D | No completed legacy idle pair exchange in the observation; other local speech delivered. / 观测内旧闲暇双人接话未完成，其余本地发言存在，待定位。 |
+| `test_resort_revision_migration.gd` | A | Legacy migration world lacks session_generation required by ResidentBrain initialization. / 旧迁移World缺少大脑初始化读取的session_generation，兼容缺陷保留。 |
+| `test_two_villa_input.gd` | C | Original 90s timeout; completion unproven. / 达到原时限，整项完成未证实。 |
+| `test_two_villa_migration.gd` | A | Legacy migration world lacks session_generation required by ResidentBrain initialization. / 旧迁移World缺少大脑初始化读取的session_generation，兼容缺陷保留。 |
+| `test_health_ai.gd` | C | Original 90s timeout; completion unproven. / 达到原时限，整项完成未证实。 |
+| `test_island_recipe_input.gd` | C | Original 90s timeout; completion unproven. / 达到原时限，整项完成未证实。 |
+| `test_island_recipe_meals_input.gd` | C | Original 180s timeout; completion unproven. / 达到原时限，整项完成未证实。 |
+| `test_south_roads_cat.gd` | C | Original 90s timeout; completion unproven. / 达到原时限，整项完成未证实。 |
+| `test_home_island_migration.gd` | A | Legacy migration world lacks session_generation required by ResidentBrain initialization. / 旧迁移World缺少大脑初始化读取的session_generation，兼容缺陷保留。 |
+| `capture_playtest_camera.gd` | D | Idle residents did not satisfy the return check after a distant player route. / 主角远程路线后居民回访检查未达标，原因待查。 |
+| `test_playtest_invitation_input.gd` | C | Original 180s timeout; completion unproven. / 达到原时限，整项完成未证实。 |
+| `test_speech_quiet_input.gd` | C | Original 90s timeout; completion unproven. / 达到原时限，整项完成未证实。 |
+| `test_player_follow.gd` | D | Cross-island bridge arrival check failed; routing and speed unchanged. / 跨岛经桥到达检查失败，原路线和速度未改，待定位。 |
+| `test_lively_observation.gd` | C | Original 90s timeout; completion unproven. / 达到原时限，整项完成未证实。 |
+| `test_motion_v4.gd` | D | Authored schedule traversal and follow dead-zone checks failed; original parameters retained. / 作息路线与跟随不动区检查失败，原参数保留，待定位。 |
+| `test_camp_click_approach.gd` | C | Original 90s timeout; completion unproven. / 达到原时限，整项完成未证实。 |
+| `test_camp_remote_actions.gd` | C | Original 90s timeout; completion unproven. / 达到原时限，整项完成未证实。 |
+| `test_intelligence_activation.gd` | C | Minimal Hungry fixture lacks the real hunger interface (quiet_until). / 最小Hungry假对象缺真实饥饿接口字段，测试设施待补。 |
+| `test_flower_gifts.gd` | B | Legacy fixture forces the old selector; unified-brain selection now owns decisions. / 旧夹具只强制旧选择器；v0.7已由统一大脑选事，断言保留待迁移。 |
+| `test_memory_life_input.gd` | D | Anniversary delivery through local gates was not observed. / 未观测到纪念日台词经本地闸门实际投递，待定位。 |
+| `test_days_controller.gd` | D | Daily event/gesture did not start; subsequent fixture access failed and timed out. / 每日事件/动作未启动，随后夹具字段读取报错并超时，待定位。 |
+| `test_memory_reminders_controller.gd` | D | Reminder delivery/presentation/persistence checks failed. / 记忆提醒交付、呈现与持久记录检查失败，待定位。 |
+| `test_resident_moods_controller.gd` | D | Actual happy-mood bubble pool check failed. / 实际高兴情绪气泡池检查失败，待定位。 |
+| `test_weather_controller.gd` | D | Garden/camp schedule arrival checks failed; authored parameters retained. / 菜园/营地日程到达检查失败，原参数保留，待定位。 |
+| `test_relationship_rewards_controller.gd` | D | Seat arrival and approach-to-working-host reward checks failed. / 关系奖励的入座与接近工作主角检查失败，待定位。 |
+| `test_moon_fishing_mouse.gd` | C | Original 90s timeout; completion unproven. / 达到原时限，整项完成未证实。 |
+| `test_run_eat_mouse_standard.gd` | C | Original 90s timeout; completion unproven. / 达到原时限，整项完成未证实。 |
+| `test_run_eat_mouse_showcase.gd` | C | Original 90s timeout; completion unproven. / 达到原时限，整项完成未证实。 |
+| `check_translations.gd` | C | CSV-only static scan flags direct bilingual brain content (1102 findings); full locale coverage remains unverified. / 静态扫描未识别直接双语脑内容，共1102处报告，完整本地化覆盖待适配验证。 |
+| `test_their_island_ui.gd` | C | Original 90s timeout; completion unproven. / 达到原时限，整项完成未证实。 |
+| `test_their_island_story_input.gd` | C | Original 180s timeout; completion unproven. / 达到原时限，整项完成未证实。 |
+| `test_their_island_progress.gd` | A | Legacy migration world lacks session_generation required by ResidentBrain initialization. / 旧迁移World缺少大脑初始化读取的session_generation，兼容缺陷保留。 |
+| `test_overnight_player_standard_moon.gd` | C | Original 90s timeout; completion unproven. / 达到原时限，整项完成未证实。 |
+| `test_overnight_player_showcase_home.gd` | D | Uninvited outside-seat onlookers were not observed; cause unconfirmed. / 未观测到席圈外未受邀旁观表现，原因待查。 |
+| `test_overnight_player_showcase_moon.gd` | C | Original 90s timeout; completion unproven. / 达到原时限，整项完成未证实。 |
+
 ## v0.6.1 — 2026-11-13
 
 - Downloadable Windows x86_64, universal macOS and Linux x86_64 packages, with licenses and bilingual launch/save instructions. Local play needs no Godot or Python. / 三平台可直接打开的游戏包，附授权及中英打开/存档说明；本地玩法无需Godot或Python。
