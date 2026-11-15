@@ -19,15 +19,18 @@ func run()->void:
 	var card:Dictionary=game._intent_card("codex",{"dialogue":{"channel_id":"direct:codex","recipient_ids":["codex"]}},"direct:codex")
 	var file:=FileAccess.open(OS.get_environment("HABITAT_DATA_DIR").path_join("intent-card.json"),FileAccess.WRITE);file.store_string(JSON.stringify(card));file.close()
 	game.playground.stop();game.chat.hide();game.chat_input.release_focus()
-	game.steward.manager="codex"
+	check(game.steward.start("codex"),"host really enables stewardship before approving")
+	game.steward.local_only=false
+	game.world.actors.codex.controller="model"
+	game.steward.pool.set_management("codex",true)
 	# C: this fixture is an explicit host preparation; keep model follow protection.
 	game.world.host_command("codex",{"intent":"move","region_id":"home","x":game.world.actors.human.position[0]+2,"y":game.world.actors.human.position[1]})
 	for step in range(1000):
 		game.world.advance(.1)
 		if not game.world._routes.has("codex"):break
 	for choice in ["yes","no","timeout"]:
-		var row:Dictionary={"reason":choice,"intents":[{"action":"fish"}]}
-		game.steward.queue=[row];game.steward.timeline=[{"status":"pending"}]
+		var row:Dictionary={"phase":"fixture_future","reason":choice,"intents":[{"action":"fish"}]}
+		game.steward.queue=[row];game.steward.timeline=[row.merged({"status":"pending"})]
 		game.steward.approve_next(row,.1)
 		await process_frame;await process_frame
 		check(is_instance_valid(game.steward.invitation) and game.steward.invitation.visible,"invitation visible "+choice)
@@ -43,7 +46,8 @@ func run()->void:
 			for down in [true,false]:
 				var event:=InputEventMouseButton.new();event.button_index=MOUSE_BUTTON_LEFT;event.position=point;event.global_position=point;event.pressed=down;root.push_input(event,true);await process_frame
 		check(not game.steward.invitation.visible,"invitation resolved "+choice)
-	game.steward.queue.clear();game.steward.timeline.clear();game.steward.manager=""
+	game.world.actors.codex.controller="local"
+	game.steward.stop();game.steward.queue.clear();game.steward.timeline.clear();game.steward.manager=""
 	game.world.director.set_all_enabled(true)
 	var curve:Array=[]
 	var farthest:=0.0

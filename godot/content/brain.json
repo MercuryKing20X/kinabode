@@ -517,6 +517,42 @@
       "requires": "story",
       "completion": "original_executor",
       "labor": false
+    },
+    "host_interaction": {
+      "zh": "去找你说句话",
+      "en": "come over and talk to you",
+      "pose": "chat",
+      "need": "missing",
+      "duration": 3,
+      "base": 0,
+      "need_weight": 0,
+      "requires": "interaction",
+      "completion": "delivered_speech",
+      "labor": false
+    },
+    "pair_sea": {
+      "zh": "和伙伴一起看海",
+      "en": "watch the sea together",
+      "pose": "sea_watch",
+      "need": "curious",
+      "duration": 35,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "peer",
+      "completion": "shared_arrival_then_duration",
+      "labor": false
+    },
+    "pair_sweep": {
+      "zh": "和伙伴一起扫扫身边",
+      "en": "sweep this patch together",
+      "pose": "sweep",
+      "need": "bored",
+      "duration": 35,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "peer",
+      "completion": "shared_arrival_then_duration",
+      "labor": false
     }
   },
   "text": {
@@ -707,6 +743,106 @@
     "day_event": [
       "做个小动作",
       "share a little moment"
+    ],
+    "interaction_idle": [
+      "你站着没动已经有一会儿了",
+      "you have been standing still for a while"
+    ],
+    "interaction_circles": [
+      "你刚走了一圈又回到原地",
+      "you just looped back to where you started"
+    ],
+    "interaction_water": [
+      "你在真实海岸边停了下来",
+      "you stopped beside the coast"
+    ],
+    "interaction_sprint": [
+      "你实际位移突然变快了",
+      "your movement suddenly sped up"
+    ],
+    "interaction_near_silent": [
+      "你走近后安静地站在我身边",
+      "you came close and stayed without speaking"
+    ],
+    "interaction_returned": [
+      "你刚从远处回到了我附近",
+      "you came back after being far away"
+    ],
+    "interaction_rain": [
+      "真实天气在下雨，你仍在屋外",
+      "it is raining and you are still outside"
+    ],
+    "interaction_night": [
+      "真实昼夜已经入夜，你仍在屋外",
+      "night has fallen and you are still outside"
+    ],
+    "interaction_watch_work": [
+      "我有真实工作，你停在附近看着",
+      "I have a real job and you stopped to watch"
+    ],
+    "interaction_helped": [
+      "你刚和我完成了真实递物或共同劳动",
+      "you just gave me something or helped with real work"
+    ],
+    "interaction_far": [
+      "你刚离开了我附近",
+      "you just moved away from me"
+    ],
+    "interaction_home_near": [
+      "你站在我已建好的家门附近",
+      "you are beside the door of my completed home"
+    ],
+    "interaction_meal": [
+      "你安排的真实烧烤刚让我吃到了",
+      "I just ate at the barbecue you arranged"
+    ],
+    "interaction_hungry_idle": [
+      "我真的饿了，你还站着没开饭",
+      "I am hungry and you are still standing without dinner"
+    ],
+    "interaction_watch_play": [
+      "你站在正在玩的伙伴旁边",
+      "you are watching friends who are actually playing"
+    ],
+    "interaction_no_chat": [
+      "今天过了好一会儿，你还没和我说话",
+      "a good part of today has passed without a word between us"
+    ],
+    "interaction_peer_invite": [
+      "我想邀请身边的伙伴一起玩",
+      "I would like to do something with my friend"
+    ],
+    "interaction_peer_comment": [
+      "伙伴正在我身边一起做这件事",
+      "my friend is here doing this with me"
+    ],
+    "interaction_refuse": [
+      "这只是玩的邀请，我想先做自己的事",
+      "this is a social invitation and I prefer my own activity first"
+    ],
+    "interaction_command_ack": [
+      "你明确交代了劳动，我先执行",
+      "you gave a work order and I am carrying it out"
+    ],
+    "peer_interaction": [
+      "和伙伴一起待会儿",
+      "spend time with a friend"
+    ],
+    "deferred": [
+      "等合适的时候再说",
+      "wait for a good moment"
+    ],
+    "interaction_accept": [
+      "你邀请我一起玩，我愿意过来陪你",
+      "you invited me to play and I want to join you"
+    ],
+    "declined": [
+      "这次想先做自己的事",
+      "prefer my own activity this time"
+    ],
+    "interaction_finished": [
+      "你交代的真实工作刚完成，我想叫你来看",
+      "the real job you assigned just finished and I want to show you"
     ]
   },
   "voices": {
@@ -994,6 +1130,26 @@
     "chess": [
       "下棋",
       "play a board game"
+    ],
+    "question": [
+      "问问你的想法",
+      "ask what you think"
+    ],
+    "report": [
+      "向你汇报",
+      "tell you how it went"
+    ],
+    "say": [
+      "说说接下来的安排",
+      "explain our plan"
+    ],
+    "assemble": [
+      "和大家集合",
+      "gather with everyone"
+    ],
+    "social_invite": [
+      "请你加入这次活动",
+      "ask you to join our activity"
     ]
   },
   "scores": {

@@ -312,6 +312,7 @@ func tick_job(id:String,job:Dictionary,delta:float)->void:
 		if job.time<float(config.eat_seconds):return
 		if life.station.portions<=0:job.phase="fire_sit";job.time=0;return
 		life.station.portions-=1;life.station.meals_eaten+=1;state.current.eaten+=1;state.current.eaters.append(id)
+		if world.director.brains.has(id):world.director.brains[id].interactions.enqueue("meal","meal:"+str(state.current.id))
 		var tasted:Array=world.barbecue_tastes.by_actor.get(id,[])
 		var first:bool=taste_history_known(state.current.food_id) and state.current.food_id not in tasted
 		if state.current.food_id not in tasted:tasted.append(state.current.food_id)

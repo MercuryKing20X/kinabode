@@ -835,6 +835,7 @@ func _record_chat(channel: String, actor_id: String, text: String, kind := "mess
 	if actor_id=="human" and kind in ["message","answer"]:
 		var recipients:Array=(command_page.selected.duplicate() if command_page!=null and not command_page.selected.is_empty() else world.actors.keys().filter(func(id):return id!="human")) if channel==Channels.ALL else [channel.trim_prefix("direct:")]
 		for resident in recipients:
+			if world.director.brains.has(resident):world.director.brains[resident].interactions.talked_day=world.days.day()
 			memory_books.remember_chat(resident,world.world_id,entry.message_id,text,world.days.day(),channel)
 			memory_books.learn(resident,world.world_id,entry.message_id,text,world.days.day())
 	if channel == _chat_channel(): _render_chat()
@@ -983,6 +984,14 @@ func _send(text: String) -> void:
 	var play_text:String=text.replace(LocalText.source("content.overnight.text.87c479f93e29ce"),LocalText.source("content.overnight.text.29f07ca1600fd9")).replace(LocalText.source("content.overnight.text.f1bf53c0148547"),LocalText.source("content.overnight.text.6adb4bfec2ff5b")).replace(LocalText.source("content.overnight.text.33f5a6f0f66c60"),LocalText.source("content.overnight.text.6adb4bfec2ff5b")).replace(LocalText.source("content.overnight.text.6f9543d8ee7fcd"),LocalText.source("content.overnight.text.6adb4bfec2ff5b"))
 	if text.is_empty():
 		status.text=T("ui.chat.empty");chat_input.grab_focus();return
+	if not group_chat and world.director.brains.has(chat_actor) and (text.contains("陪我玩") or text.contains("一起散步") or text.contains("一起看星星") or text.to_lower() in ["play with me", "walk with me", "watch stars with me"]):
+		_record_chat(_chat_channel(),"human",text)
+		var b:RefCounted=world.director.brains[chat_actor]
+		var response:Dictionary=b.interactions.social("walk" if text.contains("散步") or text.to_lower().contains("walk") else "stars" if text.contains("星星") or text.to_lower().contains("stars") else "play")
+		if response.ok:
+			b.invitation={"from":"human","action":"wander","until":b.clock+float(b.config.invite_seconds)};b.next_decision=b.clock
+			b.interactions.enqueue("accept","accepted_social_invitation")
+		_finish_chat_input();return
 	if playground!=null:
 		if text.strip_edges() in [LocalText.source("content.overnight.text.16833aa2becf6e"),LocalText.source("content.overnight.text.312062aef6737d"),LocalText.source("content.overnight.text.cfb252a606cf13"),"stop","stop playing"] and not playground.kind.is_empty():
 			playground.finish();_finish_chat_input();return
@@ -1615,7 +1624,11 @@ func _process(delta: float) -> void:
 		if world.actors.has(who) and view.visible and view.region_id==world.actors[who].region_id and get_viewport_rect().has_point(view.screen(world.point(world.actors[who]))):
 			var greeting:String=str(connection_greetings[who]);connection_greetings.erase(who)
 			_record_chat(Channels.direct(who),who,greeting,"local");view.say(greeting,"local",who)
-	if playground!=null:playground.tick(delta)
+	if playground!=null:
+		playground.tick(delta)
+		if not playground.kind.is_empty() and "human" not in playground.members:
+			for who in playground.members:
+				if world.director.brains.has(who) and world.director.brains[who].distance()<=8:world.director.brains[who].interactions.condition("watch_play",true,playground.elapsed)
 	if intentions!=null:intentions.advance(delta)
 	if steward!=null:steward.tick(delta)
 	if not world.pocket_notice.is_empty():status.text=world.pocket_notice;world.pocket_notice=""

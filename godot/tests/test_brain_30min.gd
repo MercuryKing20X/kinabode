@@ -30,9 +30,10 @@ func sample(index:int)->Dictionary:
 	var w:RefCounted=game.world
 	var initial:Dictionary=w.storage.saved().duplicate(true)
 	var plots:Dictionary=w.farms.plots.duplicate(true)
+	var interactions:Dictionary={};var interaction_seq:Array=[];var delivered_lines:Dictionary={};var approached:Dictionary={}
 	var counts:Dictionary={};var distance:Dictionary={};var idle:Dictionary={};var max_idle:Dictionary={};var seq:Array=[];var timeline:Array=[]
 	var no_labor:=true;var conserved:=true
-	for id in w.director.brains:counts[id]={};distance[id]=0.0;idle[id]=0.0;max_idle[id]=0.0
+	for id in w.director.brains:interactions[id]=0;approached[id]=0;counts[id]={};distance[id]=0.0;idle[id]=0.0;max_idle[id]=0.0
 	for tick in 7200:
 		w.advance(.25)
 		for id in w.director.brains:
@@ -55,11 +56,19 @@ func sample(index:int)->Dictionary:
 		var retained:=FileAccess.open(evidence.path_join("brain-trace-run"+str(index)+".jsonl"),FileAccess.WRITE);retained.store_string(raw_trace);retained.close()
 		for line in raw_trace.split("\n",false):
 			var row:Dictionary=JSON.parse_string(line)
+			if row.get("event")=="interaction":
+				interactions[row.actor]+=1
+				var delivered_key:String=str(row.day)+":"+str(row.actor)+":"+str(row.zh)
+				check(not delivered_lines.has(delivered_key),"no repeated delivered line per resident per day")
+				delivered_lines[delivered_key]=true
+				check(not str(row.get("scene","")).is_empty() and not row.get("reasons",[]).is_empty() and not str(row.get("proof","")).is_empty(),"every interaction has a real scene and reason")
+				interaction_seq.append(row)
 			if row.get("event")!="choice":continue
 			counts[row.actor][row.choice]=int(counts[row.actor].get(row.choice,0))+1
 			seq.append({"actor":row.actor,"at":row.at,"choice":row.choice,"reasons":row.reasons})
 	for id in w.director.brains:
 		var b:RefCounted=w.director.brains[id]
+		check(int(interactions[id])>=5,"at least five delivered host interactions "+id)
 		check(float(max_idle[id])<=15,"idle gap <=15 seconds "+id)
 		check(counts[id].size()>=8,"at least eight distinct actions "+id)
 		check(float(distance[id])/1800>=2 and float(distance[id])/1800<=8,"follow average 2..8 "+id)
@@ -72,8 +81,8 @@ func sample(index:int)->Dictionary:
 			if str(a)<str(b):check(counts[a]!=counts[b],"distinct pair distributions "+a+" / "+b)
 	check(no_labor,"zero unsolicited labor")
 	check(conserved,"original stock and unworked plots conserved at every sample")
-	sequences.append(seq)
-	var report:Dictionary={"counts":counts,"distance_mean":{},"idle_max":max_idle,"no_labor":no_labor,"conserved":conserved,"sequence":seq,"timeline":timeline}
+	sequences.append([seq,interaction_seq])
+	var report:Dictionary={"counts":counts,"host_interactions":interactions,"interaction_sequence":interaction_seq,"distance_mean":{},"idle_max":max_idle,"no_labor":no_labor,"conserved":conserved,"sequence":seq,"timeline":timeline}
 	for id in distance:report.distance_mean[id]=float(distance[id])/1800
 	var f:=FileAccess.open(evidence.path_join("30min-"+str(index)+".json"),FileAccess.WRITE);f.store_string(JSON.stringify(report,"\t"));f.close()
 	return report

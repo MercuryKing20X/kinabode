@@ -108,6 +108,12 @@ func record_event(actor_id: String, job: Dictionary, status: String, message: St
 	if job.get("intent") == "gather_wood": event["progress"] = world.gathering.progress(job)
 	if job.has("project_id"): event["project_id"] = job.project_id
 	if job.has("shared_activity_id"): event["shared_activity_id"] = job.shared_activity_id
+	if status=="completed" and actor_id=="human" and job.get("intent","") in ["chop","gather_wood"]:
+		for who in world.director.brains:
+			if jobs.has(who) and jobs[who].get("intent","") in ["chop","gather_wood"] and world.actors[who].region_id==world.actors.human.region_id and world.point(world.actors[who]).distance_to(world.point(world.actors.human))<=12:
+				world.director.brains[who].interactions.enqueue("helped","work_receipt:"+str(event.id))
+	if status=="completed" and world.director.brains.has(actor_id) and job.get("intent","") in ["chop","gather_wood","forage","build","manage_farm"]:
+		world.director.brains[actor_id].interactions.enqueue("finished","completed_job:"+str(job.get("id","")))
 	events.append(event)
 	if events.size() > 32: events.pop_front()
 
@@ -337,5 +343,6 @@ func give(actor_id: String,args: Dictionary) -> Dictionary:
 	if donor.carry[item]==0:donor.carry.erase(item)
 	target.carry[item]=int(target.carry.get(item,0))+int(quantity)
 	CarryRetention.mark(target,item,int(quantity))
+	if actor_id=="human" and world.director.brains.has(receiver):world.director.brains[receiver].interactions.enqueue("helped","gift:"+item+":"+str(quantity))
 	world.memories.record_event("gift","gift-"+Crypto.new().generate_random_bytes(12).hex_encode(),[actor_id,receiver],facts)
 	world.revision+=1;return {"ok":true,"status":"completed","quantity":int(quantity),"message":LocalText.text("system.work_system.the_whole_gift_has_been_delivered")}

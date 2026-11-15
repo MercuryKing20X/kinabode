@@ -99,7 +99,7 @@ func setup(source: RefCounted, art_library: RefCounted, directory: String, provi
 	var person:=HBoxContainer.new();details.add_child(person)
 	portrait=TextureRect.new();portrait.mouse_filter=Control.MOUSE_FILTER_STOP;portrait.gui_input.connect(func(event):
 		if event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_LEFT:
-			var panel:Control=preload("res://scripts/brain_panel.gd").new();get_tree().root.add_child(panel);tree_exiting.connect(panel.queue_free);panel.setup(world,library);panel.open(selected_id))
+			var panel:Control=preload("res://scripts/brain_panel.gd").new();get_parent().add_child(panel);tree_exiting.connect(panel.queue_free);panel.setup(world,library);panel.open(selected_id))
 	portrait.custom_minimum_size=Vector2(48,64);portrait.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;portrait.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED;person.add_child(portrait)
 	var identity:=VBoxContainer.new();identity.size_flags_horizontal=Control.SIZE_EXPAND_FILL;person.add_child(identity)
 	heading=label(identity,"");heading.add_theme_font_size_override("font_size",19);origin=label(identity,"",true)

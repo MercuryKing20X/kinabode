@@ -33,16 +33,21 @@ var spoken:Dictionary={}
 var audit_seen:=0
 var reported_goals:Dictionary={}
 var owner_visit:=false
+var pending_speech:Dictionary={}
 var closing:=false
 var formation_center:=Vector2.INF
 var formation_slots:Dictionary={}
 func reset()->void:
-	closing=false;formation_center=Vector2.INF;formation_slots.clear()
+	pending_speech.clear();closing=false;formation_center=Vector2.INF;formation_slots.clear()
 	reported_goals.clear();tasks.clear();batch.clear();paused.clear();preferences.clear();failures.clear();faults.clear();history.clear();receipts.clear();invited.clear();spoken.clear()
 	invitation_for="";invitation_deadline=0;owner_visit=false;next_check=0;next_question=0;question_until=0;rest_until=0;questions=0;answers=0;reports=0;invitations=0;ai_ignored=0;ai_used=0;serial=0;audit_seen=0
 	if is_instance_valid(card):card.queue_free()
 	if is_instance_valid(invitation_card):invitation_card.queue_free()
 func begin(g:Node)->void:
+	preload("res://scripts/resident_brain.gd").team(g.world,g.steward.Pool.IDS,"steward_begin",func():
+		_begin_body(g)
+		return {"ok":true})
+func _begin_body(g:Node)->void:
 	g.world.deliveries.party=g.steward.Pool.IDS.duplicate()
 	next_question=g.world.forest.clock+float(g.steward.trace_config.owner_question_seconds)
 	for goal in g.world.standard.goals.rows(g.world):
@@ -53,6 +58,10 @@ func begin(g:Node)->void:
 		g.world.director.routines[id].interrupt(0)
 		if g.world.work.jobs.has(id) or g.world.farms.active(id):paused[id]=g.world.forest.clock
 func end(g:Node)->void:
+	preload("res://scripts/resident_brain.gd").team(g.world,g.steward.Pool.IDS,"steward_end",func():
+		_end_body(g)
+		return {"ok":true})
+func _end_body(g:Node)->void:
 	g.world.deliveries.party.clear()
 	if not batch.is_empty() and batch.step.action=="play" and not g.playground.kind.is_empty():g.playground.stop()
 	for id in tasks.keys():
@@ -70,6 +79,9 @@ func note(g:Node,kind:String,details:Dictionary)->void:
 	if history.size()>4096:history.pop_front()
 	g.steward.trace(kind,details)
 func say(g:Node,kind:String,arg:String="")->void:
+	pending_speech[kind]=arg
+	g.world.director.brains[g.steward.manager].effect("steward","say",func():_say_body(g,kind,arg))
+func _say_body(g:Node,kind:String,arg:String="")->void:
 	var id:String=g.steward.manager
 	var tag:String=g.world.intelligence.tag(id)
 	var language:String="en" if TranslationServer.get_locale().begins_with("en") else "zh"
@@ -79,7 +91,9 @@ func say(g:Node,kind:String,arg:String="")->void:
 		var line:String=str(template).replace("{choice}",arg)
 		var key:String=str(g.world.days.day())+":"+id+":"+kind+":"+line
 		if spoken.has(key):continue
-		spoken[key]=true;g.steward.speak(id,line,"",true,"steward_local");return
+		if g.world.director.say_local(id,line,"steward_"+kind,0,0):
+			spoken[key]=true;pending_speech.erase(kind);g._record_chat(g.Channels.direct(id),id,line,"steward_local")
+		return
 func idle(g:Node,id:String)->bool:
 	var w:RefCounted=g.world
 	return id not in g.playground.members and not paused.has(id) and not g.intentions.plans.has(id) and not g.intentions.plans.values().any(func(plan):return plan.get("escorts",{}).has(id) or id in plan.get("gather_guests",[])) and not w.work.jobs.has(id) and not w.farms.active(id) and not w.deliveries.active(id) and not w.projects.active(id) and not w.activities.members.has(id) and not w.activities.held.get(id,false) and not g.questions.has(id) and not g.group_questions.has(id) and (not g._resident_chat_busy(id) or g.steward.pending.get("id","")==id) and not g.steward.meal_locked(id)
@@ -88,7 +102,6 @@ func task(g:Node,id:String,action:String,source:String="")->Dictionary:
 	serial+=1
 	var row:Dictionary={"id":serial,"action":action,"source":source,"start":g.world.forest.clock,"last_move":g.world.forest.clock,"position":g.world.point(g.world.actors[id]),"points":[],"goal":batch.get("goal",{}).get("id",""),"traveling":false}
 	if not batch.is_empty():batch.last_progress=g.world.forest.clock
-	if g.world.director.brains.has(id):g.world.director.brains[id].begin_external("steward",action)
 	tasks[id]=row;note(g,"task_start",row.merged({"actor":id}));return row
 func release(g:Node,id:String,reason:String)->void:
 	var w:RefCounted=g.world
@@ -126,9 +139,10 @@ func move(g:Node,id:String,at:Vector2,action:String="regroup",region:String="hom
 	if not target.is_finite():return false
 	var old:Dictionary=tasks.get(id,{})
 	if g.world._routes.has(id) and old.get("route")!=null and is_same(old.route,g.world._routes[id]):return true
-	g.world.activities.pause_follow(id)
-	g.world.activities.suspended_follow[id]=true
-	var result:Dictionary=g.world.command(id,{"intent":"move","region_id":region,"x":target.x,"y":target.y})
+	var result:Dictionary=g.world.director.brains[id].mandate("steward",action,func():
+		g.world.activities.pause_follow(id)
+		g.world.activities.suspended_follow[id]=true
+		return g.world.command(id,{"intent":"move","region_id":region,"x":target.x,"y":target.y}))
 	if not result.get("ok",false):
 		note(g,"route_rejected",{"actor":id,"error":result,"target":target})
 		if not batch.is_empty():batch.failed="unreachable"
@@ -190,6 +204,8 @@ func resolve(g:Node,timed_out:bool)->void:
 	if is_instance_valid(card):card.hide()
 	note(g,"owner_answer",{"selected":selected,"timeout":timed_out,"label":choice.text});say(g,"default",choice.text)
 func question(g:Node)->void:
+	g.world.director.brains[g.steward.manager].effect("steward","question",func():_question_body(g))
+func _question_body(g:Node)->void:
 	question_options=candidates(g)
 	var index:int=1 if g.world.intelligence.tag(g.steward.manager) in ["lively","laborious"] else 0
 	selected=question_options[mini(index,question_options.size()-1)].id
@@ -210,6 +226,8 @@ func chess_source(g:Node,id:String)->String:
 	return "local_easy" if g.world.intelligence.tag(id) in ["gentle","lively"] else "local_normal"
 func human_accepted()->bool:return not batch.is_empty() and invited.get(batch.key,false)
 func invite(g:Node,key:String)->bool:
+	return g.world.director.brains[g.steward.manager].effect("steward","social_invite",func():return _invite_body(g,key))
+func _invite_body(g:Node,key:String)->bool:
 	if invited.has(key):return true
 	if invitation_for!=key:
 		invitation_for=key;invitation_answer=false;invitations+=1
@@ -388,8 +406,7 @@ func dispatch_team(g:Node)->void:
 	batch.members=[]
 	if action in ["plant","harvest","water"]:
 		var preview:Dictionary=w.farms.preview_host_orders(ids,"ready" if action=="harvest" else "plant",batch.step.target_id,str(batch.step.get("crop_id","mixed")))
-		for who in ids:w.director.brains[who].begin_external("steward",action)
-		var result:Dictionary=w.farms.confirm_host_orders(preview,ids)
+		var result:Dictionary=preload("res://scripts/resident_brain.gd").team(w,ids,action,func():return w.farms.confirm_host_orders(preview,ids))
 		for row in result.get("rows",[]):
 			if row.get("ok",false):
 				batch.members.append(row.actor_id);task(g,row.actor_id,action)
@@ -442,7 +459,7 @@ func run_batch(g:Node)->void:
 			# Friends begin a real round while the host decides whether to join.
 			# A pending invitation never makes the whole group stand still.
 			batch.at=w.point(w.actors[manager])
-			var played:Dictionary=g.playground.start(str(preferences.get("game",batch.proposal.game)),false)
+			var played:Dictionary=preload("res://scripts/resident_brain.gd").team(w,g.steward.Pool.IDS,"play",func():return g.playground.start(str(preferences.get("game",batch.proposal.game)),false))
 			if not played.ok:complete(g,str(played.get("error","play_failed")));return
 			invite(g,batch.key);task(g,manager,"play");batch.phase="running";batch.running_at=w.forest.clock;return
 		if not invite(g,batch.key):return
@@ -470,7 +487,7 @@ func run_batch(g:Node)->void:
 			if human_accepted() and w._routes.has("human") and w.forest.clock-float(batch.thought_at)<90:return
 		if action=="play":
 			var game_name:String=str(preferences.get("game",batch.proposal.game))
-			var result:Dictionary=g.playground.start(game_name,invited.get(batch.key,false))
+			var result:Dictionary=preload("res://scripts/resident_brain.gd").team(w,g.steward.Pool.IDS,"play",func():return g.playground.start(game_name,invited.get(batch.key,false)))
 			if not result.ok:complete(g,str(result.get("error","play_failed")));return
 			task(g,manager,"play");batch.phase="running";batch.running_at=w.forest.clock;return
 		if action in ["chop","gather","plant","harvest","water","fish"]:
@@ -504,7 +521,7 @@ func run_batch(g:Node)->void:
 		if w.forest.clock-float(batch.running_at if batch.has("running_at") else batch.started)>limit:complete(g,"task_timeout");return
 		if action=="play":
 			invite(g,batch.key)
-			if human_accepted() and not g.playground.kind.is_empty():g.playground.start(g.playground.kind,true)
+			if human_accepted() and not g.playground.kind.is_empty():preload("res://scripts/resident_brain.gd").team(w,g.steward.Pool.IDS,"play",func():return g.playground.start(g.playground.kind,true))
 			if not g.playground.kind.is_empty():return
 			complete(g,"completed");return
 		if action in ["chop","gather"] and batch.get("primary_tasks",{}).keys().any(func(id):return tasks.get(id,{}).get("id",-1)==batch.primary_tasks[id] and not idle(g,id)):
@@ -518,7 +535,7 @@ func run_batch(g:Node)->void:
 				# Only our own local match may concede at its already-confirmed cap.
 				# No resume, extra budget, synthetic draw, or model substitution.
 				if match_row.get("mode")=="ai" and manager in w.gomoku.players(match_row) and match_row.history.size()>=int(match_row.ai.step_limit) and w.gomoku.players(match_row).all(func(id):return w.gomoku.source_for(match_row,id)!="model"):
-					var ended:Dictionary=w.gomoku.command(manager,{"intent":"gomoku_resign","site_id":match_row.site_id,"match_id":match_row.id,"revision":match_row.revision})
+					var ended:Dictionary=w.director.brains[manager].mandate("steward","chess",func():return w.gomoku.command(manager,{"intent":"gomoku_resign","site_id":match_row.site_id,"match_id":match_row.id,"revision":match_row.revision}))
 					note(g,"chess_cap_concession",{"match_id":match_row.id,"moves":match_row.history.size(),"result":ended})
 					if ended.get("ok",false):complete(g,"completed");return
 				note(g,"chess_paused",{"matches":matches,"stops":w.work.stop_audit.slice(-12)})
@@ -594,6 +611,7 @@ func new_goal_reports(rows:Array,current_id:String)->Array:
 			reported_goals[row.id]=true;fresh.append(row)
 	return fresh
 func tick(g:Node,_delta:float)->void:
+	for kind in pending_speech.keys():g.world.director.brains[g.steward.manager].effect("steward","say",func():_say_body(g,kind,str(pending_speech.get(kind,""))))
 	position_cards(g)
 	var w:RefCounted=g.world
 	var now:float=w.forest.clock

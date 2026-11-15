@@ -23,7 +23,7 @@ func tick(g:Node,delta:float)->void:
 		var pending:Dictionary=speech[who]
 		if w.forest.clock>pending.until:speech.erase(who);continue
 		if w.director.time<w.director.routines[who].visual_quiet_until:continue
-		if w.director.say_local(who,pending.text,"steward_life",30,14):speech.erase(who)
+		if w.director.brains[who].effect("steward","speech_life",func():return w.director.say_local(who,pending.text,"steward_life",30,14)):speech.erase(who)
 	for id in g.steward.Pool.IDS:
 		if not eligible(g,id) or g.steward.awaiting_assignment(id):continue
 		idle[id]=float(idle.get(id,0))+delta
@@ -36,7 +36,7 @@ func tick(g:Node,delta:float)->void:
 		var at:Vector2=w.point(leader)+Vector2.from_angle(float(turn+g.steward.Pool.IDS.find(id))*2.4)*float(g.steward.trace_config.squad_idle_radius)
 		if not w.walkable(leader.region_id,at):continue
 		var step:Dictionary={"action":"go_to","x":at.x,"y":at.y,"region_id":leader.region_id}
-		var result:Dictionary=g.intentions.submit(id,[step],g.Channels.direct(id),{},g.steward.manager)
+		var result:Dictionary=w.director.brains[id].mandate("steward",action,func():return g.intentions.submit(id,[step],g.Channels.direct(id),{},g.steward.manager))
 		cooldown[id+":"+action]=w.forest.clock+float(g.steward.trace_config.get("idle_repeat_seconds",180))
 		if result.get("ok",false):note(g,id,action)
 func note(g:Node,id:String,action:String)->void:

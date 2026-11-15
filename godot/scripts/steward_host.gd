@@ -254,7 +254,9 @@ func assign(id:String,steps:Array,channel:String,approved_limit:int=0)->Dictiona
 		var held:Dictionary={}
 		for who in assembly_ids:
 			if game.world.activities.held.has(who):held[who]=game.world.activities.held[who];game.world.activities.held.erase(who)
-		game.local_host_commands.submit(Text.source("content.steward.command.assemble"),assembly_ids,channel,assembly_ids,assembly_ids,account)
+		preload("res://scripts/resident_brain.gd").team(game.world,assembly_ids,"assemble",func():
+			game.local_host_commands.submit(Text.source("content.steward.command.assemble"),assembly_ids,channel,assembly_ids,assembly_ids,account)
+			return game.local_host_commands.last_execution)
 		assembly_accepted=game.local_host_commands.last_execution.get("actors",[])
 		for who in held:game.world.activities.held[who]=held[who]
 	var accepted:Array=[];var rejected:Dictionary={}
@@ -262,7 +264,7 @@ func assign(id:String,steps:Array,channel:String,approved_limit:int=0)->Dictiona
 		if who!=id and (game._resident_chat_busy(who) or game.world.director.routines[who].held or game.world.activities.held.get(who,false)):rejected[who]="busy";continue
 		if who in assembly_ids and who not in assembly_accepted:rejected[who]="very_hungry" if game.world.hunger.rank(who)>=3 else "busy";continue
 		var adopted:Dictionary={"job_id":game.world.work.jobs.get(who,{}).get("id","")} if who in assembly_accepted else {}
-		var result:Dictionary=game.intentions.submit(who,grouped[who],channel,adopted,id,account)
+		var result:Dictionary=game.world.director.brains[who].mandate("steward",str(grouped[who][0].action),func():return game.intentions.submit(who,grouped[who],channel,adopted,id,account))
 		if result.get("ok",false):
 			accepted.append(who)
 			if game.autonomy!=null:game.autonomy.scheduler.note_model_action(who)
@@ -271,6 +273,12 @@ func assign(id:String,steps:Array,channel:String,approved_limit:int=0)->Dictiona
 	camera_target=accepted[0] if not accepted.is_empty() else ""
 	return {"ok":not accepted.is_empty(),"accepted":accepted,"rejected":rejected,"error":"no_available_residents" if accepted.is_empty() else ""}
 func speak(id:String,text:String,channel:String="",narration:bool=false,kind:String="message")->void:
+	if active and game.world.director.brains.has(id):
+		game.world.director.brains[id].effect("steward","report",func():
+			if game.world.director.say_local(id,text,"steward_report",0,0):game._record_chat(game.Channels.direct(id) if channel.is_empty() else channel,id,text,kind))
+		return
+	_speak_body(id,text,channel,narration,kind)
+func _speak_body(id:String,text:String,channel:String="",narration:bool=false,kind:String="message")->void:
 	var compact:String=text.replace("\n"," ")
 	for start in range(0,mini(compact.length(),60),30):
 		bubbles.append({"id":id,"text":compact.substr(start,30),"source":"local_rules" if kind=="steward_local" else "autonomy" if kind=="autonomy" else "model" if game.world.director.model_controlled(id) else "local_rules"})
@@ -401,7 +409,7 @@ func preset()->void:
 		var proposal:Dictionary=tutorial_planner.plan(game)
 		if proposal.has("game"):
 			current_goal=proposal.goal
-			var result:Dictionary=game.playground.start(proposal.game)
+			var result:Dictionary=preload("res://scripts/resident_brain.gd").team(game.world,Pool.IDS,"play",func():return game.playground.start(proposal.game))
 			trace("game_start",result)
 			if not result.get("ok",false):tutorial_planner.retry[proposal.goal.id]=game.world.forest.clock+float(trace_config.retry_seconds)
 			return
@@ -902,6 +910,8 @@ func rhythm_line(id:String,kind:String,argument:String="")->String:
 		if not speech_used.has(id+":"+line):return line
 	return ""
 func rhythm_say(id:String,kind:String,argument:String="")->bool:
+	return game.world.director.brains[id].effect("steward","speech_"+kind,func():return _rhythm_say_body(id,kind,argument))
+func _rhythm_say_body(id:String,kind:String,argument:String="")->bool:
 	var line:String=rhythm_line(id,kind,argument)
 	if line.is_empty():return true
 	if not game.world.director.say_local(id,line,"steward_"+kind,0,0):return false

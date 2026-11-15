@@ -293,7 +293,7 @@ func decide(id:String,accepted:bool,selected:Array)->void:
 	for actor in successful:
 		var tag:String=world.intelligence.tag(actor)
 		if tag not in ["gentle","lively","laborious","quiet"]:tag="gentle"
-		speech_queue.append({"actor_id":actor,"line":Text.text("local.commands.start_"+tag),"channel_id":plan.channel_id,"expires":world.director.time+180})
+		speech_queue.append({"actor_id":actor,"line":Text.text("local.commands.start_"+tag),"brain_ack":plan.action in ["chop","plant","ready","water","build_stage","forage"],"action":plan.action,"channel_id":plan.channel_id,"expires":world.director.time+180})
 	feedback.emit(Text.text("local.commands.started"),plan.channel_id)
 func _process(_delta:float)->void:
 	if host==null or game==null:return
@@ -367,6 +367,10 @@ func _deliver_speech(actor_id:String="")->void:
 		var routine:RefCounted=world.director.routines.get(speech.actor_id)
 		if routine==null or world.director.time<routine.visual_quiet_until or world.fishing.life.time<float(world.fishing.life.quiet_until.get(speech.actor_id,0)):continue
 		if speech.expires<world.director.time:speech_queue.erase(speech);continue
+		if speech.get("brain_ack",false):
+			if world.director.brains[speech.actor_id].interactions.deliver("command_ack","host_order:"+str(speech.get("action","")),"human","command_ack"):
+				speech_queue.erase(speech)
+			continue
 		if world.director.say_local(speech.actor_id,speech.line,"host_command_complete",float(world.hunger.config.personal_gap),float(world.hunger.config.village_gap)):
 			actor_reply.emit(speech.actor_id,speech.line,speech.channel_id);speech_queue.erase(speech)
 

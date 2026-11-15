@@ -29,7 +29,13 @@ func run()->void:
 	receiver.needs.tired=.9
 	check(not b.invite("companion-2","chat"),"tired recipient declines social invitation")
 	receiver.needs.tired=0
-	check(b.invite("companion-2","chat"),"available recipient receives candidate invitation")
+	# B: DIRECTION round two explicitly permits personality refusal of social invitations.
+	var accepted:bool=b.invite("companion-2","chat")
+	for attempt in 20:
+		if accepted:break
+		check(not receiver.refusal.get("reason","").is_empty(),"social refusal has a reason")
+		accepted=b.invite("companion-2","chat")
+	check(accepted,"available recipient receives candidate invitation")
 	check(receiver.invitation.get("from")=="codex","invitation bound to exact sender")
 	w.hunger.ensure("codex");w.hunger.states.codex.elapsed=float(w.hunger.config.thresholds[3])
 	check(b.candidates().all(func(c):return c.action=="food"),"very hungry restricts entire candidate set")

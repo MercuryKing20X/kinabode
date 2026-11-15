@@ -1,0 +1,1609 @@
+{
+  "idle_seconds": 60,
+  "sustained_step_seconds": 180,
+  "scene_stages": 5,
+  "personal_seconds": 130,
+  "event_ttl": 90,
+  "near_distance": 3.5,
+  "far_distance": 10,
+  "return_seconds": 60,
+  "no_chat_seconds": 600,
+  "observation_seconds": 1,
+  "loop_window": 25,
+  "loop_distance": 12,
+  "score": 85,
+  "duration": 3,
+  "pair_seconds": 120,
+  "refusal_chance": {
+    "laborious": 0.25,
+    "lively": 0.15,
+    "gentle": 0.12,
+    "quiet": 0.4
+  },
+  "scenes": {
+    "idle": {
+      "reason": [
+        "你站着没动已经有一会儿了",
+        "you have been standing still for a while"
+      ],
+      "voices": {
+        "laborious": {
+          "zh": [
+            "懒鬼，和地板比谁站得久？",
+            "磨蹭什么呢，岛又不会自己长好。",
+            "站着看什么看，过来陪我走走。",
+            "喂，你的脚生根了吗？",
+            "岛主，发呆也该换个姿势了。"
+          ],
+          "en": [
+            "Taking root, boss?",
+            "The island is waiting on your grand standing-around plan.",
+            "Come on. Even a short walk counts.",
+            "Your feet on strike today?",
+            "Impressive. You have outlasted that rock."
+          ]
+        },
+        "lively": {
+          "zh": [
+            "哎呀～你不动，我都等无聊啦。",
+            "陪我玩嘛，站着多没意思。",
+            "你是不是偷偷睡着啦？",
+            "喂喂，我在这里呀～",
+            "再不理我，我就绕着你转啦。"
+          ],
+          "en": [
+            "Heyyy, your feet forgot the fun part!",
+            "Come play with me? Pretty please?",
+            "Did you fall asleep standing up?",
+            "Hellooo! Your favourite distraction is right here.",
+            "Keep ignoring me and I am doing laps around you."
+          ]
+        },
+        "gentle": {
+          "zh": [
+            "站久了会不会累？要不要走走？",
+            "我过来陪你一会儿，好吗？",
+            "如果在想事情，我就轻一点。",
+            "要不要先歇一会儿？",
+            "海风很好，别一直站着呀。"
+          ],
+          "en": [
+            "Would a little walk feel nice?",
+            "May I keep you company for a moment?",
+            "Thinking something through? I can be quiet.",
+            "Perhaps you could sit for a little while.",
+            "There is a lovely breeze. Shall we enjoy it?"
+          ]
+        },
+        "quiet": {
+          "zh": [
+            "……还站着。",
+            "你在等石头开花？",
+            "脚没麻？",
+            "换个地方发呆。",
+            "……我过来看看。"
+          ],
+          "en": [
+            "Still there.",
+            "Waiting for the rocks to bloom?",
+            "Feet numb yet?",
+            "Try a different patch of nothing.",
+            "Just checking."
+          ]
+        }
+      }
+    },
+    "circles": {
+      "reason": [
+        "你刚走了一圈又回到原地",
+        "you just looped back to where you started"
+      ],
+      "voices": {
+        "laborious": {
+          "zh": [
+            "绕够没有？路都快被你踩亮了。",
+            "你是在巡岛还是绕晕自己？",
+            "行，转圈也算你忙过了。",
+            "别绕了，我看着都晕。",
+            "找不到路就说，别和树较劲。"
+          ],
+          "en": [
+            "Mapping a circle, are we?",
+            "Patrol route or dizzy spell?",
+            "Fine. I will put circles on your busy schedule.",
+            "Stop spinning. I am getting dizzy watching.",
+            "Lost? The tree is not going to give directions."
+          ]
+        },
+        "lively": {
+          "zh": [
+            "转圈也不叫我！",
+            "等等我，我也要绕一圈～",
+            "你怎么又跑回来了呀？",
+            "这是什么新游戏？教我嘛。",
+            "绕来绕去，最后还是来找我吧？"
+          ],
+          "en": [
+            "You started spinning without me!",
+            "Wait! Save me a lap!",
+            "Back again? That was quick!",
+            "Is this a new game? Teach me!",
+            "All those circles better end at me."
+          ]
+        },
+        "gentle": {
+          "zh": [
+            "是不是在找什么？我帮你看看？",
+            "刚才好像来过这里呢。",
+            "慢一点，别把自己绕晕了。",
+            "要不要沿着海边走直一点？",
+            "我在这里，你不用来回找。"
+          ],
+          "en": [
+            "Looking for something? I can help.",
+            "This spot looks rather familiar.",
+            "Take it gently. Circles can be dizzying.",
+            "Shall we try the coast path instead?",
+            "I am right here. You need not keep searching."
+          ]
+        },
+        "quiet": {
+          "zh": [
+            "又一圈。",
+            "……同一个地方。",
+            "树没动，是你绕回来了。",
+            "方向反了？",
+            "转够了叫我。"
+          ],
+          "en": [
+            "Another lap.",
+            "Same place.",
+            "The tree stayed. You came back.",
+            "Wrong turn?",
+            "Tell me when you are done."
+          ]
+        }
+      }
+    },
+    "water": {
+      "reason": [
+        "你在真实海岸边停了下来",
+        "you stopped beside the coast"
+      ],
+      "voices": {
+        "laborious": {
+          "zh": [
+            "看海能看饱？站稳点。",
+            "别光瞧，海不会替你干活。",
+            "离水远半步，别添乱。",
+            "你和浪花瞪什么眼？",
+            "行吧，看海这回我陪你。"
+          ],
+          "en": [
+            "Can staring at waves fill a plate?",
+            "The sea will not do your chores.",
+            "Half a step back. Less paperwork for me.",
+            "Having a staring contest with the tide?",
+            "Fine. One sea break. Together."
+          ]
+        },
+        "lively": {
+          "zh": [
+            "海好看，还是我好看呀？",
+            "你等浪花，我等你～",
+            "这里好凉快，陪我站会儿。",
+            "不钓鱼也可以陪我嘛。",
+            "浪又来啦，你看你看！"
+          ],
+          "en": [
+            "The sea or me? Choose carefully!",
+            "You wait for waves. I wait for you.",
+            "Ooh, stay here with me a bit!",
+            "No fishing needed. Just us!",
+            "Another wave! Look, look!"
+          ]
+        },
+        "gentle": {
+          "zh": [
+            "小心脚下，水边有点滑。",
+            "海风轻轻的，很舒服呢。",
+            "你想安静看海，我陪着。",
+            "往里站一点，好吗？",
+            "这片海今天也很好看。"
+          ],
+          "en": [
+            "Mind your footing near the water.",
+            "Such a soft breeze today.",
+            "We can watch quietly together.",
+            "A little further from the edge, perhaps?",
+            "The sea is lovely from here."
+          ]
+        },
+        "quiet": {
+          "zh": [
+            "水边。小心。",
+            "……浪来了。",
+            "别掉下去。",
+            "看海？嗯。",
+            "这里挺安静。"
+          ],
+          "en": [
+            "Watch the edge.",
+            "Wave coming.",
+            "Do not fall in.",
+            "Sea watching? Fine.",
+            "Quiet here."
+          ]
+        }
+      }
+    },
+    "sprint": {
+      "reason": [
+        "你实际位移突然变快了",
+        "your movement suddenly sped up"
+      ],
+      "voices": {
+        "laborious": {
+          "zh": [
+            "哟，懒鬼终于动了！",
+            "跑这么急，饭要飞了？",
+            "看路，别一头撞树。",
+            "有这劲儿早干嘛去了？",
+            "慢点，岛又不会逃跑。"
+          ],
+          "en": [
+            "Oh! The statue runs!",
+            "What is escaping? Your lunch?",
+            "Eyes forward. Trees do not dodge.",
+            "Where was all that energy earlier?",
+            "Easy. The island cannot run away."
+          ]
+        },
+        "lively": {
+          "zh": [
+            "等等我呀～突然跑那么快！",
+            "你要去哪儿玩？带我带我！",
+            "哇，风都追不上你啦。",
+            "跑步比赛怎么不喊开始！",
+            "别一下就把我丢后面嘛。"
+          ],
+          "en": [
+            "Wait for meee!",
+            "Where is the fun? Take me!",
+            "Whoa, even the wind fell behind!",
+            "You forgot to say ready, set, go!",
+            "Do not leave your sidekick behind!"
+          ]
+        },
+        "gentle": {
+          "zh": [
+            "慢一点，留心前面的路。",
+            "这么急，是有什么事吗？",
+            "我在后面，不用担心。",
+            "跑累了就停一停呀。",
+            "看清脚下再跑，好吗？"
+          ],
+          "en": [
+            "Please watch the path ahead.",
+            "Is something urgent?",
+            "I am back here. No need to worry.",
+            "A little pause if you need one.",
+            "Careful where you put your feet."
+          ]
+        },
+        "quiet": {
+          "zh": [
+            "……突然跑了。",
+            "看路。",
+            "急什么。",
+            "不用等我。",
+            "跑慢点。"
+          ],
+          "en": [
+            "Sudden hurry.",
+            "Watch the path.",
+            "What is the rush?",
+            "Do not wait for me.",
+            "Easy."
+          ]
+        }
+      }
+    },
+    "near_silent": {
+      "reason": [
+        "你走近后安静地站在我身边",
+        "you came close and stayed without speaking"
+      ],
+      "voices": {
+        "laborious": {
+          "zh": [
+            "站这么近，有事就说。",
+            "看我干嘛？脸上有灰？",
+            "岛主也会不好意思开口？",
+            "别堵着路，陪我站这边。",
+            "要帮忙还是来偷懒的？"
+          ],
+          "en": [
+            "Use your words, boss.",
+            "Something on my face?",
+            "Shy now, are we?",
+            "Move over here. You are in the path.",
+            "Helping or supervising the air?"
+          ]
+        },
+        "lively": {
+          "zh": [
+            "贴这么近，是想我啦？",
+            "你不说话，那我先说啦～",
+            "陪我就大大方方陪嘛。",
+            "哎呀，你在看什么呀？",
+            "我看到你啦，别装路过。"
+          ],
+          "en": [
+            "Aww, missed me?",
+            "No words? I have plenty!",
+            "You can just say you want company.",
+            "What are you looking at, hmm?",
+            "Caught you! That was no casual walk-by."
+          ]
+        },
+        "gentle": {
+          "zh": [
+            "你来了，要一起坐一会儿吗？",
+            "不用急着说，我听着呢。",
+            "有心事的话，可以告诉我。",
+            "这样安静待着也挺好。",
+            "我在呢，想说什么都可以。"
+          ],
+          "en": [
+            "Would you like to sit with me?",
+            "Take your time. I am listening.",
+            "Something on your mind?",
+            "Quiet company is lovely too.",
+            "I am here whenever you are ready."
+          ]
+        },
+        "quiet": {
+          "zh": [
+            "有事？",
+            "……说吧。",
+            "站这边。",
+            "不说也行。",
+            "我看见你了。"
+          ],
+          "en": [
+            "Something?",
+            "Go on.",
+            "This side.",
+            "Silence works too.",
+            "I see you."
+          ]
+        }
+      }
+    },
+    "returned": {
+      "reason": [
+        "你刚从远处回到了我附近",
+        "you came back after being far away"
+      ],
+      "voices": {
+        "laborious": {
+          "zh": [
+            "舍得回来了？",
+            "回来就好，别又一声不吭跑远。",
+            "外面看够了？歇口气吧。",
+            "哟，岛主还认得回来的路。",
+            "别站门口，过来。"
+          ],
+          "en": [
+            "Look who remembered us.",
+            "Next time, a word before vanishing.",
+            "Had your wander? Catch your breath.",
+            "Good. You found the way back.",
+            "Do not linger there. Come over."
+          ]
+        },
+        "lively": {
+          "zh": [
+            "回来啦！我都想你了～",
+            "你跑哪儿玩去了，不带我。",
+            "下次带上我嘛！",
+            "给我讲讲外面有什么呀？",
+            "快过来，我给你留了位置。"
+          ],
+          "en": [
+            "You are back! I missed you!",
+            "Secret adventures without me?",
+            "Next time I am coming too!",
+            "Tell me everything! Well, the fun bits!",
+            "Over here! I saved you some space."
+          ]
+        },
+        "gentle": {
+          "zh": [
+            "回来啦，一路还好吗？",
+            "要不要先坐坐？",
+            "看到你回来，我就放心了。",
+            "外面的风大不大？",
+            "慢慢说，我想听你见到的风景。"
+          ],
+          "en": [
+            "Welcome back. Was the walk all right?",
+            "A seat before anything else?",
+            "It is good to see you safely back.",
+            "Was it windy out there?",
+            "Tell me about the view when you like."
+          ]
+        },
+        "quiet": {
+          "zh": [
+            "回来了。",
+            "……嗯，没事就好。",
+            "路还顺？",
+            "坐吧。",
+            "下次说一声。"
+          ],
+          "en": [
+            "Back.",
+            "Good. You are fine.",
+            "Clear path?",
+            "Sit.",
+            "A word next time."
+          ]
+        }
+      }
+    },
+    "rain": {
+      "reason": [
+        "真实天气在下雨，你仍在屋外",
+        "it is raining and you are still outside"
+      ],
+      "voices": {
+        "laborious": {
+          "zh": [
+            "下雨了还傻站着，懒鬼。",
+            "往屋檐下挪挪，别磨蹭。",
+            "淋着很好玩？过来躲雨。",
+            "衣服湿了可别怪云。",
+            "雨都催你了，快点。"
+          ],
+          "en": [
+            "Rain, boss. Even the sky noticed you.",
+            "Under the eaves. Move those feet.",
+            "Enjoying the soak? Come under cover.",
+            "Do not blame the clouds for wet sleeves.",
+            "The weather has given you a hint."
+          ]
+        },
+        "lively": {
+          "zh": [
+            "下雨啦，陪我躲雨嘛～",
+            "你再淋，我也要担心啦。",
+            "这里这里，屋檐下面！",
+            "雨点都黏着你，不许比我还黏。",
+            "回来嘛，外面湿乎乎的。"
+          ],
+          "en": [
+            "Rain! Shelter date? Please?",
+            "Keep that up and I will worry!",
+            "Here! Under the eaves with me!",
+            "Those raindrops are clingier than me. Rude.",
+            "Come baaack. It is all soggy out there."
+          ]
+        },
+        "gentle": {
+          "zh": [
+            "下雨了，进来躲躲吧。",
+            "衣角都湿了，先避一避？",
+            "雨里凉，别一直站着。",
+            "我陪你去屋檐下，好吗？",
+            "等雨小些再走也不迟。"
+          ],
+          "en": [
+            "Come in out of the rain, perhaps?",
+            "Your hem is getting wet. A little cover?",
+            "It is cool in the rain. Take care.",
+            "Shall I walk to the eaves with you?",
+            "There is no hurry. We can wait for lighter rain."
+          ]
+        },
+        "quiet": {
+          "zh": [
+            "下雨了。",
+            "屋檐在那边。",
+            "……会湿。",
+            "别淋了。",
+            "进来吧。"
+          ],
+          "en": [
+            "Rain.",
+            "Eaves. Over there.",
+            "Getting wet.",
+            "Enough rain.",
+            "Come in."
+          ]
+        }
+      }
+    },
+    "night": {
+      "reason": [
+        "真实昼夜已经入夜，你仍在屋外",
+        "night has fallen and you are still outside"
+      ],
+      "voices": {
+        "laborious": {
+          "zh": [
+            "天黑了，还不挪窝？",
+            "岛主，夜风可不听你指挥。",
+            "黑灯瞎火，走路看着点。",
+            "磨蹭一天了，歇歇吧。",
+            "还想和月亮比谁晚回去？"
+          ],
+          "en": [
+            "Dark now. Planning to stay planted?",
+            "Night wind does not take orders.",
+            "Watch your step in the dark.",
+            "A full day of dithering. Take a break.",
+            "Racing the moon home?"
+          ]
+        },
+        "lively": {
+          "zh": [
+            "天黑啦，再陪我一小会儿？",
+            "月亮出来了，你看呀～",
+            "别一个人走远，我要跟不上啦。",
+            "夜里也不理我呀？",
+            "我们一起看一眼月亮嘛。"
+          ],
+          "en": [
+            "Night already? One more little minute?",
+            "Look! The moon is up!",
+            "Do not wander off without me in the dark.",
+            "Ignoring me even after sunset?",
+            "Just one moon peek together? Please?"
+          ]
+        },
+        "gentle": {
+          "zh": [
+            "天黑了，要不要回去歇会儿？",
+            "夜风凉些，别站太久。",
+            "我陪你走到亮一点的地方。",
+            "路暗了，慢慢走呀。",
+            "今天也辛苦了，歇一歇吧。"
+          ],
+          "en": [
+            "Shall we head somewhere restful?",
+            "The night breeze is cooler. Take care.",
+            "I can walk with you toward the light.",
+            "Easy steps. The path is dark.",
+            "You have had a long day. A little rest?"
+          ]
+        },
+        "quiet": {
+          "zh": [
+            "天黑了。",
+            "……还不回？",
+            "月亮出来了。",
+            "看着路。",
+            "夜风凉。"
+          ],
+          "en": [
+            "Dark now.",
+            "Still out?",
+            "Moon is up.",
+            "Mind the path.",
+            "Cool wind."
+          ]
+        }
+      }
+    },
+    "watch_work": {
+      "reason": [
+        "我有真实工作，你停在附近看着",
+        "I have a real job and you stopped to watch"
+      ],
+      "voices": {
+        "laborious": {
+          "zh": [
+            "站着看什么看，过来搭把手。",
+            "监工倒是很勤快嘛。",
+            "看够了没？斧头又不会害羞。",
+            "懒鬼，至少给我让点位置。",
+            "你看着，我可真在干。"
+          ],
+          "en": [
+            "Excellent supervising. Fancy helping?",
+            "Management is looking busy today.",
+            "The axe is not shy. Stop staring.",
+            "At least give me elbow room.",
+            "For the record, this is actual work."
+          ]
+        },
+        "lively": {
+          "zh": [
+            "你在看我呀？那我可要认真点～",
+            "陪着可以，夸我一句嘛。",
+            "别光看，跟我说说话呀。",
+            "我忙着呢，你别偷偷走掉。",
+            "嘿嘿，有你陪着也不无聊。"
+          ],
+          "en": [
+            "Watching me? Better look impressive!",
+            "Company is nice. Compliments also accepted!",
+            "Talk to me while I do this?",
+            "Stay right there. No sneaking off!",
+            "Much less boring with you here."
+          ]
+        },
+        "gentle": {
+          "zh": [
+            "站远一点，小心碰着。",
+            "你在这里陪着也很好。",
+            "我先忙完，你坐一会儿吧。",
+            "要看看我是怎么做的吗？",
+            "不用担心，我会慢慢做好的。"
+          ],
+          "en": [
+            "A little space, just to be safe.",
+            "It is nice having you here.",
+            "Please sit while I finish this.",
+            "Would you like to see how it works?",
+            "No worries. I will take care with it."
+          ]
+        },
+        "quiet": {
+          "zh": [
+            "……在看？",
+            "别挡着。",
+            "还没做完。",
+            "等会儿。",
+            "站远一点。"
+          ],
+          "en": [
+            "Watching?",
+            "Give me room.",
+            "Still working.",
+            "A moment.",
+            "Step back."
+          ]
+        }
+      }
+    },
+    "helped": {
+      "reason": [
+        "你刚和我完成了真实递物或共同劳动",
+        "you just gave me something or helped with real work"
+      ],
+      "voices": {
+        "laborious": {
+          "zh": [
+            "这才像话，谢了。",
+            "哟，懒鬼今天搭手了。",
+            "行，两个人快些。",
+            "这回算你靠谱。",
+            "收到了，下次也这么利落。"
+          ],
+          "en": [
+            "There we go. Thanks.",
+            "The boss helped. Mark the occasion.",
+            "Two pairs of hands. Sensible.",
+            "Reliable this time. I approve.",
+            "Got it. Same efficiency next time."
+          ]
+        },
+        "lively": {
+          "zh": [
+            "你帮我啦！最喜欢你了～",
+            "哎呀，轻松多了！",
+            "我们配合得好好呀。",
+            "谢谢嘛，我记着呢。",
+            "嘿嘿，一起做就是开心。"
+          ],
+          "en": [
+            "You helped! Favourite person status secured!",
+            "Ooh, that is much easier!",
+            "Look at us! Dream team!",
+            "Thank youuu. I noticed!",
+            "Together makes everything more fun."
+          ]
+        },
+        "gentle": {
+          "zh": [
+            "谢谢你，轻松不少呢。",
+            "你来帮忙，我很高兴。",
+            "这次多亏你了。",
+            "东西收到了，谢谢。",
+            "一起做的时候很安心。"
+          ],
+          "en": [
+            "Thank you. That made it easier.",
+            "I am glad you came to help.",
+            "That was kind of you.",
+            "I have it safely. Thank you.",
+            "Working together feels reassuring."
+          ]
+        },
+        "quiet": {
+          "zh": [
+            "谢了。",
+            "……收到。",
+            "帮上忙了。",
+            "嗯，轻松些了。",
+            "下次叫我。"
+          ],
+          "en": [
+            "Thanks.",
+            "Got it.",
+            "That helped.",
+            "Easier now.",
+            "Ask me next time."
+          ]
+        }
+      }
+    },
+    "far": {
+      "reason": [
+        "你刚离开了我附近",
+        "you just moved away from me"
+      ],
+      "voices": {
+        "laborious": {
+          "zh": [
+            "又跑哪儿去？",
+            "走远了喊一声，别让我找。",
+            "别磨蹭着走丢了。",
+            "行，你忙你的。",
+            "看着路，我可不替你撞树。"
+          ],
+          "en": [
+            "Where to now?",
+            "A word before disappearing, please.",
+            "Do not dawdle yourself into getting lost.",
+            "Fine. Get on with it.",
+            "Eyes on the path. I cannot dodge trees for you."
+          ]
+        },
+        "lively": {
+          "zh": [
+            "别走那么远嘛～",
+            "你又把我落下啦。",
+            "等等，我还没说完呢！",
+            "带上我好不好呀？",
+            "回来记得先找我哦。"
+          ],
+          "en": [
+            "Do not go so faaar!",
+            "You left your sidekick again!",
+            "Wait! I was not finished!",
+            "Can I come? Can I?",
+            "Find me first when you get back!"
+          ]
+        },
+        "gentle": {
+          "zh": [
+            "慢慢走，路上小心。",
+            "要我陪你走一段吗？",
+            "走远了也别着急回来。",
+            "我在这里等一会儿。",
+            "回来的时候说一声就好。"
+          ],
+          "en": [
+            "Take care along the path.",
+            "Would some company be nice?",
+            "No need to rush back.",
+            "I will be here for a while.",
+            "Just let me know when you return."
+          ]
+        },
+        "quiet": {
+          "zh": [
+            "走了？",
+            "……随你。",
+            "别迷路。",
+            "我在这。",
+            "回来再说。"
+          ],
+          "en": [
+            "Leaving?",
+            "Suit yourself.",
+            "Do not get lost.",
+            "I am here.",
+            "Later, then."
+          ]
+        }
+      }
+    },
+    "home_near": {
+      "reason": [
+        "你站在我已建好的家门附近",
+        "you are beside the door of my completed home"
+      ],
+      "voices": {
+        "laborious": {
+          "zh": [
+            "站我家门口干嘛？",
+            "进出留条路，岛主。",
+            "又来查我院子？",
+            "别把门堵了，懒鬼。",
+            "路过就路过，别一直瞧。"
+          ],
+          "en": [
+            "Inspecting my doorstep?",
+            "Doorway. People use it.",
+            "Garden audit again?",
+            "Leave the door clear, boss.",
+            "Passing by? Commit to the passing part."
+          ]
+        },
+        "lively": {
+          "zh": [
+            "来找我的吗？嘿嘿～",
+            "我家这边也好看吧？",
+            "你站这里，我就当你等我啦。",
+            "不要偷偷看嘛，叫我呀。",
+            "来我家门口玩也不喊我！"
+          ],
+          "en": [
+            "Visiting me? Heehee!",
+            "My corner is cute too, right?",
+            "I am counting this as waiting for me!",
+            "No secret peeking. Call me!",
+            "Playing on my doorstep without me?"
+          ]
+        },
+        "gentle": {
+          "zh": [
+            "是来找我的吗？",
+            "门边有些窄，站这边吧。",
+            "你喜欢这里的风景吗？",
+            "想待一会儿也可以。",
+            "我在呢，不用站门口等。"
+          ],
+          "en": [
+            "Were you looking for me?",
+            "The doorway is narrow. Over here?",
+            "Do you like the view here?",
+            "You are welcome to linger.",
+            "No need to wait at the door. I am here."
+          ]
+        },
+        "quiet": {
+          "zh": [
+            "我家。",
+            "找我？",
+            "门留着。",
+            "……进出要走。",
+            "站旁边吧。"
+          ],
+          "en": [
+            "My place.",
+            "Looking for me?",
+            "Door clear.",
+            "People walk through there.",
+            "Stand to the side."
+          ]
+        }
+      }
+    },
+    "meal": {
+      "reason": [
+        "你安排的真实烧烤刚让我吃到了",
+        "I just ate at the barbecue you arranged"
+      ],
+      "voices": {
+        "laborious": {
+          "zh": [
+            "这顿不错，算你有心。",
+            "终于知道请客了，谢啦。",
+            "吃到了，干活也得先吃饱。",
+            "这回不催你，味道行。",
+            "行，懒鬼今天加一分口头夸奖。"
+          ],
+          "en": [
+            "Good meal. Credit where due.",
+            "You remembered dinner. Thanks.",
+            "Fed at last. Sensible planning.",
+            "No complaints. This one is good.",
+            "One verbal commendation for the boss."
+          ]
+        },
+        "lively": {
+          "zh": [
+            "分给我的呀？好开心～",
+            "你最好啦，这口香！",
+            "嘿嘿，吃饱就想黏着你。",
+            "谢谢请客，下回还叫我嘛。",
+            "有你在，开饭都特别开心。"
+          ],
+          "en": [
+            "For me? Best day!",
+            "You are the best. This is delicious!",
+            "Full tummy, maximum cling mode!",
+            "Thanks for dinner! Invite me again!",
+            "Meals are extra fun with you around."
+          ]
+        },
+        "gentle": {
+          "zh": [
+            "谢谢你惦记着我。",
+            "这一口很暖，谢谢。",
+            "大家一起吃真好呢。",
+            "你忙了这顿，辛苦了。",
+            "吃到了，我很开心。"
+          ],
+          "en": [
+            "Thank you for thinking of me.",
+            "Such a warming bite. Thank you.",
+            "A shared meal is lovely.",
+            "Thank you for arranging all this.",
+            "I enjoyed that very much."
+          ]
+        },
+        "quiet": {
+          "zh": [
+            "……好吃。",
+            "谢了，吃到了。",
+            "这顿不错。",
+            "嗯，暖和了。",
+            "下回也叫我。"
+          ],
+          "en": [
+            "Good.",
+            "Thanks. Had mine.",
+            "Nice meal.",
+            "Warm now.",
+            "Invite me next time."
+          ]
+        }
+      }
+    },
+    "hungry_idle": {
+      "reason": [
+        "我真的饿了，你还站着没开饭",
+        "I am hungry and you are still standing without dinner"
+      ],
+      "voices": {
+        "laborious": {
+          "zh": [
+            "懒鬼，肚子可不陪你发呆。",
+            "站着看能变出晚饭？",
+            "岛主，该张罗吃的了吧。",
+            "我先声明，肚子已经催了。",
+            "磨蹭什么，我都听见咕噜了。"
+          ],
+          "en": [
+            "My stomach did not sign up for standing around.",
+            "Will staring conjure dinner?",
+            "Boss. Food planning time.",
+            "Official notice: tummy complaints are in.",
+            "You dawdle. My stomach provides the soundtrack."
+          ]
+        },
+        "lively": {
+          "zh": [
+            "肚子咕噜啦，你听到了嘛～",
+            "站这么久，能不能请我吃呀？",
+            "想吃饭，也想你陪我吃。",
+            "我都眼巴巴看着你啦。",
+            "哎呀～该开饭了嘛。"
+          ],
+          "en": [
+            "Hear that? My tummy is filing a request!",
+            "Could standing time become dinner time?",
+            "Food and you. My favourite combination!",
+            "I am doing my best hopeful eyes!",
+            "Pleeease can it be dinner time?"
+          ]
+        },
+        "gentle": {
+          "zh": [
+            "有点饿了，要一起准备晚饭吗？",
+            "等你方便的时候，叫我吃饭吧。",
+            "我先在这里陪你等开饭。",
+            "你也歇够了吗？该吃点了。",
+            "肚子在轻轻提醒我了呢。"
+          ],
+          "en": [
+            "Shall we think about dinner together?",
+            "Call me when a meal is ready.",
+            "I will keep you company while we wait.",
+            "Rested enough? A meal might be nice.",
+            "My stomach is giving me a gentle nudge."
+          ]
+        },
+        "quiet": {
+          "zh": [
+            "饿了。",
+            "……饭呢。",
+            "还不开饭？",
+            "肚子在催。",
+            "我等着。"
+          ],
+          "en": [
+            "Hungry.",
+            "Dinner?",
+            "Not yet?",
+            "Stomach says hurry.",
+            "Waiting."
+          ]
+        }
+      }
+    },
+    "watch_play": {
+      "reason": [
+        "你站在正在玩的伙伴旁边",
+        "you are watching friends who are actually playing"
+      ],
+      "voices": {
+        "laborious": {
+          "zh": [
+            "光看有什么劲，想玩就说。",
+            "岛主又当观众了？",
+            "别挡场地，懒鬼。",
+            "看明白了吗？下回试试。",
+            "这回我可不会让着你。"
+          ],
+          "en": [
+            "Fancy joining? Use your words.",
+            "Audience duty again, boss?",
+            "Clear the playing space.",
+            "Got the idea? Try next round.",
+            "Fair warning. No easy wins from me."
+          ]
+        },
+        "lively": {
+          "zh": [
+            "来嘛来嘛，别只看呀！",
+            "轮到你就好玩啦～",
+            "我刚才那下你看到了吗？",
+            "你在看我，我更想赢啦。",
+            "陪我们玩嘛，好不好？"
+          ],
+          "en": [
+            "Come onnn! Watching is only half the fun!",
+            "Your turn would make it better!",
+            "Did you see my last move?",
+            "Now you are watching, I have to win!",
+            "Play with us? Pretty please?"
+          ]
+        },
+        "gentle": {
+          "zh": [
+            "想加入的时候告诉我就好。",
+            "站这里看得清一点。",
+            "她们玩得很开心呢。",
+            "要不要下一轮一起？",
+            "只是看看也很好，我陪你。"
+          ],
+          "en": [
+            "Let me know if you would like to join.",
+            "You can see better from here.",
+            "They seem to be enjoying it.",
+            "Perhaps the next round together?",
+            "Watching is fine too. I can stay with you."
+          ]
+        },
+        "quiet": {
+          "zh": [
+            "只看？",
+            "……下轮？",
+            "别挡着。",
+            "想玩就说。",
+            "看懂了？"
+          ],
+          "en": [
+            "Just watching?",
+            "Next round?",
+            "Clear the space.",
+            "Say if you want in.",
+            "Got it?"
+          ]
+        }
+      }
+    },
+    "no_chat": {
+      "reason": [
+        "今天过了好一会儿，你还没和我说话",
+        "a good part of today has passed without a word between us"
+      ],
+      "voices": {
+        "laborious": {
+          "zh": [
+            "岛主，一天都没叫我了。",
+            "忙归忙，打个招呼总会吧。",
+            "忘了岛上还有我？",
+            "懒鬼，今天你的话也放假？",
+            "我过来看看，你还认得我吧。"
+          ],
+          "en": [
+            "Boss. Remember saying hello?",
+            "Busy is fine. A greeting takes a second.",
+            "Forgot who else lives here?",
+            "Words on holiday too today?",
+            "Checking you still recognise me."
+          ]
+        },
+        "lively": {
+          "zh": [
+            "你都不理我，一整天啦～",
+            "我过来找你，不许装没看见。",
+            "今天还没听你叫我呢。",
+            "说句话嘛，我想听。",
+            "再不理我，我可要撒娇啦。"
+          ],
+          "en": [
+            "You have ignored me all daaay!",
+            "Here I am. No pretending you missed me!",
+            "You have not called me over today!",
+            "Say something? I like your voice.",
+            "Last warning before serious pouting!"
+          ]
+        },
+        "gentle": {
+          "zh": [
+            "今天还没和你说上话呢。",
+            "你忙的话，我就陪一小会儿。",
+            "过来看看你，一切还好吗？",
+            "想和你打个招呼。",
+            "不用急着答，知道你在就好。"
+          ],
+          "en": [
+            "We have not had a word today.",
+            "If you are busy, I will stay just a moment.",
+            "Checking on you. Everything all right?",
+            "I wanted to say hello.",
+            "No hurry to answer. Good to see you here."
+          ]
+        },
+        "quiet": {
+          "zh": [
+            "今天没说话。",
+            "……忘了我？",
+            "过来看看。",
+            "你忙你的。",
+            "嗯，我还在。"
+          ],
+          "en": [
+            "No words today.",
+            "Forgot me?",
+            "Checking in.",
+            "Carry on.",
+            "Still here."
+          ]
+        }
+      }
+    },
+    "peer_invite": {
+      "reason": [
+        "我想邀请身边的伙伴一起玩",
+        "I would like to do something with my friend"
+      ],
+      "voices": {
+        "laborious": {
+          "zh": [
+            "过来，一起扫扫身边。",
+            "陪我走两步，别磨蹭。",
+            "一起看会儿海？",
+            "来比划两下，活动活动。",
+            "歇就一起歇会儿。"
+          ],
+          "en": [
+            "Come over. Let us tidy this patch.",
+            "A short walk. No dawdling.",
+            "Sea break together?",
+            "Come stretch those arms.",
+            "Fine. A shared break."
+          ]
+        },
+        "lively": {
+          "zh": [
+            "一起玩嘛～",
+            "陪我看海好不好？",
+            "来这里，我想和你待一会儿。",
+            "我们一起转一圈呀。",
+            "快来，陪我蹦两下。"
+          ],
+          "en": [
+            "Play with meee!",
+            "Sea watching date?",
+            "Over here! Company wanted!",
+            "Let us do a little twirl!",
+            "Come bounce with me!"
+          ]
+        },
+        "gentle": {
+          "zh": [
+            "要不要一起看看海？",
+            "过来坐一会儿吧。",
+            "一起慢慢走走，好吗？",
+            "我想有个人作伴。",
+            "这里很好，陪我看看？"
+          ],
+          "en": [
+            "Shall we watch the sea together?",
+            "A quiet seat together?",
+            "A little walk, perhaps?",
+            "Some company would be lovely.",
+            "Such a nice spot. Join me?"
+          ]
+        },
+        "quiet": {
+          "zh": [
+            "一起？",
+            "过来坐。",
+            "……看海？",
+            "陪一会儿。",
+            "这里安静。"
+          ],
+          "en": [
+            "Together?",
+            "Sit here.",
+            "Sea?",
+            "Stay a while.",
+            "Quiet spot."
+          ]
+        }
+      }
+    },
+    "peer_comment": {
+      "reason": [
+        "伙伴正在我身边一起做这件事",
+        "my friend is here doing this with me"
+      ],
+      "voices": {
+        "laborious": {
+          "zh": [
+            "这回配合不错。",
+            "有点样子嘛。",
+            "别急，慢慢来。",
+            "两个人也挺好。",
+            "行，下回还找你。"
+          ],
+          "en": [
+            "Decent teamwork.",
+            "Now that looks better.",
+            "Steady. No rush.",
+            "Two is rather nice.",
+            "Same team next time."
+          ]
+        },
+        "lively": {
+          "zh": [
+            "一起玩真开心～",
+            "你刚才好可爱呀。",
+            "嘿嘿，我们好合拍。",
+            "再陪我一会儿嘛。",
+            "下次也要一起哦。"
+          ],
+          "en": [
+            "Together is the best!",
+            "That was adorable!",
+            "Look at us, perfect timing!",
+            "One more little minute?",
+            "Same time next time!"
+          ]
+        },
+        "gentle": {
+          "zh": [
+            "有你陪着真好。",
+            "刚才那样很有趣呢。",
+            "我们慢慢来就好。",
+            "谢谢你过来陪我。",
+            "这里安静得刚刚好。"
+          ],
+          "en": [
+            "Lovely having you here.",
+            "That was rather fun.",
+            "We can take our time.",
+            "Thank you for joining me.",
+            "Just the right sort of quiet."
+          ]
+        },
+        "quiet": {
+          "zh": [
+            "……不错。",
+            "嗯，一起。",
+            "安静点也好。",
+            "还行。",
+            "下次再来。"
+          ],
+          "en": [
+            "Not bad.",
+            "Together, then.",
+            "Quiet is good.",
+            "All right.",
+            "Again sometime."
+          ]
+        }
+      }
+    },
+    "refuse": {
+      "reason": [
+        "这只是玩的邀请，我想先做自己的事",
+        "this is a social invitation and I prefer my own activity first"
+      ],
+      "voices": {
+        "laborious": {
+          "zh": [
+            "不去就不去，我自己去走走。",
+            "先不玩，我想安静站会儿。",
+            "这回不凑热闹，我想歇歇。",
+            "等一下，我还想把这看完。",
+            "今天先不陪玩，我想自己转转。"
+          ],
+          "en": [
+            "Not this time. I am taking my own walk.",
+            "Passing. A quiet minute first.",
+            "No crowd for me. I want a break.",
+            "Wait. I want to finish looking at this.",
+            "I fancy wandering on my own this time."
+          ]
+        },
+        "lively": {
+          "zh": [
+            "等一下嘛，我还想在这里玩～",
+            "先不去，我想再转一圈。",
+            "哎呀，让我先歇一小会儿。",
+            "这回我自己玩，待会儿找你嘛。",
+            "先等等，我舍不得这边呀。"
+          ],
+          "en": [
+            "Waaait! I am still having fun here!",
+            "Not yet! One more twirl first!",
+            "Tiny breather first, pleeease?",
+            "Solo adventure this round. I will find you after!",
+            "Give me a minute. I like it here!"
+          ]
+        },
+        "gentle": {
+          "zh": [
+            "我想先在这里歇一会儿。",
+            "这次先不去，我想看看海。",
+            "等我把眼前的风景看完，好吗？",
+            "我想安静一会儿，稍后再陪你。",
+            "今天想自己慢慢走走呢。"
+          ],
+          "en": [
+            "May I rest here a little first?",
+            "I would rather watch the sea this time.",
+            "Let me finish enjoying this view, perhaps?",
+            "A quiet moment first. Company later.",
+            "I feel like a gentle walk on my own today."
+          ]
+        },
+        "quiet": {
+          "zh": [
+            "不去。我想看完。",
+            "……随你，我自己走走。",
+            "等会儿。想歇着。",
+            "先不了。这里安静。",
+            "不玩。想坐会儿。"
+          ],
+          "en": [
+            "No. Finishing this.",
+            "Suit yourself. I want a walk.",
+            "Later. Resting.",
+            "Pass. Quiet here.",
+            "No game. Sitting a while."
+          ]
+        }
+      }
+    },
+    "command_ack": {
+      "reason": [
+        "你明确交代了劳动，我先执行",
+        "you gave a work order and I am carrying it out"
+      ],
+      "voices": {
+        "laborious": {
+          "zh": [
+            "又是我……好啦好啦。",
+            "懒鬼，活交给我了。",
+            "知道了，这就去。",
+            "行，别站在路中间。",
+            "听见了，马上干。"
+          ],
+          "en": [
+            "Me again. Fine, on it.",
+            "Boss delegates. I get the axe.",
+            "Heard you. Moving.",
+            "Fine. Keep the path clear.",
+            "Got it. Time to work."
+          ]
+        },
+        "lively": {
+          "zh": [
+            "好嘛好嘛，这就去～",
+            "收到啦，做完陪我玩哦。",
+            "我去啦，记得夸我。",
+            "哎呀，又有活啦，好吧。",
+            "交给我嘛！"
+          ],
+          "en": [
+            "Okaaay, on my way!",
+            "Got it! Playtime after, deal?",
+            "Off I go. Compliments later!",
+            "More work? All right then!",
+            "Leave it to me!"
+          ]
+        },
+        "gentle": {
+          "zh": [
+            "好的，我这就去。",
+            "听见了，我会仔细做的。",
+            "交给我吧。",
+            "嗯，先把这件做好。",
+            "好，我慢慢做稳妥些。"
+          ],
+          "en": [
+            "Of course. On my way.",
+            "I will take care with it.",
+            "Leave it with me.",
+            "Yes. This comes first.",
+            "All right. Carefully done."
+          ]
+        },
+        "quiet": {
+          "zh": [
+            "嗯。",
+            "知道了。",
+            "……这就去。",
+            "行。",
+            "交给我。"
+          ],
+          "en": [
+            "Mm.",
+            "Understood.",
+            "On it.",
+            "Fine.",
+            "Got it."
+          ]
+        }
+      }
+    },
+    "accept": {
+      "reason": [
+        "你邀请我一起玩，我愿意过来陪你",
+        "you invited me to play and I want to join you"
+      ],
+      "voices": {
+        "laborious": {
+          "zh": [
+            "行，陪你玩一会儿。",
+            "走吧，别磨蹭了。",
+            "这回我奉陪，可不会让你。",
+            "好，正好活动一下。",
+            "来，别只站着。"
+          ],
+          "en": [
+            "Fine. A short game.",
+            "Come on, then. Feet moving.",
+            "I am in. No easy wins, though.",
+            "Good. Time to stretch.",
+            "Over here. Let us do this."
+          ]
+        },
+        "lively": {
+          "zh": [
+            "好呀好呀，陪你玩～",
+            "终于叫我啦！来嘛。",
+            "嘿嘿，最喜欢一起玩了。",
+            "走呀，我跟着你呢。",
+            "好哦，不许中途丢下我。"
+          ],
+          "en": [
+            "Yes yes yes! Playtime!",
+            "Finally! You asked!",
+            "Together is my favourite way!",
+            "Come on! Your sidekick is ready!",
+            "Deal! No ditching me halfway!"
+          ]
+        },
+        "gentle": {
+          "zh": [
+            "好呀，一起待一会儿。",
+            "我很愿意陪你。",
+            "嗯，慢慢走就好。",
+            "那我们一起看看吧。",
+            "好的，我过来陪你。"
+          ],
+          "en": [
+            "I would enjoy that.",
+            "I would be happy to join you.",
+            "A gentle little walk, then.",
+            "Let us take a look together.",
+            "Of course. I am coming over."
+          ]
+        },
+        "quiet": {
+          "zh": [
+            "……行。",
+            "陪一会儿。",
+            "走吧。",
+            "嗯，一起。",
+            "好，别太吵。"
+          ],
+          "en": [
+            "Fine.",
+            "A little while.",
+            "Let us go.",
+            "Together, then.",
+            "All right. Keep it quiet."
+          ]
+        }
+      }
+    },
+    "finished": {
+      "reason": [
+        "你交代的真实工作刚完成，我想叫你来看",
+        "the real job you assigned just finished and I want to show you"
+      ],
+      "voices": {
+        "laborious": {
+          "zh": [
+            "交代的活做完了，过来看看。",
+            "懒鬼，这回有成果给你看。",
+            "这件事办好了，别光站着。",
+            "做完了，来瞧瞧我的手艺。",
+            "你交代的搞定了，过来吧。"
+          ],
+          "en": [
+            "Job done. Come and have a look.",
+            "Results, boss. Worth moving your feet for.",
+            "That is sorted. Come see.",
+            "Finished. Have a look at my work.",
+            "Your task is done. Over here."
+          ]
+        },
+        "lively": {
+          "zh": [
+            "做好啦！快来看快来看～",
+            "你交代的弄好啦，夸我嘛。",
+            "嘿嘿，做完了，来看看呀。",
+            "我忙完啦，终于能叫你来啦。",
+            "给你看，我真的做完了哦。"
+          ],
+          "en": [
+            "Done! Come see, come see!",
+            "Task finished! Compliments, please!",
+            "Heehee! All done. Come look!",
+            "Finished at last! Now I can call you over!",
+            "Look! I really did it!"
+          ]
+        },
+        "gentle": {
+          "zh": [
+            "你交代的事做好了，要看看吗？",
+            "忙完了，想请你过来看看。",
+            "这件做好了，慢慢过来就好。",
+            "我做完了，愿意陪我看一眼吗？",
+            "事情办好了，想让你知道。"
+          ],
+          "en": [
+            "Your task is finished. Would you like to see?",
+            "All done. I would love to show you.",
+            "Finished carefully. Come when you like.",
+            "May I show you what I finished?",
+            "It is done. I wanted you to know."
+          ]
+        },
+        "quiet": {
+          "zh": [
+            "做完了。来看？",
+            "……好了。过来吧。",
+            "交代的办好了。",
+            "嗯，来看看。",
+            "忙完了，叫你一声。"
+          ],
+          "en": [
+            "Done. Look?",
+            "Finished. Over here.",
+            "Your task is sorted.",
+            "Come see.",
+            "Finished. Just letting you know."
+          ]
+        }
+      }
+    }
+  }
+}
