@@ -31,6 +31,7 @@ var offers:Dictionary={}
 var provider_running:=false
 var next_visit:=0.0
 var special_provider:=""
+var rhythm:RefCounted
 var interactions:RefCounted
 var refusal:Dictionary={}
 var free_since:=-100000.0
@@ -41,7 +42,7 @@ func reset()->void:
 	current.clear();history.clear();recent.clear();invitation.clear();top.clear();route=null;still=0;next_decision=0;clock=0;last_near=0;seen_places.clear();schedule_due=0;next_visit=0;offers.clear();provider_running=false;special_provider=""
 	needs={"tired":0.0,"bored":.25,"missing":0.0,"curious":.5}
 	generation=world.session_generation
-	interactions=preload("res://scripts/brain_interactions.gd").new(self);refusal.clear()
+	interactions=preload("res://scripts/brain_interactions.gd").new(self);rhythm=preload("res://scripts/brain_rhythm.gd").new(self);refusal.clear()
 	var seed_text:String=OS.get_environment("HABITAT_BRAIN_SEED")
 	rng.seed=(int(seed_text) if not seed_text.is_empty() else int(config.seed))+int(id.hash())
 func text(key:String,language:String="")->String:
@@ -108,10 +109,13 @@ func command(args:Dictionary)->Dictionary:
 	if intent=="move" and world.activities.explicit_selected.has(id) and not world.host_issuing.has(id) and not world.activities.suspended_follow.has(id) and not world.activities.commanded(id):return world._command_body(id,args)
 	if not active() or executing or intent.ends_with("_read") or intent in ["query_state","propose","promise","promise_cancel","journal_read"]:return world._command_body(id,args)
 	return mandate("steward" if not world.host_issuing.has(id) and not world.activities.squad_leader.is_empty() else "command",intent,func():return world._command_body(id,args))
+func sheltering()->bool:
+	if current.get("source","")!="local" or world._routes.has("human") or world.hunger.rank(id)>=3:return false
+	return (current.get("action")=="night_rest" and world.days.phase().id=="night") or (current.get("action")=="rain_shelter" and world.weather.current().id=="rain")
 func follow(dark_fear:bool=false)->void:
 	if not active() or executing:world.hunger._follow_body(id,dark_fear);return
 	# Other providers request follow; only the brain may grant it while idle.
-	if current.get("source","") in ["command","steward"] or busy():return
+	if current.get("source","") in ["command","steward"] or busy() or sheltering():return
 	if current.get("source","")=="local" and not world._routes.has("human") and (current.action in ["follow","food"] or distance()<=float(config.follow_max)):return
 	if current.get("source","")=="local":finish("interrupted","host_moved")
 	executing=true;world.hunger._follow_body(id,dark_fear);executing=false
@@ -149,6 +153,9 @@ func update_needs(delta:float)->void:
 	if not seen_places.has(place):
 		seen_places[place]=true;needs.curious=minf(1,float(needs.curious)+float(config.needs_context.new_place_boost))
 		if seen_places.size()>256:seen_places.erase(seen_places.keys()[0])
+func social_ledger()->RefCounted:
+	if world.director.brain_social==null:world.director.brain_social=preload("res://scripts/brain_social.gd").new(world)
+	return world.director.brain_social
 func candidates()->Array:
 	var result:Array=[]
 	var hungry:bool=world.hunger.rank(id)>=3
@@ -162,10 +169,12 @@ func candidates()->Array:
 	if clock>=schedule_due:
 		schedule_due=clock+float(world.schedules.config.retry)
 		schedule_options=world.schedules.options(id) if clock>=float(world.schedules.config.first_after) and rng.randf()<float(world.schedules.config.chance) else []
+	var phase_weights:Dictionary=rhythm.weights()
 	for key in config.actions:
 		var a:Dictionary=config.actions[key]
 		var scheduled:Dictionary={}
-		if a.requires=="interaction":continue
+		if a.requires in ["interaction","social_scene"]:continue
+		if a.requires=="rhythm" and not rhythm.available(key):continue
 		if a.requires=="dark" and (world.dark==null or not world.dark.here() or world.actors[id].region_id!="dark"):continue
 		if a.requires=="story":
 			var story:RefCounted=world.their_island
@@ -183,8 +192,8 @@ func candidates()->Array:
 		if a.requires=="flower_gift" and (not world.flower_gifts.eligible(id) or not world.flower_gifts.patches.any(func(patch):return patch.point.distance_to(world.point(world.actors.human))<=float(config.follow_max))):continue
 		if a.requires=="facility" and not world.leisure.sites.values().any(func(site):return site.complete and site.region_id==world.actors[id].region_id and world.point(site).distance_to(world.point(world.actors.human))<=float(config.follow_max)):continue
 		if hungry and key!="food":continue
+		if key=="food" and world.hunger.rank(id)<0:continue
 		if dark_fear and not hungry and key!="dark_life":continue
-		if key=="food" and world.hunger.rank(id)<2:continue
 		if key=="follow" and not following and (clock-free_since<float(world.director.routines[id].return_visit.options(world.director.routines[id]).far_seconds) or (not return_due and clock<next_visit)):continue
 		if a.requires=="night_clear" and (world.days.phase().id!="night" or world.weather.current().id in ["rain","fog"]):continue
 		if a.requires=="near_cat" and (not world.cat.discovered or world.cat.region!=world.actors[id].region_id or world.cat.position.distance_to(world.point(world.actors[id]))>8):continue
@@ -204,6 +213,10 @@ func candidates()->Array:
 		if not scheduled.is_empty():components.append({"key":"weather","value":float(scheduled.weight)*float(config.schedule_weight)})
 		if world.weather.current().id in ["rain","fog"] and a.need=="tired":components.append({"key":"weather","value":float(config.scores.weather)})
 		if invitation.get("action")==key and clock<float(invitation.get("until",0)):components.append({"key":"invite","value":float(config.invite_bonus)})
+		if phase_weights.has(key):components.append({"key":"rhythm_rain" if world.weather.current().id=="rain" and key=="rain_shelter" else "rhythm_"+str(world.days.phase().id),"value":float(phase_weights[key])})
+		if key=="food":
+			var rank:int=world.hunger.rank(id)
+			components=[{"key":"hunger","value":float(config.food_scoring.base_by_rank[rank])+float(config.food_scoring.return_by_rank[rank])+(float(config.food_scoring.lively_by_rank[rank]) if tag()=="lively" else 0.0)}]
 		var score:float=float(a.base)+rng.randf_range(-float(config.jitter),float(config.jitter))
 		for component in components:score+=float(component.value)
 		if recent.has(key):score-=float(config.novelty_penalty)*maxf(0,1-(clock-float(recent[key]))/float(config.novelty_seconds))
@@ -215,7 +228,9 @@ func candidates()->Array:
 		if float(offers[action].until)<clock:offers.erase(action);continue
 		if not hungry:result.append({"action":action,"score":float(config.providers.reaction_score),"reasons":["social"],"partner":""})
 	if not hungry and invitation.has("point") and clock<float(invitation.until):
-		result.append({"action":invitation.action,"score":float(config.invite_bonus)+100,"reasons":["invite","social"],"partner":invitation.from,"paired":true,"point":invitation.point})
+		result.append({"action":invitation.action,"score":float(config.invite_bonus)+100,"reasons":["invite","social"],"partner":invitation.from,"paired":true,"point":invitation.point,"coop":invitation.get("coop","")})
+	var cooperative:Dictionary=social_ledger().candidate(self)
+	if not cooperative.is_empty() and not hungry:result.append(cooperative)
 	var interaction:Dictionary=interactions.candidate()
 	if not interaction.is_empty() and not hungry:result.append(interaction)
 	result.sort_custom(func(a,b):return a.score>b.score if a.score!=b.score else str(a.action)<str(b.action))
@@ -225,7 +240,7 @@ func offer(action:String,body:Callable)->void:
 
 func record(options:Array)->void:
 	top=options.slice(0,3).duplicate(true)
-	var row:Dictionary={"actor":id,"at":clock,"day":world.days.day(),"event":"choice","choice":current.action,"source":current.source,"top":top.duplicate(true),"reasons":current.reasons.duplicate(),"outcome":"running"}
+	var row:Dictionary={"actor":id,"at":clock,"day":world.days.day(),"event":"choice","choice":current.action,"source":current.source,"top":top.duplicate(true),"reasons":current.reasons.duplicate(),"outcome":"running","phase":world.days.phase().id,"weather":world.weather.current().id,"hunger_rank":world.hunger.rank(id)}
 	history.append(row.duplicate(true))
 	if history.size()>int(config.history_limit):history.pop_front()
 	trace(row)
@@ -267,7 +282,13 @@ func start(choice:Dictionary,options:Array)->void:
 	var action:String=choice.action;var a:Dictionary=config.actions.get(action,{"duration":20})
 	current=choice.duplicate(true);current.merge({"source":"local","start":clock,"arrived":clock,"duration":float(a.duration)})
 	recent[action]=clock;record(options)
+	if a.get("requires","")=="rhythm":
+		var at:Vector2=rhythm.target(action)
+		if at.is_finite():choice["point"]=at
 	if choice.get("paired",false):invitation.clear()
+	if action=="small_coop":
+		if not choice.get("paired",false) and not social_ledger().prepare(self,choice):finish("failed","social_refused");return
+		current.merge(choice,true);current.duration=float(config.social_scenes.session_seconds)
 	if action=="host_interaction":
 		if distance()>float(interactions.data.near_distance):
 			var p:Vector2=destination("follow")
@@ -337,15 +358,20 @@ func advance_special(delta:float)->bool:
 func pose()->void:
 	if current.is_empty() or current.source!="local" or world._routes.has(id):return
 	var a:Dictionary=config.actions.get(current.action,config.actions.daydream)
-	world.actors[id].activity=str(a.pose) if a.pose in ["play_cute","play_squat","play_lie","local_sit"] else "local_look"
-	world.lively.active[id]={"action":a.pose,"start":float(current.arrived),"until":clock+float(current.duration)}
+	var visual:String=str(a.pose)
+	if current.action=="small_coop" and social_ledger().sessions.has(current.get("coop","")):
+		var session:Dictionary=social_ledger().sessions[current.coop]
+		visual=str(social_ledger().data.cooperation[session.context].poses[session.members.find(id)])
+	world.actors[id].activity=visual if visual in ["play_cute","play_squat","play_lie","local_sit"] else "local_look"
+	world.lively.active[id]={"action":visual,"start":float(current.arrived),"until":clock+float(current.duration)}
 	world.lively.time=clock
 	if current.action=="play_cute":world.actors[id].activity="play_cute"
+	if a.get("requires","")=="rhythm":rhythm.speak(current.action)
 func advance(delta:float)->void:
 	if not active() or delta<=0:return
 	if generation!=world.session_generation:reset();generation=world.session_generation
 	clock=world.director.time;update_needs(delta)
-	interactions.observe();interactions.refusal_tick()
+	interactions.observe();interactions.refusal_tick();social_ledger().observe(self)
 	if not interactions.pending.is_empty() and distance()<=float(interactions.data.near_distance) and current.get("action","")!="host_interaction" and (busy() or world.hunger.rank(id)>=2):
 		if interactions.deliver_pending():trace({"actor":id,"at":clock,"event":"candidate","choice":"host_interaction","source":"local","reasons":["observed_event"],"outcome":"delivered_without_interrupt"})
 	interactions.tick_current()
@@ -392,9 +418,10 @@ func advance(delta:float)->void:
 		else:return
 	if not world.activities.following.has(id) and not world.activities.default_follow_excluded.has(id):world.activities.following[id]=true
 	if not current.is_empty():
-		if not str(current.get("partner","")).is_empty():
+		if not str(current.get("partner","")).is_empty() and str(current.get("coop","")).is_empty():
 			var peer:Dictionary=world.actors.get(current.partner,{})
 			if peer.is_empty() or peer.region_id!=world.actors[id].region_id or world.point(peer).distance_to(world.point(world.actors[id]))>float(world.lively.config.pair_distance):finish("failed","partner_left");return
+		if (current.action=="night_rest" and world.days.phase().id!="night") or (current.action=="rain_shelter" and world.weather.current().id!="rain"):finish("completed","conditions_changed");return
 		if current.action=="stars" and (world.days.phase().id!="night" or world.weather.current().id in ["rain","fog"]):finish("completed","conditions_changed");return
 		if route!=null and world._routes.has(id):
 			if not is_same(route,world._routes[id]):finish("interrupted","route_replaced");return
@@ -409,18 +436,21 @@ func advance(delta:float)->void:
 			if current.has("scheduled"):world.schedules.targets[id].arrived=true;world.schedules.statistics.arrived[id]=int(world.schedules.statistics.arrived.get(id,0))+1
 		if not current.is_empty() and float(current.arrived)>=0:
 			pose()
-			if current.get("paired",false) and clock>=interactions.next_pair:
+			if current.action not in ["small_coop","social_banter"] and current.get("paired",false) and clock>=interactions.next_pair:
 				var other:RefCounted=world.director.brains.get(current.partner)
 				if other!=null and other.current.get("action","")==current.action and other.current.get("paired",false):
 					if not interactions.peer_reply and interactions.deliver("peer_comment",interactions.peer_session,current.partner,"peer_comment"):
 						interactions.peer_reply=true;interactions.next_pair=clock+float(interactions.data.pair_seconds)
-			if current.action!="host_interaction" and clock-float(current.arrived)>=float(current.duration):finish("completed")
+			if current.action!="host_interaction" and str(current.get("coop","")).is_empty() and clock-float(current.arrived)>=float(current.duration):finish("completed")
+	# A live two-person scene keeps its already accepted local pose until its dialogue ends.
+	# Commands, held/quiet, real work, host movement and very-hungry checks still win above.
+	if current.has("coop") and not str(current.coop).is_empty() and social_ledger().by_actor.get(id,"")==current.coop and not world._routes.has("human"):return
 	if clock<next_decision:return
 	next_decision=clock+float(config.decision_seconds)
 	var choices:Array=candidates()
 	if choices.is_empty():return
 	if current.is_empty():start(choices[0],choices);return
-	if world.activities.following.has(id) and (distance()>float(config.follow_max)+1 or world._routes.has("human")):
+	if world.activities.following.has(id) and not sheltering() and (distance()>float(config.follow_max)+1 or world._routes.has("human")):
 		finish("interrupted","host_moved");follow();return
 	if current.action!="host_interaction" and choices[0].action!=current.action and float(choices[0].score)>float(current.score)+float(config.persistence)+float(config.switch_margin):start(choices[0],choices)
 func summary(language:String="")->Dictionary:

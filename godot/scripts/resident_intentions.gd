@@ -198,10 +198,13 @@ func _next(id:String)->void:
 				seat_index+=1
 				# Reserve this eligible guest before routing so the host's real plan pauses explicit follow.
 				p.gather_guests.append(who)
-				var arrival:Dictionary={"ok":true} if game.steward.active else world.command(who,{"intent":"move","region_id":life.station.region_id,"x":at.x,"y":at.y})
+				var arrival:Dictionary=world.command(who,{"intent":"move","region_id":life.station.region_id,"x":at.x,"y":at.y})
 				if arrival.get("ok",false):p.gather_targets[who]={"at":at,"region":life.station.region_id}
 				else:p.gather_guests.erase(who)
-		if not life.fireside.near(id,5):
+			p.gather_targets[id]={"at":world.point(seats[0]),"region":life.station.region_id}
+			var own_seat:Vector2=p.gather_targets[id].at
+			result=world.command(id,{"intent":"move","region_id":life.station.region_id,"x":own_seat.x,"y":own_seat.y})
+		if not p.get("gather_targets",{}).has(id) and not life.fireside.near(id,5):
 			result={"ok":false,"error":"unreachable"}
 			for offset in [Vector2(0,3),Vector2(3,0),Vector2(-3,0),Vector2(0,-3)]:
 				var at:Vector2=world.point(life.station)+offset
@@ -369,13 +372,19 @@ func advance(delta:float)->void:
 						# Approaching a new meal never reopens the completed meal's timer/circle.
 						# The real grill commit owns its new invitation and seat jobs.
 						if not game.steward.active:game.steward.speak(id,Text.text("content.overnight.text.d0a3c372b12813") if TranslationServer.get_locale().begins_with("zh") else "Come sit by the fire. I'll wait for everyone before grilling.")
-					var missing:Array=[] if game.steward.active else p.gather_fire.guests.filter(func(who):return who!=id and (world._routes.has(who) or not p.gather_targets.has(who) or world.actors[who].region_id!=p.gather_targets[who].region or world.point(world.actors[who]).distance_to(p.gather_targets[who].at)>1.5))
+					var missing:Array=p.gather_fire.guests.filter(func(who):return (world._routes.has(who) or not p.gather_targets.has(who) or world.actors[who].region_id!=p.gather_targets[who].region or world.point(world.actors[who]).distance_to(p.gather_targets[who].at)>1.5))
 					if not missing.is_empty() and world.forest.clock-float(p.gather_fire.at)<60:continue
 					if not missing.is_empty():
 						for who in missing:
 							game.steward.speak(id,(Text.text("content.overnight.text.572176c7810b0c") if TranslationServer.get_locale().begins_with("zh") else "%s couldn't arrive in time; we'll start with those seated.")%Text.resident(world,who))
 							fire.interrupt(who)
 					guests=p.gather_fire.guests.filter(func(who):return who not in missing)
+					if not p.get("seated_before_roast",false):
+						# Arrival is a real World route receipt; eating jobs are created only at grill commit.
+						for who in guests:
+							if who not in missing and not world._routes.has(who):world.actors[who].activity="fire_sit"
+						p.seated_before_roast=true
+						continue
 					if direct:result=fire.direct_grill(fish.id,id)
 					else:
 						var menu_id:String=str(p.current.get("item_id","single:mushroom"))

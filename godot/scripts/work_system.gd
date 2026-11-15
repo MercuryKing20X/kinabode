@@ -219,6 +219,7 @@ func advance(delta: float) -> void:
 				actor.activity = "idle"
 				job.time = 0.0
 				visual_event("fall", target, actor_id)
+				if actor_id=="human":preload("res://scripts/brain_interactions.gd").host_event(world,"host_tree","tree:"+str(target.id)+":"+str(world.revision))
 				world.revision += 1
 			"fall_wait":
 				actor.activity = "idle"
@@ -277,6 +278,7 @@ func advance(delta: float) -> void:
 				world.projects.contribution(actor_id, site, 0, 1)
 				world._grids.erase(site.region_id)
 				site["status"] = "complete" if int(site.stage_index) == 5 else "building"
+				if actor_id=="human" and int(site.stage_index)==5:preload("res://scripts/brain_interactions.gd").host_event(world,"host_built","build:"+str(site.id))
 				_finish(actor_id, LocalText.text("system.work_system.the_house_is_complete") if site.status == "complete" else LocalText.text("system.work_system.this_stage_is_complete"))
 
 func collect(actor_id: String, drop_id: String) -> Dictionary:
@@ -343,6 +345,6 @@ func give(actor_id: String,args: Dictionary) -> Dictionary:
 	if donor.carry[item]==0:donor.carry.erase(item)
 	target.carry[item]=int(target.carry.get(item,0))+int(quantity)
 	CarryRetention.mark(target,item,int(quantity))
-	if actor_id=="human" and world.director.brains.has(receiver):world.director.brains[receiver].interactions.enqueue("helped","gift:"+item+":"+str(quantity))
+	if actor_id=="human" and world.director.brains.has(receiver):preload("res://scripts/brain_interactions.gd").host_event(world,"helped","gift:"+str(world.revision),receiver)
 	world.memories.record_event("gift","gift-"+Crypto.new().generate_random_bytes(12).hex_encode(),[actor_id,receiver],facts)
 	world.revision+=1;return {"ok":true,"status":"completed","quantity":int(quantity),"message":LocalText.text("system.work_system.the_whole_gift_has_been_delivered")}

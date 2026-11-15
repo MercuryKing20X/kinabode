@@ -3,8 +3,13 @@ var samples:Array=[]
 func run()->void:
 	OS.set_environment("HABITAT_OPENING","showcase")
 	root.size=Vector2i(1280,800)
-	game=load("res://scenes/main_v3.tscn").instantiate();root.add_child(game);game.save_enabled=false;game.set_process(false);game.memory_life.set_process(false)
-	await process_frame;await process_frame
+	game=load("res://scenes/main_v3.tscn").instantiate();game.dialogue_adapter_factory=func(_id,_scope):return IntentFake.new()
+	root.add_child(game);game.save_enabled=false;game.set_process(false);game.memory_life.set_process(false)
+	for ready_frame in 120:
+		await process_frame
+		if game.steward!=null:break
+	check(game.steward!=null,"prebuilt offline links finish Main initialization")
+	if game.steward==null:quit(1);return
 	var w:RefCounted=game.world
 	for id in game.steward.Pool.IDS:w.director.set_controller(id,"local");w.activities.release_follow(id)
 	w.director.set_controller("codex","model")

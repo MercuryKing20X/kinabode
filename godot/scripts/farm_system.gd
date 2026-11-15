@@ -303,6 +303,7 @@ func tick_job(actor_id: String, job: Dictionary, delta: float) -> void:
 		"plant":
 			if not plot.crop_id.is_empty() or not world.pay_costs(actor_id,{str(job.item_id):1}).ok: _finish(actor_id, LocalText.text("system.farm_system.the_plot_changed_you_keep_the_seeds"), false); return
 			plot.crop_id = job.crop_id; plot.watered = false; plot.planted_at = clock
+			if actor_id=="human":preload("res://scripts/brain_interactions.gd").host_event(world,"host_plant","plant:"+str(job.id))
 			_finish(actor_id, LocalText.text("system.farm_system.seed_planted_it_needs_one_watering_next"))
 		"water":
 			if plot.crop_id.is_empty(): _finish(actor_id, LocalText.text("system.farm_system.the_plot_changed"), false); return
@@ -322,6 +323,7 @@ func tick_job(actor_id: String, job: Dictionary, delta: float) -> void:
 				for item in harvested:actor.carry[item]=int(actor.carry.get(item,0))+int(harvested[item])
 			if actor_id=="human" and plot.crop_id not in world.ingredients.discovered:world.ingredients.discovered.append(plot.crop_id)
 			farms[job.farm_id].harvested += int(crop.yield); plot.harvests += 1
+			if actor_id=="human":preload("res://scripts/brain_interactions.gd").host_event(world,"host_harvest","harvest:"+str(job.id))
 			if crop.regrow: plot.planted_at = clock; plot.watered = true
 			else: plot.crop_id = ""; plot.watered = false
 			if active(actor_id) and plot.id not in orders[actor_id].completed: orders[actor_id].completed.append(plot.id)

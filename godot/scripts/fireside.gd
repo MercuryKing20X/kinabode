@@ -57,6 +57,7 @@ func light_host(storage_only:bool=false,actor_id:String="human")->Dictionary:
 	ignited_at=world.director.time
 	state.remaining+=float(config.fire_seconds);state.suspended=false;state.committed=false;away=0;circle_closed=false
 	life.station.fuel_used+=wood_cost
+	if actor_id=="human":preload("res://scripts/brain_interactions.gd").host_event(world,"host_fire","fire:"+str(world.revision))
 	if life.station.artwork.is_empty():life.station.artwork=world.library.artworks[life.station.artwork_id].duplicate(true)
 	if life.station.portions==0:life.station.state="embers"
 	world.revision+=1;return {"ok":true,"sources":debit_result.sources,"message":LocalText.text("system.fireside.the_fire_is_lit_choose_something_to_eat")}
@@ -312,7 +313,7 @@ func tick_job(id:String,job:Dictionary,delta:float)->void:
 		if job.time<float(config.eat_seconds):return
 		if life.station.portions<=0:job.phase="fire_sit";job.time=0;return
 		life.station.portions-=1;life.station.meals_eaten+=1;state.current.eaten+=1;state.current.eaters.append(id)
-		if world.director.brains.has(id):world.director.brains[id].interactions.enqueue("meal","meal:"+str(state.current.id))
+		if world.director.brains.has(id):preload("res://scripts/brain_interactions.gd").host_event(world,"meal","meal:"+str(state.current.id),id) if state.roast_by=="human" else world.director.brains[id].interactions.enqueue("meal","meal:"+str(state.current.id))
 		var tasted:Array=world.barbecue_tastes.by_actor.get(id,[])
 		var first:bool=taste_history_known(state.current.food_id) and state.current.food_id not in tasted
 		if state.current.food_id not in tasted:tasted.append(state.current.food_id)

@@ -553,6 +553,114 @@
       "requires": "peer",
       "completion": "shared_arrival_then_duration",
       "labor": false
+    },
+    "morning_hello": {
+      "zh": "打个早安招呼",
+      "en": "say good morning",
+      "pose": "wave",
+      "need": "missing",
+      "duration": 20,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "rhythm",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "weather_watch": {
+      "zh": "看看早上的天气",
+      "en": "look at the morning sky",
+      "pose": "cloud_watch",
+      "need": "curious",
+      "duration": 18,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "rhythm",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "garden_watch": {
+      "zh": "看看菜地",
+      "en": "look over the garden",
+      "pose": "local_look",
+      "need": "curious",
+      "duration": 20,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "rhythm",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "evening_chat": {
+      "zh": "到火边或你身边聊今天",
+      "en": "gather for an evening chat",
+      "pose": "chat",
+      "need": "missing",
+      "duration": 30,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "rhythm",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "night_rest": {
+      "zh": "到屋檐下歇歇",
+      "en": "rest by a doorway",
+      "pose": "local_sit",
+      "need": "tired",
+      "duration": 28,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "rhythm",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "fireflies": {
+      "zh": "看看夜里的萤火虫",
+      "en": "watch the fireflies",
+      "pose": "sea_watch",
+      "need": "curious",
+      "duration": 25,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "rhythm",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "rain_shelter": {
+      "zh": "找个屋檐避雨",
+      "en": "find cover from the rain",
+      "pose": "local_sit",
+      "need": "tired",
+      "duration": 30,
+      "base": 5,
+      "need_weight": 18,
+      "requires": "rhythm",
+      "completion": "arrive_then_duration",
+      "labor": false
+    },
+    "small_coop": {
+      "zh": "和伙伴一起做件小事",
+      "en": "share a little activity",
+      "pose": "chat",
+      "need": "missing",
+      "duration": 100,
+      "base": 0,
+      "need_weight": 0,
+      "requires": "social_scene",
+      "completion": "arrive_then_scene",
+      "labor": false
+    },
+    "social_banter": {
+      "base": 0,
+      "need": "missing",
+      "need_weight": 0,
+      "duration": 180,
+      "requires": "social_scene",
+      "pose": "chat",
+      "zh": "和伙伴拌两句嘴",
+      "en": "trading a little banter",
+      "labor": false,
+      "completion": "arrive_then_scene"
     }
   },
   "text": {
@@ -843,6 +951,82 @@
     "interaction_finished": [
       "你交代的真实工作刚完成，我想叫你来看",
       "the real job you assigned just finished and I want to show you"
+    ],
+    "rhythm_morning": [
+      "早晨想舒展身体、打声招呼",
+      "morning is a good time to stretch and say hello"
+    ],
+    "rhythm_afternoon": [
+      "白天想做自己喜欢的事",
+      "daylight suits my favourite things"
+    ],
+    "rhythm_dusk": [
+      "傍晚想和大家靠近些",
+      "I want company as evening settles"
+    ],
+    "rhythm_night": [
+      "夜里想安静看看或歇息",
+      "night invites a quiet look or a rest"
+    ],
+    "rhythm_rain": [
+      "真的下雨了，想找地方遮雨",
+      "it is raining and I would like some cover"
+    ],
+    "brain_social": [
+      "身边的伙伴正和我一起聊或做小事",
+      "my friend is here sharing this little moment"
+    ],
+    "social_banter": [
+      "和伙伴拌两句嘴",
+      "trade a little banter"
+    ],
+    "small_coop": [
+      "和伙伴一起做件小事",
+      "share a little activity"
+    ],
+    "interaction_host_tree": [
+      "你刚真实砍倒了一棵树",
+      "you just felled a real tree"
+    ],
+    "interaction_host_fish": [
+      "你刚提交了一条真实钓获",
+      "you just landed a real fish"
+    ],
+    "interaction_host_big_fish": [
+      "你刚钓到的真实鱼体型很大",
+      "the real fish you just landed is large"
+    ],
+    "interaction_host_rare_fish": [
+      "你刚钓到了原规则认定的稀有鱼",
+      "your catch is rare under the existing fish rules"
+    ],
+    "interaction_host_built": [
+      "你刚用原材料完成了真实建造",
+      "you just completed real construction with real materials"
+    ],
+    "interaction_host_plant": [
+      "你刚真实扣种子并种下了作物",
+      "you just paid a real seed and planted a crop"
+    ],
+    "interaction_host_harvest": [
+      "你刚提交了真实作物收获",
+      "you just committed a real crop harvest"
+    ],
+    "interaction_host_fire": [
+      "你刚真实扣木材点燃或续上营火",
+      "you just paid real wood to light or tend the fire"
+    ],
+    "interaction_host_dark_return": [
+      "你刚沿原行程从黑暗岛回来了",
+      "you just returned from Dark Island by the real route"
+    ],
+    "interaction_host_moon_return": [
+      "你刚沿真实路径从月牙岛回到主岛",
+      "you just walked back from Crescent Island"
+    ],
+    "interaction_host_appearance": [
+      "你刚明确换上了另一套外观",
+      "you just explicitly changed your appearance"
     ]
   },
   "voices": {
@@ -870,7 +1054,29 @@
       "refuse_command": [
         "等我做完你交代的事。",
         "Lemme finish this first!"
-      ]
+      ],
+      "rhythm_lines": {
+        "morning_hello": [
+          "早安早安～今天也要陪我玩呀！",
+          "Morning, morning! Save some playtime for me!"
+        ],
+        "evening_chat": [
+          "今天最好玩的事，你先说嘛～",
+          "Best bit of your day? You go first!"
+        ],
+        "night_rest": [
+          "我先在这儿靠一会儿，眼皮要打架啦～",
+          "Just resting here a bit. My eyelids are giving up!"
+        ],
+        "rain_shelter": [
+          "哎呀，先借这儿躲躲雨嘛～",
+          "Eek! Borrowing this dry little spot!"
+        ],
+        "fireflies": [
+          "那边一闪一闪的，你也看见啦？",
+          "That little twinkle! You saw it too?"
+        ]
+      }
     },
     "gentle": {
       "prefix": [
@@ -896,7 +1102,29 @@
       "refuse_command": [
         "等我做完你交代的事。",
         "I promised to finish this first."
-      ]
+      ],
+      "rhythm_lines": {
+        "morning_hello": [
+          "早呀，今天也慢慢来吧。",
+          "Good morning. Let us take today gently."
+        ],
+        "evening_chat": [
+          "太阳低了，今天有什么想聊的吗？",
+          "The sun is low. Anything from today you would like to share?"
+        ],
+        "night_rest": [
+          "我在这边歇一会儿，你也别太累。",
+          "I will rest here for a while. Be kind to yourself too."
+        ],
+        "rain_shelter": [
+          "这边能躲一点雨，过来歇歇吧。",
+          "There is a little cover here. Come take a breather."
+        ],
+        "fireflies": [
+          "夜里这些小小的亮光，真温柔。",
+          "Such gentle little lights in the dark."
+        ]
+      }
     },
     "laborious": {
       "prefix": [
@@ -922,7 +1150,29 @@
       "refuse_command": [
         "等我做完你交代的事。",
         "I will join once this job is done."
-      ]
+      ],
+      "rhythm_lines": {
+        "morning_hello": [
+          "早，懒鬼，伸伸胳膊再说。",
+          "Morning, sleepyhead. Stretch those arms first."
+        ],
+        "evening_chat": [
+          "一天又过去了，过来坐会儿呗。",
+          "Another day done. Come sit a minute."
+        ],
+        "night_rest": [
+          "我歇一会儿，谁也别催。",
+          "Taking a breather. No rushing me."
+        ],
+        "rain_shelter": [
+          "雨还挺会挑时候。先躲这儿。",
+          "Rain picked its moment. Cover first."
+        ],
+        "fireflies": [
+          "亮一下又暗一下，还挺精神。",
+          "On, off, on again. Lively little things."
+        ]
+      }
     },
     "quiet": {
       "prefix": [
@@ -948,7 +1198,29 @@
       "refuse_command": [
         "等我做完你交代的事。",
         "After I finish this."
-      ]
+      ],
+      "rhythm_lines": {
+        "morning_hello": [
+          "……早。",
+          "Morning."
+        ],
+        "evening_chat": [
+          "一天了。坐会儿？",
+          "Long day. Sit?"
+        ],
+        "night_rest": [
+          "这里安静。待会儿。",
+          "Quiet here. Staying a while."
+        ],
+        "rain_shelter": [
+          "雨。先等会儿。",
+          "Rain. Wait it out."
+        ],
+        "fireflies": [
+          "……看见了。那点光。",
+          "Saw it. That little light."
+        ]
+      }
     }
   },
   "social_relation_weight": 1.0,
@@ -1171,5 +1443,197 @@
     "personality_need_scale": 50
   },
   "destination_attempts": 16,
-  "panel_history": 5
+  "panel_history": 5,
+  "food_scoring": {
+    "base_by_rank": [
+      -1000,
+      8,
+      35,
+      180
+    ],
+    "return_by_rank": [
+      0,
+      0,
+      15,
+      100
+    ],
+    "lively_by_rank": [
+      0,
+      5,
+      7,
+      0
+    ]
+  },
+  "rhythm": {
+    "near_radius": 6,
+    "shelter_search": 12,
+    "phase_speech_seconds": 90,
+    "weights": {
+      "gentle": {
+        "morning": {
+          "stretch": 40,
+          "morning_hello": 55,
+          "weather_watch": 40,
+          "garden_watch": 24
+        },
+        "afternoon": {
+          "flower_scent": 20,
+          "cloud_watch": 20,
+          "sea_watch": 50,
+          "chat": 20
+        },
+        "dusk": {
+          "evening_chat": 85,
+          "sweep": 24,
+          "back_to_back": 28,
+          "local_sit": 25
+        },
+        "night": {
+          "stars": 65,
+          "fireflies": 55,
+          "night_rest": 105,
+          "local_sit": 30
+        },
+        "rain": {
+          "rain_shelter": 55,
+          "read": 25,
+          "daydream": 20,
+          "stars": -500,
+          "fireflies": -500
+        }
+      },
+      "lively": {
+        "morning": {
+          "stretch": 40,
+          "morning_hello": 55,
+          "weather_watch": 40,
+          "garden_watch": 24
+        },
+        "afternoon": {
+          "butterfly": 20,
+          "hop": 20,
+          "spin": 20,
+          "play_cute": 35
+        },
+        "dusk": {
+          "evening_chat": 85,
+          "sweep": 24,
+          "back_to_back": 28,
+          "local_sit": 25
+        },
+        "night": {
+          "stars": 65,
+          "fireflies": 55,
+          "night_rest": 165,
+          "local_sit": 30
+        },
+        "rain": {
+          "rain_shelter": 55,
+          "read": 25,
+          "daydream": 20,
+          "stars": -500,
+          "fireflies": -500
+        }
+      },
+      "laborious": {
+        "morning": {
+          "stretch": 40,
+          "morning_hello": 24,
+          "weather_watch": 24,
+          "garden_watch": 24
+        },
+        "afternoon": {
+          "sweep": 20,
+          "wood_tidy": 20,
+          "dust": 20
+        },
+        "dusk": {
+          "evening_chat": 85,
+          "sweep": 24,
+          "back_to_back": 28,
+          "local_sit": 25
+        },
+        "night": {
+          "stars": 65,
+          "fireflies": 55,
+          "night_rest": 105,
+          "local_sit": 30
+        },
+        "rain": {
+          "rain_shelter": 55,
+          "read": 25,
+          "daydream": 20,
+          "stars": -500,
+          "fireflies": -500
+        }
+      },
+      "quiet": {
+        "morning": {
+          "stretch": 18,
+          "morning_hello": 24,
+          "weather_watch": 24,
+          "garden_watch": 24
+        },
+        "afternoon": {
+          "read": 20,
+          "daydream": 20,
+          "local_sit": 20
+        },
+        "dusk": {
+          "evening_chat": 85,
+          "sweep": 24,
+          "back_to_back": 28,
+          "local_sit": 25
+        },
+        "night": {
+          "stars": 135,
+          "fireflies": 90,
+          "night_rest": 105,
+          "read": 20
+        },
+        "rain": {
+          "rain_shelter": 55,
+          "read": 25,
+          "daydream": 20,
+          "stars": -500,
+          "fireflies": -500
+        }
+      }
+    },
+    "min_radius": 2.5,
+    "night_home_radius": 48
+  },
+  "social_scenes": {
+    "first_after": 45,
+    "cooldown_seconds": 145,
+    "session_seconds": 180,
+    "reply_seconds": 2,
+    "expiry_seconds": 300,
+    "pair_distance": 4,
+    "candidate_score": 95,
+    "observer_seconds": 2,
+    "near_host": 12,
+    "max_history": 128,
+    "coop_kinds": [
+      "butterfly",
+      "sea",
+      "camp",
+      "cat"
+    ],
+    "coop_host_radius": 3.5
+  },
+  "host_replies": {
+    "ttl_seconds": 120,
+    "queue_limit": 12,
+    "witness_radius": 12,
+    "score": 155
+  },
+  "developer_report": {
+    "seconds": 1800,
+    "sample_seconds": 5,
+    "step": 0.25,
+    "seed": 701,
+    "world_seed": 701,
+    "report_version": 1
+  }
 }

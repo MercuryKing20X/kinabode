@@ -3,6 +3,19 @@ func run()->void:
 	var w:=preload("res://scripts/world_state.gd").new("res://content/home-v3/world.json");w.residents.provision(w)
 	w.library=preload("res://scripts/character_library.gd").new();w.library.configure(OS.get_environment("HABITAT_DATA_DIR"))
 	preload("res://scripts/world_opening.gd").apply(w,w.library,"standard");w.intelligence.activate_presets();w.hunger.start()
+	var scenes:Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://content/brain-social.json"))
+	check(scenes.pairs.size()==6,"six unique authored resident pairs")
+	var pairs:Dictionary={}
+	for pair in scenes.pairs:
+		var members:Array=pair.actors.duplicate();members.sort();var key:String=":".join(members)
+		check(members.size()==2 and not pairs.has(key),"unique exact pair membership");pairs[key]=true
+		check(pair.scripts.size()>=6,"at least six real-context scripts per pair")
+		for scene in pair.scripts:
+			check(scene.lines.size()>=2 and scene.lines.size()<=4,"banter has two to four authored turns")
+			check(scene.lines.all(func(line):return line.actor in members and not line.zh.is_empty() and not line.en.is_empty()),"each banter turn binds a real member and both languages")
+	for activity in scenes.cooperation.values():
+		for voice in activity.voices.values():
+			for stage in ["begin","middle","end"]:check(voice[stage].size()==2 and voice[stage].all(func(text):return not text.is_empty()),"cooperation has authored bilingual begin/middle/end")
 	var original:Dictionary=w.storage.saved().duplicate(true)
 	var b:RefCounted=w.director.brains.codex
 	var c:RefCounted=w.director.brains["companion-2"]

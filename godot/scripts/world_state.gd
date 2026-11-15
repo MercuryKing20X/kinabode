@@ -161,7 +161,9 @@ func assign_appearance(id: String, artwork_id: String, allow_human: bool = false
 	if library.artworks[artwork_id].get("kind", "character") != "character": return false
 	if "human_only" in library.artworks[artwork_id].get("tags",[]) and id!="human":return false
 	if actors[id].get("role", "") == "human" and not (allow_human and confirmed): return false
+	var previous_appearance:String=str(actors[id].appearance_id)
 	actors[id].appearance_id = artwork_id
+	if id=="human" and previous_appearance!=artwork_id:preload("res://scripts/brain_interactions.gd").host_event(self,"host_appearance","appearance:"+str(revision))
 	actors[id]["custom_appearance"] = true
 	revision += 1
 	return true

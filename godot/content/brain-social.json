@@ -1,0 +1,1282 @@
+{
+  "pairs": [
+    {
+      "actors": [
+        "codex",
+        "companion-2"
+      ],
+      "scripts": [
+        {
+          "id": "codex_companion-2_rain",
+          "context": "rain",
+          "lines": [
+            {
+              "actor": "codex",
+              "zh": "先往屋檐下站一点吧。",
+              "en": "A little closer to the eaves, perhaps?"
+            },
+            {
+              "actor": "companion-2",
+              "zh": "那你陪我一起躲嘛～",
+              "en": "Only if you hide with me!"
+            },
+            {
+              "actor": "codex",
+              "zh": "好，我没有要丢下你呀。",
+              "en": "Of course. I was not leaving you."
+            },
+            {
+              "actor": "companion-2",
+              "zh": "嘿嘿，那就不跟雨比赛啦。",
+              "en": "Heehee! No racing the rain, then!"
+            }
+          ]
+        },
+        {
+          "id": "codex_companion-2_rest",
+          "context": "rest",
+          "lines": [
+            {
+              "actor": "codex",
+              "zh": "想歇一会儿的话，就坐坐吧。",
+              "en": "A seat if you fancy a rest."
+            },
+            {
+              "actor": "companion-2",
+              "zh": "可是坐着也想找你说话嘛。",
+              "en": "But I still want to talk to you!"
+            },
+            {
+              "actor": "codex",
+              "zh": "我听着呢，小声一点也可以。",
+              "en": "I am listening. Quiet words are welcome."
+            },
+            {
+              "actor": "companion-2",
+              "zh": "那我小小声黏着你。",
+              "en": "Then I shall be a tiny quiet sidekick."
+            }
+          ]
+        },
+        {
+          "id": "codex_companion-2_waiting",
+          "context": "waiting",
+          "lines": [
+            {
+              "actor": "codex",
+              "zh": "肚子又在提醒了吗？",
+              "en": "Your stomach reminding you again?"
+            },
+            {
+              "actor": "companion-2",
+              "zh": "嗯！你听见它叫我名字啦？",
+              "en": "Yes! Did you hear it calling my name?"
+            },
+            {
+              "actor": "codex",
+              "zh": "我只听见咕噜一声呢。",
+              "en": "I heard a little rumble."
+            },
+            {
+              "actor": "companion-2",
+              "zh": "那就是它在叫饭嘛。",
+              "en": "That is tummy language for dinner!"
+            }
+          ]
+        },
+        {
+          "id": "codex_companion-2_sea",
+          "context": "sea",
+          "lines": [
+            {
+              "actor": "codex",
+              "zh": "海浪的声音很轻呢。",
+              "en": "Such a soft sound from the waves."
+            },
+            {
+              "actor": "companion-2",
+              "zh": "我也轻轻的，你看我多乖。",
+              "en": "I am soft and quiet too. See?"
+            },
+            {
+              "actor": "codex",
+              "zh": "你刚才那句可不算轻呀。",
+              "en": "That last sentence was rather lively."
+            },
+            {
+              "actor": "companion-2",
+              "zh": "哎呀，被你发现啦。",
+              "en": "Oops! You caught me!"
+            }
+          ]
+        },
+        {
+          "id": "codex_companion-2_meal",
+          "context": "meal",
+          "lines": [
+            {
+              "actor": "codex",
+              "zh": "慢慢吃，不用着急。",
+              "en": "There is no rush with your food."
+            },
+            {
+              "actor": "companion-2",
+              "zh": "我没有急，是它太香啦。",
+              "en": "Not rushing! It just smells amazing!"
+            },
+            {
+              "actor": "codex",
+              "zh": "香也可以多嚼两口呀。",
+              "en": "A few extra chews can be lovely too."
+            },
+            {
+              "actor": "companion-2",
+              "zh": "好嘛，我听你的嘛。",
+              "en": "Okaaay. For you, extra chews!"
+            }
+          ]
+        },
+        {
+          "id": "codex_companion-2_idle",
+          "context": "idle",
+          "lines": [
+            {
+              "actor": "codex",
+              "zh": "刚才安静了一小会儿呢。",
+              "en": "A quiet little moment just now."
+            },
+            {
+              "actor": "companion-2",
+              "zh": "因为我在攒一句大大的话！",
+              "en": "I was saving up a really big sentence!"
+            },
+            {
+              "actor": "codex",
+              "zh": "那我准备好听了。",
+              "en": "I am ready to listen."
+            },
+            {
+              "actor": "companion-2",
+              "zh": "其实就是想叫你陪我嘛。",
+              "en": "It is actually just: stay with me!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actors": [
+        "codex",
+        "npc.mira"
+      ],
+      "scripts": [
+        {
+          "id": "codex_npc.mira_rain",
+          "context": "rain",
+          "lines": [
+            {
+              "actor": "codex",
+              "zh": "下雨了，先避一避吧。",
+              "en": "Let us find a little cover."
+            },
+            {
+              "actor": "npc.mira",
+              "zh": "我知道，你也别站外面念我。",
+              "en": "I know. You are outside too, you know."
+            },
+            {
+              "actor": "codex",
+              "zh": "我是在叫你一起过来呀。",
+              "en": "I was inviting you with me."
+            },
+            {
+              "actor": "npc.mira",
+              "zh": "……行，算你关心我。",
+              "en": "Fine. Concern accepted."
+            }
+          ]
+        },
+        {
+          "id": "codex_npc.mira_rest",
+          "context": "rest",
+          "lines": [
+            {
+              "actor": "codex",
+              "zh": "要不要先歇歇手？",
+              "en": "A little rest for your hands?"
+            },
+            {
+              "actor": "npc.mira",
+              "zh": "你又看我一脸想干活了？",
+              "en": "Do I look that eager to work?"
+            },
+            {
+              "actor": "codex",
+              "zh": "我只是觉得这里坐着很舒服。",
+              "en": "I only thought this was a nice seat."
+            },
+            {
+              "actor": "npc.mira",
+              "zh": "那我陪你坐一小会儿。",
+              "en": "Fine. A short sit together."
+            }
+          ]
+        },
+        {
+          "id": "codex_npc.mira_waiting",
+          "context": "waiting",
+          "lines": [
+            {
+              "actor": "codex",
+              "zh": "等开饭的时候也别着急。",
+              "en": "No need to hurry while waiting for dinner."
+            },
+            {
+              "actor": "npc.mira",
+              "zh": "我不急，是肚子在催。",
+              "en": "I am calm. My stomach is impatient."
+            },
+            {
+              "actor": "codex",
+              "zh": "那就让它也休息一会儿。",
+              "en": "Perhaps it could rest for a moment too."
+            },
+            {
+              "actor": "npc.mira",
+              "zh": "这位可不太听我管。",
+              "en": "That department ignores my orders."
+            }
+          ]
+        },
+        {
+          "id": "codex_npc.mira_sea",
+          "context": "sea",
+          "lines": [
+            {
+              "actor": "codex",
+              "zh": "海边待一会儿很好呢。",
+              "en": "A little time by the sea is lovely."
+            },
+            {
+              "actor": "npc.mira",
+              "zh": "你就不怕我忍不住找事做？",
+              "en": "What if I start looking for work?"
+            },
+            {
+              "actor": "codex",
+              "zh": "看浪花也算一件小事呀。",
+              "en": "Wave watching is a little task too."
+            },
+            {
+              "actor": "npc.mira",
+              "zh": "行，这活我接了。",
+              "en": "Fine. Assignment accepted."
+            }
+          ]
+        },
+        {
+          "id": "codex_npc.mira_meal",
+          "context": "meal",
+          "lines": [
+            {
+              "actor": "codex",
+              "zh": "今天一起吃，真好。",
+              "en": "It is lovely eating together."
+            },
+            {
+              "actor": "npc.mira",
+              "zh": "吃归吃，你别只顾着看我。",
+              "en": "Eat, then. Stop studying me."
+            },
+            {
+              "actor": "codex",
+              "zh": "我是想看看大家开不开心。",
+              "en": "I like seeing whether everyone is happy."
+            },
+            {
+              "actor": "npc.mira",
+              "zh": "看到了吧？我挺开心的。",
+              "en": "There. Happy. Satisfied?"
+            }
+          ]
+        },
+        {
+          "id": "codex_npc.mira_idle",
+          "context": "idle",
+          "lines": [
+            {
+              "actor": "codex",
+              "zh": "这样慢慢待着也挺好。",
+              "en": "A gentle pause is rather nice."
+            },
+            {
+              "actor": "npc.mira",
+              "zh": "你是不是又劝我偷懒？",
+              "en": "Trying to talk me into slacking?"
+            },
+            {
+              "actor": "codex",
+              "zh": "我是在邀请你歇一会儿。",
+              "en": "I am inviting you to rest."
+            },
+            {
+              "actor": "npc.mira",
+              "zh": "换个说法就顺耳多了。",
+              "en": "That sounds much more respectable."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actors": [
+        "codex",
+        "npc.nora"
+      ],
+      "scripts": [
+        {
+          "id": "codex_npc.nora_rain",
+          "context": "rain",
+          "lines": [
+            {
+              "actor": "codex",
+              "zh": "雨声听起来很轻呢。",
+              "en": "The rain sounds rather gentle."
+            },
+            {
+              "actor": "npc.nora",
+              "zh": "……衣角湿了就不轻了。",
+              "en": "Less gentle on wet sleeves."
+            },
+            {
+              "actor": "codex",
+              "zh": "那我们站里面一点。",
+              "en": "A little further under cover, then."
+            },
+            {
+              "actor": "npc.nora",
+              "zh": "嗯，这句实在。",
+              "en": "Practical. Good."
+            }
+          ]
+        },
+        {
+          "id": "codex_npc.nora_rest",
+          "context": "rest",
+          "lines": [
+            {
+              "actor": "codex",
+              "zh": "你想安静一会儿吗？",
+              "en": "Would you like some quiet?"
+            },
+            {
+              "actor": "npc.nora",
+              "zh": "你小声就行。",
+              "en": "Quiet words are fine."
+            },
+            {
+              "actor": "codex",
+              "zh": "那我轻轻陪着。",
+              "en": "I can stay softly beside you."
+            },
+            {
+              "actor": "npc.nora",
+              "zh": "……这样挺好。",
+              "en": "That works."
+            }
+          ]
+        },
+        {
+          "id": "codex_npc.nora_waiting",
+          "context": "waiting",
+          "lines": [
+            {
+              "actor": "codex",
+              "zh": "要不要坐着等开饭？",
+              "en": "Shall we sit while we wait for dinner?"
+            },
+            {
+              "actor": "npc.nora",
+              "zh": "坐着也会饿。",
+              "en": "Still hungry when sitting."
+            },
+            {
+              "actor": "codex",
+              "zh": "至少脚可以歇歇呀。",
+              "en": "Your feet could have a rest, at least."
+            },
+            {
+              "actor": "npc.nora",
+              "zh": "嗯，脚同意了。",
+              "en": "My feet agree."
+            }
+          ]
+        },
+        {
+          "id": "codex_npc.nora_sea",
+          "context": "sea",
+          "lines": [
+            {
+              "actor": "codex",
+              "zh": "海风轻轻吹着呢。",
+              "en": "Such a gentle sea breeze."
+            },
+            {
+              "actor": "npc.nora",
+              "zh": "你又要说好舒服？",
+              "en": "Going to say it feels lovely?"
+            },
+            {
+              "actor": "codex",
+              "zh": "被你猜到了。",
+              "en": "You guessed."
+            },
+            {
+              "actor": "npc.nora",
+              "zh": "……确实。",
+              "en": "It does."
+            }
+          ]
+        },
+        {
+          "id": "codex_npc.nora_meal",
+          "context": "meal",
+          "lines": [
+            {
+              "actor": "codex",
+              "zh": "这顿吃得还好吗？",
+              "en": "Enjoying the meal?"
+            },
+            {
+              "actor": "npc.nora",
+              "zh": "你看我有抱怨？",
+              "en": "Heard any complaints?"
+            },
+            {
+              "actor": "codex",
+              "zh": "我只是想听你说一句。",
+              "en": "I wanted to hear a word from you."
+            },
+            {
+              "actor": "npc.nora",
+              "zh": "嗯，好吃。",
+              "en": "Good food."
+            }
+          ]
+        },
+        {
+          "id": "codex_npc.nora_idle",
+          "context": "idle",
+          "lines": [
+            {
+              "actor": "codex",
+              "zh": "你刚才好像在想事情。",
+              "en": "You looked thoughtful just now."
+            },
+            {
+              "actor": "npc.nora",
+              "zh": "……在发呆。",
+              "en": "Was staring at nothing."
+            },
+            {
+              "actor": "codex",
+              "zh": "那也可以呀。",
+              "en": "That is quite all right too."
+            },
+            {
+              "actor": "npc.nora",
+              "zh": "嗯，别帮我取名字。",
+              "en": "Good. No fancy name for it."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actors": [
+        "companion-2",
+        "npc.mira"
+      ],
+      "scripts": [
+        {
+          "id": "companion-2_npc.mira_rain",
+          "context": "rain",
+          "lines": [
+            {
+              "actor": "companion-2",
+              "zh": "下雨了，你先躲还是我先躲？",
+              "en": "Rain! Who gets to cover first?"
+            },
+            {
+              "actor": "npc.mira",
+              "zh": "路这么宽，一起走不就行了。",
+              "en": "Wide path. We can walk together."
+            },
+            {
+              "actor": "companion-2",
+              "zh": "哎呀，一点比赛精神都没有嘛。",
+              "en": "Aww, where is your competitive spirit?"
+            },
+            {
+              "actor": "npc.mira",
+              "zh": "比谁先把衣服淋湿？不比。",
+              "en": "A wet-clothes contest? Pass."
+            }
+          ]
+        },
+        {
+          "id": "companion-2_npc.mira_rest",
+          "context": "rest",
+          "lines": [
+            {
+              "actor": "companion-2",
+              "zh": "你是不是偷偷歇着啦？",
+              "en": "Secretly taking a break?"
+            },
+            {
+              "actor": "npc.mira",
+              "zh": "大大方方歇，怎么了？",
+              "en": "Openly taking a break. Problem?"
+            },
+            {
+              "actor": "companion-2",
+              "zh": "嘿嘿，我也要大大方方的。",
+              "en": "Heehee! I want an open break too!"
+            },
+            {
+              "actor": "npc.mira",
+              "zh": "行，别把我位置挤没了。",
+              "en": "Fine. Leave me some space."
+            }
+          ]
+        },
+        {
+          "id": "companion-2_npc.mira_waiting",
+          "context": "waiting",
+          "lines": [
+            {
+              "actor": "companion-2",
+              "zh": "我肚子叫得比你响哦。",
+              "en": "My tummy is louder than yours!"
+            },
+            {
+              "actor": "npc.mira",
+              "zh": "这种事也要比？",
+              "en": "Everything has to be a competition?"
+            },
+            {
+              "actor": "companion-2",
+              "zh": "赢了能不能先闻一口饭？",
+              "en": "Does winning get first sniff of dinner?"
+            },
+            {
+              "actor": "npc.mira",
+              "zh": "闻倒是没人拦你。",
+              "en": "No one is stopping you sniffing."
+            }
+          ]
+        },
+        {
+          "id": "companion-2_npc.mira_sea",
+          "context": "sea",
+          "lines": [
+            {
+              "actor": "companion-2",
+              "zh": "我们数浪花吧，我肯定赢！",
+              "en": "Wave counting! I am going to win!"
+            },
+            {
+              "actor": "npc.mira",
+              "zh": "你先别把同一朵数两回。",
+              "en": "Do not count the same wave twice."
+            },
+            {
+              "actor": "companion-2",
+              "zh": "它跑回来找我，不算吗？",
+              "en": "It came back to visit me. That counts!"
+            },
+            {
+              "actor": "npc.mira",
+              "zh": "……你这算法挺能耐。",
+              "en": "Remarkable arithmetic."
+            }
+          ]
+        },
+        {
+          "id": "companion-2_npc.mira_meal",
+          "context": "meal",
+          "lines": [
+            {
+              "actor": "companion-2",
+              "zh": "这串好香，我就看看嘛。",
+              "en": "That smells amazing. Just looking!"
+            },
+            {
+              "actor": "npc.mira",
+              "zh": "看看可以，别盯着我的。",
+              "en": "Looking is fine. Eyes off mine."
+            },
+            {
+              "actor": "companion-2",
+              "zh": "哎呀，你自己的也不藏一下。",
+              "en": "Aww, you could at least hide it!"
+            },
+            {
+              "actor": "npc.mira",
+              "zh": "吃饭还得防你这双眼睛。",
+              "en": "Guarding dinner from your eyes now."
+            }
+          ]
+        },
+        {
+          "id": "companion-2_npc.mira_idle",
+          "context": "idle",
+          "lines": [
+            {
+              "actor": "companion-2",
+              "zh": "你走路怎么像在开会呀？",
+              "en": "You walk like you are going to a meeting!"
+            },
+            {
+              "actor": "npc.mira",
+              "zh": "总比你一蹦一蹦晃眼强。",
+              "en": "Better than all that bouncing in my vision."
+            },
+            {
+              "actor": "companion-2",
+              "zh": "可是蹦起来就开心嘛。",
+              "en": "But bouncing is happy!"
+            },
+            {
+              "actor": "npc.mira",
+              "zh": "行，开心就看着点路。",
+              "en": "Fine. Happy feet still need eyes."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actors": [
+        "companion-2",
+        "npc.nora"
+      ],
+      "scripts": [
+        {
+          "id": "companion-2_npc.nora_rain",
+          "context": "rain",
+          "lines": [
+            {
+              "actor": "companion-2",
+              "zh": "你躲雨都不叫我～",
+              "en": "You hid from the rain without calling me!"
+            },
+            {
+              "actor": "npc.nora",
+              "zh": "叫了。你在说话。",
+              "en": "Called. You were talking."
+            },
+            {
+              "actor": "companion-2",
+              "zh": "那你多叫一句嘛。",
+              "en": "Call twice next time!"
+            },
+            {
+              "actor": "npc.nora",
+              "zh": "……躲雨。听见了？",
+              "en": "Rain. Shelter. Hear me now?"
+            }
+          ]
+        },
+        {
+          "id": "companion-2_npc.nora_rest",
+          "context": "rest",
+          "lines": [
+            {
+              "actor": "companion-2",
+              "zh": "怎么又坐着啦，陪我玩嘛。",
+              "en": "Sitting again? Play with me!"
+            },
+            {
+              "actor": "npc.nora",
+              "zh": "你坐下，我也算陪你。",
+              "en": "Sit down. Still company."
+            },
+            {
+              "actor": "companion-2",
+              "zh": "哎呀，这也太省力啦。",
+              "en": "Aww, that is too easy!"
+            },
+            {
+              "actor": "npc.nora",
+              "zh": "嗯，聪明。",
+              "en": "Efficient."
+            }
+          ]
+        },
+        {
+          "id": "companion-2_npc.nora_waiting",
+          "context": "waiting",
+          "lines": [
+            {
+              "actor": "companion-2",
+              "zh": "你说，饭会不会自己走过来？",
+              "en": "Think dinner could walk over by itself?"
+            },
+            {
+              "actor": "npc.nora",
+              "zh": "不会。",
+              "en": "No."
+            },
+            {
+              "actor": "companion-2",
+              "zh": "那你能不能多说一个字嘛？",
+              "en": "One more word? Please?"
+            },
+            {
+              "actor": "npc.nora",
+              "zh": "不会来。",
+              "en": "Still no."
+            }
+          ]
+        },
+        {
+          "id": "companion-2_npc.nora_sea",
+          "context": "sea",
+          "lines": [
+            {
+              "actor": "companion-2",
+              "zh": "海浪都比你话多啦。",
+              "en": "The waves talk more than you!"
+            },
+            {
+              "actor": "npc.nora",
+              "zh": "它不用回答你。",
+              "en": "They do not have to answer you."
+            },
+            {
+              "actor": "companion-2",
+              "zh": "哼，那你就陪我听浪嘛。",
+              "en": "Hmph. Listen to them with me, then!"
+            },
+            {
+              "actor": "npc.nora",
+              "zh": "正在听。",
+              "en": "Doing that."
+            }
+          ]
+        },
+        {
+          "id": "companion-2_npc.nora_meal",
+          "context": "meal",
+          "lines": [
+            {
+              "actor": "companion-2",
+              "zh": "你吃这么安静，我都想听听。",
+              "en": "So quiet eating. I want to hear!"
+            },
+            {
+              "actor": "npc.nora",
+              "zh": "听什么。",
+              "en": "Hear what?"
+            },
+            {
+              "actor": "companion-2",
+              "zh": "听你说好吃呀。",
+              "en": "You saying it tastes good!"
+            },
+            {
+              "actor": "npc.nora",
+              "zh": "……好吃。继续吃。",
+              "en": "Good. Now eat."
+            }
+          ]
+        },
+        {
+          "id": "companion-2_npc.nora_idle",
+          "context": "idle",
+          "lines": [
+            {
+              "actor": "companion-2",
+              "zh": "你是不是又在等我说完呀？",
+              "en": "Waiting for me to finish again?"
+            },
+            {
+              "actor": "npc.nora",
+              "zh": "嗯。",
+              "en": "Yes."
+            },
+            {
+              "actor": "companion-2",
+              "zh": "我还有好多话呢。",
+              "en": "But I have loads more words!"
+            },
+            {
+              "actor": "npc.nora",
+              "zh": "看出来了。",
+              "en": "Noticed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actors": [
+        "npc.mira",
+        "npc.nora"
+      ],
+      "scripts": [
+        {
+          "id": "npc.mira_npc.nora_rain",
+          "context": "rain",
+          "lines": [
+            {
+              "actor": "npc.mira",
+              "zh": "下雨了，别站那儿当柱子。",
+              "en": "Rain. Stop posing as a post."
+            },
+            {
+              "actor": "npc.nora",
+              "zh": "你在叫另一根柱子？",
+              "en": "One post calling another?"
+            },
+            {
+              "actor": "npc.mira",
+              "zh": "我这不是准备躲了吗。",
+              "en": "I was about to move."
+            },
+            {
+              "actor": "npc.nora",
+              "zh": "嗯，柱子会走了。",
+              "en": "The post walks. Progress."
+            }
+          ]
+        },
+        {
+          "id": "npc.mira_npc.nora_rest",
+          "context": "rest",
+          "lines": [
+            {
+              "actor": "npc.mira",
+              "zh": "歇够了吗？我就问问。",
+              "en": "Rested enough? Just asking."
+            },
+            {
+              "actor": "npc.nora",
+              "zh": "还没。",
+              "en": "No."
+            },
+            {
+              "actor": "npc.mira",
+              "zh": "你倒是诚实。",
+              "en": "Honest, at least."
+            },
+            {
+              "actor": "npc.nora",
+              "zh": "比装忙省事。",
+              "en": "Easier than pretending to be busy."
+            }
+          ]
+        },
+        {
+          "id": "npc.mira_npc.nora_waiting",
+          "context": "waiting",
+          "lines": [
+            {
+              "actor": "npc.mira",
+              "zh": "肚子都催了，岛主还磨蹭。",
+              "en": "Stomach is complaining. Boss is dawdling."
+            },
+            {
+              "actor": "npc.nora",
+              "zh": "你催岛主，我等饭。",
+              "en": "You nag. I wait."
+            },
+            {
+              "actor": "npc.mira",
+              "zh": "分工倒挺清楚。",
+              "en": "A clear division of labour."
+            },
+            {
+              "actor": "npc.nora",
+              "zh": "嗯，各司其职。",
+              "en": "Precisely."
+            }
+          ]
+        },
+        {
+          "id": "npc.mira_npc.nora_sea",
+          "context": "sea",
+          "lines": [
+            {
+              "actor": "npc.mira",
+              "zh": "看海这么久，看出什么了？",
+              "en": "All that watching. What did you find?"
+            },
+            {
+              "actor": "npc.nora",
+              "zh": "海。",
+              "en": "Sea."
+            },
+            {
+              "actor": "npc.mira",
+              "zh": "……你就不能多说点？",
+              "en": "Anything more specific?"
+            },
+            {
+              "actor": "npc.nora",
+              "zh": "很多海。",
+              "en": "Lots of sea."
+            }
+          ]
+        },
+        {
+          "id": "npc.mira_npc.nora_meal",
+          "context": "meal",
+          "lines": [
+            {
+              "actor": "npc.mira",
+              "zh": "你那口吃完再点头，别呛着。",
+              "en": "Finish that bite before nodding."
+            },
+            {
+              "actor": "npc.nora",
+              "zh": "你管得真细。",
+              "en": "Thorough supervision."
+            },
+            {
+              "actor": "npc.mira",
+              "zh": "我可不想一会儿拍你背。",
+              "en": "I do not fancy thumping your back."
+            },
+            {
+              "actor": "npc.nora",
+              "zh": "嗯，知道你关心。",
+              "en": "Concern noted."
+            }
+          ]
+        },
+        {
+          "id": "npc.mira_npc.nora_idle",
+          "context": "idle",
+          "lines": [
+            {
+              "actor": "npc.mira",
+              "zh": "你慢归慢，别挡路就行。",
+              "en": "Slow is fine. Just leave the path clear."
+            },
+            {
+              "actor": "npc.nora",
+              "zh": "你急归急，别踩我影子。",
+              "en": "Hurry is fine. Stay off my shadow."
+            },
+            {
+              "actor": "npc.mira",
+              "zh": "行，咱俩各退半步。",
+              "en": "Half a step each, then."
+            },
+            {
+              "actor": "npc.nora",
+              "zh": "……成交。",
+              "en": "Deal."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "cooperation": {
+    "butterfly": {
+      "reason": [
+        "我们正一起追着身边的蝴蝶影子玩",
+        "we are playing a little butterfly chase together"
+      ],
+      "poses": [
+        "butterfly",
+        "hop"
+      ],
+      "voices": {
+        "gentle": {
+          "begin": [
+            "那边有影子晃过，一起追着玩一小会儿？",
+            "A little shadow passed. Shall we follow it for a moment?"
+          ],
+          "middle": [
+            "我慢慢跟着，你别绊到。",
+            "I am right behind you. Mind your footing."
+          ],
+          "end": [
+            "绕完这一小圈了，谢谢你陪我。",
+            "Our little loop is done. Thank you for coming."
+          ]
+        },
+        "lively": {
+          "begin": [
+            "追影子比赛，咱俩一队～",
+            "Shadow chase! We are on the same team!"
+          ],
+          "middle": [
+            "嘿嘿，往这边绕！",
+            "Heehee, around this way!"
+          ],
+          "end": [
+            "这圈跑完啦，我们都赢了！",
+            "Lap complete! Everybody wins!"
+          ]
+        },
+        "laborious": {
+          "begin": [
+            "来，绕一圈追影子，别踩菜地。",
+            "One lap chasing shadows. Keep off the crops."
+          ],
+          "middle": [
+            "慢点，看脚下，我跟着呢。",
+            "Watch your step. I am keeping up."
+          ],
+          "end": [
+            "行，一圈到这儿，收队。",
+            "One lap. Team dismissed."
+          ]
+        },
+        "quiet": {
+          "begin": [
+            "……绕一圈。一起？",
+            "One lap. Together?"
+          ],
+          "middle": [
+            "往那边。我看着。",
+            "That way. I see it."
+          ],
+          "end": [
+            "一圈了。歇会儿。",
+            "Lap done. A breather."
+          ]
+        }
+      }
+    },
+    "sea": {
+      "reason": [
+        "我们到了真实海岸边一起数海浪",
+        "we reached the real coast to count the waves together"
+      ],
+      "poses": [
+        "sea_watch",
+        "sea_watch"
+      ],
+      "voices": {
+        "gentle": {
+          "begin": [
+            "海就在眼前，我们一起数几道浪吧。",
+            "The sea is right here. Shall we count a few waves together?"
+          ],
+          "middle": [
+            "这一道浪比刚才轻呢。",
+            "That one sounded softer than the last."
+          ],
+          "end": [
+            "数完啦，海声真让人安心。",
+            "All counted. What a peaceful sound."
+          ]
+        },
+        "lively": {
+          "begin": [
+            "一起数浪花嘛，我来开头！",
+            "Wave counting! Let me start!"
+          ],
+          "middle": [
+            "一、二……哎呀，又散啦！",
+            "One, two... aw, that one fell apart!"
+          ],
+          "end": [
+            "数不清也开心，下次还来～",
+            "Lost count. Still had fun!"
+          ]
+        },
+        "laborious": {
+          "begin": [
+            "来数浪，别又数着数着走神。",
+            "Count waves with me. Try staying focused."
+          ],
+          "middle": [
+            "这一道你数，我数下一道。",
+            "Your wave. I will take the next."
+          ],
+          "end": [
+            "行，这一轮数完，挺整齐。",
+            "Round finished. Nicely counted."
+          ]
+        },
+        "quiet": {
+          "begin": [
+            "海边。数几道浪？",
+            "Count a few waves?"
+          ],
+          "middle": [
+            "这一道，算你的。",
+            "That one is yours."
+          ],
+          "end": [
+            "够了。听会儿海。",
+            "Enough. Just listen."
+          ]
+        }
+      }
+    },
+    "camp": {
+      "reason": [
+        "我们在已建营火旁一起整理姿势",
+        "we are tidying around a completed campfire as a cosmetic activity"
+      ],
+      "poses": [
+        "sweep",
+        "wood_tidy"
+      ],
+      "voices": {
+        "gentle": {
+          "begin": [
+            "营火边有点挤，我们让出一小圈吧。",
+            "It is a little crowded by the fire. Shall we leave some space?"
+          ],
+          "middle": [
+            "你往左一点，我站这边就好。",
+            "A little to your left. I can stand here."
+          ],
+          "end": [
+            "这下火边宽敞些了，谢谢你。",
+            "There is more room now. Thank you."
+          ]
+        },
+        "lively": {
+          "begin": [
+            "来来，火边排个整齐的圈！",
+            "Come on, let us make a neat circle by the fire!"
+          ],
+          "middle": [
+            "我让一小步，你也挪一点嘛～",
+            "A tiny step from me. Your turn!"
+          ],
+          "end": [
+            "好啦，整整齐齐，等大家来！",
+            "All neat! Ready for everyone!"
+          ]
+        },
+        "laborious": {
+          "begin": [
+            "火边让条路，咱俩挪一挪。",
+            "Make a path by the fire. Both of us, shift over."
+          ],
+          "middle": [
+            "就这样，别挡着别人过。",
+            "Good. Keep that way clear."
+          ],
+          "end": [
+            "行，路让出来了。",
+            "There. A clear path."
+          ]
+        },
+        "quiet": {
+          "begin": [
+            "火边。让点位置。",
+            "Fire is crowded. A little room."
+          ],
+          "middle": [
+            "我在这边。你呢？",
+            "I am on this side. You?"
+          ],
+          "end": [
+            "好了。坐吧。",
+            "Done. Sit."
+          ]
+        }
+      }
+    },
+    "cat": {
+      "reason": [
+        "柚柚就在旁边，我们一起给它留位置",
+        "Yoyo is nearby and we are making room together"
+      ],
+      "poses": [
+        "local_look",
+        "cat_watch"
+      ],
+      "voices": {
+        "gentle": {
+          "begin": [
+            "柚柚在旁边呢，我们给它留点位置吧。",
+            "Yoyo is beside us. Shall we make a little space?"
+          ],
+          "middle": [
+            "我让开这里，你留着那边就好。",
+            "I will leave this spot. You keep that side clear."
+          ],
+          "end": [
+            "好啦，它有地方待着了。",
+            "There. A quiet place for Yoyo."
+          ]
+        },
+        "lively": {
+          "begin": [
+            "嘘，给柚柚留个大大的位置～",
+            "Shh! Big cat-shaped space, coming up!"
+          ],
+          "middle": [
+            "我退一步，你也退一点嘛。",
+            "One step back from me. Your turn!"
+          ],
+          "end": [
+            "猫猫专座，完成！",
+            "Reserved for the cat. Done!"
+          ]
+        },
+        "laborious": {
+          "begin": [
+            "猫就在旁边，来，让个位置。",
+            "Cat beside us. Let us move over."
+          ],
+          "middle": [
+            "别挤，往我这边站一点。",
+            "No crowding. A step this way."
+          ],
+          "end": [
+            "好了，给它留够地方了。",
+            "Good. Plenty of room for the cat."
+          ]
+        },
+        "quiet": {
+          "begin": [
+            "猫。让一下。",
+            "Cat. Move a little."
+          ],
+          "middle": [
+            "这里空着。别踩。",
+            "Leave that spot clear."
+          ],
+          "end": [
+            "好了。它的地方。",
+            "Done. Cat territory."
+          ]
+        }
+      }
+    }
+  },
+  "judge": {
+    "voices": {
+      "gentle": {
+        "zh": "你觉得呢？我们听听你的想法。",
+        "en": "What do you think? We would like to hear."
+      },
+      "lively": {
+        "zh": "你来评评理嘛～",
+        "en": "Come on, be our judge!"
+      },
+      "laborious": {
+        "zh": "你评评理，谁在磨蹭？",
+        "en": "You settle it. Who is dawdling?"
+      },
+      "quiet": {
+        "zh": "……你说呢。",
+        "en": "Your call."
+      }
+    }
+  }
+}

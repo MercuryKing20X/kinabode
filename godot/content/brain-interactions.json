@@ -1604,6 +1604,798 @@
           ]
         }
       }
+    },
+    "host_tree": {
+      "reason": [
+        "你刚真实砍倒了一棵树",
+        "you just felled a real tree"
+      ],
+      "voices": {
+        "laborious": {
+          "zh": [
+            "哟，懒鬼动真格了。",
+            "这一下像样，站稳点。",
+            "树倒了，别站下面啊。",
+            "这回轮到我当观众了。",
+            "行啊，斧头用得不错。"
+          ],
+          "en": [
+            "Oh! Actual work from the boss.",
+            "Decent swing. Steady feet.",
+            "Timber. Keep clear of it.",
+            "My turn to supervise, then.",
+            "Not bad with that axe."
+          ]
+        },
+        "lively": {
+          "zh": [
+            "哇，倒啦！你刚才好厉害～",
+            "那一下我看到了哦！",
+            "我给你鼓掌嘛，好不好？",
+            "嘿嘿，树都被你说服啦。",
+            "声音好大，吓我一跳！"
+          ],
+          "en": [
+            "Whoa! Down it goes! Nice!",
+            "I saw that swing!",
+            "May I be your cheering section?",
+            "Heehee, that tree took the hint!",
+            "That thump made me jump!"
+          ]
+        },
+        "gentle": {
+          "zh": [
+            "倒下来了，留心脚下呀。",
+            "刚才那一下很稳呢。",
+            "辛苦了，先松一松手吧。",
+            "我看到了，小心枝条。",
+            "不用急，慢慢来就好。"
+          ],
+          "en": [
+            "Mind your step as it falls.",
+            "That was a steady swing.",
+            "A little rest for your hands, perhaps?",
+            "I saw. Watch those branches.",
+            "There is no need to hurry."
+          ]
+        },
+        "quiet": {
+          "zh": [
+            "倒了。",
+            "……干得不错。",
+            "看着脚下。",
+            "这一下挺响。",
+            "嗯，砍下来了。"
+          ],
+          "en": [
+            "Down.",
+            "Nice work.",
+            "Watch your feet.",
+            "Quite a thump.",
+            "That did it."
+          ]
+        }
+      }
+    },
+    "host_fish": {
+      "reason": [
+        "你刚提交了一条真实钓获",
+        "you just landed a real fish"
+      ],
+      "voices": {
+        "laborious": {
+          "zh": [
+            "钓到了？这回没白等。",
+            "还行，手挺稳的。",
+            "先放好，别只顾着显摆。",
+            "哟，今天有收获。",
+            "行啊，海肯给你面子。"
+          ],
+          "en": [
+            "A catch. Worth the wait.",
+            "Steady hands. Good.",
+            "Put it somewhere safe before showing off.",
+            "A result at last.",
+            "The sea obliged you today."
+          ]
+        },
+        "lively": {
+          "zh": [
+            "鱼鱼！我看见啦～",
+            "哇，真的钓到了！",
+            "快给我看看嘛。",
+            "你也太会钓啦！",
+            "嘿嘿，等得值啦。"
+          ],
+          "en": [
+            "Fish! I saw it!",
+            "You caught one! For real!",
+            "Let me have a look!",
+            "Ooh, you are good at this!",
+            "Totally worth the wait!"
+          ]
+        },
+        "gentle": {
+          "zh": [
+            "钓到了呢，真好。",
+            "收线很稳，辛苦了。",
+            "我也看见它了。",
+            "慢慢放好，别着急。",
+            "这次等来了一个小惊喜。"
+          ],
+          "en": [
+            "A lovely catch.",
+            "Nicely reeled in.",
+            "I saw it too.",
+            "Take your time putting it safely away.",
+            "A little surprise after the wait."
+          ]
+        },
+        "quiet": {
+          "zh": [
+            "钓到了。",
+            "……嗯，一条。",
+            "收好了。",
+            "手挺稳。",
+            "等到了。"
+          ],
+          "en": [
+            "Caught one.",
+            "There it is.",
+            "Keep it safe.",
+            "Steady hands.",
+            "Worth waiting."
+          ]
+        }
+      }
+    },
+    "host_big_fish": {
+      "reason": [
+        "你刚钓到的真实鱼体型很大",
+        "the real fish you just landed is large"
+      ],
+      "voices": {
+        "laborious": {
+          "zh": [
+            "这么大，拿稳点啊。",
+            "这条有分量，别逞强。",
+            "哟，今天可不是小收获。",
+            "这下总算能显摆了。",
+            "行，给你记句夸奖。"
+          ],
+          "en": [
+            "Big one. Hold steady.",
+            "Some weight there. Take care.",
+            "Now that is a catch.",
+            "Fine. You may show this one off.",
+            "One commendation for that."
+          ]
+        },
+        "lively": {
+          "zh": [
+            "好大好大！快看呀～",
+            "哇，我都想抱抱它啦！",
+            "这条也太气派了吧。",
+            "你偷偷练过吧？好厉害！",
+            "大鱼！我要多看两眼。"
+          ],
+          "en": [
+            "Huge! Everybody look!",
+            "Whoa! It looks huggable!",
+            "That fish has presence!",
+            "Secret fishing practice? Impressive!",
+            "Big fish! Let me admire it!"
+          ]
+        },
+        "gentle": {
+          "zh": [
+            "好大的一条，手还好吗？",
+            "这条要稳稳拿住呢。",
+            "真是难得的大收获。",
+            "慢一些，我在旁边看着。",
+            "收上来了，辛苦你啦。"
+          ],
+          "en": [
+            "A large one. Are your hands all right?",
+            "A careful grip for this one.",
+            "What a substantial catch.",
+            "Easy now. I am right here.",
+            "Safely landed. Well done."
+          ]
+        },
+        "quiet": {
+          "zh": [
+            "……大。",
+            "拿稳。",
+            "这条有分量。",
+            "不错。",
+            "看到了，很大。"
+          ],
+          "en": [
+            "Big.",
+            "Steady.",
+            "Weighty one.",
+            "Good.",
+            "Yes. Very big."
+          ]
+        }
+      }
+    },
+    "host_rare_fish": {
+      "reason": [
+        "你刚钓到了原规则认定的稀有鱼",
+        "your catch is rare under the existing fish rules"
+      ],
+      "voices": {
+        "laborious": {
+          "zh": [
+            "这条少见啊，真让你钓到了。",
+            "行，这回运气也站你这边。",
+            "别晃，我再看一眼。",
+            "稀罕货，拿稳了。",
+            "哟，值得认真瞧瞧。"
+          ],
+          "en": [
+            "A rare one. You actually landed it.",
+            "Luck joined your team this time.",
+            "Hold still. Let me see.",
+            "Unusual catch. Careful with it.",
+            "Now that deserves a proper look."
+          ]
+        },
+        "lively": {
+          "zh": [
+            "哇，这条好少见！",
+            "快让我仔细看看嘛～",
+            "你把小惊喜钓上来啦。",
+            "嘿嘿，今天太幸运了！",
+            "稀有的！我也看见了哦。"
+          ],
+          "en": [
+            "Ooh, a rare one!",
+            "Let me get a proper look!",
+            "You fished up a surprise!",
+            "Heehee! Lucky day!",
+            "Rare fish! I was here to see it!"
+          ]
+        },
+        "gentle": {
+          "zh": [
+            "是少见的鱼呢。",
+            "这次很特别，真好。",
+            "我想再安静看一眼。",
+            "这么难得，你慢慢收好。",
+            "很高兴刚好看到了。"
+          ],
+          "en": [
+            "An unusual fish.",
+            "A special catch indeed.",
+            "May I look a little longer?",
+            "Such a rare find. Keep it safe.",
+            "I am glad I happened to see it."
+          ]
+        },
+        "quiet": {
+          "zh": [
+            "少见。",
+            "……这条特别。",
+            "再看一眼。",
+            "运气不错。",
+            "值得记住。"
+          ],
+          "en": [
+            "Rare.",
+            "Unusual one.",
+            "Another look.",
+            "Good luck today.",
+            "Memorable."
+          ]
+        }
+      }
+    },
+    "host_built": {
+      "reason": [
+        "你刚用原材料完成了真实建造",
+        "you just completed real construction with real materials"
+      ],
+      "voices": {
+        "laborious": {
+          "zh": [
+            "造好了？还挺像样。",
+            "懒鬼今天有成果啊。",
+            "材料没白费，这回不错。",
+            "行，岛上又添一样。",
+            "别急着显摆，先看看稳不稳。"
+          ],
+          "en": [
+            "Finished? Looks decent.",
+            "Results from the boss today.",
+            "Materials well spent.",
+            "One more proper thing on the island.",
+            "Admire it after checking it is steady."
+          ]
+        },
+        "lively": {
+          "zh": [
+            "做好啦！我想看～",
+            "这里真的变样子了耶。",
+            "哇，是你建好的呀！",
+            "嘿嘿，又多一个能看的地方。",
+            "让我看看，让我看看嘛。"
+          ],
+          "en": [
+            "Done! Let me see!",
+            "Ooh, this place changed!",
+            "You built it!",
+            "Heehee, something new to admire!",
+            "My turn to look! Please!"
+          ]
+        },
+        "gentle": {
+          "zh": [
+            "建好了，辛苦了。",
+            "一点点做起来，真好呢。",
+            "这里看起来不一样了。",
+            "我想慢慢看看你的成果。",
+            "谢谢你给岛上添这一处。"
+          ],
+          "en": [
+            "Finished. Thank you for the work.",
+            "Lovely seeing it come together.",
+            "This spot feels different now.",
+            "I would enjoy looking at your work.",
+            "Thank you for adding this to our island."
+          ]
+        },
+        "quiet": {
+          "zh": [
+            "好了。",
+            "……不错。",
+            "多了一处。",
+            "看见了。",
+            "辛苦。"
+          ],
+          "en": [
+            "Finished.",
+            "Good.",
+            "Something new.",
+            "I see it.",
+            "Nice work."
+          ]
+        }
+      }
+    },
+    "host_plant": {
+      "reason": [
+        "你刚真实扣种子并种下了作物",
+        "you just paid a real seed and planted a crop"
+      ],
+      "voices": {
+        "laborious": {
+          "zh": [
+            "种下了，别忘了水。",
+            "这回手脚挺利落嘛。",
+            "行，土里有盼头了。",
+            "先浇好，别只顾数收成。",
+            "懒鬼今天还会种菜啊。"
+          ],
+          "en": [
+            "Planted. Remember the water.",
+            "Efficient hands for once.",
+            "Something to look forward to in that soil.",
+            "Water first. Count the harvest later.",
+            "The boss gardens too. Noted."
+          ]
+        },
+        "lively": {
+          "zh": [
+            "种下啦！我看着呢～",
+            "小小一颗，等它慢慢长。",
+            "你种得好认真呀。",
+            "嘿嘿，菜地有新邻居啦。",
+            "别忘了浇水哦，我提醒你啦！"
+          ],
+          "en": [
+            "Planted! I saw!",
+            "Tiny seed, big plans!",
+            "You look so serious gardening!",
+            "Heehee, a new garden neighbour!",
+            "Water reminder from your sidekick!"
+          ]
+        },
+        "gentle": {
+          "zh": [
+            "已经种下了，真好。",
+            "接下来给它一点水吧。",
+            "慢慢长就好，不用急。",
+            "我喜欢这样一点点开始。",
+            "谢谢你照料这块地。"
+          ],
+          "en": [
+            "A lovely little beginning.",
+            "Some water next, perhaps.",
+            "It can take its time growing.",
+            "I like these gentle starts.",
+            "Thank you for tending this patch."
+          ]
+        },
+        "quiet": {
+          "zh": [
+            "种下了。",
+            "记得水。",
+            "……等它长。",
+            "嗯，看到了。",
+            "慢慢来。"
+          ],
+          "en": [
+            "Planted.",
+            "Water next.",
+            "Let it grow.",
+            "Saw that.",
+            "Take your time."
+          ]
+        }
+      }
+    },
+    "host_harvest": {
+      "reason": [
+        "你刚提交了真实作物收获",
+        "you just committed a real crop harvest"
+      ],
+      "voices": {
+        "laborious": {
+          "zh": [
+            "收到了？这下是实打实的。",
+            "行，没白照料。",
+            "菜进仓了，放心了吧。",
+            "这回收得挺利落。",
+            "种的苦工总算见成果了。"
+          ],
+          "en": [
+            "Harvested. A real result.",
+            "Worth the care.",
+            "Stored safely. There we go.",
+            "A tidy harvest.",
+            "The garden work paid off."
+          ]
+        },
+        "lively": {
+          "zh": [
+            "收菜啦！好开心～",
+            "哇，真的长好了呀。",
+            "你拿到收成啦！",
+            "嘿嘿，等到这一天啦。",
+            "让我看看刚收的嘛。"
+          ],
+          "en": [
+            "Harvest time! Yay!",
+            "Ooh, it really grew!",
+            "You got the crop!",
+            "Heehee, worth waiting for!",
+            "Let me see the fresh harvest!"
+          ]
+        },
+        "gentle": {
+          "zh": [
+            "收好了，辛苦你。",
+            "慢慢照料的成果到了呢。",
+            "看到收成，我也高兴。",
+            "这回的菜已经收进来了。",
+            "谢谢你一直记着这块地。"
+          ],
+          "en": [
+            "Safely harvested. Thank you.",
+            "The patient care paid off.",
+            "I am glad to see the harvest.",
+            "The crop is in now.",
+            "Thank you for remembering this patch."
+          ]
+        },
+        "quiet": {
+          "zh": [
+            "收好了。",
+            "……有收成。",
+            "不错。",
+            "等到了。",
+            "辛苦。"
+          ],
+          "en": [
+            "Harvest in.",
+            "A yield.",
+            "Good.",
+            "Ready at last.",
+            "Nice work."
+          ]
+        }
+      }
+    },
+    "host_fire": {
+      "reason": [
+        "你刚真实扣木材点燃或续上营火",
+        "you just paid real wood to light or tend the fire"
+      ],
+      "voices": {
+        "laborious": {
+          "zh": [
+            "火起来了，这回有暖和的地方。",
+            "续上了？行，别离太远。",
+            "这一下挺利落嘛。",
+            "木材没白烧，靠近点。",
+            "岛主终于把火照料上了。"
+          ],
+          "en": [
+            "Fire is going. A warm spot at last.",
+            "Tended? Good. Stay nearby.",
+            "Efficiently done.",
+            "Wood well used. Come closer.",
+            "The boss remembered the fire."
+          ]
+        },
+        "lively": {
+          "zh": [
+            "亮起来啦！暖乎乎的～",
+            "火火又精神了耶。",
+            "你一生火我就想凑过来。",
+            "嘿嘿，续上啦！",
+            "这里好暖，陪我待会儿嘛。"
+          ],
+          "en": [
+            "Light! Warmth! Lovely!",
+            "That fire perked right up!",
+            "You light it, I want to come closer!",
+            "Heehee, topped up!",
+            "So warm here. Stay with me?"
+          ]
+        },
+        "gentle": {
+          "zh": [
+            "火亮了，谢谢你。",
+            "暖起来了，真舒服。",
+            "木材添好了呢。",
+            "靠近一点就能暖暖手。",
+            "有这点火光，心里也安稳。"
+          ],
+          "en": [
+            "Thank you for lighting it.",
+            "Lovely warmth.",
+            "The fire is tended now.",
+            "A little closer to warm our hands.",
+            "A comforting little glow."
+          ]
+        },
+        "quiet": {
+          "zh": [
+            "火亮了。",
+            "……暖。",
+            "续上了。",
+            "这里好些。",
+            "嗯，看到了火。"
+          ],
+          "en": [
+            "Fire is up.",
+            "Warm.",
+            "Tended.",
+            "Better here.",
+            "I see the glow."
+          ]
+        }
+      }
+    },
+    "host_dark_return": {
+      "reason": [
+        "你刚沿原行程从黑暗岛回来了",
+        "you just returned from Dark Island by the real route"
+      ],
+      "voices": {
+        "laborious": {
+          "zh": [
+            "从那边回来了？先站稳。",
+            "回来就好，别急着又跑。",
+            "黑暗里走一趟，歇口气吧。",
+            "这回可别一声不吭再出门。",
+            "行，回到亮堂地方了。"
+          ],
+          "en": [
+            "Back from there? Steady now.",
+            "Good. No immediate vanishing act.",
+            "A breather after the dark.",
+            "A word before your next trip, please.",
+            "Back in the light. Good."
+          ]
+        },
+        "lively": {
+          "zh": [
+            "回来啦！那边好黑，我都惦记你了。",
+            "快过来，让我看看你嘛。",
+            "你从黑暗岛回来啦！",
+            "嘿嘿，还是这里亮堂。",
+            "下回也先跟我说一声哦。"
+          ],
+          "en": [
+            "You are back! I worried about you in that dark!",
+            "Come here! Let me see you!",
+            "Back from Dark Island!",
+            "Heehee, much brighter here!",
+            "Tell me before your next trip, okay?"
+          ]
+        },
+        "gentle": {
+          "zh": [
+            "从黑暗岛回来了，一切还好吗？",
+            "回来就好，先歇一会儿吧。",
+            "看到你平安回来，很放心。",
+            "亮一点的地方舒服些呢。",
+            "慢慢来，不急着再出门。"
+          ],
+          "en": [
+            "Back from Dark Island. All well?",
+            "A little rest now, perhaps.",
+            "I am glad you returned safely.",
+            "The light is comforting.",
+            "No hurry to head out again."
+          ]
+        },
+        "quiet": {
+          "zh": [
+            "回来了。",
+            "……从那边？嗯。",
+            "坐一会儿。",
+            "这里亮。",
+            "平安就好。"
+          ],
+          "en": [
+            "Back.",
+            "From there? Good.",
+            "Sit a while.",
+            "Light here.",
+            "Safe. Good."
+          ]
+        }
+      }
+    },
+    "host_moon_return": {
+      "reason": [
+        "你刚沿真实路径从月牙岛回到主岛",
+        "you just walked back from Crescent Island"
+      ],
+      "voices": {
+        "laborious": {
+          "zh": [
+            "月牙岛看够了？歇歇吧。",
+            "回来了就打个招呼嘛。",
+            "走这么远，脚没酸？",
+            "行，认得回来的路。",
+            "看完风景，总算回来了。"
+          ],
+          "en": [
+            "Had your fill of Crescent Island?",
+            "A hello on your return, perhaps.",
+            "Quite a walk. Feet all right?",
+            "Good. You know the way back.",
+            "Views admired. Boss returned."
+          ]
+        },
+        "lively": {
+          "zh": [
+            "从月牙岛回来啦！带没带想我的心情？",
+            "你又偷偷看风景去啦～",
+            "快跟我说，那边好不好看？",
+            "回来先陪我一会儿嘛。",
+            "嘿嘿，你终于走回来啦。"
+          ],
+          "en": [
+            "Back from Crescent Island! Missed me at all?",
+            "Secret scenic trip again!",
+            "Tell me about the view!",
+            "A little time with me now? Please?",
+            "Heehee, you finally walked back!"
+          ]
+        },
+        "gentle": {
+          "zh": [
+            "从月牙岛回来了，走累了吗？",
+            "那边的海风也很好吧。",
+            "回来先歇歇脚吧。",
+            "想听你说说刚才的风景。",
+            "很高兴又见到你。"
+          ],
+          "en": [
+            "Was the Crescent Island walk tiring?",
+            "A lovely breeze there too, I imagine.",
+            "Rest your feet for a moment.",
+            "Tell me about the view when you like.",
+            "Good to see you again."
+          ]
+        },
+        "quiet": {
+          "zh": [
+            "月牙岛回来了？",
+            "……路挺远。",
+            "歇着吧。",
+            "风景看够了？",
+            "嗯，回来了。"
+          ],
+          "en": [
+            "Back from Crescent Island?",
+            "Long walk.",
+            "Rest.",
+            "Enough scenery?",
+            "Welcome back."
+          ]
+        }
+      }
+    },
+    "host_appearance": {
+      "reason": [
+        "你刚明确换上了另一套外观",
+        "you just explicitly changed your appearance"
+      ],
+      "voices": {
+        "laborious": {
+          "zh": [
+            "换了一身？干活可别变慢。",
+            "哟，岛主今天讲究了。",
+            "看见啦，别转圈显摆了。",
+            "新打扮不错，站直点。",
+            "衣服换了，懒鬼还是你。"
+          ],
+          "en": [
+            "New look? Same working speed, I hope.",
+            "Dressed up today, boss.",
+            "Seen it. You can stop modelling.",
+            "Nice look. Stand straight.",
+            "New clothes. Same boss."
+          ]
+        },
+        "lively": {
+          "zh": [
+            "哇，换打扮啦！让我看看～",
+            "好看耶，你转过来嘛。",
+            "你偷偷换了也得给我看呀。",
+            "嘿嘿，我一下就认出来啦。",
+            "今天这个样子也喜欢！"
+          ],
+          "en": [
+            "Ooh! New look! Let me see!",
+            "Cute! Turn this way!",
+            "No secret makeover. Show me!",
+            "Heehee, I still knew it was you!",
+            "I like this look too!"
+          ]
+        },
+        "gentle": {
+          "zh": [
+            "换了新的打扮呢，很适合你。",
+            "看到了，还是熟悉的你。",
+            "这个样子也很好看。",
+            "你喜欢这身就好。",
+            "想让我再看看吗？"
+          ],
+          "en": [
+            "A lovely change. It suits you.",
+            "A new look, the same familiar you.",
+            "This is lovely too.",
+            "What matters is that you enjoy it.",
+            "May I have another look?"
+          ]
+        },
+        "quiet": {
+          "zh": [
+            "换了。",
+            "……挺好。",
+            "还是你。",
+            "看到了。",
+            "嗯，认得。"
+          ],
+          "en": [
+            "Changed.",
+            "Looks good.",
+            "Still you.",
+            "I noticed.",
+            "Recognised you."
+          ]
+        }
+      }
     }
   }
 }

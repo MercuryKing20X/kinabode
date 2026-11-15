@@ -12,13 +12,20 @@ func run()->void:
 	check(pool.retries.codex==1,"first retry scheduled")
 	pool.retry_due.codex=0;pool._process(.1);await frames()
 	check(pool.links.codex==original and pool.states.codex.state=="ready" and pool.management("codex"),"same bound link and management recovered")
+	# B: DIRECTION 2026-11-10 “任何原因断开…都自动重连”; ready closes a failure episode.
+	check(not pool.retries.has("codex") and not pool.retry_due.has("codex"),"successful ready clears the completed failure episode")
 	for attempt in range(3):
 		pool.receive("codex",{"kind":"state","state":"disconnected"})
-		if pool.retry_due.has("codex"):pool.retry_due.codex=0;pool._process(.1);await frames()
-	check(pool.retries.codex==3 and not pool.retry_due.has("codex"),"retry cap three")
+		check(pool.retries.get("codex",0)==1 and pool.retry_due.has("codex"),"new outage starts one bounded pending retry")
+		pool.retry_due.codex=0;pool._process(.1);await frames()
+		check(pool.links.codex==original and pool.states.codex.state=="ready" and not pool.retries.has("codex"),"each successful reconnect keeps exact link and clears its episode")
 	var panel:Node=preload("res://scripts/connection_overview.gd").new();root.add_child(panel);panel.setup(dir);panel.open();await frames()
-	var button:Button=UI.descendants(panel).filter(func(n):return n is Button and n.name=="persona_codex")[0]
-	check(await UI.click(self,button),"real persona button click");await frames();await shot("persona-full")
+	var portrait:Control=UI.descendants(panel).filter(func(n):return n is Control and n.name=="persona_codex")[0]
+	await UI.reveal(self,portrait)
+	var point:Vector2=portrait.get_global_rect().get_center()
+	for down in [true,false]:
+		var event:=InputEventMouseButton.new();event.button_index=MOUSE_BUTTON_LEFT;event.position=point;event.global_position=point;event.pressed=down;root.push_input(event,true);await process_frame
+	check(panel.has_node("PersonaEditor"),"real persona portrait click");await frames();await shot("persona-full")
 	var dialog:Node=panel.get_node("PersonaEditor");var editor:TextEdit=UI.descendants(dialog).filter(func(n):return n is TextEdit)[0]
 	check(editor.text==Cards.card("codex").text,"full world and resident persona displayed")
 	editor.text+="\n测试修改";check(await UI.click(self,dialog.get_ok_button()),"save persona click");await frames()

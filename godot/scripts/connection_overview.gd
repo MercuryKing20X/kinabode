@@ -48,6 +48,10 @@ func refresh()->void:
 		if not str(state.get("error","")).is_empty():state.state="error"
 		var light:=Label.new();light.text="●";light.add_theme_color_override("font_color",Color("77ca91") if state.state=="ready" else Color("f3ce55") if state.state=="connecting" else Color("e97070") if state.state in ["error","disconnected"] else Color("858585"));row.add_child(light)
 		var portrait:=TextureRect.new();portrait.custom_minimum_size=Vector2(32,40);portrait.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;portrait.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		portrait.name="persona_"+id;portrait.mouse_filter=Control.MOUSE_FILTER_STOP
+		portrait.gui_input.connect(func(event):
+			if event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_LEFT:show_persona(id))
+		portrait.tooltip_text=Text.text("reliable.persona")
 		portrait.texture=art.texture({"codex":"white-haired-girl","companion-2":"blue-haired-girl","npc.mira":"orange-sunflower-girl","npc.nora":"black-scarf-girl"}[id],"down_0");row.add_child(portrait)
 		if id in records_changed:
 			var bounce:=create_tween()

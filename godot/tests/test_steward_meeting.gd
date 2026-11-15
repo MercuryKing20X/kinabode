@@ -15,8 +15,11 @@ func run()->void:
 			if who!="human" and not departed.has(who) and origins[who]!=w.point(w.actors[who]):departed[who]={"at":w.forest.clock,"running":w.is_running(who)}
 		if i==3:
 			game.view.follow_player=false;game.view.center=w.point(w.actors.codex);await picture("gather-running")
-		for who in fire.jobs:
-			if w.work.jobs.get(who,{}).get("phase","")=="fire_sit" and not seated.has(who):seated[who]=w.forest.clock
+		# C: before grill commit there is no meal/eat job. Observe actual route arrival and seated pose.
+		var plan:Dictionary=game.intentions.plans.get("codex",{})
+		for who in plan.get("gather_targets",{}):
+			var target:Dictionary=plan.gather_targets[who]
+			if not w._routes.has(who) and w.actors[who].region_id==target.region and w.point(w.actors[who]).distance_to(target.at)<=1.5 and w.actors[who].activity=="fire_sit" and not seated.has(who):seated[who]=w.forest.clock
 		if not fire.state.get("current",{}).is_empty():roast_at=w.forest.clock;break
 		if i%100==0:await process_frame
 	print("MEETING_HISTORY ",game.intentions.history," FAILURE ",game.intentions.last_failure)

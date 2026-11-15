@@ -11,6 +11,7 @@ var world: RefCounted:
 	get: return _owner.get_ref()
 var routines: Dictionary = {}
 var brains:Dictionary={}
+var brain_social:RefCounted
 var brain_trace_directory:=""
 var destinations: Dictionary = {}
 var seen: Dictionary = {}

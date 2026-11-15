@@ -95,7 +95,9 @@ func tick(id: String,job: Dictionary,delta: float) -> void:
 					for box in config.obstacles:
 						if Rect2(world.point(site)+Vector2(box[0],box[1]),Vector2(box[2],box[3])).has_point(world.point(other)):
 							world.work._finish(id,LocalText.text("system.leisure_system.someone_is_in_the_building_area_clear_the_space"),false);return
-				site.complete=true;world._grids.clear();world._terrain_solids.erase(str(site.region_id))
+				site.complete=true
+				if id=="human":preload("res://scripts/brain_interactions.gd").host_event(world,"host_built","facility:"+str(site.id))
+				world._grids.clear();world._terrain_solids.erase(str(site.region_id))
 				world.rescue_obstructed()
 				if world.their_island!=null:world.their_island.construction_completed(id,site.id)
 				world.work._finish(id,LocalText.text("system.leisure_system.the_facility_is_complete_invite_everyone_to_play"))

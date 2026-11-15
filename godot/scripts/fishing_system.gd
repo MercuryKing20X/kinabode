@@ -396,6 +396,9 @@ func tick_job(actor_id: String, job: Dictionary, delta: float) -> void:
 			if actor_id=="human":world.ingredients.note_obtained("fish")
 			var discovery: bool=world.journal.record_catch(id)
 			world.days.queue_catch(id)
+			if actor_id=="human":
+				var scene:String="host_rare_fish" if entry.color_id=="aurora" else "host_big_fish" if float(entry.scale)>=2.0 else "host_fish"
+				preload("res://scripts/brain_interactions.gd").host_event(world,scene,"fish:"+id)
 			var companions: Array=[]
 			for other in world.actors.values():
 				if other.id!=actor_id and other.region_id==actor.region_id and world.point(other).distance_to(world.point(actor))<8:companions.append(other.id)

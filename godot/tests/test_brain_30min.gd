@@ -9,6 +9,7 @@ var sequences:Array=[]
 func fresh_title(index:int)->void:
 	OS.set_environment("HABITAT_DATA_DIR",base_directory.path_join("run-"+str(index)))
 	OS.set_environment("HABITAT_BRAIN_SEED","701")
+	OS.set_environment("HABITAT_TEST_SEED",str(JSON.parse_string(FileAccess.get_file_as_string("res://content/brain.json")).developer_report.world_seed))
 	OS.set_environment("HABITAT_OPENING","standard")
 	preload("res://tests/deterministic_environment.gd").streams.clear()
 	var title:Node=load("res://scenes/title.tscn").instantiate();root.add_child(title);current_scene=title
@@ -32,10 +33,12 @@ func sample(index:int)->Dictionary:
 	var plots:Dictionary=w.farms.plots.duplicate(true)
 	var interactions:Dictionary={};var interaction_seq:Array=[];var delivered_lines:Dictionary={};var approached:Dictionary={}
 	var counts:Dictionary={};var distance:Dictionary={};var idle:Dictionary={};var max_idle:Dictionary={};var seq:Array=[];var timeline:Array=[]
+	var telemetry:=preload("res://scripts/brain_report.gd").new()
 	var no_labor:=true;var conserved:=true
 	for id in w.director.brains:interactions[id]=0;approached[id]=0;counts[id]={};distance[id]=0.0;idle[id]=0.0;max_idle[id]=0.0
 	for tick in 7200:
-		w.advance(.25)
+		w.advance(.25);telemetry.sample(w,.25)
+		if tick==5999:telemetry.finish(w,evidence.path_join("one-day-"+str(index)))
 		for id in w.director.brains:
 			var b:RefCounted=w.director.brains[id]
 			distance[id]+=b.distance()*.25
@@ -49,6 +52,21 @@ func sample(index:int)->Dictionary:
 				timeline.append({"actor":id,"at":tick*.25,"action":b.current.get("action",""),"reasons":b.current.get("reasons",[]),"distance":b.distance()})
 		if tick%240==0:await process_frame
 		if tick%2400==0:print("BRAIN_SIM_PROGRESS run=",index," seconds=",tick*.25)
+	var day_report:Dictionary=telemetry.finish(w,evidence.path_join("daily-"+str(index)))
+	for id in day_report.actors:
+		var stats:Dictionary=day_report.actors[id]
+		if stats.ranks.has("0") and float(stats.ranks["0"].seconds)>0:check(float(stats.ranks["0"].food)/float(stats.ranks["0"].seconds)<=.1,"full food time share <=10% "+id)
+		check(int(stats.banter)+int(stats.cooperation)>=2,"at least two completed banter or cooperation episodes "+id)
+	var clear_night:Array=day_report.trace.filter(func(row):return row.get("event")=="choice" and row.get("phase")=="night" and row.get("weather") not in ["rain","fog"])
+	check(not clear_night.is_empty(),"fixed source seed includes actual clear night observations")
+	if not clear_night.is_empty():check(clear_night.any(func(row):return row.choice=="stars"),"a resident really chooses stars during a clear night")
+	var first_day:Dictionary=JSON.parse_string(FileAccess.get_file_as_string(evidence.path_join("one-day-"+str(index)).path_join("report.json")))
+	var expected:Dictionary={"morning":["morning_hello","weather_watch","stretch","garden_watch"],"afternoon":["sea_watch","read","sweep","wood_tidy","play_cute","spin","small_coop"],"dusk":["evening_chat"],"night":["stars","night_rest","fireflies"]}
+	for phase in expected:
+		var totals:Dictionary={}
+		for stats in first_day.actors.values():
+			for action in stats.phases.get(phase,{}):totals[action]=float(totals.get(action,0))+float(stats.phases[phase][action])
+		check(telemetry.top(totals,3).any(func(row):return row.action in expected[phase]),"phase top three contain the authored rhythm "+phase)
 	var trace_dir:String=w.director.brain_trace_directory
 	for name in DirAccess.get_files_at(trace_dir):
 		if not name.ends_with(".jsonl"):continue
@@ -81,7 +99,8 @@ func sample(index:int)->Dictionary:
 			if str(a)<str(b):check(counts[a]!=counts[b],"distinct pair distributions "+a+" / "+b)
 	check(no_labor,"zero unsolicited labor")
 	check(conserved,"original stock and unworked plots conserved at every sample")
-	sequences.append([seq,interaction_seq])
+	var social_sequence:Array=day_report.trace.filter(func(row):return row.get("event") in ["social_begin","social_episode","banter_line","cooperation_line"])
+	sequences.append([seq,interaction_seq,social_sequence,day_report.trace,day_report.timeline,day_report.actors])
 	var report:Dictionary={"counts":counts,"host_interactions":interactions,"interaction_sequence":interaction_seq,"distance_mean":{},"idle_max":max_idle,"no_labor":no_labor,"conserved":conserved,"sequence":seq,"timeline":timeline}
 	for id in distance:report.distance_mean[id]=float(distance[id])/1800
 	var f:=FileAccess.open(evidence.path_join("30min-"+str(index)+".json"),FileAccess.WRITE);f.store_string(JSON.stringify(report,"\t"));f.close()
@@ -98,5 +117,9 @@ func run()->void:
 	game.queue_free();await process_frame
 	await sample(2)
 	check(sequences[0]==sequences[1],"same seed exact decision sequence twice")
+	game.queue_free();await process_frame
+	await fresh_title(3)
+	var physical:Dictionary=await preload("res://tests/brain_polish_fixture.gd").new(self).run()
+	var physical_file:=FileAccess.open(evidence.path_join("human-commits.json"),FileAccess.WRITE);physical_file.store_string(JSON.stringify(physical,"\t"));physical_file.close()
 	game.queue_free();await process_frame
 	print("BRAIN_30MIN ",checks," failed=",failed);quit(1 if failed else 0)

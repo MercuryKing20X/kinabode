@@ -6,6 +6,7 @@ var brain:RefCounted:
 var w:RefCounted:
 	get:return brain.world
 var data:Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://content/brain-interactions.json"))
+var event_queue:Array=[]
 var pending:Dictionary={}
 var seen:Dictionary={}
 var said:Dictionary={}
@@ -14,6 +15,7 @@ var receipts:Array=[]
 var samples:Array=[]
 var previous:=Vector2.INF
 var previous_region:=""
+var previous_moon:=false
 var previous_distance:=INF
 var previous_speed:=0.0
 var idle_since:=0.0
@@ -26,6 +28,16 @@ var near_since:=-1.0
 var peer_session:=""
 var peer_reply:=false
 func _init(b:RefCounted)->void:owner=weakref(b)
+static func host_event(world:RefCounted,scene:String,proof:String,only:String="")->void:
+	if not world.actors.has("human"):return
+	for who in world.director.brains:
+		var brain:RefCounted=world.director.brains[who]
+		if not brain.active() or (not only.is_empty() and who!=only):continue
+		if world.actors[who].region_id!=world.actors.human.region_id or brain.distance()>float(brain.config.host_replies.witness_radius):continue
+		var item:Dictionary={"scene":scene,"proof":proof,"until":world.director.time+float(brain.config.host_replies.ttl_seconds),"kind":"host_reply"}
+		if brain.interactions.event_queue.any(func(row):return row.proof==proof and row.scene==scene):continue
+		brain.interactions.event_queue.append(item)
+		if brain.interactions.event_queue.size()>int(brain.config.host_replies.queue_limit):brain.interactions.event_queue.pop_front()
 func enqueue(scene:String,proof:String)->void:
 	if not pending.is_empty() or not data.scenes.has(scene) or line(scene).is_empty():return
 	pending={"scene":scene,"proof":proof,"until":brain.clock+float(data.event_ttl)}
@@ -35,6 +47,8 @@ func condition(scene:String,on:bool,since:float)->void:
 	var key:String=str(w.days.day())+":"+scene+":"+str(since)+":"+str(stage)
 	if not seen.has(key):enqueue(scene,key)
 func observe()->void:
+	while not event_queue.is_empty() and float(event_queue[0].until)<brain.clock:event_queue.pop_front()
+	if not event_queue.is_empty() and pending.get("kind","")!="host_reply":pending=event_queue.pop_front()
 	if brain.clock<next_observe:return
 	next_observe=brain.clock+float(data.observation_seconds)
 	if not pending.is_empty() and brain.clock>float(pending.until):pending.clear()
@@ -42,6 +56,10 @@ func observe()->void:
 	var pos:Vector2=w.point(host)
 	var same:bool=host.region_id==w.actors[brain.id].region_id
 	var dist:float=brain.distance()
+	if previous_region=="dark" and host.region_id=="home":host_event(w,"host_dark_return","return_dark:"+str(brain.clock),brain.id)
+	var on_moon:bool=host.region_id=="home" and w.moon.contains(pos)
+	if previous_moon and not on_moon and host.region_id=="home":host_event(w,"host_moon_return","return_moon:"+str(brain.clock),brain.id)
+	previous_moon=on_moon
 	if not same and far_since<0:far_since=brain.clock
 	var speed:float=0 if not previous.is_finite() or host.region_id!=previous_region else pos.distance_to(previous)/float(data.observation_seconds)
 	if speed>.02:idle_since=brain.clock
@@ -88,15 +106,16 @@ func still_true(scene:String)->bool:
 		"far":return brain.distance()>float(data.far_distance)
 	return true
 func deliver_pending()->bool:
-	if (w.dark!=null and w.dark.here()) or pending.is_empty() or brain.clock<next_delivery:return false
+	if (w.dark!=null and w.dark.here()) or pending.is_empty() or (pending.get("kind","")!="host_reply" and brain.clock<next_delivery):return false
 	var fact:Dictionary=pending.duplicate(true)
 	if not still_true(fact.scene):pending.clear();return false
-	if not deliver(fact.scene,fact.proof):return false
-	seen[fact.proof]=true;pending.clear();next_delivery=brain.clock+float(data.personal_seconds)
+	if not deliver(fact.scene,fact.proof,"human",str(fact.get("kind","interaction"))):return false
+	seen[fact.proof]=true;pending.clear()
+	if fact.get("kind","")!="host_reply":next_delivery=brain.clock+float(data.personal_seconds)
 	return true
 func candidate()->Dictionary:
-	if (w.dark!=null and w.dark.here()) or pending.is_empty() or brain.clock<next_delivery or brain.distance()>12:return {}
-	return {"action":"host_interaction","score":float(data.score),"reasons":["interaction_"+str(pending.scene)],"partner":"","interaction":pending.duplicate(true)}
+	if (w.dark!=null and w.dark.here()) or pending.is_empty() or (pending.get("kind","")!="host_reply" and brain.clock<next_delivery) or brain.distance()>12:return {}
+	return {"action":"host_interaction","score":float(brain.config.host_replies.score) if pending.get("kind","")=="host_reply" else float(data.score),"reasons":["interaction_"+str(pending.scene)],"partner":"","interaction":pending.duplicate(true)}
 func line(scene:String)->Dictionary:
 	var voice:Dictionary=data.scenes[scene].voices.get(brain.tag(),data.scenes[scene].voices.gentle)
 	w.director.local_dialogue.persistent_setup()
@@ -108,6 +127,11 @@ func line(scene:String)->Dictionary:
 func deliver(scene:String,proof:String,listener:String='human',kind:String='interaction')->bool:
 	var row:Dictionary=line(scene)
 	if row.is_empty():return false
+	return deliver_authored(row,scene,proof,listener,kind,data.scenes[scene].reason)
+func deliver_authored(row:Dictionary,scene:String,proof:String,listener:String,kind:String,reason:Array)->bool:
+	w.director.local_dialogue.persistent_setup()
+	var section:String=w.director.local_dialogue.daily_section(brain.id)
+	if w.director.local_dialogue.daily.get_value(section,"brain-line:"+str(row.zh).sha256_text(),false):return false
 	var r:RefCounted=w.director.routines[brain.id]
 	if brain.clock<r.visual_quiet_until or w.activities.held.get(brain.id,false) or w.activities.members.has(brain.id) or brain.clock<float(w.hunger.quiet_until.get(brain.id,0)) or w.fishing.life.time<float(w.fishing.life.quiet_until.get(brain.id,0)):return false
 	var text:String=row.en if TranslationServer.get_locale().begins_with('en') else row.zh
@@ -115,18 +139,20 @@ func deliver(scene:String,proof:String,listener:String='human',kind:String='inte
 	said[row.key]=true
 	w.director.local_dialogue.persist_delivery(brain.id,{"id":"brain:"+scene+":"+str(row.key.get_slice(":",2))})
 	w.director.local_dialogue.persist_delivery(brain.id,{"id":"brain-line:"+str(row.zh).sha256_text()})
-	var entry:Dictionary={"actor":brain.id,"at":brain.clock,"day":w.days.day(),"event":kind,"choice":"host_interaction" if listener=='human' else 'peer_interaction',"source":"local","scene":scene,"reasons":["interaction_"+scene],"reason":data.scenes[scene].reason,"proof":proof,"listener":listener,"zh":row.zh,"en":row.en,"outcome":"completed"}
+	var entry:Dictionary={"actor":brain.id,"at":brain.clock,"day":w.days.day(),"event":kind,"choice":"host_interaction" if listener=='human' else 'peer_interaction',"source":"local","scene":scene,"reasons":["interaction_"+scene] if data.scenes.has(scene) else ["rhythm_"+str(w.days.phase().id)] if scene.begins_with("rhythm:") else ["brain_social"],"reason":reason,"proof":proof,"listener":listener,"zh":row.zh,"en":row.en,"outcome":"completed"}
 	receipts.append(entry.duplicate(true));if receipts.size()>256:receipts.pop_front()
 	brain.trace(entry);brain.history.append(entry.duplicate(true));if brain.history.size()>int(brain.config.history_limit):brain.history.pop_front()
 	return true
 func tick_current()->void:
 	if brain.current.get('action','')!='host_interaction' or w._routes.has(brain.id):return
 	var fact:Dictionary=brain.current.interaction
+	if pending.is_empty():brain.finish('completed','trigger_expired');return
+	if pending.proof!=fact.proof:brain.finish('completed','trigger_superseded');return
 	if not still_true(fact.scene):pending.clear();brain.finish("completed","conditions_changed");return
 	if deliver_pending():brain.finish('completed','interaction_delivered')
 	elif brain.clock-float(brain.current.start)>float(data.event_ttl):brain.finish('timeout','speech_gate')
 func social(action:String,from:String='human')->Dictionary:
-	if action not in ['play','chess','walk','stars','chat','back_to_back','sea_watch','sweep','pair_sea','pair_sweep']:return {"ok":false,"error":"not_social"}
+	if action not in ['play','chess','walk','stars','chat','back_to_back','sea_watch','sweep','pair_sea','pair_sweep','small_coop']:return {"ok":false,"error":"not_social"}
 	var reason:String='refuse_hunger' if w.hunger.rank(brain.id)>=2 else 'refuse_command' if brain.busy() or brain.current.get('source','') in ['command','steward'] else 'refuse_tired' if float(brain.needs.tired)>=float(brain.config.tired_refusal) else 'refuse' if brain.rng.randf()<float(data.refusal_chance.get(brain.tag(),.2)) else ''
 	if not reason.is_empty():
 		# Queue the full authored reason until the original speech gate can deliver it.

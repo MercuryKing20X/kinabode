@@ -31,3 +31,20 @@ By contributing, you confirm you can submit the material under the project's lic
 The isolated runners use seed `1027`, a fixed noon epoch and timezone, deterministic Crypto bytes and RNG initialization in a temporary source overlay. Shipped sources retain normal randomness. Monotonic timeouts and simulation advance remain real. Set `HABITAT_DETERMINISTIC_TESTS=0` for a random-world comparison, or `HABITAT_TEST_SEED` for another reproducible seed. Each case has separate game data and `user://`; native mouse checks share an exclusive window lock.
 
 隔离测试默认固定种子、墙钟、时区与随机初始化，仅覆盖临时工程的熵来源，不改正式游戏或任何底线断言。`HABITAT_DETERMINISTIC_TESTS=0` 可作随机对照，`HABITAT_TEST_SEED` 可指定其它种子。保留真实模拟推进与超时；每项独立数据和 user 目录，可视鼠标检查互斥。保留的旧历史审计可用 `HABITAT_PRIVATE_TEST_FIXTURES` 指定外部只读夹具根目录，私有报告和提示词不随公开仓库发布。
+
+## Brain report / 大脑自动报告（源码开发版）
+
+Run `python3 scripts/brain_report.py --output ./brain-report` for a fixed-seed,
+accelerated 30-minute **new standard opening**. Add `--visible` to display the
+viewport. This source/editor tool always creates temporary game data and an
+independent user directory, injects offline adapters before connections exist,
+and uses Dummy audio. It never loads your normal save and is not an exported
+package feature. Timing advances through World; acceleration only skips waiting
+between frames. The seed and sampling settings live in `godot/content/brain.json`.
+
+在源码工程执行上述命令，可自动跑固定种子的新正式开局30分钟。输出JSON统计与
+SVG时间线，包括活动时间/占比、各时段前三、饥饿档位下等开饭占比、主角接话、
+互动、拌嘴/合作、空档和距离。原始结果位于本次隔离数据目录的 `brain-reports/`；
+`--output` 复制报告到指定位置。没有真实模型调用，不修改玩家档，不写入虚构物资。
+
+Use `--speed 60` for a paced run or `--speed 1` for real time. Omitting it runs as fast as possible with the same simulation steps. The `day-1/` subdirectory contains the first 25-minute day.
