@@ -19,13 +19,16 @@ func _initialize() -> void:
 			if fields[0].begins_with("content.") or fields[0].begins_with("resident."):covered[fields[1]]=true
 			if _placeholders(fields[1])!=_placeholders(fields[2]):errors.append("Placeholder mismatch: "+fields[0])
 	if zh.is_empty():errors.append("No translation keys loaded")
+	var fixture_errors:Array[String]=[]
+	_check_content({"zh":"故意缺少译文"},"negative-fixture",{},fixture_errors)
+	if fixture_errors.is_empty():errors.append("Missing-translation negative fixture was not detected")
 	var scripts := _files("res://scripts", ".gd")
 	for path in scripts:
 		var source := FileAccess.get_file_as_string(path)
 		for line_no in range(source.split("\n").size()):
 			var line: String = source.split("\n")[line_no]
 			if line.strip_edges().begins_with("#"): continue
-			if _untranslated_literal(line): errors.append("Untranslated CJK: %s:%d" % [path, line_no + 1])
+			if _untranslated_literal(line) and not _inline_bilingual(line): errors.append("Untranslated CJK: %s:%d" % [path, line_no + 1])
 	var content := _files("res://content", ".json")
 	for path in content:
 		if path.contains("/i18n/"): continue
@@ -80,8 +83,31 @@ func _check_content(value:Variant,path:String,covered:Dictionary,errors:Array[St
 	if value is String:
 		if _contains_cjk(value) and not covered.has(value):errors.append("Untranslated content: "+path+": "+value)
 	elif value is Array:
+		if value.size()==2 and value[0] is String and value[1] is String and _contains_cjk(value[0]) and not _contains_cjk(value[1]) and not value[1].is_empty():
+			if _placeholders(value[0])!=_placeholders(value[1]):errors.append("Placeholder mismatch: "+path)
+			return
 		for index in range(value.size()):_check_content(value[index],path+"["+str(index)+"]",covered,errors)
 	elif value is Dictionary:
+		if value.has("zh") and value.has("en"):
+			var z:Variant=value.zh;var e:Variant=value.en
+			if z is String and e is String and not e.is_empty() and not _contains_cjk(e):
+				if _placeholders(z)!=_placeholders(e):errors.append("Placeholder mismatch: "+path)
+			elif z is Array and e is Array and z.size()==e.size() and not e.is_empty():
+				for i in z.size():_check_content([z[i],e[i]],path+".zh["+str(i)+"]",covered,errors)
+			else:errors.append("Missing bilingual value: "+path)
+			for key in value:
+				if key not in ["zh","en"]:_check_content(value[key],path+"."+str(key),covered,errors)
+			return
 		for key in value:
 			_check_content(key,path+".key",covered,errors)
 			_check_content(value[key],path+"."+str(key),covered,errors)
+
+func _inline_bilingual(line:String)->bool:
+	# Only explicit paired literals / localized-input comparisons count, not arbitrary ASCII.
+	var pairs:=RegEx.new()
+	pairs.compile("[\"']([^\"']+)[\"']\\s*,\\s*[\"']([^\"']+)[\"']")
+	var remainder:=line
+	for m in pairs.search_all(line):
+		if _contains_cjk(m.get_string(1)) and not _contains_cjk(m.get_string(2)) and not m.get_string(2).is_empty():remainder=remainder.replace(m.get_string(),"PAIR")
+	if not _untranslated_literal(remainder):return true
+	return line.contains("text.contains(") and line.contains("text.to_lower()")

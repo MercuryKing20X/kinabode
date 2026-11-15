@@ -109,12 +109,13 @@ func state() -> Dictionary:
 
 func advance(delta: float) -> void:
 	time += delta
-	world.director.local_speech_window.emit(ID)
+	if not world.director.brains.has(ID) or not world.director.brains[ID].active():world.director.local_speech_window.emit(ID)
 	if not world.intelligence.compatibility and intelligence_preset_id!=world.intelligence.preset_id(ID):apply_intelligence_preferences()
 	if not enabled or not world.residents.supports(world.actors[ID],"move"):return
 	if world.director.brains.has(ID) and world.director.brains[ID].active():
 		# The brain chooses; this legacy routine retains only the shared speech outlet.
-		if not held and not world.work.jobs.has(ID) and time>=next_speech and not world.activities.blocked(ID,false):
+		if world.director.brain_social!=null and world.director.brain_social.by_actor.has(ID):return
+		if chatter and not held and not world.work.jobs.has(ID) and time>=next_speech and not world.activities.blocked(ID,false) and not world.days.defer_idle(ID):
 			if not world.director.memory_reminders.try_speak(ID) and not world.relationships.try_event(ID) and not world.wishes.try_event(ID) and not world.personality.try_event(ID):_speak("near")
 		return
 	# DIRECTION: 托管时其它系统不能直接让人走或打断。

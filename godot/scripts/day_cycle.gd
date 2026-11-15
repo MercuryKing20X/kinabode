@@ -90,8 +90,9 @@ func advance() -> void:
 func eligible(id: String) -> bool:
 	if id=="human" or not world.director.routines.has(id):return false
 	# Arriving at the meal is still the rush, not a new idle opportunity.
-	if world.hunger!=null and world.hunger.has_method("rushing") and world.hunger.rushes.has(id):return false
+	if world.hunger!=null and (world.hunger.rank(id)>=3 or (world.hunger.has_method("rushing") and world.hunger.rushes.has(id))):return false
 	var actor: Dictionary=world.actors[id];var routine: RefCounted=world.director.routines[id]
+	if world.director.brains.has(id) and (world.director.brains[id].provider_running or not str(world.director.brains[id].current.get("coop","")).is_empty()):return false
 	if not routine.enabled or not routine.chatter or routine.held or not routine.kind.is_empty() or routine.time<routine.next_speech or world.director.time<world.director.speech_after:return false
 	if world.work.jobs.has(id) or world._routes.has(id) or world.loaded(id) or not world.fishing.held(id).is_empty() or world.activities.blocked(id) or world.shared_activity.holds(id) or world.farms.active(id) or world.projects.active(id) or world.gomoku.active(id):return false
 	if world.fishing.life.time<float(world.fishing.life.quiet_until.get(id,0)):return false
@@ -105,7 +106,7 @@ func defer_idle(id: String,for_action: bool=false) -> bool:
 	return (marked_day!=day() or part.id not in spoken) and within_day()-float(part.start)*day_seconds>=float(config.greeting_after)
 func _start_small(id: String) -> void:
 	if world.director.brains.has(id) and world.director.brains[id].active() and not world.director.brains[id].executing:
-		world.director.brains[id].offer("day_event",func():_start_small(id);return not owned_job_id.is_empty());return
+		world.director.brains[id].execute_provider("day_event",func():_start_small(id);return not owned_job_id.is_empty());return
 	var event: Dictionary=config.small_events[posmod((world.world_id+str(marked_day)+"small").hash(),config.small_events.size())]
 	var routine: RefCounted=world.director.routines[id]
 	routine.issuing=true

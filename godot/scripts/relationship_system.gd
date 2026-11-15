@@ -267,6 +267,8 @@ func approach(id: String,kind: String="nearby",focus: Vector2=Vector2.ZERO) -> b
 				return true
 	return false
 func reward(id: String,action: String,explicit: bool=false) -> bool:
+	if world.director.brains.has(id) and world.director.brains[id].active() and not world.director.brains[id].executing:
+		return world.director.brains[id].execute_provider("relationship_"+action,func():return reward(id,action,explicit))
 	var level:=index(id)
 	if not reward_available(id):return false
 	var r: RefCounted=world.director.routines[id];var actor: Dictionary=world.actors[id];var human: Dictionary=world.actors.human

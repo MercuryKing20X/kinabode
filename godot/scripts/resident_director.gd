@@ -105,11 +105,11 @@ func can_say_local(id:String,context:String="",listener_id:String="human")->bool
 		if time<routine.visual_quiet_until or world.activities.held.get(id,false) or world.activities.members.has(id):return false
 	elif routine.time<routine.next_speech or time<speech_after:return false
 	if listener_id!="human":
-		if context=="local_pair":
-			if local_dialogue==null or not local_dialogue.pair_allowed(id,listener_id):return false
+		if context in ["local_pair","brain_pair"]:
+			if local_dialogue==null or not local_dialogue.pair_allowed(id,listener_id,context=="brain_pair"):return false
 		elif not context.begins_with("gomoku_"):return false
 		var allowed: bool=world.gomoku.sessions.values().any(func(g):return g.get("mode")=="ai" and id in world.gomoku.players(g) and listener_id in world.gomoku.players(g) and id!=listener_id and (g.phase=="playing" or (g.phase=="finished" and world.gomoku.memories.any(func(record):return record.id==g.id))))
-		if context!="local_pair" and not allowed:return false
+		if context not in ["local_pair","brain_pair"] and not allowed:return false
 	if context.begins_with("steward_"):return true
 	var listener: Dictionary=world.actors.get(listener_id,{})
 	if listener.is_empty() or actor.region_id!=listener.region_id or world.point(actor).distance_to(world.point(listener))>12:return false
@@ -123,6 +123,7 @@ func say_local(id: String,text: String,context: String,personal_gap: float,group
 	serial+=1;events.append({"serial":serial,"actor_id":id,"source":"local_rules","context":context,"text":text,"explicit":false,"time":time})
 	if events.size()>24:events.pop_front()
 	routine.next_speech=routine.time+personal_gap;speech_after=time+group_gap
+	if context=="brain_pair":return true
 	if context not in ["local_pair","local_host","local_sense"]:
 		old_spoken_at[id]=time;old_spoken_credit=mini(OLD_LINES_PER_NEW,old_spoken_credit+1)
 		old_spoken_actor[id]=int(old_spoken_actor.get(id,0))+1
@@ -159,11 +160,23 @@ func say_fireside(id:String,text:String,context:String,station_id:String)->bool:
 func advance(delta: float) -> void:
 	time += delta
 	moods.advance(delta)
+	for id in brains:
+		if brains[id].active():
+			# Advance the original personal clock once before its speech window.
+			# Otherwise a deadline opens only later in routine.advance(), where
+			# generic reminders can consume it before anniversary/host feedback.
+			routines[id].time+=delta
+			local_speech_window.emit(id)
+	if brain_social!=null:brain_social.deliver_due()
 	for brain in brains.values():brain.advance(delta)
+	for id in brains:
+		var r:RefCounted=routines[id]
+		if brains[id].active() and not brains[id].provider_running and str(brains[id].current.get("coop","")).is_empty() and r.enabled and r.chatter and not r.held and time>=r.next_speech and not world.days.defer_idle(id):
+			if not memory_reminders.try_speak(id) and old_spoken_at.has(id) and float(moods.changed_at.get(id,0))>0 and float(old_spoken_at.get(id,-INF))<float(moods.changed_at.get(id,-INF)):r._speak("near")
 	idle_candidates.clear();collecting_idle=true
 	for id in routines:
 		var routine: RefCounted = routines[id]
-		routine.advance(delta)
+		routine.advance(0.0 if brains.has(id) and brains[id].active() else delta)
 		for event in routine.events:
 			if int(event.serial) <= int(seen.get(id, 0)): continue
 			seen[id] = event.serial

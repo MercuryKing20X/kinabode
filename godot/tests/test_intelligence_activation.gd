@@ -1,6 +1,6 @@
 extends SceneTree
 const World=preload("res://scripts/world_state.gd")
-class Hungry extends RefCounted:
+class Hungry extends "res://scripts/hunger_system.gd":
 	func rank(_id:String)->int:return 2
 var checks:=0
 var failed:=false
@@ -9,7 +9,7 @@ func check(ok:bool,msg:String)->void:
 	if not ok:failed=true;push_error(msg)
 func _initialize()->void:call_deferred("run")
 func run()->void:
-	var w:=World.new();w.residents.provision(w);w.director.set_all_enabled(false);w.intelligence.activate_presets();w.hunger=Hungry.new()
+	var w:=World.new();w.residents.provision(w);w.director.set_all_enabled(false);w.intelligence.activate_presets();w.hunger=Hungry.new(w)
 	check(w.personality.tag("companion-2")=="lively" and w.personality.tag("npc.mira")=="laborious","new host presets have requested main traits")
 	w.advance(.1)
 	check(w.intelligence.active["companion-2"]==["glutton","clingy"],"food and clingy priority, maximum two")

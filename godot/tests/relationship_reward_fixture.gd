@@ -9,7 +9,7 @@ static func directory() -> String:
 	if not FileAccess.file_exists(temporary.path_join("stage4/island-v2.json")):
 		OS.set_environment("HABITAT_LIFE2_EXTENDED","1");OS.set_environment("HABITAT_LIFE2_STAGE_SAVES",temporary);OS.set_environment("HABITAT_LIVE_TEST","0")
 		var output: Array=[]
-		var code:=OS.execute(OS.get_executable_path(),["--headless","--path",ProjectSettings.globalize_path("res://"),"--script","tests/test_local_life_15d.gd"],output,true)
+		var code:=OS.execute(OS.get_executable_path(),["--headless","--audio-driver","Dummy","--path",ProjectSettings.globalize_path("res://"),"--script","tests/test_local_life_15d.gd"],output,true)
 		if code!=0:push_error("Real stage fixture creation failed: "+str(output))
 		OS.set_environment("HABITAT_LIFE2_EXTENDED","");OS.set_environment("HABITAT_LIFE2_STAGE_SAVES","")
 	return temporary

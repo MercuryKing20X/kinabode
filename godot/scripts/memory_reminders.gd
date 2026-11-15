@@ -42,11 +42,12 @@ func eligible(id: String) -> bool:
 	if not world.director.model_controlled(id):return false
 	if config.is_empty() or settings==null or path.is_empty() or id=="human" or not world.director.routines.has(id):return false
 	var routine: RefCounted=world.director.routines[id];var actor: Dictionary=world.actors[id]
+	if world.director.brains.has(id) and (world.director.brains[id].provider_running or not str(world.director.brains[id].current.get("coop","")).is_empty()):return false
 	if not routine.enabled or not routine.chatter or routine.held or routine.blocked() or not routine.kind.is_empty():return false
 	if routine.time<float(config.first_after) or routine.time<routine.next_speech or world.director.time<world.director.speech_after:return false
 	if world.fishing.life.time<float(world.fishing.life.quiet_until.get(id,0)):return false
 	if world.activities.held.get(id,false) or world.activities.blocked(id) or world.shared_activity.holds(id) or world.farms.active(id) or world.projects.active(id) or world.gomoku.active(id):return false
-	if world.work.jobs.has(id) or world._routes.has(id) or world.loaded(id) or not world.fishing.held(id).is_empty() or actor.activity!="idle":return false
+	if world.work.jobs.has(id) or world._routes.has(id) or world.loaded(id) or not world.fishing.held(id).is_empty() or actor.activity not in ["idle","local_look","local_sit","play_cute","play_squat","play_lie"]:return false
 	if actor.region_id!=world.actors.human.region_id or world.point(actor).distance_to(world.point(world.actors.human))>float(config.radius):return false
 	return world.forest.clock>=deadline(section(id)) and world.forest.clock>=deadline(section())
 func text_for(id: String,entry: Dictionary) -> String:

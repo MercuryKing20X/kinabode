@@ -20,10 +20,11 @@ func reset_if_needed()->void:
 	sessions.clear();by_actor.clear();due.clear();used.clear();completed.clear();generation=w.session_generation
 func eligible(id:String)->bool:
 	if not w.director.brains.has(id):return false
+	if not w.director.local_dialogue.pending.is_empty() and id in w.director.local_dialogue.pending.actors:return false
 	if w.hunger.rank(id)>=3:return false
 	if not w.activities.following.has(id) and w.director.brains[id].clock>=w.director.brains[id].next_visit:return false
 	var b:RefCounted=w.director.brains[id];var r:RefCounted=w.director.routines[id]
-	return b.active() and r.enabled and r.chatter and not r.held and not b.busy() and w.director.time>=r.visual_quiet_until and w.fishing.held(id).is_empty() and not w._routes.has(id)
+	return b.active() and r.enabled and r.chatter and not r.held and r.time>=r.next_speech and not b.busy() and w.director.time>=r.visual_quiet_until and w.fishing.held(id).is_empty() and not w._routes.has(id)
 func contexts(a:String,b:String)->Array:
 	var result:Array=['idle']
 	if w.weather.current().id=='rain':result.push_front('rain')
@@ -54,7 +55,9 @@ func observe(brain:RefCounted)->void:
 			for script in pair_rows[0].scripts:
 				var key:String=str(w.days.day())+':'+str(script.id)
 				if script.context!=context or used.has(key):continue
-				brain.effect('local','social_banter',func():begin(id,peer,script,key))
+				brain.offer('social_banter',func():
+					if by_actor.has(id) or by_actor.has(peer) or not eligible(id) or not eligible(peer) or not w.director.brains[id].social_allowed('social_banter',peer) or not w.director.brains[peer].social_allowed('social_banter',id):return false
+					begin(id,peer,script,key);return true, float(brain.config.social_scenes.candidate_score))
 				return
 func begin(a:String,b:String,script:Dictionary,key:String)->void:
 	serial+=1;var token:String='social-'+str(serial)
@@ -71,7 +74,7 @@ func begin(a:String,b:String,script:Dictionary,key:String)->void:
 		w.director.brains[who].trace({'actor':who,'at':w.director.time,'event':'social_begin','kind':'banter','session':token,'context':script.context,'reasons':['brain_social']})
 func candidate(brain:RefCounted)->Dictionary:
 	reset_if_needed()
-	if by_actor.has(brain.id) or brain.clock<float(cfg().first_after) or brain.clock<float(due.get(brain.id,0)) or w.hunger.rank(brain.id)>=2:return {}
+	if not eligible(brain.id) or by_actor.has(brain.id) or brain.clock<float(cfg().first_after) or brain.clock<float(due.get(brain.id,0)) or w.hunger.rank(brain.id)>=2:return {}
 	for peer in w.director.brains:
 		if peer==brain.id or by_actor.has(peer) or w.hunger.rank(peer)>=2 or not eligible(peer) or brain.clock<float(due.get(peer,0)):continue
 		if w.actors[peer].region_id!=w.actors[brain.id].region_id or w.point(w.actors[peer]).distance_to(w.point(w.actors[brain.id]))>float(cfg().pair_distance):continue
@@ -155,3 +158,15 @@ func end(s:Dictionary,outcome:String)->void:
 		by_actor.erase(who);due[who]=w.director.time+float(cfg().cooldown_seconds)
 		if b.current.get('coop','')==s.id:b.finish('completed' if outcome=='completed' else 'interrupted','social_'+outcome)
 	sessions.erase(s.id)
+
+# Accepted scenes share the same village outlet. Offer their due reply before
+# new idle observations can consume it; all original actor/speech gates remain.
+func deliver_due()->void:
+	var pending:Array=sessions.values().duplicate()
+	pending.sort_custom(func(a,b):return str(a.id)<str(b.id) if a.next==b.next else float(a.next)<float(b.next))
+	for session in pending:
+		if not sessions.has(session.id) or int(session.index)>=session.lines.size():continue
+		var who:String=str(session.lines[int(session.index)].actor)
+		var brain:RefCounted=w.director.brains[who]
+		brain.clock=w.director.time
+		tick(brain)

@@ -88,6 +88,7 @@ func run()->void:
 		w.advance(1)
 		game.memory_life.speak("codex")
 		if w.director.events.any(func(e):return e.context=="memory_reminder" and e.text.contains("7")):break
+	if not w.director.events.any(func(e):return e.context=="memory_reminder" and e.text.contains("7")):print("ANNIVERSARY_GATES ",JSON.stringify(memory_gates()))
 	check(w.director.events.any(func(e):return e.context=="memory_reminder" and e.text.contains("7")),"anniversary delivered through real local gates")
 	game.view._process(10);game._process(0);game.view.follow_player=false;game.view.show_region(w.actors.codex.region_id);game.view.center=w.point(w.actors.codex);game.view.queue_redraw();await picture("anniversary-day7")
 	check(b.resolve("codex","小火苗")=="叫大家烧烤","taught alias survives real day advancement")
@@ -108,3 +109,7 @@ func run()->void:
 	game.connection_overview.hide();game.island_hud.refresh();await picture("connection-lights")
 	print("MEMORY_LIFE_INPUT ",checks," failed=",failed)
 	game.queue_free();await process_frame;quit(1 if failed else 0)
+
+func memory_gates()->Dictionary:
+	var w:RefCounted=game.world;var r:RefCounted=w.director.routines.codex
+	return {"activity":w.actors.codex.activity,"carry":w.actors.codex.carry,"blocked":r.blocked(),"kind":r.kind,"held":r.held,"route":w._routes.has("codex"),"brain":w.director.brains.codex.current,"provider":w.director.brains.codex.provider_running,"eligible":w.director.memory_reminders.eligible("codex"),"time":r.time,"next_speech":r.next_speech,"speech_after":w.director.speech_after,"personal_after":w.director.memory_reminders.deadline(w.director.memory_reminders.section("codex")),"village_after":w.director.memory_reminders.deadline(w.director.memory_reminders.section()),"forest_clock":w.forest.clock,"reminder_mentions":w.director.memory_reminders.history("codex"),"events":w.director.events}

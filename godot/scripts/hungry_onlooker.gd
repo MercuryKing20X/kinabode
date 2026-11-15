@@ -16,12 +16,12 @@ static func valid_config(value:Variant)->bool:
 		if not (value[key] is int or value[key] is float) or not is_finite(value[key]):return false
 	return value.radius>=4 and value.radius<=12 and value.seat_margin>=0.3 and value.seat_margin<=2 and value.swallow_every>=3 and value.swallow_every<=60 and value.swallow_seconds>=0.2 and value.swallow_seconds<=1.5 and value.swallow_seconds<value.swallow_every and value.swallow_pixels>=0.5 and value.swallow_pixels<=3 and value.drool_every>=6 and value.drool_every<=120 and value.drool_seconds>=0.5 and value.drool_seconds<=4 and value.drool_seconds<value.drool_every
 
-func presentation(world:RefCounted,id:String,clock:float)->Dictionary:
+func presentation(world:RefCounted,id:String,clock:float,require_idle_pose:bool=true)->Dictionary:
 	if config.is_empty():return {}
 	if id=="human" or not world.actors.has(id) or world.hunger==null or world.hunger.rank(id)<2:return {}
 	var actor:Dictionary=world.actors[id];var movement:Dictionary=world.motion_state(id)
 	if movement.get("moving",false) or float(movement.get("still_seconds",0))<0.3 or world._routes.has(id) or world.work.jobs.has(id):return {}
-	if actor.activity not in ["idle","local_look"] or not world.hunger.can_follow(id):return {}
+	if (require_idle_pose and actor.activity not in ["idle","local_look"]) or not world.hunger.can_follow(id):return {}
 	var routine:RefCounted=world.director.routines.get(id)
 	if routine==null or not routine.chatter or routine.blocked() or routine.time<routine.visual_quiet_until or world.fishing.life.time<float(world.fishing.life.quiet_until.get(id,0)):return {}
 	var best:RefCounted=null;var best_distance:float=float(config.radius)

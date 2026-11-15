@@ -106,7 +106,7 @@ func still_true(scene:String)->bool:
 		"far":return brain.distance()>float(data.far_distance)
 	return true
 func deliver_pending()->bool:
-	if (w.dark!=null and w.dark.here()) or pending.is_empty() or (pending.get("kind","")!="host_reply" and brain.clock<next_delivery):return false
+	if not w.director.routines[brain.id].chatter or (w.dark!=null and w.dark.here()) or pending.is_empty() or (pending.get("kind","")!="host_reply" and brain.clock<next_delivery):return false
 	var fact:Dictionary=pending.duplicate(true)
 	if not still_true(fact.scene):pending.clear();return false
 	if not deliver(fact.scene,fact.proof,"human",str(fact.get("kind","interaction"))):return false
@@ -114,7 +114,7 @@ func deliver_pending()->bool:
 	if fact.get("kind","")!="host_reply":next_delivery=brain.clock+float(data.personal_seconds)
 	return true
 func candidate()->Dictionary:
-	if (w.dark!=null and w.dark.here()) or pending.is_empty() or (pending.get("kind","")!="host_reply" and brain.clock<next_delivery) or brain.distance()>12:return {}
+	if not w.director.routines[brain.id].chatter or (w.dark!=null and w.dark.here()) or pending.is_empty() or (pending.get("kind","")!="host_reply" and brain.clock<next_delivery) or brain.distance()>12:return {}
 	return {"action":"host_interaction","score":float(brain.config.host_replies.score) if pending.get("kind","")=="host_reply" else float(data.score),"reasons":["interaction_"+str(pending.scene)],"partner":"","interaction":pending.duplicate(true)}
 func line(scene:String)->Dictionary:
 	var voice:Dictionary=data.scenes[scene].voices.get(brain.tag(),data.scenes[scene].voices.gentle)
@@ -135,7 +135,7 @@ func deliver_authored(row:Dictionary,scene:String,proof:String,listener:String,k
 	var r:RefCounted=w.director.routines[brain.id]
 	if brain.clock<r.visual_quiet_until or w.activities.held.get(brain.id,false) or w.activities.members.has(brain.id) or brain.clock<float(w.hunger.quiet_until.get(brain.id,0)) or w.fishing.life.time<float(w.fishing.life.quiet_until.get(brain.id,0)):return false
 	var text:String=row.en if TranslationServer.get_locale().begins_with('en') else row.zh
-	if not w.director.say_local(brain.id,text,'brain_interaction' if listener=='human' else 'local_pair',float(w.hunger.config.personal_gap),float(w.hunger.config.village_gap),listener):return false
+	if not w.director.say_local(brain.id,text,'brain_interaction' if listener=='human' else 'brain_pair',float(w.hunger.config.personal_gap),float(w.hunger.config.village_gap),listener):return false
 	said[row.key]=true
 	w.director.local_dialogue.persist_delivery(brain.id,{"id":"brain:"+scene+":"+str(row.key.get_slice(":",2))})
 	w.director.local_dialogue.persist_delivery(brain.id,{"id":"brain-line:"+str(row.zh).sha256_text()})

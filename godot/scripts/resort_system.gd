@@ -81,6 +81,7 @@ func begin(target_id:String,ids:Array)->Dictionary:
 	for id in ids:
 		if not world.actors.has(id) or id in accepted:continue
 		if not vacation(id):rejected[id]="not_on_island";continue
+		if world.director.brains.has(id) and world.director.brains[id].active():world.director.brains[id].begin_external("command","resort")
 		if id!="human" and world.hunger.rank(id)>=3:rejected[id]="very_hungry";continue
 		if world.work.jobs.has(id) or world.farms.active(id) or world.projects.active(id) or world.shared_activity.holds(id) or world.loaded(id):rejected[id]="busy";continue
 		var slot:=-1

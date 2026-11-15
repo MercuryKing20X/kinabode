@@ -41,3 +41,38 @@ and busy validation still apply to every command. A valid work order can have an
 authored acknowledgement; a blocked or partial job is never called complete.
 Peer invitations share an actual destination and activity, can be declined with
 a reason, and yield to real commands. Sweeping and tidying poses remain cosmetic.
+
+## Regression repair / 接管后的回归
+
+Frozen migration worlds may lack a session generation; brain initialization uses
+zero until a live world supplies it. Daily gestures, relationship seats and work
+companionship use brain provider candidates and retain the original executor,
+claims and speech gates. Free schedules and wandering retain their original
+opportunity clock. Disabled chatter cannot reserve a speaking interaction.
+
+Explicit following keeps the original HungerSystem queue and bridge executor,
+including when daily activities are disabled. Following shelter targets obey the
+existing nearby radius. Free return visits retain both the regular interval and
+the original far-away grace condition. These changes grant no work or resources.
+
+Disabled routines skip unnecessary brain sampling. Accepted scenes and their
+original speech retry opportunities continue to advance each frame. Brain
+microsecond counters are diagnostic only
+and never enter scores, saved state or deterministic trace comparisons.
+
+Hungry uninvited onlookers are a stationary food candidate: the existing
+read-only fire/seat/distance/settling validator supplies the cue. The brain may
+choose its original look pose at that spot; it creates no approach, invitation,
+food or speech. Host feedback keeps its original local speech window before
+new brain interaction lines can consume the same opportunity.
+
+An accepted brain scene starts only when both speakers can use the existing
+personal speech window. Its peer lines use `brain_pair` through the same pair
+validation; they do not spend the separate LocalDialogue three-old-lines quota.
+Due scene replies compete before new idle lines, without bypassing any gap.
+
+The original resident clock advances once before the shared speech window, so
+anniversary and retained preference reminders can use an opening cooldown.
+The later routine pass receives zero elapsed time for active brains; it does
+not advance that same clock twice. Clickable need bubbles avoid the fire's
+actual hit rectangle, preserving separate fire and need input.

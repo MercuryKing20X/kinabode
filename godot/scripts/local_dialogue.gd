@@ -44,12 +44,13 @@ func _init(source:RefCounted)->void:
 	for index in range(depth):
 		for groups in families.values():
 			if index<groups.size():pair_order.append(groups[index])
-func idle(id:String,allow_local_motion:bool=false)->bool:
+func idle(id:String,allow_local_motion:bool=false,allow_brain_scene:bool=false)->bool:
 	if not world.director.routines.has(id) or not world.actors.has(id):return false
 	var r:RefCounted=world.director.routines[id]
+	if not allow_brain_scene and world.director.brain_social!=null and world.director.brain_social.by_actor.has(id):return false
 	return r.enabled and r.chatter and not r.held and r.kind!="flower_gift" and r.time>=r.visual_quiet_until and not world.activities.blocked(id) and not world.work.jobs.has(id) and (not world._routes.has(id) or (allow_local_motion and (r.owns_route or world.activities.following.has(id)))) and not world.projects.active(id) and not world.farms.active(id) and not world.homestead.active(id) and not world.shared_activity.holds(id) and not world.gomoku.active(id) and world.director.time>=float(world.hunger.quiet_until.get(id,0)) and world.fishing.life.time>=float(world.fishing.life.quiet_until.get(id,0))
-func pair_allowed(a:String,b:String)->bool:
-	return a!=b and idle(a) and idle(b) and world.actors[a].region_id==world.actors[b].region_id and world.point(world.actors[a]).distance_to(world.point(world.actors[b]))<=4
+func pair_allowed(a:String,b:String,allow_brain_scene:bool=false)->bool:
+	return a!=b and idle(a,false,allow_brain_scene) and idle(b,false,allow_brain_scene) and world.actors[a].region_id==world.actors[b].region_id and world.point(world.actors[a]).distance_to(world.point(world.actors[b]))<=4
 func pair_waitable(a:String,b:String)->bool:
 	# Brief local following/yielding may delay a reply, never speak during motion.
 	# Real tasks, commands, separation, held and stop still discard the exchange.

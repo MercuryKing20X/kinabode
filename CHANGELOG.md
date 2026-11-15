@@ -1,52 +1,28 @@
 # Changelog / 更新记录
 
-## Unreleased — v0.7 polish 4 / 未发布
+## Unreleased — v0.7 polish 5 / 未发布
 
-- Balance local banter, small cooperation and activity freshness; bring signature activities back while preserving hunger and authored rules. / 调整本地拌嘴、小合作与分类新鲜度，让招牌活动回到前五；原饥饿及内容规则保留。
-- Deterministic standard-opening checks now cover time shares by hunger rank and signature activities; two complete 30-minute traces match. / 新增分饥饿档等饭、社交时间占比与招牌验收，两次完整30分钟trace一致。
+- Restore legacy-save initialization and loading; reconstructed resort-v1 fixtures preserve owned carry, storage counts and retained memories. / 修复旧迁移World的大脑初始化与实际读档，复刻旧档核对本人背包、仓库及保留记忆。
+- Reconnect daily gestures, schedules, relationship rewards, memory reminders, moods, return visits, cross-island following and hungry onlookers through the resident brain and original executors. / 每日小事件、日程、关系奖励、回忆、情绪、回访、跨岛跟随及火边旁观接回大脑，沿用原路线、座位和任务执行器。
+- Preserve the follow queue and its small-movement still zone; nearby shelters respect the existing six-tile follow radius. Natural pair exchanges share speech validation without spending each other's quota. / 保留跟随队列及小幅移动不动区，跟随避雨遵守原6格范围；新旧双人对话共享验证、各守原额度。
+- Synchronize the original personal clock before its speech window, and keep clickable need bubbles clear of the actual campfire target. / 原居民时钟先推进一次再开说话窗口，需求气泡避开真实营火点击区域。
+- Skip disabled-brain sampling and restore exclusive scheduling for measured slow tests; original deadlines and content parameters remain. / 关闭日常时跳过无效大脑采样，恢复慢测隔离调度，原时限与内容参数不变。
+- Recognize direct Chinese/English fields and paired arrays in translation checks; retain a deliberate missing-translation negative fixture. / 翻译检查识别中英字段及成对数组，并保留故意缺译的反例。
+
+Validation / 验证：two complete suites: **401/406** and **404/406**, with five then 2 failures; no third full run. The original 36 failures now have 35 passing cases. All original deadlines and assertions remain. / 两次完整全套401/406与404/406，失败5→2项，无第三次全套；原36项中35项在最终全套通过，原时限与断言保留。
+
+Balance / 平衡：banter 5.858%, small cooperation 5.250%; full/slightly hungry waiting-for-food time remains 0%; signature activities remain in the top five; proactive host interactions 7/8/9/7; identical same-seed traces and statistics. / 拌嘴5.858%、小合作5.250%，饱饱/有点饿等饭0%，招牌活动前五、主动互动7/8/9/7及同种子完整一致均达标。Morning top-three rhythm remains a separate failed assertion, listed below. / 晨间前三节律仍单独失败，见下表。
+
+Performance / 性能：four brains 704.219→523.463 µs/frame; disabled daily life 175.384→10.560 µs/frame in the same isolated probe. Final camp click 71.638s versus v0.6.1 69.716s; original 90s deadline unchanged. / 同隔离探针四人大脑704.219→523.463微秒/帧，关闭日常175.384→10.560；最终营火点击71.638秒，对照v0.6.1为69.716秒，原90秒时限不变。
+
+No new content, dialogue, artwork, model calls, player-data edits or content-parameter tuning. / 无新内容、台词、美术或真实模型调用，不改玩家数据及内容参数。
 
 ### Known issues / 已知问题
 
-Full suite: 369/405 passed; 36 failed. Original assertions retained. / 完整全套369/405通过，36失败，原断言保留。
-
-| Test | Class / 分类 | Status / 状态 |
-|---|---|---|
-| `test_follow_play_input.gd` | D | Maximum distance 11.011 tiles exceeds six; reproduced unchanged at the previous commit too; cause unconfirmed. / 最大11.011格超过6格，前一提交亦精确复现，原因待查。 |
-| `test_local_dialogue.gd` | D | No completed legacy idle pair exchange in the observation; other local speech delivered. / 观测内旧闲暇双人接话未完成，其余本地发言存在，待定位。 |
-| `test_resort_revision_migration.gd` | A | Legacy migration world lacks session_generation required by ResidentBrain initialization. / 旧迁移World缺少大脑初始化读取的session_generation，兼容缺陷保留。 |
-| `test_two_villa_input.gd` | C | Original 90s timeout; completion unproven. / 达到原时限，整项完成未证实。 |
-| `test_two_villa_migration.gd` | A | Legacy migration world lacks session_generation required by ResidentBrain initialization. / 旧迁移World缺少大脑初始化读取的session_generation，兼容缺陷保留。 |
-| `test_health_ai.gd` | C | Original 90s timeout; completion unproven. / 达到原时限，整项完成未证实。 |
-| `test_island_recipe_input.gd` | C | Original 90s timeout; completion unproven. / 达到原时限，整项完成未证实。 |
-| `test_island_recipe_meals_input.gd` | C | Original 180s timeout; completion unproven. / 达到原时限，整项完成未证实。 |
-| `test_south_roads_cat.gd` | C | Original 90s timeout; completion unproven. / 达到原时限，整项完成未证实。 |
-| `test_home_island_migration.gd` | A | Legacy migration world lacks session_generation required by ResidentBrain initialization. / 旧迁移World缺少大脑初始化读取的session_generation，兼容缺陷保留。 |
-| `capture_playtest_camera.gd` | D | Idle residents did not satisfy the return check after a distant player route. / 主角远程路线后居民回访检查未达标，原因待查。 |
-| `test_playtest_invitation_input.gd` | C | Original 180s timeout; completion unproven. / 达到原时限，整项完成未证实。 |
-| `test_speech_quiet_input.gd` | C | Original 90s timeout; completion unproven. / 达到原时限，整项完成未证实。 |
-| `test_player_follow.gd` | D | Cross-island bridge arrival check failed; routing and speed unchanged. / 跨岛经桥到达检查失败，原路线和速度未改，待定位。 |
-| `test_lively_observation.gd` | C | Original 90s timeout; completion unproven. / 达到原时限，整项完成未证实。 |
-| `test_motion_v4.gd` | D | Authored schedule traversal and follow dead-zone checks failed; original parameters retained. / 作息路线与跟随不动区检查失败，原参数保留，待定位。 |
-| `test_camp_click_approach.gd` | C | Original 90s timeout; completion unproven. / 达到原时限，整项完成未证实。 |
-| `test_camp_remote_actions.gd` | C | Original 90s timeout; completion unproven. / 达到原时限，整项完成未证实。 |
-| `test_intelligence_activation.gd` | C | Minimal Hungry fixture lacks the real hunger interface (quiet_until). / 最小Hungry假对象缺真实饥饿接口字段，测试设施待补。 |
-| `test_flower_gifts.gd` | B | Legacy fixture forces the old selector; unified-brain selection now owns decisions. / 旧夹具只强制旧选择器；v0.7已由统一大脑选事，断言保留待迁移。 |
-| `test_memory_life_input.gd` | D | Anniversary delivery through local gates was not observed. / 未观测到纪念日台词经本地闸门实际投递，待定位。 |
-| `test_days_controller.gd` | D | Daily event/gesture did not start; subsequent fixture access failed and timed out. / 每日事件/动作未启动，随后夹具字段读取报错并超时，待定位。 |
-| `test_memory_reminders_controller.gd` | D | Reminder delivery/presentation/persistence checks failed. / 记忆提醒交付、呈现与持久记录检查失败，待定位。 |
-| `test_resident_moods_controller.gd` | D | Actual happy-mood bubble pool check failed. / 实际高兴情绪气泡池检查失败，待定位。 |
-| `test_weather_controller.gd` | D | Garden/camp schedule arrival checks failed; authored parameters retained. / 菜园/营地日程到达检查失败，原参数保留，待定位。 |
-| `test_relationship_rewards_controller.gd` | D | Seat arrival and approach-to-working-host reward checks failed. / 关系奖励的入座与接近工作主角检查失败，待定位。 |
-| `test_moon_fishing_mouse.gd` | C | Original 90s timeout; completion unproven. / 达到原时限，整项完成未证实。 |
-| `test_run_eat_mouse_standard.gd` | C | Original 90s timeout; completion unproven. / 达到原时限，整项完成未证实。 |
-| `test_run_eat_mouse_showcase.gd` | C | Original 90s timeout; completion unproven. / 达到原时限，整项完成未证实。 |
-| `check_translations.gd` | C | CSV-only static scan flags direct bilingual brain content (1102 findings); full locale coverage remains unverified. / 静态扫描未识别直接双语脑内容，共1102处报告，完整本地化覆盖待适配验证。 |
-| `test_their_island_ui.gd` | C | Original 90s timeout; completion unproven. / 达到原时限，整项完成未证实。 |
-| `test_their_island_story_input.gd` | C | Original 180s timeout; completion unproven. / 达到原时限，整项完成未证实。 |
-| `test_their_island_progress.gd` | A | Legacy migration world lacks session_generation required by ResidentBrain initialization. / 旧迁移World缺少大脑初始化读取的session_generation，兼容缺陷保留。 |
-| `test_overnight_player_standard_moon.gd` | C | Original 90s timeout; completion unproven. / 达到原时限，整项完成未证实。 |
-| `test_overnight_player_showcase_home.gd` | D | Uninvited outside-seat onlookers were not observed; cause unconfirmed. / 未观测到席圈外未受邀旁观表现，原因待查。 |
-| `test_overnight_player_showcase_moon.gd` | C | Original 90s timeout; completion unproven. / 达到原时限，整项完成未证实。 |
+| Test / 测试 | Cause and next step / 原因及后续 |
+|---|---|
+| `test_brain_30min.gd` | The fixed-seed morning top three are cooperation, host interaction and banter; stretch and weather watching occur but rank fourth/fifth. This rhythm assertion passed in polish 4 and remains a regression. Review opportunity allocation within the original scores and repeat across seeds; retain the assertion. / 固定种子晨间前三为小合作、主角互动、拌嘴，伸懒腰和看天气真实发生但排第四/五；该节律断言第四轮通过，本轮仍回归。后续在原分值内核对机会分配并复验多种子，保留断言。 |
+| `test_health_ai.gd` | The natural fish-need bubble is starved by competing idle speech, so real click/catch/thanks remains unverified. Stub dispatch, actual harvest and fallback explanations pass. Arbitrate old needs and brain interactions without changing the 180s need cooldown or the original reminder/speech gates. / 自然鱼需求气泡受闲暇发言竞争压制，真实点击、本人钓获和感谢仍未完成验收；桩派发、真实收成及退回说明已过。后续统一需求与互动的机会仲裁，保持180秒需求冷却及原回忆/说话闸门。 |
 
 ## v0.6.1 — 2026-11-13
 

@@ -190,8 +190,7 @@ func hit(mouse: Vector2) -> String:
 	var homestead_area: Rect2=world.homestead.area()
 	if Rect2(screen(homestead_area.position),homestead_area.size*32*zoom).has_point(mouse) and (world.homestead.site.state!="unstarted" or world.homestead.occupancy().is_empty()):return world.homestead.config.site.id
 	for life in world.barbecues.values():
-		var barbecue := screen(world.point(life.station))
-		if Rect2(barbecue - Vector2(34, 65) * zoom, Vector2(68, 74) * zoom).has_point(mouse): return life.station.id
+		if _barbecue_hit_box(life.station).has_point(mouse): return life.station.id
 	for patch in world.all_mushrooms().values():
 		if int(patch.amount) > 0 and screen(world.point(patch)).distance_to(mouse) < 45 * zoom: return patch.id
 	var hits: Array = []
@@ -457,10 +456,17 @@ func _draw_thought_clouds() -> void:
 func clear_local_speech(actor_id: String) -> void:
 	if speech_by_actor.get(actor_id,{}).get("source")=="local_rules":speech_by_actor.erase(actor_id)
 	if speech_actor==actor_id and speech_source=="local_rules":speech_until=0
+func _barbecue_hit_box(station:Dictionary)->Rect2:
+	return Rect2(screen(world.point(station))-Vector2(34,65)*zoom,Vector2(68,74)*zoom)
+
 func speech_layout() -> Array:
 	if chess_overlay:return [] # Board bubbles own the visible scene; world gates and facts keep running.
 	var entries: Array=[];var boxes: Array[Rect2]=[]
 	var viewport:=get_viewport_rect()
+	# Keep the actual fire target available under clickable need bubbles. The
+	# same rectangle owns hit testing; moving a bubble must not accept a need.
+	for life in world.barbecues.values():
+		if life.station.region_id==region_id and world.standard.ready(life.station.id):boxes.append(_barbecue_hit_box(life.station))
 	for actor in world.actors.values():
 		if actor.id=="human" or actor.region_id!=region_id:continue
 		var label_point:Vector2=screen(world.point(actor))+Vector2(-12,15) if world.locations.v3() else screen(world.point(actor))-Vector2(font.get_string_size(LocalText.resident(world,str(actor.id)),HORIZONTAL_ALIGNMENT_LEFT,-1,preload("res://scripts/ui_scale.gd").pixels(16)).x/2,(_resident_head_height(actor)+4)*zoom+10)

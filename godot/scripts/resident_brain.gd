@@ -34,6 +34,9 @@ var offers:Dictionary={}
 var provider_running:=false
 var next_visit:=0.0
 var special_provider:=""
+var onlooker:RefCounted=preload("res://scripts/hungry_onlooker.gd").new()
+var profile_usec:=0
+var profile_frames:=0
 var rhythm:RefCounted
 var interactions:RefCounted
 var refusal:Dictionary={}
@@ -45,7 +48,7 @@ func reset()->void:
 	balance_events.clear();category_recent.clear();last_host_busy=-100000.0
 	current.clear();history.clear();recent.clear();invitation.clear();top.clear();route=null;still=0;next_decision=0;clock=0;last_near=0;seen_places.clear();schedule_due=0;next_visit=0;offers.clear();provider_running=false;special_provider=""
 	needs={"tired":0.0,"bored":.25,"missing":0.0,"curious":.5}
-	generation=world.session_generation
+	generation=int(world.get("session_generation") if world.get("session_generation")!=null else 0)
 	interactions=preload("res://scripts/brain_interactions.gd").new(self);rhythm=preload("res://scripts/brain_rhythm.gd").new(self);refusal.clear()
 	var seed_text:String=OS.get_environment("HABITAT_BRAIN_SEED")
 	rng.seed=(int(seed_text) if not seed_text.is_empty() else int(config.seed))+int(id.hash())
@@ -71,6 +74,7 @@ func finish(outcome:String,reason:String="")->void:
 		world.lively.active.erase(id)
 		world.director.destinations.erase(id)
 		world.director.routines[id].owns_route=false
+		world.director.routines[id].kind=""
 		if not world.work.jobs.has(id) and not world._routes.has(id):world.actors[id].activity="idle"
 	current.clear();route=null;still=0;next_decision=clock
 func begin_external(source:String,action:String)->void:
@@ -148,7 +152,11 @@ func follow(dark_fear:bool=false)->void:
 	if not active() or executing:world.hunger._follow_body(id,dark_fear);return
 	# Other providers request follow; only the brain may grant it while idle.
 	if current.get("source","") in ["command","steward"] or busy() or sheltering():return
-	if current.get("source","")=="local" and not world._routes.has("human") and (current.action in ["follow","food"] or distance()<=float(config.follow_max)):return
+	if current.get("source","")=="local" and current.action in ["follow","food"]:
+		executing=true;world.hunger._follow_body(id,dark_fear);executing=false
+		if world._routes.has(id):route=world._routes[id];current.arrived=-1.0
+		return
+	if current.get("source","")=="local" and not world._routes.has("human") and distance()<=float(config.follow_max):return
 	if current.get("source","")=="local":finish("interrupted","host_moved")
 	executing=true;world.hunger._follow_body(id,dark_fear);executing=false
 	if current.is_empty() and world._routes.has(id):
@@ -190,6 +198,11 @@ func social_ledger()->RefCounted:
 	return world.director.brain_social
 func candidates()->Array:
 	var result:Array=[]
+	var r:RefCounted=world.director.routines[id]
+	if clock>=r.next_decision and not world.activities.following.has(id) and r.preferences.weights.values().reduce(func(sum,value):return sum+float(value),0.0)>0 and world.hunger.rank(id)<3:
+		result.append({"action":"legacy_idle","score":float(config.special_score)+float(config.scores.return),"reasons":["curious"],"partner":""})
+	if world.hunger.rank(id)==2 and not onlooker.presentation(world,id,clock,false).is_empty():
+		result.append({"action":"food","score":float(config.special_score)+float(config.scores.return),"reasons":["hunger"],"partner":"","onlooker":true})
 	var hungry:bool=world.hunger.rank(id)>=3
 	var following:bool=world.activities.following.has(id)
 	var dark_fear:bool=world.dark!=null and world.dark.here() and world.actors[id].region_id=="dark" and not world.dark.permanent(world.point(world.actors.human))
@@ -197,7 +210,9 @@ func candidates()->Array:
 	var ids:Array=world.director.brains.keys();ids.sort()
 	for who in ids:
 		if who!=id and world.actors[who].region_id==world.actors[id].region_id and world.point(world.actors[who]).distance_to(world.point(world.actors[id]))<=5:peer=who;break
-	var return_due:bool=clock-last_near>=float(world.director.routines[id].return_visit.options(world.director.routines[id]).interval_seconds)
+	var visit:Dictionary=world.director.routines[id].return_visit.options(world.director.routines[id])
+	var return_due:bool=clock-last_near>=float(visit.interval_seconds)
+	var far_due:bool=distance()>float(visit.far_distance) and clock-last_near>=float(visit.far_seconds)
 	if clock>=schedule_due:
 		schedule_due=clock+float(world.schedules.config.retry)
 		schedule_options=world.schedules.options(id) if clock>=float(world.schedules.config.first_after) and rng.randf()<float(world.schedules.config.chance) else []
@@ -226,7 +241,7 @@ func candidates()->Array:
 		if hungry and key!="food":continue
 		if key=="food" and world.hunger.rank(id)<0:continue
 		if dark_fear and not hungry and key!="dark_life":continue
-		if key=="follow" and not following and (clock-free_since<float(world.director.routines[id].return_visit.options(world.director.routines[id]).far_seconds) or (not return_due and clock<next_visit)):continue
+		if key=="follow" and not following and (clock-free_since<float(world.director.routines[id].return_visit.options(world.director.routines[id]).far_seconds) or (not return_due and not far_due and clock<next_visit)):continue
 		if a.requires=="night_clear" and (world.days.phase().id!="night" or world.weather.current().id in ["rain","fog"]):continue
 		if a.requires=="near_cat" and (not world.cat.discovered or world.cat.region!=world.actors[id].region_id or world.cat.position.distance_to(world.point(world.actors[id]))>8):continue
 		if a.requires=="peer" and peer.is_empty():continue
@@ -240,6 +255,7 @@ func candidates()->Array:
 		if following:components.append({"key":"follow","value":float(config.scores.follow)})
 		if key in ["follow","food"] and (distance()>float(config.follow_max) or return_due or hungry or (key=="follow" and not following and clock>=next_visit)):components.append({"key":"hunger" if hungry else "missing","value":float(config.scores.return)})
 		if a.requires in ["dark","story"]:components.append({"key":"curious","value":float(config.special_score)})
+		if key=="follow" and not following and (far_due or return_due):components.append({"key":"missing","value":float(config.special_score)})
 		if key=="stars":components.append({"key":"night","value":float(config.scores.night)})
 		if key in ["chat","back_to_back"]:components.append({"key":"social","value":float(config.scores.social)+float(world.relationships.index(id))*float(config.social_relation_weight)})
 		if not scheduled.is_empty():components.append({"key":"weather","value":float(scheduled.weight)*float(config.schedule_weight)})
@@ -264,7 +280,7 @@ func candidates()->Array:
 		result.append(candidate)
 	for action in offers.keys():
 		if float(offers[action].until)<clock:offers.erase(action);continue
-		if not hungry:result.append({"action":action,"score":float(config.providers.reaction_score),"reasons":["social"],"partner":""})
+		if not hungry:result.append({"action":action,"score":float(offers[action].get("score",float(config.special_score)+float(config.scores.return))),"reasons":["social"],"partner":""})
 	if not hungry and invitation.has("point") and clock<float(invitation.until):
 		result.append({"action":invitation.action,"score":float(config.invite_bonus)+100,"reasons":["invite","social"],"partner":invitation.from,"paired":true,"point":invitation.point,"coop":invitation.get("coop","")})
 	var cooperative:Dictionary=social_ledger().candidate(self)
@@ -275,8 +291,10 @@ func candidates()->Array:
 		result.append(interaction)
 	result.sort_custom(func(a,b):return a.score>b.score if a.score!=b.score else str(a.action)<str(b.action))
 	return result
-func offer(action:String,body:Callable)->void:
-	if not offers.has(action):offers[action]={"body":body,"until":clock+float(config.decision_seconds)*2}
+func offer(action:String,body:Callable,score:float=-1)->void:
+	if not offers.has(action):
+		offers[action]={"body":body,"until":clock+float(config.decision_seconds)*2}
+		if score>=0:offers[action]["score"]=score
 
 func record(options:Array)->void:
 	top=options.slice(0,3).duplicate(true)
@@ -318,21 +336,29 @@ func destination(action:String)->Vector2:
 	return Vector2.INF
 func start(choice:Dictionary,options:Array)->void:
 	finish("interrupted","better_choice")
-	world.hunger.clear_follow(id)
+	if choice.action!="food" or world.hunger.rank(id)<3:world.hunger.clear_follow(id)
 	var action:String=choice.action;var a:Dictionary=config.actions.get(action,{"duration":20})
 	current=choice.duplicate(true);current.merge({"source":"local","start":clock,"arrived":clock,"duration":float(a.duration)})
 	recent[action]=clock;category_recent[category(action)]=clock
-	if action in ["social_banter","small_coop"]:
-		balance_events=balance_events.filter(func(row):return clock-float(row.at)<float(config.balance.window_seconds))
-		balance_events.append({"at":clock,"action":action,"peer":choice.get("partner","")})
 	record(options)
 	if a.get("requires","")=="rhythm":
 		var at:Vector2=rhythm.target(action)
 		if at.is_finite():choice["point"]=at
-	if choice.get("paired",false):invitation.clear()
+	if choice.get("paired",false):
+		invitation.clear()
+		if action=="social_banter":offers.erase(action)
 	if action=="small_coop":
 		if not choice.get("paired",false) and not social_ledger().prepare(self,choice):finish("failed","social_refused");return
 		current.merge(choice,true);current.duration=float(config.social_scenes.session_seconds)
+	if action=="social_banter" and not choice.get("paired",false) and offers.has(action):
+		executing=true;var accepted:bool=offers[action].body.call();executing=false;offers.erase(action)
+		if not accepted:finish("failed","social_unavailable");return
+		choice.merge({"point":invitation.point,"paired":true,"coop":invitation.coop,"partner":invitation.from},true)
+		current.merge(choice,true);current.duration=float(config.social_scenes.session_seconds);invitation.clear()
+	if action in ["social_banter","small_coop"]:
+		balance_events=balance_events.filter(func(row):return clock-float(row.at)<float(config.balance.window_seconds))
+		balance_events.append({"at":clock,"action":action,"peer":choice.get("partner","")})
+	if choice.get("onlooker",false):pose();return
 	if action=="host_interaction":
 		if distance()>float(interactions.data.near_distance):
 			var p:Vector2=destination("follow")
@@ -350,20 +376,29 @@ func start(choice:Dictionary,options:Array)->void:
 		executing=true;var accepted:bool=offers[action].body.call();executing=false;offers.erase(action)
 		if not accepted:finish("failed","provider_rejected");return
 		provider_running=true;route=world._routes.get(id);current["job_id"]=world.work.jobs.get(id,{}).get("id","");return
+	if action=="legacy_idle":
+		executing=true
+		var r:RefCounted=world.director.routines[id]
+		var accepted:bool=world.relationships.try_reward(id) or world.schedules.try_start(r) or (float(r.preferences.weights.get("wander",0))>0 and r._start("wander"))
+		executing=false
+		if not accepted:finish("failed","provider_rejected");return
+		provider_running=true;route=world._routes.get(id);return
 	if action in ["flower_gift","facility"]:
 		executing=true;var accepted:bool=world.director.routines[id]._start(action);executing=false
 		if not accepted:finish("failed","provider_rejected");return
 		provider_running=true;route=world._routes.get(id);current["job_id"]=world.work.jobs.get(id,{}).get("id","");return
 	if action in ["hold_cat","pet_cat"]:
 		if not world.cat.interact(id,"hold" if action=="hold_cat" else "pet"):finish("failed","cat_busy");return
+	if action=="wander":world.director.routines[id].kind="wander"
 	if choice.has("scheduled"):
+		world.director.routines[id].kind="schedule"
 		current.duration=float(world.schedules.config.stay_seconds)
 		world.schedules.next_after[id]=clock+float(world.schedules.config.interval)
 		world.schedules.statistics.started[id]=int(world.schedules.statistics.started.get(id,0))+1
 		world.schedules.targets[id]=choice.scheduled.merged({"phase":world.days.phase().id,"arrived":false})
 		schedule_options.clear();schedule_due=float(world.schedules.next_after[id])
 	if action=="food" and world.hunger.rank(id)>=3:
-		executing=true;world.hunger.follow_after.erase(id);world.hunger._follow_body(id);executing=false
+		executing=true;world.hunger._follow_body(id);executing=false
 		route=world._routes.get(id);world.director.routines[id].owns_route=route!=null;last_position=world.point(world.actors[id]);current.arrived=-1.0 if route!=null else clock
 		return
 	if not str(choice.partner).is_empty() and not choice.get("paired",false):
@@ -402,7 +437,7 @@ func advance_special(delta:float)->bool:
 func pose()->void:
 	if current.is_empty() or current.source!="local" or world._routes.has(id):return
 	var a:Dictionary=config.actions.get(current.action,config.actions.daydream)
-	var visual:String=str(a.pose)
+	var visual:String="local_look" if current.get("onlooker",false) else str(a.pose)
 	if current.action=="small_coop" and social_ledger().sessions.has(current.get("coop","")):
 		var session:Dictionary=social_ledger().sessions[current.coop]
 		visual=str(social_ledger().data.cooperation[session.context].poses[session.members.find(id)])
@@ -412,9 +447,18 @@ func pose()->void:
 	if current.action=="play_cute":world.actors[id].activity="play_cute"
 	if a.get("requires","")=="rhythm":rhythm.speak(current.action)
 func advance(delta:float)->void:
+	var measured:int=Time.get_ticks_usec()
+	_advance_body(delta)
+	profile_usec+=Time.get_ticks_usec()-measured;profile_frames+=1
+func _advance_body(delta:float)->void:
 	if not active() or delta<=0:return
-	if generation!=world.session_generation:reset();generation=world.session_generation
-	clock=world.director.time;update_needs(delta)
+	if generation!=int(world.get("session_generation") if world.get("session_generation")!=null else 0):reset()
+	clock=world.director.time
+	var routine:RefCounted=world.director.routines[id]
+	if not routine.enabled or routine.held:
+		if current.get("source","")=="local" and (routine.held or current.get("action","") not in ["follow","food"]):finish("interrupted","held_or_quiet")
+		return
+	update_needs(delta)
 	if world.work.jobs.has("human") or world._routes.has("human"):last_host_busy=clock
 	interactions.observe();interactions.refusal_tick()
 	if social_ledger().by_actor.has(id) or social_allowed("social_banter"):social_ledger().observe(self)
@@ -468,6 +512,7 @@ func advance(delta:float)->void:
 			var peer:Dictionary=world.actors.get(current.partner,{})
 			if peer.is_empty() or peer.region_id!=world.actors[id].region_id or world.point(peer).distance_to(world.point(world.actors[id]))>float(world.lively.config.pair_distance):finish("failed","partner_left");return
 		if (current.action=="night_rest" and world.days.phase().id!="night") or (current.action=="rain_shelter" and world.weather.current().id!="rain"):finish("completed","conditions_changed");return
+		if current.get("onlooker",false) and onlooker.presentation(world,id,clock,false).is_empty():finish("completed","meal_finished");return
 		if current.action=="stars" and (world.days.phase().id!="night" or world.weather.current().id in ["rain","fog"]):finish("completed","conditions_changed");return
 		if route!=null and world._routes.has(id):
 			if not is_same(route,world._routes[id]):finish("interrupted","route_replaced");return
@@ -492,12 +537,19 @@ func advance(delta:float)->void:
 	# Commands, held/quiet, real work, host movement and very-hungry checks still win above.
 	if current.has("coop") and not str(current.coop).is_empty() and social_ledger().by_actor.get(id,"")==current.coop and not world._routes.has("human"):return
 	if clock<next_decision:return
+	if not world.activities.following.has(id) and clock<world.director.routines[id].next_decision and current.is_empty():return
 	next_decision=clock+float(config.decision_seconds)
 	var choices:Array=candidates()
 	if choices.is_empty():return
 	if current.is_empty():start(choices[0],choices);return
+	# Arrival satisfies the distance bonus; do not retain a far-away score while
+	# already settled beside the host. Keep every authored weight unchanged.
+	if current.action=="follow" and float(current.arrived)>=0:
+		for choice in choices:
+			if choice.action=="follow":current.score=choice.score;break
 	if world.activities.following.has(id) and not sheltering() and (distance()>float(config.follow_max)+1 or world._routes.has("human")):
-		finish("interrupted","host_moved");follow();return
+		if current.action not in ["follow","food"]:finish("interrupted","host_moved")
+		follow();return
 	if current.action!="host_interaction" and choices[0].action!=current.action and float(choices[0].score)>float(current.score)+float(config.persistence)+float(config.switch_margin):start(choices[0],choices)
 func summary(language:String="")->Dictionary:
 	var lang:String=language if not language.is_empty() else ("en" if TranslationServer.get_locale().begins_with("en") else "zh")
@@ -514,3 +566,9 @@ func summary(language:String="")->Dictionary:
 	var voice:Dictionary=config.voices.get(tag(),config.voices.gentle)
 	var sentence:String=str(voice.prefix[1 if lang=="en" else 0])+ (" " if lang=="en" else "")+action_name(action,lang)+( ", " if lang=="en" else "，")+str(voice.because[1 if lang=="en" else 0])+(" " if lang=="en" else "")+("; " if lang=="en" else "、").join(lines)+("." if lang=="en" else "。")
 	return {"action":action,"sentence":sentence,"needs":words,"recent":history.slice(-int(config.panel_history)).duplicate(true)}
+
+func execute_provider(action:String,body:Callable)->bool:
+	if not eligible() or busy() or world._routes.has(id):return false
+	var choice:Dictionary={"action":action,"score":float(config.special_score)+float(config.scores.return),"reasons":["social"],"partner":""}
+	offer(action,body);start(choice,[choice])
+	return provider_running

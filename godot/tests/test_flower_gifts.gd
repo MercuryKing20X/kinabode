@@ -97,9 +97,12 @@ func run() -> void:
 	game.world.local_companion.set_enabled(true); game.world.local_companion.rng.seed=5
 	game.world.local_companion.last_walk=0
 	game.world.local_companion.preferences.weights={"flower_gift":2}
+	game.world.director.brains.codex.offer("flower_gift",func():return game.world.local_companion._start("flower_gift"))
 	game.world.local_companion.next_decision=game.world.local_companion.time
-	game.world.advance(.1)
-	check(game.world.local_companion.kind=="flower_gift", "normal local decision pipeline selects flower behavior")
+	for opportunity in 120:
+		game.world.advance(.1)
+		if game.world.director.brains.codex.current.get("action")=="flower_gift" and game.world.flower_gifts.active.get("actor_id")=="codex":break
+	check(game.world.director.brains.codex.current.get("action")=="flower_gift" and game.world.flower_gifts.active.get("actor_id")=="codex", "normal brain candidate starts actual flower behavior")
 	var capture := OS.get_environment("HABITAT_CAPTURE_DIR")
 	var captured := {}
 	for tick in range(800):

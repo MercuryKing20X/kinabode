@@ -24,13 +24,13 @@ func shelter(action:String)->Vector2:
 		for index in offsets.size():
 			var offset:Vector2=offsets[(index+maxi(0,first))%offsets.size()]
 			var p:Vector2=w.point(home)+offset
-			if w.walkable(home.region_id,p) and w.director.available_position(b.id,home.region_id,p) and p.distance_to(w.point(w.actors.human))>=float(b.config.rhythm.min_radius) and p.distance_to(w.point(w.actors.human))<=float(b.config.rhythm.night_home_radius if action=='night_rest' else b.config.rhythm.shelter_search):return p
+			if w.walkable(home.region_id,p) and w.director.available_position(b.id,home.region_id,p) and p.distance_to(w.point(w.actors.human))>=float(b.config.rhythm.min_radius) and p.distance_to(w.point(w.actors.human))<=minf(float(b.config.follow_max) if w.activities.following.has(b.id) else INF,float(b.config.rhythm.night_home_radius if action=='night_rest' else b.config.rhythm.shelter_search)):return p
 	var trees:Array=w.objects.values().filter(func(o):return o.get('kind','')=='tree' and o.get('status','')=='mature' and o.region_id==w.actors[b.id].region_id)
 	trees.sort_custom(func(a,c):return w.point(a).distance_to(w.point(w.actors[b.id]))<w.point(c).distance_to(w.point(w.actors[b.id])))
 	for tree in trees:
 		for offset in [Vector2(1.5,1.5),Vector2(-1.5,1.5)]:
 			var p:Vector2=w.point(tree)+offset
-			if w.walkable(tree.region_id,p) and w.director.available_position(b.id,tree.region_id,p) and p.distance_to(w.point(w.actors.human))>=float(b.config.rhythm.min_radius) and p.distance_to(w.point(w.actors.human))<=float(b.config.rhythm.shelter_search):return p
+			if w.walkable(tree.region_id,p) and w.director.available_position(b.id,tree.region_id,p) and p.distance_to(w.point(w.actors.human))>=float(b.config.rhythm.min_radius) and p.distance_to(w.point(w.actors.human))<=minf(float(b.config.follow_max) if w.activities.following.has(b.id) else INF,float(b.config.rhythm.shelter_search)):return p
 	return Vector2.INF
 func target(action:String)->Vector2:
 	if action in ['night_rest','rain_shelter']:return shelter(action)
