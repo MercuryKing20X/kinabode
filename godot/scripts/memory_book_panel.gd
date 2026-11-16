@@ -65,6 +65,10 @@ func refresh()->void:
 	if residents.is_empty():note.text=T("empty");return
 	var pool:Node=preload("res://scripts/connection_session_pool.gd").obtain(get_tree(),books.directory.get_base_dir())
 	reasoning_points.setup(books.directory.get_base_dir(),world.world_id if world!=null else pool.ledger_world,residents[partner.selected])
+	if books.latest_ai.has(residents[partner.selected]):
+		var quote:Dictionary=books.latest_ai[residents[partner.selected]]
+		var preview:=Label.new();preview.text=quote.text;preview.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;rows.add_child(preview)
+		button(rows,"记下来" if TranslationServer.get_locale().begins_with("zh") else "Remember these words",func():books.keep_ai_quote(residents[partner.selected]);refresh())
 	var layer:String=["facts","about_you","letters","","about_you"][tabs.selected]
 	var entries:Array=books.list_for(residents[partner.selected],layer)
 	if tabs.selected==4:
@@ -76,7 +80,7 @@ func refresh()->void:
 	note.text=str(entries.size())+" · "+str(offset+1)
 	for entry in entries.slice(offset,offset+10):
 		var row:=HBoxContainer.new();rows.add_child(row)
-		var label:=Label.new();label.text=Time.get_date_string_from_unix_time(int(entry.at))+" · "+books.render(entry);label.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;label.size_flags_horizontal=Control.SIZE_EXPAND_FILL;row.add_child(label)
+		var label:=Label.new();label.text=Time.get_date_string_from_unix_time(int(entry.at))+" · "+(books.quote_label(entry) if entry.params.get("ai_quote",false) else books.render(entry));label.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;label.size_flags_horizontal=Control.SIZE_EXPAND_FILL;row.add_child(label)
 		button(row,T("delete"),func():books.remove(entry.id);refresh())
 		var photo:String=books.photo_path(str(entry.photo_id if not entry.photo_id.is_empty() else entry.params.get("attachment","")))
 		if not photo.is_empty() and FileAccess.file_exists(photo):

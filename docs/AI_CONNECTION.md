@@ -1,3 +1,23 @@
+# v0.8：游戏原生 API 与本机模型（2026-11-16）
+
+连接页选「兼容 API / 本机模型」，填写完整接口地址、聊天/思考模型名和密钥。地址例如 `https://api.openai.com/v1`，也接受完整 `/v1/chat/completions`（规范为接口根路径）。云端必须 HTTPS；HTTP 仅允许 localhost、127.0.0.1、[::1]。拒绝 URL 内用户名、密码、查询参数、片段和换行。不要把密钥填在地址里。
+
+地址与模型保存在玩家数据目录 `connection-mode.cfg`；密钥单独保存在 `api-secret.cfg`，Unix 权限 0600。环境变量 `HABITAT_OPENAI_KEY` / `HABITAT_OPENAI_BASE_URL` 可覆盖。密钥不放在世界存档、记忆、提示词、日志、报告或仓库；自动备份白名单不含 api-secret.cfg。没有密钥明确报错；本机服务不鉴权时也需填占位值（如 ollama），不能把缺失密钥假称已连接。旧 macOS 钥匙串入口已改为跨平台本机配置，已有用户需要重新填写或使用环境变量。
+
+游戏原生 HTTPRequest 异步 GET `/models` 做无推理连接检查与模型列表刷新；POST `/chat/completions` 使用同属 Godot 的 HTTPClient 逐帧读取 SSE，因为 HTTPRequest 只在整包完成后回调。没有 Python、子进程、文件邮箱或 API 端会话文件。支持 UTF-8 分片、SSE usage、[DONE] 及返回普通 JSON 的兼容服务。发送 stream:true、stream_options.include_usage、max_tokens；不强制供应商特有 response_format。GPT/o 系列附 reasoning_effort（日常 low；维护/自主按原档位映射），其他模型使用服务端默认推理行为，不假称所有供应商均支持同一种推理强度。没有价格显示费用未知，没有完整 usage 保留原未知预留。并非宣称每家供应商都已实连。
+
+接口只收到固定完整人设、原宿主生成的意图小卡（含同一本 MemoryBooks 摘要、当前世界状态）与游戏内玩家原话。每轮无远端历史，断开、换源与重连重新取同一居民卡；不会读岛外文件。统一规则文本在 content/connection-instructions.txt；Codex 继续使用原意图协议，二者的权限都由同一宿主校验。卡片与引文是数据，不是权限。原档位、每人/全局每日上限、未知预留、停止所有 AI、身体不等 AI 均保留。取消直接关闭本人 HTTP 客户端，迟到文字/意图不再派发；超时保守保留未知成本。错误提示只用固定文本，不转发可能回显密钥的服务器错误正文；正常回复也过滤完整密钥回显。连接成功仅代表端点可达，不是已经推理。
+
+可选 Codex 仍需本机 Codex 与 Python 3，沿原 Python 桥/文件邮箱，不影响 API 或完全离线玩法；原外部 MCP 协议与测试保留。没有 Python 时 API 仍工作，连接页明确标注 Codex 的本机依赖。所有自动验收使用预建连接前注入的桩，真实调用必须另获明确授权且隔离。
+
+本机模型（本轮只测地址与协议桩，未安装或运行真实本机模型）：
+
+1. 从 [Ollama 官网](https://ollama.com/download) 安装，按官方说明启动并下载自己机器能运行的模型；填 `http://127.0.0.1:11434/v1`、已安装的精确模型名、占位密钥 `ollama`。本机端点完成推理，不需要云端付费；首次安装/下载模型需要网络。见 [OpenAI 兼容接口](https://docs.ollama.com/openai)。
+2. 或安装 [LM Studio](https://lmstudio.ai/)，下载并加载模型，在 Developer 页启动本地服务器；默认填 `http://127.0.0.1:1234/v1`，填已加载模型名。若服务启用鉴权就用它要求的密钥，否则使用占位值。见 [官方兼容接口说明](https://lmstudio.ai/docs/developer/openai-compat)。
+3. 接口若不支持本轮 SSE、usage 或参数，显示实际错误/未知用量；不偷偷改服务商、不回退调用另一家，不把本地台词冒充模型回复。
+
+---
+
 # 2026-11-11 每位伙伴的今日份额
 
 连接页每位伙伴直接显示“今日上限”、已用进度与设置框，token数可设，0表示不限。设置按稳定居民ID存本机 `connection-mode.cfg` 的原daily_limit，不写世界存档。用量从 `resident-intelligence-ui.cfg` 中各world/居民分区的真实账本只读汇总同一自然日，因此开始另一个世界不会绕过本人当日份额；不改写或迁移旧账本。

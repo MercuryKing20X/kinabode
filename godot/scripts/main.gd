@@ -266,6 +266,7 @@ func _ready() -> void:
 		backups.startup(bool(loaded.ok),bool(loaded.get("loaded",false)),world.days.day())
 	var binding := ConfigFile.new()
 	memory_books.setup(data_dir)
+	world.director.quote_books=weakref(memory_books)
 	memory_books.migrate(world)
 	memory_books.entry_deleted.connect(_forget_memory_source)
 	world.memories.notebook=memory_books
@@ -1496,6 +1497,7 @@ func _bound_companion_event(event: Dictionary, actor_id: String, scope := "direc
 				immediate.result=local_host_commands.last_execution.duplicate(true)
 			if not str(event.get("speech","")).is_empty():
 				var spoken:String=_persona_speech(event.speech,actor_id)
+				memory_books.offer_ai_quote(actor_id,world.world_id,str(event.turn_key),spoken,str(connection.get_meta("memory_provider","Codex")),world.days.day(),channel)
 				if steward!=null and not world.gomoku.active(actor_id):steward.speak(actor_id,spoken,channel)
 				else:_record_chat(channel,actor_id,spoken);view.say(spoken,"model",actor_id)
 		"observe": connection.reply(str(event.id), world.observe(actor_id, event.get("query", {})))

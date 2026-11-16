@@ -1,3 +1,9 @@
+# v0.8 原生传输边界（2026-11-16）
+
+OpenAI 兼容 API 从 CompanionLink 分流至 direct_api_transport.gd；不再写桥会话或派 Python。原 actor/scope/turn_key 屏障、Main 意图/记忆的 exact source 校验、World 唯一路线与物资流程均保持。SSE 只发布 speech_partial；intent_result 仅在 [DONE]、完整 JSON 与结构校验后发出。usage 先于意图校验记账；没有有效 usage 不造零消耗。原 MCP/schema/驱动不变，Codex 仍走可选旧桥。只发送游戏卡片，不提供文件/网络工具；密钥只在 Authorization，不进卡片。连接与安装说明见 AI_CONNECTION.md。
+
+---
+
 # 2026-11-12 v0.6收尾调度修正
 
 托管邀请在全队沿原World走向活动地点时发出，保留15秒确认与只有明确同意才移动/加入人类。同一目标补料只是子步骤：先真实收尾归队，只有整条目标/活动结束才启动原歇息计时。采木优先选择附近能容下全队真实目标的树群，未改产量、速度或参数。免费烤蘑菇不再被规划器库存门槛拦住。

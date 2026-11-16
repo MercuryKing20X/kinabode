@@ -1,5 +1,7 @@
 class_name ResidentDirector
 extends RefCounted
+var quote_books:WeakRef
+var quote_next:Dictionary={}
 signal local_speech_window(actor_id:String)
 const LocalText=preload("res://scripts/localization.gd")
 const OLD_LINES_PER_NEW:=3
@@ -212,6 +214,12 @@ func advance(delta: float) -> void:
 		if needs_due[a]!=needs_due[b]:return needs_due[a]
 		return routines[a].next_speech<routines[b].next_speech)
 	for candidate_id in ready:
+		# Saved AI words reuse the existing idle opportunity and all speech gates.
+		if not needs_due[candidate_id] and not model_controlled(candidate_id) and quote_books!=null and quote_books.get_ref()!=null and time>=float(quote_next.get(candidate_id,0)):
+			var books:RefCounted=quote_books.get_ref()
+			var quotes:Array=books.local_quotes(candidate_id)
+			if not quotes.is_empty() and local_dialogue.idle(candidate_id) and local_dialogue.say_spoken(candidate_id,books.quote_label(quotes[-1]),"ai_kept_quote"):
+				quote_next[candidate_id]=time+3600;return
 		# New content may replace only this resident's existing ordinary turn.
 		if try_new_spoken(str(candidate_id)):return
 		var before:int=serial

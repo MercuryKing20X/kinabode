@@ -35,7 +35,7 @@ gestation.praise_good,做得好,Well done
 gestation.praise_great,好厉害,Great job
 gestation.reasoning_policy,聊天与简单指令固定轻推理；规划、写信、总结与自主回合使用所选档位。,"Chat and simple commands use light reasoning; planning, letters, summaries and autonomy use this level."
 gestation.unknown_cost,: %d · 费用未知（接口未提供单价）,: %d · cost unknown (no provider price supplied)
-gestation.api_domain,接口地址（域名）,API address (domain)
+gestation.api_domain,接口地址（含 /v1 路径）,API address (including /v1 path)
 gestation.refresh_models,从接口刷新模型列表,Refresh models from provider
 gestation.list_failed,无法读取列表；请手动填写模型 ID。,Could not load models; enter a model ID.
 gestation.manual_model,手动模型 ID（列表未读取）,Model ID (list unavailable)

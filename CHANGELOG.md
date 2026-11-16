@@ -1,3 +1,8 @@
+# Unreleased — v0.8 connection
+
+- Added native OpenAI-compatible API connections and loopback URLs for Ollama/LM Studio, including incremental SSE, local credentials, provider-neutral resident cards and existing quota/cancel gates. Codex remains an optional local Python integration.
+- Added player-selected AI quotes in the memory book, with retained provenance and bounded offline speech through the original Director gates.
+
 # Changelog / 更新记录
 
 ## Unreleased — v0.7 round 6 / 未发布

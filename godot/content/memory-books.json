@@ -16,5 +16,6 @@
     "cat_contact",
     "anniversary",
     "goal_completed"
-  ]
+  ],
+  "ai_quote_limit": 64
 }

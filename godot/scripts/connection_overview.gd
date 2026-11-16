@@ -40,7 +40,7 @@ func refresh()->void:
 			banner_until=Time.get_ticks_msec()+3000
 		previous_states[id]=now
 	banner=Label.new();banner.text=banner_text if Time.get_ticks_msec()<banner_until else "";banner.add_theme_color_override("font_color",Color("ffdfa0"));rows.add_child(banner)
-	if advanced:_api_controls()
+	_api_controls()
 	var title:=Label.new();title.text=Text.text("memory.connections");rows.add_child(title)
 	var python_note:=Label.new();python_note.text=Text.text("release.optional_python");python_note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;rows.add_child(python_note)
 	for id in records:
@@ -61,7 +61,7 @@ func refresh()->void:
 		label.text=Text.text({"codex":"resident.snow","companion-2":"resident.skye","npc.mira":"resident.clem","npc.nora":"resident.raven"}.get(id,"resident.unknown"))+" · "+Text.text("memory.state."+str(state.state))+" · "+str(state.get("tokens","?"))+" token"
 		label.tooltip_text=str(state.get("error",state.get("greeting","")));row.add_child(label)
 		var api:=OptionButton.new();api.name="api_"+id;api.size_flags_vertical=Control.SIZE_SHRINK_CENTER
-		for text in [Text.text("simple.local"),"Codex","GPT API"]:api.add_item(text)
+		for text in [Text.text("simple.local"),"Codex",("兼容 API / 本机模型" if TranslationServer.get_locale().begins_with("zh") else "API / local model")]:api.add_item(text)
 		api.select(0 if pool.settings.get_value("selection",id,"local")=="local" and not pool.settings.get_value("enabled",id,false) else 2 if pool.settings.get_value("api",id,"codex")=="openai" else 1)
 		api.item_selected.connect(func(index):
 			if index==0:
@@ -149,42 +149,46 @@ func _api_controls()->void:
 	var save:=Button.new();save.text=Text.text("gpt.save_key");rows.add_child(save)
 	var status:=Label.new();rows.add_child(status)
 	save.pressed.connect(func():
-		if not OS.get_environment("HABITAT_DATA_DIR").is_empty():status.text=Text.text("gpt.test_key");key.clear();return
 		var secret:=key.text.strip_edges();key.clear()
 		if secret.is_empty():return
-		var output:Array=[]
-		var code:=OS.execute("/usr/bin/security",PackedStringArray(["add-generic-password","-U","-s","youqi.openai","-a","api","-w",secret]),output,false)
-		if code==0:pool.settings.set_value("openai","key_suffix",secret.right(4));pool.persist()
-		status.text=(Text.text("gpt.saved")+" ••••"+secret.right(4)) if code==0 else Text.text("gpt.key_failed")
+		var saved:bool=preload("res://scripts/api_credentials.gd").save_key(directory,secret)
+		status.text=Text.text("gpt.saved") if saved else Text.text("gpt.key_failed")
 	)
 	var endpoint_label:=Label.new();endpoint_label.text=Text.text("gestation.api_domain");rows.add_child(endpoint_label)
-	var endpoint:=LineEdit.new();endpoint.name="GPTEndpoint";endpoint.text=str(pool.settings.get_value("openai","base","https://api.openai.com/v1")).trim_prefix("https://").split("/")[0];rows.add_child(endpoint)
-	var shown_domain:String=endpoint.text
+	var endpoint:=LineEdit.new();endpoint.name="GPTEndpoint";endpoint.text=str(pool.settings.get_value("openai","base","https://api.openai.com/v1"));rows.add_child(endpoint)
 	var save_endpoint:Callable=func(value):
-		if str(value).strip_edges()==shown_domain:return
-		var base:String=str(value).strip_edges()
-		if not base.begins_with("https://"):base="https://"+base
-		if base.trim_prefix("https://").find("/")==-1:base+="/v1"
-		if base==str(pool.settings.get_value("openai","base","https://api.openai.com/v1")):return
-		pool.settings.set_value("openai","base",base);pool.settings.erase_section_key("openai","models");pool.persist()
+		var base:String=preload("res://scripts/api_credentials.gd").endpoint(str(value))
+		if base.is_empty():
+			status.text="地址无效 / Invalid address";return
+		pool.settings.set_value("openai","base",base);pool.persist()
 	endpoint.text_submitted.connect(save_endpoint)
 	endpoint.focus_exited.connect(func():save_endpoint.call(endpoint.text))
 	var fetch:=Button.new();fetch.text=Text.text("gestation.refresh_models");rows.add_child(fetch)
 	fetch.pressed.connect(func():
-		var output:Array=[]
-		var python:=OS.get_environment("HABITAT_PYTHON")
-		if python.is_empty():python="/usr/bin/python3"
-		OS.execute(python,PackedStringArray([ProjectSettings.globalize_path("res://bridge/openai_companion.py"),"--models","--base",str(pool.settings.get_value("openai","base","https://api.openai.com/v1"))]),output,false)
-		var result:Variant=JSON.parse_string("".join(output))
-		if result is Dictionary and result.has("models"):pool.settings.set_value("openai","models",result.models);pool.persist();refresh()
-		else:status.text=str(result.get("error",Text.text("gestation.list_failed"))) if result is Dictionary else Text.text("gestation.list_failed")
+		var credentials=preload("res://scripts/api_credentials.gd")
+		var secret:String=credentials.key(directory)
+		var base:String=credentials.endpoint(str(pool.settings.get_value("openai","base","https://api.openai.com/v1")))
+		if secret.is_empty() or base.is_empty():status.text="请填写地址和密钥 / Set address and key";return
+		var request:=HTTPRequest.new();add_child(request);request.timeout=15;request.max_redirects=0;request.body_size_limit=2097152
+		request.request_completed.connect(func(result,code,_headers,bytes):
+			request.queue_free()
+			var parser:=JSON.new();var models:Array=[]
+			if result==HTTPRequest.RESULT_SUCCESS and code==200 and parser.parse(bytes.get_string_from_utf8())==OK and parser.data is Dictionary and parser.data.get("data") is Array:
+				for item in parser.data.data:
+					if item is Dictionary and item.get("id") is String and item.id.length()<200 and not secret in item.id:models.append(item.id)
+			if models.is_empty():
+				if is_instance_valid(status):status.text=Text.text("gestation.list_failed")
+				return
+			pool.settings.set_value("openai","models",models);pool.persist();refresh())
+		if request.request(base+"/models",PackedStringArray(["Authorization: Bearer "+secret,"User-Agent: Mozilla/5.0"]))!=OK:
+			request.queue_free();status.text=Text.text("gestation.list_failed")
 	)
 	for field in ["chat","thinking"]:
 		var row:=HBoxContainer.new();rows.add_child(row)
 		var label:=Label.new();label.text=Text.text("gpt."+field);row.add_child(label)
 		var models:Array=pool.settings.get_value("openai","models",[])
 		if models.is_empty():
-			var manual:=LineEdit.new();manual.name="GPTManual_"+field;manual.text=pool.settings.get_value("openai",field,"gpt-6.1-terra");manual.placeholder_text=Text.text("gestation.manual_model");manual.text_changed.connect(func(value):pool.settings.set_value("openai",field,value);pool.persist());row.add_child(manual)
+			var manual:=LineEdit.new();manual.size_flags_horizontal=Control.SIZE_EXPAND_FILL;manual.name="GPTManual_"+field;manual.text=pool.settings.get_value("openai",field,"gpt-6.1-terra");manual.placeholder_text=Text.text("gestation.manual_model");manual.text_changed.connect(func(value):pool.settings.set_value("openai",field,value);pool.persist());row.add_child(manual)
 		else:
 			var picker:=OptionButton.new();picker.name="GPTModel_"+field
 			for model in models:picker.add_item(str(model))

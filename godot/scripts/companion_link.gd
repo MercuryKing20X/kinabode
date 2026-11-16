@@ -5,7 +5,7 @@ const LocalText=preload("res://scripts/localization.gd")
 
 signal event_received(event: Dictionary)
 
-const FILES: Array[String] = ["openai_companion.py", "intent_companion.py", "companion.py", "file_transport.py", "action_contract.py", "model_actions_mcp.py", "codex_high_budget.json"]
+const FILES: Array[String] = ["intent_companion.py", "companion.py", "file_transport.py", "action_contract.py", "model_actions_mcp.py", "codex_high_budget.json"]
 var bridge_files: Array[String] = FILES.duplicate()
 var helper_filename := "companion.py"
 var runtime_namespace := "runtime"
@@ -34,6 +34,21 @@ var _shutting_down: bool = false
 var turn_kind := "chat"
 var turn_key := ""
 var capability_error := ""
+var direct_api:Node
+func _is_direct_api()->bool:
+	var base:=OS.get_environment("HABITAT_DATA_DIR")
+	if base.is_empty():base=ProjectSettings.globalize_path("user://")
+	return preload("res://scripts/api_credentials.gd").read_settings(base).get_value("api",resident_id,"codex")=="openai"
+func _direct()->Node:
+	if not is_instance_valid(direct_api):
+		direct_api=preload("res://scripts/direct_api_transport.gd").new();add_child(direct_api)
+		direct_api.event_received.connect(_accept_event)
+	_data_dir=OS.get_environment("HABITAT_DATA_DIR")
+	if _data_dir.is_empty():_data_dir=ProjectSettings.globalize_path("user://")
+	direct_api.directory=_data_dir;direct_api.resident_id=resident_id;direct_api.scope=conversation_scope
+	set_meta("memory_provider","OpenAI-compatible")
+	persona_card=preload("res://scripts/persona_cards.gd").card(resident_id,"",_data_dir)
+	return direct_api
 var autonomy_tool_limit := 0
 var autonomy_tool_calls := 0
 
@@ -46,6 +61,11 @@ func send_autonomy(context: Dictionary,level: String,limits: Dictionary,key: Str
 	if JSON.stringify(bounded).to_utf8_buffer().size()>4096:return false
 	if context.has("lifeblood_memory") and (level!="lifeblood" or JSON.stringify(context.lifeblood_memory).to_utf8_buffer().size()>80000):return false
 	if _daily_quota_reached():return false
+	if _is_direct_api():
+		turn_kind="autonomy_event";turn_key=key;_generation+=1;_busy=true
+		var accepted:bool=_direct().send({"kind":"autonomy_event","world":context.duplicate(true),"level":level,"limits":limits,"turn_key":key},persona_card)
+		if not accepted:_busy=false
+		return accepted
 	if not _start():return false
 	turn_kind="autonomy_event";turn_key=key;autonomy_tool_limit=int(limits.get("tools",0));autonomy_tool_calls=0;_generation+=1;_busy=true;_pending_ids.clear()
 	var accepted: bool=_send({"kind":"autonomy_event","world":context.duplicate(true),"level":level,"limits":limits.duplicate(),"turn_key":key})
@@ -70,6 +90,8 @@ func _error(message: String) -> void:
 	_emit({"kind": "error", "message": message})
 
 func _start() -> bool:
+	if _is_direct_api():
+		_busy=true;return _direct().connect_api()
 	if _pid > 0 and OS.is_process_running(_pid):
 		if _shutting_down:
 			_error(LocalText.text("connection.companion_link.the_previous_connection_is_closing_send_again_in_a"))
@@ -116,14 +138,10 @@ func _start() -> bool:
 	if not FileAccess.file_exists(python):
 		_error(LocalText.text("connection.companion_link.python_3_was_not_found_companion_connections_are_unavailable"))
 		return false
-	var api_settings:=ConfigFile.new();api_settings.load(_data_dir.path_join("connection-mode.cfg"))
-	if api_settings.get_value("api",resident_id,"codex")=="openai":helper_filename="openai_companion.py"
 	var conversation_dir := session_data_directory(_data_dir)
 	DirAccess.make_dir_recursive_absolute(conversation_dir)
 	persona_card=preload("res://scripts/persona_cards.gd").card(resident_id,"",_data_dir)
 	_write_atomic(conversation_dir.path_join("persona.json"),persona_card)
-	if helper_filename=="openai_companion.py":
-		_write_atomic(conversation_dir.path_join("openai-settings.json"),{"base":api_settings.get_value("openai","base","https://api.openai.com/v1"),"chat":api_settings.get_value("openai","chat","gpt-6.1-terra"),"thinking":api_settings.get_value("openai","thinking","gpt-6.1-terra")})
 	var args := PackedStringArray([
 		"-u", runtime_dir.path_join("file_transport.py"),
 		"--session-dir", _session_dir, "--data-dir", conversation_dir,
@@ -157,6 +175,10 @@ func send_message(text: String, world: Dictionary) -> void:
 		return
 	if _daily_quota_reached():
 		_error(LocalText.text("steward.limit"));return
+	if _is_direct_api():
+		_generation+=1;turn_kind="chat";turn_key=_new_token();_busy=true
+		if not _direct().send({"kind":"chat","text":text.left(4000),"world":world.duplicate(true),"level":world.get("intelligence_level","low"),"turn_key":turn_key},persona_card):_busy=false
+		return
 	if not _start():
 		return
 	_generation += 1
@@ -189,7 +211,8 @@ func reply(request_id: String, result: Dictionary) -> void:
 	answer(request_id, result)
 
 func cancel_turn() -> void:
-	print("CANCEL_TURN_TRACE ",JSON.stringify({"resident":resident_id,"turn_key":turn_key,"turn_kind":turn_kind,"stack":get_stack()}))
+	if is_instance_valid(direct_api):
+		_generation+=1;direct_api.cancel();return
 	if not _busy and _pending_ids.is_empty():return
 	if _pid <= 0:
 		_busy = false
@@ -207,6 +230,8 @@ func cancel_turn() -> void:
 	_send({"kind": "cancel"})
 
 func shutdown() -> void:
+	if is_instance_valid(direct_api):
+		direct_api.close();_generation+=1;_busy=false;handshake_ready=false;turn_key="";return
 	if _pid <= 0 or _shutting_down:
 		return
 	_shutting_down = true
@@ -221,10 +246,6 @@ func _exit_tree() -> void:
 	shutdown()
 
 func _send(message: Dictionary) -> bool:
-	if helper_filename=="openai_companion.py" and message.get("kind","") in ["chat","autonomy_event"]:
-		var models:=ConfigFile.new();models.load(_data_dir.path_join("connection-mode.cfg"))
-		message["api_chat_model"]=models.get_value("openai","chat","gpt-6.1-terra")
-		message["api_thinking_model"]=models.get_value("openai","thinking","gpt-6.1-terra")
 	_sequence += 1
 	var envelope := {"session": _session, "generation": _generation, "id": _new_token(), "message": message}
 	var filename: String = "%010d.json" % _sequence
@@ -308,6 +329,7 @@ func _drain_events() -> void:
 func _accept_event(event: Dictionary) -> void:
 	if event.get("code")=="autonomy_unsupported":capability_error=str(event.get("message",LocalText.text("connection.companion_link.unsupported_autonomy_level")))
 	if event.has("turn_key") and not str(event.turn_key).is_empty() and event.turn_key!=turn_key:return
+	if is_instance_valid(direct_api) and event.get("kind")=="usage" and event.get("model") is String:set_meta("memory_provider","API · "+str(event.model))
 	event=event.duplicate(true);event["autonomy"]=turn_kind=="autonomy_event";event["turn_key"]=turn_key
 	var kind: String = str(event.get("kind", ""))
 	if _cancelling:

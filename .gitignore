@@ -22,3 +22,7 @@ Thumbs.db
 tmp/
 output/
 *.log
+
+# Player-local API credentials and endpoint preferences
+api-secret.cfg
+connection-mode.cfg

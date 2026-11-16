@@ -195,7 +195,7 @@ run([ENGINE,'--headless','--editor','--path','godot','--import','--quit'])
 run([sys.executable,"scripts/test_life_protocol.py"])
 run([sys.executable,"scripts/test_intent_companion.py"])
 run([sys.executable,"scripts/test_persona_cards.py"])
-for visible_script in ["test_simple_connection_input.gd", "test_title_fit_input.gd", "test_about_document.gd"]:
+for visible_script in ["test_ai_quote_ui.gd", "test_simple_connection_input.gd", "test_title_fit_input.gd", "test_about_document.gd"]:
     with temporary_directory(prefix="youqi-simple-") as directory:
         run([ENGINE,"--path","godot","--script","tests/"+visible_script],dict(os.environ,HABITAT_DATA_DIR=directory))
 for storage_script in sorted((ROOT / "godot/tests").glob("test_chess*.gd")) + sorted((ROOT / "godot/tests").glob("test_*storage*.gd")) + sorted((ROOT / "godot/tests").glob("test_jieqi*.gd")) + sorted((ROOT / "godot/tests").glob("test_visible_locale*.gd")):
@@ -210,7 +210,7 @@ for script in ['test_foundation.gd','test_slice.gd','test_editor.gd','test_share
         run([ENGINE,'--headless','--path','godot','--script','tests/'+script],dict(os.environ,HABITAT_DATA_DIR=directory))
 with temporary_directory(prefix='youqi-test-') as directory:
     run([ENGINE,'--headless','--path','godot','--script','tests/test_conversation_link.gd'],dict(os.environ,HABITAT_DATA_DIR=directory))
-for script in ['test_return_visit.py','test_speech_quiet.py','test_farm_commands.py','test_character_face_directions.py','test_intelligence_content.py','test_read_bridge.py','test_model_bridge.py','test_conversation_bridge.py','test_shared_companion.py','test_codex_connection_probe.py','test_codex_unix_websocket.py','test_action_adapters.py','test_external_adapter.py','test_gomoku_adapter.py','test_cooking_adapter.py','test_journal_adapter.py','test_homestead_adapter.py','test_autonomy_bridge.py','test_overnight_prompt.py','test_proposals_adapter.py','test_promises_adapter.py','test_gifts_adapter.py','test_documentation_migration.py','test_gomoku_speech_contract.py','test_v3_reset.py']:
+for script in ['test_return_visit.py','test_speech_quiet.py','test_farm_commands.py','test_character_face_directions.py','test_intelligence_content.py','test_read_bridge.py','test_model_bridge.py','test_conversation_bridge.py','test_shared_companion.py','test_direct_api.py','test_codex_connection_probe.py','test_codex_unix_websocket.py','test_action_adapters.py','test_external_adapter.py','test_gomoku_adapter.py','test_cooking_adapter.py','test_journal_adapter.py','test_homestead_adapter.py','test_autonomy_bridge.py','test_overnight_prompt.py','test_proposals_adapter.py','test_promises_adapter.py','test_gifts_adapter.py','test_documentation_migration.py','test_gomoku_speech_contract.py','test_v3_reset.py']:
     run([sys.executable,'scripts/'+script])
 with temporary_directory(prefix='youqi-test-') as directory:
     run([ENGINE,'--headless','--path','godot','--script','tests/test_forest.gd'],dict(os.environ,HABITAT_DATA_DIR=directory))
