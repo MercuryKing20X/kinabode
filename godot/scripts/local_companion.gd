@@ -116,7 +116,7 @@ func advance(delta: float) -> void:
 		# The brain chooses; this legacy routine retains only the shared speech outlet.
 		if world.director.brain_social!=null and world.director.brain_social.by_actor.has(ID):return
 		if chatter and not held and not world.work.jobs.has(ID) and time>=next_speech and not world.activities.blocked(ID,false) and not world.days.defer_idle(ID):
-			if not world.director.memory_reminders.try_speak(ID) and not world.relationships.try_event(ID) and not world.wishes.try_event(ID) and not world.personality.try_event(ID):_speak("near")
+			if not try_need_speech() and not world.director.memory_reminders.try_speak(ID) and not world.relationships.try_event(ID) and not world.wishes.try_event(ID) and not world.personality.try_event(ID):_speak("near")
 		return
 	# DIRECTION: 托管时其它系统不能直接让人走或打断。
 	if not world.activities.squad_leader.is_empty():return
@@ -331,6 +331,16 @@ func _context() -> String:
 			if int(object.get("stage_index", 0)) > 0: return "building"
 		if object.kind == "tree" and object.status == "mature": return "trees"
 	return "ambient"
+
+func try_need_speech()->bool:
+	var need:Dictionary=needs.choose(world,ID)
+	if need.is_empty():return false
+	# This is still the resident's ordinary turn: keep the original earned
+	# LocalDialogue substitution before delivering its next old need line.
+	if world.director.try_new_spoken(ID):return true
+	var before:int=world.director.serial
+	_speak("need_satisfied" if need.kind=="satisfied" else "near")
+	return world.director.serial>before
 
 func _speak(context: String = "", explicit: bool = false) -> void:
 	if not explicit and (not chatter or time < next_speech): return

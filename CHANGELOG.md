@@ -1,6 +1,29 @@
 # Changelog / 更新记录
 
-## Unreleased — v0.7 polish 5 / 未发布
+## Unreleased — v0.7 round 6 / 未发布
+
+- Restore natural need bubbles within the original ordinary speech opportunity; keep earned LocalDialogue turns, factual reminders and their existing gates. / 恢复原普通发言机会中的需求气泡，保留本地对话“三旧换新”额度、事实提醒与原闸门。
+- Order equally old needs deterministically and restore true catch thanks while pending fish still blocks idle movement. Bubble clicks use original host commands and real fishing. / 同龄需求确定性排序，待安置真鱼仍阻止闲暇移动但可说真实感谢；点击仍走原指令和真实钓鱼。
+- Admit ordinary host-interaction approaches only when the speech gate opens by the next decision; retain priority for committed host-event replies. Morning rhythm returns without changing scores or content parameters. / 普通主动互动只在原发言冷却将于下一决策前结束时参与候选，真实主角事件反馈仍优先；不调分值或内容参数恢复晨间节律。
+
+Validation / 验证：first complete suite **405/406**; original health and brain failures passed. Restored the original earned-dialogue substitution after the remaining LocalDialogue regression; seven focused commands then passed. Second and final complete suite **406/406**, zero failures (5209.2s); no third full run. / 第二遍也是最后一遍完整全套406/406，零失败（5209.2秒），未启动第三遍。
+
+Balance / 平衡：one-day banter **4.688%**, small cooperation **5.067%**; full/slightly hungry food waiting **0%**; signature activities remain in the top five; proactive host interactions **7/7/8/5** in one day; original exact same-seed checks pass. / 一天拌嘴4.688%、小合作5.067%，饱饱/有点饿等饭0%，招牌前五、主动互动7/7/8/5及原同种子完整一致断言通过。
+
+No new content, balance tuning, real model calls, artwork or player-data edits. Not released or merged. / 无新内容、平衡调参、真实模型调用、美术或玩家档修改；未发布、未合并。
+
+### Known issues / 已知问题
+
+Three historical standalone brain probes outside the registered 406-command suite fail both in the round-five base and in the earlier round-six probe run, with matching assertions. They remain diagnostics to investigate, not passing acceptance evidence. / 三个未登记进406套件的历史独立探针，在第五轮基线与本轮收尾前探针版本均同断言失败，保留调查，不称验收通过。
+
+| Probe / 探针 | Failing observation / 未通过观察 |
+|---|---|
+| `test_brain_interactions_input.gd` | Early idle/rain interaction window. / 早期站定互动窗口。 |
+| `test_brain_polish_input.gd` | Blue's night-rest arrival after a real meal. / 真实用餐后小蓝夜休到达。 |
+| `test_brain_social_contract.gd` | Legacy pair-sweep arrival, host-absent activity and peer comment. / 旧双人扫地会合、主角离开后的共同活动及点评。 |
+
+## v0.7 round five validation history / 第五轮历史记录
+
 
 - Restore legacy-save initialization and loading; reconstructed resort-v1 fixtures preserve owned carry, storage counts and retained memories. / 修复旧迁移World的大脑初始化与实际读档，复刻旧档核对本人背包、仓库及保留记忆。
 - Reconnect daily gestures, schedules, relationship rewards, memory reminders, moods, return visits, cross-island following and hungry onlookers through the resident brain and original executors. / 每日小事件、日程、关系奖励、回忆、情绪、回访、跨岛跟随及火边旁观接回大脑，沿用原路线、座位和任务执行器。

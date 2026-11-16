@@ -114,6 +114,11 @@ func deliver_pending()->bool:
 	if fact.get("kind","")!="host_reply":next_delivery=brain.clock+float(data.personal_seconds)
 	return true
 func candidate()->Dictionary:
+	# Admit ordinary speech only when its original gate opens by the next
+	# decision. A small approach can then arrive in time, without reserving
+	# the body for an entire personal cooldown. Real host facts keep priority.
+	var r:RefCounted=w.director.routines[brain.id]
+	if pending.get("kind","")!="host_reply" and maxf(r.next_speech,w.director.speech_after)>brain.clock+float(brain.config.decision_seconds):return {}
 	if not w.director.routines[brain.id].chatter or (w.dark!=null and w.dark.here()) or pending.is_empty() or (pending.get("kind","")!="host_reply" and brain.clock<next_delivery) or brain.distance()>12:return {}
 	return {"action":"host_interaction","score":float(brain.config.host_replies.score) if pending.get("kind","")=="host_reply" else float(data.score),"reasons":["interaction_"+str(pending.scene)],"partner":"","interaction":pending.duplicate(true)}
 func line(scene:String)->Dictionary:

@@ -172,7 +172,7 @@ func advance(delta: float) -> void:
 	for id in brains:
 		var r:RefCounted=routines[id]
 		if brains[id].active() and not brains[id].provider_running and str(brains[id].current.get("coop","")).is_empty() and r.enabled and r.chatter and not r.held and time>=r.next_speech and not world.days.defer_idle(id):
-			if not memory_reminders.try_speak(id) and old_spoken_at.has(id) and float(moods.changed_at.get(id,0))>0 and float(old_spoken_at.get(id,-INF))<float(moods.changed_at.get(id,-INF)):r._speak("near")
+			if not r.try_need_speech() and not memory_reminders.try_speak(id) and old_spoken_at.has(id) and float(moods.changed_at.get(id,0))>0 and float(old_spoken_at.get(id,-INF))<float(moods.changed_at.get(id,-INF)):r._speak("near")
 	idle_candidates.clear();collecting_idle=true
 	for id in routines:
 		var routine: RefCounted = routines[id]

@@ -76,3 +76,22 @@ anniversary and retained preference reminders can use an opening cooldown.
 The later routine pass receives zero elapsed time for active brains; it does
 not advance that same clock twice. Clickable need bubbles avoid the fire's
 actual hit rectangle, preserving separate fire and need input.
+
+## Remaining speech regressions / 发言回归收尾
+
+Need bubbles retain the ordinary local speech outlet. Within an existing idle
+speech opportunity, a due need competes before generic fact reminders; special
+retained-memory windows and already accepted peer replies keep their priority.
+The original earned three-old-lines LocalDialogue substitution still precedes
+this ordinary old-line opportunity. A real newly held catch may deliver
+`need_satisfied` through the original
+thank-you exception even while pending fish blocks idle movement. Clicking the
+bubble still invokes the original host command and real fishing executor.
+
+Host interaction observations remain pending while the original personal or
+village speech gate is closed. They become activity candidates when that gate
+will open by the next decision, allowing the existing short approach without
+reserving the resident's body for a full cooldown. Real committed host-event
+feedback retains its original priority. This keeps ordinary rhythm activities available without changing utility scores,
+weights, gaps, scene limits or content. Delivery still repeats the original
+validation; a candidate is never proof of delivered speech.

@@ -38,7 +38,9 @@ func choose(world:RefCounted,id:String)->Dictionary:
 		if tag=="quiet":kinds.push_front("chess")
 		if tag=="gentle" and world.cat.discovered:kinds.push_front("cat")
 	# Oldest delivered need first; unserved candidates cannot starve behind chess.
-	kinds.sort_custom(func(a,b):return float(last.get(id+":"+a,-INF))<float(last.get(id+":"+b,-INF)))
+	kinds.sort_custom(func(a,b):
+		var at:float=float(last.get(id+":"+a,-INF));var bt:float=float(last.get(id+":"+b,-INF))
+		return str(a)<str(b) if at==bt else at<bt)
 	for kind in kinds:
 		var key:String=id+":"+kind
 		if time-float(last.get(key,-180))<180:continue
