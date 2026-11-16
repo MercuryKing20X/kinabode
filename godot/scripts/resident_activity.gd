@@ -11,6 +11,7 @@ var squad_leader:=""
 var explicit_selected:Dictionary={}
 var command_busy:Callable
 func commanded(id:String)->bool:
+	if world.flower_creation!=null and world.flower_creation.active(id):return true
 	# A real ingredient approach is owned work even though it has no WorkSystem job.
 	return (world.ingredients!=null and world.ingredients.resident_pending.has(id) and world.hunger.rank(id)<3) or (command_busy.is_valid() and command_busy.call(id))
 var default_follow_excluded:Dictionary={}
@@ -136,7 +137,7 @@ func advance(delta: float) -> void:
 	for id in followers:
 		if not world.actors.has(id):following.erase(id);continue
 		if id==squad_leader:continue
-		if command_busy.is_valid() and command_busy.call(id):continue
+		if (world.flower_creation!=null and world.flower_creation.active(id)) or (command_busy.is_valid() and command_busy.call(id)):continue
 		if suspended_follow.has(id) or blocked(id,false) or world.work.jobs.has(id) or world.farms.active(id) or world.hunger.rushes.has(id):
 			world.hunger.clear_follow(id);continue
 		world.hunger.follow(id)

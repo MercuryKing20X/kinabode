@@ -15,7 +15,8 @@
     "gomoku_match",
     "cat_contact",
     "anniversary",
-    "goal_completed"
+    "goal_completed",
+    "gift_flower"
   ],
   "ai_quote_limit": 64
 }

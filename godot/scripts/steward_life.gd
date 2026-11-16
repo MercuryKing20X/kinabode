@@ -15,7 +15,7 @@ func eligible(g:Node,id:String,planned:bool=false)->bool:
 	for plan in g.intentions.plans.values():
 		if id in plan.get("gather_guests",[]):return false
 	var r:RefCounted=w.director.routines[id]
-	return not g.steward.meal_locked(id) and w.hunger.rank(id)<3 and not g.intentions.plans.has(id) and (not w.work.jobs.has(id) or r.owns_job()) and not w.farms.active(id) and not w.projects.active(id) and not w.activities.members.has(id) and not w.activities.held.get(id,false) and not r.held and r.enabled and w.director.time>=r.visual_quiet_until and not g.questions.has(id) and not g.group_questions.has(id) and not g._resident_chat_busy(id) and (not w._routes.has(id) or r.owns_route or w.activities.following.has(id))
+	return not g.steward.meal_locked(id) and w.hunger.rank(id)<3 and not g.intentions.plans.has(id) and not w.flower_creation.active(id) and (not w.work.jobs.has(id) or r.owns_job()) and not w.farms.active(id) and not w.projects.active(id) and not w.activities.members.has(id) and not w.activities.held.get(id,false) and not r.held and r.enabled and w.director.time>=r.visual_quiet_until and not g.questions.has(id) and not g.group_questions.has(id) and not g._resident_chat_busy(id) and (not w._routes.has(id) or r.owns_route or w.activities.following.has(id))
 func tick(g:Node,delta:float)->void:
 	var w:RefCounted=g.world
 	if next_circle==0:rng.randomize();next_circle=w.forest.clock+rng.randf_range(300,600)

@@ -9,7 +9,7 @@ var world:RefCounted:
 var plans:Dictionary={}
 var history:Array=[]
 var last_failure:Dictionary={}
-const ACTIONS=["assemble","fish","light","roast","invite","plant","harvest","water","chop","gather","build","chess","go_to","wander","sit","lounge","pool","swing","hold_cat","pet_cat","stars","home","follow","unfollow","hand_over","stop"]
+const ACTIONS=["assemble","fish","light","roast","invite","plant","harvest","water","chop","gather","build","chess","go_to","wander","sit","lounge","pool","swing","hold_cat","pet_cat","stars","home","follow","unfollow","hand_over","stop","place_flower","arrange_flowers","pick_flower","gift_flower","trade_flowers"]
 func setup(source:Node)->void:
 	host=weakref(source)
 	for who in world.director.brains:
@@ -34,6 +34,7 @@ func chat_only(text:String)->bool:
 	return terms._chat_markers.any(func(word):return probe.contains(str(word))) and not terms._request_overrides.any(func(word):return probe.contains(str(word)))
 func is_request(text:String)->bool:
 	if negated(text) or chat_only(text):return false
+	if ["摆花","摆个","摆字","送我花","换花","arrange flowers","place a rose","give me a rose","trade roses"].any(func(term):return text.to_lower().contains(term)):return true
 	var terms:Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://content/resident-intentions.json"))
 	return terms.keys().filter(func(key):return not str(key).begins_with("_")).any(func(key):return terms[key].any(func(word):return game.local_host_commands.parser._contains_alias(text.to_lower(),str(word))))
 func understand(text:String,id:String)->Array:
@@ -69,6 +70,7 @@ func understand(text:String,id:String)->Array:
 	return steps.slice(0,5)
 func cancel(id:String)->void:
 	var p:Dictionary=plans.get(id,{})
+	if str(p.get("current",{}).get("action","")) in world.flower_creation.ACTIONS:world.flower_creation.cancel(id)
 	for who in p.get("escorts",{}):
 		var owned:Dictionary=p.escorts[who]
 		if world._routes.has(who) and owned.has("route") and is_same(world._routes[who],owned.route):world._routes.erase(who)
@@ -82,13 +84,15 @@ func _submit_body(id:String,steps:Array,channel:String,adopt:Dictionary={},spons
 	if sponsor.is_empty() and (game.steward.authorized(id) or steps.any(func(step):return step is Dictionary and (step.has("actor_ids") or step.has("assignments")))):return game.steward.assign(id,steps,channel)
 	if steps.is_empty() or steps.size()>5:return world._error("invalid_intent_count")
 	for step in steps:
-		if not step is Dictionary or step.keys().any(func(k):return k not in ["action","text","target_id","item_id","crop_id","x","y","region_id","guest_ids","replace"]):return world._error("invalid_intention")
+		if not step is Dictionary or step.keys().any(func(k):return k not in ["action","text","target_id","item_id","crop_id","x","y","region_id","guest_ids","replace","color","pattern","quantity","position"]):return world._error("invalid_intention")
 		if not str(step.get("action","")) in ACTIONS:return world._error("unknown_intention")
-		for field in ["text","target_id","item_id","crop_id","region_id"]:
+		for field in ["text","target_id","item_id","crop_id","region_id","color","pattern"]:
 			if step.has(field) and (not step[field] is String or step[field].length()>400):return world._error("invalid_intention")
 		if step.action in ["plant","harvest","water","chop","gather","hand_over"] and step.has("text") and not str(step.text).is_empty():
 			var parsed:Dictionary=game.local_host_commands.parser.parse_command(world,step.text,[id])
 			if not parsed.get("ok",false) or (parsed.actor_ids!=[id] and sponsor.is_empty()):return world._error("own_actor_only")
+		if step.has("quantity") and (not world._integer(step.quantity) or step.quantity<1 or step.quantity>800):return world._error("invalid_intention")
+		if step.has("position") and not world.catalog._pair(step.position):return world._error("invalid_intention")
 		if step.has("guest_ids") and step.action not in ["roast","invite","pool","lounge","swing","stars","chess","go_to"]:return world._error("invalid_intention")
 		if step.has("guest_ids") and (not step.guest_ids is Array or step.guest_ids.size()>world.actors.size()-1 or step.guest_ids.size()!=Array(step.guest_ids.reduce(func(dict,who):dict[who]=true;return dict,{}).keys()).size() or step.guest_ids.any(func(who):return who=="human" or not world.actors.has(who))):return world._error("invalid_participant")
 	if plans.has(id):return world._error("plan_busy")
@@ -115,6 +119,7 @@ func _fail(id:String,reason:String)->void:
 	if game.steward.active:game.steward.body_director.failure(game,id,reason,plans.get(id,{}))
 	last_failure[id]=reason
 	var p:Dictionary=plans.get(id,{})
+	if str(p.get("current",{}).get("action","")) in world.flower_creation.ACTIONS:world.flower_creation.cancel(id)
 	if world.farms.active(id) and not str(p.get("farm_order_id","")).is_empty() and world.farms.orders.get(id,{}).get("host_order_id","")==p.farm_order_id:world.farms.pause(id)
 	if not str(p.get("job_id","")).is_empty() and world.work.jobs.get(id,{}).get("id")==p.job_id:
 		if world.farms.active(id):world.farms.pause(id)
@@ -158,6 +163,7 @@ func _next(id:String)->void:
 	if action=="roast" and step.get("item_id","")=="single:fish":step.item_id="fish"
 	if action not in ["hold_cat","pet_cat"] and world.cat.carrier==id:world.cat.interact(id,"release")
 	var held_fish:Dictionary=world.fishing.held(id)
+	if action in world.flower_creation.ACTIONS and not held_fish.is_empty():_fail(id,"pending_fish");return
 	var needs_placement:bool=action not in ["light","invite","fish","go_to","wander","follow","unfollow","home","stop","roast"] or (action=="roast" and str(step.get("item_id","")).begins_with("single:"))
 	if not held_fish.is_empty() and needs_placement:
 		var stocked:=false
@@ -165,7 +171,17 @@ func _next(id:String)->void:
 			if world.fishing.command(id,{"intent":"stock_fish","fish_id":held_fish.id,"pen_id":pen}).get("ok",false):stocked=true;break
 		if not stocked:_fail(id,"pending_fish");return
 	var result:Dictionary={"ok":true}
-	if action=="fish":
+	if action in world.flower_creation.ACTIONS:
+		var args:Dictionary=step.duplicate(true);args.erase("action");args["intent"]=action
+		var held:Variant=world.activities.held.get(id,false);world.activities.held.erase(id)
+		var routine:RefCounted=world.director.routines[id];var original_hold:bool=routine.held
+		# This exact accepted model step owns the conversation hold; all task,
+		# question and shared-activity gates have already been checked above.
+		routine.held=false
+		result=world.command(id,args)
+		routine.held=original_hold;world.activities.held[id]=held
+		if result.get("ok",false):p.started=true
+	elif action=="fish":
 		var held:Variant=world.activities.held.get(id,false);world.activities.held.erase(id)
 		result=world.fishing.invite_from_host_text([id],false)
 		world.activities.held[id]=held
@@ -323,7 +339,7 @@ func advance(delta:float)->void:
 		var p:Dictionary=plans[id];var action:String=str(p.current.action)
 		p.elapsed+=delta
 		if game.questions.has(id) or game.group_questions.has(id) or (world.activities.members.has(id) and action!="assemble"):_note(id,action,"interrupted");cancel(id);continue
-		if p.session_generation!=world.session_generation or (not p.sponsor.is_empty() and not game.steward.authorized(p.sponsor)) or (p.sponsor.is_empty() and not world.director.model_controlled(id)):plans.erase(id);continue
+		if p.session_generation!=world.session_generation or (not p.sponsor.is_empty() and not game.steward.authorized(p.sponsor)) or (p.sponsor.is_empty() and not world.director.model_controlled(id)):cancel(id);continue
 		if world.hunger.rank(id)>=3 and not (game.steward.active and action in ["light","roast","invite"]):_fail(id,"very_hungry");continue
 		if p.get("waiting_meal",false):_next(id);continue
 		if p.get("labor_approach",false) and not world._routes.has(id):
@@ -440,7 +456,8 @@ func advance(delta:float)->void:
 			p.started=true;_note(id,action,"accepted");plans.erase(id);continue
 		if p.elapsed>=3 and not p.started and action not in ["follow","unfollow","stop","invite"]:_fail(id,"not_started");continue
 		var done:bool=false
-		if action=="fish":done=not world.fishing.held(id).is_empty()
+		if action in world.flower_creation.ACTIONS:done=not world.flower_creation.active(id)
+		elif action=="fish":done=not world.fishing.held(id).is_empty()
 		elif action=="build":done=not world.their_island.running.has(id) and not world.work.jobs.has(id)
 		elif action in ["plant","harvest"]:done=not world.farms.active(id)
 		elif action in ["assemble","water","chop","gather","hand_over"]:done=not p.get("labor_approach",false) and not game.local_host_commands.tracked.any(func(row):return id in row.actors and id not in row.finished and id not in row.canceled and id not in row.returning)

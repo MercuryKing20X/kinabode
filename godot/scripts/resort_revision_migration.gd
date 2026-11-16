@@ -8,8 +8,11 @@ static func old_world()->RefCounted:
 static func removed(id:String)->bool:return id.begins_with("homelands.house.") or id.begins_with("homelands.free.")
 static func migrate(world:RefCounted,data:Dictionary)->bool:
 	if not world.locations.v3():return true
-	if data.get("vacation_version",0)==3:return true
-	if data.get("vacation_version",0)==2:return reduce_villas(world,data)
+	if data.get("vacation_version",0)==4:return true
+	if data.get("vacation_version",0)==3:return flower_isle(world,data)
+	if data.get("vacation_version",0)==2:
+		if not reduce_villas(world,data):return false
+		return flower_isle(world,data,false)
 	var old:RefCounted=old_world()
 	if not old.error.is_empty():return false
 	if data.get("opening_id")=="standard":old.standard.install_geometry()
@@ -85,7 +88,8 @@ static func migrate(world:RefCounted,data:Dictionary)->bool:
 	next.vacation_version=2
 	data.clear();data.merge(next)
 	world.resort.set_meta("revision_refunds",{"items":refunds,"wood":total})
-	return reduce_villas(world,data,false)
+	if not reduce_villas(world,data,false):return false
+	return flower_isle(world,data,false)
 
 static func valid_archive(value:Variant)->bool:
 	if not value is Dictionary or value.size()!=3 or not value.get("plans") is Dictionary or not value.get("memories") is Array or not value.get("interior") is Array:return false
@@ -133,3 +137,60 @@ static func reduce_villas(world:RefCounted,data:Dictionary,validate:bool=true)->
 	data.clear();data.merge(next)
 	world.resort.set_meta("two_villa_refund",wood)
 	return true
+
+# v0.9: remove holiday fixtures only after strict validation in the preceding
+# two-villa geometry. All refunds use the original committed investment.
+static func flower_isle(world:RefCounted,data:Dictionary,validate:bool=true)->bool:
+	if validate:
+		var previous:RefCounted=load("res://content/migrations/flower-predecessor/world-state.gd").new("res://content/home-v3/world.json")
+		previous.residents.provision(previous)
+		if data.get("opening_id")=="standard":previous.standard.install_geometry()
+		if not load("res://scripts/save_store.gd")._valid(previous,data):return false
+	var next:Dictionary=data.duplicate(true)
+	var removed_rooms:Array=[]
+	var total:=0
+	for id in next.objects.keys():
+		if str(id).begins_with("resort.villa.") and id!="resort.villa.human":
+			var site:Dictionary=next.objects[id]
+			total+=int(site.get("invested",0))+int(site.get("delivered",{}).get("wood",0))
+			removed_rooms.append("room."+id);next.objects.erase(id)
+	for id in next.interior.furniture.keys():
+		var item:Dictionary=next.interior.furniture[id]
+		if item.region_id not in removed_rooms:continue
+		total+=int(item.get("invested",0))
+		for actor in next.actors.values():
+			if actor.get("furniture_id")==id:actor.erase("furniture_id")
+		next.interior.furniture.erase(id)
+	for id in next.get("leisure",{}).get("sites",{}).keys():
+		var item:Dictionary=next.leisure.sites[id]
+		if item.get("region_id","home")=="home" and world.home_island.contains(world.point(item)):
+			total+=int(item.get("invested",0));next.leisure.sites.erase(id)
+	if total>9007199254740991-int(next.storage.items.get("wood",0)):return false
+	if total:next.storage.items.wood=int(next.storage.items.get("wood",0))+total
+	for actor in next.actors.values():
+		if actor.region_id in removed_rooms:
+			actor.region_id="home";actor.position=[75,205]
+		if actor.region_id=="home" and float(actor.position[1])>=150:actor.position=nearest_open(world,world.point(actor))
+	var pet:Dictionary=next.get("cat",{})
+	if pet.get("region_id") in removed_rooms:pet.region_id="home";pet.position=[75,205]
+	if pet.get("region_id")=="home" and float(pet.get("position",[0,0])[1])>=150:pet.position=nearest_open(world,world.point(pet))
+	for item in next.drops.values():
+		if item.region_id=="home" and float(item.position[1])>=150:item.position=nearest_open(world,world.point(item))
+	for memory in next.interior.memories.duplicate():
+		if memory.get("room_id","") in removed_rooms:
+			if not next.has("retired_south_projects"):next.retired_south_projects={"plans":{},"memories":[],"interior":[]}
+			next.retired_south_projects.interior.append(memory);next.interior.memories.erase(memory)
+	next.vacation_version=4
+	data.clear();data.merge(next)
+	world.resort.set_meta("flower_isle_refund",total)
+	return true
+
+static func nearest_open(world:RefCounted,at:Vector2)->Array:
+	if world.walkable("home",at):return [at.x,at.y]
+	# Increasing distance search, deterministic ties. Same World collision test.
+	var best:=Vector2(81,180);var distance:=INF
+	for y in range(162,255):
+		for x in range(14,149):
+			var p:=Vector2(x,y);var d:float=at.distance_squared_to(p)
+			if d<distance and world.walkable("home",p):distance=d;best=p
+	return [best.x,best.y]

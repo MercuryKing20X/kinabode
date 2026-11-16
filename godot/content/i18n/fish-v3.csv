@@ -18,10 +18,10 @@ content.fishv3.description.moonfish,月光鱼在月牙岛的自然海岸出没�
 content.fishv3.description.seahorse,海马在月牙岛的自然海岸出没。,Seahorse lives off Crescent Island.
 content.fishv3.description.angler,幽灯鱼在黑暗岛的自然海岸出没。,Deep lanternfish lives off the Dark Island.
 content.fishv3.description.ghost,幽灵鱼在黑暗岛的自然海岸出没。,Ghost fish lives off the Dark Island.
-content.fishv3.description.butterfly,热带蝴蝶鱼在度假岛的自然海岸出没。,Butterflyfish lives off Holiday Island.
-content.fishv3.description.puffer,河豚在度假岛的自然海岸出没。,Pufferfish lives off Holiday Island.
+content.fishv3.description.butterfly,热带蝴蝶鱼在鲜花岛的自然海岸出没。,Butterflyfish lives off Flower Isle.
+content.fishv3.description.puffer,河豚在鲜花岛的自然海岸出没。,Pufferfish lives off Flower Isle.
 content.fishv3.description.rainbow,彩虹鳟在主岛的自然海岸出没。,Rainbow trout lives off the main island.
-content.fishv3.description.tuna,金枪鱼在度假岛的自然海岸出没。,Giant tuna lives off Holiday Island.
+content.fishv3.description.tuna,金枪鱼在鲜花岛的自然海岸出没。,Giant tuna lives off Flower Isle.
 content.fishv3.taste.koi,第一次吃锦鲤，记住这个味道了。,My first taste of koi. I will remember this flavor.
 content.fishv3.taste.catfish,第一次吃鲶鱼，记住这个味道了。,My first taste of catfish. I will remember this flavor.
 content.fishv3.taste.clownfish,第一次吃小丑鱼，记住这个味道了。,My first taste of clownfish. I will remember this flavor.
@@ -130,7 +130,7 @@ content.fishv3.catch.tuna.quiet,……金枪鱼。原来长这样。,...A giant 
 fishv3.island.main,主岛,Main Island
 fishv3.island.moon,月牙岛,Crescent Island
 fishv3.island.dark,黑暗岛,Dark Island
-fishv3.island.south,度假岛,Holiday Island
+fishv3.island.south,鲜花岛,Flower Isle
 fishv3.any,不限,Any
 fishv3.summer,夏季,Summer
 fishv3.night,夜间,Night

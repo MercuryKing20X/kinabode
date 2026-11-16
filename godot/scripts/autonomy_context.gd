@@ -8,6 +8,10 @@ static func build(world: RefCounted,id: String,events: Array=[],history: Array=[
 	var nearby: Array=world.actors.values().filter(func(other):return other.id!=id and other.region_id==actor.region_id and world.point(other).distance_to(world.point(actor))<=12)
 	result.self["relationship"]=world.relationships.summary(id)
 	result.self["wish"]=world.wishes.summary(id)
+	if world.flower_creation!=null:
+		var flowers:Dictionary=world.flower_creation.summary(id)
+		flowers.candidates=flowers.candidates.slice(0,3);flowers.arrangements=flowers.arrangements.slice(-3)
+		result.self["flower_creation"]=flowers
 	result.self["weather"]=world.weather.summary()
 	if world.moon!=null and not world.moon.config.is_empty():result.self["moon_island"]=world.moon.summary();result.self["barbecues"]=world.barbecue_summaries().filter(func(s):return s.region_id==actor.region_id).map(func(s):return {"id":s.id,"position":s.position,"state":s.state,"portions":s.portions})
 	result.self["schedule"]=world.schedules.summary(id)

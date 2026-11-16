@@ -89,6 +89,14 @@ func list_for(resident:String,layer:String="")->Array:
 	result.sort_custom(func(a,b):return a.at<b.at if a.at!=b.at else a.id<b.id)
 	return result.duplicate(true)
 func render(entry:Dictionary)->String:
+	if entry.params.get("writing_template","") in ["diary","letter"]:
+		var english:bool=Text.revision().begins_with("en")
+		var snippets:Array=[]
+		for id in entry.params.get("source_ids",[]):
+			if entries.has(id):snippets.append(render(entries[id]).left(180))
+		var events:String=" / ".join(snippets)
+		if entry.params.writing_template=="letter":return ("Dear you, I wanted to keep this little moment with you: " if english else "给你：想把今天这件小事留给你：")+events+(". From, "+display_name(entry.resident_id) if english else "。——"+display_name(entry.resident_id))
+		return ("Day "+str(int(entry.day))+" · Tonight\n" if english else "第 "+str(int(entry.day))+" 天 · 今夜\n")+(("Today I want to remember: " if english else "今天想记下：")+events if not events.is_empty() else ("No new shared moments were recorded today. I leave this page quiet." if english else "今天没有记下新的共同经历，就留一页安静。"))
 	if entry.text=="memory.localized_fact":return str(entry.params.localized.get("en" if Text.revision().begins_with("en") else "zh",""))
 	if entry.params.get("archive_summary",false):
 		var quotes:Array=entry.params.quotes.values().map(func(value):return str(value))
@@ -408,3 +416,17 @@ func local_quotes(resident:String)->Array:
 	return list_for(resident).filter(func(e):return (e.params.get("ai_quote",false) and e.params.get("selected_by")=="player" and not str(e.params.get("turn_key","")).is_empty()) or (e.params.get("ai",false) and e.layer=="feelings" and not e.params.get("source_ids",[]).is_empty() and e.params.source_ids.all(func(id):return entries.has(id) and entries[id].resident_id==resident))).slice(-quote_limit)
 func quote_label(entry:Dictionary)->String:
 	return ("AI 时期 · " if TranslationServer.get_locale().begins_with("zh") else "From our AI days · ")+str(entry.params.get("provider",entry.source))+" · "+render(entry)
+
+# Creation writing stays beside the memory books; never in a world snapshot.
+# A stable event ID also honours deletion across reloads without recreating a page.
+func write_local_diary(resident:String,world_id:String,day:int,at:float=0.0)->bool:
+	if resident.is_empty() or resident=="human" or world_id.is_empty() or day<1:return false
+	if list_for(resident,"daily").any(func(e):return e.world_id==world_id and int(e.day)==day and not e.params.get("archive_summary",false)):return false
+	var actual:Array=list_for(resident,"facts").filter(func(e):return e.world_id==world_id and int(e.day)==day and (e.source=="game" or e.params.get("human_quote",false))).slice(-5)
+	return add(resident,world_id,"diary-evening:"+str(day),"daily","",{"writing_template":"diary","source_ids":actual.map(func(e):return e.id),"human_quote":actual.any(func(e):return e.params.get("human_quote",false)),"channel":"direct:"+resident},day,"local",[resident],at)
+
+func write_local_letter(resident:String,world_id:String,day:int,at:float=0.0)->bool:
+	if resident.is_empty() or resident=="human" or world_id.is_empty() or day<1:return false
+	var actual:Array=list_for(resident,"facts").filter(func(e):return e.world_id==world_id and int(e.day)==day and (e.source=="game" or e.params.get("human_quote",false))).slice(-2)
+	if actual.is_empty():return false
+	return add(resident,world_id,"letter-local:"+str(day),"letters","",{"writing_template":"letter","source_ids":actual.map(func(e):return e.id),"human_quote":actual.any(func(e):return e.params.get("human_quote",false)),"channel":"direct:"+resident},day,"local",["human",resident],at)

@@ -1,0 +1,25 @@
+key,zh,en
+flowers.title,鲜花岛 · 花摊与摆花,Flower Isle · Roses and arrangements
+flowers.red,红玫瑰,Red roses
+flowers.white,白玫瑰,White roses
+flowers.yellow,黄玫瑰,Yellow roses
+flowers.pink,粉玫瑰,Pink roses
+flowers.heart,爱心,Heart
+flowers.star,星星,Star
+flowers.smile,笑脸,Smiley face
+flowers.sun,太阳,Sun
+flowers.flower,花,Flower
+flowers.arrow,箭头,Arrow
+flowers.trade,用木材换花,Trade wood for roses
+flowers.text_hint,字（最多6字；留空摆图案）,Text (max 6; leave empty for a pattern)
+flowers.arrange,选好后点空地摆字 / 图案,Choose open ground for text / pattern
+flowers.single,摆一朵,Place one rose
+flowers.pick,捡一朵,Pick up one rose
+flowers.instructions,每格一朵。花田只可观赏；按 Esc 退出放置。,One rose per cell. Fields are scenery; Esc cancels placement.
+flowers.choose_ground,请点可走空地（不压路、建筑或田）；Esc 取消,Click open ground away from roads / buildings / farms; Esc cancels
+flowers.done,已完成,Done
+flowers.started,她出发了，完成后回来,She is on her way and will return when finished
+flowers.failed,这里暂时做不了：,Cannot do that here:
+flowers.stock,仓库：木材 %s · 红 %s / 白 %s / 黄 %s / 粉 %s,Warehouse: wood %s · red %s / white %s / yellow %s / pink %s
+flowers.play_arrange,摆花,Arrange flowers
+flowers.play_gift,送我花,Give me a rose

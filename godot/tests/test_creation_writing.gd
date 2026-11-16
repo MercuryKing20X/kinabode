@@ -1,0 +1,42 @@
+extends SceneTree
+const Books=preload("res://scripts/memory_books.gd")
+const Text=preload("res://scripts/localization.gd")
+func _initialize()->void:call_deferred("run")
+func run()->void:
+	var dir:String=OS.get_environment("HABITAT_DATA_DIR");assert(dir.contains("youqi-"))
+	var b:=Books.new();assert(b.setup(dir))
+	for resident in ["codex","companion-2","npc.mira","npc.nora"]:
+		assert(b.add(resident,"creation-world","placed-real-rose","facts","memory.localized_fact",{"localized":{"zh":"我用仓库里的红玫瑰摆好了爱心。","en":"I arranged a heart using red roses from storage."}},1,"game",[resident],100))
+		assert(b.write_local_diary(resident,"creation-world",1,1200))
+		assert(not b.write_local_diary(resident,"creation-world",1,1300))
+		assert(b.write_local_letter(resident,"creation-world",1,1300))
+		assert(not b.write_local_letter(resident,"creation-world",1,1400))
+		var diary:Dictionary=b.list_for(resident,"daily")[0]
+		assert(diary.params.source_ids.size()==1)
+		Text.select(dir,"zh");assert(b.render(diary).contains("红玫瑰"))
+		Text.select(dir,"en");assert(b.render(diary).contains("red roses"))
+	b.remember_chat("codex","creation-world","private-quote","private-rose-quote",2,"direct:codex")
+	assert(b.write_local_diary("codex","creation-world",2,2400))
+	assert(b.write_local_letter("codex","creation-world",2,2400))
+	assert(b.export_html(dir.path_join("private-filter.html"),false))
+	assert(not FileAccess.get_file_as_string(dir.path_join("private-filter.html")).contains("private-rose-quote"))
+	assert(not b.write_local_letter("codex","other-world",1))
+	var fact:Dictionary=b.list_for("codex","facts")[0]
+	var ids:Array=[fact.id]
+	assert(b.accept_ai("codex","creation-world","fake",[{"layer":"daily","text":"A heart of real red roses.","source_ids":["invented"]}],ids,1,{"day":1}).rejected==1)
+	assert(b.accept_ai("companion-2","creation-world","fake",[{"layer":"daily","text":"A heart of real red roses.","source_ids":ids}],ids,1,{"day":1}).rejected==1)
+	assert(b.accept_ai("codex","other-world","fake",[{"layer":"daily","text":"A heart of real red roses.","source_ids":ids}],ids,1,{"day":1}).rejected==1)
+	assert(b.accept_ai("codex","creation-world","fake",[{"layer":"daily","text":"A heart of real red roses.","source_ids":ids}],ids,2,{"day":2}).rejected==1)
+	assert(b.accept_ai("codex","creation-world","fake",[{"layer":"daily","text":"A heart of real red roses.","source_ids":ids}],ids,1,{"day":1}).accepted==1)
+	assert(b.list_for("codex","daily").filter(func(e):return e.day==1).size()==1)
+	var letter_text:String="Dear you, today I arranged a little heart with red roses from our storage. I want to keep this quiet moment on our island with you."
+	assert(b.accept_ai("codex","creation-world","fake",[{"layer":"letters","text":letter_text,"source_ids":ids}],ids,1,{"day":1}).accepted==1)
+	assert(b.export_data(dir.path_join("creation.json")))
+	assert(b.export_html(dir.path_join("creation.html")))
+	var imported:=Books.new();assert(imported.setup(dir.path_join("import")));assert(imported.import_data(dir.path_join("creation.json")).ok)
+	assert(imported.list_for("companion-2","daily").size()==1)
+	var reload:=Books.new();assert(reload.setup(dir));assert(reload.list_for("npc.nora","daily").size()==1)
+	var page:Dictionary=reload.list_for("npc.nora","daily")[0];assert(reload.remove(page.id));assert(not reload.write_local_diary("npc.nora","creation-world",1,1400))
+	assert(reload.remove(fact.id));assert(reload.list_for("codex","daily").filter(func(e):return e.day==1).is_empty());assert(reload.list_for("codex","letters").filter(func(e):return e.day==1).is_empty())
+	print("CREATION_WRITING_PASS nightly templates/real sources/actor-world-day rejection/AI replacement/letters/roundtrip/deletion")
+	quit()

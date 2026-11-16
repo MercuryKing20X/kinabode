@@ -262,7 +262,7 @@ func _shadow(p: Vector2, width: float) -> void:
 func _draw() -> void:
 	if world == null or textures.is_empty(): return
 	gesture_symbols.clear()
-	if region_id=="dark":dark_renderer.draw(self);return
+	if region_id=="dark":dark_renderer.draw(self);_draw_creation_flowers();return
 	if region_id != "home": room_renderer.draw(self); return
 	var viewport := get_viewport_rect()
 	_draw_ground(viewport)
@@ -276,6 +276,7 @@ func _draw() -> void:
 	for patch in world.flower_gifts.patches:
 		if viewport.grow(80).has_point(screen(patch.point)):
 			_sprite("flowers", patch.point, .38, Color.WHITE, Ambience.wind(clock, patch.point) * .025)
+	_draw_creation_flowers()
 	# All farm surfaces and fences use one compact layout contract.
 	for site in world.objects.values():
 		if site.kind == "construction_site": _draw_courtyard(site)
@@ -525,6 +526,9 @@ func _actor(actor: Dictionary) -> void:
 		var event:Dictionary=world.dark.events.back();var age:float=world.director.time-float(event.get("time",-100))
 		if event.kind in ["torch_light","beacon"] and age>=0 and age<.6:p.y-=sin(age/.6*PI)*7*zoom
 	var gesture: Dictionary = world.flower_gifts.presentation(actor.id)
+	if world.flower_creation!=null and world.flower_creation.jobs.get(actor.id,{}).get("action")=="gift_flower":
+		var job:Dictionary=world.flower_creation.jobs[actor.id]
+		gesture={"phase":"offering" if not world._routes.has(actor.id) else "bringing","carrying":job.get("offered",false),"progress":clampf(float(job.elapsed)/1.5,0,1),"delivered":not job.get("offered",false),"color":job.color}
 	var running: bool = world.display_running(actor.id)
 	var rushing:bool=world.hunger!=null and world.hunger.has_method("rushing") and world.hunger.rushing(actor.id)
 	var motion_gesture := gesture.duplicate()
@@ -766,8 +770,11 @@ func _flower_gesture(actor: Dictionary, gesture: Dictionary) -> void:
 		var reach := sin(clampf(progress * 1.8, 0, 1) * PI * .5)
 		hand += (Vector2(side * 14,-3) if facing in ["left","right"] else Vector2(0,8 if facing=="down" else -6)) * reach
 	var opacity := 1.0 - smoothstep(.78,1.0,progress) if phase == "offering" else 1.0
-	draw_texture_rect(textures.flowers, Rect2((hand-Vector2(15,22))*zoom,Vector2(30,24)*zoom),false,Color(1,1,1,opacity))
-	if phase == "offering" and gesture.delivered:
+	if gesture.has("color"):
+		var rose:Texture2D=preload("res://scripts/resort_renderer.gd").asset("rose-"+str(gesture.color))
+		if rose!=null:draw_texture_rect(rose,Rect2((hand-Vector2(11,24))*zoom,Vector2(22,28)*zoom),false,Color(1,1,1,opacity))
+	else:draw_texture_rect(textures.flowers, Rect2((hand-Vector2(15,22))*zoom,Vector2(30,24)*zoom),false,Color(1,1,1,opacity))
+	if phase == "offering" and gesture.get("delivered",false):
 		for i in range(3):
 			var drift := Vector2((i-1)*8,-8-progress*15)
 			draw_rect(Rect2((hand+drift)*zoom,Vector2(2,2)*zoom),Color(1,.91,.66,sin(progress*PI)*.65))
@@ -1055,3 +1062,12 @@ func _wrap_speech(value:String,width:float)->String:
 		else:current=candidate
 	if not current.is_empty():lines.append(current)
 	return "\n".join(lines)
+
+func _draw_creation_flowers()->void:
+	if world.flower_creation==null:return
+	for f in world.flower_creation.flowers.values():
+		if f.region_id!=region_id:continue
+		var at:Vector2=screen(Vector2(f.position[0],f.position[1]))
+		if not get_viewport_rect().grow(20).has_point(at):continue
+		var tex:Texture2D=preload("res://scripts/resort_renderer.gd").asset("rose-"+f.color)
+		if tex!=null:draw_texture_rect(tex,Rect2(at-Vector2(14,19)*zoom,Vector2(28,28)*zoom),false)

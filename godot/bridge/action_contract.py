@@ -3,6 +3,8 @@ import math
 VERSION=2
 ACTIONS={'fish':set(),'stock_fish':{'fish_id','pen_id'},'release_fish':{'fish_id'},'move':{'region_id','x','y'},'stop':set(),'gesture':{'gesture'}}
 ACTIONS.update(gomoku_read={'site_id'},gomoku_join={'site_id','match_id','revision'},gomoku_move={'site_id','match_id','revision','x','y','speech'},gomoku_leave={'site_id','match_id','revision'},gomoku_resign={'site_id','match_id','revision'})
+FLOWERS={'place_flower','arrange_flowers','pick_flower','gift_flower','trade_flowers'}
+for name in FLOWERS:ACTIONS[name]={'color','quantity','text','pattern','position','x','y','region_id'}
 ACTIONS.update(give={'receiver_id','item_id','quantity'})
 ACTIONS.update(promise={'action_type','target_id','day','phase','valid_seconds'},promise_cancel={'promise_id'})
 ACTIONS.update(resident_plan={'steps'})
@@ -16,11 +18,15 @@ DELEGATABLE={'plant','harvest','water','chop','gather','fish','follow','unfollow
 for name in DELEGATABLE:ACTIONS[name].add('actor_ids')
 SCHEMA={'type':'object','properties':{'action':{'type':'string','enum':list(ACTIONS)},'arguments':{'type':'object'}},'required':['action'],'additionalProperties':False}
 def validate_intention(step, nested=False):
-    allowed={'action','text','target_id','item_id','crop_id','x','y','region_id','guest_ids','replace','actor_ids','assignments'}
-    kinds={'assemble','fish','light','roast','invite','plant','harvest','water','chop','gather','build','chess','go_to','wander','sit','lounge','pool','swing','hold_cat','pet_cat','stars','home','follow','unfollow','hand_over','stop'}
+    allowed={'action','text','target_id','item_id','crop_id','x','y','region_id','guest_ids','replace','actor_ids','assignments','color','quantity','pattern','position'}
+    kinds={'assemble','fish','light','roast','invite','plant','harvest','water','chop','gather','build','chess','go_to','wander','sit','lounge','pool','swing','hold_cat','pet_cat','stars','home','follow','unfollow','hand_over','stop'}|FLOWERS
     if not isinstance(step,dict) or set(step)-allowed or step.get('action') not in kinds:raise ValueError('invalid_intention')
     for field,value in step.items():
-        if field in ('guest_ids','actor_ids'):
+        if field=='position':
+            if not isinstance(value,list) or len(value)!=2 or any(type(v) not in (int,float) or not math.isfinite(v) for v in value):raise ValueError('invalid_position')
+        elif field=='quantity':
+            if type(value) not in (int,float) or not math.isfinite(value) or value!=int(value) or not 1<=value<=800:raise ValueError('invalid_quantity')
+        elif field in ('guest_ids','actor_ids'):
             if not isinstance(value,list) or not 1<=len(value)<=32 or any(not isinstance(v,str) or v=='human' or not v or len(v)>128 for v in value) or len(set(value))!=len(value):raise ValueError('invalid_participant')
         elif field=='assignments':
             if nested or not isinstance(value,list) or not 1<=len(value)<=4:raise ValueError('invalid_assignments')
@@ -36,6 +42,7 @@ def command(value):
     if not isinstance(args,dict) or set(args)-ACTIONS[action]:raise ValueError('invalid_action_arguments')
     required=set() if action=='journal_read' else ACTIONS[action]-({'region_id'} if action in ('move','go_to','gather_at') else set())
     if action in ('homestead_start','homestead_resume'):required-= {'wood_limit','crop_limit'}
+    if action in FLOWERS:required=set()
     if action=='gomoku_move':required.discard('speech')
     if action=='propose':required.discard('ttl_seconds')
     if action=='promise':required.discard('valid_seconds')
@@ -43,7 +50,13 @@ def command(value):
     if 'actor_ids' in args:required=set()
     if required-set(args):raise ValueError('missing_action_arguments')
     for key,item in args.items():
-        if action=='resident_plan' and key=='steps':
+        if action in FLOWERS and key=='position':
+            if not isinstance(item,list) or len(item)!=2 or any(type(v) not in (int,float) or not math.isfinite(v) for v in item):raise ValueError('invalid_position')
+        elif action in FLOWERS and key=='quantity':
+            if type(item) not in (int,float) or not math.isfinite(item) or item!=int(item) or not 1<=item<=800:raise ValueError('invalid_quantity')
+        elif action in FLOWERS and key=='text':
+            if not isinstance(item,str) or not 1<=len(item)<=6 or any(c not in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789一二三十人大小中山口田王心' for c in item.upper()):raise ValueError('invalid_flower_text')
+        elif action=='resident_plan' and key=='steps':
             if not isinstance(item,list) or not 1<=len(item)<=5:raise ValueError('invalid_intent_count')
             for step in item:validate_intention(step)
         elif key=='actor_ids':

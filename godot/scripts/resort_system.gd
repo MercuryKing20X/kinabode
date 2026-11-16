@@ -26,7 +26,7 @@ static func install(catalog:RefCounted)->void:
 	if catalog.manifest.get("template_id")!="home-v3" or not catalog.regions.get("home",{}).get("layout",{}).has("homelands"):return
 	var region:Dictionary=catalog.regions.home
 	region.size[1]=330
-	region.zones.append({"id":"resort","name":preload("res://scripts/localization.gd").text("content.health_20261107.ead88ddab5c6"),"rect":[14,162,134,92]})
+	region.zones.append({"id":"resort","name":preload("res://scripts/localization.gd").text("content.homeisland.name"),"rect":[14,162,134,92]})
 	region.land_extensions[int(region.layout.homelands.land_index)]=EXTENSION.duplicate(true);catalog._compiled_geometry.clear()
 	for id in catalog.objects.keys():
 		if str(id).begins_with("homelands.house.") or str(id).begins_with("homelands.free."):catalog.objects.erase(id)
@@ -36,8 +36,8 @@ func enabled()->bool:return world.locations.v3() and world.catalog.regions.get("
 func contains(at:Vector2)->bool:
 	if at.y<150:return false
 	return enabled() and world.home_island.contains(at)
-func vacation(id:String)->bool:return enabled() and world.actors.has(id) and world.actors[id].region_id=="home" and contains(world.point(world.actors[id]))
-func line()->String:return preload("res://scripts/localization.gd").source("content.health_20261107.d726a7d5decf") if not TranslationServer.get_locale().begins_with("en") else "We are on holiday here. Let us work back on the main island!"
+func vacation(_id:String)->bool:return false
+func line()->String:return "鲜花岛只赏花和玩耍，干活要回主岛哦。" if not TranslationServer.get_locale().begins_with("en") else "Flower Isle is for roses and play. Work belongs on the main island."
 func villa(id:String)->Dictionary:
 	for v in config.villas:
 		if v.id==id:return v
@@ -76,6 +76,8 @@ func migrate()->void:
 func ready()->void:
 	migrate();furnish()
 func begin(target_id:String,ids:Array)->Dictionary:
+	return world._error("vacation_retired")
+func _retired_begin(target_id:String,ids:Array)->Dictionary:
 	if not activities.has(target_id):return world._error("unknown_resort_activity")
 	var activity:Dictionary=activities[target_id];var accepted:Array=[];var rejected:Dictionary={}
 	for id in ids:

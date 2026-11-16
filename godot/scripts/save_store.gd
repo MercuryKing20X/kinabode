@@ -15,9 +15,14 @@ static func save_world(world: RefCounted, directory: String) -> bool:
 	data["their_island"]=world.their_island.saved()
 	if world.home_island!=null and not world.home_island.legacy:data["home_island_visited"]=world.home_island.landed
 	if world.home_island!=null and not world.home_island.legacy and world.catalog.regions.home.get("layout",{}).has("homelands"):data["home_map_version"]=2
-	if world.resort!=null and world.resort.migrated:data["vacation_version"]=3
+	if world.resort!=null and world.resort.migrated:data["vacation_version"]=4
 	if world.resort!=null and world.resort.has_meta("retired_south_projects"):data["retired_south_projects"]=world.resort.get_meta("retired_south_projects").duplicate(true)
+	if world.get("flower_creation")!=null:data["flower_creation"]=world.flower_creation.saved()
 	data["storage"] = world.storage.saved()
+	for job in (world.flower_creation.jobs.values() if world.get("flower_creation")!=null else []):
+		if job.get("offered",false):
+			var rose:String=world.flower_creation.item(job.color)
+			data.storage.items[rose]=int(data.storage.items.get(rose,0))+1
 	data["jieqi"] = world.jieqi.saved()
 	if Opening.v3(world):data["template_id"]="home-v3";data["opening_id"]=world.opening_id
 	if world.standard.active():data["standard_opening"]=world.standard.saved()
@@ -145,6 +150,7 @@ static func load_world(world: RefCounted, directory: String) -> Dictionary:
 	world.days.restore(data.get("day_cycle",{}))
 	world.memories.restore(data.get("shared_memories", {}))
 	world.their_island.restore(data.get("their_island",{}))
+	world.flower_creation.restore(data.get("flower_creation",{}))
 	if world.home_island!=null:world.home_island.restore_visited(bool(data.get("home_island_visited",false)))
 	world.session_generation+=1
 	world.memories.sync()
@@ -191,12 +197,13 @@ static func _valid(world: RefCounted, data: Dictionary) -> bool:
 			if not id is String or id=="human" or not data.get("actors",{}).has(id) or seen_follow.has(id):return false
 			seen_follow[id]=true
 	if data.has("retired_south_projects") and not preload("res://scripts/resort_revision_migration.gd").valid_archive(data.retired_south_projects):return false
-	if data.has("vacation_version") and (not _quantity(data.vacation_version,3) or data.vacation_version!=1 and data.vacation_version!=2 and data.vacation_version!=3):return false
+	if data.has("vacation_version") and (not _quantity(data.vacation_version,4) or data.vacation_version!=1 and data.vacation_version!=2 and data.vacation_version!=3 and data.vacation_version!=4):return false
 	if data.has("their_island") and not world.their_island.valid_saved(data.their_island):return false
 	if data.has("home_island_visited") and not data.home_island_visited is bool:return false
 	if data.has("home_map_version") and (not (data.home_map_version is int or data.home_map_version is float) or not is_finite(data.home_map_version) or data.home_map_version!=2):return false
 	if data.has("island_ingredients") and not world.ingredients.valid(data.island_ingredients):return false
 	if data.has("cat") and not preload("res://scripts/cat_companion.gd").valid(data.cat):return false
+	if data.has("flower_creation") and not world.flower_creation.valid_saved(data.flower_creation,data.get("actors",{})):return false
 	if data.has("storage") and not world.storage.valid_saved(data.storage): return false
 	if data.has("jieqi") and not world.jieqi.valid_saved(data.jieqi,data.get("actors",{})):return false
 	if data.has("barbecue_tastes") and not _valid_tastes(world,data.barbecue_tastes,data.get("actors",{})):return false

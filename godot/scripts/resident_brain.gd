@@ -175,7 +175,7 @@ func distance()->float:
 	return world.point(world.actors[id]).distance_to(world.point(world.actors.human)) if world.actors[id].region_id==world.actors.human.region_id else INF
 func busy()->bool:
 	if provider_running:return false
-	return world.activities.suspended_follow.has(id) or world.work.jobs.has(id) or world.farms.active(id) or world.projects.active(id) or world.homestead.active(id) or world.deliveries.active(id) or world.activities.blocked(id,false) or world.activities.commanded(id) or (external_busy.is_valid() and external_busy.call())
+	return (world.flower_creation!=null and world.flower_creation.active(id)) or world.activities.suspended_follow.has(id) or world.work.jobs.has(id) or world.farms.active(id) or world.projects.active(id) or world.homestead.active(id) or world.deliveries.active(id) or world.activities.blocked(id,false) or world.activities.commanded(id) or (external_busy.is_valid() and external_busy.call())
 func eligible()->bool:
 	var r:RefCounted=world.director.routines[id]
 	return r.enabled and not r.held and (clock>=r.visual_quiet_until or (world.hunger.rank(id)>=3 and world.hunger.can_follow(id))) and not r.transporting() and world.fishing.held(id).is_empty() and not world.hunger.rushes.has(id)

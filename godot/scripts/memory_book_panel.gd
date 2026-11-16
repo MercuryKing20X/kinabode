@@ -23,6 +23,9 @@ func refresh_locale()->void:
 		if node is Button or node is Label:
 			if locale_labels.has(node.text):node.text=Text.text(locale_labels[node.text])
 	for i in 5:tabs.set_item_text(i,T(["days","about","mail","album","portrait"][i]))
+	tabs.set_item_text(5,"日记本" if TranslationServer.get_locale().begins_with("zh") else "Diary")
+	for i in residents.size():
+		partner.set_item_text(i,Text.resident(world,residents[i]) if world!=null and world.actors.has(residents[i]) else books.display_name(residents[i]))
 	if visible:refresh()
 func _descendants(node:Node)->Array:
 	var result:Array=[]
@@ -38,6 +41,7 @@ func setup(store:RefCounted,source:RefCounted=null)->void:
 	partner=OptionButton.new();head.add_child(partner);partner.item_selected.connect(func(_i):offset=0;refresh())
 	tabs=OptionButton.new();head.add_child(tabs)
 	for key in ["days","about","mail","album","portrait"]:tabs.add_item(T(key))
+	tabs.add_item("日记本" if TranslationServer.get_locale().begins_with("zh") else "Diary")
 	tabs.item_selected.connect(func(_i):offset=0;refresh());button(head,T("close"),hide)
 	reasoning_points=preload("res://scripts/reasoning_points.gd").new();column.add_child(reasoning_points)
 	var scroll:=ScrollContainer.new();scroll.custom_minimum_size=Vector2(660,360);column.add_child(scroll)
@@ -69,8 +73,17 @@ func refresh()->void:
 		var quote:Dictionary=books.latest_ai[residents[partner.selected]]
 		var preview:=Label.new();preview.text=quote.text;preview.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;rows.add_child(preview)
 		button(rows,"记下来" if TranslationServer.get_locale().begins_with("zh") else "Remember these words",func():books.keep_ai_quote(residents[partner.selected]);refresh())
-	var layer:String=["facts","about_you","letters","","about_you"][tabs.selected]
+	if tabs.selected==2 and world!=null and world.actors.has(residents[partner.selected]) and not world.director.model_controlled(residents[partner.selected]):
+		var actor:String=residents[partner.selected]
+		var binding:String=world.world_id
+		var request:=button(rows,"请写封信（本地）" if TranslationServer.get_locale().begins_with("zh") else "Ask for a letter (local)",func():
+			var ok:bool=world!=null and world.world_id==binding and world.actors.has(actor) and not world.director.model_controlled(actor) and books.write_local_letter(actor,binding,world.days.day(),world.forest.clock)
+			refresh()
+			note.text=("信已写进回忆册。" if ok else "今天没有可写的新记录，或已经写过信了。") if TranslationServer.get_locale().begins_with("zh") else ("The letter is in your album." if ok else "No new notes today, or a letter was already written."))
+		request.name="request_local_letter"
+	var layer:String=["facts","about_you","letters","","about_you","daily"][tabs.selected]
 	var entries:Array=books.list_for(residents[partner.selected],layer)
+	if tabs.selected==5:entries=entries.filter(func(e):return not e.params.get("archive_summary",false))
 	if tabs.selected==4:
 		var portraits:Array=entries.filter(func(e):return e.params.get("kind","")=="portrait")
 		if not portraits.is_empty():entries=portraits.slice(-1)
@@ -80,7 +93,8 @@ func refresh()->void:
 	note.text=str(entries.size())+" · "+str(offset+1)
 	for entry in entries.slice(offset,offset+10):
 		var row:=HBoxContainer.new();rows.add_child(row)
-		var label:=Label.new();label.text=Time.get_date_string_from_unix_time(int(entry.at))+" · "+(books.quote_label(entry) if entry.params.get("ai_quote",false) else books.render(entry));label.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;label.size_flags_horizontal=Control.SIZE_EXPAND_FILL;row.add_child(label)
+		var date:String=("第 "+str(int(entry.day))+" 天" if TranslationServer.get_locale().begins_with("zh") else "Day "+str(int(entry.day))) if entry.layer=="daily" else Time.get_date_string_from_unix_time(int(entry.at))
+		var label:=Label.new();label.text=("" if entry.params.get("writing_template","")=="diary" else date+" · ")+(books.quote_label(entry) if entry.params.get("ai_quote",false) else books.render(entry));label.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;label.size_flags_horizontal=Control.SIZE_EXPAND_FILL;row.add_child(label)
 		button(row,T("delete"),func():books.remove(entry.id);refresh())
 		var photo:String=books.photo_path(str(entry.photo_id if not entry.photo_id.is_empty() else entry.params.get("attachment","")))
 		if not photo.is_empty() and FileAccess.file_exists(photo):

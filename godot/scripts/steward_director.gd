@@ -271,6 +271,16 @@ func choose(g:Node)->Dictionary:
 			g.steward.tutorial_planner.retry[proposal.goal.id]=w.forest.clock+30
 			return choose(g)
 	if not proposal.is_empty() and int(failures.get(proposal.goal.id,0))>=2:return {}
+	# Creation is a warehouse-backed leisure choice after the required day goals.
+	if proposal.is_empty() and w.hunger.rank(manager)<3:
+		var available:Array=w.flower_creation.config.colors.filter(func(color):return w.storage.count(w.flower_creation.item(color))>0)
+		if not available.is_empty():
+			if int(preferences.get("flower_gift_day",0))!=w.days.day() and int(w.flower_creation.gifts.get(manager,{}).get("day",0))!=w.days.day():
+				preferences.flower_gift_day=w.days.day()
+				return {"goal":{"id":"gift_flowers","text":g.LocalText.text("flowers.play_gift")},"intents":[{"action":"gift_flower","color":available[0]}]}
+			if int(preferences.get("flower_arrange_day",0))!=w.days.day() and w.storage.count(w.flower_creation.item(available[0]))>=24:
+				preferences.flower_arrange_day=w.days.day()
+				return {"goal":{"id":"flower_isle","text":g.LocalText.text("flowers.play_arrange")},"intents":[{"action":"arrange_flowers","color":available[0]}]}
 	# When the next goal needs time or night, spend that time actually playing together.
 	if proposal.is_empty():
 		return {"goal":{"id":"free_play","text":g.LocalText.text("play.handkerchief")},"game":str(preferences.get("game","handkerchief"))}
@@ -338,6 +348,8 @@ func start_batch(g:Node,proposal:Dictionary)->void:
 		if coast.is_empty():return
 		w.fishing.team_shores=coast
 		at=Vector2(coast[g.steward.manager].position[0],coast[g.steward.manager].position[1])
+	elif step.action=="arrange_flowers":at=safe(g,Vector2(52,210))
+	elif step.action=="gift_flower":at=safe(g,w.point(w.actors.human)+Vector2(0,2))
 	elif step.action=="stars":at=w.point(w.resort.activities[w.resort.nearest("stars")])
 	elif step.action in ["light","roast"]:at=safe(g,w.point(w.barbecues[target].station)+Vector2(0,3))
 	elif step.action=="chess":

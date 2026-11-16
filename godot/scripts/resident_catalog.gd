@@ -4,7 +4,7 @@ const LocalText=preload("res://scripts/localization.gd")
 var definitions: Dictionary = {}
 var error := ""
 var capacity := 32
-const SOCIAL := ["island_propose","give","promise","promise_cancel","propose","move","stop","enter","exit","sit","use_facility","come_near","greet","dance","watch","gesture","gomoku_read","gomoku_join","gomoku_move","gomoku_leave","gomoku_resign","journal_read","homestead_read"]
+const SOCIAL := ["place_flower","arrange_flowers","pick_flower","gift_flower","trade_flowers","island_propose","give","promise","promise_cancel","propose","move","stop","enter","exit","sit","use_facility","come_near","greet","dance","watch","gesture","gomoku_read","gomoku_join","gomoku_move","gomoku_leave","gomoku_resign","journal_read","homestead_read"]
 func _init() -> void:
 	var data: Variant = JSON.parse_string(FileAccess.get_file_as_string("res://content/residents.json"))
 	if not data is Dictionary or not data.get("residents") is Array: error=LocalText.text("system.resident_catalog.the_resident_catalog_is_invalid"); return

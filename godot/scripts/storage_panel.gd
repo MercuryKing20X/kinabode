@@ -46,6 +46,7 @@ func _input(event:InputEvent)->void:
 	elif event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_LEFT and not panel.get_global_rect().has_point(event.position):
 		hide();get_viewport().set_input_as_handled()
 static func item_name(source:RefCounted,item:String)->String:
+	if item in ["rose_red","rose_white","rose_yellow","rose_pink"]:return LocalText.text("flowers."+item.trim_prefix("rose_"))
 	if item=="wood":return LocalText.text("hud.wood")
 	if item=="mushroom":return LocalText.text("hud.mushroom")
 	if item=="firefly.jar":return LocalText.text("storage.firefly_jar")

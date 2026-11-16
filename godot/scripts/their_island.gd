@@ -138,7 +138,9 @@ func restore(data:Dictionary)->void:
 func story_busy(r:RefCounted)->bool:
 	var id:String=r.ID
 	return not r.enabled or not r.chatter or r.held or r.time<r.visual_quiet_until or world.hunger.rank(id)>=2 or world.activities.blocked(id,false) or (world.deliveries!=null and world.deliveries.active(id)) or world.work.jobs.has(id) or world.projects.active(id) or world.farms.active(id) or world.homestead.active(id) or r.transporting() or not world.fishing.held(id).is_empty() or (world._routes.has(id) and not r.owns_route and not world.hunger.owned_routes.has(id))
-func story_tick(r:RefCounted,delta:float)->bool:
+func story_tick(_r:RefCounted,_delta:float)->bool:
+	return false
+func _retired_story_tick(r:RefCounted,delta:float)->bool:
 	var id:String=r.ID
 	if delta<=0 or not config.presets.has(id) or world.actors[id].region_id!="home":return false
 	if world.actors.human.region_id!="home":

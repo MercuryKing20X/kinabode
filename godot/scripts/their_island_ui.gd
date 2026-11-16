@@ -39,6 +39,11 @@ func setup(host:Node)->void:
 	button.pressed.connect(show_next)
 func _process(_delta:float)->void:
 	if game==null:return
+	# Flower Isle retired holiday invitations and courtyard construction.
+	if game.world.resort!=null and game.world.resort.enabled():
+		button.hide()
+		if is_instance_valid(card):_close()
+		return
 	button.visible=game.world.their_island.ready() and (game.world.home_island.here() or not game.world.their_island.pending.is_empty())
 	button.text=(preload("res://scripts/localization.gd").source("content.health_20261107.eafae6117cde") if not TranslationServer.get_locale().begins_with("en") else "Holiday invitations")+" (%s)"%game.world.their_island.pending.size()
 	if is_instance_valid(card) and card.visible:_refresh_material()
@@ -62,6 +67,7 @@ func _refresh_material()->void:
 	if missing>0:material.text+="\n"+Text.text("theirs_ui.missing")%missing
 	else:material.text+="\n"+Text.text("theirs_ui.enough")
 func show_next()->void:
+	if game.world.resort!=null and game.world.resort.enabled():return
 	if is_instance_valid(card):card.popup_centered();return
 	var system:RefCounted=game.world.their_island
 	if system.pending.is_empty():return

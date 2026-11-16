@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "colors": [
+    "red",
+    "white",
+    "yellow",
+    "pink"
+  ],
+  "roses_per_wood": 2,
+  "world_limit": 800,
+  "manager_wood_floor": 10,
+  "gifts_per_day": 1,
+  "timeout_seconds": 240,
+  "step_seconds": 0.16
+}

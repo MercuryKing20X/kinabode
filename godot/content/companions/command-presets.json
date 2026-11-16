@@ -236,5 +236,17 @@
     "en": "Watch the stars together",
     "category": 5,
     "resort_kind": "stars"
+  },
+  {
+    "id": "flowers.arrange",
+    "category": 4,
+    "zh": "摆花",
+    "en": "Arrange flowers"
+  },
+  {
+    "id": "flowers.gift",
+    "category": 4,
+    "zh": "送我花",
+    "en": "Give me a rose"
   }
 ]

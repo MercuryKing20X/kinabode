@@ -2,7 +2,7 @@ extends Node
 ## Host opt-in coordinator. No saved world tasks, no second movement or inventory.
 const Text=preload("res://scripts/localization.gd")
 const Pool=preload("res://scripts/connection_session_pool.gd")
-const DELEGATE=["assemble","plant","harvest","water","chop","gather","hand_over","fish","go_to","follow","unfollow","stop","home","stars","pool","swing","lounge","light","roast","invite","chess","sit","wander","hold_cat","pet_cat","build"]
+const DELEGATE=["assemble","plant","harvest","water","chop","gather","hand_over","fish","go_to","follow","unfollow","stop","home","stars","pool","swing","lounge","light","roast","invite","chess","sit","wander","hold_cat","pet_cat","build","place_flower","arrange_flowers","pick_flower","gift_flower","trade_flowers"]
 var body_director=preload("res://scripts/steward_director.gd").new()
 var next_planning:=0.0
 var host:WeakRef
@@ -363,11 +363,13 @@ func merge_plan(planning:Array)->Array:
 	return result
 func valid_step(step:Variant)->bool:
 	if not step is Dictionary or step.get("action","") not in DELEGATE:return false
-	if step.keys().any(func(k):return k not in ["action","text","target_id","item_id","crop_id","x","y","region_id","guest_ids","replace","actor_ids","assignments"]):return false
-	for field in ["text","target_id","item_id","crop_id","region_id"]:
+	if step.keys().any(func(k):return k not in ["action","text","target_id","item_id","crop_id","x","y","region_id","guest_ids","replace","actor_ids","assignments","color","pattern","quantity","position"]):return false
+	for field in ["text","target_id","item_id","crop_id","region_id","color","pattern"]:
 		if step.has(field) and (not step[field] is String or step[field].length()>400):return false
 	for field in ["x","y"]:
 		if step.has(field) and (not game.world.catalog._number(step[field]) or absf(float(step[field]))>100000):return false
+	if step.has("quantity") and (not game.world._integer(step.quantity) or step.quantity<1 or step.quantity>800):return false
+	if step.has("position") and not game.world.catalog._pair(step.position):return false
 	if step.has("replace") and not step.replace is bool:return false
 	for field in ["actor_ids","guest_ids"]:
 		if not step.has(field):continue

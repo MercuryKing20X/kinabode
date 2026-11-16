@@ -57,6 +57,7 @@ var projects: RefCounted
 var gathering: RefCounted
 var farms: RefCounted
 var forest: RefCounted
+var flower_creation: RefCounted
 var flower_gifts: RefCounted
 var work: RefCounted
 var barbecues:Dictionary={}
@@ -150,6 +151,7 @@ func _init(manifest_path:String="res://content/world.json") -> void:
 	jieqi=preload("res://scripts/jieqi_system.gd").new(self)
 	jieqi.completed.connect(_jieqi_completed)
 	resort=preload("res://scripts/resort_system.gd").new(self)
+	flower_creation=preload("res://scripts/flower_creation.gd").new(self)
 
 func _add_actor(id: String, display_name: String, role: String, position: Vector2) -> void:
 	actors[id] = {"id": id, "name": residents.name_for(id,display_name), "role": role, "region_id": catalog.manifest.spawn.region_id, "position": [position.x, position.y], "activity": "idle", "carry": {}, "retained_carry":{}, "facing": "down", "appearance_id": residents.appearance_for(id), "name_version":1, "controller":residents.controller_for(id,role)}
@@ -202,6 +204,7 @@ func observe(actor_id: String, query: Dictionary = {}) -> Dictionary:
 		summaries.append({"id": region.id, "name": region.name, "origin": region.origin, "size": region.size})
 	var result := {"ok": true, "protocol_version": 1, "world_id": world_id, "template_id": catalog.manifest.get("template_id",catalog.manifest.id), "snapshot_revision": revision, "observed_at": Time.get_datetime_string_from_system(true), "self_actor_id": actor_id, "self": _resident(actor_id), "residents": [], "world_bounds": catalog.manifest.bounds, "regions": summaries, "region": {"id": region_id, "zones": region_info(region_id).zones}, "capabilities": {"read": true, "local_actions": ["move", "stop", "build_house", "pause_project", "resume_project", "cancel_project", "deliver_wood", "gather_wood", "chop", "store", "collect", "build", "forage", "select_blueprint", "enter", "exit", "furnish", "place_furniture", "pickup_furniture", "rotate_furniture", "sit", "take"], "external_actions": ["move", "stop", "build_house", "pause_project", "resume_project", "cancel_project", "deliver_wood", "gather_wood", "chop", "store", "collect", "build", "forage", "select_blueprint", "enter", "exit", "furnish", "place_furniture", "pickup_furniture", "rotate_furniture", "sit", "take"], "model_chat": true, "construction": true, "farming": true}, "coordinate_system": "independent room-local tile coordinates; enter/exit through house door" if region_id.begins_with("room.") else "region-local tile units; world position = region origin + local position"}
 	result["storage"] = storage.saved()
+	result["flower_creation"]=flower_creation.summary(actor_id)
 	result["gathering"] = activities.snapshot()
 	result["shared_activity"] = shared_activity.snapshot()
 	result["memories"] = memories.query(actor_id,{"limit":memories.snapshot_limit})
@@ -217,6 +220,8 @@ func observe(actor_id: String, query: Dictionary = {}) -> Dictionary:
 	result["journal"]=journal.summary(actor_id)
 	result["day"]=days.summary(actor_id)
 	result["intelligence"]=intelligence.summary(actor_id)
+	result.capabilities.local_actions.append_array(flower_creation.ACTIONS)
+	result.capabilities.external_actions.append_array(flower_creation.ACTIONS)
 	result.capabilities.local_actions.append("journal_read")
 	result.capabilities.external_actions.append("journal_read")
 	result.capabilities.local_actions.append_array(gomoku.ACTIONS)
@@ -320,6 +325,12 @@ func host_text_command(actor_id:String,args:Dictionary)->Dictionary:
 	return result
 
 func command(actor_id: String, args: Dictionary) -> Dictionary:
+	if flower_creation!=null:
+		if args.get("intent")=="stop":flower_creation.cancel(actor_id)
+		elif args.get("intent") in flower_creation.ACTIONS:
+			var ready:Dictionary=flower_creation.preflight(actor_id)
+			if not ready.ok:return ready
+		elif args.get("intent")!="query_state" and not str(args.get("intent","")).ends_with("_read"):flower_creation.cancel(actor_id)
 	if director!=null and director.brains.has(actor_id):return director.brains[actor_id].command(args)
 	return _command_body(actor_id,args)
 
@@ -327,7 +338,8 @@ func _command_body(actor_id: String, args: Dictionary) -> Dictionary:
 	if ingredients!=null and ingredients.resident_pending.has(actor_id) and str(args.get("intent",""))!="query_state" and not str(args.get("intent","")).ends_with("_read"):ingredients.resident_pending.erase(actor_id)
 	if actor_id=="human" and dark!=null:dark.cancel()
 	if not actors.has(actor_id): return _error("unknown_resident")
-	if resort!=null and resort.enabled() and args.get("intent") in resort.WORK and (resort.vacation(actor_id) or (objects.has(str(args.get("target_id",""))) and resort.retired(objects[str(args.target_id)]))):return {"ok":false,"error":"vacation_only","message":resort.line()}
+	if flower_creation!=null and args.get("intent") in flower_creation.ACTIONS:return flower_creation.execute(actor_id,args)
+	if resort!=null and resort.enabled() and args.get("intent") in resort.WORK and ((actors[actor_id].region_id=="home" and resort.contains(point(actors[actor_id]))) or (objects.has(str(args.get("target_id",""))) and resort.retired(objects[str(args.target_id)]))):return {"ok":false,"error":"vacation_only","message":resort.line()}
 	if str(args.get("intent","")) in ["follow","unfollow","hand_over","query_state","gather_at"]:
 		return model_social_command(actor_id,args)
 	var farm_issue:Dictionary=farms.host_grants.get(actor_id,{}) if farms!=null else {}
@@ -959,6 +971,7 @@ func advance(delta: float) -> void:
 	personality.advance()
 	intelligence.advance()
 	if delta>0:standard.offer_hint()
+	if flower_creation!=null:flower_creation.advance(delta)
 	director.advance(delta)
 	activities.advance(delta)
 	fishing.advance(delta)
@@ -1072,6 +1085,7 @@ func job_summary(job: Dictionary) -> Dictionary:
 
 # Only UI/host uses this method; model/API calls remain bound to command(actor_id).
 func host_command(id: String,args: Dictionary) -> Dictionary:
+	if flower_creation!=null and args.get("intent") in flower_creation.ACTIONS:return command(id,args)
 	if not actors.has(id):return _error("unknown_resident")
 	if not residents.supports(actors[id],str(args.get("intent",""))):return _error("unsupported_capability")
 	if shared_activity.contains(id): shared_activity.pause(LocalText.text("system.world_state.the_host_assigned_something_new_the_previous_activity"))

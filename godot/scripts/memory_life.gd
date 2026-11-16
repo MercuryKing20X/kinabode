@@ -10,6 +10,7 @@ var world:RefCounted:
 var next_speech_check:Dictionary={}
 var elapsed:=0.0
 var day_seen:=0
+var evening_seen:=0
 var attempts:Dictionary={}
 var photo_busy:=false
 var photo_queue:Array=[]
@@ -47,10 +48,15 @@ func _process(delta:float)->void:
 		photo_seen[e.id]=true
 		if e.layer=="facts" and e.source=="game":
 			var kind:String=e.params.get("legacy",{}).get("kind","")
-			if kind in photo_config.photo_kinds:
+			if kind in photo_config.photo_kinds and (kind!="gift_flower" or e.params.get("legacy",{}).get("first",false)):
 				var previous:Array=books.list_for(e.resident_id,"facts").filter(func(other):return other.id!=e.id and not other.photo_id.is_empty() and other.params.get("legacy",{}).get("kind","")==kind and photo_subject(other)==photo_subject(e))
 				if kind=="anniversary" or previous.is_empty():photo_queue.append(e.id)
 	if not photo_busy and not photo_queue.is_empty():capture(photo_queue.pop_front())
+	# This evening's pages are derived from retained, current-world facts. No
+	# backfill for missing days, no new model wakeup, and no gameplay side effect.
+	if world.days.phase().id=="night" and evening_seen!=world.days.day():
+		evening_seen=world.days.day()
+		write_evening_pages()
 	if world.days.day()>day_seen:
 		var ended:int=world.days.day()-1;day_seen=world.days.day()
 		for id in world.director.routines:attempts[id]={"day":ended,"pending":true}
@@ -68,8 +74,7 @@ func request_daily(id:String)->bool:
 	if not idle(id) or game.world.director.routines[id].held:return false
 	if not world.director.model_controlled(id):
 		var ended:int=int(attempts[id].day);attempts[id].pending=false
-		var actual:Array=books.list_for(id,"facts").filter(func(e):return e.world_id==world.world_id and e.day==ended and e.source=="game")
-		if not actual.is_empty():books.add(id,world.world_id,"daily-local:"+str(ended),"daily"," / ".join(actual.map(func(e):return books.render(e))).left(1200),{"source_ids":actual.map(func(e):return e.id)},ended,"local",[id],world.forest.clock)
+		books.write_local_diary(id,world.world_id,ended,world.forest.clock)
 		return false
 	if game.resident_connections.preferences.preference(id).level=="low":return false
 	if not game._valid_link(game.links,id):return false
@@ -157,7 +162,8 @@ func capture(id:String,play_photo:bool=false)->void:
 	var photos:Array=[]
 	for e in books.entries.values():
 		if e.world_id==world.world_id and e.day==entry.day and not e.photo_id.is_empty() and e.photo_id not in photos:photos.append(e.photo_id)
-	if (photos.size()>=int(photo_config.photo_daily_limit) and not (play_photo and entry.text.begins_with("playground.memory."))) or not entry.photo_id.is_empty():return
+	var first_rose:bool=entry.params.get("legacy",{}).get("kind","")=="gift_flower" and entry.params.get("legacy",{}).get("first",false)
+	if (photos.size()>=int(photo_config.photo_daily_limit) and not first_rose and not (play_photo and entry.text.begins_with("playground.memory."))) or not entry.photo_id.is_empty():return
 	var actor:Dictionary=world.actors.get(entry.resident_id,{})
 	if actor.is_empty():return
 	photo_busy=true
@@ -266,3 +272,19 @@ func fishing_together(catcher:String,fish_id:String,others:Array)->void:
 	for other in others:
 		for id in [catcher,other]:
 			books.add(id,world.world_id,"fishing-together:"+fish_id+":"+other,"facts","memory.fishing_together",{"first":Text.resident(world,catcher),"second":Text.resident(world,other),"legacy":{"kind":"fishing_together","fish_id":fish_id,"catcher_id":catcher,"peer_id":other}},world.days.day(),"game",[catcher,other],world.forest.clock)
+
+# An uneventful evening still has one real observation to ground its page.
+# This observes the current night only; it cannot invent prior days or activities.
+func write_evening_pages()->void:
+	if world.days.phase().id!="night":return
+	var day:int=world.days.day()
+	var weather:Dictionary=world.weather.current()
+	var names:Dictionary={"sunny":["晴","clear"],"cloudy":["多云","cloudy"],"rain":["小雨","light rain"],"fog":["雾","foggy"]}
+	for id in world.director.routines:
+		var diary_id:String=(str(id)+"|"+world.world_id+"|diary-evening:"+str(day)+"|daily").sha256_text()
+		if books.deleted.has(diary_id):continue
+		var actual:Array=books.list_for(id,"facts").filter(func(e):return e.world_id==world.world_id and int(e.day)==day and (e.source=="game" or e.params.get("human_quote",false)))
+		if actual.is_empty():
+			var words:Array=names.get(weather.id,[str(weather.name),str(weather.id)])
+			books.add(id,world.world_id,"evening-observation:"+str(day),"facts","memory.localized_fact",{"localized":{"zh":"第 %s 天，已经是夜晚，天气是%s。"%[day,words[0]],"en":"Day %s: it is night, and the weather is %s."%[day,words[1]]},"legacy":{"kind":"evening_observation","day":day,"phase":"night","weather_id":weather.id},"channel":"direct:"+str(id)},day,"game",[id],world.forest.clock)
+		books.write_local_diary(id,world.world_id,day,world.forest.clock)

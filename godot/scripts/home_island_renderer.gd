@@ -50,7 +50,7 @@ static func draw(v:Node)->void:
 				if visible(v,Rect2(x,y,1,1)):v.draw_rect(Rect2(v.screen(Vector2(x,y))-Vector2(2,12)*v.zoom,Vector2(4,14)*v.zoom),Color("987044"))
 	var land:PackedVector2Array=v.world.home_island.land_shape
 	if not visible(v,Rect2(14,162,134,92)):return
-	v._surface(land,v.textures.sand,Color("f0d8a5"));draw_counts.land+=1
+	v._surface(land,v.textures.grass,Color("a3bb76"));draw_counts.land+=1
 	for road in v.world.home_island.config.get("roads",[]):
 		var points:=PackedVector2Array()
 		for p in road.points:points.append(Vector2(p[0],p[1]))

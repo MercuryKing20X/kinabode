@@ -37,11 +37,10 @@ func _prepare_patches() -> void:
 				if patches.any(func(patch): return patch.point.distance_to(point)<3.5): continue
 				patches.append({"id":"roadside.%s.%s.%s"%[road_index,segment,step], "point":point})
 
-func eligible(id: String) -> bool:
-	if not active.is_empty() or world.director.time < next_gift_at or world.director.time < float(cooldowns.get(id,0)): return false
-	var actor: Dictionary = world.actors[id]
-	var human: Dictionary = world.actors.human
-	return actor.region_id == "home" and human.region_id == "home" and not world.loaded(id) and world.point(actor).distance_to(world.point(human)) <= float(config.notice_radius)
+func eligible(_id: String) -> bool:
+	# 2026-11-11 Flower Isle supersedes free cosmetic picking/offering.
+	# The roadside anchors remain scenery; FlowerCreation owns warehouse gifts.
+	return false
 
 func start(routine: RefCounted) -> bool:
 	if not routine.enabled or routine.blocked() or not eligible(routine.ID): return false

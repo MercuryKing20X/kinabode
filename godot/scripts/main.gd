@@ -81,6 +81,9 @@ var connection_ui_states: Dictionary = {}
 var connection_state_cache: Dictionary = {}
 var ai_connect_panel: AcceptDialog
 var external_residents: Dictionary={}
+var flower_panel:Control
+var flower_placement:Dictionary={}
+var flower_actor_ids:Array=[]
 var playground:Node
 var watch_ui:Node
 var brain_panel:Control
@@ -529,6 +532,7 @@ func _ready() -> void:
 	local_host_commands=preload("res://scripts/local_host_commands.gd").new(self);add_child(local_host_commands)
 	intentions=preload("res://scripts/resident_intentions.gd").new();add_child(intentions);intentions.setup(self)
 	steward=preload("res://scripts/steward_host.gd").new();add_child(steward);steward.setup(self)
+	world.flower_creation.trade_authority=func(id):return steward!=null and steward.authorized(id)
 	brain_panel=preload("res://scripts/brain_panel.gd").new();root.add_child(brain_panel);brain_panel.setup(world,library)
 	view.mind_clicked.connect(func(id):brain_panel.open(id))
 	endpoint.resident_context=func(id):return {"management":steward.authorized(id),"managed_by":steward.manager if steward.active else "","work_options":steward.work_context() if steward.authorized(id) else []}
@@ -636,6 +640,8 @@ func _toggle_fullscreen() -> void:
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED if fullscreen else DisplayServer.WINDOW_MODE_FULLSCREEN)
 
 func _input(event: InputEvent) -> void:
+	if not flower_placement.is_empty() and event is InputEventKey and event.pressed and event.keycode==KEY_ESCAPE:
+		flower_placement.clear();flower_actor_ids.clear();status.text="";get_viewport().set_input_as_handled();return
 	if view!=null and not view.follow_player and (event is InputEventMouseButton or event is InputEventMouseMotion):view.peek_elapsed=0
 	var typing:Control=get_viewport().gui_get_focus_owner()
 	if event is InputEventKey and event.pressed and event.keycode==KEY_SPACE and not (typing is LineEdit or typing is TextEdit):
@@ -982,6 +988,7 @@ func _send(text: String) -> void:
 	if _chat_is_composing() or _chat_ime_enter_frame==Engine.get_process_frames():
 		status.text=T("ui.chat.finish_composing");return
 	text = text.strip_edges()
+	if pending_question.is_empty() and questions.is_empty() and group_questions.is_empty() and _flower_local_chat(text):return
 	var play_text:String=text.replace(LocalText.source("content.overnight.text.87c479f93e29ce"),LocalText.source("content.overnight.text.29f07ca1600fd9")).replace(LocalText.source("content.overnight.text.f1bf53c0148547"),LocalText.source("content.overnight.text.6adb4bfec2ff5b")).replace(LocalText.source("content.overnight.text.33f5a6f0f66c60"),LocalText.source("content.overnight.text.6adb4bfec2ff5b")).replace(LocalText.source("content.overnight.text.6f9543d8ee7fcd"),LocalText.source("content.overnight.text.6adb4bfec2ff5b"))
 	if text.is_empty():
 		status.text=T("ui.chat.empty");chat_input.grab_focus();return
@@ -1292,6 +1299,7 @@ func _show_opening_board()->void:
 		var quote:=Label.new();quote.text=world.standard.board_quote();body.add_child(quote)
 	dialog.confirmed.connect(dialog.queue_free);dialog.close_requested.connect(dialog.queue_free);dialog.popup_centered(Vector2i(480,260))
 func _clicked(id: String, local: Vector2) -> void:
+	if _flower_clicked(id,local):return
 	if id.begins_with("resort."):
 		get_node("ResortUI").show_target(id);return
 	if has_node("ResortUI"):get_node("ResortUI").leave()
@@ -1566,6 +1574,7 @@ func _flush_autonomy_messages() -> void:
 	if autonomy!=null:autonomy.flush_pending()
 
 func _setup_dark_ui()->void:
+	if flower_panel==null and is_instance_valid(view):_setup_flowers_ui()
 	if not has_node("IngredientUI"):
 		var ingredient_ui=preload("res://scripts/island_ingredients_ui.gd").new();ingredient_ui.name="IngredientUI";add_child(ingredient_ui);ingredient_ui.setup(self)
 	if dark_ui==null and is_instance_valid(view):
@@ -2846,3 +2855,62 @@ func _persona_speech(line:String,id:String)->String:
 	if preload("res://scripts/persona_cards.gd").safe_speech(line):return line
 	print("PERSONA_SPEECH_FILTER resident=",id," reason=format_or_voice")
 	return T("simple.fallback")
+
+func _setup_flowers_ui()->void:
+	flower_panel=preload("res://scripts/flower_panel.gd").new();add_child(flower_panel);flower_panel.theme=Theme.new();flower_panel.theme.default_font=ui_font;flower_panel.theme.default_font_size=18;flower_panel.setup()
+	flower_panel.action_requested.connect(func(args):
+		var result:Dictionary=world.host_command("human",args)
+		flower_panel.stock.text=_flower_stock();flower_panel.message.text=_flower_result(result))
+	flower_panel.placement_requested.connect(func(args):
+		flower_placement=args.duplicate(true)
+		if flower_actor_ids.is_empty():flower_actor_ids=["human"]
+		status.text=T("flowers.choose_ground"))
+func _flower_stock()->String:
+	return T("flowers.stock")%[world.storage.count("wood"),world.storage.count("rose_red"),world.storage.count("rose_white"),world.storage.count("rose_yellow"),world.storage.count("rose_pink")]
+func _open_flowers(ids:Array=["human"])->void:
+	flower_actor_ids=ids.duplicate();flower_placement.clear()
+	flower_panel.open(str(ids[0]),_flower_stock(),ids==["human"])
+func _flower_result(result:Dictionary)->String:
+	return str(result.get("message",(T("flowers.done") if result.get("status","")=="completed" else T("flowers.started")) if result.get("ok",false) else T("flowers.failed")+str(result.get("error",""))))
+func _flower_clicked(id:String,at:Vector2)->bool:
+	if flower_panel==null:return false
+	if not flower_placement.is_empty():
+		if flower_actor_ids.size()>1 and flower_placement.get("intent")=="arrange_flowers":
+			var args:Dictionary=flower_placement.duplicate(true);args.position=[at.x,at.y];args.region_id=view.region_id
+			status.text=_flower_result(world.flower_creation.arrange_group(flower_actor_ids,args));flower_placement.clear();flower_actor_ids.clear();return true
+		var messages:Array=[]
+		for who in flower_actor_ids:
+			var args:Dictionary=flower_placement.duplicate(true);args.position=[at.x,at.y];args.region_id=view.region_id
+			messages.append(_flower_result(world.host_command(who,args)))
+		status.text=" · ".join(messages);flower_placement.clear();flower_actor_ids.clear();return true
+	if id in ["flower.stall","flower.arrange"] or (view.region_id=="home" and at.distance_to(Vector2(43,208))<=1.8):
+		_open_flowers();return true
+	return false
+func _flower_local_chat(text:String)->bool:
+	var lower:String=text.to_lower()
+	if not (text.contains("摆") or text.contains("送我花") or lower.contains("arrange flowers") or lower.contains("give me a rose")):return false
+	if intentions!=null and (intentions.negated(text) or intentions.chat_only(text)):return false
+	var fallback:Array=command_page.selected.duplicate() if group_chat and command_page!=null else [chat_actor]
+	var parsed:Dictionary=local_host_commands.parser.parse_command(world,text,fallback)
+	var ids:Array=parsed.get("actor_ids",fallback).filter(func(id):return id!="human" and world.actors.has(id))
+	if ids.is_empty():return false
+	# Connected residents keep their original model route; never parse on their behalf.
+	if ids.any(func(id):return world.director.model_controlled(id)):return false
+	var args:Dictionary={"intent":"gift_flower" if text.contains("送我花") or lower.contains("give me a rose") else "arrange_flowers","color":"red"}
+	for pair in [["白","white"],["黄","yellow"],["粉","pink"],["红","red"]]:
+		if text.contains(pair[0]) or lower.contains(pair[1]):args.color=pair[1]
+	var pattern:=""
+	for pair in [["爱心","heart"],["星星","star"],["笑脸","smile"],["太阳","sun"],["箭头","arrow"],["花形","flower"]]:
+		if text.contains(pair[0]) or lower.contains(pair[1]):pattern=pair[1]
+	var regex:=RegEx.new();regex.compile("(?:摆|arrange flowers)\\s*([A-Za-z0-9一二三十人大小中山口田王心]{1,6})\\s*$")
+	var match_text:RegExMatch=regex.search(text)
+	if not pattern.is_empty():args.pattern=pattern
+	elif match_text!=null:args.text=match_text.get_string(1).to_upper()
+	elif args.intent=="arrange_flowers" and not (text.contains("摆花") or lower.contains("arrange flowers")):return false
+	_record_chat(_chat_channel(),"human",text)
+	if ids.size()>1 and args.intent=="arrange_flowers":
+		status.text=_flower_result(world.flower_creation.arrange_group(ids,args));_finish_chat_input();return true
+	var messages:Array=[]
+	for who in ids:
+		messages.append(LocalText.resident(world,who)+" · "+_flower_result(world.host_command(who,args)))
+	status.text=" · ".join(messages);_finish_chat_input();return true

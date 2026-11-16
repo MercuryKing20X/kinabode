@@ -1,0 +1,234 @@
+{
+  "version": 1,
+  "villas": [
+    {
+      "id": "resort.villa.human",
+      "key": "human",
+      "owner_id": "human",
+      "name": "海景大宅",
+      "name_en": "Ocean Terrace Mansion",
+      "position": [
+        39,
+        196
+      ],
+      "footprint": [
+        20,
+        16
+      ],
+      "sprite_size": [
+        20,
+        16
+      ],
+      "door": [
+        39,
+        205.5
+      ],
+      "courtyard": [
+        "lounger",
+        "pool",
+        "hammock",
+        "table",
+        "parasol",
+        "path"
+      ],
+      "style": "human",
+      "activities": [
+        {
+          "id": "resort.human.pool",
+          "kind": "pool",
+          "position": [
+            57,
+            223
+          ],
+          "size": [
+            30,
+            18
+          ],
+          "slots": [
+            [
+              47,
+              219
+            ],
+            [
+              57,
+              219
+            ],
+            [
+              67,
+              219
+            ],
+            [
+              47,
+              227
+            ],
+            [
+              57,
+              227
+            ],
+            [
+              67,
+              227
+            ]
+          ]
+        },
+        {
+          "id": "resort.human.lounge",
+          "kind": "lounge",
+          "position": [
+            57,
+            235
+          ],
+          "size": [
+            20,
+            3
+          ],
+          "slots": [
+            [
+              51,
+              235
+            ],
+            [
+              54,
+              235
+            ],
+            [
+              57,
+              235
+            ],
+            [
+              60,
+              235
+            ],
+            [
+              63,
+              235
+            ]
+          ]
+        }
+      ],
+      "gate": [
+        39,
+        208
+      ]
+    },
+    {
+      "id": "resort.villa.companion-2",
+      "key": "blue",
+      "owner_id": "companion-2",
+      "name": "风帆海边度假屋",
+      "name_en": "Sail Seaside Villa",
+      "position": [
+        75,
+        196
+      ],
+      "footprint": [
+        20,
+        16
+      ],
+      "sprite_size": [
+        20,
+        16
+      ],
+      "door": [
+        75,
+        205.5
+      ],
+      "courtyard": [
+        "lounger",
+        "pool",
+        "swing",
+        "table",
+        "parasol",
+        "path"
+      ],
+      "style": "blue",
+      "activities": [
+        {
+          "id": "resort.blue.swing",
+          "kind": "swing",
+          "position": [
+            85,
+            213
+          ],
+          "size": [
+            8,
+            5
+          ],
+          "slots": [
+            [
+              81,
+              213
+            ],
+            [
+              83,
+              213
+            ],
+            [
+              85,
+              213
+            ],
+            [
+              87,
+              213
+            ],
+            [
+              89,
+              213
+            ]
+          ]
+        }
+      ],
+      "gate": [
+        75,
+        208
+      ]
+    }
+  ],
+  "texture_native_size": [
+    384,
+    384
+  ],
+  "light": "upper-left",
+  "activities": {
+    "lounger": {
+      "offset": [
+        0,
+        24
+      ],
+      "size": [
+        10,
+        6
+      ]
+    },
+    "pool": {
+      "offset": [
+        12,
+        24
+      ],
+      "size": [
+        10,
+        8
+      ]
+    },
+    "swing": {
+      "offset": [
+        -12,
+        24
+      ],
+      "size": [
+        8,
+        7
+      ]
+    },
+    "hammock": {
+      "offset": [
+        -12,
+        24
+      ],
+      "size": [
+        8,
+        7
+      ]
+    }
+  }
+}

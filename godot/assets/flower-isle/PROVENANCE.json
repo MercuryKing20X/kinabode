@@ -1,0 +1,108 @@
+{
+  "license": "Project-authored derivative assets; image generation + manual pixel cleanup.",
+  "source_sha256": "83f7b190a20967d25b8c8e04aa1497145255b6928a03a2afcc9a3df33213b86f",
+  "model": "gpt-image-2.5-sunburst",
+  "light": "upper-left",
+  "greenhouse_native_size": [
+    640,
+    512
+  ],
+  "assets": [
+    {
+      "file": "bush-pink-closed.png",
+      "sha256": "0e1ea6904e912d7ff651c91a3c323d4626540e6ac8db719a9bffd2287f49d7d7",
+      "method": "actual supplemental generated-source sprite crop, native pixel fit, palette repaint, right/bottom outline pixel repair; exact crop in rose-sheet-crops.json",
+      "light": "upper-left"
+    },
+    {
+      "file": "bush-pink-open.png",
+      "sha256": "48d478093e70ef86182a69ad0bd6d76785c416a227f8b166dd2a0d888afb5238",
+      "method": "actual supplemental generated-source sprite crop, native pixel fit, palette repaint, right/bottom outline pixel repair; exact crop in rose-sheet-crops.json",
+      "light": "upper-left"
+    },
+    {
+      "file": "bush-red-closed.png",
+      "sha256": "7177bcf5cdd25e7e5d38a13bb5abbb09621a33cf3aafedf7f931019c37391dd3",
+      "method": "actual supplemental generated-source sprite crop, native pixel fit, palette repaint, right/bottom outline pixel repair; exact crop in rose-sheet-crops.json",
+      "light": "upper-left"
+    },
+    {
+      "file": "bush-red-open.png",
+      "sha256": "3f383af2b4e26c61d19085331716d0e68cc6517dc7cba4f92e019f2967d48486",
+      "method": "actual supplemental generated-source sprite crop, native pixel fit, palette repaint, right/bottom outline pixel repair; exact crop in rose-sheet-crops.json",
+      "light": "upper-left"
+    },
+    {
+      "file": "bush-white-closed.png",
+      "sha256": "a3e5be7f79b5155edb207ba430058b1cfc154e804e37b6aff2d3dad235671245",
+      "method": "actual supplemental generated-source sprite crop, native pixel fit, palette repaint, right/bottom outline pixel repair; exact crop in rose-sheet-crops.json",
+      "light": "upper-left"
+    },
+    {
+      "file": "bush-white-open.png",
+      "sha256": "4fe7ec59e2ad8a2a760143c87e4be14eb3b097d4e16de88b554462b3bcee9e28",
+      "method": "actual supplemental generated-source sprite crop, native pixel fit, palette repaint, right/bottom outline pixel repair; exact crop in rose-sheet-crops.json",
+      "light": "upper-left"
+    },
+    {
+      "file": "bush-yellow-closed.png",
+      "sha256": "6a4dd7e52654e6a0a93a5785a97a1e5e8e3d50f19d2f514e5f19be961c297425",
+      "method": "actual supplemental generated-source sprite crop, native pixel fit, palette repaint, right/bottom outline pixel repair; exact crop in rose-sheet-crops.json",
+      "light": "upper-left"
+    },
+    {
+      "file": "bush-yellow-open.png",
+      "sha256": "53c65d79078a91a0eed3319298ebed441048c93348bf0ce0bba427b43a932ee3",
+      "method": "actual supplemental generated-source sprite crop, native pixel fit, palette repaint, right/bottom outline pixel repair; exact crop in rose-sheet-crops.json",
+      "light": "upper-left"
+    },
+    {
+      "file": "greenhouse.png",
+      "sha256": "63abe29d3164999cb7a3b55fce4008b4c0e86051cf77db8dabe87c36357a92f5",
+      "method": "generated source crop, palette repaint, alpha edge cleanup and native nearest pixels",
+      "light": "upper-left"
+    },
+    {
+      "file": "handheld.png",
+      "sha256": "600a6c5995ffeb6623f822afacab4d69fbbc8d248d9296b1b1620f2963a088be",
+      "method": "actual supplemental generated-source sprite crop, native pixel fit, palette repaint, right/bottom outline pixel repair; exact crop in rose-sheet-crops.json",
+      "light": "upper-left",
+      "readability_repaint": "generated paper wrap/stem retained; manual 18x16 bright rose head"
+    },
+    {
+      "file": "rose-pink.png",
+      "sha256": "b9a795ac4c204e667037c301922d5b77f9671f99d9949f205b42927a374ff437",
+      "method": "actual supplemental generated-source sprite crop, native pixel fit, palette repaint, right/bottom outline pixel repair; exact crop in rose-sheet-crops.json",
+      "light": "upper-left",
+      "readability_repaint": "generated stem/leaves retained; manual 12x10 flower head, dark outline, petal shade/midtone/two bright ramps"
+    },
+    {
+      "file": "rose-red.png",
+      "sha256": "c313d5c8f98b2caccb05d82946e422b85f2850b599547b49219c7114bbce685b",
+      "method": "actual supplemental generated-source sprite crop, native pixel fit, palette repaint, right/bottom outline pixel repair; exact crop in rose-sheet-crops.json",
+      "light": "upper-left",
+      "readability_repaint": "generated stem/leaves retained; manual 12x10 flower head, dark outline, petal shade/midtone/two bright ramps"
+    },
+    {
+      "file": "rose-white.png",
+      "sha256": "2f2536a409fa862de7f267b83e967ea47dcf34a6f78d9e693e32f20b89d96b5c",
+      "method": "actual supplemental generated-source sprite crop, native pixel fit, palette repaint, right/bottom outline pixel repair; exact crop in rose-sheet-crops.json",
+      "light": "upper-left",
+      "readability_repaint": "generated stem/leaves retained; manual 12x10 flower head, dark outline, petal shade/midtone/two bright ramps"
+    },
+    {
+      "file": "rose-yellow.png",
+      "sha256": "1ef4a09ab04107609bd47e2d37c22b5cb2ebe7f3ad2e68d17571326db89341cf",
+      "method": "actual supplemental generated-source sprite crop, native pixel fit, palette repaint, right/bottom outline pixel repair; exact crop in rose-sheet-crops.json",
+      "light": "upper-left",
+      "readability_repaint": "generated stem/leaves retained; manual 12x10 flower head, dark outline, petal shade/midtone/two bright ramps"
+    },
+    {
+      "file": "stall.png",
+      "sha256": "0654804884ba97408988bfca5e7cd4f0849917bfda71f176b403442c936c4a05",
+      "method": "actual supplemental generated-source sprite crop, native pixel fit, palette repaint, right/bottom outline pixel repair; exact crop in rose-sheet-crops.json",
+      "light": "upper-left"
+    }
+  ],
+  "supplement_source_sha256": "3e5fa9386e3bce91648543e6e8cf54b4c6f43417450e4ba6e160aa031994e3e5"
+}

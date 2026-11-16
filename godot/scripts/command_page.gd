@@ -86,6 +86,7 @@ func preset_text(row:Dictionary)->String:
 	var names:Array=selected.map(func(id):return Text.resident(game.world,id))
 	return " ".join(names)+" "+text
 func reason(row:Dictionary)->String:
+	if row.id in ["flowers.arrange","flowers.gift"]:return "" if not selected.is_empty() else Text.text("local.commands.select")
 	if row.has("resort_kind"):
 		return "" if game.world.resort.vacation("human") else label(preload("res://scripts/localization.gd").source("content.health_20261107.53f977c720e6"),"Walk to the holiday island first")
 	if selected.is_empty():return label(preload("res://scripts/localization.gd").source("content.health_20261107.9dd9dba71abf"),"Select companions")
@@ -115,7 +116,10 @@ func rebuild()->void:
 		b.pressed.connect(func():
 			counts[row.id]=int(counts.get(row.id,0))+1
 			var cfg:=ConfigFile.new();cfg.set_value("commands","counts",counts);cfg.save(game.data_dir.path_join("command-clicks.cfg"))
-			game._send(preset_text(row));rebuild())
+			if row.id=="flowers.arrange":game._open_flowers(selected);game.chat.hide()
+			elif row.id=="flowers.gift":game._send(preset_text(row))
+			else:game._send(preset_text(row))
+			rebuild())
 func dispatch(_text:String)->bool:
 	return false
 func _process(delta:float)->void:
