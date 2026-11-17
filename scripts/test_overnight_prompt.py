@@ -25,7 +25,8 @@ class PromptReplay(unittest.TestCase):
         actual=measure(context)
         saved=json.loads((Path(os.environ.get('HABITAT_PRIVATE_TEST_FIXTURES',ROOT))/'production/evidence/autonomy/ultra-30min.json').read_text())
         self.assertEqual(saved['reference_prompt_tokens'],saved['prompt_measurement']['estimated_tokens_per_turn'])
-        reference=json.loads((Path(os.environ.get('HABITAT_PRIVATE_TEST_FIXTURES',ROOT))/'production/evidence/2026-11-08-对话合一与AI放权/prompt-reference.json').read_text())
+        # Exact merged-release snapshot: v2 now also advertises the five real flower actions.
+        reference=json.loads((ROOT/'godot/tests/fixtures/prompt-reference-v070.json').read_text())
         self.assertEqual(reference,actual)
         self.assertGreater(actual['characters'],len(companion.INSTRUCTIONS))
 if __name__=='__main__':unittest.main()

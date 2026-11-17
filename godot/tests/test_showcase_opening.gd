@@ -20,9 +20,10 @@ func _initialize()->void:
 	check(not Opening.apply(world,library).applied,"opening cannot duplicate stock/furniture")
 	world.resort.furnish() # Complete the normal post-library preset initialization.
 	var houses:Array=world.objects.values().filter(func(o):return o.kind=="construction_site" and o.stage_index==5)
-	check(houses.size()==7 and world.interior.rooms().size()==7,"five main homes plus two vacation villas/rooms")
+	# DIRECTION 2026-11-11：“五座别墅只留一座”。Five main homes plus the single greenhouse.
+	check(houses.size()==6 and world.interior.rooms().size()==6,"five main homes plus one greenhouse/room")
 	check(houses.all(func(h):return h.invested==0 and h.delivered.is_empty() and h.get("contributions",{}).is_empty()),"no invented building investment or contributors")
-	check(world.interior.furniture.size()==25 and world.interior.furniture.values().all(func(f):return f.invested==0),"four unearned initial furnishings per room")
+	check(world.interior.furniture.size()==20 and world.interior.furniture.values().all(func(f):return f.invested==0),"fifteen main-home furnishings plus five greenhouse presets, all with zero invented investment")
 	check(world.leisure.sites.size()==world.catalog.regions.home.layout.facilities.size() and world.leisure.sites.values().all(func(f):return f.complete and f.invested==0),"initial facilities include second chess table, no investment")
 	check(world.memories.records.is_empty() and world.projects.memories.is_empty() and world.interior.memories.is_empty(),"no memories from initial state")
 	check(world.relationships.states.is_empty() and world.wishes.states.is_empty(),"no relationship or wish history")

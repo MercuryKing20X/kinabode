@@ -1,13 +1,14 @@
 extends "res://tests/test_empowered_input.gd"
+# DIRECTION 2026-11-11：“五座别墅只留一座”“泳池、躺椅、吊床等拿掉”“旧‘度假状态’取消”。
 var rows:Array=[]
 var base_dir:String
 func make()->void:
 	OS.set_environment("HABITAT_OPENING","showcase")
-	game=load("res://scenes/main_v3.tscn").instantiate();root.add_child(game);game.save_enabled=false;game.set_process(false)
+	game=load("res://scenes/main_v3.tscn").instantiate()
+	game.dialogue_adapter_factory=func(_id,_scope):return IntentFake.new()
+	root.add_child(game);current_scene=game;game.save_enabled=false;game.set_process(false)
 	await process_frame;await process_frame
 	game.world.director.set_controller("codex","model")
-	if game.links.has("codex"):game.links.codex.queue_free();game.links.erase("codex")
-	game.dialogue_adapter_factory=func(_id,_scope):return IntentFake.new()
 	game._ensure_link("codex");game.chat.hide();game.chat_input.release_focus()
 func close()->void:
 	game.queue_free();await process_frame
@@ -17,6 +18,7 @@ func run()->void:
 	var chosen:String=OS.get_environment("HABITAT_INTENTION_CASES")
 	if not chosen.is_empty():cases=cases.filter(func(action):return action in chosen.split(","))
 	for action in cases:
+		print("CATALOG_CASE ",action)
 		OS.set_environment("HABITAT_DATA_DIR",base_dir.path_join(action));DirAccess.make_dir_recursive_absolute(base_dir.path_join(action))
 		await make()
 		var w:RefCounted=game.world
@@ -70,8 +72,13 @@ func run()->void:
 		var completed:bool=history.any(func(row):return row.result=="completed")
 		var failure:String=str(game.intentions.last_failure.get("codex",result.get("error","")))
 		rows.append({"action":action,"accepted":result.ok,"started_within_3":moved or completed,"failure":failure})
-		check(result.ok or completed,"catalog has real executable task "+action+" "+failure)
-		check(moved or completed,"catalog starts actual motion/action by three seconds "+action+" "+failure)
+		# DIRECTION 2026-11-11: remove the villas, loungers, hammocks and swings; cancel vacation state.
+		if action in ["lounge","swing"]:
+			check(not completed and failure in ["unknown_resort_activity","vacation_retired"],"retired vacation furniture is explicitly rejected "+action)
+			check(not w.work.jobs.values().any(func(job):return job.get("intent")=="resort"),"retired action creates no resort job "+action)
+		else:
+			check(result.ok or completed,"catalog has real executable task "+action+" "+failure)
+			check(moved or completed,"catalog starts actual motion/action by three seconds "+action+" "+failure)
 		await close()
 	var dir:String=base_dir
 	FileAccess.open(dir.path_join("catalog-results.json"),FileAccess.WRITE).store_string(JSON.stringify(rows,"  "))

@@ -1,11 +1,40 @@
-# Unreleased — v0.8 connection
+# Changelog / 更新记录
+
+## v0.7.0 — 2026-11-17
+
+- **Unified brains and interaction:** one resident decision system for needs, scored choices, inner thoughts, personality remarks, routines, banter, small cooperation and stewardship. / **统一大脑与互动：**需要、候选打分、心里话、吐槽、作息、拌嘴与小合作，以及托管并入同一决策入口。
+- **Native connections:** OpenAI-compatible cloud/local API and SSE without Python; optional Codex retained. Resident identity and memory remain shared across providers; player-selected AI quotes can become bounded offline speech. / **原生连接：**兼容云端和本机模型、流式回复，无需Python；保留可选Codex。同一人设记忆跨提供方，明确收藏AI台词后可在离线日常说出。
+- **Flower Isle:** one greenhouse and scenic roses, warehouse wood-for-roses, permanent flower/text/pattern arrangements, pickup and real rose gifts; first receipt creates an album photo. / **鲜花岛：**一座花房与观赏玫瑰田，仓库木材换花、永久摆花摆字摆图案、捡花与真实送花，首礼自动留照。
+- **Writing:** resident diaries and letters grounded in retained real facts, with viewing, deletion and signed import/export outside world saves. / **写东西：**依据真实事实的伙伴日记和书信，跨档保留，可看、删除、签名导入导出。
+- Release bundles include licenses and bilingual instructions. Native API needs no Python; optional Codex requires local Codex and Python 3. / 三平台包附授权与中英说明；原生API无需Python，可选Codex需本机Codex及Python3。
+
+### Validation and known issues / 验证与已知问题
+
+本轮唯一完整全套 **396/418**，22项失败。修后仅跑限定专项，未运行第二遍完整全套；不能把专项拼接成全套全绿。 / The only complete merged-tree suite passed **396/418**, with 22 failures. Focused follow-ups are separate; no second complete run and no all-green claim.
+
+| Unresolved full-suite check / 未解全套项 | Evidence / 观察 |
+|---|---|
+| `test_steward_director_long.gd` | 三日15/16，星星目标仍依赖退休resort入口；慢AI问话8次低于原9次。保原断言，发布轮不扩大重做托管。 / Three-day stewardship completes 15/16 goals; stars still depends on the retired resort entry. The slow AI fixture asks eight owner questions against the unchanged threshold of nine. |
+| `test_life_archive.gd` | 原头像卡心声入口及三个内页的真实点击未通过；归档/签名导出和真实任务检查通过，原UI断言保留。 / Real clicks on the portrait-card inner-voice entry and its three tabs fail; archive, signed export and physical-task checks pass. Original UI assertions remain. |
+| `test_steward_day.gd` | 夜间看星星真实到达失败，与退休resort入口相关，未修复。 / The steward fails to reach its night-star activity through the retired resort path. |
+| `check_translations.gd` | 花摊CSV表头key→keys及三条图鉴旧岛名已修；检查器仍将显式中英条件分支、局部zh/en变量及花字库汉字键标为未译。保留负例与全部原检查，记录剩余失败，不加跳过白名单。 / The CSV header and three stale island names are fixed. The checker still flags explicit bilingual branches, zh/en variables and Chinese glyph identifiers. Checks and the negative fixture are retained without a skip list. |
+| `test_their_island_story_input.gd` | 旧南岛引介/到达台词与依赖的真实记忆链未通过，精确竞争或退休行为影响未在发布轮确证；原断言不改。 / The old south-island introduction/arrival speech and dependent retained-memory chain fail. The exact cause is not confirmed; assertions remain. |
+
+Three standalone historical brain probes still fail their original idle/rain, night-rest and pair-play observations; the standalone memory UI probe reaches the game but its original reunion-speech assertion still fails. These are outside the registered complete suite. / 三个历史大脑探针及旧记忆UI重逢短句断言仍未通过，均未登记完整套件，不计入其分母。
+
+- Windows and Linux: archive/PCK validation only; not tested on those systems. Only MacBook M1 8GB has been tested by the author. / Windows与Linux仅结构及PCK核验，未实机；作者只在M1 8GB测试。
+- No long real-model soak test or universal provider-compatibility claim. / 未做长期真实模型测试，不宣称所有提供方均兼容。
+- Eight fan-derived appearance designs still lack complete original artist/permission records; see CREDITS. / 八套同人外观的原作者与许可留档仍不完整，见CREDITS。
+
+---
+
+## v0.8 connection development history / 连接开发历史（已纳入 v0.7.0）
 
 - Added native OpenAI-compatible API connections and loopback URLs for Ollama/LM Studio, including incremental SSE, local credentials, provider-neutral resident cards and existing quota/cancel gates. Codex remains an optional local Python integration.
 - Added player-selected AI quotes in the memory book, with retained provenance and bounded offline speech through the original Director gates.
 
-# Changelog / 更新记录
 
-## Unreleased — v0.7 round 6 / 未发布
+## v0.7 round-six development history / 第六轮开发历史（已纳入 v0.7.0）
 
 - Restore natural need bubbles within the original ordinary speech opportunity; keep earned LocalDialogue turns, factual reminders and their existing gates. / 恢复原普通发言机会中的需求气泡，保留本地对话“三旧换新”额度、事实提醒与原闸门。
 - Order equally old needs deterministically and restore true catch thanks while pending fish still blocks idle movement. Bubble clicks use original host commands and real fishing. / 同龄需求确定性排序，待安置真鱼仍阻止闲暇移动但可说真实感谢；点击仍走原指令和真实钓鱼。

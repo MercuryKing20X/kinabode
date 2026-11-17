@@ -203,7 +203,11 @@ static func _valid(world: RefCounted, data: Dictionary) -> bool:
 	if data.has("home_map_version") and (not (data.home_map_version is int or data.home_map_version is float) or not is_finite(data.home_map_version) or data.home_map_version!=2):return false
 	if data.has("island_ingredients") and not world.ingredients.valid(data.island_ingredients):return false
 	if data.has("cat") and not preload("res://scripts/cat_companion.gd").valid(data.cat):return false
-	if data.has("flower_creation") and not world.flower_creation.valid_saved(data.flower_creation,data.get("actors",{})):return false
+	if data.has("flower_creation"):
+		# Frozen pre-flower worlds still validate the optional field with the same strict validator.
+		var flowers:RefCounted=world.get("flower_creation")
+		if flowers==null:flowers=preload("res://scripts/flower_creation.gd").new(world)
+		if not flowers.valid_saved(data.flower_creation,data.get("actors",{})):return false
 	if data.has("storage") and not world.storage.valid_saved(data.storage): return false
 	if data.has("jieqi") and not world.jieqi.valid_saved(data.jieqi,data.get("actors",{})):return false
 	if data.has("barbecue_tastes") and not _valid_tastes(world,data.barbecue_tastes,data.get("actors",{})):return false

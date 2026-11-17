@@ -1,0 +1,10 @@
+{
+  "characters": 18672,
+  "ascii_characters": 18427,
+  "non_ascii_characters": 245,
+  "estimated_input_tokens": 4835,
+  "estimated_output_tokens": 256,
+  "estimated_tokens_per_turn": 5091,
+  "method": "ASCII/4 + non-ASCII/1.5, ceil + 64 protocol tokens + 256 output tokens; estimate only",
+  "real_model_calls": 0
+}

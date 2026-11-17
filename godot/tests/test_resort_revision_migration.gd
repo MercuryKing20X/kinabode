@@ -1,4 +1,5 @@
 extends SceneTree
+# DIRECTION 2026-11-11：“五座别墅只留一座”“泳池、躺椅、吊床等拿掉”“旧‘度假状态’取消”。
 const Migration=preload("res://scripts/resort_revision_migration.gd")
 const Save=preload("res://scripts/save_store.gd")
 var failed:=false
@@ -31,7 +32,8 @@ func _initialize()->void:
 	check(int(raw.storage.items.wood)==before+30,"4 invested+3 delivered+20 completed+3 chair returned exactly")
 	check(not raw.objects.keys().any(func(id):return Migration.removed(id)),"old small houses removed from saved objects")
 	check(not raw.interior.furniture.has("furniture.2"),"refunded chair removed without duplication")
-	check(raw.vacation_version==3,"revision marker written")
+	# DIRECTION Flower Isle (2026-11-11) replaces the vacation map.
+	check(raw.vacation_version==4,"Flower Isle revision marker written")
 	check(raw.actors.codex.region_id=="home" and world.walkable("home",world.point(raw.actors.codex)),"old room resident relocated to actual walkable plaza")
 	check(raw.shared_memories==memories_before,"all retained shared memory facts unchanged")
 	check(not Migration.valid_archive({"plans":{},"memories":[],"interior":[{"kind":"made_up"}]}),"forged archived interior memory rejected")

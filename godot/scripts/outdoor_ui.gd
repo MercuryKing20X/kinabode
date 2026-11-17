@@ -10,5 +10,5 @@ func setup(host:Node)->void:
 		var panel=preload("res://scripts/outdoor_panel.gd").new();game.add_child(panel);panel.setup(game);panel.popup_centered())
 func _process(_delta:float)->void:
 	if game==null:return
-	button.visible=game.world.actors.human.region_id=="home" and game.world.home_island.contains(game.world.point(game.world.actors.human)) and not game.world.resort.vacation("human")
+	button.visible=game.world.actors.human.region_id=="home" and game.world.home_island.contains(game.world.point(game.world.actors.human)) and not game.world.resort.contains(game.world.point(game.world.actors.human))
 	button.text=Text.text("outdoor.title")

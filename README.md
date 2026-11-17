@@ -1,4 +1,4 @@
-# 有栖 / Kinabode · v0.6.1
+# 有栖 / Kinabode · v0.7.0
 
 一个人带着四个饭桶在海岛上生活。种菜、钓鱼、烧烤、下棋、玩小游戏，慢慢把岛变成家。
 
@@ -9,7 +9,11 @@ A quiet island home for you and four hungry companions. Grow crops, fish, share 
 ![托管与岛主 / Steward and island host](docs/images/steward.png)
 ![关于有栖 / About Kinabode](docs/images/about.png)
 
-上图开始页、关于与正式开局来自 v0.6.0 导出验证；托管图来自 v0.6 开发验证。v0.6.1 游戏包与验证结果见 [CHANGELOG](CHANGELOG.md)。 / These start, About and standard-opening captures are from v0.6.0 verification; the stewardship capture is from v0.6 development. See [CHANGELOG](CHANGELOG.md) for v0.6.1 packages and validation.
+历史配图：上图开始页、关于与正式开局来自 v0.6.0 导出验证；托管图来自 v0.6 开发验证。v0.7.0 游戏包与验证结果见 [CHANGELOG](CHANGELOG.md)。 / These start, About and standard-opening captures are from v0.6.0 verification; the stewardship capture is from v0.6 development. See [CHANGELOG](CHANGELOG.md) for v0.7.0 packages and validation.
+
+本版带来统一伙伴大脑与心里话、原生 AI 连接与台词收藏，以及鲜花岛的换花、摆字、送花、日记和书信。
+
+This release brings unified companion brains and inner thoughts, native AI connections and saved quotes, plus Flower Isle trading, rose arrangements, gifts, diaries and letters.
 
 ## 运行 / Run
 
@@ -23,9 +27,9 @@ Install **Godot 4.7.2**, import `godot/project.godot` and run the project. The f
 
 ## 可选 AI / Optional AI
 
-在游戏的居民连接页选择本地、Codex 或 GPT API。API 地址由玩家填写，密钥放自己的本地配置或环境变量；请勿提交密钥、个人会话、存档或连接配置。连接、推理与接受任务是不同状态；等待和失败不会伪造模型回复。
+在游戏的居民连接页选择本地、可选 Codex 或原生 OpenAI 兼容 API（含 Ollama / LM Studio 本机地址）。原生 API 不需要 Python；可选 Codex 桥需要本机 Codex 与 Python 3。API 地址由玩家填写，密钥放自己的本地配置或环境变量；请勿提交密钥、个人会话、存档或连接配置。连接、推理与接受任务是不同状态；等待和失败不会伪造模型回复。
 
-Use the resident connection page to select local intelligence, Codex or a GPT API. Enter your own API endpoint and keep credentials in your local configuration or environment. Never commit keys, personal conversations, saves or connection settings. A connection does not prove inference, and an accepted job is not a completed job.
+Use the resident connection page to select local intelligence, optional Codex or a native OpenAI-compatible API, including local Ollama / LM Studio URLs. Native API needs no Python; the optional Codex bridge needs local Codex and Python 3. Enter your own API endpoint and keep credentials in your local configuration or environment. Never commit keys, personal conversations, saves or connection settings. A connection does not prove inference, and an accepted job is not a completed job.
 
 ## 验证与贡献 / Checks and contributions
 
@@ -47,4 +51,4 @@ Project-authored code, content and new artwork are under [MIT](LICENSE). Third-p
 
 Eight appearance designs derive from Chinese community fan art. This project is a tribute and is unaffiliated with the relevant companies. Original artists may contact us with concerns; we will remove the material immediately. Artist identities and original redistribution permissions are not fully documented; see CREDITS.
 
-联系方式 / Contact: **抖音 / Douyin: MercuryFantasy**。[GitHub](https://github.com/shuixingking/kinabode)。
+联系方式 / Contact: **抖音 / Douyin: MercuryFantasy**。[GitHub](https://github.com/MercuryKing20X/kinabode)。

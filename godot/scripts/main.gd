@@ -2857,7 +2857,7 @@ func _persona_speech(line:String,id:String)->String:
 	return T("simple.fallback")
 
 func _setup_flowers_ui()->void:
-	flower_panel=preload("res://scripts/flower_panel.gd").new();add_child(flower_panel);flower_panel.theme=Theme.new();flower_panel.theme.default_font=ui_font;flower_panel.theme.default_font_size=18;flower_panel.setup()
+	flower_panel=preload("res://scripts/flower_panel.gd").new();book_panel.get_parent().add_child(flower_panel);flower_panel.theme=Theme.new();flower_panel.theme.default_font=ui_font;flower_panel.theme.default_font_size=18;flower_panel.setup()
 	flower_panel.action_requested.connect(func(args):
 		var result:Dictionary=world.host_command("human",args)
 		flower_panel.stock.text=_flower_stock();flower_panel.message.text=_flower_result(result))

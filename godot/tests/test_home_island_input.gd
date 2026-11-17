@@ -1,4 +1,5 @@
 extends SceneTree
+# DIRECTION 2026-11-11：“五座别墅只留一座”“泳池、躺椅、吊床等拿掉”“旧‘度假状态’取消”。
 const UI=preload("res://tests/barbecue_ui_fixture.gd")
 var failed:=false
 func check(ok:bool,label:String)->void:
@@ -41,9 +42,10 @@ func run()->void:
 	check(game.world.objects.values().filter(func(o):return o.id.begins_with("homelands.house.") and o.region_id=="home" and o.kind=="construction_site").is_empty(),"zero retired southern build sites")
 	check(game.world.barbecues.has("homelands.barbecue"),"fourth real Fireside registered")
 	check(game.world.memories.records.any(func(r):return r.kind=="home_island_arrival"),"first landing retained canonical fact")
-	check(game.world.resort.config.villas.size()==2,"exactly two configured leisure villas")
-	check(game.world.objects.values().filter(func(o):return str(o.id).begins_with("resort.villa.") and o.stage_index==5 and o.invested==0).size()==2,"two complete preset villas with zero invented investment")
-	check(game.world.resort.activities.values().filter(func(a):return a.kind=="pool").size()==1,"exactly one shared pool")
+	# DIRECTION Flower Isle 2026-11-11: retain only the greenhouse, remove the shared pool.
+	check(game.world.resort.config.villas.size()==1,"exactly one configured greenhouse")
+	check(game.world.objects.values().filter(func(o):return str(o.id).begins_with("resort.villa.") and o.stage_index==5 and o.invested==0).size()==1,"one complete preset greenhouse with zero invented investment")
+	check(game.world.resort.activities.values().filter(func(a):return a.kind=="pool").size()==0,"retired shared pool is absent")
 	check(game.world.farms.farms.keys().filter(func(id):return str(id).begins_with("farm.theirs") and game.world.farms.ready(id)).is_empty(),"no southern farm available for production")
 	var before:int=game.world.storage.count("wood")
 	var villa:Dictionary=game.world.resort.config.villas[0]

@@ -4,7 +4,7 @@ extends "res://tests/test_home_island_input.gd"
 func run()->void:
 	var probe:Node=UI.init_game(self);await process_frame;await process_frame
 	await bridge_walk(probe,Vector2(93,185),"outdoor-retirement")
-	check(probe.world.resort.vacation("human"),"native host enters holiday land")
+	check(probe.world.resort.contains(probe.world.point(probe.world.actors.human)) and not probe.world.resort.vacation("human"),"native host enters Flower Isle without retired vacation state")
 	var outdoor:Node=null
 	for node in probe.get_children():
 		if node.get_script()==preload("res://scripts/outdoor_ui.gd"):outdoor=node

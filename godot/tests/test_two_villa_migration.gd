@@ -1,4 +1,5 @@
 extends SceneTree
+# DIRECTION 2026-11-11：“五座别墅只留一座”“泳池、躺椅、吊床等拿掉”“旧‘度假状态’取消”。
 const Save=preload("res://scripts/save_store.gd")
 var failed:=false
 func check(ok:bool,message:String)->void:
@@ -18,11 +19,11 @@ func _initialize()->void:
 	var w=load("res://scripts/world_state.gd").new("res://content/home-v3/world.json");w.library=lib;w.residents.provision(w)
 	var result:Dictionary=Save.load_world(w,dir)
 	check(result.get("ok",false) and result.get("loaded",false),"old five-villa save loads through actual entry")
-	check(w.objects.keys().filter(func(id):return str(id).begins_with("resort.villa.")).size()==2,"three removed villas absent")
+	check(w.objects.keys().filter(func(id):return str(id).begins_with("resort.villa.")).size()==1,"DIRECTION Flower Isle: four removed villas absent")
 	check(w.storage.saved().items.keys().size()==before.items.size() and before.items.keys().all(func(k):return w.storage.count(k)==int(before.items[k])),"free preset buildings and furniture grant no resources")
 	check(w.memories.saved()==memory,"actual retained memories preserved")
-	check(w.interior.furniture.values().all(func(f):return not str(f.region_id).begins_with("room.resort.villa.") or str(f.region_id) in ["room.resort.villa.human","room.resort.villa.companion-2"]),"removed villa furniture not duplicated")
-	check(Save.save_world(w,dir),"two-villa save succeeds")
+	check(w.interior.furniture.values().all(func(f):return not str(f.region_id).begins_with("room.resort.villa.") or str(f.region_id) in ["room.resort.villa.human"]),"removed villa furniture not duplicated")
+	check(Save.save_world(w,dir),"single-greenhouse save succeeds")
 	var again=load("res://scripts/world_state.gd").new("res://content/home-v3/world.json");again.library=lib;again.residents.provision(again)
 	result=Save.load_world(again,dir)
 	check(result.get("ok",false) and again.storage.saved().items.keys().size()==before.items.size() and before.items.keys().all(func(k):return again.storage.count(k)==int(before.items[k])),"reload is idempotent")

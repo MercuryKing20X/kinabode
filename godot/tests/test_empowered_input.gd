@@ -1,13 +1,14 @@
 extends "res://tests/test_intent_input.gd"
+# DIRECTION 2026-11-11：“五座别墅只留一座”“泳池、躺椅、吊床等拿掉”“旧‘度假状态’取消”。
 func run()->void:
 	OS.set_environment("HABITAT_OPENING","showcase")
 	root.size=Vector2i(1280,800);root.content_scale_size=Vector2i.ZERO
-	game=load("res://scenes/main_v3.tscn").instantiate();root.add_child(game)
+	game=load("res://scenes/main_v3.tscn").instantiate()
+	game.dialogue_adapter_factory=func(_id,_scope):return IntentFake.new()
+	root.add_child(game)
 	game.save_enabled=false;game.set_process(false);await process_frame;await process_frame
 	var w:RefCounted=game.world
 	w.director.set_controller("codex","model")
-	if game.links.has("codex"):game.links.codex.queue_free();game.links.erase("codex")
-	game.dialogue_adapter_factory=func(_id,_scope):return IntentFake.new()
 	game._ensure_link("codex");preload("res://tests/dialogue_ui_fixture.gd").open(game,"codex")
 	await text_input("你喜欢泳池吗？")
 	var idle_link:Node=game.links.codex
@@ -38,7 +39,8 @@ func run()->void:
 		if i%100==0:await process_frame
 		if not game.intentions.plans.has("codex"):break
 	print("EMPOWERED_HISTORY ",game.intentions.history)
-	check(w.resort.using("codex")=="pool" and w.resort.using("companion-2")=="pool","named companion and self really enter pool")
+	# DIRECTION Flower Isle 2026-11-11 removes the pool and vacation state.
+	check(w.resort.using("codex").is_empty() and w.resort.using("companion-2").is_empty() and game.intentions.last_failure.get("codex")=="unknown_resort_activity","retired pool request rejects without assigning either resident")
 	check(w.actors.human.position==human.position and w.actors.human.region_id==human.region_id,"all real inputs preserve human position")
 	await picture("empowered-pool")
 	await text_input("先逛逛，再去钓鱼，回来烤鱼")

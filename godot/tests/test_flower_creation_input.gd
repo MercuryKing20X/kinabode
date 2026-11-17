@@ -50,7 +50,10 @@ func run()->void:
 			if offsets.all(func(offset):return w.flower_creation.space("home",p+offset)) and w.point(w.actors.human).distance_to(p)<35:chosen=p;break
 		if is_finite(chosen.x):break
 	check(is_finite(chosen.x),"find actual open HI ground")
-	game.flower_panel.text_input.grab_focus()
+	var field:Vector2=game.flower_panel.text_input.get_global_rect().get_center()
+	for down in [true,false]:
+		var mouse:=InputEventMouseButton.new();mouse.button_index=MOUSE_BUTTON_LEFT;mouse.position=field;mouse.global_position=field;mouse.pressed=down;root.push_input(mouse,true);await process_frame
+	check(game.flower_panel.text_input.has_focus(),"actual flower input receives focus above the HUD")
 	for code in [KEY_H,KEY_I]:
 		var event:=InputEventKey.new();event.keycode=code;event.unicode=code;event.pressed=true;root.push_input(event,true);await process_frame
 	check(await UI.click(self,game.flower_panel.arrange_button),"actual HI place mode")

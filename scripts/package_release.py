@@ -8,8 +8,8 @@ p=argparse.ArgumentParser(description=__doc__)
 p.add_argument('--platform', choices=['all','Windows','macOS','Linux'], default='all')
 p.add_argument('--output',type=Path,default=ROOT/'build')
 a=p.parse_args();out=a.output.resolve();out.mkdir(parents=True,exist_ok=True)
-version='0.6.1'
-readme='''有栖 / Kinabode v0.6.1
+version='0.7.0'
+readme='''有栖 / Kinabode v0.7.0
 
 打开 / Open
 Windows: 双击 Kinabode.exe。SmartScreen: 更多信息 → 仍要运行。
@@ -21,8 +21,10 @@ Linux: Double-click Kinabode.x86_64; if needed, chmod +x Kinabode.x86_64.
 
 不接 AI 也能完整游玩；本地玩法不需要 Python。
 The full game works offline without AI or Python.
-可选 AI 需要 Python 3、自己的密钥，费用自理；连接页有说明。
-Optional AI needs Python 3 and your own credentials, billed to you.
+原生 API 可连接云端或本机模型，无需 Python；云端密钥和费用由你负责。
+可选 Codex 桥需要本机 Codex 与 Python 3。
+Native API supports cloud and local models without Python; cloud credentials and costs are yours.
+The optional Codex bridge needs local Codex and Python 3.
 
 存档 / Saves (same application name 有栖 as the development version)
 macOS: ~/Library/Application Support/Godot/app_userdata/有栖/
@@ -31,7 +33,7 @@ Linux: ~/.local/share/godot/app_userdata/有栖/
 若设置 HABITAT_DATA_DIR，则沿用其指定目录。不会重置旧进度。
 HABITAT_DATA_DIR overrides the save location. Existing progress is preserved.
 
-https://github.com/shuixingking/kinabode
+https://github.com/MercuryKing20X/kinabode
 抖音 / Douyin: MercuryFantasy
 See LICENSE, CREDITS.md and font licenses.
 '''
