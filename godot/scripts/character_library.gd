@@ -309,7 +309,7 @@ func safe_id(value: String) -> bool:
 	return value!="." and value!=".." and not value.begins_with(".")
 func display_name(id: String) -> String:
 	var art: Dictionary=artworks.get(id,{})
-	if "spare" in art.get("tags", []): return str(art.get("name", id)) + LocalText.text("content.remaining.spare_suffix")
+	if "spare" in art.get("tags", []): return preload("res://scripts/workshop_catalog.gd").work_name(art,id) + LocalText.text("content.remaining.spare_suffix")
 	if resident_world!=null:
 		for actor in resident_world.actors.values():
 			if actor.appearance_id==id:return LocalText.resident(resident_world,str(actor.id))

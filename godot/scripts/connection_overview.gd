@@ -77,11 +77,9 @@ func refresh()->void:
 				if probe.is_valid():probe.call(id,"disconnect")
 				else:pool.disconnect_ai(id)
 			else:test_connection(id))
-		if advanced and state.state=="ready":
-			var manager:=CheckButton.new();manager.focus_mode=Control.FOCUS_NONE;manager.text=Text.text("steward.authority");manager.set_pressed_no_signal(pool.management(id));manager.toggled.connect(func(on):pool.set_management(id,on));action.add_child(manager)
 		if true:
 			var cap_label:=Label.new();cap_label.name="daily_quota_label_"+id;cap_label.text=quota_caption(id);action.add_child(cap_label)
-			var limit:=SpinBox.new();limit.name="daily_quota_"+id;limit.min_value=0;limit.max_value=100000000;limit.step=1;limit.value=pool.daily_limit(id);limit.tooltip_text=Text.text("steward.daily_limit");action.add_child(limit)
+			var limit:=SpinBox.new();limit.name="daily_quota_"+id;limit.min_value=0;limit.max_value=100000000;limit.step=1;limit.value=pool.daily_limit(id);limit.tooltip_text=Text.text("door.daily_limit");action.add_child(limit)
 			var quota_progress:=ProgressBar.new();quota_progress.name="quota_progress_"+id;quota_progress.custom_minimum_size=Vector2(120,18);quota_progress.max_value=maxi(1,pool.daily_limit(id));quota_progress.value=int(pool.quota_usage(id).get("tokens",0))+int(pool.quota_usage(id).get("reserved",0));quota_progress.show_percentage=pool.daily_limit(id)>0;action.add_child(quota_progress)
 			limit.value_changed.connect(func(value):
 				pool.set_daily_limit(id,int(value))
@@ -91,7 +89,6 @@ func refresh()->void:
 			var turn_caption:=Label.new();turn_caption.text=Text.text("play.turn_limit");action.add_child(turn_caption)
 			var turn_cap:=SpinBox.new();turn_cap.min_value=0;turn_cap.max_value=100000000;turn_cap.step=10000;turn_cap.value=pool.turn_limit(id);turn_cap.tooltip_text=Text.text("play.unlimited_hint");turn_cap.value_changed.connect(func(value):pool.set_turn_limit(id,int(value)));action.add_child(turn_cap)
 
-	var reset:=Button.new();reset.focus_mode=Control.FOCUS_NONE;reset.text=Text.text("repair.reset");reset.pressed.connect(func():pool.settings.erase_section("steward_prompt");pool.persist());rows.add_child(reset)
 	var more:=Button.new();more.focus_mode=Control.FOCUS_NONE;more.text=Text.text("simple.advanced");more.pressed.connect(func():advanced=not advanced;refresh());rows.add_child(more)
 	var usage:=Label.new();usage.name="GPTUsage";usage.text=Text.text("gpt.usage")+": %d · USD %.6f (%s)" % [pool.api_tokens(),pool.api_cost(),Text.text("gpt.estimate")];rows.add_child(usage)
 	if pool.api_usage.get_value(Time.get_date_string_from_system(),"unknown_price",false):usage.text=Text.text("gpt.usage")+Text.text("gestation.unknown_cost") % pool.api_tokens()
@@ -109,15 +106,6 @@ func test_connection(id:String)->void:
 	if probe.is_valid():probe.call(id,"connect")
 	else:pool.connect_ai(id)
 	refresh()
-func offer_steward()->void:
-	if not visible or probe.is_valid() or is_instance_valid(invitation) and invitation.visible:return
-	if not pool.steward_requested.is_empty():return
-	for id in pool.IDS:
-		if pool.states.get(id,{}).get("state","")!="ready" or pool.settings.get_value("steward_prompt",id,false):continue
-		pool.settings.set_value("steward_prompt",id,true);pool.persist()
-		invitation=ConfirmationDialog.new();add_child(invitation);invitation.dialog_text=Text.text("repair.offer");invitation.title=Text.text({"codex":"resident.snow","companion-2":"resident.skye","npc.mira":"resident.clem","npc.nora":"resident.raven"}[id]);invitation.get_ok_button().text=Text.text("repair.yes");invitation.get_cancel_button().text=Text.text("repair.later")
-		invitation.confirmed.connect(func():pool.set_management(id,true);pool.steward_requested=id)
-		invitation.popup_centered();return
 func _process(delta:float)->void:
 	# Management remains explicit in settings; no automatic modal over connection rows.
 	if is_instance_valid(banner) and Time.get_ticks_msec()>=banner_until:banner.text=""

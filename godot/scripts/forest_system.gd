@@ -5,16 +5,19 @@ var _owner: WeakRef
 var world: RefCounted:
 	get: return _owner.get_ref()
 var settings: Dictionary = {}
+var wall_time: Callable = system_wall_time
 var clock := Time.get_unix_time_from_system()
 var elapsed := 0.0
 var blocked: Dictionary = {}
+
+func system_wall_time() -> float:
+	return Time.get_unix_time_from_system()
 
 func _init(source: RefCounted) -> void:
 	_owner = weakref(source)
 	settings = JSON.parse_string(FileAccess.get_file_as_string("res://content/forest.json"))
 
 func cut(tree: Dictionary) -> void:
-	clock = maxf(clock, Time.get_unix_time_from_system())
 	tree["sprout_at"] = clock + float(settings.sprout_seconds)
 	tree["mature_at"] = clock + float(settings.mature_seconds) + spread(tree.id)
 	blocked.erase(tree.id)
@@ -22,8 +25,11 @@ func cut(tree: Dictionary) -> void:
 func spread(id: String) -> float:
 	return float(posmod(id.hash(), int(settings.spread_seconds) + 1))
 
-func restore(saved_clock: float = 0.0) -> void:
-	clock = maxf(clock, saved_clock)
+func restore(saved_clock: float = 0.0, saved_wall: float = -1.0) -> void:
+	var wall: float = wall_time.call()
+	# Only a load rebases against wall time. Old saves used an epoch clock.
+	clock = maxf(wall, saved_clock) if saved_wall < 0.0 else saved_clock + maxf(0.0, wall - saved_wall)
+	elapsed = 0.0
 	blocked.clear()
 	for tree in world.objects.values():
 		if tree.kind != "tree" or tree.status == "mature": continue
@@ -35,7 +41,8 @@ func restore(saved_clock: float = 0.0) -> void:
 	refresh()
 
 func advance(delta: float) -> void:
-	clock = maxf(clock + delta, Time.get_unix_time_from_system())
+	if delta <= 0.0: return
+	clock += delta
 	elapsed += delta
 	if elapsed < float(settings.scan_seconds): return
 	elapsed = 0.0

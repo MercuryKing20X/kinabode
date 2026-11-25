@@ -116,9 +116,11 @@ func run()->void:
 	check(clicked,"natural fish need appears within original 600 seconds and real bubble input clicks it")
 	var thanked:bool=false
 	for tick in 600:
-		game._process(.5);game.view._process(.5)
+		game._process(.5);game.local_host_commands._process(.5);game.view._process(.5)
 		if game.view.speech_by_actor.get("codex",{}).get("context")=="need_satisfied":thanked=true;break
 		if tick%20==0:await process_frame
+	if w.fishing.held("codex").is_empty() or not thanked:
+		print("HEALTH_FISH_RECEIPT ",{"owned":w.fishing.held("codex").get("id",""),"thanked":thanked,"waiting":w.director.routines.codex.needs.waiting.get("codex",{}),"job":w.work.jobs.get("codex",{}),"accepted":game.local_host_commands.last_execution,"distance":w.point(w.actors.codex).distance_to(w.point(w.actors.human)),"rank":w.hunger.rank("codex")})
 	check(not w.fishing.held("codex").is_empty() and thanked,"clicked need catches own real fish and says happy thanks")
 	game.queue_free();await process_frame
 	print("HEALTH_AI ",checks," failed=",failed);quit(1 if failed else 0)

@@ -44,7 +44,7 @@ func _init(manager:Node)->void:
 		var tier:int=world.hunger.rank(id)
 		if tier>0:hunger_after[id]=audio.clock+float(audio.tuning.hunger_intervals_seconds[tier-1])*audio.rng.randf()
 	for id in world.barbecues:fires[id]=fire_snapshot(world.barbecues[id])
-	for id in world.fishing.fish:fish[id]=world.fishing.fish[id].location
+	for entry in world.fishing.unplaced_fish():fish[entry.id]=entry.location
 	if world.catalog.regions.has("home"):
 		next_gust=audio.clock+audio.rng.randf_range(float(audio.tuning.get("wind",{}).get("interval_min",25)),float(audio.tuning.get("wind",{}).get("interval_max",60)))
 		coast_shapes.append(Layout.points(world.catalog.regions.home.land))
@@ -117,10 +117,12 @@ func advance(delta:float)->void:
 		if now.invited.any(func(x):return x not in old.invited):audio.play_event("ui.invite")
 		fires[id]=now
 	var current_fish:Dictionary={}
-	for id in world.fishing.fish:
-		var f:Dictionary=world.fishing.fish[id];current_fish[id]=f.location
-		if not fish.has(id) and f.location in ["pending","storage"]:audio.play_event("ui.fish_card")
-		elif fish.get(id) in ["pending","storage"] and world.fishing.pens.has(f.location):
+	for f in world.fishing.unplaced_fish():
+		current_fish[f.id]=f.location
+		if not fish.has(f.id):audio.play_event("ui.fish_card")
+	for id in fish:
+		var f:Dictionary=world.fishing.fish.get(id,{})
+		if world.fishing.pens.has(f.get("location","")):
 			var pen:Dictionary=world.fishing.pens[f.location];var rect:Array=pen.rect
 			audio.play_event("fish.stock",Vector2(rect[0]+rect[2]/2.0,rect[1]+rect[3]/2.0),str(pen.get("region_id","home")),f.owner_id)
 	fish=current_fish

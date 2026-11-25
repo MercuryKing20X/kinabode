@@ -49,7 +49,13 @@ func run()->void:
 						game._process(.1)
 						if not w.work.jobs.has("human"):break
 					w.farms.advance(float(w.farms.crops[crop].seconds)+1)
-				step.target_id=plot.farm_id
+				check(w.command("human",{"intent":"assign_farm","farm_id":plot.farm_id,"manager_id":"codex"}).ok,"host grants management of this real plot's farm")
+				step.target_id=plot.id
+		if action=="stars":
+			for phase in range(48):
+				if w.days.phase().id=="night" and w.weather.current().id not in ["rain","fog"]:break
+				w.advance(150)
+			check(w.days.phase().id=="night" and w.weather.current().id not in ["rain","fog"],"actual world reaches a clear night for stars")
 
 		if action=="hand_over":
 			check(w.host_text_command("codex",{"intent":"gather_wood","tree_count":1}).ok,"prepare actual carried wood")

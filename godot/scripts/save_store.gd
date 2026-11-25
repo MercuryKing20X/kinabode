@@ -5,9 +5,13 @@ const CarryRetention=preload("res://scripts/carry_retention.gd")
 const MAX_SAVE_BYTES := 64 * 1024 * 1024
 
 static func save_world(world: RefCounted, directory: String) -> bool:
+	return write_data(directory.path_join("island-v2.json"), encode_world(world), MAX_SAVE_BYTES)
+
+static func encode_world(world: RefCounted) -> Dictionary:
 	if world.source_manifest=="res://content/home-v3/world.json" and world.resort!=null:world.resort.ready()
-	DirAccess.make_dir_recursive_absolute(directory)
 	var data := {"schema_version": 7, "content_version": world.catalog.regions.home.get("content_version", 1), "world_id": world.world_id, "actors": world.actors, "objects": world.objects, "drops": world.drops, "projects": {"plans": world.projects.plans, "memories": world.projects.memories}, "leisure":world.leisure.saved(), "farming": world.farms.saved(), "shared_life": world.life.state(), "interior": {"serial": world.interior.serial, "furniture": world.interior.furniture, "memories": world.interior.memories}}
+	data["actors"]=world.actors.duplicate(true)
+	for actor in data.actors.values():actor.erase("world_door_client")
 	if world.activities.persist_follow:data["following"]=world.activities.following.keys()
 	data["outdoor_plots"]=preload("res://scripts/outdoor_building.gd").saved(world)
 	data["island_ingredients"] = world.ingredients.saved()
@@ -17,7 +21,10 @@ static func save_world(world: RefCounted, directory: String) -> bool:
 	if world.home_island!=null and not world.home_island.legacy and world.catalog.regions.home.get("layout",{}).has("homelands"):data["home_map_version"]=2
 	if world.resort!=null and world.resort.migrated:data["vacation_version"]=4
 	if world.resort!=null and world.resort.has_meta("retired_south_projects"):data["retired_south_projects"]=world.resort.get_meta("retired_south_projects").duplicate(true)
-	if world.get("flower_creation")!=null:data["flower_creation"]=world.flower_creation.saved()
+	var flowers:RefCounted=world.get("flower_creation")
+	if flowers!=null:
+		data["flower_creation"]=flowers.saved()
+		data["world_creations"]=flowers.creations.saved()
 	data["storage"] = world.storage.saved()
 	for job in (world.flower_creation.jobs.values() if world.get("flower_creation")!=null else []):
 		if job.get("offered",false):
@@ -25,7 +32,6 @@ static func save_world(world: RefCounted, directory: String) -> bool:
 			data.storage.items[rose]=int(data.storage.items.get(rose,0))+1
 	data["jieqi"] = world.jieqi.saved()
 	if Opening.v3(world):data["template_id"]="home-v3";data["opening_id"]=world.opening_id
-	if world.standard.active():data["standard_opening"]=world.standard.saved()
 	data["ecology_version"] = 1
 	data["fishing"] = world.fishing.saved()
 	data["gomoku"] = world.gomoku.saved()
@@ -33,25 +39,35 @@ static func save_world(world: RefCounted, directory: String) -> bool:
 	data["journal"]=world.journal.saved()
 	data["shared_memories"] = world.memories.saved()
 	data["forest_clock"] = world.forest.clock
+	data["forest_saved_wall"] = world.forest.wall_time.call()
 	data["day_cycle"]=world.days.saved()
 	data["promises"]=world.promises.saved()
 	data["relationships"]=world.relationships.saved()
-	data["wishes"]=world.wishes.saved()
 	data["weather"]=world.weather.saved()
 	data["hunger"]=world.hunger.saved()
 	if world.dark!=null and world.dark.enabled():data["dark_island"]=world.dark.saved()
+	if world.get("hearts")!=null:data["companion_hearts"]=world.hearts.saved()
+	if world.get("island_notes")!=null:data["island_notes"]=world.island_notes.saved()
 	data["barbecue_tastes"]=world.barbecue_tastes.duplicate(true)
 	if world.moon!=null and not world.moon.config.is_empty():data["moon_island"]={"last_viewing_day":world.moon.last_viewing_day}
 	if world.barbecues.size()>1:
 		data["extra_barbecues"]={}
 		for id in world.barbecues:
 			if id!="home.barbecue":data.extra_barbecues[id]=world.barbecues[id].state()
-	var encoded := JSON.stringify(data)
-	if encoded.to_utf8_buffer().size()>=MAX_SAVE_BYTES:return false
-	var path := directory.path_join("island-v2.json")
+	return data
+
+static func write_data(path: String, data: Dictionary, limit: int) -> bool:
+	var encoded := JSON.stringify(data).to_utf8_buffer()
+	if encoded.size()>=limit:return false
+	if DirAccess.make_dir_recursive_absolute(path.get_base_dir())!=OK:return false
 	var file := FileAccess.open(path + ".tmp", FileAccess.WRITE)
 	if file == null: return false
-	file.store_string(encoded); file.flush(); file.close()
+	file.store_buffer(encoded); file.flush()
+	var ok := file.get_error()==OK
+	file.close()
+	if not ok:
+		DirAccess.remove_absolute(path+".tmp")
+		return false
 	return DirAccess.rename_absolute(path + ".tmp", path) == OK
 
 static func restore_human_appearance(world: RefCounted, directory: String) -> Dictionary:
@@ -70,6 +86,8 @@ static func restore_human_appearance(world: RefCounted, directory: String) -> Di
 static func load_world(world: RefCounted, directory: String) -> Dictionary:
 	var path := directory.path_join("island-v2.json")
 	if not FileAccess.file_exists(path): return {"ok": true, "loaded": false}
+	if not preload("res://scripts/world_upgrade.gd").prepare(directory):
+		return {"ok":false,"error":"world_backup_failed","safe_to_save":false}
 	var file := FileAccess.open(path, FileAccess.READ)
 	var data: Variant = null
 	if file != null and file.get_length() < MAX_SAVE_BYTES: data = JSON.parse_string(file.get_as_text())
@@ -138,10 +156,11 @@ static func load_world(world: RefCounted, directory: String) -> Dictionary:
 	if world.their_island!=null:world.their_island.clear_session()
 	world.projects.restore(data.get("projects", {}))
 	if data.has("leisure"): world.leisure.restore(data.leisure)
+	world.standard.sync_camps()
 	if data.has("farming"): world.farms.restore(data.farming)
 	if data.has("cat"):world.cat.restore(data.cat)
 	world.shared_activity.restore(data.get("shared_activity", {}))
-	world.forest.restore(float(data.get("forest_clock", 0)))
+	world.forest.restore(float(data.get("forest_clock", 0)), float(data.get("forest_saved_wall", -1)))
 	world.fishing.restore(data.get("fishing",{}))
 	world.gomoku.restore(data.get("gomoku",{}))
 	world.jieqi.restore(data.get("jieqi",{}))
@@ -150,7 +169,10 @@ static func load_world(world: RefCounted, directory: String) -> Dictionary:
 	world.days.restore(data.get("day_cycle",{}))
 	world.memories.restore(data.get("shared_memories", {}))
 	world.their_island.restore(data.get("their_island",{}))
-	world.flower_creation.restore(data.get("flower_creation",{}))
+	var flowers:RefCounted=world.get("flower_creation")
+	if flowers!=null:
+		flowers.restore(data.get("flower_creation",{}))
+		flowers.creations.restore(data.get("world_creations",{}))
 	if world.home_island!=null:world.home_island.restore_visited(bool(data.get("home_island_visited",false)))
 	world.session_generation+=1
 	world.memories.sync()
@@ -158,17 +180,15 @@ static func load_world(world: RefCounted, directory: String) -> Dictionary:
 	world.director.moods.reset()
 	for brain in world.director.brains.values():brain.reset()
 	world.relationships.restore(data.get("relationships",{}))
-	world.wishes.restore(data.get("wishes",{}))
 	world.weather.restore(data.get("weather",{}));world.schedules.reset();world.personality.reset()
 	world.activities.following.clear();world.activities.explicit_selected.clear();world.activities.persist_follow=data.has("following")
 	world.hunger.restore(data.get("hunger",{}))
 	for id in data.get("following",[]):world.activities.following[id]=true
 	if world.dark!=null:world.dark.restore(data.get("dark_island",{}))
+	if world.get("hearts")!=null:world.hearts.restore(data.get("companion_hearts",{}))
+	world.island_notes.restore(data.get("island_notes",{}))
 	world.barbecue_tastes=data.get("barbecue_tastes",{"version":1,"known":false,"by_actor":{}}).duplicate(true)
 	for barbecue in world.barbecues.values():barbecue.fireside.after_load()
-	world.standard.restore(data.get("standard_opening",{}))
-	world.standard.baseline_meals=[]
-	world.standard.baseline_meals.append_array(world.memories.records.filter(func(e):return e.kind=="shared_barbecue" and e.facts.get("version")==2).map(func(e):return e.source.id))
 	world.deposit_all("human")
 	world.pocket_warned=false;world.auto_stow_idle()
 	world.deliveries.pending.clear()
@@ -177,7 +197,17 @@ static func load_world(world: RefCounted, directory: String) -> Dictionary:
 	world.resort.ready()
 	world.rescue_obstructed()
 	world.revision += 1
-	return {"ok": true, "loaded": true}
+	var saved_wall:float=float(data.get("forest_saved_wall",-1))
+	var away:float=maxf(0.0,world.forest.wall_time.call()-saved_wall) if saved_wall>=0 else 0.0
+	var farm:Dictionary=data.get("farming",{})
+	var matured:=0
+	for id in farm.get("plots",{}):
+		var old:Dictionary=farm.plots[id]
+		if not old.get("watered",false) or not world.farms.crops.has(old.get("crop_id")) or not world.farms.plots.has(id):continue
+		var due:float=float(old.planted_at)+float(world.farms.crops[old.crop_id].seconds)
+		if float(farm.get("clock",0))<due and world.farms.stage(world.farms.plots[id])=="mature":matured+=1
+	var saved_day:int=1+maxi(0,floori((float(data.get("forest_clock",world.days.origin))-world.days.origin)/world.days.day_seconds))
+	return {"ok": true, "loaded": true,"absence_seconds":away,"saved_wall":saved_wall,"saved_day":saved_day,"matured":matured}
 
 static func _quantity(value: Variant, maximum: int = 100000) -> bool:
 	return (value is int or value is float) and is_finite(float(value)) and value == floor(float(value)) and value >= 0 and value <= maximum
@@ -203,20 +233,33 @@ static func _valid(world: RefCounted, data: Dictionary) -> bool:
 	if data.has("home_map_version") and (not (data.home_map_version is int or data.home_map_version is float) or not is_finite(data.home_map_version) or data.home_map_version!=2):return false
 	if data.has("island_ingredients") and not world.ingredients.valid(data.island_ingredients):return false
 	if data.has("cat") and not preload("res://scripts/cat_companion.gd").valid(data.cat):return false
-	if data.has("flower_creation"):
+	if data.has("flower_creation") or data.has("world_creations"):
 		# Frozen pre-flower worlds still validate the optional field with the same strict validator.
 		var flowers:RefCounted=world.get("flower_creation")
 		if flowers==null:flowers=preload("res://scripts/flower_creation.gd").new(world)
-		if not flowers.valid_saved(data.flower_creation,data.get("actors",{})):return false
+		if data.has("flower_creation") and not flowers.valid_saved(data.flower_creation,data.get("actors",{})):return false
+		if data.has("world_creations") and not flowers.creations.valid(data.world_creations,data.get("actors",{})):return false
 	if data.has("storage") and not world.storage.valid_saved(data.storage): return false
 	if data.has("jieqi") and not world.jieqi.valid_saved(data.jieqi,data.get("actors",{})):return false
+	var fishing_data:Variant=data.get("fishing",{})
+	if fishing_data is Dictionary and fishing_data.get("fish",{}) is Dictionary:
+		var fish:Dictionary=fishing_data.get("fish",{})
+		if data.has("island_notes"):
+			var notes:RefCounted=world.get("island_notes")
+			if notes==null:notes=preload("res://scripts/island_notes.gd").new(world)
+			if not notes.valid(data.island_notes,data.get("actors",{}),fish):return false
+		elif fish.values().any(func(row):return row is Dictionary and row.get("location")=="doorstep"):return false
+	if data.has("companion_hearts"):
+		var hearts:RefCounted=world.get("hearts")
+		if hearts==null:hearts=preload("res://scripts/companion_heart.gd").new(world)
+		if not hearts.valid(data.companion_hearts,data.get("actors",{})):return false
 	if data.has("barbecue_tastes") and not _valid_tastes(world,data.barbecue_tastes,data.get("actors",{})):return false
 	if data.has("opening_id") and data.opening_id not in ["","showcase","standard"]:return false
-	if data.has("standard_opening") and (data.get("opening_id")!="standard" or not world.standard.valid(data.standard_opening)):return false
 	if data.get("interior",{}).get("furniture",{}).values().any(func(item):return item.get("preset_origin")=="standard") and data.get("opening_id")!="standard":return false
 	if data.get("leisure",{}).get("sites",{}).keys().any(func(id):return id.begins_with("play.standard.")) and data.get("opening_id")!="standard":return false
 	if data.has("ecology_version") and data.ecology_version != 1: return false
 	if data.has("forest_clock") and (not world.catalog._number(data.forest_clock) or data.forest_clock < 0): return false
+	if data.has("forest_saved_wall") and (not data.has("forest_clock") or not world.catalog._number(data.forest_saved_wall) or data.forest_saved_wall < 0 or data.forest_saved_wall > 253402300799): return false
 	if (data.get("schema_version") != 2 and data.get("schema_version") != 3 and data.get("schema_version") != 4 and data.get("schema_version") != 5 and data.get("schema_version") != 6 and data.get("schema_version") != 7) or not data.get("world_id") is String or not data.get("actors") is Dictionary or not data.get("objects") is Dictionary or not data.get("drops") is Dictionary: return false
 	if not world.hunger.valid(data.get("hunger",{}),data.actors):return false
 	if world.dark!=null and not world.dark.valid(data.get("dark_island",{}),data.actors):return false
@@ -270,8 +313,8 @@ static func _valid(world: RefCounted, data: Dictionary) -> bool:
 	if data.has("extra_barbecues"):
 		if not data.extra_barbecues is Dictionary or data.extra_barbecues.size()>world.barbecues.size()-1:return false
 		for id in data.extra_barbecues:
-			if id=="home.barbecue" or not world.barbecues.has(id) or not _valid_life(world,data.extra_barbecues[id],data.actors,world.barbecues[id]) or not data.extra_barbecues[id].memories.is_empty():return false
-	if data.has("shared_life") and not _valid_life(world, data.shared_life, data.actors): return false
+			if id=="home.barbecue" or not world.barbecues.has(id) or not _valid_life(world,data.extra_barbecues[id],data.actors,world.barbecues[id],data.get("leisure",{}).get("sites",{})) or not data.extra_barbecues[id].memories.is_empty():return false
+	if data.has("shared_life") and not _valid_life(world, data.shared_life, data.actors,null,data.get("leisure",{}).get("sites",{})): return false
 	if data.get("schema_version") >= 4 and not _valid_interior(world, data): return false
 	if (data.get("schema_version") >= 5 or data.has("projects")) and not world.projects.valid_saved(data.get("projects"), data): return false
 	if (data.get("schema_version")>=7 or data.has("leisure")) and not world.leisure.valid_saved(data.get("leisure")):return false
@@ -296,17 +339,18 @@ static func _valid(world: RefCounted, data: Dictionary) -> bool:
 	if data.has("gomoku") and (not data.get("leisure") is Dictionary or not data.leisure.get("sites") is Dictionary or not world.gomoku.valid_saved(data.gomoku,data.actors,data.leisure.sites)):return false
 	if data.has("promises") and not world.promises.valid_saved(data.promises,data.actors,float(data.get("day_cycle",{}).get("origin",world.days.origin))):return false
 	if data.has("relationships") and not world.relationships.valid_saved(data.relationships,data.actors):return false
-	if data.has("wishes") and not world.wishes.valid_saved(data.wishes,data.actors):return false
+	if data.has("wishes") and not preload("res://scripts/legacy_wishes.gd").valid_saved(world,data.wishes,data.actors):return false
 	if data.has("weather") and not world.weather.valid_saved(data.weather):return false
 	if data.has("shared_memories") and not world.memories.valid_saved(data.shared_memories,data.actors,data.world_id):return false
 	return true
 
-static func _valid_life(world: RefCounted, data: Variant, actors: Dictionary,barbecue:RefCounted=null) -> bool:
+static func _valid_life(world: RefCounted, data: Variant, actors: Dictionary,barbecue:RefCounted=null,sites:Dictionary={}) -> bool:
 	if barbecue==null:barbecue=world.life
 	if not data is Dictionary or not data.get("station") is Dictionary or not data.get("patches") is Dictionary or not data.get("memories") is Array: return false
 	var station: Dictionary = data.station
 	if barbecue!=world.life and (station.get("region_id")!=barbecue.station.region_id or station.get("place_id")!=barbecue.station.place_id):return false
-	if station.get("id") != barbecue.station.id or not world.catalog._pair(station.get("position")) or station.position[0]!=barbecue.station.position[0] or station.position[1]!=barbecue.station.position[1] or station.get("state") not in ["cold", "cooking", "needs_turn", "ready", "eating", "embers"]: return false
+	var expected:Array=world.standard.camp_position(barbecue.station.id,sites)
+	if station.get("id") != barbecue.station.id or not world.catalog._pair(station.get("position")) or station.position[0]!=expected[0] or station.position[1]!=expected[1] or station.get("state") not in ["cold", "cooking", "needs_turn", "ready", "eating", "embers"]: return false
 	var batch: Variant = station.get("batch_size", 2)
 	if not _quantity(batch, barbecue.activity_rules.seat_offsets.size()) or batch < 2: return false
 	var portion_limit: int=160 if station.has("fireside") else int(batch)

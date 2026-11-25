@@ -7,6 +7,10 @@ var play_poses:Dictionary={}
 var play_phases:Dictionary={}
 var time := 0.0
 var attention_until := 0.0
+const WORK_ACTIVITIES=["chopping","gathering","watering","picking_up","putting_down","building","fish_cast","fish_wait","fish_bite","fish_reel","planting","harvesting","delivering"]
+const WORK_INTENTS=["chop","gather_wood","forage","fish","plant","water","harvest","build","build_house","deliver_wood","house_work","storage_delivery"]
+static func working(actor:Dictionary,job:Dictionary)->bool:
+	return actor.activity in WORK_ACTIVITIES or job.get("intent","") in WORK_INTENTS
 # One six-frame walk cycle per this many real pixels, scaled by gait step_scale.
 const WALK_STRIDE_PIXELS := 48.0
 const GESTURE_DEFAULT={"version":1,"wave":{"duration":.7,"bounce_pixels":2.5,"lean":.025},"stretch":{"duration":1.2,"scale_x":.985,"scale_y":1.035}}
@@ -70,7 +74,10 @@ func pose(actor: Dictionary, job: Dictionary, actors: Dictionary, gesture: Dicti
 	var activity: String = actor.activity
 	var movement:Dictionary=gesture.get("motion",{})
 	var settled:bool=movement.is_empty() or (not movement.get("moving",false) and float(movement.get("still_seconds",1))>=.3)
-	if settled and play_poses.has(actor.id):activity=str(play_poses[actor.id])
+	if working(actor,job):
+		play_poses.erase(actor.id);play_phases.erase(actor.id)
+		if activity.begins_with("play_") or activity in ["local_sit","local_rest","local_rise","resting","seated","rope_turn"]:activity="idle"
+	elif settled and play_poses.has(actor.id):activity=str(play_poses[actor.id])
 	if not settled:facing=str(movement.get("facing",facing))
 	if settled and activity in ["idle", "local_look"] and attention_until > time:
 		var other: Dictionary = actors.get("human", {}) if actor.id!="human" else {}
@@ -155,36 +162,38 @@ func pose(actor: Dictionary, job: Dictionary, actors: Dictionary, gesture: Dicti
 		var amount:float=sin(clampf(float(state.get("activity_age",0))/float(gestures.stretch.duration),0,1)*PI)
 		frame=facing+"_0";stretch=Vector2(lerpf(1.0,float(gestures.stretch.scale_x),amount),lerpf(1.0,float(gestures.stretch.scale_y),amount))
 	elif activity == "watering": frame = "grilling_%s" % (int(time*3)%2)
-	elif activity == "gathering": frame = "lighting_%s" % (int(time * 3) % 2)
+	elif activity == "gathering":
+		var reach:float=sin(PI*clampf(fposmod(float(job.get("time",0)),1.0),0.0,1.0))
+		frame="pickup_"+facing
+		fallback=facing+"_0"
+		lean=(.13 if facing in ["left","down"] else -.13)*reach
+		stretch.y=1.0-.18*reach
+		bob=9*reach
 	elif int(actor.carry.get("wood", 0)) > 0:
 		frame = "carry_" + facing
 		if activity == "walking": frame += "_%s" % (int(float(state.step) * 8) % 2)
-	if activity.begins_with("play_") or activity=="rope_turn":
+	if settled and activity in ["play_lie","play_cute","play_jump","rope_turn","play_squat","play_kick"]:
 		var phase:float=float(play_phases.get(actor.id,fposmod(time*.5,1)))
-		var column:int=0
-		if activity=="play_lie":column=0 if phase<.1 or phase>.97 else 1 if phase<.2 or phase>.9 else 2+int(time*1.2)%2
-		elif activity=="play_lie_side":column=5 if phase<.575 else 7
-		elif activity=="play_roll":
-			var order:Array=[4,7,6,5,8,9] if facing=="left" else [4,5,6,7,8,9]
-			column=int(order[mini(5,int(clampf(phase,0,1)*6))])
-		elif activity in ["play_cute","play_jump"]:
-			var rope:bool=activity=="play_jump"
-			column=(31 if rope else 27)+(0 if phase<.25 else 1 if phase<.5 else 2 if phase<.7 else 3)
-			state["play_lift"]=-22*sin(clampf((phase-.25)/.5,0,1)*PI)
-			state["play_land"]=maxf(0,1-absf(phase-.8)/.1)
-		elif activity=="rope_turn":column=preload("res://scripts/play_frames.gd").turn_column(phase)+(8 if facing=="right" else 11 if facing=="left" else 0)
-		elif activity=="play_squat":column=16+int(time*2)%2
-		elif activity=="play_kick":column=18+int(time*4)%3
 		frame=facing+"_0";fallback=frame;lean=0;bob=0;stretch=Vector2.ONE
-		state["play_column"]=column
-	else:state.erase("play_column")
+		state["play_style"]=activity
+		state["play_land"]=0.0
+		if activity in ["play_lie","play_squat"]:
+			frame="seated_idle" if facing=="down" else "up_0" if facing=="up" else "seated_"+facing
+		elif activity in ["play_cute","play_jump","play_kick"]:
+			if activity=="play_cute":phase=fposmod(phase*2,1)
+			bob=-22*sin(clampf((phase-.25)/.5,0,1)*PI)
+			state["play_land"]=maxf(0,1-absf(phase-.8)/.1)
+			stretch=Vector2(1+.09*state.play_land,1-.10*state.play_land)
+		elif activity=="rope_turn":lean=sin(phase*TAU)*.075
+	else:state.erase("play_style")
 	if job.get("intent")=="play_gomoku" and job.get("step")=="using":
 		frame="rest_empty";stretch.y=.78
 		fallback=facing+"_0";lean=sin(time*1.7+float(state.phase))*.018
 	var result:Dictionary={"frame": frame, "fallback": fallback, "bob": bob, "scale": stretch, "lean": sin(time * 9) * .025 if activity == "building" else sin(time*5)*.04 if activity=="dancing" else lean,"facing":facing}
-	if state.has("play_column"):
-		result["play_column"]=state.play_column
-		if activity in ["play_cute","play_jump"]:result["play_lift"]=state.get("play_lift",0);result["play_land"]=state.get("play_land",0)
+	if state.has("play_style"):
+		result["play_style"]=state.play_style
+		result["play_land"]=state.play_land
+		result["play_lift"]=bob
 	enforce_direction(result,actor,movement)
 	apply_gait(result,actor,gesture,state,settled)
 	return result

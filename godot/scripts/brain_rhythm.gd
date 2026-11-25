@@ -2,11 +2,47 @@ extends RefCounted
 ## Read-only day/weather scoring and destinations. ResidentBrain owns execution.
 var owner:WeakRef
 var next_speech:=0.0
+var door_job:=""
+var door_kind:=""
+var next_door_try:=0.0
 var b:RefCounted:
 	get:return owner.get_ref()
 var w:RefCounted:
 	get:return b.world
 func _init(brain:RefCounted)->void:owner=weakref(brain)
+func own_house()->Dictionary:
+	for site in w.objects.values():
+		if site.get("kind")=="construction_site" and site.get("owner_id")==b.id and int(site.get("stage_index",0))==5:return site
+	return {}
+
+func home_door()->bool:
+	# Night rest is an existing choice. Its only new destination is the owner's actual doorway.
+	if not door_job.is_empty():
+		if w.work.jobs.get(b.id,{}).get("id")==door_job:return true
+		var indoors:bool=str(w.actors[b.id].region_id).begins_with("room.")
+		if door_kind=="exit" and not indoors:w.hearts.react(b.id,"wake")
+		if door_kind=="enter" and indoors:b.finish("completed","at_home")
+		door_job="";door_kind=""
+	if b.clock<next_door_try or b.busy() or w._routes.has(b.id) or w.hunger.rank(b.id)>=3 or not b.intention.pending.is_empty():return false
+	var a:Dictionary=w.actors[b.id]
+	var indoors:bool=str(a.region_id).begins_with("room.")
+	var night:bool=w.days.phase().id=="night"
+	var wants_entry:bool=b.current.get("source")=="local" and b.current.get("action")=="night_rest"
+	if not indoors and (not night or not wants_entry):return false
+	if indoors and night:return b.current.is_empty()
+	var site:Dictionary=own_house()
+	if site.is_empty():return false
+	if indoors and a.region_id!=w.interior.room_for(site.id):return false
+	if not indoors and a.region_id!=site.region_id:return false
+	var args:Dictionary={"intent":"exit"} if indoors else {"intent":"enter","target_id":site.id}
+	b.executing=true
+	var result:Dictionary=w.command(b.id,args)
+	b.executing=false
+	next_door_try=b.clock+5
+	if not result.get("ok",false):return false
+	door_job=result.job_id
+	door_kind=args.intent
+	return true
 func weights()->Dictionary:
 	if not w.activities.following.has(b.id) and b.clock>=b.next_visit:return {}
 	var rows:Dictionary=b.config.rhythm.weights.get(b.tag(),b.config.rhythm.weights.gentle)
@@ -15,6 +51,9 @@ func weights()->Dictionary:
 		for key in rows.rain:result[key]=float(result.get(key,0))+float(rows.rain[key])
 	return result
 func shelter(action:String)->Vector2:
+	if action=="night_rest":
+		var site:Dictionary=own_house()
+		if not site.is_empty() and site.region_id==w.actors[b.id].region_id:return w.interior.outside(w.interior.room_for(site.id))
 	var homes:Array=w.objects.values().filter(func(o):return o.get('kind','')=='construction_site' and int(o.get('stage_index',0))>=5 and o.region_id==w.actors[b.id].region_id)
 	homes.sort_custom(func(a,c):return (a.get('owner_id','')==b.id and c.get('owner_id','')!=b.id) or (a.get('owner_id','')==c.get('owner_id','') and w.point(a).distance_to(w.point(w.actors[b.id]))<w.point(c).distance_to(w.point(w.actors[b.id]))))
 	for home in homes:

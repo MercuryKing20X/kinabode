@@ -16,6 +16,8 @@ var game:Node
 var ui_root:Control
 var config:Dictionary
 var avatars:BoxContainer
+var compact_avatars:HBoxContainer
+var resident_header:HBoxContainer
 var avatar_buttons:Dictionary={}
 var avatar_marks:Dictionary={}
 var connection_lights:Dictionary={}
@@ -32,6 +34,8 @@ var stock_detail:PanelContainer
 var stock_text:Label
 var task:PanelContainer
 var task_text:Label
+var end_fireside_button:Button
+var shown_fireside:Dictionary={}
 var return_button:Button
 var context:HBoxContainer
 var context_signature:=""
@@ -42,7 +46,8 @@ var notifications:VBoxContainer
 var notification_scroll:ScrollContainer
 var notification_toggle:Button
 var notices_signature:=""
-var notices_collapsed:=false
+var notices_collapsed:=true
+var seen_fish_notices:Dictionary={}
 var dismissed:Dictionary={}
 var expanded_notice:=""
 var deferred_fish:Dictionary={}
@@ -70,6 +75,52 @@ var residents_collapsed:=false
 var hint_seconds:=0.0
 var walk_hint_seen:=false
 var upper_status:VBoxContainer
+var masthead:HBoxContainer
+var compact_tools:HFlowContainer
+var task_notice_since:=0.0
+var task_notice_key:=""
+var camera_button:Button
+var watch_button:Button
+var watch_requested:=false
+var watch_idle:=0.0
+var watch_alpha:=1.0
+var my_ai_button:Button
+var my_ai_caption:Label
+var placement_button:Button
+var resident_layout_inputs:Array=[]
+
+func watch_blocked()->bool:
+	if game.chat.visible or resident_card.visible or game.editor.visible or game.atlas.visible:return true
+	for parent in [game,ui_root,self]:
+		for child in parent.get_children():
+			if child is Window and child.visible:return true
+			if child is PanelContainer and child.visible and child not in [residents_panel,task,stock_detail]:return true
+	return game.company!=null and game.company.camera.active
+
+func watch_toggle()->void:
+	if watch_requested or watch_alpha<.95:
+		watch_requested=false;watch_idle=0
+	elif not watch_blocked():watch_requested=true
+
+func watch_input(event:InputEvent)->void:
+	if event is InputEventMouse or event is InputEventKey:
+		watch_idle=0
+		if not (event is InputEventKey and event.keycode==KEY_H):
+			watch_requested=false
+			if watch_alpha<1 and is_instance_valid(ui_root):
+				watch_alpha=1
+				ui_root.modulate.a=1
+				ui_root.show()
+
+func tick_watch(delta:float)->void:
+	var blocked:bool=watch_blocked()
+	if blocked:watch_idle=0;watch_requested=false
+	else:watch_idle+=delta
+	var tracking_guest:bool=(game.view.follow_player and game.view.follow_actor!="human") or (is_instance_valid(game.island_ai) and not game.island_ai.rows.is_empty())
+	var hiding:bool=not blocked and (watch_requested or (watch_idle>=10 and not tracking_guest))
+	watch_alpha=1.0 if blocked else move_toward(watch_alpha,0.0 if hiding else 1.0,delta*5)
+	ui_root.modulate.a=watch_alpha
+	ui_root.visible=watch_alpha>0
 func button(parent:Node,text:String,callback:Callable)->Button:
 	var b:=Button.new();b.focus_mode=Control.FOCUS_NONE;b.set_meta("hud_owned",true);b.text=text;b.set_meta("audio_primary",_locale_static.get(text,"") in ["hud.chat","hud.grill","hud.stock_fish","hud.release","hud.later","hud.stock_all"]);b.focus_mode=Control.FOCUS_NONE;parent.add_child(b)
 	b.pressed.connect(func():game.autonomy.player_input();callback.call())
@@ -102,7 +153,8 @@ func icon(kind:String)->Texture2D:
 			var ink:=false
 			match kind:
 				"outfit":ink=(y in [3,4] and x in [6,7,8,9]) or (y in [4,5] and x in [8,9]) or (y in [6,7,8,9,10] and abs(x-8)==y-6) or (y in [10,11] and x in range(3,14))
-				"book":ink=x in [2,7,8,13] or y in [3,12] or (y in [6,9] and x in [4,5,10,11])
+				"book":ink=(y in [4,12] and x in range(2,14)) or (x in [2,7,8,13] and y in range(4,13)) or (y in [7,9] and x in [4,5,10,11])
+				"chest":ink=(x in [2,13] and y in range(5,13)) or (y in [5,8,12] and x in range(2,14)) or (x in [7,8] and y in [9,10])
 				"gear":ink=Vector2(x-7.5,y-7.5).length()>3 and Vector2(x-7.5,y-7.5).length()<6
 				"sunny":ink=Vector2(x-8,y-8).length()<3 or ((x==8 or y==8) and (x<5 or x>11 or y<5 or y>11))
 				"rain":ink=(y in [4,5,6] and x>3 and x<13) or (y>9 and (x+y)%4==0)
@@ -114,7 +166,7 @@ func setup(host:Node,source:Control,old_top:Control,settings:MenuButton)->void:
 	game=host;ui_root=source;settings_menu=settings;config=JSON.parse_string(FileAccess.get_file_as_string("res://content/home-v3/ui.json"))
 	preferences.load(game.data_dir.path_join("local-life.cfg"))
 	show_hunger_hints=bool(preferences.get_value("interface","show_hunger",true))
-	residents_collapsed=bool(preferences.get_value(game.world.world_id+"/hud","residents_collapsed",false))
+	residents_collapsed=bool(preferences.get_value(game.world.world_id+"/hud","residents_collapsed",true))
 	walk_hint_seen=bool(preferences.get_value(game.world.world_id+"/hud","walk_hint_seen",false));hint_seconds=6 if walk_hint_seen else 0
 	var remembered:Variant=preferences.get_value(game.world.world_id+"/hud","dismissed",[])
 	if remembered is Array:
@@ -130,21 +182,42 @@ func setup(host:Node,source:Control,old_top:Control,settings:MenuButton)->void:
 	for child in ui_root.get_children():
 		if child is Label and child.get_meta("ui_role","")=="movement_hint":child.hide()
 	var upper:=VBoxContainer.new();upper_status=upper;add_child(upper);upper.position=Vector2(12,10);upper.size=Vector2(420,56)
-	game.day_label.reparent(upper,false);game.day_label.set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT);game.day_label.position=Vector2.ZERO;game.day_label.size=Vector2.ZERO;game.day_label.show();game.day_label.set_meta("ui_font_base",14);game.day_label.add_theme_font_size_override("font_size",preload("res://scripts/ui_scale.gd").pixels(14))
+	masthead=HBoxContainer.new();upper.add_child(masthead)
+	compact_tools=HFlowContainer.new();upper.add_child(compact_tools)
+	game.view.consultation_sidebar=upper
+	game.day_label.reparent(masthead,false);game.day_label.set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT);game.day_label.position=Vector2.ZERO;game.day_label.size=Vector2.ZERO;game.day_label.show();game.day_label.set_meta("ui_font_base",14);game.day_label.add_theme_font_size_override("font_size",preload("res://scripts/ui_scale.gd").pixels(14))
 	var day_style:=StyleBoxFlat.new();day_style.bg_color=Color(.08,.13,.12,.80);day_style.set_content_margin_all(6)
 	game.day_label.add_theme_stylebox_override("normal",day_style)
-	stock_button=button(upper,T("hud.stock"),func():game.storage_panel.open());stock_button.alignment=HORIZONTAL_ALIGNMENT_LEFT
-	stock_button.add_theme_font_size_override("font_size",12);stock_button.expand_icon=true;stock_button.add_theme_constant_override("icon_max_width",24)
-	var task_panel:=PanelContainer.new();task_panel.name="TasksPanel";upper.add_child(task_panel);task_panel.add_theme_stylebox_override("panel",pixel_style())
-	game.journey.bar.reparent(task_panel,false)
+	stock_button=button(masthead,T("storage.title"),func():game.storage_panel.open());stock_button.alignment=HORIZONTAL_ALIGNMENT_LEFT
+	stock_button.add_theme_font_size_override("font_size",12);stock_button.icon=icon("chest");stock_button.add_theme_constant_override("icon_max_width",16)
+	var door_button:=button(self,"",func():game._toggle_resident_connections())
+	my_ai_button=door_button
+	door_button.name="WorldDoor"
+	door_button.set_anchors_and_offsets_preset(Control.PRESET_TOP_RIGHT)
+	door_button.offset_left=-310;door_button.offset_right=-16;door_button.offset_top=10;door_button.offset_bottom=62
+	door_button.clip_text=true;door_button.add_theme_font_size_override("font_size",13)
+	my_ai_caption=Label.new();door_button.add_child(my_ai_caption)
+	my_ai_caption.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	my_ai_caption.offset_left=10;my_ai_caption.offset_right=-10
+	my_ai_caption.mouse_filter=Control.MOUSE_FILTER_IGNORE
+	my_ai_caption.vertical_alignment=VERTICAL_ALIGNMENT_CENTER
+	my_ai_caption.clip_text=true;my_ai_caption.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
+	my_ai_caption.add_theme_font_size_override("font_size",13)
+	placement_button=button(self,preload("res://scripts/world_creations.gd").phrase("摆放","Place"),func():game.world_door_dialog.hide();game.world_placement.toggle())
+	placement_button.name="WorldPlacement"
+	placement_button.set_anchors_and_offsets_preset(Control.PRESET_TOP_RIGHT)
+	placement_button.offset_left=-416;placement_button.offset_right=-318;placement_button.offset_top=10;placement_button.offset_bottom=62
+	placement_button.clip_text=true
+	compact_tools.hide()
 	upper.add_theme_constant_override("separation",8)
 	var stock_style:=StyleBoxFlat.new();stock_style.bg_color=Color(.12,.21,.18,.72);stock_style.set_content_margin_all(6);stock_button.add_theme_stylebox_override("normal",stock_style)
 	stock_detail=PanelContainer.new();add_child(stock_detail);stock_detail.position=Vector2(16,92);stock_detail.size=Vector2(300,180);stock_text=label(stock_detail,"");stock_detail.hide()
 	residents_panel=PanelContainer.new();add_child(residents_panel);residents_panel.set_anchors_and_offsets_preset(Control.PRESET_TOP_RIGHT)
 	var resident_body:=VBoxContainer.new();residents_panel.add_child(resident_body)
-	var header:=HBoxContainer.new();resident_body.add_child(header)
+	var header:=HBoxContainer.new();resident_header=header;resident_body.add_child(header)
+	compact_avatars=HBoxContainer.new();header.add_child(compact_avatars)
 	residents_title=label(header,T("hud.residents_connections"));residents_title.clip_text=true;residents_title.size_flags_horizontal=Control.SIZE_EXPAND_FILL;residents_title.add_theme_font_size_override("font_size",14)
-	manage_connections=button(header,T("hud.connections"),func():open_connections(""));manage_connections.add_theme_font_size_override("font_size",12)
+	manage_connections=button(header,preload("res://scripts/world_door_panel.gd").title_text(),func():open_connections(""));manage_connections.add_theme_font_size_override("font_size",12)
 	collapse_residents=button(header,"－",toggle_residents)
 	residents_scroll=ScrollContainer.new();resident_body.add_child(residents_scroll);residents_scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED;residents_scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
 	wardrobe=preload("res://scripts/wardrobe.gd").new();ui_root.add_child(wardrobe);wardrobe.setup(game);wardrobe.visibility_changed.connect(func():call_deferred("refresh"))
@@ -157,7 +230,7 @@ func setup(host:Node,source:Control,old_top:Control,settings:MenuButton)->void:
 	card_title=label(card_header,T("hud.resident_details"));card_title.size_flags_horizontal=Control.SIZE_EXPAND_FILL;card_title.add_theme_font_size_override("font_size",17)
 	card_close=button(card_header,"×",resident_card.hide);card_close.tooltip_text=T("hud.close_details");card_close.custom_minimum_size=Vector2(42,42)
 	reasoning_points=preload("res://scripts/reasoning_points.gd").new();card_frame.add_child(reasoning_points)
-	var heart_button:=button(card_frame,T("gestation.heart"),func():open_connections(card_id);game.resident_connections.tabs.current_tab=3;game.resident_connections.refresh())
+	var heart_button:=button(card_frame,T("gestation.heart"),func():open_inner_voice(card_id))
 	heart_button.name="LifeHeartButton"
 	card_scroll=ScrollContainer.new();card_scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED;card_scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL;card_frame.add_child(card_scroll)
 	card_body=VBoxContainer.new();card_body.size_flags_horizontal=Control.SIZE_EXPAND_FILL;card_scroll.add_child(card_body);card_detail=label(card_body,"")
@@ -167,29 +240,38 @@ func setup(host:Node,source:Control,old_top:Control,settings:MenuButton)->void:
 	button(row,T("hud.delegate"),func():game._select_chat(card_id);game.assign=true;game.status.text=T("hud.delegate_hint");resident_card.hide())
 	button(row,T("hud.stop"),func():game._stop_resident(card_id))
 	button(row,T("hud.give"),func():resident_card.hide();game.gift_panel.open(card_id))
+	button(row,T("company.care"),func():if game.company!=null:game.company.show_care(card_id))
 	button(row,T("hud.rename"),func():rename_resident(card_id))
 	button(row,T("hud.appearance"),func():open_appearance(card_id))
 	button(row,T("hud.name_preset"),func():rename_intelligence(card_id))
 	button(row,T("hud.assign_preset"),func():assign_intelligence(card_id))
-	button(row,T("hud.resident_connection"),func():open_connections(card_id))
+	button(row,preload("res://scripts/world_door_panel.gd").title_text(),func():open_connections(card_id))
 	button(row,T("hud.close"),resident_card.hide);resident_card.hide()
 	var bottom:=HBoxContainer.new();primary_actions=bottom;add_child(bottom);bottom.set_anchors_and_offsets_preset(Control.PRESET_CENTER_BOTTOM);bottom.offset_left=-228;bottom.offset_right=228;bottom.offset_top=-59;bottom.offset_bottom=-16;bottom.add_theme_constant_override("separation",10)
 	for b in [game.dialogue_button,game.actions_button,game.gathering_button]:
 		b.reparent(bottom,false);b.set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT);b.custom_minimum_size=Vector2(104,40)
 	game.journey.map_button=button(bottom,T("journey.map"),func():game.journey.toggle_menu())
 	chess_button=button(bottom,T("hud.gomoku"),func():game._open_chess());chess_button.custom_minimum_size=Vector2(84,40);chess_button.hide()
+	watch_button=button(bottom,T("life.watch"),watch_toggle)
 	var corner:=HBoxContainer.new();utility_actions=corner;add_child(corner);corner.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_RIGHT);corner.offset_left=-200;corner.offset_right=-16;corner.offset_top=-59;corner.offset_bottom=-16
-	game.handbook_menu.reparent(corner,false);game.handbook_menu.text=T("hud.handbook");game.handbook_menu.icon=icon("book")
+	camera_button=button(corner,T("company.camera"),func():if game.company!=null:game.company.camera.launch())
+	camera_button.name="CompanyCamera"
+	game.handbook_menu.reparent(masthead,false);game.handbook_menu.text=T("hud.handbook");game.handbook_menu.tooltip_text=T("hud.handbook");game.handbook_menu.icon=icon("book")
 	var popup:PopupMenu=game.handbook_menu.get_popup();popup.clear()
 	# Keep the existing popup signal, but route the new explicit metadata IDs here.
 	for c in popup.id_pressed.get_connections():popup.id_pressed.disconnect(c.callable)
 	for entry in config.handbook:
-		if entry.id in ["memories","memory","our_days"]:continue
+		if entry.id in ["memories","memory","our_days","residents","storage","autonomy_records"]:continue
 		popup.add_item(LocalText.content(entry.label));popup.set_item_metadata(popup.item_count-1,entry.id)
 	popup.add_item(T("memory.notebook"));popup.set_item_metadata(popup.item_count-1,"memory_books")
+	popup.add_item(T("storage.title"));popup.set_item_metadata(popup.item_count-1,"storage")
 	popup.add_item(T("hud.relics"));popup.set_item_metadata(popup.item_count-1,"relics")
 	popup.add_item(T("hud.wardrobe"));popup.set_item_metadata(popup.item_count-1,"wardrobe")
-	if game.world.standard.active():popup.add_item(T("theirs.goals"));popup.set_item_metadata(popup.item_count-1,"opening_board")
+	popup.add_item(T("company.camera"));popup.set_item_metadata(popup.item_count-1,"camera")
+	popup.add_item(T("company.story"));popup.set_item_metadata(popup.item_count-1,"company_story")
+	popup.add_item(T("company.ask"));popup.set_item_metadata(popup.item_count-1,"company_ask")
+	popup.add_item(preload("res://scripts/world_door_panel.gd").phrase("岛上日志","Island log"));popup.set_item_metadata(popup.item_count-1,"island_log")
+	popup.add_item(preload("res://scripts/world_creations.gd").phrase("回到昨天","Return to yesterday"));popup.set_item_metadata(popup.item_count-1,"world_checkpoints")
 	popup.id_pressed.connect(func(index):open_entry(str(popup.get_item_metadata(index))))
 	popup.about_to_popup.connect(func():_position_handbook_popup.call_deferred())
 	settings.reparent(corner,false);settings.text=T("hud.settings");settings.icon=icon("gear")
@@ -211,15 +293,16 @@ func setup(host:Node,source:Control,old_top:Control,settings:MenuButton)->void:
 			var confirm:=ConfirmationDialog.new();confirm.title=T("hud.my_appearance");confirm.dialog_text=T("hud.appearance_confirm");confirm.ok_button_text=T("hud.continue");confirm.cancel_button_text=T("hud.cancel");ui_root.add_child(confirm)
 			confirm.confirmed.connect(func():wardrobe.open_for("human",true);confirm.queue_free())
 			confirm.canceled.connect(confirm.queue_free);confirm.popup_centered())
-	task=PanelContainer.new();add_child(task);task.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_LEFT);task.offset_left=16;task.offset_right=275;task.offset_top=-160;task.offset_bottom=-95
+	task=PanelContainer.new();add_child(task);task.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_LEFT);task.offset_left=16;task.offset_right=350;task.offset_top=-150;task.offset_bottom=-110
+	task.add_theme_stylebox_override("panel",StyleBoxEmpty.new())
 	var task_row:=HBoxContainer.new();task.add_child(task_row);task_text=label(task_row,"");task_text.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-	button(task_row,"×",func():game.world.command("human",{"intent":"stop"}))
+	end_fireside_button=button(task_row,"×",_end_shown_fireside);end_fireside_button.hide()
+	task.mouse_filter=Control.MOUSE_FILTER_IGNORE
 	return_button=button(self,T("hud.return_to_me"),game._return_to_player);return_button.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_LEFT);return_button.offset_left=16;return_button.offset_right=170;return_button.offset_top=-59;return_button.offset_bottom=-16
 	context=HBoxContainer.new();add_child(context);context.set_anchors_and_offsets_preset(Control.PRESET_CENTER_BOTTOM);context.offset_left=-225;context.offset_right=225;context.offset_top=-111;context.offset_bottom=-70;context.alignment=BoxContainer.ALIGNMENT_CENTER
 	notification_toggle=button(self,T("hud.island_news"),func():notices_collapsed=not notices_collapsed;notices_signature="");notification_toggle.set_anchors_and_offsets_preset(Control.PRESET_TOP_RIGHT);notification_toggle.offset_left=-270;notification_toggle.offset_right=-16;notification_toggle.offset_top=90;notification_toggle.offset_bottom=125
 	notifications=VBoxContainer.new();add_child(notifications);notifications.set_anchors_and_offsets_preset(Control.PRESET_TOP_RIGHT);notifications.offset_left=-270;notifications.offset_right=-16;notifications.offset_top=134;notifications.offset_bottom=430;notifications.add_theme_constant_override("separation",7)
 	# Preserve detailed original card controls on demand; summaries share this one edge.
-	game.action_dock.notifications_embedded=true;game.wish_panel.notifications_embedded=true;game.proposal_panel.notifications_embedded=true
 	button(game.proposal_panel.get_child(0),T("hud.close"),func():game.proposal_panel.detail_requested=false;game.proposal_panel.hide();expanded_notice="")
 	style_panels(ui_root)
 	set_interface_size(ui_size_mode,false)
@@ -252,27 +335,38 @@ func toggle_residents()->void:
 func layout_residents()->void:
 	var english:bool=LocalText.revision().begins_with("en")
 	var f:float=preload("res://scripts/ui_scale.gd").factor()
-	var width:float=(92 if residents_collapsed else 330)*f
-	if english:width=(132 if residents_collapsed else 380)*f
+	var fish_pending:bool=game.world.fishing.has_pending()
+	var inputs:Array=[english,f,get_viewport_rect().size,residents_collapsed,resident_rows.size(),fish_pending]
+	if inputs==resident_layout_inputs:return
+	resident_layout_inputs=inputs
+	var width:float=(300 if residents_collapsed else 330)*f
+	if english and not residents_collapsed:width=380*f
 	width=minf(width,get_viewport_rect().size.x*.57)
-	width=minf(width,get_viewport_rect().size.x-36-upper_status.get_combined_minimum_size().x)
 	var left_width:float=minf(420,get_viewport_rect().size.x-width-36)
 	upper_status.size=Vector2(left_width,0)
-	game.day_label.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
-	stock_button.clip_text=true
-	residents_panel.offset_left=-width-12;residents_panel.offset_right=-12;residents_panel.offset_top=10
-	residents_panel.offset_bottom=minf(get_viewport_rect().size.y-180,(76+game.world.director.routines.size()*52)*f)
+	game.day_label.autowrap_mode=TextServer.AUTOWRAP_OFF
+	stock_button.clip_text=false
+	residents_panel.offset_left=-width-12;residents_panel.offset_right=-12;residents_panel.offset_top=92
+	residents_panel.offset_bottom=52+(56*f+20) if residents_collapsed else minf(get_viewport_rect().size.y-180,42+(76+game.world.director.routines.size()*52)*f)
 	residents_scroll.custom_minimum_size.y=0
 	residents_scroll.vertical_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED if (76+game.world.director.routines.size()*52)*f<=get_viewport_rect().size.y-180 else ScrollContainer.SCROLL_MODE_AUTO
-	residents_title.text=T("hud.residents") if residents_collapsed else T("hud.residents_connections");manage_connections.visible=not residents_collapsed;collapse_residents.text="＋" if residents_collapsed else "－"
+	residents_title.text=preload("res://scripts/world_door_panel.gd").phrase("居民","Residents");manage_connections.visible=not residents_collapsed;collapse_residents.text="＋" if residents_collapsed else "－"
+	residents_title.visible=not residents_collapsed
+	residents_scroll.visible=not residents_collapsed
+	compact_avatars.visible=residents_collapsed
+	collapse_residents.tooltip_text=T("hud.residents_connections")
 	for id in resident_rows:
-		var appetite:Dictionary=game.world.hunger.summary(id)
-		avatar_buttons[id].text="" if residents_collapsed else LocalText.resident(game.world,id)+(("\n" if preload("res://scripts/ui_scale.gd").factor()>=1.1 and get_viewport_rect().size.x<1100 else " · ")+appetite_label(id) if show_hunger_hints and not appetite.is_empty() else "")
-		avatar_buttons[id].custom_minimum_size=Vector2((34 if residents_collapsed else (180 if english else 150))*f,48*f)
-		avatar_marks[id].custom_minimum_size=Vector2(10,0)
+		var target:BoxContainer=compact_avatars if residents_collapsed else avatars
+		if resident_rows[id].get_parent()!=target:resident_rows[id].reparent(target,false)
+		avatar_buttons[id].custom_minimum_size=Vector2((34 if residents_collapsed else (180 if english else 150))*f,(34 if residents_collapsed else 48)*f)
+		avatar_marks[id].custom_minimum_size=Vector2(15,15)
+		connection_lights[id].visible=not residents_collapsed
 		resident_menus[id].visible=not residents_collapsed;resident_badges[id].visible=not residents_collapsed;appearance_buttons[id].visible=not residents_collapsed
+	# Compact portraits still impose a minimum width. Expand toward the left
+	# from the right inset so the last resident stays inside the window.
+	width=maxf(width,residents_panel.get_combined_minimum_size().x)
+	residents_panel.offset_left=-width-12
 	if is_instance_valid(notification_toggle):
-		var fish_pending:bool=game.world.fishing.fish.values().any(func(entry):return entry.location=="pending")
 		if fish_pending:
 			notification_toggle.set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT);notification_toggle.offset_left=12;notification_toggle.offset_right=266;notification_toggle.offset_top=90;notification_toggle.offset_bottom=124
 			notifications.set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT);notifications.offset_left=12;notifications.offset_right=minf(612,get_viewport_rect().size.x-20);notifications.offset_top=130;notifications.offset_bottom=get_viewport_rect().size.y-70
@@ -293,15 +387,23 @@ func layout_residents()->void:
 func make_avatar(id:String)->void:
 	var row:=HBoxContainer.new();avatars.add_child(row);row.mouse_filter=Control.MOUSE_FILTER_STOP;resident_rows[id]=row
 	row.gui_input.connect(func(event):avatar_input(id,event);row.accept_event())
-	var b:=Button.new();b.focus_mode=Control.FOCUS_NONE;var row_style:StyleBoxTexture=panel_style.duplicate();row_style.set_content_margin_all(4);b.add_theme_stylebox_override("normal",row_style);b.add_theme_stylebox_override("hover",row_style);b.size_flags_horizontal=Control.SIZE_EXPAND_FILL;b.clip_text=false;b.alignment=HORIZONTAL_ALIGNMENT_LEFT;b.add_theme_font_size_override("font_size",13);row.add_child(b);avatar_buttons[id]=b
+	var b:=Button.new();b.focus_mode=Control.FOCUS_NONE;var row_style:StyleBoxTexture=panel_style.duplicate();row_style.set_content_margin_all(4);b.add_theme_stylebox_override("normal",row_style);b.add_theme_stylebox_override("hover",row_style);b.size_flags_horizontal=Control.SIZE_EXPAND_FILL;b.clip_text=true;b.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS;b.alignment=HORIZONTAL_ALIGNMENT_LEFT;b.add_theme_font_size_override("font_size",13);row.add_child(b);avatar_buttons[id]=b
 	b.gui_input.connect(func(event):avatar_input(id,event);b.accept_event())
 	update_portrait(id)
 	var lamp:=Label.new();lamp.add_theme_font_size_override("font_size",12);lamp.mouse_filter=Control.MOUSE_FILTER_STOP;row.add_child(lamp);connection_lights[id]=lamp
-	var mark:=Label.new();mark.add_theme_font_size_override("font_size",12);mark.mouse_filter=Control.MOUSE_FILTER_IGNORE;row.add_child(mark);avatar_marks[id]=mark
+	var mark:=TextureRect.new();mark.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;mark.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED;mark.custom_minimum_size=Vector2(15,15);mark.mouse_filter=Control.MOUSE_FILTER_IGNORE;row.add_child(mark);avatar_marks[id]=mark
 	var badges:=Label.new();badges.add_theme_font_size_override("font_size",10);badges.position=Vector2(2,1);badges.mouse_filter=Control.MOUSE_FILTER_IGNORE;b.add_child(badges);resident_badges[id]=badges
 	appearance_buttons[id]=button(row,"",func():open_appearance(id));appearance_buttons[id].icon=icon("outfit");appearance_buttons[id].tooltip_text=T("hud.appearance_tooltip");appearance_buttons[id].custom_minimum_size.x=68
 	var outfit_text:=Label.new();outfit_text.set_meta("hud_owned",true);outfit_text.text=T("hud.outfit");outfit_text.mouse_filter=Control.MOUSE_FILTER_IGNORE;outfit_text.add_theme_font_size_override("font_size",13);outfit_text.position=Vector2(30,9);appearance_buttons[id].add_child(outfit_text)
 	resident_menus[id]=button(row,"⋯",func():show_card(id));resident_menus[id].add_theme_font_size_override("font_size",14)
+func _end_shown_fireside()->void:
+	var camp:RefCounted=game.world.barbecues.get(shown_fireside.get("station",""))
+	if camp==null:return
+	var fire:RefCounted=camp.fireside
+	if not fire.circle_closed and fire.state.get("roast_by")=="human" and fire.state.get("current",{}).get("id")==shown_fireside.get("meal"):
+		fire.end_circle(T("content.remaining.end_the_fireside_gathering"))
+	refresh()
+
 func resident_status(id:String)->Dictionary:
 	var state:Dictionary=game._connection_light(id)
 	return {"text":state.provider,"color":state.color,"busy":(game._valid_link(game.links,id) and game.links[id].is_busy()) or (game._valid_link(game.group_links,id) and game.group_links[id].is_busy()),"tooltip":state.provider+" · "+T("memory.state."+state.state)+" · "+T("memory.today_tokens")+": "+str(state.tokens)}
@@ -345,7 +447,14 @@ func refresh_card()->void:
 	if not intelligence.is_empty():card_detail.text=game.world.intelligence.display_name(card_id)+T("hud.local_preset_suffix")+card_detail.text
 	var appetite:Dictionary=game.world.hunger.summary(card_id)
 	if show_hunger_hints and not appetite.is_empty():card_detail.text+=T("hud.state_prefix")+LocalText.content(appetite.state)
-	if game.steward!=null:card_detail.text+="\n"+LocalText.text("watch.reason")+game.steward.reason_for(card_id)
+	if game.world_door.owners.has(card_id):
+		var lease:Dictionary=game.world_door.leases[game.world_door.owners[card_id]]
+		var words:=preload("res://scripts/world_door_panel.gd")
+		card_detail.text+="\n"+words.phrase("已接入","Connected")+" · "+str(game.world.actors[card_id].world_door_client)
+		var latest:Dictionary=lease.get("last_action",{})
+		if not latest.is_empty():
+			var outcome:String=words.phrase("已完成","Completed") if latest.status=="completed" else words.phrase("未完成","Unfinished")
+			card_detail.text+="\n"+words.phrase("刚才：","Last action: ")+outcome
 func rename_intelligence(id:String)->void:
 	var preset_id:String=game.world.intelligence.preset_id(id)
 	if preset_id.is_empty():return
@@ -380,14 +489,33 @@ func open_appearance(id:String)->void:
 	if not game.world.actors.has(id):return
 	resident_card.hide()
 	wardrobe.open_for(id)
-func open_connections(id:String)->void:
+func open_connections(_id:String)->void:
 	resident_card.hide()
-	if not game.resident_connections.visible:game._toggle_resident_connections()
-	if not id.is_empty():game.resident_connections.select_resident(id)
+	if not game.world_door_dialog.visible:game._toggle_resident_connections()
+func open_inner_voice(id:String)->void:
+	resident_card.hide()
+	game.world_door_dialog.hide()
+	game._open_model_settings(id)
+	var tabs:TabBar=game.resident_connections.tabs
+	tabs.current_tab=3
+	tabs.hide()
+	game.resident_connections.refresh()
 func open_entry(id:String)->void:
+	if id=="world_checkpoints" and is_instance_valid(game.world_checkpoints_panel):
+		game.world_checkpoints_panel.open()
+		return
+	if id=="storage":
+		game.storage_panel.open();return
+	if id=="island_log" and is_instance_valid(game.island_change_panel):
+		game.island_change_panel.open()
+		return
 	if id=="relics":game.dark_ui.relics();return
 	game.autonomy.player_input();resident_card.hide()
 	match id:
+		"camera":
+			if game.company!=null:game.company.camera.launch()
+		"company_story","company_ask":
+			if game.company!=null:game.company.night.start("story" if id=="company_story" else "question")
 		"wardrobe":
 			for actor_id in game.world.actors:
 				if game.world.actors[actor_id].role!="human":wardrobe.open_for(actor_id);break
@@ -399,16 +527,11 @@ func open_entry(id:String)->void:
 		_:game._handbook_selected(id)
 func notification_data()->Array:
 	var rows:Array=[]
-	var pending:Array=[]
-	for fish in game.world.fishing.fish.values():
-		if fish.location=="pending" or (fish.location=="storage" and fish.owner_id=="human"):pending.append(fish)
+	var pending:Array=game.world.fishing.unplaced_fish()
 	pending.sort_custom(func(a,b):return float(a.caught_at)<float(b.caught_at))
 	for fish in pending:
 		if not deferred_fish.has(fish.id):rows.append({"key":"fish:"+fish.id,"kind":"fish","id":fish.owner_id,"fish_id":fish.id,"text":T("hud.new_fish") % LocalText.resident(game.world,fish.owner_id)})
 	for card in game.world.proposals.snapshot():rows.append({"key":"proposal:"+card.id,"kind":"proposal","id":card.id,"text":LocalText.resident(game.world,card.actor_id)+"："+(LocalText.content(card.text) if card.get("source","")=="local_rules" else str(card.text))})
-	for id in game.world.director.routines:
-		var wish:Dictionary=game.world.wishes.summary(id)
-		if wish.active and wish.announced and game.wish_panel.dismissed.get(id,"")!=wish.id:rows.append({"key":"wish:"+wish.id,"kind":"wish","id":id,"text":LocalText.resident(game.world,id)+"："+LocalText.content(wish.text)+"\n"+game.world.wishes.hint(game.world.wishes.template(game.world.wishes.active(id).template_id),true)})
 	for record in game.world.memories.records:
 		if record.kind in ["gift","house_completed"]:rows.append({"key":"memory:"+record.id,"kind":"memory","id":record.id,"text":game.world.memories._describe(record).summary})
 	var completed:Dictionary=game.world.homestead.site.completion
@@ -419,17 +542,25 @@ func open_notice(row:Dictionary)->void:
 	expanded_notice=row.kind
 	match row.kind:
 		"fish":game.fishing_panel.open("",row.id);refresh()
-		"wish":game.wish_panel.detail_requested=true;game.wish_panel.refresh();game.wish_panel.show()
 		"proposal":game.proposal_panel.detail_requested=true;game.proposal_panel.refresh();game.proposal_panel.show()
 		"homestead":game._open_homestead()
 		_:game._toggle_memories()
 func notice_limit()->int:
 	return int(config.notification_limit)
 func refresh_notifications()->void:
-	var rows:=notification_data();var pending:Array=game.world.fishing.fish.values().filter(func(f):return f.location=="pending" or (f.owner_id=="human" and f.location=="storage"))
+	var rows:=notification_data();var pending:Array=game.world.fishing.unplaced_fish()
+	var current_fish:Dictionary={}
+	for fish in pending:
+		current_fish[fish.id]=true
+		if not seen_fish_notices.has(fish.id) and not deferred_fish.has(fish.id):notices_collapsed=false
+	seen_fish_notices=current_fish
 	var sig:=JSON.stringify(rows)+str(notices_collapsed)+JSON.stringify(deferred_fish)
-	notification_toggle.text=T("hud.news_count")%[rows.size()," ＋" if notices_collapsed else " －"]
-	notification_toggle.visible=(not rows.is_empty() or not pending.is_empty()) and not resident_card.visible and not game.resident_connections.visible and not game.chat.visible and not game.editor.visible and not game.atlas.visible
+	if not pending.is_empty():
+		var visible_now:bool=notifications.is_visible_in_tree()
+		if not visible_now and notices_collapsed==false and expanded_notice=="fish" and not game.fishing_panel.visible:expanded_notice=""
+	notification_toggle.text="●" if notices_collapsed else T("hud.island_news")
+	notification_toggle.tooltip_text=T("hud.island_news")
+	notification_toggle.visible=(not rows.is_empty() or not pending.is_empty()) and not resident_card.visible and not game.resident_connections.visible and not game.world_door_dialog.visible and not game.world_placement.visible and not game.chat.visible and not game.editor.visible and not game.atlas.visible
 	notifications.visible=notification_toggle.visible and not notices_collapsed and expanded_notice.is_empty() and not game.gift_panel.visible and not game.fishing_panel.visible
 	if notification_scroll!=null:notification_scroll.visible=LocalText.revision().begins_with("en") and notifications.visible
 	if sig==notices_signature:return
@@ -447,7 +578,9 @@ func refresh_notifications()->void:
 			var title:Button=button(top,T("hud.catch_card") % [LocalText.resident(game.world,entry.owner_id),LocalText.content(str(info.species_name)),LocalText.content(str(info.sizes_name))],func():open_notice(row));title.clip_text=true;title.size_flags_horizontal=Control.SIZE_EXPAND_FILL;title.add_theme_font_size_override("font_size",13)
 			var fish_grid:=GridContainer.new();fish_grid.columns=4;body.add_child(fish_grid)
 			var fish_actions:=fish_grid
-			button(fish_actions,T("hud.grill"),func():game.choose_direct_grill(row.fish_id))
+			if game.world.life.fireside.direct_fish_available(entry):
+				var grill:=button(fish_actions,T("hud.grill"),func():game.choose_direct_grill(row.fish_id))
+				grill.set_meta("fish_id",row.fish_id)
 			button(fish_actions,T("hud.stock_fish"),func():fish_action(row.fish_id,"stock"))
 			button(fish_actions,T("hud.release"),func():fish_action(row.fish_id,"release"))
 			button(fish_actions,T("hud.later"),func():deferred_fish[row.fish_id]=true;notices_signature="";refresh_notifications())
@@ -479,7 +612,7 @@ func fish_action(id:String,action:String)->void:
 	notices_signature="";game.action_dock.refresh();refresh_notifications()
 
 func stock_all_pending()->void:
-	var pending:Array=game.world.fishing.fish.values().filter(func(f):return f.location=="pending" or (f.owner_id=="human" and f.location=="storage"))
+	var pending:Array=game.world.fishing.unplaced_fish()
 	pending.sort_custom(func(a,b):return float(a.caught_at)<float(b.caught_at))
 	var placed:=0
 	for entry in pending:
@@ -517,7 +650,6 @@ func refresh_context()->void:
 				choices.push_front({"id":site.id,"label":T("hud.construction")%[LocalText.content(site.name),site.invested,game.world.leisure.cost(site)]})
 			elif nearby and site.complete and game.world.gomoku.table(str(site.id)).is_empty() and not game.world.barbecues.has(str(game.world.standard.sites.get(site.id,{}).get("target",site.id))):choices.append({"id":site.id,"label":T("hud.gomoku") if not game.world.gomoku.table(site.id).is_empty() else LocalText.content(site.name)})
 
-		if human.region_id=="home" and game.world.standard.active() and p.distance_to(Vector2(game.world.map_anchor("notice")[0],game.world.map_anchor("notice")[1]))<=radius:choices.push_front({"id":"opening.board","label":T("hud.noticeboard")})
 		if not game.world.fishing.shore("human").is_empty():choices.append({"id":"fish","label":T("hud.shore_fishing")})
 		for site in game.world.objects.values():
 			if site.region_id==human.region_id and site.kind=="construction_site" and p.distance_to(game.world.point(site)+Vector2(0,game.world.site_size(site).y/2+1))<=radius:choices.append({"id":site.id,"label":T("hud.enter_home") if int(site.stage_index)==5 else T("hud.build")});break
@@ -531,7 +663,6 @@ func refresh_context()->void:
 	for child in context.get_children():context.remove_child(child);child.queue_free()
 	for entry in choices.slice(0,3):button(context,entry.label,func():activate_context(entry.id))
 func activate_context(id:String)->void:
-	if id=="opening.board":game._show_opening_board();return
 	if game.world.leisure.sites.has(id) and not game.world.leisure.sites[id].complete:game.leisure_panel.open_site(id);return
 	if id.begins_with("light:"):
 		var station_id:String=id.trim_prefix("light:")
@@ -553,6 +684,12 @@ func layout_primary_actions()->void:
 	var f:float=preload("res://scripts/ui_scale.gd").factor()
 	var bottom_height:float=maxf(44,42*f)
 	var english:bool=LocalText.revision().begins_with("en")
+	var narrow_english:bool=english and get_viewport_rect().size.x<=1000
+	var guide_row:Container=compact_tools if narrow_english and f>=1.2 else masthead
+	if game.handbook_menu.get_parent()!=guide_row:game.handbook_menu.reparent(guide_row,false)
+	compact_tools.visible=guide_row==compact_tools
+	var placement_left:float=-388.0 if narrow_english else -416.0
+	if placement_button.offset_left!=placement_left:placement_button.offset_left=placement_left
 	# Two distinct rows at narrow sizes prevent the action and utility groups overlapping.
 	primary_actions.set_anchors_and_offsets_preset(Control.PRESET_CENTER_BOTTOM)
 	var compact:Control=primary_actions.get_node_or_null("CompactDialogue")
@@ -574,34 +711,47 @@ func layout_primary_actions()->void:
 	context.offset_top=-bottom_height*3-28;context.offset_bottom=-bottom_height*2-28
 	game.status.position=Vector2(16,get_viewport_rect().size.y*.42);game.status.size=Vector2(minf(260*f,get_viewport_rect().size.x*.42),44*f)
 func refresh()->void:
+	if is_instance_valid(my_ai_button) and is_instance_valid(game.island_ai):
+		var words:=preload("res://scripts/world_door_panel.gd")
+		var status_line:String=words.title_text()+" · "+game.island_ai.status_text()
+		var status_tip:String=game.island_ai.status_text(true)
+		if my_ai_caption.text!=status_line:
+			my_ai_caption.text=status_line
+			my_ai_button.accessibility_name=status_line
+		if my_ai_button.tooltip_text!=status_tip:my_ai_button.tooltip_text=status_tip
 	visible=not ((scale_manager()!=null and scale_manager().full_modal_open()) or (game.jieqi_panel!=null and game.jieqi_panel.visible) or (game.gomoku_panel!=null and game.gomoku_panel.card.visible) or (game.chess_choice!=null and game.chess_choice.visible))
-	layout_primary_actions()
-	residents_panel.visible=not resident_card.visible and not game.resident_connections.visible and not game.editor.visible and not game.fishing_panel.visible
+	residents_panel.visible=not game.chat.visible and not game.atlas.visible and not resident_card.visible and not game.resident_connections.visible and not game.world_door_dialog.visible and not game.world_placement.visible and not game.editor.visible and not game.fishing_panel.visible
 	upper_status.visible=not game.editor.visible
+	layout_primary_actions()
 	game.status.visible=not game.editor.visible and visible
-	game.day_label.text=LocalText.text("title.name")+" · "+T("hud.day_weather")%[game.world.days.day(),LocalText.content(game.world.days.phase().name),LocalText.content(game.world.weather.current().name)]
+	var date_text:=T("life.island_name")+" · "+(T("hud.day_weather") % [game.world.days.day(),LocalText.content(game.world.days.phase().name),LocalText.content(game.world.weather.current().name)])
+	if game.day_label.text!=date_text:game.day_label.text=date_text
 	var nearby_fire:RefCounted=game.world.nearest_barbecue("human")
 	var stock:Dictionary=game.world.storage.saved().items
 	var names:Dictionary={"wood":T("hud.wood"),"mushroom":T("hud.mushroom")}
 	var parts:Array=[]
 	for item in ["wood","mushroom"]:parts.append(names[item]+" "+str(stock.get(item,0)))
-	stock_button.text=T("storage.title")+" · "+" · ".join(parts);stock_button.icon=game.view.textures.get("chest",icon("book"))
+	stock_button.text=T("storage.title");stock_button.tooltip_text=T("storage.title")+" · "+" · ".join(parts)
 
 	for id in game.world.director.routines:
 		if not resident_rows.has(id):make_avatar(id);layout_residents()
+	var proposal_cards:Array=game.world.proposals.snapshot()
 	for id in avatar_marks:
-		update_portrait(id);avatar_buttons[id].tooltip_text=LocalText.resident(game.world,id)
+		update_portrait(id)
+		var resident_name:=LocalText.resident(game.world,id)
+		if avatar_buttons[id].tooltip_text!=resident_name:avatar_buttons[id].tooltip_text=resident_name
 		var state:Dictionary=resident_status(id)
-		avatar_marks[id].text="●" if state.busy else ""
-		avatar_marks[id].add_theme_color_override("font_color",Color("8ac5f0"))
-		connection_lights[id].text="●";connection_lights[id].tooltip_text=state.tooltip
-		connection_lights[id].add_theme_color_override("font_color",state.color)
-		var appetite:Dictionary=game.world.hunger.summary(id)
-		avatar_buttons[id].text="" if residents_collapsed else LocalText.resident(game.world,id)+(("\n" if preload("res://scripts/ui_scale.gd").factor()>=1.1 and get_viewport_rect().size.x<1100 else " · ")+appetite_label(id) if show_hunger_hints and not appetite.is_empty() else "")
+		var emotes=preload("res://scripts/pixel_emotes.gd")
+		var mood:Texture2D=emotes.texture(emotes.MOODS[game.world.hearts.dominant(id)])
+		if avatar_marks[id].texture!=mood:avatar_marks[id].texture=mood
+		if connection_lights[id].text.is_empty():connection_lights[id].text="●"
+		if connection_lights[id].tooltip_text!=state.tooltip:connection_lights[id].tooltip_text=state.tooltip
+		if connection_lights[id].get_theme_color("font_color")!=state.color:connection_lights[id].add_theme_color_override("font_color",state.color)
+		var name_line:String="" if residents_collapsed else resident_name+(("\n" if preload("res://scripts/ui_scale.gd").factor()>=1.1 and get_viewport_rect().size.x<1100 else " · ")+appetite_label(id) if show_hunger_hints else "")
+		if avatar_buttons[id].text!=name_line:avatar_buttons[id].text=name_line
 		var flags:Array=[]
-		if game.world.wishes.summary(id).active:flags.append(T("hud.wish_flag"))
 		if game.questions.has(id) or game.group_questions.has(id):flags.append(T("hud.question_flag"))
-		if game.world.proposals.snapshot().any(func(card):return card.actor_id==id):flags.append(T("hud.proposal_flag"))
+		if proposal_cards.any(func(card):return card.actor_id==id):flags.append(T("hud.proposal_flag"))
 		resident_badges[id].text="/".join(flags);resident_badges[id].tooltip_text=T("hud.flags_tooltip")
 	if game.status.text.is_empty() or (game.status.get_meta("ui_message_key","")=="ui.main.movement_hint" and game.status.text==LocalText.text("ui.main.movement_hint")):
 		game.status.modulate.a=clampf((5-hint_seconds)/2,0,1);game.status.visible=hint_seconds<5
@@ -612,23 +762,36 @@ func refresh()->void:
 	var intent:String=str(job.get("intent","manage_farm" if game.world.farms.active("human") else "build_house" if game.world.projects.active("human") else "move"))
 	var phase:String=str(job.get("phase",game.world.farms.orders.get("human",{}).get("status","")))
 	task_text.text=T("hud.task_status") % [LocalText.content(str(config.task_names.get(intent,T("hud.working")))),LocalText.content(str(config.phase_names.get(phase,"")))]
+	if task_notice_key!=task_text.text or not task.visible:
+		task_notice_key=task_text.text;task_notice_since=Time.get_ticks_msec()/1000.0
+	var elapsed:=Time.get_ticks_msec()/1000.0-task_notice_since
+	task.modulate.a=clampf(4.0-elapsed,0.0,1.0)
+	task.visible=task.visible and elapsed<4.0
+	shown_fireside.clear()
+	for station_id in game.world.barbecues:
+		var fire:RefCounted=game.world.barbecues[station_id].fireside
+		if fire.active() and not fire.circle_closed and fire.state.get("roast_by")=="human" and fire.near("human",float(fire.config.host_radius)):
+			var meal:Dictionary=fire.state.get("current",{})
+			if not meal.is_empty():shown_fireside={"station":station_id,"meal":meal.id};break
+	end_fireside_button.visible=not shown_fireside.is_empty()
+	end_fireside_button.tooltip_text=T("content.remaining.end_the_fireside_gathering")
+	if end_fireside_button.visible:
+		task_text.text=T("hud.barbecue")
+		task.modulate.a=1.0;task.show()
 	return_button.visible=not game.view.follow_player and not game.atlas.visible
 	game.furniture_button.hide()
 	if not game.action_dock.feedback.is_empty():game.status.text=game.action_dock.feedback
-	if game.wish_panel.visible and expanded_notice!="wish":game.wish_panel.hide()
 	if game.proposal_panel.visible and expanded_notice!="proposal":game.proposal_panel.hide()
-	if expanded_notice=="wish" and not game.wish_panel.visible:expanded_notice=""
 	if expanded_notice=="proposal" and not game.proposal_panel.visible:expanded_notice=""
 	if expanded_notice=="fish" and not game.fishing_panel.visible:expanded_notice=""
 	game.action_dock.strip.visible=game.action_dock.strip.visible and expanded_notice=="fish"
 	game.action_dock.reopen_button.hide()
 	refresh_card();refresh_context();refresh_notifications()
-	context.visible=not game.chat.visible and not game.editor.visible and not game.atlas.visible and not game.resident_connections.visible and not game.participant_picker.visible
 	# Chat is a focused surface: keep the bottom toggle available, never overlay its input.
 	if not visible:game.status.hide()
 	utility_actions.visible=not game.chat.visible
 	if game.chat.visible:
-		residents_panel.hide();notifications.hide();notification_toggle.hide();game.status.hide();context.hide();task.hide();return_button.hide()
+		game.status.hide();context.hide();task.hide();return_button.hide()
 
 func _process(delta:float)->void:
 	hint_seconds+=delta
@@ -643,20 +806,29 @@ func appetite_label(id:String)->String:
 	var rank:int=game.world.hunger.rank(id)
 	return "" if rank<0 else T(["hud.hunger_full","hud.hunger_peckish","hud.hunger_hungry","hud.hunger_very"][rank])
 func refresh_locale()->void:
+	manage_connections.text=preload("res://scripts/world_door_panel.gd").title_text()
+	var door_tip:Label=find_child("WorldDoorTip",true,false)
+	if is_instance_valid(door_tip):door_tip.text=preload("res://scripts/world_door_panel.gd").phrase("↑ 从这儿邀请你的 AI","↑ Invite your AI here")
+	var placement:Button=find_child("WorldPlacement",true,false)
+	if is_instance_valid(placement):placement.text=preload("res://scripts/world_creations.gd").phrase("摆放","Place")
 	_refresh_static(self)
+	if is_instance_valid(watch_button):watch_button.text=T("life.watch")
 	# Dialog inputs retain raw custom names and drafts. Only registered static text changes.
 	for child in ui_root.get_children():
 		if child is Window:
 			_refresh_static(child)
 			if not child.has_meta("locale_title") and _locale_static.has(child.title):child.set_meta("locale_title",_locale_static[child.title])
 			if child.has_meta("locale_title"):child.title=T(str(child.get_meta("locale_title")))
-	game.handbook_menu.text=T("hud.handbook");settings_menu.text=T("hud.settings")
+	game.handbook_menu.text=T("hud.handbook");game.handbook_menu.tooltip_text=T("hud.handbook");settings_menu.text=T("hud.settings")
+	if is_instance_valid(camera_button):camera_button.text=T("company.camera")
 	var popup:PopupMenu=game.handbook_menu.get_popup()
 	for index in range(popup.item_count):
 		var id:String=str(popup.get_item_metadata(index))
 		if id=="relics":popup.set_item_text(index,T("hud.relics"))
 		elif id=="wardrobe":popup.set_item_text(index,T("hud.wardrobe"))
-		elif id=="opening_board":popup.set_item_text(index,T("theirs.goals"))
+		elif id=="island_log":popup.set_item_text(index,preload("res://scripts/world_door_panel.gd").phrase("岛上日志","Island log"))
+		elif id=="world_checkpoints":popup.set_item_text(index,preload("res://scripts/world_creations.gd").phrase("回到昨天","Return to yesterday"))
+		elif id in ["camera","company_story","company_ask"]:popup.set_item_text(index,T("company."+{"camera":"camera","company_story":"story","company_ask":"ask"}[id]))
 		else:
 			for entry in config.handbook:
 				if entry.id==id:popup.set_item_text(index,LocalText.content(entry.label))
@@ -667,6 +839,7 @@ func refresh_locale()->void:
 		if id==0:settings.set_item_text(index,T("ui.main.fullscreen_window"))
 		elif id==1:settings.set_item_text(index,T("ui.main.sound_backups"))
 		elif id==99:settings.set_item_text(index,T("ui.main.new_game_archive_and_restart"))
+		elif id==103:settings.set_item_text(index,preload("res://scripts/world_door_panel.gd").title_text())
 		elif id==90:settings.set_item_text(index,T("hud.my_appearance"))
 		elif id==94:settings.set_item_text(index,T("hud.hunger_hints"))
 		elif id in [96,97]:settings.set_item_text(index,T("camera.distance.original" if id==97 else "camera.distance.close"))
@@ -675,14 +848,14 @@ func refresh_locale()->void:
 
 func _position_handbook_popup()->void:
 	var popup:PopupMenu=game.handbook_menu.get_popup()
-	if not popup.visible:return
+	if not popup.visible or not game.handbook_menu.is_inside_tree():return
 	var rect:Rect2=game.handbook_menu.get_global_rect()
 	if rect.end.y+popup.size.y>get_viewport_rect().size.y:
 		popup.position.y=roundi(maxf(0,rect.position.y-popup.size.y-4))
 
 func _position_settings_popup()->void:
 	var popup:PopupMenu=settings_menu.get_popup()
-	if not popup.visible:return
+	if not popup.visible or not settings_menu.is_inside_tree():return
 	var rect:Rect2=settings_menu.get_global_rect()
 	# Keep the releasing click over its opener, outside the menu's item area.
 	if rect.end.y+popup.size.y>get_viewport_rect().size.y:

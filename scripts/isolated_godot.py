@@ -12,6 +12,7 @@ with tempfile.TemporaryDirectory(prefix='youqi-probe-') as directory:
     base = Path(directory)
     project = base / 'godot'
     project.mkdir()
+    (base / 'scripts').symlink_to(ROOT / 'scripts', target_is_directory=True)
     for source in (ROOT / 'godot').iterdir():
         if source.name != 'project.godot':
             (project / source.name).symlink_to(source, target_is_directory=source.is_dir())

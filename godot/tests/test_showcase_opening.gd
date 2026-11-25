@@ -26,7 +26,7 @@ func _initialize()->void:
 	check(world.interior.furniture.size()==20 and world.interior.furniture.values().all(func(f):return f.invested==0),"fifteen main-home furnishings plus five greenhouse presets, all with zero invented investment")
 	check(world.leisure.sites.size()==world.catalog.regions.home.layout.facilities.size() and world.leisure.sites.values().all(func(f):return f.complete and f.invested==0),"initial facilities include second chess table, no investment")
 	check(world.memories.records.is_empty() and world.projects.memories.is_empty() and world.interior.memories.is_empty(),"no memories from initial state")
-	check(world.relationships.states.is_empty() and world.wishes.states.is_empty(),"no relationship or wish history")
+	check(world.relationships.states.is_empty(),"no relationship history")
 	check(world.homestead.completed() and world.homestead.site.completion.is_empty(),"preset flowerbed no historical completion")
 	check(world.days.day()==1 and world.journal.saved().get("discoveries",{}).is_empty(),"day one and empty discovery history")
 	check(world.work.jobs.is_empty() and world.work.claims.is_empty() and world._routes.is_empty(),"no work/claims/routes invented")

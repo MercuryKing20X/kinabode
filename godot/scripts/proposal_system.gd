@@ -22,7 +22,7 @@ func target_valid(activity: String,target: String) -> bool:
 		"table":return world.leisure.sites.has(target) and world.leisure.art(world.leisure.sites[target]).get("recreation",{}).get("behavior")=="sit"
 		"fishery":return world.fishing.pens.has(target)
 	return false
-func create(id: String,args: Dictionary) -> Dictionary:
+func create(id: String,args: Dictionary,heart_companion: String="") -> Dictionary:
 	if args.get("activity")=="opening_fire":return world._error("host_only_opening_hint")
 	if id=="human" or not world.director.model_controlled(id):return world._error("model_resident_required")
 	if args.keys().any(func(key):return key not in ["intent","text","activity","target_id","ttl_seconds"]):return world._error("invalid_proposal")
@@ -33,6 +33,8 @@ func create(id: String,args: Dictionary) -> Dictionary:
 	var level: String=level_provider.call(id) if level_provider.is_valid() else "medium"
 	if now()-float(last_created.get(id,0))<float(policies.get(level,policies.medium).cooldown):return world._error("proposal_cooldown")
 	var card: Dictionary={"id":"proposal-"+Crypto.new().generate_random_bytes(12).hex_encode(),"actor_id":id,"text":args.text.strip_edges(),"activity":args.activity,"target_id":args.target_id,"expires_at":now()+ttl}
+	if args.activity=="fish_together" and heart_companion!=id and heart_companion!="human" and world.director.brains.has(heart_companion):
+		card["companion_id"]=heart_companion
 	cards[id]=card;last_created[id]=now();world.revision+=1
 	return {"ok":true,"status":"proposed","proposal_id":card.id,"message":LocalText.text("content.remaining.suggestion_delivered_waiting_for_the_player_s_explicit_choice_no_activ")}
 func advance(delta: float) -> void:

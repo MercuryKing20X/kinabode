@@ -254,6 +254,10 @@ func _draw() -> void:
 				draw_rect(Rect2(at-Vector2(3,2),Vector2(6,4)),Color("c2b97e") if plot.crop_id.is_empty() else Color("bcdb88"))
 			draw_string_outline(font,p+Vector2(-32,5),LocalText.content(farm.name),HORIZONTAL_ALIGNMENT_LEFT,-1,13,3,Color("263e35"))
 			draw_string(font,p+Vector2(-32,5),LocalText.content(farm.name),HORIZONTAL_ALIGNMENT_LEFT,-1,13,Color("ffedc0"))
+	for row in world.flower_creation.creations.pieces.values():
+		if row.created<=world.flower_creation.creations.seen:continue
+		var region:Dictionary=world.catalog.regions[row.region]
+		draw_circle(screen_position(Vector2(region.origin[0],region.origin[1])+world.point(row)),3,Color("fff0a0"))
 	for pen in world.fishing.pens.values():
 		var region: Dictionary=world.catalog.regions[pen.region_id]
 		var rect: Rect2=world.catalog.rectangle(pen.rect)

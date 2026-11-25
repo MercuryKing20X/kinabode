@@ -37,7 +37,7 @@ var scene_speech:RefCounted
 var weather: RefCounted
 var personality: RefCounted
 var schedules: RefCounted
-var wishes: RefCounted
+var play_invite:Callable
 var promises: RefCounted
 var proposals: RefCounted
 var homestead: RefCounted
@@ -64,11 +64,15 @@ var barbecues:Dictionary={}
 var life: RefCounted
 var interior: RefCounted
 var library: RefCounted
+var hearts: RefCounted
+var island_notes:RefCounted=preload("res://scripts/island_notes.gd").new(self)
 var director: RefCounted
 var local_companion: RefCounted
 var village: RefCounted
 var revision := 1
 var world_id := Crypto.new().generate_random_bytes(16).hex_encode()
+var open_life:=false
+var life_seed:=0
 var _grids: Dictionary = {}
 var _terrain_solids: Dictionary = {}
 var _land_polygons: Dictionary = {}
@@ -119,6 +123,7 @@ func _init(manifest_path:String="res://content/world.json") -> void:
 	_add_actor("human", LocalText.source("system.world_state.you"), "human", point)
 	_add_actor("codex", LocalText.source("system.world_state.youqi"), "companion", point + Layout.points([locations.section("spawn_companion_offset")])[0])
 	director = preload("res://scripts/resident_director.gd").new(self)
+	hearts=preload("res://scripts/companion_heart.gd").new(self)
 	local_companion = director.routines.codex
 	village = preload("res://scripts/village_life.gd").new(self)
 	activities = preload("res://scripts/resident_activity.gd").new(self)
@@ -137,7 +142,6 @@ func _init(manifest_path:String="res://content/world.json") -> void:
 	promises = preload("res://scripts/promise_system.gd").new(self)
 	cooperation = preload("res://scripts/cooperation_system.gd").new(self)
 	relationships=preload("res://scripts/relationship_system.gd").new(self)
-	wishes=preload("res://scripts/wish_system.gd").new(self)
 	weather=preload("res://scripts/weather_system.gd").new(self)
 	schedules=preload("res://scripts/schedule_system.gd").new(self)
 	moon=preload("res://scripts/moon_island.gd").new(self)
@@ -351,8 +355,6 @@ func _command_body(actor_id: String, args: Dictionary) -> Dictionary:
 	if not director.issuing(actor_id) and not intent.ends_with("_read") and intent not in ["island_propose","propose","promise","promise_cancel","give"]:
 		for barbecue in barbecues.values():barbecue.fireside.command_received(actor_id,intent)
 
-	if hunger!=null and hunger.rank(actor_id)>=2 and not work.jobs.has(actor_id) and not projects.active(actor_id) and not farms.active(actor_id) and not homestead.active(actor_id) and intent in ["chop","gather_wood","forage","plant","water","harvest","build","build_house","build_facility","deliver_wood","homestead_start"]:
-		return work.fail("hungry",LocalText.text("system.world_state.you_are_hungry_have_something_to_eat_before"))
 	if intent in ["store","take","collect","pickup_furniture","rotate_furniture","place_furniture"]:
 		var target:Dictionary=object_by_id(str(args.get("target_id","")))
 		var owner:String=storage_owner(target)
@@ -518,6 +520,7 @@ func rescue_obstructed()->void:
 
 func walkable(region_id: String, position: Vector2) -> bool:
 	if region_id.begins_with("room."): return interior.rooms().has(region_id) and interior.walkable(region_id, position)
+	if flower_creation!=null and flower_creation.creations.blocked(region_id,position):return false
 	if not _terrain_walkable(region_id,position) or (leisure!=null and leisure.blocked(region_id,position)) or (homestead!=null and homestead.blocks(region_id,position)): return false
 	for object in objects.values():
 		if object.region_id != region_id: continue
@@ -620,12 +623,16 @@ func find_route(actor_id: String, destination: Vector2) -> Array[Vector2]:
 	var region_id: String = actors[actor_id].region_id
 	if not walkable(region_id, destination): return []
 	rescue_actor(actor_id)
+	return route_between(region_id,point(actors[actor_id]),destination)
+
+func route_between(region_id:String,current:Vector2,destination:Vector2)->Array[Vector2]:
+	if not walkable(region_id,destination):return []
 	# Every segment and local repair requires a walkable start; avoid searching
 	# the whole grid repeatedly when a loaded actor is inside an obstacle.
-	if not walkable(region_id,point(actors[actor_id])):return []
-	if segment_clear(region_id,point(actors[actor_id]),destination):return [destination]
+	if not walkable(region_id,current):return []
+	if segment_clear(region_id,current,destination):return [destination]
 	if region_id=="home" and home_island!=null:
-		var road:Array[Vector2]=home_island.road_route(point(actors[actor_id]),destination)
+		var road:Array[Vector2]=home_island.road_route(current,destination)
 		if not road.is_empty():return road
 	var region: Dictionary = region_info(region_id)
 	if not _grids.has(region_id):
@@ -683,9 +690,9 @@ func find_route(actor_id: String, destination: Vector2) -> Array[Vector2]:
 								for fence in Layout.yard_fences(point(object),footprint/2):
 									if p.distance_to(Geometry2D.get_closest_point_to_segment(p,fence[0],fence[1]))<.3:blocked=true;break
 						if blocked:grid.set_point_solid(Vector2i(x,y),true)
+		if flower_creation!=null:flower_creation.creations.mark_grid(region_id,grid)
 		_grids[region_id] = grid
 	var grid: AStarGrid2D = _grids[region_id]
-	var current := point(actors[actor_id])
 	var points := grid.get_id_path(Vector2i(current.floor()), Vector2i(destination.floor()))
 	if points.is_empty():
 		# A real coast/furniture-edge endpoint can be walkable while its coarse
@@ -865,6 +872,7 @@ func _finish_motion(delta:float,before:Dictionary)->void:
 		var moved:bool=shift.length()>0.00001
 		var state:Dictionary=_motion_states.get(id,{"facing":actor.facing,"still_seconds":1.0})
 		state["running"]=moved and bool(old.get("running",false))
+		state["gait_reason"]=old.get("gait_reason","off_route") if moved else ""
 		state["moving"]=moved;state["distance"]=shift.length();state["velocity"]=shift/delta
 		state["still_seconds"]=0.0 if moved else minf(60,float(state.still_seconds)+delta)
 		if moved:state.facing=walking_direction(shift)
@@ -887,10 +895,8 @@ func force_human_run() -> void:
 
 func is_running(actor_id: String) -> bool:
 	if actor_id!="human" and actors.has(actor_id):
-		if hunger!=null and hunger.rank(actor_id)>=2 and not hunger.rushing(actor_id):return false
 		return _routes.has(actor_id) and not _routes[actor_id].is_empty() and actors[actor_id].activity=="walking"
 	if hunger!=null and hunger.has_method("rushing") and hunger.rushing(actor_id) and not loaded(actor_id):return true
-	if hunger!=null and actor_id!="human" and hunger.rank(actor_id)>=2:return false
 	if not actors.has(actor_id) or not _routes.has(actor_id) or _routes[actor_id].is_empty(): return false
 	if not _forced_runs.get(actor_id, false): return false
 	if actors[actor_id].activity != "walking" or loaded(actor_id): return false
@@ -902,22 +908,24 @@ func is_running(actor_id: String) -> bool:
 	return true
 
 func display_running(id:String)->bool:
-	# The final displacement still belongs to the route that just ended.
-	if _routes.has(id):return is_running(id)
 	var state:Dictionary=motion_state(id)
 	return bool(state.get("moving",false)) and bool(state.get("running",false))
 
+func _route_gait_reason(id:String)->String:
+	var actor:Dictionary=actors[id]
+	if str(actor.region_id).begins_with("room."):return "inside"
+	var route:Array=_routes[id]
+	var at:Vector2=point(actor)
+	if route.is_empty() or at.distance_to(route.back())<=2.5:return "approach"
+	return "run" if nearby_camp_seats(id,1.25).is_empty() else "camp_seat"
+
 func movement_speed(id:String)->float:
 	if id!="human" and is_running(id):
-		if hunger!=null and hunger.has_method("follow_paused") and hunger.follow_paused(id):return 0.0
 		if hunger!=null and hunger.has_method("rushing") and hunger.rushing(id) and not loaded(id):return float(hunger.config.rush_speed)/32.0
 		return CARRY_SPEED if loaded(id) else RUN_SPEED
 	if loaded(id):return CARRY_SPEED
 	if fishing!=null and not fishing.held(id).is_empty():return SPEED
 	if hunger!=null and hunger.has_method("rushing") and hunger.rushing(id):return float(hunger.config.rush_speed)/32.0
-	if hunger!=null and hunger.has_method("follow_paused") and hunger.follow_paused(id):return 0.0
-	if hunger!=null and id!="human" and hunger.rank(id)>=3:return float(hunger.config.presentation.very_slow_speed)/32.0
-	if hunger!=null and id!="human" and hunger.rank(id)>=2:return float(hunger.config.slow_speed)/32.0
 	return RUN_SPEED if is_running(id) else SPEED
 
 func advance(delta: float) -> void:
@@ -935,8 +943,9 @@ func advance(delta: float) -> void:
 	var changed := false
 	for id in _routes.keys():
 		if id=="human" and dark!=null and dark.block_motion(delta):continue
-		motion_before[id]["running"]=is_running(id)
-		var budget: float = movement_speed(id) * delta
+		var budget:float=movement_speed(id)*delta
+		motion_before[id]["gait_reason"]=_route_gait_reason(id)
+		motion_before[id]["running"]=motion_before[id].gait_reason=="run"
 		var point := Vector2(actors[id].position[0], actors[id].position[1])
 		while budget > 0 and not _routes[id].is_empty():
 			var target: Vector2 = _routes[id][0]
@@ -966,24 +975,24 @@ func advance(delta: float) -> void:
 	if moon!=null:moon.advance(delta)
 	# Commit the frame clock before local rules read persisted deadlines.
 	forest.advance(delta)
+	if delta>0:island_notes.tick()
 	if scene_speech==null:scene_speech=preload("res://scripts/scene_speech.gd").new(self);scene_speech.reset()
 	scene_speech.advance()
 	personality.advance()
 	intelligence.advance()
-	if delta>0:standard.offer_hint()
 	if flower_creation!=null:flower_creation.advance(delta)
 	director.advance(delta)
+	flower_creation.creations.tick_reactions()
 	activities.advance(delta)
 	fishing.advance(delta)
 	gomoku.advance(delta)
 	jieqi.advance(delta)
 	days.advance()
 	weather.advance()
+	if hearts!=null:hearts.advance(delta)
 	proposals.advance(delta)
 	promises.advance(delta)
-	wishes.advance(delta)
 	relationships.advance(delta)
-	standard.advance(delta)
 	if home_island!=null:home_island.advance(delta)
 	if their_island!=null:their_island.advance(delta)
 	if dark!=null:dark.advance(delta)
@@ -1098,8 +1107,9 @@ func host_command(id: String,args: Dictionary) -> Dictionary:
 	return result
 
 func map_anchor(key:String)->Array:
-	var entry:Variant=catalog.regions.home.layout.anchors[key]
+	var entry:Variant=catalog.regions.home.get("layout",{}).get("anchors",{}).get(key)
 	if entry is Array:return entry.duplicate()
+	if not entry is Dictionary:return []
 	if entry.has("anchor"):return map_anchor(str(entry.anchor))
 	var object:Dictionary=catalog.objects[entry.object_id]
 	return [object.position[0]+entry.offset[0],object.position[1]+entry.offset[1]]
@@ -1219,4 +1229,6 @@ func model_social_command(id:String,args:Dictionary)->Dictionary:
 	if intent=="follow" and id not in ids:ids.append(id)
 	elif intent=="unfollow":ids.erase(id)
 	if work.jobs.has(id) or farms.active(id) or projects.active(id) or homestead.active(id) or shared_activity.holds(id) or activities.members.has(id):return _error("busy")
-	return activities.set_followers(ids,[id])
+	var brain:RefCounted=director.brains.get(id)
+	var inside_plan:bool=brain!=null and brain.executing and brain.current.get("origin")=="native"
+	return activities.set_followers(ids,[id],not inside_plan)

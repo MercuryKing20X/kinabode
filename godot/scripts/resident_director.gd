@@ -3,8 +3,8 @@ extends RefCounted
 var quote_books:WeakRef
 var quote_next:Dictionary={}
 signal local_speech_window(actor_id:String)
+signal world_speech(actor_id:String,target:String,line:String)
 const LocalText=preload("res://scripts/localization.gd")
-const OLD_LINES_PER_NEW:=3
 
 # One local routine per identity. Model bindings and capabilities are separate.
 const Routine = preload("res://scripts/local_companion.gd")
@@ -13,23 +13,22 @@ var world: RefCounted:
 	get: return _owner.get_ref()
 var routines: Dictionary = {}
 var brains:Dictionary={}
-var brain_social:RefCounted
 var brain_trace_directory:=""
 var destinations: Dictionary = {}
 var seen: Dictionary = {}
 var events: Array = []
 var serial := 0
 var speech_after := 0.0
+var command_speech_after: Dictionary = {}
 var return_visit_after := 0.0
 var time := 0.0
 var collecting_idle:=false
 var idle_candidates:Dictionary={}
+var moment_pacing:RefCounted
 var memory_reminders: RefCounted
 var moods: RefCounted
 var local_dialogue:RefCounted
-var old_spoken_credit:=0
 var old_spoken_at:Dictionary={}
-var old_spoken_actor:Dictionary={}
 
 func _init(source: RefCounted) -> void:
 	_owner = weakref(source)
@@ -97,41 +96,57 @@ func state(id: String) -> Dictionary:
 	elif not routine.kind.is_empty() or (brains.has(id) and brains[id].active() and brains[id].current.get("source","")=="local"): effective = "local_rules"
 	return {"controller": world.actors[id].controller, "effective": effective, "capabilities": world.residents.capabilities(world.actors[id]), "local_life": routine.state()}
 
-var steward_speech_pending:=false
+var company_night_owner:=""
+signal return_speech_window
+var return_speech_reserved:=false
+var heart_speech_window:Callable
 func can_say_local(id:String,context:String="",listener_id:String="human")->bool:
-	if steward_speech_pending and not context.begins_with("steward_"):return false
 	if not routines.has(id):return false
 	var routine: RefCounted=routines[id];var actor: Dictionary=world.actors[id]
+	if actor.has("world_door_client") and context!="world_door":return false
 	if not routine.enabled or routine.held or not routine.chatter:return false
-	if context.begins_with("steward_"):
-		if time<routine.visual_quiet_until or world.activities.held.get(id,false) or world.activities.members.has(id):return false
-	elif routine.time<routine.next_speech or time<speech_after:return false
+	if context=="company_night" and not company_night_owner.is_empty():
+		var listener:Dictionary=world.actors.human
+		return time>=routine.visual_quiet_until and listener.region_id==actor.region_id and world.point(listener).distance_to(world.point(actor))<=12
+	if context in ["heart_social","heart_call"] and (time<routine.visual_quiet_until or world.activities.blocked(id,false) or world.fishing.life.time<float(world.fishing.life.quiet_until.get(id,0))):return false
+	if routine.time<routine.next_speech or time<speech_after:return false
 	if listener_id!="human":
-		if context in ["local_pair","brain_pair"]:
+		if context in ["heart_social","world_door"]:pass
+		elif context in ["local_pair","brain_pair"]:
 			if local_dialogue==null or not local_dialogue.pair_allowed(id,listener_id,context=="brain_pair"):return false
 		elif not context.begins_with("gomoku_"):return false
 		var allowed: bool=world.gomoku.sessions.values().any(func(g):return g.get("mode")=="ai" and id in world.gomoku.players(g) and listener_id in world.gomoku.players(g) and id!=listener_id and (g.phase=="playing" or (g.phase=="finished" and world.gomoku.memories.any(func(record):return record.id==g.id))))
-		if context not in ["local_pair","brain_pair"] and not allowed:return false
-	if context.begins_with("steward_"):return true
+		if context not in ["local_pair","brain_pair","heart_social","world_door"] and not allowed:return false
 	var listener: Dictionary=world.actors.get(listener_id,{})
-	if listener.is_empty() or actor.region_id!=listener.region_id or world.point(actor).distance_to(world.point(listener))>12:return false
+	if listener.is_empty() or actor.region_id!=listener.region_id or world.point(actor).distance_to(world.point(listener))>(20 if context=="heart_social" else 50 if context=="heart_call" else 12):return false
 	return true
 
-func say_local(id: String,text: String,context: String,personal_gap: float,group_gap: float,listener_id: String="human") -> bool:
+func say_local(id: String,text: String,context: String,personal_gap: float,group_gap: float,listener_id: String="human",source:String="local_rules") -> bool:
 	if not can_say_local(id,context,listener_id):return false
 	var routine:RefCounted=routines[id]
 	if world.personality!=null and not world.personality.allowed_line(id,text):return false
 	if world.personality!=null:world.personality.note_line(id,text)
-	serial+=1;events.append({"serial":serial,"actor_id":id,"source":"local_rules","context":context,"text":text,"explicit":false,"time":time})
+	serial+=1;events.append({"serial":serial,"actor_id":id,"source":source,"context":context,"text":text,"explicit":false,"time":time})
 	if events.size()>24:events.pop_front()
 	routine.next_speech=routine.time+personal_gap;speech_after=time+group_gap
-	if context=="brain_pair":return true
-	if context not in ["local_pair","local_host","local_sense"]:
-		old_spoken_at[id]=time;old_spoken_credit=mini(OLD_LINES_PER_NEW,old_spoken_credit+1)
-		old_spoken_actor[id]=int(old_spoken_actor.get(id,0))+1
-	else:
-		# A new line spends this speaker's real old deliveries; a pending reply may borrow.
-		old_spoken_actor[id]=int(old_spoken_actor.get(id,0))-OLD_LINES_PER_NEW
+	old_spoken_at[id]=time
+	return true
+
+func say_command(id: String, target: String, line: String) -> bool:
+	if not routines.has(id) or not world.actors.has(target):return false
+	var routine:RefCounted=routines[id]
+	if routine.held or time<float(command_speech_after.get(id,0)):return false
+	var speaker:Dictionary=world.actors[id]
+	var listener:Dictionary=world.actors[target]
+	if speaker.region_id!=listener.region_id or world.point(speaker).distance_to(world.point(listener))>8:return false
+	if not preload("res://scripts/island_notes.gd").valid_text(line):return false
+	command_speech_after[id]=time+12
+	routine.next_speech=maxf(routine.next_speech,routine.time+12)
+	speech_after=maxf(speech_after,time+8)
+	serial+=1
+	events.append({"serial":serial,"actor_id":id,"source":"model","context":"world_door","text":line,"explicit":false,"time":time})
+	if events.size()>24:events.pop_front()
+	world_speech.emit(id,target,line)
 	return true
 
 func say_rush_event(id:String,text:String)->bool:
@@ -168,11 +183,14 @@ func advance(delta: float) -> void:
 			# Otherwise a deadline opens only later in routine.advance(), where
 			# generic reminders can consume it before anniversary/host feedback.
 			routines[id].time+=delta
-			local_speech_window.emit(id)
-	if brain_social!=null:brain_social.deliver_due()
+	if delta>0:return_speech_window.emit()
+	for id in brains:
+		if brains[id].active():local_speech_window.emit(id)
+	if delta>0 and heart_speech_window.is_valid():heart_speech_window.call()
 	for brain in brains.values():brain.advance(delta)
 	for id in brains:
 		var r:RefCounted=routines[id]
+		if world.actors[id].has("world_door_client"):continue
 		if brains[id].active() and not brains[id].provider_running and str(brains[id].current.get("coop","")).is_empty() and r.enabled and r.chatter and not r.held and time>=r.next_speech and not world.days.defer_idle(id):
 			if not r.try_need_speech() and not memory_reminders.try_speak(id) and old_spoken_at.has(id) and float(moods.changed_at.get(id,0))>0 and float(old_spoken_at.get(id,-INF))<float(moods.changed_at.get(id,-INF)):r._speak("near")
 	idle_candidates.clear();collecting_idle=true
@@ -229,12 +247,7 @@ func advance(delta: float) -> void:
 func try_new_spoken(actor_id:String="")->bool:
 	if local_dialogue==null:return false
 	if time<speech_after:return false
-	if old_spoken_credit<OLD_LINES_PER_NEW and not local_dialogue.reply_ready():return false
-	# Keep the first existing feedback after a derived mood change. A real
-	# pending reply bypasses admission inside LocalDialogue and keeps its gates.
-	if not local_dialogue.try_spoken(func(id:String):return (actor_id.is_empty() or id==actor_id) and int(old_spoken_actor.get(id,0))>=OLD_LINES_PER_NEW and float(old_spoken_at.get(id,-INF))>=float(moods.changed_at.get(id,-INF))):return false
-	old_spoken_credit-=OLD_LINES_PER_NEW
-	return true
+	return local_dialogue.try_spoken(func(id:String):return actor_id.is_empty() or id==actor_id)
 
 func queue_idle_speech(id:String,context:String)->void:
 	if not idle_candidates.has(id):idle_candidates[id]=context

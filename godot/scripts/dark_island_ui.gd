@@ -23,7 +23,11 @@ func setup(host:Node)->void:
 	else:layer.add_child(fire_button)
 	fire_button.pressed.connect(func():show_result(game.world.dark.light_portable_torch()))
 	entry_button=Button.new();entry_button.add_theme_font_override("font",game.view.font);entry_button.text=T("ui.dark.bridge_entry")
-	if game.island_hud!=null:game.island_hud.upper_status.add_child(entry_button)
+	if game.island_hud!=null:
+		game.island_hud.compact_tools.add_child(entry_button)
+		entry_button.text=""
+		entry_button.icon=game.island_hud.icon("fog")
+		entry_button.tooltip_text=T("ui.dark.bridge_entry")
 	else:entry_button.position=Vector2(18,98);layer.add_child(entry_button)
 	entry_button.pressed.connect(boat_dialog)
 	return_button=Button.new();return_button.add_theme_font_override("font",game.view.font);return_button.text=T("ui.dark.return_to_light");return_button.position=Vector2(18,150);layer.add_child(return_button)
@@ -187,7 +191,8 @@ func T(key:String)->String:
 	return translated
 func refresh_locale()->void:
 	fire_button.text=T("ui.dark.light_button");fire_button.tooltip_text=T("ui.dark.torch_tooltip")
-	entry_button.text=T("ui.dark.bridge_entry")
+	entry_button.tooltip_text=T("ui.dark.bridge_entry")
+	if game.island_hud==null:entry_button.text=entry_button.tooltip_text
 	_refresh_locale_nodes(self)
 	if is_instance_valid(menu):_refresh_locale_nodes(menu)
 func _refresh_locale_nodes(node:Node)->void:

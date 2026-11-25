@@ -1,0 +1,15 @@
+# Our stories / 我们的故事
+
+Sixteen authored chapters, four per companion, are a view of retained true shared memories. The first two chapters are a real shared meal and a favourite meal. Later chapters reflect personality (stars, games, construction or a beacon), followed by a real reconciliation. Each scene has three to six lines in Chinese and independently written English. All content and new timing thresholds live in `content/story-chapters.json`.
+
+`StoryChapters` observes MemoryBooks facts whose original canonical record passes the existing strict SharedMemories validator. It does not issue jobs, routes, inventory actions or relationship credit. `story_stars` requires fifteen actual seconds of both the human and resident using the existing star seats, nearby, on a clear night. `emotion_reconciled` records an actual human contact that reduces already elevated hurt; it is not inferred from a model's wording. The first ordinary favourite and signature meal records remain the food authority. Raven's real shared mushroom meal is a favourite for her story.
+
+Optional schema-7 `story_chapters` preserves unlocks and their exact source IDs. Loading additionally checks the retained source facts against the chapter condition; a fabricated unlock dictionary cannot grant a scene. Old saves can backfill only chapters supported by true retained book facts. Old facts are never assigned fabricated historical photographs or reenacted automatically. Deleting a source removes dependent story access; chapter tombstones prevent automatic resurrection.
+
+New unlocks add a canonical `story_chapter` to Our Days and the same MemoryBooks record. The small presentation scene zooms only the camera and shows authored text; no character, human or resource is moved or consumed. Escape/close skips it and restores the camera. The original viewport photo path captures a 320×200 image immediately for each new unlock, independently of whether its optional scene is played or skipped. Each chapter has its own photo subject. Explicit replay does not create another fact or photograph. The story page has four companion columns and four chapters per column, with vague hints for locked chapters. It is reachable from the avatar card and the memory book (including the title screen). Title-screen replays show text because no live world exists.
+
+本轮不额外调用AI改写故事：全部本地中英场景完整可用，真实AI调用仅用于授权的小白打算试跑。故事不控制主角、不加关系分、不发物资，不重播旧经历冒充新事件。旧档只按仍保留的真实记忆补判；删源和删除章节均不会静默复活。
+
+The dialogue is an authored literary recreation anchored to the cited event, not a verbatim transcript of what the human or resident said at that historical moment. Scene text must not be imported as a new quotation, outside-world knowledge or proof of another action. A newly unlocked chapter may photograph the current live viewport; that image records the current unlock presentation, not an invented historical camera capture. Backfilled chapters never enter the automatic scene/photo queue, and explicit replays never capture again.
+
+小场景是以真实来源事实为底的文学化重现，不是当时逐字聊天记录，不把场景台词回写成新的原话或其他行为证据。新解锁的照片只记录当前现场，不冒称过去的摄影；旧档补判不排自动场景、不补历史照片、不补互动/情绪/关系，明确重看不再拍照。

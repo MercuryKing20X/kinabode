@@ -1,7 +1,6 @@
 {
   "version": 2,
   "pending_limit": 1,
-  "max_fish": 4096,
   "cast_seconds": 2.4,
   "reel_seconds": 6.0,
   "job_timeout": 240,
@@ -284,8 +283,7 @@
         -15,
         24,
         20
-      ],
-      "capacity": 12
+      ]
     },
     {
       "id": "home.fishery.south",
@@ -296,8 +294,7 @@
         120,
         24,
         20
-      ],
-      "capacity": 12
+      ]
     },
     {
       "id": "home.fishery.west",
@@ -308,8 +305,7 @@
         50,
         24,
         20
-      ],
-      "capacity": 12
+      ]
     },
     {
       "id": "home.fishery.east",
@@ -320,8 +316,7 @@
         50,
         24,
         20
-      ],
-      "capacity": 12
+      ]
     }
   ],
   "shore_reach": 5.0,

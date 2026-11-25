@@ -1,0 +1,52 @@
+{
+  "approach_seconds": 12,
+  "line_seconds": 6,
+  "minimum_seconds": 20,
+  "maximum_seconds": 40,
+  "card_seconds": 15,
+  "camera_factor": 1.24,
+  "consult_seconds": 30,
+  "consult_line_seconds": 3,
+  "first_day_rest_factor": 2,
+  "walk_tiles": 12,
+  "lines": {
+    "gentle": [
+      ["你好，我叫小白。以后海边这条路，我们可以一起走。", "I'm Xiaobai. Come walk the coast with me sometime."],
+      ["我是小白。你刚来，先在这儿歇一会儿吧。", "Xiaobai, that's me. You've come a long way. Stay a while."],
+      ["小白在这里。你看，浪刚才退下去一点了。", "I'm Xiaobai. Look, the tide's starting to go out."]
+    ],
+    "lively": [
+      ["我是小蓝！你也会把手伸进海里试试水温吗？", "Xiaolan here! Are you the type who has to test the water, too?"],
+      ["嗨，我是小蓝！下次来找我，我们比赛谁先看见海。", "Hey, I'm Xiaolan! Race you to the first glimpse of the sea."],
+      ["小蓝报到！你住的地方也能听见浪吗？", "Xiaolan reporting in! Could you hear the waves where you lived?"]
+    ],
+    "laborious": [
+      ["叫我小橙。咳，我们……好像有点饿了。", "Call me Xiaocheng. Ah. I think that's all our stomachs talking."],
+      ["我是小橙。认路我行，空着肚子就有点难。", "I'm Xiaocheng. I'm good with directions, once I've eaten."],
+      ["小橙在这儿！刚才响的是我的肚子，不是海。", "Xiaocheng! That last rumble was me, not the sea."]
+    ],
+    "quiet": [
+      ["阿黑。要先生个火吗？火边说话暖和。", "Ahei. Fire first? It's nicer talking somewhere warm."],
+      ["我是阿黑。嗯，先找个地方生火吧。", "I'm Ahei. Let's find somewhere to light a fire."],
+      ["阿黑。先弄个火堆？肚子已经替我们投票了。", "Ahei. Shall we start a fire? Our stomachs have voted."]
+    ]
+  },
+  "ui": {
+    "skip": ["跳过", "Skip"],
+    "question": ["要不要我们先自己忙起来？你可以随时叫停哦。", "Shall we get started? Just say the word if you'd like us to stop."],
+    "yes": ["好，交给你们", "Yes, take it from here"],
+    "no": ["我自己来", "I'll take it from here"],
+    "meeting": ["第一次见面：大家在海边围成半圈，和你打了招呼。", "Our first hello: everyone gathered by the sea to meet you."],
+    "gather": ["大家先过来，我们商量一下。", "Come over for a minute. Let's make a plan."],
+    "thought": ["我想想，咱们从哪儿开始好呢……", "Let's see. What should we start with?"],
+    "wood_plan": ["今天先砍点树，攒够木头才能生火吃饭。", "Let's cut some wood first, so we can get a fire going and eat."],
+    "plan": ["今天先这样做：%s。", "Here's where we'll start: %s."],
+    "wood_roles": ["%s，各找一棵树，砍完把木头带回来。", "%s, one tree each. Bring the wood back when you're done."],
+    "roles": ["%s，跟我来。到地方我们再分头做。", "%s, come with me. We'll split up when we get there."],
+    "gentle": ["好呀，我和你们一起。", "All right. I'll be right with you."],
+    "lively": ["来啦，算我一个！", "Coming! Count me in."],
+    "laborious": ["好，我来搭把手。", "Got it. I'll do my share."],
+    "quiet": ["嗯，走吧。", "Mm. Let's go."],
+    "rest": ["先歇一歇，等大家喘口气。", "Break time. Let's give everyone a chance to catch their breath."]
+  }
+}

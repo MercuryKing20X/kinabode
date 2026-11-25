@@ -93,20 +93,17 @@ func _process(delta: float) -> void:
 	elapsed=0;refresh()
 func refresh(force:=false) -> void:
 	if actor_picker.item_count==0 or pen_picker.item_count==0:return
-	if not force and revision==world.revision:return
-	revision=world.revision
+	if not force and revision==world.fishing.population_revision:return
+	revision=world.fishing.population_revision
 	var own_pending: Array=world.fishing.pending(actor_id())
 	var pending_id: String=str(own_pending[0].id) if not own_pending.is_empty() else ""
 	if pending_id!=last_pending_id and not pending_id.is_empty():
 		selected_fish=pending_id;note.text=T("activities.new_fish")
 	last_pending_id=pending_id
-	var job: Dictionary=world.work.jobs.get(actor_id(),{})
-	var phases: Dictionary={"fish_cast":T("activities.cast"),"fish_wait":T("activities.wait"),"fish_reel":T("activities.reel")}
-	var label: String=T("activities.walk_shore") if world._routes.has(actor_id()) else str(phases.get(job.get("phase",""),""))
 	var pen: Dictionary=world.fishing.pens[pen_id()]
-	state.text=T("activities.pen_count")%[LocalText.content(pen.name),world.fishing.residents_fish(pen_id()).size(),int(pen.capacity)]
+	state.text=T("activities.pen_count")%[LocalText.content(pen.name),world.fishing.pen_count(pen_id())]
 	fish_ids.clear();fish_list.clear()
-	var stored:Array=world.fishing.fish.values().filter(func(entry):return entry.owner_id=="human" and entry.location=="storage")
+	var stored:Array=world.fishing.unplaced_fish().filter(func(entry):return entry.owner_id=="human" and entry.location=="storage")
 	var entries: Array=own_pending+stored+world.fishing.residents_fish(pen_id())
 	for entry in entries:
 		var info: Dictionary=world.fishing.describe(entry)

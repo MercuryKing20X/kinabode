@@ -6,7 +6,7 @@ static func open(host:Node)->void:
 	var box:=VBoxContainer.new();host.audio_dialog.add_child(box);box.custom_minimum_size=Vector2(430,0)
 	if host.ui_scale!=null:host.ui_scale.add_settings(box)
 	if host.world!=null:
-		var follow_toggle:=CheckButton.new();follow_toggle.focus_mode=Control.FOCUS_NONE;follow_toggle.text=LocalText.source("content.one_line.literal_14");follow_toggle.button_pressed=not host.world.activities.following.is_empty();box.add_child(follow_toggle)
+		var follow_toggle:=CheckButton.new();follow_toggle.focus_mode=Control.FOCUS_NONE;follow_toggle.text=LocalText.text("ui.main.follow");follow_toggle.button_pressed=not host.world.activities.following.is_empty();box.add_child(follow_toggle)
 		follow_toggle.toggled.connect(func(value):
 			host.local_settings.set_value("follow","enabled",value);host.local_settings.save(host.data_dir.path_join("local-life.cfg"))
 			host.world.activities.set_followers(host.world.actors.keys().filter(func(id):return id!="human") if value else []))

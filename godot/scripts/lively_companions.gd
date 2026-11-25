@@ -38,7 +38,7 @@ func socially_idle(id:String)->bool:
 	return not r.blocked()
 func advance(delta:float)->void:
 	if not world.intelligence.compatibility:return
-	if delta<=0 or not enabled or not world.activities.squad_leader.is_empty():return
+	if delta<=0 or not enabled:return
 	time+=delta
 	for id in world.director.routines:
 		if not proximity.has(id):proximity[id]={"seconds":0.0,"near_seconds":0.0}

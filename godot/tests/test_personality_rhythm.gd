@@ -12,7 +12,7 @@ func run() -> void:
 	# C: Measure the original personality idle cadence, independently of the
 	# separately covered authored pair/host/sense conversation scheduler.
 	w.director.local_dialogue.next_check=INF
-	w.wishes.config.first_after=86400;w.personality.config.fact_events_enabled=false
+	w.personality.config.fact_events_enabled=false
 	w.days.config.greeting_after=w.days.day_seconds+1;w.days.config.small_after=w.days.day_seconds+1
 	for id in w.director.routines:
 		w.activities.default_follow_excluded[id]=true

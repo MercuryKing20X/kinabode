@@ -75,15 +75,26 @@ func migrate()->void:
 	migration={"refunds":refund,"crops":crops,"added":items};migrated=true
 func ready()->void:
 	migrate();furnish()
+func star_activity()->String:
+	# Stargazing survives the retired vacation area, on the existing main plaza.
+	var anchor:Array=world.map_anchor("plaza.center")
+	var at:=Vector2(anchor[0],anchor[1])+Vector2(0,6)
+	var slots:Array=[]
+	for offset in [Vector2(-4,0),Vector2(-2,0),Vector2(0,0),Vector2(2,0),Vector2(4,0)]:
+		var p:Vector2=at+offset
+		if world.walkable("home",p):slots.append([p.x,p.y])
+	activities["main.stars"]={"id":"main.stars","kind":"stars","position":[at.x,at.y],"slots":slots,"size":[10,2]}
+	return "main.stars"
 func begin(target_id:String,ids:Array)->Dictionary:
-	return world._error("vacation_retired")
+	if target_id!="main.stars":return world._error("vacation_retired")
+	if world.days.phase().id!="night" or world.weather.current().id in ["rain","fog"]:return world._error("stars_require_clear_night").merged({"message":"要等晴朗的夜晚，才看得见星星。" if not TranslationServer.get_locale().begins_with("en") else "Let’s wait for a clear night to see the stars."})
+	return _retired_begin(target_id,ids)
 func _retired_begin(target_id:String,ids:Array)->Dictionary:
 	if not activities.has(target_id):return world._error("unknown_resort_activity")
 	var activity:Dictionary=activities[target_id];var accepted:Array=[];var rejected:Dictionary={}
 	for id in ids:
 		if not world.actors.has(id) or id in accepted:continue
-		if not vacation(id):rejected[id]="not_on_island";continue
-		if world.director.brains.has(id) and world.director.brains[id].active():world.director.brains[id].begin_external("command","resort")
+		if world.actors[id].region_id!="home" or target_id!="main.stars":rejected[id]="not_on_island";continue
 		if id!="human" and world.hunger.rank(id)>=3:rejected[id]="very_hungry";continue
 		if world.work.jobs.has(id) or world.farms.active(id) or world.projects.active(id) or world.shared_activity.holds(id) or world.loaded(id):rejected[id]="busy";continue
 		var slot:=-1
@@ -93,6 +104,7 @@ func _retired_begin(target_id:String,ids:Array)->Dictionary:
 		var at:Vector2=Vector2(activity.slots[slot][0],activity.slots[slot][1])
 		var route:Array[Vector2]=world.find_route(id,at)
 		if route.is_empty() and world.point(world.actors[id]).distance_to(at)>.3:rejected[id]="unreachable";continue
+		if world.director.brains.has(id) and world.director.brains[id].active():world.director.brains[id].begin_external("command","resort")
 		world.activities.pause_follow(id);world.director.command_received(id,"resort")
 		world.work.serial+=1
 		world.work.jobs[id]={"id":"job-%s"%world.work.serial,"intent":"resort","phase":"resort_work","target_id":target_id,"slot":slot,"time":0.0,"step":"arriving"}
@@ -101,6 +113,7 @@ func _retired_begin(target_id:String,ids:Array)->Dictionary:
 		accepted.append(id)
 	return {"ok":not accepted.is_empty(),"accepted":accepted,"rejected":rejected}
 func tick(id:String,job:Dictionary,delta:float)->void:
+	if job.target_id=="main.stars" and (world.days.phase().id!="night" or world.weather.current().id in ["rain","fog"]):world.work.stop(id,false);return
 	var a:Dictionary=activities.get(job.target_id,{})
 	if a.is_empty():world.work.stop(id,false);return
 	job.step="using";job.time+=delta
@@ -119,6 +132,7 @@ func using(id:String)->String:
 	var j:Dictionary=world.work.jobs.get(id,{})
 	return str(activities.get(j.get("target_id",""),{}).get("kind","")) if j.get("intent")=="resort" and j.get("step")=="using" and not world._routes.has(id) else ""
 func nearest(kind:String)->String:
+	if kind=="stars":return star_activity()
 	var best:="";var distance:=INF
 	for a in activities.values():
 		if a.kind!=kind:continue

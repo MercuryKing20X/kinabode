@@ -1,0 +1,9 @@
+{
+  "enabled": false,
+  "quiet_seconds": 240,
+  "window_seconds": 60,
+  "window_limit": 2,
+  "idle_bonus": 32,
+  "quiet_penalty": -180,
+  "tracked_limit": 32
+}

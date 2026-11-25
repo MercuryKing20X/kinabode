@@ -95,7 +95,7 @@ func reason(row:Dictionary)->String:
 	var parsed:Dictionary=parser.parse_command(game.world,preset_text(row),selected)
 	if not parsed.get("ok",false):return label(preload("res://scripts/localization.gd").source("content.health_20261107.12c7cc425f11"),"No executable entry")
 	if parsed.action=="query_state":return ""
-	if selected.any(func(id):return game.world.director.model_controlled(id)):return ""
+	if selected.any(func(id):return game.world.director.model_controlled(id) or game.world.actors[id].has("world_door_client")):return ""
 	var plan:Dictionary=game.local_host_commands.preview(parsed,selected.filter(func(id):return not game.world.director.model_controlled(id)))
 	if plan.rows.any(func(r):return r.allowed):return ""
 	if plan.rows.is_empty():return label(preload("res://scripts/localization.gd").source("content.health_20261107.c4d2c4453dd9"),"Use Talk for connected companions")

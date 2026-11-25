@@ -14,7 +14,8 @@ static func timeline(world:RefCounted,id:String,job:Dictionary)->Dictionary:
 	if fire_life==null or not fire_life.fireside.jobs.has(id):return {}
 	var fire:RefCounted=fire_life.fireside
 	if job.get("phase")=="fire_sit":
-		return {"column":6 if world.director.time-float(job.get("meal_finished_at",-10))<1 else 7+int(world.director.time*1.5)%3,"progress":1.0,"food":{}}
+		var satisfied_seconds:float=float(fire.dialogue.taste_config.favorite_satisfied_seconds) if fire.dialogue.reactions.has(id) and fire.dialogue.reactions[id].get("kind")=="happy" else 1.0
+		return {"column":6 if world.director.time-float(job.get("meal_finished_at",-10))<satisfied_seconds else 7+int(world.director.time*1.5)%3,"progress":1.0,"food":{}}
 	if job.get("phase")!="fire_eat" or fire.state.current.is_empty():return {}
 	var t:float=clampf(float(job.time)/float(fire.config.eat_seconds),0,1)
 	var s:=style(world,id,int(job.get("meal_rank",world.hunger.rank(id))))

@@ -16,6 +16,10 @@ func run()->void:
 	w.activities.set_followers([]) # Explicit host dismissal: this scenario measures free idle visits, not follow mode.
 	# C: mirror the current player follow UI opt-out as well as clearing selected followers.
 	for id in w.director.routines:w.activities.default_follow_excluded[id]=true
+	var capabilities:Dictionary={}
+	for id in w.director.routines:
+		capabilities[id]=w.residents.capabilities(w.actors[id])
+		w.residents.definitions[id].capabilities=["social"]
 	var inventory:Dictionary={}
 	for chest in [{"id":"storage","items":w.storage.saved().items,"capacity":9007199254740991,"kind":"storage"}]:inventory[chest.id]=chest.get("items",{}).duplicate(true)
 	var distances:Dictionary={}
@@ -43,6 +47,7 @@ func run()->void:
 		check(visits.all(func(v):return v.distance<=8),"every actual arrival near human "+id)
 	for chest in [{"id":"storage","items":w.storage.saved().items,"capacity":9007199254740991,"kind":"storage"}]:check(chest.get("items",{})==inventory[chest.id],"social visits never consume stock "+chest.id)
 	# A real accepted work order must retain its exact ID until its normal receipt.
+	for id in capabilities:w.residents.definitions[id].capabilities=capabilities[id]
 	var trees:Array=w.objects.values().filter(func(o):return o.get("kind")=="tree" and o.get("state",o.get("status",""))!="stump")
 	var worker_id:String=w.director.routines.keys()[0]
 	var accepted:=false

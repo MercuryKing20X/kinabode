@@ -17,10 +17,10 @@ func _initialize()->void:
 	w.command("codex",{"intent":"stop"})
 	w.hunger.start();w.hunger.ensure("codex");w.hunger.states.codex.elapsed=w.hunger.config.thresholds[3]
 	check(w.hunger.rank("codex")==3,"fixture reaches original very hungry threshold")
-	for action in ["arrange_flowers","gift_flower","place_flower"]:
-		var result:Dictionary=w.host_command("codex",{"intent":action,"pattern":"heart"})
-		check(result.error=="very_hungry" and not str(result.message).is_empty(),"hungry refusal explains "+action)
-	check(w.storage.saved()==before,"very hungry never spends roses")
+	var order:Dictionary=w.host_command("codex",{"intent":"arrange_flowers","pattern":"heart"})
+	check(order.ok,"hunger alone does not prevent an otherwise valid flower order")
+	check(w.storage.saved()==before,"flower order does not spend material before execution")
+	w.command("codex",{"intent":"stop"})
 	var human:Dictionary=w.actors.human.duplicate(true)
 	check(not f.execute("human",{"intent":"trade_flowers","quantity":10}).ok,"remote trade rejected")
 	check(w.actors.human==human and w.storage.saved()==before,"remote trade never moves host or commits wood")

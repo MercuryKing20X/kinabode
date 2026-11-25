@@ -2,9 +2,9 @@
 
 ## A home, at your pace / 慢慢安家的海岛
 
-You are the host of an island, with four companions who have distinct authored personalities. Farming, fishing, construction, meals and games create shared moments. There is no combat, currency, stamina or sleep lock. The game works entirely with local intelligence; model connections are optional.
+You arrive on an island with four companions who have distinct personalities. You can join them in fishing, building, playing and sharing meals, or watch them make a life. There is no combat, currency, stamina or sleep lock. The island can run entirely with local intelligence.
 
-玩家带四位性格不同的伙伴在岛上生活；种菜、钓鱼、建造、吃饭与游戏构成日常。没有战斗、货币、体力和睡眠锁；本地即可完整游玩，模型接入可选。
+玩家来到四位伙伴生活的岛上，可以一起钓鱼、建造、玩耍、吃饭，也可以旁观。没有战斗、货币、体力和睡眠锁；本地即可完整游玩。
 
 ## Identity, intelligence, appearance / 居民、智能、形象
 
@@ -20,15 +20,15 @@ World is the only route authority. Work, farming, construction and shared activi
 
 ## Hunger and meals / 饥饿与共餐
 
-Hunger affects expressions, speech, following and limited movement behavior; it does not lower yield, success, work speed or relationship scores. Very hungry companions refuse new work and can abandon their own current task without losing material. Only a player-confirmed barbecue serves real food to invited residents. The player chooses the fire, invitations and menu; excess cooked food is recorded as waste.
+Hunger is part of resident life: it can show in speech and behavior. A resident can plan a meal at a fire, and the player can also invite others for a barbecue. Cooking and eating use the existing food rules; grilled mushrooms are always available at a campfire.
 
-饥饿影响表现、跟随与有限移动，不影响产量/成功率/工作速度/关系；很饿者拒绝新活并可放下本人任务，物资保留。只有玩家确认开烤才真实吃饭，未受邀不吃，多余食物记浪费。
+饥饿是生活状态，会体现在台词和行为里。居民可以打算去火边吃饭，玩家也能邀请大家围炉。做饭和吃饭沿用实际食物规则，营火烤蘑菇一直可用。
 
-## Steward / 托管
+## My AI and creation / 我的 AI 与创造
 
-One director coordinates current jobs and keeps the squad near its leader. Real work and shared play are split among companions; task transitions have bounded rest and failure handling. Optional AI offers voice and preferences, never owns physical jobs or blocks the body's local execution. Player commands take priority. Host decisions and invitations remain explicit UI choices.
+In [My AI](AI_CONNECTION.md), you can let your own AI move into a resident. It makes plans for that resident; the game validates each action, route, and cost. It cannot control the player. Residents and players can change the island through the placement and removal rules, review recent changes, and restore a checkpoint.
 
-一个导演统一派活；伙伴分工、一起玩、有限歇息与失败收尾。AI只提供口吻和偏好，不阻挡身体。玩家命令优先；主角的移动与共同活动仍需明确点击。
+在[我的 AI](AI_CONNECTION.md)里让自己的 AI 住进居民。它为本人安排打算，游戏校验每步行动、路线和成本；它不能操控主角。居民和玩家可以按规则摆放、拆除，查看岛上变化或恢复快照。
 
 ## Islands / 岛屿
 
@@ -38,12 +38,12 @@ The home island is the main place to build and live. Crescent Island offers moon
 
 ## Memory and optional models / 记忆与可选模型
 
-Only committed canonical facts become gameplay memories. Private and group histories stay bound to their channel. Model outputs require exact resident, world, session, generation and request identity; stale replies are rejected. Local routines do not imply inference or resource authority. Lifeblood is optional and costly; actual use and unknown usage must be shown honestly.
+Gameplay memories come from events that actually happened. Private and group histories stay with their channel, and model replies are accepted only for the request that produced them. A resident continues local life when no AI plan is available.
 
-记忆来自已提交真实事实；私聊/群聊分离，输出精确绑定身份与回合，拒绝迟到结果。本地生活不等于模型推理。生命孕育可选，用量和未知状态如实显示。
+游戏记忆来自真实发生的事。私聊和群聊各自保留历史，模型回复只用于发出它的那次请求。没有可用 AI 打算时，居民继续过本地生活。
 
 ## Local brain / 本地大脑
 
-Each resident has one utility brain. Needs and authored preferences choose existing local activities; player commands and steward assignments take priority through the same entry point. Right-click a companion or click their detail portrait to see what they want and why. Hunger is read from the existing system, and local choices grant no work or food authority. See [Resident brain](RESIDENT_BRAIN.md).
+For residents without an AI plan, local choices use existing activities and each resident’s preferences. Local and model plans use the same action rules.
 
-每位伙伴用同一个大脑选择已有活动；玩家命令和托管派活优先。右键伙伴或点击居民详情头像可看“我现在想……因为……”。需要不显示数字，也不改变原饥饿、劳动和物资规则。
+没有 AI 打算的居民会按自己的偏好选择已有活动。本地与模型打算共用原行动规则。

@@ -30,8 +30,12 @@ static func tab(tree:SceneTree,tabs:TabContainer,index:int)->bool:
 	return tabs.current_tab==index
 static func reveal(tree:SceneTree,control:Control)->void:
 	var owner:Node=control
-	while owner!=null and (owner.get_script()==null or owner.get_script().resource_path!="res://scripts/main.gd"):owner=owner.get_parent()
-	if owner!=null and owner.watch_ui!=null and owner.watch_ui.menu_scroll.is_ancestor_of(control) and not owner.chat.visible:await click(tree,owner.dialogue_button)
+	while owner!=null and not (owner.has_method("_open_model_settings") and owner.get("island_hud")!=null):owner=owner.get_parent()
+	if owner!=null and owner.watch_ui!=null and is_instance_valid(owner.watch_ui.menu_scroll) and owner.watch_ui.menu_scroll.is_ancestor_of(control) and not owner.chat.visible:await click(tree,owner.dialogue_button)
+	if owner!=null and is_instance_valid(control) and is_instance_valid(owner.island_hud) and owner.island_hud.residents_collapsed:
+		var hud:Control=owner.island_hud
+		if control==hud.manage_connections or control in hud.appearance_buttons.values() or control in hud.resident_menus.values():
+			await click(tree,hud.collapse_residents)
 	if not is_instance_valid(control):return
 	var pages:Array=[];var parent:Node=control
 	while parent.get_parent()!=null:
@@ -51,12 +55,19 @@ static func button_locator(button:BaseButton)->Dictionary:
 	var metadata:Dictionary={}
 	for key in button.get_meta_list():metadata[key]=button.get_meta(key)
 	var result:Dictionary={"original":weakref(button),"parent":weakref(button.get_parent()),"path":button.get_path(),"text":button.text,"tooltip":button.tooltip_text,"class":button.get_class(),"metadata":metadata}
+	if owner!=null and button.has_meta("fish_id") and owner.island_hud.notifications.is_ancestor_of(button):
+		result["fish_binding"]={"owner":weakref(owner),"id":button.get_meta("fish_id"),"world":weakref(owner.world)}
 	if owner!=null and owner.command_page!=null:
 		for key in owner.command_page.buttons:
 			if owner.command_page.buttons[key]==button:
 				result["command"]={"owner":weakref(owner),"key":key,"selected":owner.command_page.selected.duplicate(),"category":owner.command_page.category,"world":weakref(owner.world)}
 	return result
 static func resolve_button(locator:Dictionary)->BaseButton:
+	if locator.has("fish_binding"):
+		var binding:Dictionary=locator.fish_binding;var owner:Node=binding.owner.get_ref()
+		if not is_instance_valid(owner) or owner.world!=binding.world.get_ref():return null
+		var matches:Array=descendants(owner.island_hud.notifications).filter(func(n):return n is BaseButton and n.get_meta("fish_id","")==binding.id and n.text==locator.text)
+		return matches[0] if matches.size()==1 else null
 	if locator.has("command"):
 		var binding:Dictionary=locator.command;var owner:Node=binding.owner.get_ref()
 		if not is_instance_valid(owner) or owner.world!=binding.world.get_ref() or owner.command_page.selected!=binding.selected or owner.command_page.category!=binding.category:return null
@@ -96,7 +107,8 @@ static func click(tree:SceneTree,button:BaseButton)->bool:
 		if not is_instance_valid(button):print("UI target vanished before input ",locator.path);return false
 		var rect:Rect2=button.get_global_rect()
 		stable=stable+1 if rect==last_rect and button.get_instance_id()==last_id else 0
-		last_id=button.get_instance_id();last_rect=rect;at=rect.get_center()
+		last_id=button.get_instance_id();last_rect=rect
+		at=button.get_global_transform_with_canvas()*(button.size*.5)
 		viewport=button.get_viewport()
 		if viewport is Window and viewport.is_embedded():at+=Vector2(viewport.position);viewport=tree.root
 		if DisplayServer.get_name()!="headless":
@@ -124,8 +136,8 @@ static func click(tree:SceneTree,button:BaseButton)->bool:
 		var hover:Control=viewport.gui_get_hovered_control()
 		print("UI real input rejected ",locator.text," path=",locator.path," point=",at," before=",last_rect," root_size=",tree.root.size," hovered=",hover.get_path() if hover!=null else "none"," target_alive=",is_instance_valid(button))
 	return count.pressed==1
-static func init_game(tree:SceneTree)->Node:
-	OS.set_environment("HABITAT_OPENING","legacy");tree.root.size=Vector2i(1280,800);tree.root.content_scale_size=Vector2i.ZERO
+static func init_game(tree:SceneTree,opening:String="legacy")->Node:
+	OS.set_environment("HABITAT_OPENING",opening);tree.root.size=Vector2i(1280,800);tree.root.content_scale_size=Vector2i.ZERO
 	var game:Node=load("res://scenes/main_v3.tscn").instantiate();game.world=preload("res://scripts/world_state.gd").new("res://content/home-v3/world.json");tree.root.add_child(game)
 	game.save_enabled=false;game.set_process(false);game.view.set_process(false);game.view.sound_enabled=false;game.island_hud.set_process(false);game.world.director.set_all_enabled(false);game.chat.hide()
 	return game

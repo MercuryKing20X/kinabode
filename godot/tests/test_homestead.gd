@@ -46,7 +46,6 @@ func run() -> void:
 	check(is_equal_approx(world.homestead.site.progress,progress) and not world.homestead.completed() and world.homestead.plans.codex.status=="paused","stop and reload preserve partial construction without unlock")
 	check(H.build(world,"codex") and world.homestead.completed() and world.recipes.recipes.size()==32,"only actual construction completion unlocks one recipe")
 	var event: Dictionary=world.homestead.site.completion.duplicate(true)
-	check(world.wishes.proofs({"template_id":"flowerbed","resident_id":"codex"})==["homestead:"+event.id],"genuine construction remains valid wish proof")
 	check(H.amount(world,"wood")==24 and H.amount(world,"turnip")==6 and H.amount(world,"pumpkin")==4,"completed investments still conserve wood and crops")
 	check(not world.command("codex",{"intent":"homestead_build","plan_id":world.homestead.plans.codex.id}).ok and not world.command("human",{"intent":"homestead_start","site_id":world.homestead.config.site.id}).ok and world.homestead.site.completion==event,"duplicate commands neither debit nor create another completion")
 	world=reload_world(world,"completed")

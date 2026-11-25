@@ -19,7 +19,6 @@ var retries:Dictionary={}
 var retry_due:Dictionary={}
 var shared_preferences:RefCounted
 var ledger_world:=""
-var steward_requested:=""
 var api_usage:=ConfigFile.new()
 var initialized:=false
 static func obtain(tree:SceneTree,base:String)->Node:
@@ -37,6 +36,9 @@ func _ready()->void:
 	initialized=true
 	api_usage.load(directory.path_join("openai-usage.cfg"))
 	settings.load(directory.path_join("connection-mode.cfg"));history.load(directory.path_join("connection-overview.cfg"))
+	# Retired management preferences are ignored until the next normal save.
+	for retired in ["management","steward_prompt"]:
+		if settings.has_section(retired):settings.erase_section(retired)
 	# Retired player transports are ignored in memory; never rewrite on load.
 	settings.set_value("connection","external_residents",{})
 	settings.set_value("connection","shared_test",false)
@@ -51,10 +53,6 @@ func auto_enabled(id:String)->bool:return settings.get_value("auto",id,true)
 func set_auto(id:String,enabled:bool)->void:settings.set_value("auto",id,enabled);persist()
 func persist()->void:
 	settings.save(directory.path_join("connection-mode.cfg"))
-func management(id:String)->bool:return id in IDS and settings.get_value("management",id,false)
-func set_management(id:String,on:bool)->void:
-	if id not in IDS:return
-	settings.set_value("management",id,on);persist();changed.emit()
 func daily_limit(id:String)->int:return int(settings.get_value("daily_limit",id,0))
 func set_daily_limit(id:String,value:int)->void:
 	if id not in IDS or value<0 or value>100000000:return
@@ -181,8 +179,9 @@ func disconnect_ai(id:String,explicit:bool=true)->void:
 	deadlines.erase(id);states[id]={"state":"local"}
 	if explicit:settings.set_value("enabled",id,false);settings.set_value("selection",id,"local");persist()
 	changed.emit()
-func start_saved()->void:
+func start_saved(excluded:Array=[])->void:
 	for id in IDS:
+		if id in excluded:continue
 		if settings.get_value("selection",id,"")=="local" and not settings.get_value("enabled",id,false):continue
 		var previous:Dictionary=history.get_value("residents",id,{})
 		if settings.get_value("enabled",id,false) or previous.get("state","") in ["disconnected","error"]:

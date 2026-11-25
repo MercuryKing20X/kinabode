@@ -33,7 +33,7 @@ func run_case(recipe_id:String,guest:String,signature:bool)->void:
 	var residents:Array=["codex","companion-2","npc.mira","npc.nora"]
 	for n in range(4):w.actors[residents[n]].appearance_id=portraits[n]
 	if w.recipes.recipe_catalog[recipe_id].fish:
-		w.fishing.fish["fish-000000000000000000000000"]={"id":"fish-000000000000000000000000","owner_id":"human","location":"pending","source_id":"home.sea.east","species_id":"eel","size_id":"person","color_id":"cream","scale":1}
+		w.fishing.add_fish({"id":"fish-000000000000000000000000","owner_id":"human","location":"pending","source_id":"home.sea.east","species_id":"eel","size_id":"person","color_id":"cream","scale":1})
 
 	for id in w.director.routines:w.director.routines[id].rng.seed=hash("speech-input:"+str(id))
 	var g:Node=load("res://scenes/main_v3.tscn").instantiate();g.world=w;g.dialogue_adapter_factory=func(_id,_scope):return preload("res://tests/test_intent_input.gd").IntentFake.new()

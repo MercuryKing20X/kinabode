@@ -64,7 +64,7 @@ func run()->void:
 	check(b.list_for("codex","facts").any(func(e):return e.event_id.begins_with("water-help:")),"same proof generates helper memory")
 	# A genuinely new completed meal produces a photo; old facts do not replay on load.
 	game.house_panel.open_site("home.house.01");await process_frame
-	check(preload("res://scripts/host_build_all.gd").apply(w).ok,"explicit test-only completed-site prerequisite")
+	check(preload("res://tests/fixture_host_build_all.gd").apply(w).ok,"explicit test-only completed-site prerequisite")
 	game.house_panel.hide()
 	game.chat.hide();game._refresh_conversation_holds()
 	var start:Dictionary=preload("res://tests/barbecue_fixture.gd").start(w,"single:mushroom",["human","codex"])

@@ -23,7 +23,7 @@ func _init(source:Node=null)->void:
 		host=weakref(source)
 		if not world.director.local_speech_window.is_connected(_deliver_speech):world.director.local_speech_window.connect(_deliver_speech)
 func setup(source:Node)->void:host=weakref(source)
-func _local(ids:Array)->Array:return ids.filter(func(id):return world.actors.has(id) and id!="human" and (not world.director.model_controlled(id) or id in fallback_models))
+func _local(ids:Array)->Array:return ids.filter(func(id):return world.actors.has(id) and id!="human" and not world.actors[id].has("world_door_client") and (not world.director.model_controlled(id) or id in fallback_models))
 func closest_local()->String:return parser.closest_local(world)
 func unknown(actor_ids:Array,text:String="")->Dictionary:
 	var ids:Array=_local(actor_ids);var id:String=ids[0] if not ids.is_empty() else closest_local()
@@ -76,7 +76,7 @@ func submit(text:String,fallback_ids:Array=[],channel_id:String="",authorized_mo
 			feedback.emit(Text.resident(world,row.actor_id)+Text.source("content.one_line.literal_4")+", ".join(missing),channel_id)
 	for model in models:plan.rows.append({"actor_id":model,"allowed":false,"reason":Text.text("local.commands.model")})
 	plan["fallback_models"]=fallback_models.duplicate()
-	plan["steward_order"]=not material_account.is_empty()
+	plan["sponsored_order"]=not material_account.is_empty()
 	plan.id=Crypto.new().generate_random_bytes(12).hex_encode();plan.channel_id=channel_id
 	pending=plan.duplicate(true)
 	var settings:Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://content/companions/host-commands.json"))
@@ -84,7 +84,7 @@ func submit(text:String,fallback_ids:Array=[],channel_id:String="",authorized_mo
 	for row in plan.rows:
 		for count in row.get("seed_costs",{}).values():material_count+=int(count)
 	var automatic:bool=material_count<=int(settings.confirmation_material_threshold)
-	if not material_account.is_empty():automatic=material_account.generation==world.session_generation and game.steward.authorized(material_account.source) and locals.all(func(id):return id in material_account.ids) and int(material_account.remaining)>=material_count
+	if not material_account.is_empty():automatic=material_account.generation==world.session_generation and locals.all(func(id):return id in material_account.ids) and int(material_account.remaining)>=material_count
 	if automatic:
 		var selected:Array=plan.rows.filter(func(row):return row.allowed).map(func(row):return row.actor_id)
 		for row in plan.rows:
@@ -105,15 +105,17 @@ func eligible(id:String,action:String)->String:
 	if id not in fallback_models and game.has_method("_resident_chat_busy") and game._resident_chat_busy(id):return Text.text("local.commands.busy")
 	if world.actors[id].region_id!=world.actors.human.region_id:return Text.text("local.commands.region")
 	if action=="stop":return ""
-	if world.hunger.rank(id)>=3 or (action in ["plant","ready","water","chop","forage","start_project","build_stage"] and world.hunger.rank(id)>=2):return Text.text("local.commands.hungry")
+	if not world.open_life and (world.hunger.rank(id)>=3 or (action in ["plant","ready","water","chop","forage","start_project","build_stage"] and world.hunger.rank(id)>=2)):return Text.text("local.commands.hungry")
 	if action in ["unfollow","stop"]:return ""
 	# An explicit host follow selection pauses the resident's existing work and
 	# route in ResidentActivity. Do not reject it as busy before that handover.
 	if action=="follow":return ""
 	var routine:RefCounted=world.director.routines.get(id)
+	var brain:RefCounted=world.director.brains.get(id)
 	if world.farms.active(id) or world.projects.active(id) or world.activities.members.has(id):return Text.text("local.commands.busy")
-	if world.work.jobs.has(id) and (routine==null or not routine.owns_job()):return Text.text("local.commands.busy")
-	if world._routes.has(id) and not world.activities.following.has(id) and (routine==null or not routine.owns_route):return Text.text("local.commands.busy")
+	var local_job:bool=(routine!=null and routine.owns_job()) or (brain!=null and brain.owns_local_job())
+	if world.work.jobs.has(id) and not local_job:return Text.text("local.commands.busy")
+	if world._routes.has(id) and not local_job and not world.activities.following.has(id) and (routine==null or not routine.owns_route) and (brain==null or not brain.owns_local_route()):return Text.text("local.commands.busy")
 	return ""
 func preview(parsed:Dictionary,locals:Array)->Dictionary:
 	var result:Dictionary=parsed.duplicate(true);result.rows=[]
@@ -171,8 +173,8 @@ func decide(id:String,accepted:bool,selected:Array)->void:
 	if not accepted:feedback.emit(Text.text("local.commands.canceled"),plan.channel_id);return
 	var ids:Array=plan.rows.filter(func(row):return row.allowed and row.actor_id in selected).map(func(row):return row.actor_id)
 	ids=_local(ids)
-	# Host confirmation revokes only conflicting steward work, before revalidation.
-	if not plan.get("steward_order",false) and not ids.is_empty():
+	# Explicit orders replace conflicting resident plans.
+	if not plan.get("sponsored_order",false) and not ids.is_empty():
 		for actor in ids:
 			var old:Dictionary=game.intentions.plans.get(actor,{})
 			if not str(old.get("sponsor","")).is_empty():
@@ -186,12 +188,18 @@ func decide(id:String,accepted:bool,selected:Array)->void:
 		feedback.emit("；".join(reasons) if not reasons.is_empty() else Text.text("local.commands.nobody"),plan.channel_id);return
 	var was_following:Array=world.activities.following.keys()
 	var successful:Array=[];var order_tokens:Dictionary={}
+	if plan.action not in ["plant","ready","water","stop","unfollow","vacation","barbecue"]:
+		for actor in ids:
+			if world.director.brains.has(actor):world.director.brains[actor].pause_for_player(plan.action=="follow")
 	if plan.action in ["plant","ready","water"]:
 		ids=ids.filter(func(actor):return eligible(actor,plan.action).is_empty())
 		if ids.is_empty():last_execution={"ok":false,"error":"no_eligible_participant"};feedback.emit(Text.text("local.commands.nobody"),plan.channel_id);return
 		var result:Dictionary=world.farms.confirm_host_orders(plan.farm_plan,ids)
 		for row in result.get("rows",[]):
-			if row.get("ok",false):successful.append(row.actor_id);order_tokens[row.actor_id]=str(row.get("order_id",""))
+			if row.get("ok",false):
+				successful.append(row.actor_id);order_tokens[row.actor_id]=str(row.get("order_id",""))
+				var brain:RefCounted=world.director.brains.get(row.actor_id)
+				if brain!=null and not brain.paused_wood.is_empty():brain.paused_wood_wait_order=order_tokens[row.actor_id]
 			else:feedback.emit(Text.resident(world,row.actor_id)+": "+str(row.get("message",row.get("error",""))),plan.channel_id)
 	elif plan.action=="vacation":
 		var result:Dictionary=world.resort.begin(fresh.activity_id,["human"]+ids)
@@ -275,11 +283,16 @@ func decide(id:String,accepted:bool,selected:Array)->void:
 			if world.command(actor,{"intent":"stop"}).get("ok",false):successful.append(actor)
 	elif plan.action in ["follow","unfollow"]:
 		var followers:Array=world.activities.following.keys()
+		var scope:Array=ids.duplicate()
+		if plan.action=="follow" and plan.get("explicit_targets",false) and fallback_models.is_empty():
+			for actor in followers.duplicate():
+				if actor not in ids and not world.activities.explicit_selected.has(actor):
+					followers.erase(actor);scope.append(actor)
 		for actor in ids:
 			if plan.action=="follow" and actor not in followers:followers.append(actor)
 			if plan.action=="unfollow":followers.erase(actor)
 			if plan.action=="follow" and not (world.director.brains.has(actor) and world.director.brains[actor].continuing_follow()):world.activities.release_follow(actor)
-		if world.activities.set_followers(followers).get("ok",false):successful=ids
+		if world.activities.set_followers(followers,scope,false).get("ok",false):successful=ids
 	elif plan.action=="gather":
 		var result:Dictionary=world.activities.gather_selected(ids,fresh.destination.region_id,Vector2(fresh.destination.position[0],fresh.destination.position[1]))
 		if result.get("ok",false):successful=ids
@@ -289,7 +302,7 @@ func decide(id:String,accepted:bool,selected:Array)->void:
 	last_execution={"ok":true,"actors":successful.duplicate()}
 	var job_ids:Dictionary={}
 	for actor in successful:job_ids[actor]=str(world.work.jobs.get(actor,{}).get("id",""))
-	tracked.append({"job_ids":job_ids,"actors":successful.duplicate(),"was_following":was_following,"returning":[],"finished":[],"action":plan.action,"channel_id":plan.channel_id,"order_tokens":order_tokens,"canceled":[],"next_text":plan.get("next_text",""),"fallback_models":fallback_models.duplicate(),"steward_order":plan.get("steward_order",false)})
+	tracked.append({"job_ids":job_ids,"actors":successful.duplicate(),"was_following":was_following,"returning":[],"finished":[],"action":plan.action,"channel_id":plan.channel_id,"order_tokens":order_tokens,"canceled":[],"next_text":plan.get("next_text",""),"fallback_models":fallback_models.duplicate(),"sponsored_order":plan.get("sponsored_order",false)})
 	for actor in successful:
 		var tag:String=world.intelligence.tag(actor)
 		if tag not in ["gentle","lively","laborious","quiet"]:tag="gentle"
@@ -320,9 +333,9 @@ func _process(_delta:float)->void:
 				var receipt:Array=world.work.events.filter(func(event):return event.get("actor_id","")==id and event.get("job_id","")==item.job_ids.get(id,"") and event.get("status","") in ["completed","blocked","cancelled","waiting_materials"])
 				if receipt.is_empty() or receipt.back().status!="completed":
 					item.canceled.append(id);feedback.emit(Text.text("local.commands.interrupted")%Text.resident(world,id),item.channel_id);continue
-			if world.hunger.rank(id)>=3 and id not in item.returning:
+			if not world.open_life and world.hunger.rank(id)>=3 and id not in item.returning:
 				item.canceled.append(id);recall(id);feedback.emit(Text.resident(world,id)+": "+Text.text("local.commands.hungry"),item.channel_id);continue
-			if done and not item.get("steward_order",false) and item.action not in ["stop","unfollow","follow"]:
+			if done and not item.get("sponsored_order",false) and item.action not in ["stop","unfollow","follow"]:
 				if id not in item.returning:
 					item.returning.append(id)
 					if world.activities.members.has(id):world.activities.members.erase(id)
@@ -332,10 +345,14 @@ func _process(_delta:float)->void:
 				_approach_returning(item,id)
 				done=world.actors[id].region_id==world.actors.human.region_id and world.point(world.actors[id]).distance_to(world.point(world.actors.human))<=3
 			if done:
-				if id in item.returning and id not in item.was_following:world.activities.release_follow(id)
+				if id in item.returning and id not in item.was_following and item.action not in ["plant","ready","chop"]:world.activities.release_follow(id)
 				item.finished.append(id);var tag:String=world.intelligence.tag(id)
 				if tag not in ["gentle","lively","laborious","quiet"]:tag="gentle"
 				speech_queue.append({"actor_id":id,"line":Text.text("local.commands.done_"+tag),"channel_id":item.channel_id,"expires":world.director.time+180})
+		for id in item.order_tokens:
+			var brain:RefCounted=world.director.brains.get(id)
+			if brain!=null and (id in item.finished or id in item.canceled) and brain.paused_wood_wait_order==item.order_tokens[id]:
+				brain.paused_wood_wait_order=""
 		if item.finished.size()+item.canceled.size()==item.actors.size():
 			if item.canceled.is_empty():completed.emit(Text.text("local.commands.all_done_"+item.action) if Text.entries.has("local.commands.all_done_"+item.action) else Text.text("local.commands.all_done"),item.channel_id)
 			tracked.erase(item)

@@ -77,12 +77,14 @@ func run() -> void:
 	check(Save.save_world(world, directory), "growth timestamps saved")
 	var reload: RefCounted = World.new()
 	check(Save.load_world(reload, directory).ok and absf(float(reload.objects[tree.id].mature_at)-float(tree.mature_at)) < .01, "reload preserves deadline without resetting timer")
-	var offline: RefCounted = World.new(); offline.forest.clock = float(tree.mature_at)+1
+	var offline: RefCounted = World.new()
+	var saved_wall:float=world.forest.wall_time.call()
+	offline.forest.wall_time=func():return saved_wall+float(tree.mature_at)-world.forest.clock+1
 	check(Save.load_world(offline, directory).ok and offline.objects[tree.id].status == "mature", "offline growth reaches one maturity without harvest")
 	check([{"id":"storage","items":offline.storage.saved().items,"capacity":9007199254740991,"kind":"storage"}].reduce(func(total,item): return total+int(item.items.get("wood",0)),0) == 6, "offline growth does not add inventory")
 	var path := directory.path_join("island-v2.json")
 	var old: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(path))
-	old.erase("ecology_version"); old.erase("forest_clock"); old.erase("day_cycle")
+	old.erase("ecology_version"); old.erase("forest_clock"); old.erase("forest_saved_wall"); old.erase("day_cycle")
 	old.objects[tree.id].erase("sprout_at"); old.objects[tree.id].erase("mature_at")
 	var file := FileAccess.open(path, FileAccess.WRITE); file.store_string(JSON.stringify(old)); file.close()
 	var legacy: RefCounted = World.new()

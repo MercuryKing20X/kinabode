@@ -2,6 +2,7 @@ extends "res://tests/test_intelligence_core_input.gd"
 func run()->void:
 	await fresh()
 	var w:RefCounted=game.world
+	w.director.set_all_enabled(false)
 	var human:Array=w.actors.human.position.duplicate()
 	var before:int=w.storage.count("wood")
 	var original_capabilities:Array=w.residents.capabilities(w.actors["npc.mira"]).duplicate()

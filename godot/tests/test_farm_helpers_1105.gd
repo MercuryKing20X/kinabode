@@ -68,14 +68,14 @@ func run()->void:
 	w.hunger.states["npc.nora"].elapsed=float(w.hunger.config.thresholds[2])+1
 	w.actors["companion-2"].region_id="room.home.house.01"
 	var blocked:Dictionary=w.farms.preview_host_orders(IDS,"plant","farm.home","mixed")
-	check(blocked.rows[1].reason=="different_region" and blocked.rows[2].reason=="very_hungry" and blocked.rows[3].reason=="hungry","accurate region and unchanged two hunger boundaries")
+	check(blocked.rows[1].reason=="different_region" and w.hunger.rank("npc.mira")==3 and w.hunger.rank("npc.nora")==2 and blocked.rows[2].reason=="no_seed" and blocked.rows[3].reason=="no_seed","region and real missing seeds govern eligibility without changing hunger thresholds")
 	# Diagnostic-only state fixtures: inspect actual disabled UI and native All behavior.
 	await click_world(w.point(w.farms.farm_plots("farm.home")[0]))
 	check(await UI.click(self,game.farm_panel.helpers_button),"native open diagnostic refusal list")
 	var grey:Node=UI.shown(game,"res://scripts/farm_invitation.gd")
-	check(grey!=null and grey.checks["npc.mira"].disabled and grey.checks["npc.nora"].disabled and grey.checks["companion-2"].disabled,"hungry and foreign-region choices disabled in actual UI")
+	check(grey!=null and not grey.checks["npc.mira"].disabled and not grey.checks["npc.nora"].disabled and grey.checks["companion-2"].disabled,"only the foreign-region choice is disabled by these boundaries")
 	if grey!=null:
-		check(await UI.click(self,grey.all_box) and grey.selected_ids()==["codex"],"native All excludes disabled companions")
+		check(await UI.click(self,grey.all_box) and grey.selected_ids()==["codex","npc.mira","npc.nora"],"native All excludes only the disabled foreign-region companion")
 		await capture("farm-disabled-reasons",w.point(w.farms.farm_plots("farm.home")[0]))
 		await key(KEY_ESCAPE)
 	# Genuine showcase maturity provides harvested produce without creating crops for the test.

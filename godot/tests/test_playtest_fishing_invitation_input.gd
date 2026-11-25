@@ -69,6 +69,8 @@ func fishing(game:Node,all_first:bool)->void:
 	check(before.size()==4,"four unique invited fishing jobs")
 func wardrobe(game:Node)->void:
 	var assignments:Dictionary={"codex":"ai-gpt","companion-2":"ai-deepseek","npc.mira":"ai-claude","npc.nora":"ai-glm"}
+	if game.island_hud.residents_collapsed:
+		check(await UI.click(self,game.island_hud.collapse_residents),"actual mouse expands resident roster for wardrobe")
 	for id in assignments:
 		game.island_hud.refresh();await process_frame;await process_frame
 		check(await click(game.island_hud.appearance_buttons[id]),"wardrobe open "+id)

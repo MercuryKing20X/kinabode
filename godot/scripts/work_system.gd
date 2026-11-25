@@ -84,11 +84,6 @@ func take_food_host(_storage_id:String,item_id:String,quantity:int)->Dictionary:
 	return world.take_storage_host(item_id,quantity)
 
 func stop(actor_id: String, report: bool = true) -> void:
-	if not world.activities.squad_leader.is_empty() and jobs.has(actor_id):
-		var origin:Array=[]
-		for frame in get_stack().slice(1,5):origin.append(str(frame.source).get_file()+":"+str(frame.function)+":"+str(frame.line))
-		stop_audit.append({"actor":actor_id,"job_id":jobs[actor_id].get("id",""),"origin":origin,"clock":world.forest.clock})
-		if stop_audit.size()>512:stop_audit.pop_front()
 	if world.homestead!=null:world.homestead.stopped(actor_id,jobs.get(actor_id,{}))
 	if world.days!=null:world.days.job_stopped(actor_id,jobs.get(actor_id,{}))
 	if world.gomoku!=null and jobs.get(actor_id,{}).get("intent")=="play_gomoku":world.gomoku.pause_actor(actor_id)
@@ -245,6 +240,7 @@ func advance(delta: float) -> void:
 					if job.intent=="gather_wood":job.wood_stored+=amount
 					record_event(actor_id,job,"progress","+%s %s"%[amount,LocalText.text("journey.wood")])
 				else:actor.carry["wood"] = int(actor.carry.get("wood", 0)) + amount
+				if job.get("keep_bundle",false):CarryRetention.mark(actor,"wood",amount)
 				drop.wood -= amount
 				if int(drop.wood) == 0:
 					world.drops.erase(job.drop_id)
@@ -253,6 +249,7 @@ func advance(delta: float) -> void:
 					if world.drops.has(job.drop_id):job.phase="pickup"
 					elif job.intent=="gather_wood":world.gathering.after_delivery(actor_id,job)
 					else:_finish(actor_id,LocalText.text("storage.collected"))
+				elif job.get("keep_bundle",false):_finish(actor_id,LocalText.text("storage.collected"))
 				else:
 					job.phase="storage_delivery";world.deliveries.request(actor_id)
 				world.revision+=1
@@ -281,14 +278,14 @@ func advance(delta: float) -> void:
 				if actor_id=="human" and int(site.stage_index)==5:preload("res://scripts/brain_interactions.gd").host_event(world,"host_built","build:"+str(site.id))
 				_finish(actor_id, LocalText.text("system.work_system.the_house_is_complete") if site.status == "complete" else LocalText.text("system.work_system.this_stage_is_complete"))
 
-func collect(actor_id: String, drop_id: String) -> Dictionary:
+func collect(actor_id: String, drop_id: String,keep_bundle:bool=false) -> Dictionary:
 	if jobs.has(actor_id): return fail("busy", LocalText.text("system.work_system.finish_your_current_task_first"))
 	if not world.drops.has(drop_id): return fail("missing_drop", LocalText.text("system.work_system.there_is_no_wood_here"))
 	if claims.has(drop_id): return fail("claimed", LocalText.text("system.work_system.a_companion_is_hauling_this_wood"))
 	if world.loaded(actor_id): return fail("hands_full", LocalText.text("system.work_system.put_away_what_you_are_holding_first"))
 	var drop: Dictionary = world.drops[drop_id]
 	if drop.region_id != world.actors[actor_id].region_id: return fail("different_region", LocalText.text("system.work_system.the_wood_is_on_another_island"))
-	var result := _begin(actor_id, {"intent": "collect", "target_id": drop_id, "drop_id": drop_id, "phase": "pickup"}, drop)
+	var result := _begin(actor_id, {"intent": "collect", "target_id": drop_id, "drop_id": drop_id, "phase": "pickup","keep_bundle":keep_bundle and actor_id!="human"}, drop)
 	if result.ok: claims[drop_id] = actor_id
 	return result
 
@@ -324,7 +321,7 @@ func _deliver_material(actor_id: String, site: Dictionary) -> int:
 
 	return amount
 
-func give(actor_id: String,args: Dictionary) -> Dictionary:
+func give(actor_id: String,args: Dictionary,record_gift:bool=true) -> Dictionary:
 	if args.keys().any(func(key):return key not in ["intent","receiver_id","item_id","quantity"]):return world._error("invalid_gift")
 	var receiver: String=str(args.get("receiver_id",""));var item: String=str(args.get("item_id",""));var quantity: Variant=args.get("quantity")
 	if not world.actors.has(receiver) or receiver==actor_id or item.is_empty() or not (quantity is int or quantity is float) or not is_finite(quantity) or quantity!=floor(quantity) or quantity<1:return world._error("invalid_gift")
@@ -346,5 +343,5 @@ func give(actor_id: String,args: Dictionary) -> Dictionary:
 	target.carry[item]=int(target.carry.get(item,0))+int(quantity)
 	CarryRetention.mark(target,item,int(quantity))
 	if actor_id=="human" and world.director.brains.has(receiver):preload("res://scripts/brain_interactions.gd").host_event(world,"helped","gift:"+str(world.revision),receiver)
-	world.memories.record_event("gift","gift-"+Crypto.new().generate_random_bytes(12).hex_encode(),[actor_id,receiver],facts)
+	if record_gift:world.memories.record_event("gift","gift-"+Crypto.new().generate_random_bytes(12).hex_encode(),[actor_id,receiver],facts)
 	world.revision+=1;return {"ok":true,"status":"completed","quantity":int(quantity),"message":LocalText.text("system.work_system.the_whole_gift_has_been_delivered")}

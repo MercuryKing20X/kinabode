@@ -4,9 +4,12 @@ var response_latency_ms:=0.0
 func text_input(text:String,send_by_button:bool=false)->void:
 	if not game.chat.visible:check(await UI.click(self,game.dialogue_button),"native opens chat")
 	await process_frame;await process_frame
+	root.grab_focus()
 	var p:Vector2=game.chat_input.get_global_rect().get_center()
+	var motion:=InputEventMouseMotion.new();motion.position=p;motion.global_position=p;root.push_input(motion,true)
+	await process_frame
 	for down in [true,false]:
-		var event:=InputEventMouseButton.new();event.button_index=MOUSE_BUTTON_LEFT;event.position=p;event.pressed=down;root.push_input(event,true);await process_frame
+		var event:=InputEventMouseButton.new();event.button_index=MOUSE_BUTTON_LEFT;event.position=p;event.global_position=p;event.pressed=down;event.button_mask=MOUSE_BUTTON_MASK_LEFT if down else 0;root.push_input(event,true);await process_frame
 	for index in text.length():
 		for down in [true,false]:
 			var event:=InputEventKey.new();event.unicode=text.unicode_at(index);event.pressed=down;root.push_input(event,true);await process_frame
@@ -63,11 +66,41 @@ func run()->void:
 	for tick in 120:w.advance(.25)
 	# A real right click on the displayed resident opens the basic mind panel.
 	var id:String="companion-2"
+	await text_input("别跟了")
+	await text_input("小蓝跟我来")
+	var route_started:=await ground(w.point(w.actors.human)+Vector2(0,10))
+	check(route_started,"mouse walks the host away from the overlapping group")
+	if route_started:
+		for tick in 500:
+			game._process(.1);game.local_host_commands._process(.1)
+			if not w._routes.has("human") and w.point(w.actors.human).distance_to(w.point(w.actors[id]))<4:break
 	game.view.center=w.point(w.actors[id]);game.view.follow_player=false;game.view.zoom=1
 	await process_frame
-	var point:Vector2=game.view.screen(w.point(w.actors[id]))+Vector2(0,-40)
+	var point:=Vector2.INF
+	for attempt in 80:
+		var screen_point:Vector2=game.view.screen(w.point(w.actors[id]))
+		for offset in [Vector2(0,-40),Vector2(-16,-40),Vector2(16,-40),Vector2(0,-68),Vector2(0,-18)]:
+			var candidate:Vector2=screen_point+offset
+			if game.view.care_hit(candidate)==id:
+				point=candidate;break
+		if point.is_finite():break
+		# Follow can briefly put two sprites on the same spot. Let the original
+		# movement settle before choosing a position that visibly belongs to Blue.
+		game._process(.1)
+		await process_frame
+	check(point.is_finite(),"Blue has a separately hittable part of the visible sprite")
+	if not point.is_finite():quit(1);return
+	var motion:=InputEventMouseMotion.new()
+	motion.position=point;motion.global_position=point;root.push_input(motion,true)
+	await process_frame
 	for down in [true,false]:
 		var event:=InputEventMouseButton.new();event.button_index=MOUSE_BUTTON_RIGHT;event.position=point;event.global_position=point;event.pressed=down;root.push_input(event,true);await process_frame
+	if game.company.care_target!=id:
+		var hover:Control=root.gui_get_hovered_control()
+		print("BRAIN_CARE_HIT point=",point," candidate=",game.view.care_hit(point)," care=",game.company.care_target," hovered=",hover.get_path() if hover!=null else "none")
+	check(game.company.care_target==id,"right click opens the exact resident's care card")
+	if game.company.care_target==id:
+		check(await UI.click(self,game.company.care_card.get_node_or_null("body/mind")),"native care card opens the resident's mind")
 	check(game.brain_panel.visible and game.brain_panel.actor_id==id,"right click opens exact resident mind")
 	for locale in ["zh","en"]:
 		game.LocalText.select(game.data_dir,locale);game.brain_panel.refresh();await shot("mind-"+locale)

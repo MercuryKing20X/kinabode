@@ -11,10 +11,9 @@ func run()->void:
 	var game:Node=load("res://scenes/main_v3.tscn").instantiate();game.world=World.new("res://content/home-v3/world.json");root.add_child(game)
 	game.save_enabled=false;game.set_process(false);game.view.sound_enabled=false;await process_frame
 	game._toggle_workshop();game.editor.open_art("human-starter")
-	var menu:MenuButton
-	for m in game.editor.find_children("*","MenuButton",true,false):
-		if m.text=="文件 ▾":menu=m
-	check(menu!=null,"file menu exists")
+	var menu:MenuButton=game.editor.file_menu_button
+	check(is_instance_valid(menu) and menu.is_visible_in_tree(),"file menu exists and is visible")
+	if not is_instance_valid(menu):quit(1);return
 	check(not game.editor.rename_row.visible,"old resident selection hidden")
 	check(menu.get_popup().item_count==6,"all six file actions available")
 	menu.get_popup().id_pressed.emit(1);check(game.editor.assembler_dialog.visible,"assembler entry")

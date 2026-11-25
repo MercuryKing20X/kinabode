@@ -1,9 +1,17 @@
 class_name SharedMemories
 extends RefCounted
+
+# Allow old saves to retain verified chapters after removing the story system.
+const LEGACY_CHAPTERS:={
+	"codex":["meal","favorite","stars","reconcile"],
+	"companion-2":["meal","favorite","play","reconcile"],
+	"npc.mira":["meal","favorite","building","reconcile"],
+	"npc.nora":["meal","favorite","beacon","reconcile"],
+}
 const LocalText=preload("res://scripts/localization.gd")
 var localization_since:=-1.0
 ## Durable facts from existing commit records. Queries never create memories.
-const KINDS := ["signature_taste","island_arrival","island_build","cat_contact","home_island_arrival","jieqi_result","dark_discovery","dark_beacon","dark_beacon","first_shared_meal","feeding","meal_reaction","moon_viewing","wish_completed","relationship_stage","gift","promise_result","proposal_decision","meal", "sat_together", "house_completed", "shared_barbecue", "fishing_catch", "gomoku_match"]
+const KINDS := ["doorstep_note_first","doorstep_gift_first","heart_project","care_first","company_promise_first","company_night","first_meeting","story_chapter","emotion_reconciled","story_stars","favorite_taste","signature_taste","island_arrival","island_build","cat_contact","home_island_arrival","jieqi_result","dark_discovery","dark_beacon","dark_beacon","first_shared_meal","feeding","meal_reaction","moon_viewing","wish_completed","relationship_stage","gift","promise_result","proposal_decision","meal", "sat_together", "house_completed", "shared_barbecue", "fishing_catch", "gomoku_match"]
 const MARK_LIMIT := 192 # Six source collections, each bounded to 32.
 var _owner: WeakRef
 var world: RefCounted:
@@ -206,6 +214,19 @@ func _describe(entry: Dictionary, language:String="") -> Dictionary:
 	result["participant_names"]=names
 	var joined:String=str(t.call("join")).join(labels);var f:Dictionary=entry.facts
 	match str(entry.kind):
+		"doorstep_note_first","doorstep_gift_first":result["summary"]=translated.call("heart.project."+entry.kind)%names[f.actor_id]
+		"heart_project":result["summary"]=translated.call("heart.project.finished")%translated.call("heart.project.title."+str(f.type))
+		"care_first":result["summary"]=translated.call("company."+str(f.action)+"_first")
+		"company_promise_first":result["summary"]=translated.call("company.promise_first")
+		"company_night":result["summary"]=translated.call("company."+("story" if f.mode=="story" else "ask"))
+		"first_meeting":result["summary"]=translated.call("open.meeting")
+		"story_chapter":result["summary"]=translated.call("story.kind")
+		"emotion_reconciled":result["summary"]="We talked and felt a little closer again." if language=="en" or (language.is_empty() and TranslationServer.get_locale().begins_with("en")) else "我们主动说了话，她心里的委屈轻了一点。"
+		"story_stars":result["summary"]="We stayed under the stars together." if language=="en" or (language.is_empty() and TranslationServer.get_locale().begins_with("en")) else "我们一起在星光下待了一会儿。"
+		"favorite_taste":
+			var food_id:String=f.food_id
+			var food_name:String=world.recipes.recipe_catalog[food_id].name if world.recipes.recipe_catalog.has(food_id) else world.life.fireside.config.singles[food_id].name if world.life.fireside.config.singles.has(food_id) else LocalText.source("system.fireside.grilled_fish")
+			result["summary"]=translated.call("content.favorite.memory")%[names[f.actor_id],content_label.call(food_name)]
 		"signature_taste":result["summary"]=translated.call("content.signature.memory")%[names[f.actor_id],content_label.call(world.recipes.recipe_catalog[f.recipe_id].name)]
 		"cat_contact":result["summary"]=translated.call("cat.memory."+str(f.action))%names[f.actor_id]
 		"island_arrival":result["summary"]=translated.call("theirs.arrival_memory")%names[f.resident_id]
@@ -225,7 +246,7 @@ func _describe(entry: Dictionary, language:String="") -> Dictionary:
 		"relationship_stage":result["summary"]=t.call("relationship")%[names[f.resident_id],display.call(str(f.stage_name))]
 		"gift":result["summary"]=t.call("gift")%[names[f.giver_id],f.quantity,display.call(str(f.item_id)),names[f.receiver_id]]
 		"promise_result":
-			var action:String=display.call(str(world.promises.config.actions.get(f.action_type,{}).get("name",f.action_type)))
+			var action:String=translated.call("company.sunrise" if f.action_type=="social_sunrise" else "company.fireside") if f.action_type in world.promises.SOCIAL else display.call(str(world.promises.config.actions.get(f.action_type,{}).get("name",f.action_type)))
 			result["summary"]=t.call("promise_done")%[names[f.resident_id],action] if f.outcome=="completed" else t.call("promise_failed")%[names[f.resident_id],action,f.reason]
 		"proposal_decision":result["summary"]=t.call("proposal_accept" if f.decision=="accepted" else "proposal_decline")%[names[f.resident_id],f.text]
 		"gomoku_match":result["summary"]=t.call("gomoku_draw")%[joined,f.move_count] if f.result=="draw" else t.call("gomoku_win" if f.result=="five" else "gomoku_resign")%[joined,f.move_count,names[f.winner_id]]
@@ -297,8 +318,23 @@ func valid_saved(data: Variant, actors: Dictionary, world_id: String) -> bool:
 		if entry.has("text_version") and (not _count(entry.text_version,1) or entry.text_version!=1):return false
 		var facts: Dictionary=entry.facts
 		match str(entry.kind):
-			"signature_taste","island_arrival","island_build","home_island_arrival","cat_contact","jieqi_result","dark_discovery","dark_beacon","first_shared_meal","feeding","meal_reaction","moon_viewing","wish_completed","relationship_stage","gift","promise_result","proposal_decision":
+			"care_first","company_promise_first","company_night":
 				if not engine_facts_valid(entry.kind,facts,entry.participants,actors):return false
+				var company_source:String=company_key(entry.kind,facts)
+				# Earlier saves used a single date key for either night topic.
+				if entry.source.id!=company_source and not (entry.kind=="company_night" and entry.source.id==str(int(facts.day))):return false
+				if entry.kind=="company_night":
+					var event_key:String="night:"+company_source
+					if seen.has(event_key):return false
+					seen[event_key]=true
+			"first_meeting":
+				if entry.source.id!="standard_welcome" or entry.region_id!="home" or not engine_facts_valid(entry.kind,facts,entry.participants,actors):return false
+			"doorstep_note_first","doorstep_gift_first":
+				if entry.source.id!=entry.kind or entry.region_id!="home" or not engine_facts_valid(entry.kind,facts,entry.participants,actors):return false
+			"heart_project","story_chapter","emotion_reconciled","story_stars","favorite_taste","signature_taste","island_arrival","island_build","home_island_arrival","cat_contact","jieqi_result","dark_discovery","dark_beacon","first_shared_meal","feeding","meal_reaction","moon_viewing","wish_completed","relationship_stage","gift","promise_result","proposal_decision":
+				if not engine_facts_valid(entry.kind,facts,entry.participants,actors):return false
+				if entry.kind=="favorite_taste" and entry.source.id!=str(facts.actor_id)+":"+str(facts.food_id):return false
+				if entry.kind=="story_chapter" and entry.source.id!=facts.chapter_id:return false
 			"gomoku_match":
 				if facts.size()!=7 or facts.get("match_id")!=entry.source.id or not facts.get("site_id") is String or facts.site_id.is_empty() or facts.site_id.length()>128 or not _ids([facts.get("black_id"),facts.get("white_id")],actors,2) or _sorted([facts.black_id,facts.white_id])!=_sorted(entry.participants) or not _count(facts.get("move_count"),225):return false
 				if facts.get("result") not in ["five","draw","resign"] or (facts.result=="draw" and (facts.get("winner_id")!="" or facts.move_count!=225)) or (facts.result!="draw" and facts.get("winner_id") not in entry.participants) or (facts.result=="five" and facts.move_count<9):return false
@@ -326,6 +362,36 @@ func valid_saved(data: Variant, actors: Dictionary, world_id: String) -> bool:
 	return true
 
 func engine_facts_valid(kind: String,facts: Dictionary,participants: Array,actors: Dictionary) -> bool:
+	if kind in ["doorstep_note_first","doorstep_gift_first"]:
+		return facts.size()==1 and facts.get("actor_id")!="human" and _ids(participants,actors,2) and participants.size()==2 and "human" in participants and facts.get("actor_id") in participants
+	if kind=="heart_project":
+		return facts.size()==4 and facts.get("actor_id") in ["codex","companion-2","npc.mira","npc.nora"] and facts.actor_id in participants and _ids(participants,actors,1) and participants.size()<=5 and facts.get("type") is String and _count(facts.get("day"),1000000) and _count(facts.get("started"),1000000) and facts.started>=1 and facts.day>=facts.started
+	if kind in ["care_first","company_promise_first","company_night"]:
+		var id:Variant=facts.get("actor_id")
+		if not id is String or id=="human" or not actors.has(id) or _sorted(participants)!=_sorted(["human",id]):return false
+		if kind=="care_first":return facts.size()==2 and facts.get("action") in ["pat","comfort"]
+		if kind=="company_promise_first":return facts.size()==1
+		return facts.size()==3 and _count(facts.get("day"),1000000) and facts.day>=1 and facts.get("mode") in ["story","question"]
+	if kind=="first_meeting":
+		var cast:Array=["codex","companion-2","human","npc.mira","npc.nora"]
+		if facts.is_empty():return _ids(participants,actors,5) and _sorted(participants)==cast
+		return facts.size()==1 and facts.get("brief")==true and participants.size() in [2,3,4,5] and _ids(participants,actors,participants.size()) and "human" in participants and participants.all(func(id):return id in cast)
+	if kind in ["story_chapter","emotion_reconciled","story_stars"]:
+		var id:Variant=facts.get("actor_id")
+		if not id is String or id=="human" or not actors.has(id) or _sorted(participants)!=_sorted(["human",id]):return false
+		if kind=="story_chapter":
+			if facts.size()!=3 or not facts.get("chapter_id") is String or not facts.get("source_ids") is Array or facts.source_ids.is_empty() or facts.source_ids.size()>8 or facts.source_ids.any(func(v):return not v is String or v.length()!=64 or not v.is_valid_hex_number(false)):return false
+			return LEGACY_CHAPTERS.get(id,[]).any(func(chapter):return facts.chapter_id==id+"."+chapter)
+		if kind=="story_stars":return facts.size()==2 and _count(facts.get("day"),1000000) and facts.day>=1
+		var hurt:Variant=facts.get("previous_hurt")
+		return facts.size()==3 and _count(facts.get("day"),1000000) and facts.day>=1 and (hurt is float or hurt is int) and is_finite(hurt) and hurt>=30 and hurt<=100
+	if kind=="favorite_taste":
+		if facts.size()!=3 or not actors.has(facts.get("actor_id","")) or facts.actor_id=="human":return false
+		var food:Variant=facts.get("food_id")
+		if not food is String or food=="mushroom" or food not in world.life.fireside.config.singles and food not in world.recipes.recipe_catalog and food!="fish":return false
+		var meal:Variant=facts.get("meal_id")
+		if not meal is String or meal.length()!=24 or not meal.is_valid_hex_number(false):return false
+		return participants==[facts.actor_id] or _sorted(participants)==_sorted(["human",facts.actor_id])
 	if kind=="signature_taste":
 		if facts.size()!=2 or not actors.has(facts.get("actor_id","")) or facts.actor_id=="human" or facts.get("recipe_id") not in ["honey-berry-apple","sea-land-skewers","harvest-stew","dark-truffle-soup"]:return false
 		return participants==[facts.actor_id] or _sorted(participants)==_sorted(["human",facts.actor_id])
@@ -352,7 +418,7 @@ func engine_facts_valid(kind: String,facts: Dictionary,participants: Array,actor
 	if kind=="moon_viewing":
 		return facts.size()==6 and _ids(participants,actors,2) and "human" in participants and facts.get("place_id")=="home.moon" and facts.get("site_id") in world.catalog.regions.home.layout.get("moon",{}).get("platform_sites",[]) and _count(facts.get("day"),1000000) and facts.day>=1 and facts.get("phase")=="night" and _count(facts.get("moon_phase"),7) and facts.moon_phase==posmod(int(facts.day)-1,8) and facts.get("weather") in ["sunny","cloudy","fog","rain"]
 	if kind=="wish_completed":
-		return facts.size()==7 and facts.get("resident_id") in actors and facts.resident_id!="human" and _sorted(participants)==_sorted(["human",facts.resident_id]) and facts.get("wish_id") is String and facts.wish_id.begins_with("wish-") and facts.wish_id.length()==29 and facts.get("template_id") is String and not world.wishes.template(facts.template_id).is_empty() and facts.get("title") is String and facts.title.length()>0 and facts.title.length()<=30 and facts.get("kind") in ["meal","fish","furniture","facility","homestead"] and facts.get("target_id") is String and facts.target_id.length()>0 and facts.target_id.length()<=128 and facts.get("proof_id") is String and facts.proof_id.length()>0 and facts.proof_id.length()<=128
+		return facts.size()==7 and facts.get("resident_id") in actors and facts.resident_id!="human" and _sorted(participants)==_sorted(["human",facts.resident_id]) and facts.get("wish_id") is String and facts.wish_id.begins_with("wish-") and facts.wish_id.length()==29 and facts.get("template_id") is String and facts.template_id in preload("res://scripts/legacy_wishes.gd").TEMPLATE_IDS and facts.get("title") is String and facts.title.length()>0 and facts.title.length()<=30 and facts.get("kind") in ["meal","fish","furniture","facility","homestead"] and facts.get("target_id") is String and facts.target_id.length()>0 and facts.target_id.length()<=128 and facts.get("proof_id") is String and facts.proof_id.length()>0 and facts.proof_id.length()<=128
 	if kind=="relationship_stage":
 		return facts.size()==4 and facts.get("resident_id") in actors and facts.resident_id!="human" and _sorted(participants)==_sorted(["human",facts.resident_id]) and _count(facts.get("stage_index"),4) and facts.stage_index>=1 and facts.get("stage_id")==world.relationships.config.stages[int(facts.stage_index)].id and facts.get("stage_name")==world.relationships.config.stages[int(facts.stage_index)].name
 	if kind=="gift":
@@ -360,18 +426,29 @@ func engine_facts_valid(kind: String,facts: Dictionary,participants: Array,actor
 		for crop in world.farms.crops:items.append("seed."+crop)
 		return facts.size()==4 and facts.get("giver_id") in actors and facts.get("receiver_id") in actors and facts.giver_id!=facts.receiver_id and _sorted(participants)==_sorted([facts.giver_id,facts.receiver_id]) and facts.get("item_id") in items and _count(facts.get("quantity"),world.work.CARRY_LIMIT) and facts.quantity>0
 	if kind=="promise_result":
-		return facts.size()==7 and facts.get("resident_id") in actors and facts.resident_id!="human" and _sorted(participants)==_sorted(["human",facts.resident_id]) and facts.get("action_type") in ["water","harvest","fish","cook","come_near"] and facts.get("target_id") is String and facts.target_id.length()>0 and facts.target_id.length()<=128 and _count(facts.get("day"),1000000) and facts.day>=1 and facts.get("phase") is String and facts.phase.length()>0 and facts.phase.length()<=32 and facts.get("outcome") in ["completed","failed","cancelled"] and facts.get("reason") is String and facts.reason.length()<=160
+		return facts.size()==7 and facts.get("resident_id") in actors and facts.resident_id!="human" and _sorted(participants)==_sorted(["human",facts.resident_id]) and facts.get("action_type") in ["water","harvest","fish","cook","come_near","social_sunrise","social_fireside"] and facts.get("target_id") is String and facts.target_id.length()>0 and facts.target_id.length()<=128 and _count(facts.get("day"),1000000) and facts.day>=1 and facts.get("phase") is String and facts.phase.length()>0 and facts.phase.length()<=32 and facts.get("outcome") in ["completed","failed","cancelled"] and facts.get("reason") is String and facts.reason.length()<=160
 	if kind=="proposal_decision":
 		return facts.size()==5 and facts.get("resident_id") in actors and facts.resident_id!="human" and _sorted(participants)==_sorted(["human",facts.resident_id]) and facts.get("text") is String and facts.text.length()>0 and facts.text.length()<=40 and facts.get("activity") in ["fish_together","cook_together","homestead_together","sit_together","watch_fishery"] and facts.get("target_id") is String and not facts.target_id.is_empty() and facts.target_id.length()<=128 and facts.get("decision") in ["accepted","declined"]
 	return false
 func record_event(kind: String,key: String,participants: Array,facts: Dictionary) -> bool:
 	if kind not in KINDS or not engine_facts_valid(kind,facts,participants,world.actors):return false
+	if kind in ["care_first","company_promise_first","company_night"] and key!=company_key(kind,facts):return false
+	if kind=="first_meeting" and (key!="standard_welcome" or world.actors.human.region_id!="home"):return false
+	if kind=="favorite_taste" and key!=str(facts.actor_id)+":"+str(facts.food_id):return false
+	if kind=="story_chapter" and key!=facts.chapter_id:return false
+	if kind=="heart_project" and key!="%s:%s:%s"%[facts.actor_id,facts.type,int(facts.started)]:return false
+	if kind in ["doorstep_note_first","doorstep_gift_first"] and (key!=kind or world.actors[participants[0]].region_id!="home"):return false
 	var identity:=_record_id(world.world_id,kind,key)
 	if records.any(func(entry):return entry.id==identity):return false
 	records.append({"id":identity,"world_id":world.world_id,"kind":kind,"occurred_at":maxf(world.forest.clock,Time.get_unix_time_from_system()),"region_id":world.actors[participants[0]].region_id,"participants":_sorted(participants),"facts":facts.duplicate(true),"text_version":1,"source":{"system":kind,"id":key}})
 	if committed.is_valid():committed.call(records[-1])
 	if records.size()>capacity:records.pop_front()
 	world.revision+=1;return true
+
+func company_key(kind:String,facts:Dictionary)->String:
+	if kind=="care_first":return facts.actor_id+":"+facts.action
+	if kind=="company_promise_first":return facts.actor_id
+	return str(int(facts.day))+":"+str(facts.mode)
 
 func meal_place_valid(facts:Dictionary)->bool:
 	return facts.get("station_id") in world.barbecues and facts.get("place_id")==world.barbecues[facts.station_id].station.get("place_id","") and not str(facts.place_id).is_empty()

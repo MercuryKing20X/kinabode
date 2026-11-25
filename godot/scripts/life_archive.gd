@@ -30,6 +30,12 @@ func fresh(id:String)->Dictionary:
 	return {"version":1,"resident_id":id,"mood":{"joy":50.0,"tired":20.0,"missing":20.0,"curious":50.0,"hurt":10.0,"safe":50.0},"records":[],"curve":[],"dreams":[],"selves":[],"wishes":[],"usage":[],"world_days":{}}
 func profile(id:String)->Dictionary:
 	if not profiles.has(id):profiles[id]=fresh(id)
+	if game.world.get("hearts")!=null:
+		# Preserve an earned legacy life mood only for its own existing world.
+		# A new world must never inherit another island's feelings.
+		if not game.world.hearts.profiles.has(id) and profiles[id].world_days.keys().any(func(key):return str(key).begins_with(game.world.world_id+":")):
+			game.world.hearts.profile(id).mood=profiles[id].mood.duplicate(true)
+		profiles[id].mood=game.world.hearts.mood(id)
 	return profiles[id]
 func persist(id:String)->bool:
 	return game.memory_books.atomic(directory.path_join(id.sha256_text()+".life.json"),profile(id))
@@ -54,7 +60,10 @@ func valid_profile(value:Variant)->bool:
 				for axis in AXES:
 					var n:Variant=record.mood.get(axis)
 					if not (n is int or n is float) or not is_finite(n) or n<0 or n>100:return false
-			if key=="wishes" and (record.get("kind") not in ["farm","fish"] or record.get("status") not in ["pending","completed"] or (record.kind=="farm" and not record.get("target_id") is String)):return false
+			if key=="wishes":
+				if record.get("kind")=="daily":
+					if not record.get("goal") is String or record.get("status") not in ["pending","completed","expired"] or not record.get("attempted") is bool:return false
+				elif record.get("kind") not in ["farm","fish"] or record.get("status") not in ["pending","completed"] or (record.kind=="farm" and not record.get("target_id") is String):return false
 			if key=="usage":
 				for field in ["total_tokens","input_tokens","output_tokens"]:
 					var n:Variant=record.get(field)
@@ -93,30 +102,15 @@ func tick(delta:float)->void:
 			for entry in game.memory_books.list_for(id):seen[entry.id]=true
 			active_levels[id]=true
 		var p:Dictionary=profile(id)
-		for axis in AXES:p.mood[axis]=move_toward(float(p.mood[axis]),float(fresh(id).mood[axis]),actual*.015)
 		if p.selves.is_empty():self_page(id,game.world.days.day(),[],"local","gestation.self_initial")
 		for entry in game.memory_books.entries.values():
 			if seen.has(entry.id) or entry.resident_id!=id:continue
 			seen[entry.id]=true
 			if entry.world_id!=game.world.world_id or entry.layer!="facts":continue
-			if entry.params.get("human_quote",false):
-				var words:String=game.memory_books.render(entry).to_lower()
-				if [Text.source("gestation.praise_thanks"),Text.source("gestation.praise_good"),Text.source("gestation.praise_great"),"thank you","well done","great job"].any(func(word):return word in words):p.mood.joy=clampf(float(p.mood.joy)+8,0,100);p.mood.safe=clampf(float(p.mood.safe)+6,0,100)
 			if entry.source!="game":continue
 			if not fresh_facts.has(id):fresh_facts[id]=[]
 			fresh_facts[id].append(entry)
-			var kind:String=str(entry.params.get("legacy",{}).get("kind",""))
-			var change:Dictionary={"meal":{"joy":12,"safe":10,"tired":-8},"shared_barbecue":{"joy":8,"safe":6},"fishing_catch":{"curious":12,"joy":6},"gomoku_match":{"joy":6,"curious":8},"wish_completed":{"joy":12,"safe":6},"work_completed":{"tired":8,"safe":6}}.get(kind,{"curious":2})
-			for axis in change:p.mood[axis]=clampf(float(p.mood[axis])+float(change[axis]),0,100)
 			append_record(id,"feeling",Text.text("gestation.event_feeling").replace("{event}",game.memory_books.render(entry)),[entry.id])
-		var actor:Dictionary=game.world.actors[id];var human:Dictionary=game.world.actors.human
-		var near:bool=actor.region_id==human.region_id and game.world.point(actor).distance_to(game.world.point(human))<=8
-		p.mood.missing=clampf(float(p.mood.missing)+actual*(-.05 if near else .025),0,100)
-		if near:p.mood.safe=clampf(float(p.mood.safe)+actual*.01,0,100);p.absent_seconds=0.0
-		elif not game.world.work.jobs.has(id):
-			p.absent_seconds=float(p.get("absent_seconds",0))+actual
-			if float(p.absent_seconds)>600:p.mood.hurt=clampf(float(p.mood.hurt)+actual*.005,0,100)
-		if game.world.work.jobs.has(id):p.mood.tired=clampf(float(p.mood.tired)+actual*.02,0,100)
 		var key:String=game.world.world_id+":"+str(game.world.days.day())
 		if not p.world_days.has(key):
 			if day_seen!=game.world.days.day():end_day(id,maxi(1,game.world.days.day()-1))
@@ -135,7 +129,6 @@ func observe_weather(id:String)->void:
 	var p:Dictionary=profile(id);var weather:String=str(game.world.weather.current().get("id",""));var key:String=game.world.world_id+":"+str(game.world.days.day())+":"+weather
 	if p.get("weather_key","")==key:return
 	p.weather_key=key
-	if weather=="rain":p.mood.safe=clampf(float(p.mood.safe)+4,0,100);p.mood.curious=clampf(float(p.mood.curious)+3,0,100)
 func end_day(id:String,day:int)->void:
 	var p:Dictionary=profile(id);var key:String=game.world.world_id+":"+str(day)
 	if p.dreams.any(func(e):return e.id==key):return
@@ -157,7 +150,7 @@ func observe_context(id:String,key:String)->void:
 	game.memory_books.add(id,game.world.world_id,"life-observed:"+key,"facts",Text.text("gestation.observed").replace("{weather}",Text.content(str(game.world.weather.current().get("name",observed.weather)))).replace("{phase}",Text.content(str(game.world.days.phase().get("name",observed.phase)))),{"legacy":{"kind":"life_observation","facts":observed}},game.world.days.day(),"game",[id],game.world.forest.clock)
 func request(id:String)->Dictionary:
 	if not enabled(id):return {}
-	return {"version":1,"mood":profile(id).mood.duplicate(true),"source_ids":sources(id),"wishes":wish_options(id),"active_wishes":active_wishes(id),"instruction":"Return observe, feel, want, act, reflect. feel={text,source_ids}; cite supplied true facts. act must equal intents. reflect describes your current thought, never an uncompleted outcome. Optional life_day={dream,today,self}; self only every three game days. The self string must cover all four: your authored personality; recent genuine likes from supplied facts; your feelings toward the human; and who you hope to become. If recent likes are unknown, admit that; never invent shared history. Wishes are proposals only, never permissions. active_wishes contains only your pending wishes in this world and host-verified progress. During an already authorized idle autonomy turn, consider an available intent_hints action as your ordinary own intent; during authorized stewardship, include it in the ordinary planning array. Otherwise use existing dialogue or host-confirmation proposals. Hints never authorize a new call, movement, work, another resident, or completion; the original host must validate every action again. Never repeat local_execution work or mark progress from AI text."}
+	return {"version":1,"mood":profile(id).mood.duplicate(true),"source_ids":sources(id),"wishes":wish_options(id),"active_wishes":active_wishes(id),"instruction":"Return observe, feel, want, act, reflect. feel={text,source_ids}; cite supplied true facts. act must equal intents. reflect describes your current thought, never an uncompleted outcome. Optional life_day={dream,today,self}; self only every three game days. The self string must cover all four: your authored personality; recent genuine likes from supplied facts; your feelings toward the human; and who you hope to become. If recent likes are unknown, admit that; never invent shared history. Wishes are proposals only, never permissions. active_wishes contains only your pending wishes in this world and host-verified progress. During an already authorized idle autonomy turn, consider an available intent_hints action as your ordinary own intent. Otherwise use existing dialogue or host-confirmation proposals. Hints never authorize a new call, movement, work, another resident, or completion; the original host must validate every action again. Never repeat local_execution work or mark progress from AI text."}
 func accept(id:String,value:Dictionary,allowed:Array,key:String)->bool:
 	if not enabled(id):return false
 	for field in ["observe","want","reflect"]:
@@ -244,7 +237,7 @@ func wish_idle(id:String)->bool:
 	return w.director.model_controlled(id) and not w.work.jobs.has(id) and not w._routes.has(id) and not w.farms.active(id) and not w.projects.active(id) and not w.homestead.active(id) and not w.shared_activity.holds(id) and not w.gomoku.active(id) and not w.deliveries.active(id) and not w.activities.commanded(id) and not w.activities.blocked(id,false) and not w.director.routines[id].held and not game.questions.has(id) and not game.group_questions.has(id)
 func fish_wish_hint(id:String)->bool:
 	var w:RefCounted=game.world;var f:RefCounted=w.fishing
-	if not wish_idle(id) or not w.residents.supports(w.actors[id],"fish") or w.hunger.rank(id)>=3 or w.loaded(id) or not f.pending(id).is_empty() or f.fish.size()>=int(f.rules.max_fish):return false
+	if not wish_idle(id) or not w.residents.supports(w.actors[id],"fish") or w.hunger.rank(id)>=3 or w.loaded(id) or not f.pending(id).is_empty():return false
 	var coast:Dictionary=f.shore(id)
 	if coast.is_empty():return false
 	var reserved:int=w.work.jobs.values().filter(func(job):return job.get("intent")=="fish" and job.get("water_id")==coast.water_id).size()
@@ -256,6 +249,8 @@ func active_wishes(id:String)->Array:
 	var w:RefCounted=game.world
 	for wish in profile(id).wishes:
 		if wish.get("status")!="pending" or wish.get("world_id")!=w.world_id:continue
+		# Daily outing wishes have their own model card and no labor hints.
+		if wish.kind=="daily":continue
 		var item:Dictionary={"id":str(wish.id),"kind":str(wish.kind),"text":str(wish.text).left(1200),"status":"pending","progress":{"current":0,"total":1},"source_ids":[],"intent_hints":[]}
 		if wish.kind=="fish":
 			if fish_wish_hint(id):item.intent_hints.append({"action":"fish"})
@@ -279,12 +274,12 @@ func active_wishes(id:String)->Array:
 	return result.duplicate(true)
 func update_wishes(id:String)->void:
 	var p:Dictionary=profile(id)
-	if p.wishes.is_empty():
+	if not p.wishes.any(func(row):return row.kind!="daily" and row.world_id==game.world.world_id) and not game.autonomy.native_heart(id):
 		var options:Array=wish_options(id)
 		if not options.is_empty():
 			var row:Dictionary=stamp();row.merge(options[0]);row.status="pending";row.source_ids=sources(id);p.wishes.append(row);persist(id);return
 	for row in p.wishes:
-		if row.status!="pending" or row.world_id!=game.world.world_id:continue
+		if row.status!="pending" or row.world_id!=game.world.world_id or row.kind=="daily":continue
 		if row.kind=="farm" and farm_wish_done(id,row):
 			var event_id:String="life-goal-completed:"+str(row.id)
 			game.memory_books.add(id,game.world.world_id,event_id,"facts","gestation.farm_proof",{"farm_id":row.target_id,"source_ids":row.progress.values(),"legacy":{"kind":"goal_completed","farm_id":row.target_id}},game.world.days.day(),"game",[id],game.world.forest.clock)
@@ -337,7 +332,7 @@ func today_usage(id:String)->Dictionary:
 		else:result.unknown_time=true
 	return result
 func snapshot(id:String)->Dictionary:
-	return profile(id).duplicate(true) if profiles.has(id) or enabled(id) else {}
+	return profile(id).duplicate(true) if enabled(id) else {}
 func export_bundle()->Dictionary:return profiles.duplicate(true)
 func valid_bundle(data:Variant)->bool:
 	return data is Dictionary and data.size()<=128 and data.keys().all(func(id):return id is String and valid_profile(data[id]) and data[id].resident_id==id)
@@ -348,7 +343,7 @@ func import_bundle(data:Dictionary)->bool:
 		incoming=incoming.duplicate(true)
 		for field in ["records","dreams","selves","wishes"]:
 			incoming[field]=incoming[field].filter(func(row):return row.get("source_ids",[]).all(func(source):return game.memory_books.entries.has(source) and game.memory_books.entries[source].resident_id==id and game.memory_books.entries[source].layer=="facts" and game.memory_books.entries[source].source=="game"))
-		incoming.wishes=incoming.wishes.filter(func(row):return row.status!="completed" or row.source_ids.any(func(source):return str(game.memory_books.entries[source].params.get("legacy",{}).get("kind",""))==("fishing_catch" if row.kind=="fish" else "goal_completed") and (row.kind=="fish" or game.memory_books.entries[source].params.get("farm_id",game.memory_books.entries[source].params.get("legacy",{}).get("farm_id",""))==row.target_id)))
+		incoming.wishes=incoming.wishes.filter(func(row):return row.status!="completed" or row.source_ids.any(func(source):return wish_proof(id,row,source)))
 		if not profiles.has(id):profiles[id]=incoming.duplicate(true)
 		else:
 			for field in ["records","curve","dreams","selves","wishes","usage"]:
@@ -356,6 +351,11 @@ func import_bundle(data:Dictionary)->bool:
 					if not profiles[id][field].any(func(old):return old.id==row.id):profiles[id][field].append(row.duplicate(true))
 		if not persist(id):return false
 	return true
+func wish_proof(_id:String,row:Dictionary,source:String)->bool:
+	var entry:Dictionary=game.memory_books.entries[source]
+	var fact:Dictionary=entry.params.get("legacy",{})
+	if row.kind=="daily":return entry.world_id==row.world_id and int(entry.day)==int(row.day) and fact.get("kind")=="daily_wish_completed" and fact.get("goal")==row.goal
+	return fact.get("kind")==("fishing_catch" if row.kind=="fish" else "goal_completed") and (row.kind=="fish" or entry.params.get("farm_id",fact.get("farm_id",""))==row.target_id)
 func render_row(row:Dictionary)->String:
 	if row.get("kind","")=="act":
 		var steps:Variant=JSON.parse_string(str(row.get("text","")))

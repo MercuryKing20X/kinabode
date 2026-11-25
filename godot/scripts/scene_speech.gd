@@ -18,7 +18,8 @@ var reversals:=0
 var last_vector:=Vector2.ZERO
 var last_check:=0.0
 var seen_work:Array=[]
-var seen_fish:Array=[]
+var seen_fish:Dictionary={}
+var seen_fish_revision:=-1
 var seen_ingredients:Array=[]
 var seen_journal:Dictionary={}
 var delivered:Array=[]
@@ -27,7 +28,8 @@ var said_day:=-1
 var day:=-1
 func _init(w:RefCounted)->void:owner=weakref(w)
 func reset()->void:
-	previous.clear();pending.clear();near_seconds.clear();distant.clear();first_seen.clear();assigned.clear();phase_seen.clear();recent_positions.clear();still=0;walked=0;reversals=0;seen_work=world.work.events.map(func(e):return e.id);seen_fish=world.fishing.fish.keys();seen_ingredients=world.ingredients.discovered.duplicate();seen_journal=world.journal.discoveries.duplicate(true);last_check=world.director.time;said.clear();said_day=-1
+	previous.clear();pending.clear();near_seconds.clear();distant.clear();first_seen.clear();assigned.clear();phase_seen.clear();recent_positions.clear();still=0;walked=0;reversals=0;seen_work=world.work.events.map(func(e):return e.id);seen_ingredients=world.ingredients.discovered.duplicate();seen_journal=world.journal.discoveries.duplicate(true);last_check=world.director.time;said.clear();said_day=-1
+	sync_fish(false)
 func emit_at(scene:String,region:String,at:Vector2,exclude:String="")->void:
 	for id in world.director.routines:
 		var actor:Dictionary=world.actors[id]
@@ -37,6 +39,16 @@ func emit_at(scene:String,region:String,at:Vector2,exclude:String="")->void:
 		queue.append({"scene":scene,"expires":world.director.time+60,"region":region,"at":at})
 		if queue.size()>12:queue.pop_front()
 		pending[id]=queue
+func sync_fish(notify:bool)->void:
+	var current:Dictionary={}
+	for entry in world.fishing.fish.values():
+		current[entry.id]=true
+		if notify and not seen_fish.has(entry.id) and world.actors.has(entry.owner_id):
+			var actor:Dictionary=world.actors[entry.owner_id]
+			emit_at("peer_fish",actor.region_id,world.point(actor),entry.owner_id)
+	seen_fish=current
+	seen_fish_revision=world.fishing.population_revision
+
 func advance()->void:
 	var now:float=world.director.time
 	if now-last_check<.5:return
@@ -86,11 +98,7 @@ func advance()->void:
 		seen_work.append(e.id)
 		if e.status=="completed" and e.has("progress") and world.actors.has(e.actor_id):emit_at("peer_chop",world.actors[e.actor_id].region_id,world.point(world.actors[e.actor_id]),e.actor_id)
 	seen_work=world.work.events.map(func(e):return e.id)
-	for fid in world.fishing.fish:
-		if fid in seen_fish:continue
-		var fish:Dictionary=world.fishing.fish[fid];var catcher:String=str(fish.owner_id)
-		if world.actors.has(catcher):emit_at("peer_fish",world.actors[catcher].region_id,world.point(world.actors[catcher]),catcher)
-	seen_fish=world.fishing.fish.keys()
+	if seen_fish_revision!=world.fishing.population_revision:sync_fish(true)
 	for item in world.ingredients.discovered:
 		if item not in seen_ingredients:emit_at("new_ingredient",region,p)
 	seen_ingredients=world.ingredients.discovered.duplicate()

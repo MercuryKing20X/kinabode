@@ -178,11 +178,10 @@ func swim(view:Node,entry:Dictionary,rect:Rect2,display_scale:float)->Dictionary
 		if displacement.x!=0.0:state.flip=displacement.x<0
 	return state
 func water(view: Node) -> void:
-	if swimmers.size()>view.world.fishing.fish.size():
-		for id in swimmers.keys():
-			if not view.world.fishing.fish.has(id) or not view.world.fishing.pens.has(view.world.fishing.fish[id].location):swimmers.erase(id)
+	for id in swimmers.keys():
+		var entry:Dictionary=view.world.fishing.fish.get(id,{})
+		if entry.is_empty() or entry.location!=swimmers[id].pen_id:swimmers.erase(id)
 	for pen in view.world.fishing.pens.values():
-		if not view.world.standard.ready(pen.id):continue
 		if pen.region_id!=view.region_id:continue
 		var rect: Rect2=view.world.catalog.rectangle(pen.rect)
 		var screen_rect:=Rect2(view.screen(rect.position),rect.size*32*view.zoom)
@@ -212,8 +211,7 @@ func water(view: Node) -> void:
 					var p:Vector2=start.lerp(finish,float(n)/count)
 					view.draw_line(p,p+Vector2(0,13)*view.zoom,Color("76978b"),maxf(1,view.zoom))
 				view.draw_line(start+Vector2(0,13)*view.zoom,finish+Vector2(0,13)*view.zoom,Color("849c88"),maxf(1,view.zoom))
-		var fishes: Array=view.world.fishing.residents_fish(pen.id)
-		fishes.sort_custom(func(a,b):return a.scale>b.scale)
+		var fishes: Array=view.world.fishing.display_fish(pen.id)
 		var fit:float=pen_display_scale(view,rect,fishes)
 		for index in range(fishes.size()):
 			var entry: Dictionary=fishes[index];var state:Dictionary=swim(view,entry,rect,fit);var p:Vector2=state.position
@@ -223,11 +221,14 @@ func water(view: Node) -> void:
 			fish_image(view,entry,view.screen(p),.78,bool(state.flip),fit,true,float(state.facing))
 			if entry.species_id in ["lantern","star","moonfish","angler"]:
 				view.draw_arc(view.screen(p),30*view.zoom,0,TAU,24,Color(.9,.9,.6,.15),6*view.zoom,true)
+		var label:=LocalText.content(str(pen.name))
+		var extra:int=view.world.fishing.pen_count(pen.id)-fishes.size()
+		if extra>0:label+=" (+"+str(extra)+")"
 		if view.has_method("map_label"):
-			view.map_label(pen.name,rect.position+Vector2(rect.size.x*.25,-.35));continue
+			view.map_label(label,rect.position+Vector2(rect.size.x*.25,-.35));continue
 		var label_size:int=maxi(8,int(14*view.zoom)) if view.world.locations.v3() else 16
-		view.draw_string_outline(view.font,screen_rect.position+Vector2(8,-6)*view.zoom,LocalText.content(str(pen.name)),HORIZONTAL_ALIGNMENT_LEFT,-1,label_size,2 if view.world.locations.v3() else 4,Color("254d52"))
-		view.draw_string(view.font,screen_rect.position+Vector2(8,-6)*view.zoom,LocalText.content(str(pen.name)),HORIZONTAL_ALIGNMENT_LEFT,-1,label_size,Color("fff0c7"))
+		view.draw_string_outline(view.font,screen_rect.position+Vector2(8,-6)*view.zoom,label,HORIZONTAL_ALIGNMENT_LEFT,-1,label_size,2 if view.world.locations.v3() else 4,Color("254d52"))
+		view.draw_string(view.font,screen_rect.position+Vector2(8,-6)*view.zoom,label,HORIZONTAL_ALIGNMENT_LEFT,-1,label_size,Color("fff0c7"))
 
 func overlay(view: Node) -> void:
 	for effect in view.effects:
@@ -410,9 +411,8 @@ func held_front(view: Node,actor: Dictionary) -> void:
 func hit(view: Node,mouse: Vector2) -> String:
 	var local: Vector2=view.local_point(mouse)
 	for pen in view.world.fishing.pens.values():
-		if not view.world.standard.ready(pen.id):continue
-		if view.world.catalog.rectangle(pen.rect).has_point(local):
-			for entry in view.world.fishing.residents_fish(pen.id):
+		if pen.region_id==view.region_id and view.world.catalog.rectangle(pen.rect).has_point(local):
+			for entry in view.world.fishing.display_fish(pen.id):
 				var state:Dictionary=swimmers.get(entry.id,{})
 				if not state.is_empty() and Rect2(state.position-state.extent,state.extent*2).has_point(local):return "fish:"+str(entry.id)
 			return pen.id

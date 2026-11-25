@@ -41,7 +41,7 @@ func run()->void:
 			var actors:Dictionary={}
 			for id in source.residents:
 				actors[id]={"position":game.world.actors[id].position.duplicate(),"idle":dialogue.idle(id),"route":game.world._routes.has(id),"activity":game.world.actors[id].activity,"state":game.world.director.state(id).effective,"speech_due":game.world.director.routines[id].next_speech,"time":game.world.director.routines[id].time,"owns_local_route":game.world.director.routines[id].owns_route,"hunger_quiet_until":game.world.hunger.quiet_until.get(id,0),"visual_quiet_until":game.world.director.routines[id].visual_quiet_until}
-			snapshots.append({"at":game.world.director.time,"actors":actors,"pending":dialogue.pending.duplicate(true),"old_credit":game.world.director.old_spoken_credit,"pair_served":dialogue.pair_served.duplicate(),"solo_served":dialogue.solo_served.duplicate()})
+			snapshots.append({"at":game.world.director.time,"actors":actors,"pending":dialogue.pending.duplicate(true),"pair_served":dialogue.pair_served.duplicate(),"solo_served":dialogue.solo_served.duplicate()})
 		for group in source.pairs:
 			if dialogue.pair_allowed(group.actors[0],group.actors[1]):pair_windows+=1;break
 		for row in dialogue.delivered:

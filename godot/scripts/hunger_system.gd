@@ -60,7 +60,7 @@ func rank(id:String)->int:
 func summary(id:String)->Dictionary:
 	var index:=rank(id)
 	return {} if index<0 else {"state":LocalText.text(NAMES[index])}
-func holds_idle(id:String)->bool:return rank(id)>=2
+func holds_idle(_id:String)->bool:return false
 func follow_paused(id:String)->bool:
 	return rank(id)>=3 and follow_targets.has(id) and owned_routes.has(id) and not world.work.jobs.has(id) and world._routes.has(id) and is_same(world._routes[id],owned_routes[id].route) and fmod(world.director.time,float(config.presentation.pause_every))<float(config.presentation.pause_seconds)
 func visible_cue(id:String)->Dictionary:
@@ -131,6 +131,8 @@ func yield_sideways(id:String,destination:Vector2)->bool:
 	return false
 func abandon(id:String)->void:
 	var job:Dictionary=world.work.jobs.get(id,{}).duplicate(true)
+	var meal_work:Variant=world.get("meal_work_active")
+	if meal_work is Callable and meal_work.is_valid() and meal_work.call(id,job):return
 	# Hunger cannot cancel the real meal that is resolving it.
 	if job.get("intent")=="eat":return
 	if job.is_empty() and not world.projects.active(id) and not world.farms.active(id) and not world.homestead.active(id):return
@@ -142,7 +144,6 @@ func follow(id:String,dark_fear:bool=false)->void:
 	if world.director.brains.has(id) and world.director.brains[id].active():world.director.brains[id].follow(dark_fear);return
 	_follow_body(id,dark_fear)
 func _follow_body(id:String,dark_fear:bool=false)->void:
-	if not world.activities.squad_leader.is_empty():return
 	if world.activities.suspended_follow.has(id) or world.farms.active(id) or world.work.jobs.has(id):clear_follow(id);return
 	if rank(id)<3 and world.director.routines.has(id) and world.director.routines[id].kind in ["island_intro","island_arrival"]:return
 	if world.deliveries!=null and world.deliveries.active(id):return
@@ -168,7 +169,7 @@ func _follow_body(id:String,dark_fear:bool=false)->void:
 		for selected_id in world.activities.following:
 			if selected_id not in hungry:hungry.append(selected_id)
 	hungry.sort() # Stable identity slots, independent of controller and temporary departures.
-	var index:int=world.actors.keys().filter(func(who):return who!="human").find(id);var human:Dictionary=world.actors.get(world.activities.squad_leader,world.actors.human)
+	var index:int=world.actors.keys().filter(func(who):return who!="human").find(id);var human:Dictionary=world.actors.human
 	if world.actors[id].region_id==human.region_id:
 		var distance_to_human:float=world.point(world.actors[id]).distance_to(world.point(human))
 		var player_approaching:bool=world._routes.has("human") and not world._routes.human.is_empty() and world._routes.human.back().distance_to(world.point(world.actors[id]))<=2.1
@@ -200,6 +201,9 @@ func _follow_body(id:String,dark_fear:bool=false)->void:
 	# Stagger the queue using its configured spacing, so tall pixel silhouettes
 	# do not sit directly over each other while their feet remain separate.
 	target+=Vector2(-forward.y,forward.x)*(1.25 if dark_fear else float(config.follow_spacing))*(1 if index%2==0 else -1)
+	if world.activities.following.has(id) and rank(id)<3 and not dark_fear and world._routes.has("human"):
+		var side:Vector2=forward.orthogonal()
+		target=world.point(human)-forward*(1.5+floorf(float(maxi(0,index))/2)*1.15)+side*(1 if index%2==0 else -1)
 	if dark_fear and world.dark.torch.remaining>0 and target.distance_to(world.point(human))>3.5:target=world.point(human).move_toward(target,3.5)
 	if world.actors[id].region_id==human.region_id and world.point(world.actors[id]).distance_to(target)<.8:
 		follow_targets[id]={"region":human.region_id,"point":target};return
@@ -252,10 +256,6 @@ func advance(delta:float)->void:
 			world.actors[id].facing=("right" if towards.x>0 else "left") if absf(towards.x)>absf(towards.y) else ("down" if towards.y>0 else "up")
 		var bucket:Dictionary=statistics.state_seconds.get(id,{})
 		bucket[STATES[index]]=float(bucket.get(STATES[index],0))+delta;statistics.state_seconds[id]=bucket
-		if index>=2:
-			var routine:RefCounted=world.director.routines[id]
-			if not routine.kind.is_empty():routine.interrupt(8)
-		if index>=3:abandon(id)
 		if not can_follow(id):clear_follow(id)
 		if reactions.has(id) and reactions[id].get("pending",false):
 			if world.director.time-float(reactions[id].queued_at)>float(config.presentation.reaction_grace_seconds):reactions.erase(id)
@@ -266,8 +266,7 @@ func advance(delta:float)->void:
 			var invite:Dictionary=pending_invites.get(id,{})
 			if not invite.is_empty() and world.director.time<=invite.until:try_rush(id,invite.station_id)
 			elif not invite.is_empty():pending_invites.erase(id)
-		if index>=3 and not rushes.has(id):follow(id)
-		if not try_reaction(id) and index>=1:try_speak(id)
+		if not try_reaction(id) and (index>=2 or (index==1 and not world.director.return_speech_reserved)):try_speak(id)
 
 func ate(id:String,event_id:String,meal_type:String,place_id:String)->void:
 	if meal_type!="barbecue" or not enabled or not configured(id) or event_id in meal_seen:return
@@ -282,8 +281,6 @@ func ate(id:String,event_id:String,meal_type:String,place_id:String)->void:
 	world.memories.record_event("meal_reaction","ate-"+event_id,[id],{"eater_id":id,"previous_state":LocalText.source(NAMES[maxi(0,old)]),"meal_type":meal_type,"place_id":place_id})
 	world.revision+=1
 func try_reaction(id:String)->bool:
-	if world.standard!=null and world.standard.waiting_reaction(id):
-		return world.standard.react(id)
 	if not pending_reactions.has(id) or not world.director.moods.can_speak(id):return false
 	var pool:Array=world.intelligence.catalog.speech[pending_reactions[id]].lines
 	var r:RefCounted=world.director.routines[id];var candidates:Array=world.personality.selection(id,pool,r.recent_lines)

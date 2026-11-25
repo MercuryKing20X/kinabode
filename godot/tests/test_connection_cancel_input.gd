@@ -9,19 +9,12 @@ func run()->void:
 	game._ensure_link("codex");game.link=game.links.codex
 	check(game.links.codex is IntentFake,"all mixed inputs use isolated model stub rather than lazy production bridge")
 	game.connection_ui_states["codex:direct"]="ready"
-	game.steward.pool.set_management("codex",true)
-	game.steward.pool.settings.set_value("steward_prompt","codex",true)
 	preload("res://tests/dialogue_ui_fixture.gd").open(game,"codex")
-	check(game.steward.start("codex"),"management fixture starts")
-	game.steward.reasons.clear()
 	var link:Node=game.links.codex
 	var cancelled:Array=[]
 	link.event_received.connect(func(e):
 		if e.get("state") in ["cancelling","cancelled"]:cancelled.append(e))
 	if OS.get_environment("HABITAT_CANCEL_CAPTURE")=="1":
-		game.resident_connections.preferences.choose("codex","ultra");game.steward.refresh()
-		await UI.click(self,game.steward.level_button);await process_frame;await picture("steward-five-levels")
-		game.steward.level_button.get_popup().hide()
 		await UI.click(self,game.island_hud.settings_menu);await process_frame;await picture("settings-restored")
 		game.queue_free();await process_frame;quit();return
 	for level in ["ultra","lifeblood"]:
@@ -46,16 +39,6 @@ func run()->void:
 			link._accept_event({"kind":"intent_result","turn_key":key,"speech":"好，我听见啦。","intents":[]})
 			link._accept_event({"kind":"state","turn_key":key,"state":"ready","turnComplete":true})
 	check(cancelled.is_empty(),"ten mixed inputs zero cancellation")
-	# Explicit follow hands the body back to the host and ends stewardship.
-	# Re-enter this separate manager-menu fixture before inspecting its level UI.
-	check(not game.steward.active,"explicit follow returns control to the host")
-	check(game.steward.start("codex"),"host explicitly reopens management for the level menu")
-	game.steward.refresh();await process_frame
-	check(game.steward.level_button.text=="档位：生命孕育","Chinese manager level")
-	await UI.click(self,game.steward.level_button);await process_frame
-	check(game.steward.level_button.get_popup().visible and not game.steward.folded,"five levels remain expanded")
-	await picture("cancel-level-menu")
-	game.steward.level_button.get_popup().hide()
 	await UI.click(self,game.island_hud.settings_menu);await process_frame
 	check(game.island_hud.settings_menu.get_popup().visible,"settings opens via real input")
 	await picture("cancel-settings")

@@ -67,7 +67,7 @@ func send(message:Dictionary,persona:Dictionary)->bool:
 	if not configure():return false
 	var settings:=Credentials.read_settings(directory)
 	var world:Dictionary=message.get("world",{})
-	var card:Dictionary=world.get("lifeblood_memory",world.get("intent_card",world)).duplicate(true)
+	var card:Dictionary=world.get("heart_card",world.get("lifeblood_memory",world.get("intent_card",world))).duplicate(true)
 	var deep:bool=message.get("kind")=="autonomy_event" or world.get("source")=="host_memory_maintenance" or card.has("memory_request")
 	model=str(settings.get_value("openai","thinking" if deep else "chat","gpt-6.1-terra"))
 	var instructions:=FileAccess.get_file_as_string("res://content/connection-instructions.txt")
@@ -86,7 +86,7 @@ func send(message:Dictionary,persona:Dictionary)->bool:
 		if "]:" in address:port=int(address.get_slice("]:",1))
 	elif ":" in address:host=address.get_slice(":",0);port=int(address.get_slice(":",1))
 	if client.connect_to_host(host,port,TLSOptions.client() if split[0]=="https" else null)!=OK:fail("network");return false
-	started=Time.get_ticks_msec();deadline=started+timeout_ms;set_process(true)
+	started=Time.get_ticks_msec();deadline=started+(120000 if card.has("heart_request") else timeout_ms);set_process(true)
 	say({"kind":"state","state":"thinking"})
 	return true
 func close()->void:
@@ -166,6 +166,7 @@ func finish()->void:
 	if valid_usage and int(usage.total_tokens)>=int(usage.prompt_tokens)+int(usage.completion_tokens):
 		say({"kind":"usage","input_tokens":int(usage.prompt_tokens),"output_tokens":int(usage.completion_tokens),"total_tokens":int(usage.total_tokens),"complete":true,"model":model,"estimated_usd":null,"first_token_ms":first_ms,"ai_reply_ms":Time.get_ticks_msec()-started,"request_bytes":request_bytes})
 	var value:Variant=decode(content)
+	if value is Dictionary and value.get("activity") is String:value={"speech":"","intention":value}
 	if not value is Dictionary or not value.get("speech") is String:fail("response");return
 	for field in ["intents","memory","planning"]:
 		if not value.get(field,[]) is Array or value.get(field,[]).size()>(5 if field=="intents" else 6) or value.get(field,[]).any(func(item):return not item is Dictionary):fail("response");return
@@ -180,7 +181,7 @@ func finish()->void:
 	if value.has("life_day") and (not value.life_day is Dictionary or value.life_day.values().any(func(v):return not v is String or v.length()>1200)):fail("response");return
 	# Host independently validates life fields, memories and every intention.
 	var accepted:Dictionary={}
-	for field in ["speech","intents","memory","planning","preference","reason","observe","feel","want","act","reflect","life_wishes","life_day"]:
+	for field in ["speech","intention","intents","memory","planning","preference","reason","observe","feel","want","act","reflect","life_wishes","life_day","daily_wishes","peer_reply","company_reply","heart_project"]:
 		if value.has(field):accepted[field]=value[field]
 	accepted["kind"]="intent_result"
 	accepted=scrub(accepted)

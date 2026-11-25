@@ -60,18 +60,6 @@
       "wood": 16
     },
     {
-      "id": "play.standard.south-pen",
-      "target": "home.fishery.south",
-      "name": "南码头围网",
-      "wood": 12
-    },
-    {
-      "id": "play.standard.west-pen",
-      "target": "home.fishery.west",
-      "name": "西码头围网",
-      "wood": 12
-    },
-    {
       "id": "play.standard.hill-field",
       "target": "farm.hill",
       "name": "待开垦浆果田",
@@ -150,7 +138,7 @@
     "north-slope"
   ],
   "storage": {
-    "wood": 4,
+    "wood": 5,
     "mushroom": 6,
     "seed.turnip": 4,
     "seed.tomato": 4

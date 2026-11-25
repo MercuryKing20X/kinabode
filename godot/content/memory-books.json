@@ -16,7 +16,8 @@
     "cat_contact",
     "anniversary",
     "goal_completed",
-    "gift_flower"
+    "gift_flower",
+    "favorite_taste"
   ],
   "ai_quote_limit": 64
 }

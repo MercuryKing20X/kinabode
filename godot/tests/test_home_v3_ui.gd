@@ -45,8 +45,8 @@ func run()->void:
 	# B: DIRECTION “去掉 ⚡，内容并回‘对话/指令’”。 Reachability assertions retained.
 	for size in [Vector2i(1280,800),Vector2i(960,640)]:
 		root.size=size;await process_frame;await process_frame;hud.refresh()
-		for control in [hud.avatars,game.dialogue_button,game.journey.map_button,game.watch_ui.toggle,hud.stock_button]:check(Rect2(Vector2.ZERO,Vector2(size)).encloses(control.get_global_rect()),"native viewport contains "+control.get_class()+" "+str(size))
-		var bottom:Array=[game.dialogue_button,game.journey.map_button,game.watch_ui.toggle]
+		for control in [hud.avatars,game.dialogue_button,game.journey.map_button,hud.watch_button,hud.stock_button]:check(Rect2(Vector2.ZERO,Vector2(size)).encloses(control.get_global_rect()),"native viewport contains "+control.get_class()+" "+str(size))
+		var bottom:Array=[game.dialogue_button,game.journey.map_button,hud.watch_button]
 		for index in range(bottom.size()-1):check(not bottom[index].get_global_rect().intersects(bottom[index+1].get_global_rect()),"three bottom entries do not overlap")
 		check(await UI.click(self,game.dialogue_button),"real dialogue opens unified commands")
 		for control in [game.gathering_button,game.handbook_menu]:
@@ -63,6 +63,8 @@ func run()->void:
 	check(F.job(game.world,"human",{"intent":"fish"}),"actual fish becomes notification, no invented record")
 	hud.refresh();check(hud.notification_data().size()==1 and hud.notifications.get_child_count()==1,"pending real fish has unified edge card")
 	game.action_dock.refresh();check(not game.action_dock.strip.visible and not game.action_dock.reopen_button.visible,"child refresh never restores duplicate fishing strip")
+	var gift_followers:Array=game.world.activities.following.keys();gift_followers.erase("codex")
+	check(game.world.activities.set_followers(gift_followers,["codex"],false).ok,"player releases this giver before her separate inventory transaction")
 	check(F.withdraw(game.world,"codex","turnip"),"gift source really picked from shared harvest")
 	check(F.job(game.world,"codex",{"intent":"move","x":shore[0]+.5,"y":shore[1]}),"giver actually walks within range")
 	for n in range(2):check(game.world.command("codex",{"intent":"give","receiver_id":"human","item_id":"turnip","quantity":1}).ok,"real atomic gift creates true notification")

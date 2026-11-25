@@ -8,8 +8,8 @@ p=argparse.ArgumentParser(description=__doc__)
 p.add_argument('--platform', choices=['all','Windows','macOS','Linux'], default='all')
 p.add_argument('--output',type=Path,default=ROOT/'build')
 a=p.parse_args();out=a.output.resolve();out.mkdir(parents=True,exist_ok=True)
-version='0.7.0'
-readme='''有栖 / Kinabode v0.7.0
+version='0.8.0'
+readme=f'''有栖 / Kinabode v{version}
 
 打开 / Open
 Windows: 双击 Kinabode.exe。SmartScreen: 更多信息 → 仍要运行。
@@ -21,10 +21,10 @@ Linux: Double-click Kinabode.x86_64; if needed, chmod +x Kinabode.x86_64.
 
 不接 AI 也能完整游玩；本地玩法不需要 Python。
 The full game works offline without AI or Python.
-原生 API 可连接云端或本机模型，无需 Python；云端密钥和费用由你负责。
-可选 Codex 桥需要本机 Codex 与 Python 3。
-Native API supports cloud and local models without Python; cloud credentials and costs are yours.
-The optional Codex bridge needs local Codex and Python 3.
+打开「我的 AI」，选来源和居民，测试连接后点「住进来」。
+Codex 和 Claude Code 需要本机 CLI 和 Python 3.8 或更新版本；Claude 需先在终端登录。
+Open My AI, pick a source and resident, test the connection, then select Move In.
+Codex and Claude Code need the local CLI and Python 3.8 or newer; sign into Claude in a terminal first.
 
 存档 / Saves (same application name 有栖 as the development version)
 macOS: ~/Library/Application Support/Godot/app_userdata/有栖/
@@ -47,7 +47,15 @@ for preset,slug,exe in [('Windows','windows','Kinabode.exe'),('macOS','macos','K
  if folder.exists():shutil.rmtree(folder)
  folder.mkdir()
  command=[godot_executable(),'--headless','--audio-driver','Dummy','--rendering-method','gl_compatibility','--rendering-driver','opengl3','--path',str(ROOT/'godot'),'--export-release',preset,str(folder/exe)]
- subprocess.run(command,check=True)
+ bundled=ROOT/'godot/content/release/island_thinker.py'
+ bundled.parent.mkdir(exist_ok=True)
+ with bundled.open('xb') as helper:
+  try:
+   helper.write((ROOT/'scripts/island_thinker.py').read_bytes())
+   helper.flush()
+   subprocess.run(command,check=True)
+  finally:
+   bundled.unlink()
  if preset=='macOS':
   with zipfile.ZipFile(folder/exe) as z:
    for item in z.infolist():

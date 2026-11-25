@@ -40,6 +40,7 @@ func run() -> void:
 	game=load("res://scenes/main.tscn").instantiate();root.add_child(game);game.save_enabled=false;game.set_process(false);root.content_scale_aspect=Window.CONTENT_SCALE_ASPECT_EXPAND
 	await process_frame
 	game.world.director.set_all_enabled(false);game.chat.hide();game.chat_input.release_focus();game.view.sound_enabled=false
+	game.world.director.set_controller("codex","local")
 	game.world.hunger.enabled=false # Isolate cosmetic weather and idle schedules.
 	game.view.center=game.world.point(game.world.actors.human);game.view.zoom=1.05
 	var human: Dictionary=game.world.actors.human.duplicate(true)

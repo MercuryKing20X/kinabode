@@ -15,10 +15,11 @@ func run()->void:
 	var w:=F.fresh();w.residents.provision(w);w.director.set_all_enabled(false);w.hunger.start()
 	check(w.hunger.rank("human")==-1 and w.hunger.summary("human").is_empty(),"human never hungry")
 	var s:Dictionary=w.hunger.states.codex;s.elapsed=0;s.full_meal=true
+	var empty_speed:float=w.movement_speed("codex")
 	w.advance(float(w.hunger.config.thresholds[1])-.1);check(w.hunger.rank("codex")==0,"before peckish boundary")
 	w.advance(.2);check(w.hunger.rank("codex")==1,"real delta crosses peckish boundary")
 	s.elapsed=float(w.hunger.config.thresholds[2])-.1;w.advance(.2);check(w.hunger.rank("codex")==2,"hungry boundary")
-	check(is_equal_approx(w.movement_speed("codex")*32,125) and not w.is_running("codex"),"hungry empty speed is125 and cannot run")
+	check(is_equal_approx(w.movement_speed("codex"),empty_speed),"hunger leaves empty movement speed unchanged")
 	var rel:Dictionary=w.relationships.saved();w.advance(20);check(w.relationships.saved()==rel,"hunger never changes relationship scores")
 	var save:Dictionary=w.hunger.saved();save.states.codex.elapsed=0;save.states.codex.full_meal=true;save.saved_at=Time.get_unix_time_from_system()-86400
 	w.hunger.restore(save);check(w.hunger.states.codex.elapsed==float(w.hunger.config.thresholds[1]) and w.hunger.rank("codex")==1,"offline new advance capped at peckish")
@@ -29,9 +30,9 @@ func run()->void:
 	check(work.command("codex",{"intent":"chop","target_id":"home.tree.02"}).ok,"real second task accepted before hunger")
 	work.hunger.start();work.hunger.states.codex.elapsed=float(work.hunger.config.thresholds[3])-.1
 	var human:Dictionary=work.actors.human.duplicate(true);work.advance(.2)
-	check(not work.work.jobs.has("codex") and work.hunger.statistics.abandoned.size()==1,"very hungry abandons accepted own task")
-	check(B.wood_total(work)==total and work.actors.human==human,"abandon preserves materials and never moves human")
-	check(Save.save_world(work,dir.path_join("abandon")),"save after hunger abandonment")
+	check(work.work.jobs.has("codex") and work.hunger.statistics.abandoned.is_empty(),"very hungry retains accepted own task")
+	check(B.wood_total(work)==total and work.actors.human==human,"hunger preserves materials and never moves human")
+	check(Save.save_world(work,dir.path_join("abandon")),"save during an active task")
 	var loaded:=F.fresh();check(Save.load_world(loaded,dir.path_join("abandon")).ok and B.wood_total(loaded)==total and loaded.work.jobs.is_empty(),"reload has no duplicated material or restored jobs")
 	var social:=F.fresh();social.residents.provision(social);social.hunger.start();social.director.set_all_enabled(true)
 	for id in social.director.routines:social.director.set_held(id,true)

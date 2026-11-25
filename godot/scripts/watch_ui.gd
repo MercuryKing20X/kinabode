@@ -4,20 +4,30 @@ var game:Node
 var recent:RichTextLabel
 var age:=0.0
 var signature:=""
-var toggle:Button
 var bar:HBoxContainer
 var menu_column:VBoxContainer
 var menu_scroll:ScrollContainer
+func hit_toggle(at:Vector2)->bool:
+	if not is_instance_valid(game) or not is_instance_valid(game.island_hud):return false
+	var button:Button=game.island_hud.watch_button
+	return is_instance_valid(button) and button.is_visible_in_tree() and button.get_global_rect().has_point(at)
 func setup(source:Node)->void:
 	game=source
 	if game.island_hud==null:return
 	bar=game.island_hud.primary_actions
+	# Keep the dock at the HUD's original depth. A nonmodal panel can hide
+	# the HUD surface without taking away buttons in the reserved bottom row.
+	var hud_root:Control=game.island_hud.ui_root
+	var hud_index:int=game.island_hud.get_index()
+	bar.reparent(hud_root,false)
+	hud_root.move_child(bar,hud_index)
+	bar.mouse_filter=Control.MOUSE_FILTER_IGNORE
+	bar.clip_contents=true
 	game.gathering_button.reparent(bar,false);game.gathering_button.show();game.gathering_button.focus_mode=Control.FOCUS_NONE
 	game.dialogue_button.reparent(bar,false);bar.move_child(game.dialogue_button,0)
 	game.dialogue_button.custom_minimum_size=Vector2(120,40);game.dialogue_button.set_meta("ui_scale_min",Vector2(120,40));game.dialogue_button.set_meta("main_locale_text","watch.dialogue_commands")
 	game.actions_button.hide();game.actions_button.reparent(game.island_hud,false)
 	game.journey.map_button.reparent(bar,false);bar.move_child(game.journey.map_button,1)
-	toggle=Button.new();bar.add_child(toggle);bar.move_child(game.gathering_button,bar.get_child_count()-1);toggle.focus_mode=Control.FOCUS_NONE;bar.alignment=BoxContainer.ALIGNMENT_CENTER;toggle.custom_minimum_size=Vector2(78,40);toggle.set_meta("ui_scale_min",Vector2(78,40));toggle.pressed.connect(game.steward.choose)
 	game.journey.map_button.pressed.connect(func():game.chat.hide();game.chat_input.release_focus())
 	recent=RichTextLabel.new();game.island_hud.add_child(recent);recent.mouse_filter=Control.MOUSE_FILTER_IGNORE;recent.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_RIGHT);recent.offset_left=-470;recent.offset_right=-20;recent.offset_top=-145;recent.offset_bottom=-65
 	rebuild_menu()
@@ -47,7 +57,7 @@ func setup(source:Node)->void:
 	# Compatibility references resolve to the single visible dialogue entry.
 	game.actions_button=game.dialogue_button
 	game.chat.visibility_changed.connect(func():
-		if game.chat.visible:game.chat.move_to_front())
+		if game.chat.visible:game.chat.move_to_front.call_deferred())
 	game.chat.hide();refresh_locale()
 	Text.events.changed.connect(refresh_locale)
 func refresh_locale()->void:
@@ -55,6 +65,7 @@ func refresh_locale()->void:
 	if menu_column!=null:game.action_dock._refresh_static(menu_column)
 	for index in range(4):game.action_dock.action_tabs.set_tab_title(index,Text.text(["watch.common","watch.everyone","watch.myself","watch.ask"][index]))
 	game.dialogue_button.text=Text.text("watch.dialogue_commands")
+	game.journey.map_button.text=Text.text("journey.map")
 	game.command_page.rebuild_targets();game.command_page.rebuild()
 func rebuild_menu()->void:
 	if game.command_page.selected.is_empty():game.command_page.selected=game.command_page.actors()
@@ -74,7 +85,7 @@ func rebuild_menu()->void:
 	game.command_page.body.reparent(common,false);game.command_page.body.show();game.command_page.body.get_child(0).hide();game.command_page.category=0;game.command_page.rebuild()
 	var everyone:=VBoxContainer.new();everyone.name=Text.text("watch.everyone");tabs.add_child(everyone)
 	bar.move_child(game.gathering_button,bar.get_child_count()-1);game.gathering_button.text=Text.text("watch.follow_options");game.gathering_button.set_meta("main_locale_text","watch.follow_options")
-	for row in [["watch.chop","content.steward.command.chop"],["watch.harvest","content.steward.command.harvest"],["watch.gather","content.steward.command.assemble"],["watch.follow","content.steward.command.follow"],["watch.unfollow","content.steward.command.unfollow"]]:
+	for row in [["watch.chop","world.command.chop"],["watch.harvest","world.command.harvest"],["watch.gather","world.command.assemble"],["watch.follow","world.command.follow"],["watch.unfollow","world.command.unfollow"]]:
 		var entry:Array=row
 		game.action_dock.button(everyone,Text.text(entry[0]),func():game.chat.hide();game._send(preset_command(entry[1]))).set_meta("locale_key",entry[0])
 	game.action_dock.button(everyone,Text.text("play.choose"),choose_game).set_meta("locale_key","play.choose")
@@ -83,7 +94,7 @@ func rebuild_menu()->void:
 		for control in page.get_children():control.reparent(everyone if control is Button and control.text==Text.text("storage.ask_wood") else own,false)
 	old.hide()
 	var ask:=VBoxContainer.new();ask.name=Text.text("watch.ask");tabs.add_child(ask)
-	for row in [["watch.doing","content.steward.command.doing"],["watch.hungry","content.steward.command.hungry"],["watch.stock","content.steward.command.stock"]]:
+	for row in [["watch.doing","world.command.doing"],["watch.hungry","world.command.hungry"],["watch.stock","world.command.stock"]]:
 		var entry:Array=row
 		game.action_dock.button(ask,Text.text(entry[0]),func():game.chat.hide();game._send(preset_command(entry[1]))).set_meta("locale_key",entry[0])
 	for page in tabs.get_children():
@@ -94,6 +105,11 @@ func rebuild_menu()->void:
 var meal_countdown:Label
 func _process(delta:float)->void:
 	if game==null or game.island_hud==null:return
+	var settings:MenuButton=game.island_hud.settings_menu
+	settings.offset_left=-16-maxf(84,settings.get_combined_minimum_size().x)
+	bar.visible=not (game.editor.visible or game.atlas.visible or (game.company!=null and game.company.camera.active)
+		or (game.jieqi_panel!=null and game.jieqi_panel.visible) or (game.gomoku_panel!=null and game.gomoku_panel.card.visible)
+		or (game.chess_choice!=null and game.chess_choice.visible))
 	if meal_countdown==null:
 		meal_countdown=Label.new();meal_countdown.name="MealCountdown";meal_countdown.mouse_filter=Control.MOUSE_FILTER_IGNORE;game.island_hud.add_child(meal_countdown)
 	var lines:Array[String]=[]
@@ -115,8 +131,6 @@ func _process(delta:float)->void:
 		game.chat.set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT)
 		game.chat.size=extent;game.chat.position=Vector2((viewport_size.x-extent.x)/2,maxf(12,bar.global_position.y-extent.y-12))
 	game.island_hud.return_button.hide();game.island_hud.utility_actions.hide()
-	var ids:Array=game.steward.candidates()
-	toggle.text=Text.text("repair.running")%Text.resident(game.world,game.steward.manager) if game.steward.active else Text.text("watch.manage");toggle.disabled=false;toggle.tooltip_text=""
 	var rows:Array=game.dialogue.histories.get(game._chat_channel(),[]).slice(-3)
 	var current:String=JSON.stringify(rows)
 	if current!=signature:
@@ -126,7 +140,7 @@ func _process(delta:float)->void:
 	recent.modulate.a=clampf((6-age)/2,0,.8);recent.visible=not game.chat.visible
 
 func preset_command(key:String)->String:
-	var chinese:String=Text.source(key).trim_prefix(Text.source("content.steward.everyone_prefix"))
+	var chinese:String=Text.source(key)
 	var english:String=str(Text.entries.get(key,{}).get("en",key)).trim_prefix("Everyone ")
 	return game.command_page.preset_text({"zh":chinese,"en":english})
 
@@ -135,7 +149,7 @@ func choose_game()->void:
 	var column:=VBoxContainer.new();card.add_child(column)
 	var join:=CheckButton.new();join.focus_mode=Control.FOCUS_NONE;join.text=Text.text("play.join");join.set_meta("play_join",true);column.add_child(join)
 	var watch:=Label.new();watch.text=Text.text("play.watch");column.add_child(watch)
-	for kind in ["eagle","handkerchief","hide","fireflies","circle","shuttlecock","rope"]:
+	for kind in game.playground.GAMES:
 		var key:String=kind
 		var button:=Button.new();button.focus_mode=Control.FOCUS_NONE;button.text=Text.text("play."+key);button.set_meta("play_kind",key);column.add_child(button)
 		button.pressed.connect(func():

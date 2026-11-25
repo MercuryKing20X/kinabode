@@ -10,7 +10,7 @@ var ranks:Dictionary={}
 var interruptions:Array=[]
 var checks:=0
 var failed:=false
-var initial_wood:=4
+var initial_wood:=0
 var produced:=0
 var tree_states:Dictionary={}
 var raw_used:Dictionary={}
@@ -22,6 +22,7 @@ var source_audits:Array=[]
 func start(dir:String)->void:
 	w=World.new("res://content/home-v3/world.json");w.residents.provision(w);w.library=Library.new();w.library.configure(dir)
 	assert(Opening.apply(w,w.library,"standard").ok);w.intelligence.activate_presets();w.hunger.start();w.director.set_all_enabled(true)
+	initial_wood=int(w.standard.config.storage.wood)
 	w.world_id="standard-probe";w.fishing.rng.seed=1029
 	for id in w.director.routines:w.director.routines[id].rng.seed=hash(id)
 	for tree in w.objects.values():

@@ -83,8 +83,6 @@ func run()->void:
 	advance(dish,60);dish.life.fireside.end_circle("real dish complete")
 	check(dish.life.fireside.state.current.eaten==2 and dish.life.fireside.state.current.wasted==1 and dish.life.station.portions==0,"recipe extras wasted without carry or leftovers")
 	check(dish.actors.human.carry.is_empty() and Save.save_world(dish,dir.path_join("dish")) and Save.load_world(fresh(dir.path_join("dish-read")),dir.path_join("dish")).ok,"real eaten and wasted recipe validates with no packed food")
-	check(not dish.wishes.proofs({"template_id":"soup","target_id":"turnip-soup","resident_id":"codex"}).is_empty(),"same real dish eaten by human and companion satisfies existing meal wish")
-	check(dish.wishes.proofs({"template_id":"soup","target_id":"turnip-soup","resident_id":"npc.nora"}).is_empty(),"passerby never gets a dish wish proof")
 	var fishworld:=fresh(dir.path_join("fish"));check(pickup(fishworld,"wood",2) and approach(fishworld,fishworld.life) and fishworld.life.fireside.light_host().ok,"real fish fixture first lights with owned wood")
 	var shores:Array=fishworld.fishing.nearby_shores("human");var shore:Array=shores[0].position
 	check(F.job(fishworld,"human",{"intent":"move","x":shore[0],"y":shore[1]}),"human explicitly walks to real coast")

@@ -1,7 +1,11 @@
 extends "res://tests/test_local_command_main_input.gd"
 func run()->void:
 	game=UI.init_game(self);await process_frame;await process_frame
-	var rows:Array=JSON.parse_string(FileAccess.get_file_as_string("res://../production/evidence/2026-11-05-智能一句话与跟随/coverage-cases.json"))
+	var source:Variant=JSON.parse_string(FileAccess.get_file_as_string("res://../production/evidence/2026-11-05-智能一句话与跟随/coverage-cases.json"))
+	if not source is Array or source.is_empty():
+		push_error("Missing or invalid command-coverage fixture; set HABITAT_PRIVATE_TEST_FIXTURES for this suite")
+		quit(2);return
+	var rows:Array=source
 	var begin:int=int(OS.get_environment("HABITAT_COVERAGE_START"))
 	var end:int=int(OS.get_environment("HABITAT_COVERAGE_END"))
 	if end<=begin:end=rows.size()

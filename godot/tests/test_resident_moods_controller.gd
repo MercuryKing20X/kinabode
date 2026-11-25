@@ -41,7 +41,6 @@ func run() -> void:
 	world.hunger.enabled=false
 	# Keep separate memory/day features from occupying this feature's viewport opportunity.
 	world.director.memory_reminders.config.first_after=86400
-	world.wishes.config.first_after=86400 # Isolate mood speech; wishes have their own truthful-event probes.
 	game.view.follow_player=false;game.view.center=world.point(world.actors.human)+Vector2(2,-1);game.view.zoom=1.3
 	game.resident_connections.open("codex");show_line("calm");await pair("calm")
 	world.director.set_all_enabled(false)

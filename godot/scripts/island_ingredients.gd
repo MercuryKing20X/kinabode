@@ -136,7 +136,7 @@ func dry_fish()->Dictionary:
 	var fish:Dictionary=world.fishing.held("human")
 	if fish.is_empty():return world._error("no_owned_pending_fish")
 	drying={"fish_id":str(fish.id),"ready_at":world.forest.clock+float(config.dry_seconds),"collect":false}
-	world.fishing.fish.erase(fish.id);world.revision+=1
+	world.fishing.erase_fish(fish.id);world.revision+=1
 	return {"ok":true}
 
 func note_obtained(id:String)->void:

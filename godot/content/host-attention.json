@@ -1,0 +1,271 @@
+{
+  "choices": [["一起去钓鱼", "Let's fish together"], ["一起吃饭", "Let's eat together"], ["不用啦", "Maybe later"]],
+  "idle_seconds": 180,
+  "cooldown_seconds": 180,
+  "lines": {
+    "stir": {
+      "gentle": {
+        "zh": [
+          "刚才在发呆吗～要不要一起去钓鱼？",
+          "醒过来啦？我陪你去海边坐坐。",
+          "你动啦。要不要慢慢走到海边？",
+          "要不要带上鱼竿？我在这儿等你。",
+          "看你站了好一会儿。一起去钓鱼吗？"
+        ],
+        "en": [
+          "Were you miles away just now? Shall we go fishing?",
+          "Back with us? We could sit by the water.",
+          "You're up. A quiet walk down to the shore?",
+          "Fancy bringing your rod? I'll wait right here.",
+          "You had a long think. Want some company for a cast?"
+        ]
+      },
+      "lively": {
+        "zh": [
+          "你动啦！快来，比谁先钓到鱼！",
+          "终于出发啦！捎上我呗！",
+          "刚才在想鱼吗？走，去见它们！",
+          "我都跑来啦，带我一起钓鱼！",
+          "海边有位置！我们去占一个？"
+        ],
+        "en": [
+          "You're moving! Race you to the first bite!",
+          "We're off! Take me with you!",
+          "Thinking about fish? Come on, let's meet them!",
+          "I ran all this way. Take me fishing!",
+          "There's room by the water! Shall we grab a spot?"
+        ]
+      },
+      "laborious": {
+        "zh": [
+          "你终于动了。走，钓鱼去。",
+          "想好了？拿上竿，去海边。",
+          "站够了吧？找个地方甩两竿。",
+          "腿活动开了？走到岸边正好。",
+          "你带路，我跟着。要不要钓鱼？"
+        ],
+        "en": [
+          "About time. Let's go cast a line.",
+          "Mind made up? Grab the rod.",
+          "Done standing? We can fit in a couple of casts.",
+          "Legs working again? The shore's a decent walk.",
+          "You lead, I'll follow. Fishing?"
+        ]
+      },
+      "quiet": {
+        "zh": [
+          "嗯，动了。钓鱼吗？",
+          "醒了？岸边很静。",
+          "要去甩一竿吗？",
+          "你走。我跟着。去海边？",
+          "鱼还在。去看看吧。"
+        ],
+        "en": [
+          "Mm. You're moving. Fish?",
+          "Back? It's quiet on the shore.",
+          "One cast?",
+          "You lead. Shore?",
+          "The fish are still there. We could look."
+        ]
+      }
+    },
+    "camp": {
+      "gentle": {
+        "zh": [
+          "你来火边啦。",
+          "正好，这里能歇脚。",
+          "火边有个位置。",
+          "你也想在这里坐会儿吗？",
+          "走累了就靠这边歇吧。"
+        ],
+        "en": [
+          "You've come down to the fire pit.",
+          "Good spot to rest your feet.",
+          "There's room by the pit.",
+          "Feeling like a little sit too?",
+          "You can catch your breath here."
+        ]
+      },
+      "lively": {
+        "zh": [
+          "你也到火边啦！",
+          "这边这边，我看见你啦！",
+          "来火边集合啦！",
+          "你走得好快，我差点没跟上！",
+          "我们在这里待一会儿呗！"
+        ],
+        "en": [
+          "You made it to the pit!",
+          "Over here! I see you!",
+          "Fire pit meetup!",
+          "You got here quick! Nearly missed you!",
+          "Let's hang out right here!"
+        ]
+      },
+      "laborious": {
+        "zh": [
+          "到灶台了。",
+          "站这儿正好。",
+          "来火边歇脚？",
+          "旁边有空位。",
+          "到了就坐会儿吧。"
+        ],
+        "en": [
+          "That's the fire pit.",
+          "Here will do.",
+          "Resting at the pit?",
+          "Space to the side.",
+          "May as well sit for a bit."
+        ]
+      },
+      "quiet": {
+        "zh": [
+          "到火边了。",
+          "这边静。",
+          "嗯，到了。",
+          "有位子。",
+          "坐会儿？"
+        ],
+        "en": [
+          "At the pit.",
+          "Quiet here.",
+          "Mm. Made it.",
+          "Room here.",
+          "Sit a while?"
+        ]
+      }
+    },
+    "landed": {
+      "gentle": {
+        "zh": [
+          "你上岸啦，脚下慢一点。",
+          "回来啦。我在这儿。",
+          "看见你了，一路还顺利吗？",
+          "岸上有地方歇歇。",
+          "你回来得正好。"
+        ],
+        "en": [
+          "You're ashore. Watch your step.",
+          "You're back. I'm here.",
+          "There you are. Easy crossing?",
+          "There's room to rest on the bank.",
+          "It's good timing, you coming back."
+        ]
+      },
+      "lively": {
+        "zh": [
+          "上岸啦！我在这儿呢！",
+          "回来啦！让我先打招呼！",
+          "我看到你到岸了！",
+          "嘿！陆地好走多了吧！",
+          "你回来得好快！"
+        ],
+        "en": [
+          "You're ashore! Over here!",
+          "You're back! I get first hello!",
+          "I saw you land!",
+          "Hey! Solid ground again!",
+          "That was a quick trip!"
+        ]
+      },
+      "laborious": {
+        "zh": [
+          "上岸了。先站稳。",
+          "回来就好。",
+          "地上稳，慢点走。",
+          "岸到了，歇口气。",
+          "路上还顺吧？"
+        ],
+        "en": [
+          "Ashore. Get your footing.",
+          "Good, you're back.",
+          "Solid ground. Take it easy.",
+          "That's the bank. Catch your breath.",
+          "Smooth trip?"
+        ]
+      },
+      "quiet": {
+        "zh": [
+          "回来了。",
+          "嗯，上岸了。",
+          "到了就好。",
+          "这里是岸。",
+          "看见你了。"
+        ],
+        "en": [
+          "You're back.",
+          "Mm. Ashore.",
+          "Good. You made it.",
+          "There's the bank.",
+          "I see you."
+        ]
+      }
+    },
+    "pickup": {
+      "gentle": {
+        "zh": [
+          "你捡到东西啦。",
+          "手里那个要先收好吗？",
+          "我看见你把它拿起来了。",
+          "好像有点沉，拿稳哦。",
+          "你找到要找的东西了吗？"
+        ],
+        "en": [
+          "You picked something up.",
+          "Shall you put that somewhere safe?",
+          "I saw you lift it.",
+          "Looks a bit heavy. Careful.",
+          "Was that what you were looking for?"
+        ]
+      },
+      "lively": {
+        "zh": [
+          "咦，你拿到什么啦？",
+          "哎，我看见你捡起来了！",
+          "你手里那个是什么呀？",
+          "找到东西啦！让我看看！",
+          "哇，被你先拿到了！"
+        ],
+        "en": [
+          "Ooh, what did you get?",
+          "Hey, I saw you pick that up!",
+          "What's that in your hands?",
+          "You found something! Let me see!",
+          "Whoa, you got there first!"
+        ]
+      },
+      "laborious": {
+        "zh": [
+          "拿起来了？拿稳。",
+          "东西到手了。",
+          "行，别掉了。",
+          "捡到了就收好。",
+          "手上有东西，留点空。"
+        ],
+        "en": [
+          "Got it? Hold it steady.",
+          "That's in hand, then.",
+          "Good. Don't drop it.",
+          "Keep it somewhere safe.",
+          "Hands loaded. Leave yourself room."
+        ]
+      },
+      "quiet": {
+        "zh": [
+          "捡到了。",
+          "嗯，拿着了。",
+          "看见了。",
+          "拿稳。",
+          "手里有东西。"
+        ],
+        "en": [
+          "You found it.",
+          "Mm. Got it.",
+          "Saw that.",
+          "Hold steady.",
+          "Something in your hands."
+        ]
+      }
+    }
+  }
+}

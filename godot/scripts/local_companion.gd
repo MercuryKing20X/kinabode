@@ -109,23 +109,21 @@ func state() -> Dictionary:
 
 func advance(delta: float) -> void:
 	time += delta
+	if world.actors[ID].has("world_door_client"):return
 	if not world.director.brains.has(ID) or not world.director.brains[ID].active():world.director.local_speech_window.emit(ID)
 	if not world.intelligence.compatibility and intelligence_preset_id!=world.intelligence.preset_id(ID):apply_intelligence_preferences()
 	if not enabled or not world.residents.supports(world.actors[ID],"move"):return
 	if world.director.brains.has(ID) and world.director.brains[ID].active():
 		# The brain chooses; this legacy routine retains only the shared speech outlet.
-		if world.director.brain_social!=null and world.director.brain_social.by_actor.has(ID):return
 		if chatter and not held and not world.work.jobs.has(ID) and time>=next_speech and not world.activities.blocked(ID,false) and not world.days.defer_idle(ID):
-			if not try_need_speech() and not world.director.memory_reminders.try_speak(ID) and not world.relationships.try_event(ID) and not world.wishes.try_event(ID) and not world.personality.try_event(ID):_speak("near")
+			if not try_need_speech() and not world.director.memory_reminders.try_speak(ID) and not world.relationships.try_event(ID) and not world.personality.try_event(ID):_speak("near")
 		return
-	# DIRECTION: 托管时其它系统不能直接让人走或打断。
-	if not world.activities.squad_leader.is_empty():return
 	if world.dark!=null and world.dark.companions.tick(self,delta):return
 	if world.their_island!=null and world.their_island.story_tick(self,delta):return
 	if world.activities.following.has(ID) and not held and not world.work.jobs.has(ID) and not world.activities.blocked(ID,false) and world.director.time>=float(world.hunger.quiet_until.get(ID,0)) and world.fishing.life.time>=float(world.fishing.life.quiet_until.get(ID,0)):
 		var fact_spoken:=false
 		if chatter and time>=next_speech and (world.days==null or not world.days.defer_idle(ID)):
-			fact_spoken=world.director.memory_reminders.try_speak(ID) or world.relationships.try_event(ID) or world.wishes.try_event(ID) or world.personality.try_event(ID)
+			fact_spoken=world.director.memory_reminders.try_speak(ID) or world.relationships.try_event(ID) or world.personality.try_event(ID)
 		if not fact_spoken:_speak("near")
 	# A newly caught pending fish blocks idle movement, not its true thank-you.
 	if needs.waiting.get(ID,{}).get("kind")=="fish" and needs.choose(world,ID).get("kind")=="satisfied":
@@ -142,9 +140,7 @@ func advance(delta: float) -> void:
 		world.hunger.follow(ID)
 		return
 	if was_busy:
-		if world.standard!=null and world.standard.react(ID):return
 		wander_anchor = world.point(world.actors[ID]); anchor_region = world.actors[ID].region_id; was_busy = false
-	if world.standard!=null and world.standard.waiting_reaction(ID):world.standard.react(ID);return
 	if world.their_island!=null and world.their_island.try_finish_speech(self):return
 	if return_visit.tick(self,delta):return
 	if kind == "flower_gift":
@@ -187,11 +183,11 @@ func advance(delta: float) -> void:
 		if world.days==null or not world.days.defer_idle(ID,true):
 			var spoken:=false
 			if chatter and time>=next_speech and (world.days==null or not world.days.defer_idle(ID)):
-				spoken=world.director.memory_reminders.try_speak(ID) or world.relationships.try_event(ID) or world.wishes.try_event(ID) or world.personality.try_event(ID)
+				spoken=world.director.memory_reminders.try_speak(ID) or world.relationships.try_event(ID) or world.personality.try_event(ID)
 			if not spoken:_choose()
 	if chatter and time >= next_speech and not owns_route:
 		if world.days==null or not world.days.defer_idle(ID):
-			if not world.director.memory_reminders.try_speak(ID) and not world.relationships.try_event(ID) and not world.wishes.try_event(ID) and not world.personality.try_event(ID):_speak()
+			if not world.director.memory_reminders.try_speak(ID) and not world.relationships.try_event(ID) and not world.personality.try_event(ID):_speak()
 
 func apply_intelligence_preferences()->void:
 	preferences=world.intelligence.preferences_for(ID)
@@ -335,9 +331,8 @@ func _context() -> String:
 func try_need_speech()->bool:
 	var need:Dictionary=needs.choose(world,ID)
 	if need.is_empty():return false
-	# This is still the resident's ordinary turn: keep the original earned
-	# LocalDialogue substitution before delivering its next old need line.
-	if world.director.try_new_spoken(ID):return true
+	# Keep the substitution for ordinary needs, not a completed action's thanks.
+	if need.kind!="satisfied" and world.director.try_new_spoken(ID):return true
 	var before:int=world.director.serial
 	_speak("need_satisfied" if need.kind=="satisfied" else "near")
 	return world.director.serial>before

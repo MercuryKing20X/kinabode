@@ -7,7 +7,6 @@ static func build(world: RefCounted,id: String,events: Array=[],history: Array=[
 	var result: Dictionary={"ok":true,"version":1,"world_id":world.world_id,"resident_id":id,"source":"game_event","self":{"id":id,"name":str(actor.name).left(24),"region_id":actor.region_id,"position":actor.position.duplicate(),"activity":actor.activity,"carry":actor.carry.duplicate(),"mood":world.director.moods.summary(id)},"goal":{"intent":job.get("intent",""),"phase":job.get("phase",""),"target_id":job.get("target_id","")},"nearby":[],"nearby_total":0,"events":[],"recent_dialogue":[],"truncated":false}
 	var nearby: Array=world.actors.values().filter(func(other):return other.id!=id and other.region_id==actor.region_id and world.point(other).distance_to(world.point(actor))<=12)
 	result.self["relationship"]=world.relationships.summary(id)
-	result.self["wish"]=world.wishes.summary(id)
 	if world.flower_creation!=null:
 		var flowers:Dictionary=world.flower_creation.summary(id)
 		flowers.candidates=flowers.candidates.slice(0,3);flowers.arrangements=flowers.arrangements.slice(-3)

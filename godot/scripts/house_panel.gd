@@ -16,6 +16,7 @@ var plan: OptionButton
 var progress: ProgressBar
 var stage_label: Label
 var materials: Label
+var occupants:Label
 var feedback: Label
 var delivery_button: Button
 var build_button: Button
@@ -48,6 +49,7 @@ func setup(source: RefCounted, art_library: RefCounted) -> void:
 		world.objects[site_id]["house_appearance"]=["personal","classic","personal_legacy"][index]
 		world.revision+=1;refresh())
 	stage_label = Label.new(); column.add_child(stage_label)
+	occupants=Label.new();occupants.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;column.add_child(occupants)
 	progress = ProgressBar.new(); progress.show_percentage = false; progress.custom_minimum_size.y = 8; column.add_child(progress)
 	materials = Label.new(); column.add_child(materials)
 	build_button = button(column, T("ui.house_panel.build"), func():
@@ -80,6 +82,11 @@ func refresh() -> void:
 	preview.texture = library.frozen_texture(art, "stage_%s" % maxi(0, int(state.stage) - 1)) if state.stage > 0 else library.frozen_texture(art, "stage_4")
 	if state.stage==5 and preload("res://scripts/house_appearance.gd").enabled(site):preview.texture=preload("res://scripts/house_appearance.gd").texture(site,library,world.days.phase().id=="night")
 	stage_label.text = T("ui.house_panel.completed") if state.stage == 5 else T("ui.house_panel.stage") % [state.stage + 1, T(STAGES[state.stage])]
+	var people:Array=[]
+	for id in world.actors:
+		if id!="human" and world.actors[id].region_id==world.interior.room_for(site_id):people.append(LocalText.resident(world,id))
+	occupants.visible=not people.is_empty()
+	occupants.text=T("life.occupants")%" · ".join(people)
 	progress.max_value = state.total; progress.value = state.invested + state.delivered
 	materials.text = T("ui.house_panel.invested") % [state.invested + state.delivered, state.total]
 	if state.stage < 5:

@@ -28,7 +28,7 @@ func run()->void:
 		if actor.activity=="chopping":
 			reached=true
 			if fposmod(float(w.work.jobs.get("npc.mira",{}).get("time",0)),float(w.forest.settings.swing_seconds))/float(w.forest.settings.swing_seconds)<.15:continue
-			game.resident_connections.hide();game.steward.panel.hide();game.action_dock.hide()
+			game.resident_connections.hide();game.action_dock.hide()
 			game.view.follow_player=false;game.view.follow_actor="";game.view.center=w.point(actor);game.view.zoom=1.5;game.view.queue_redraw()
 			await process_frame;RenderingServer.force_draw(false)
 			if DisplayServer.get_name()!="headless":

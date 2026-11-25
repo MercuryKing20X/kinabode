@@ -32,12 +32,6 @@ func receive_reply(query: Dictionary) -> Dictionary:
 	if kind=="action" and not _pending_ids.is_empty():return {"ok":false,"error":"waiting_for_answer"}
 	if kind=="action" and not event.get("command") is Dictionary:return {"ok":false,"error":"invalid_dialogue_action"}
 	if kind=="complete" and not _pending_ids.is_empty():return {"ok":false,"error":"question_unanswered"}
-	var planning:bool=packet.get("world",{}).get("intent_card",{}).has("steward_request")
-	if planning and kind in ["action","question"]:return {"ok":false,"error":"planning_only"}
-	if planning and kind=="assistant":
-		var reply:Variant=JSON.parse_string(event.text)
-		if not reply is Dictionary or not reply.get("speech") is String or not reply.get("planning") is Array:return {"ok":false,"error":"invalid_plan_reply"}
-		event={"kind":"intent_result","speech":reply.speech,"intents":[],"planning":reply.planning}
 	seen[id]=true
 	if kind=="complete":packet.clear();_accept_event({"kind":"state","state":"ready","turnComplete":true});return {"ok":true}
 	var routed: Dictionary=event.duplicate(true);routed["id"]=id

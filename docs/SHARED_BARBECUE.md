@@ -84,3 +84,28 @@ SharedActivity is a host-started engine coordinator over existing World/SharedLi
 # 2026-11-04 邀请原因补验
 
 邀请页逐人显示具名折行原因，提交后状态同样列出本人及原因；本人气泡仍受原Director门控，不强制同时发言。104状态组合208居民fixture通过（140实吃/68拒绝），忙碌/位置前置为明示夹具，非104条无设坐标原生全过程。另两开局四营火8条原生步行/跟随/邀请/实吃全过，此前历史保留。
+
+## v0.8: tastes and feelings / 口味与心情
+
+`heart-tastes.json` supplies six Chinese and English lines for each of the four
+personality voices in each class: staple mushrooms, ordinary food, favourites.
+The first actual chew queues a taste line through the existing Fireside speech
+gates. Same-day repeated mushroom meals become more pointed on servings two
+and three; Raven can still like mushrooms while wanting a change. No new model
+call is made for taste speech.
+
+Only a finished, physically consumed meal changes persistent joy: mushrooms +2,
+ordinary +10, favourites +25 (clamped to the emotion range). The free unlimited
+mushroom rule, hunger restoration and ingredient receipts are unchanged.
+Same-day completed mushroom counts follow stable residents across fires and
+reloads in the optional heart state. A failed or interrupted chew grants no
+finished-meal mood or counter. Favourites extend the existing satisfied frame;
+no original artwork or physical speed is changed. First signature dishes still
+use canonical `signature_taste` memories. Other first favourite foods use a strict
+`favorite_taste` fact with the actual meal identity, eater and food. Existing food
+history prevents old-save backfill; no duplicate signature/favourite credit. Real
+meals retain their original shared-barbecue food facts. No relationship points are added.
+
+吃到第一口才排入口味台词；真正吃完才记心情与当日蘑菇次数。三次蘑菇的
+嫌弃逐步加强，但不扣饥饿或关系数值，也不让伙伴自行取食。招牌首尝沿用
+真实的「我们的日子」记录，其余最爱首尝新增严格的真实餐ID/食物/本人事实；不补旧档、不重复招牌。

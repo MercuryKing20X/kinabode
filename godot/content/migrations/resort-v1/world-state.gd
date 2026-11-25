@@ -35,7 +35,6 @@ var scene_speech:RefCounted
 var weather: RefCounted
 var personality: RefCounted
 var schedules: RefCounted
-var wishes: RefCounted
 var promises: RefCounted
 var proposals: RefCounted
 var homestead: RefCounted
@@ -133,7 +132,6 @@ func _init(manifest_path:String="res://content/world.json") -> void:
 	promises = preload("res://scripts/promise_system.gd").new(self)
 	cooperation = preload("res://scripts/cooperation_system.gd").new(self)
 	relationships=preload("res://scripts/relationship_system.gd").new(self)
-	wishes=preload("res://scripts/wish_system.gd").new(self)
 	weather=preload("res://scripts/weather_system.gd").new(self)
 	schedules=preload("res://scripts/schedule_system.gd").new(self)
 	moon=preload("res://scripts/moon_island.gd").new(self)
@@ -889,7 +887,6 @@ func advance(delta: float) -> void:
 	weather.advance()
 	proposals.advance(delta)
 	promises.advance(delta)
-	wishes.advance(delta)
 	relationships.advance(delta)
 	standard.advance(delta)
 	if home_island!=null:home_island.advance(delta)

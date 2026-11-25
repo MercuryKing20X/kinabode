@@ -1,0 +1,64 @@
+{
+  "waiting": [
+    "在等开饭",
+    "waiting for a meal"
+  ],
+  "asks": {
+    "gentle": [
+      [
+        "我们饿坏了，我去砍点柴生火好吗？",
+        "我想给大家烤点蘑菇，可以让我准备吗？",
+        "大家肚子都空了。我去张罗这顿饭，好吗？",
+        "等会儿就能有热的了。让我去准备，好不好？"
+      ],
+      [
+        "We're all so hungry. May I fetch some wood and start a fire?",
+        "I'd like to roast mushrooms for everyone. Is that all right?",
+        "Everyone's running on empty. Shall I get a meal going?",
+        "Something warm would help. May I get it ready?"
+      ]
+    ],
+    "lively": [
+      [
+        "肚子都在叫啦！我去找柴生火，好吗？",
+        "饿扁啦！点个头我就去烤蘑菇！",
+        "我来准备饭吧，行不行？",
+        "大家都等着呢！我去张罗一顿？"
+      ],
+      [
+        "Our bellies are singing! Can I fetch wood and get a fire going?",
+        "I'm starving! Say yes and I'll get those mushrooms roasting!",
+        "Can I get dinner started?",
+        "Everyone's waiting! Shall I rustle up a meal?"
+      ]
+    ],
+    "laborious": [
+      [
+        "都饿了。我去砍柴生火，成吗？",
+        "先吃饭。准我弄点柴吗？",
+        "蘑菇得热着吃。我去准备，可以吧？",
+        "再等也饱不了。这顿我来，行吗？"
+      ],
+      [
+        "We're hungry. Shall I cut wood and light the fire?",
+        "Food first. May I get the wood?",
+        "Mushrooms are better hot. Shall I get them going?",
+        "Waiting won't fill us up. Can I handle this meal?"
+      ]
+    ],
+    "quiet": [
+      [
+        "饿了。我去弄柴，可以吗？",
+        "我去生火，好吗？",
+        "烤蘑菇吧。我去准备？",
+        "大家都饿了。我来弄饭，行吗？"
+      ],
+      [
+        "Hungry. May I get some wood?",
+        "Shall I light a fire?",
+        "Mushrooms, maybe. Shall I get them ready?",
+        "We're all hungry. May I make dinner?"
+      ]
+    ]
+  }
+}

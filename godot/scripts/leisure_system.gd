@@ -8,6 +8,7 @@ var world: RefCounted:
 var sites: Dictionary={}
 var serial:=0
 func cost(site:Dictionary)->int:
+	if world.standard!=null and world.standard.RETIRED_FISHERY_COSTS.has(site.id):return int(world.standard.RETIRED_FISHERY_COSTS[site.id])
 	return int(world.standard.sites[site.id].wood) if world.standard!=null and world.standard.sites.has(site.id) else Rules.cost(art(site).recreation)
 func _init(source: RefCounted) -> void:
 	_owner=weakref(source)
@@ -72,15 +73,17 @@ func command(id: String,args: Dictionary) -> Dictionary:
 	world.director.command_received(id,intent)
 	world.work.serial+=1;job["id"]="job-%s"%world.work.serial;world.work.jobs[id]=job;world._routes.erase(id);world.revision+=1
 	return {"ok":true,"status":"accepted","job_id":job.id}
+
 func tick(id: String,job: Dictionary,delta: float) -> void:
 	var actor: Dictionary=world.actors[id];var site: Dictionary=sites[job.target_id];var work:=art(site);var config: Dictionary=work.recreation
-	var entry: Vector2=Vector2(job.get("steward_entry",world.point(site)+Vector2(config.entry[0],config.entry[1])))
+	var entry: Vector2=world.point(site)+Vector2(config.entry[0],config.entry[1])
 	if job.intent=="build_facility":
 		if actor.region_id!="home":world.interior._arrive(id,"home",entry);return
 		var needed:=cost(site)-int(site.invested)
 		if job.step=="supply":
-			var amount: int=mini(needed,int(world.available_items(id).get("wood",0)))
-			if amount>0 and world.pay_costs(id,{"wood":amount}).ok:
+			var available:int=int(world.available_items(id).get("wood",0))
+			var amount: int=mini(needed,available)
+			if amount>0 and (world.pay_costs(id,{"wood":amount})).ok:
 				site.invested+=amount;world.revision+=1
 			if site.invested<cost(site):world.work._finish(id,LocalText.text("system.leisure_system.not_enough_wood_existing_construction_contributions_are_kept"),false);return
 			job.step="deliver"
@@ -96,6 +99,7 @@ func tick(id: String,job: Dictionary,delta: float) -> void:
 						if Rect2(world.point(site)+Vector2(box[0],box[1]),Vector2(box[2],box[3])).has_point(world.point(other)):
 							world.work._finish(id,LocalText.text("system.leisure_system.someone_is_in_the_building_area_clear_the_space"),false);return
 				site.complete=true
+				if site.get("world_camp_rebuild",false):world.standard.sync_camps()
 				if id=="human":preload("res://scripts/brain_interactions.gd").host_event(world,"host_built","facility:"+str(site.id))
 				world._grids.clear();world._terrain_solids.erase(str(site.region_id))
 				world.rescue_obstructed()
@@ -139,6 +143,7 @@ func restore(data: Dictionary) -> void:
 	for id in sites:
 		if id.begins_with("play.moon."):added[id]=sites[id]
 	sites=data.sites.duplicate(true)
+	for id in world.standard.RETIRED_FISHERY_COSTS:sites.erase(id)
 	for id in added:
 		if not sites.has(id):sites[id]=added[id]
 	if not sites.has("play.gomoku"):sites["play.gomoku"]=new_corner
@@ -150,6 +155,7 @@ func valid_saved(data: Variant) -> bool:
 		if not id is String or not id.begins_with("play."):return false
 		if not site is Dictionary or site.get("id")!=id or site.get("region_id")!="home" or not Rules.pair(site.get("position")) or not site.get("complete") is bool or not Rules.integer(site.get("invested"),0,1000) or not site.get("template_id") is String or not site.get("name") is String:return false
 		if site.get("kind")!="play_site" or not world.terrain_surface("home",world.point(site)):return false
+		if site.has("world_camp_rebuild") and (site.world_camp_rebuild!=true or not world.standard.sites.has(id) or not world.barbecues.has(world.standard.sites[id].target)):return false
 		if id.begins_with("play.custom.") and (not id.trim_prefix("play.custom.").is_valid_int() or int(id.trim_prefix("play.custom."))<1 or int(id.trim_prefix("play.custom."))>int(data.serial)):return false
 		if not site.get("artwork") is Dictionary:return false
 		if site.artwork.is_empty():

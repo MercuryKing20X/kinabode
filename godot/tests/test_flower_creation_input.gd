@@ -66,9 +66,13 @@ func run()->void:
 	check(w.flower_creation.flowers.size()==w.flower_creation.pixels({"text":"HI"}).size()-1,"picked one actual rose")
 	# A local typed request chooses a personality pattern and returns through World.
 	w.actors["companion-2"].appearance_id=w.actors.codex.appearance_id
+	if w.flower_creation.active("companion-2"):await advance_until_idle("companion-2")
 	await text_input("小蓝摆个爱心")
 	check(w.flower_creation.active("companion-2"),"real typed local heart accepted with alternate appearance")
+	var arrangement:Dictionary=w.flower_creation.jobs.get("companion-2",{})
+	check(arrangement.get("label")=="heart","acceptance belongs to this exact typed arrangement")
 	await advance_until_idle("companion-2")
+	if not arrangement.get("committed",false):print("FLOWER_HEART_RECEIPT ",arrangement," body=",w.actors["companion-2"]," time=",w.director.time)
 	check(w.flower_creation.flowers.values().any(func(f):return f.actor_id=="companion-2" and f.label=="heart"),"local heart actually committed")
 	check(w.point(w.actors["companion-2"]).distance_to(w.point(w.actors.human))<4,"local arranger returns near human")
 	if DisplayServer.get_name()!="headless":
@@ -95,6 +99,7 @@ func run()->void:
 		if i%200==0:await process_frame
 		if not game.intentions.plans.has("codex") and not w.flower_creation.active("codex"):break
 	check(w.flower_creation.flowers.values().any(func(f):return f.actor_id=="codex" and f.label=="心"),"bound AI stub chose and placed true text")
+	if game.intentions.last_failure.has("codex"):print("FLOWER_NATIVE_RECEIPT ",game.intentions.last_failure.codex," history=",game.intentions.history)
 	check(w.flower_creation.first_received,"first actual AI rose delivery records first receipt")
 	if DisplayServer.get_name()!="headless":
 		for frame in 12:await process_frame

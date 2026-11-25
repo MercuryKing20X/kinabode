@@ -102,9 +102,11 @@ func _fit(reference:WeakRef,id:int)->void:
 	var node:Node=reference.get_ref()
 	if node==null or not node.is_inside_tree() or node.get_meta("chess_scene_surface",false) or node.get_meta("watch_menu",false):return
 	var available:Vector2=interface.get_viewport_rect().size-Vector2(24,56 if node is Window else 24)
+	var dock:Control=game.island_hud.primary_actions if game.get("island_hud")!=null else null
+	var reserves_dock:bool=node is PanelContainer and is_instance_valid(dock) and dock.is_inside_tree() and not node.is_ancestor_of(dock) and node.get_global_rect().intersects(dock.get_global_rect())
+	if reserves_dock:available.y=minf(available.y,dock.global_position.y-24)
 	if node==game.get("chat"):
-		var hud:Node=game.get("island_hud")
-		available.y=minf(available.y,hud.primary_actions.global_position.y-24 if hud!=null else interface.get_viewport_rect().size.y-84)
+		available.y=minf(available.y,dock.global_position.y-24 if is_instance_valid(dock) and dock.is_inside_tree() else interface.get_viewport_rect().size.y-84)
 	if node is Control and (not node is PanelContainer or node.get_parent() is Container):return
 	# Keep the chat header and input reachable above the bottom action dock.
 	if node==game.get("chat") and not node.has_meta("chat_scroll_body"):
@@ -142,6 +144,7 @@ func _fit(reference:WeakRef,id:int)->void:
 		var parent:Control=node.get_parent() as Control
 		if parent!=null:
 			var bounds:Vector2=parent.size
+			if reserves_dock:bounds.y=minf(bounds.y,dock.global_position.y-parent.global_position.y)
 			if node==game.get("chat") and game.get("island_hud")!=null:bounds.y=game.island_hud.primary_actions.global_position.y-12
 			node.position=Vector2(clampf(node.position.x,12,maxf(12,bounds.x-node.size.x-12)),clampf(node.position.y,12,maxf(12,bounds.y-node.size.y-12)))
 	elif node is Window:
@@ -154,6 +157,7 @@ func modal_open()->bool:
 func full_modal_open()->bool:
 	if not is_instance_valid(interface):return false
 	for child in interface.get_children():
+		if child==game.get("world_door_dialog"):continue
 		if (child==game.get("action_dock") and game.get("watch_ui")!=null) or child==game.get("island_hud") or child==game.get("chat") or not child is Control or not child.visible:continue
 		if child is PanelContainer and child.size.x>=interface.size.x*.25 and child.size.y>=100:return true
 		if child.size.x>=interface.size.x*.9 and child.size.y>=interface.size.y*.9:

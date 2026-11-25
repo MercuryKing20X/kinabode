@@ -93,6 +93,7 @@ func tick_job(actor_id: String, job: Dictionary, delta: float) -> void:
 			if actor_id=="human":world.storage.add({"mushroom":int(patch.amount)})
 			else:actor.carry["mushroom"]=int(actor.carry.get("mushroom",0))+int(patch.amount)
 			if actor_id=="human":world.ingredients.note_obtained("mushroom")
+			if actor_id!="human" and int(patch.amount)>0:work.visual_event("mushroom_gathered",patch,actor_id)
 			patch.amount=0;patch.ready_at=Time.get_unix_time_from_system()+21600
 			work.claims.erase(job.target_id)
 			if actor_id=="human":

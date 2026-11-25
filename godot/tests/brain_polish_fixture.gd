@@ -28,7 +28,14 @@ func matching(node:Node,key:String)->Array:
 	return t.UI.descendants(node).filter(func(n):return n is Button and n.text==label)
 func build_camp()->bool:
 	var site:Dictionary=w.leisure.sites['play.standard.camp']
-	await world_click(w.point(site));await t.process_frame
+	var at:Vector2=w.point(site)
+	game.chat.hide();game.brain_panel.hide();game.view.follow_player=false;game.view.center=at;game.view.zoom=1
+	await t.process_frame
+	for offset in [Vector2.ZERO,Vector2(0,-14),Vector2(14,0),Vector2(-14,0),Vector2(0,14)]:
+		var screen:Vector2=game.view.screen(at)+offset
+		if game.view.hit(screen) not in [site.id,"home.barbecue"]:continue
+		await mouse(screen)
+		if game.leisure_panel.visible:break
 	if not game.leisure_panel.visible:return false
 	var buttons:Array=matching(game.leisure_panel,'panels.choose_builder_build')
 	if buttons.is_empty() or not await t.UI.click(t,buttons[0]):return false
@@ -105,7 +112,7 @@ func run()->Dictionary:
 		if fed:fire.end_circle('explicit test host leaves the finished meal')
 	print('REAL_MEAL_FINAL ',fire_snapshot(), ' elapsed=',w.director.time)
 	t.check(fed,'all four become full by eating the one real caught fish')
-	var telemetry:=preload('res://scripts/brain_report.gd').new()
+	var telemetry:=preload('res://tests/fixture_brain_report.gd').new()
 	for tick in 1440:w.advance(.25);telemetry.sample(w,.25)
 	var full:Dictionary=telemetry.finish(w,t.evidence.path_join('full-after-real-meal'))
 	for id in full.actors:

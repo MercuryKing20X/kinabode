@@ -5,6 +5,9 @@ var game:Node
 var button:Button
 var selection:=""
 var dry_button:Button
+var next_refresh:=0.0
+var last_region:=""
+var displayed_sources:Array=[]
 func setup(host:Node)->void:
 	game=host
 	var layer:=CanvasLayer.new();layer.layer=3;add_child(layer)
@@ -13,12 +16,20 @@ func setup(host:Node)->void:
 	button.pressed.connect(func():
 		var result:Dictionary=game.world.ingredients.begin(selection)
 		if not result.ok:game.status.text=str(result.get("error","")))
-func _process(_delta:float)->void:
+func _process(delta:float)->void:
 	if game==null or game.world==null:return
+	var region:String=game.world.actors.human.region_id
+	next_refresh-=delta
+	if delta>0 and next_refresh>0 and region==last_region:
+		queue_redraw()
+		return
+	next_refresh=.15
+	last_region=region
+	displayed_sources=game.world.ingredients.sources()
 	dry_button.text=preload("res://scripts/localization.gd").text("ingredients.dry")
 	dry_button.visible=game.world.actors.human.region_id=="home" and game.world.point(game.world.actors.human).distance_to(game.world.ingredients.dry_position())<3
 	selection="";var distance:=10.0
-	for item in game.world.ingredients.sources():
+	for item in displayed_sources:
 		if not game.world.ingredients.available(item):continue
 		var d:float=game.world.point(game.world.actors.human).distance_to(Vector2(item.position[0],item.position[1]))
 		if d<distance:
@@ -28,7 +39,7 @@ func _process(_delta:float)->void:
 	queue_redraw()
 func _draw()->void:
 	if game==null or game.world==null:return
-	for item in game.world.ingredients.sources():
+	for item in displayed_sources:
 		if item.region!=game.view.region_id or not game.world.ingredients.visible(item):continue
 		var at:Vector2=game.view.screen(Vector2(item.position[0],item.position[1]))
 		if not get_viewport_rect().grow(20).has_point(at):continue

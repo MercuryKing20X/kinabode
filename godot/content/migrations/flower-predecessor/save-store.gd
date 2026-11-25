@@ -30,7 +30,6 @@ static func save_world(world: RefCounted, directory: String) -> bool:
 	data["day_cycle"]=world.days.saved()
 	data["promises"]=world.promises.saved()
 	data["relationships"]=world.relationships.saved()
-	data["wishes"]=world.wishes.saved()
 	data["weather"]=world.weather.saved()
 	data["hunger"]=world.hunger.saved()
 	if world.dark!=null and world.dark.enabled():data["dark_island"]=world.dark.saved()
@@ -151,7 +150,6 @@ static func load_world(world: RefCounted, directory: String) -> Dictionary:
 	world.director.moods.reset()
 	for brain in world.director.brains.values():brain.reset()
 	world.relationships.restore(data.get("relationships",{}))
-	world.wishes.restore(data.get("wishes",{}))
 	world.weather.restore(data.get("weather",{}));world.schedules.reset();world.personality.reset()
 	world.activities.following.clear();world.activities.explicit_selected.clear();world.activities.persist_follow=data.has("following")
 	world.hunger.restore(data.get("hunger",{}))
@@ -284,7 +282,7 @@ static func _valid(world: RefCounted, data: Dictionary) -> bool:
 	if data.has("gomoku") and (not data.get("leisure") is Dictionary or not data.leisure.get("sites") is Dictionary or not world.gomoku.valid_saved(data.gomoku,data.actors,data.leisure.sites)):return false
 	if data.has("promises") and not world.promises.valid_saved(data.promises,data.actors,float(data.get("day_cycle",{}).get("origin",world.days.origin))):return false
 	if data.has("relationships") and not world.relationships.valid_saved(data.relationships,data.actors):return false
-	if data.has("wishes") and not world.wishes.valid_saved(data.wishes,data.actors):return false
+	if data.has("wishes") and not preload("res://scripts/legacy_wishes.gd").valid_saved(world,data.wishes,data.actors):return false
 	if data.has("weather") and not world.weather.valid_saved(data.weather):return false
 	if data.has("shared_memories") and not world.memories.valid_saved(data.shared_memories,data.actors,data.world_id):return false
 	return true

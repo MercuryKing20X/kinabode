@@ -8,7 +8,6 @@ var overview:=false
 var overview_factor:=5
 var boardwalk:Texture2D
 var curbs:PackedVector2Array=[]
-var atmosphere=preload("res://scripts/island_ambience.gd").new()
 var ambience_enabled:=true
 var emission:Node2D
 var baking_world:=false
@@ -22,6 +21,7 @@ var static_bakes:=0
 var farm_bakes:=0
 var farm_cache_rect:=Rect2()
 var farm_cache_key:=""
+var farm_check_at:=0.0
 var static_decor:SubViewport
 var decor_ready:=false
 var decor_bakes:=0
@@ -76,14 +76,20 @@ func update_ambience()->void:
 	if is_instance_valid(emission):emission.queue_redraw()
 func _process(delta:float)->void:
 	super._process(delta);update_ambience()
-	if static_ground!=null:refresh_farm_cache();refresh_decor_cache()
+	if static_ground!=null:
+		if clock>=farm_check_at:
+			farm_check_at=clock+.12
+			refresh_farm_cache()
+		refresh_decor_cache()
+		if overview and static_decor==null:initialize_decor_cache()
 func _prepare_scenery()->void:scenery.clear() # v3 uses authored clusters, not uniform random scattering
 func screen(point:Vector2)->Vector2:return super.screen(point).round()
 func hit(mouse:Vector2)->String:
+	var paper:String=note_hit(mouse)
+	if not paper.is_empty():return paper
 	if region_id=="dark":
 		var target:String=dark_renderer.hit(self,mouse)
 		if not target.is_empty():return target
-	if world.standard.active() and Rect2(screen(Vector2(world.map_anchor("notice")[0],world.map_anchor("notice")[1]))-Vector2(50,100)*zoom,Vector2(100,125)*zoom).has_point(mouse):return "opening.board"
 	if world.standard.active():
 		for id in world.standard.sites:
 			var site:Dictionary=world.leisure.sites[id]
@@ -140,11 +146,10 @@ func _draw_ground(_viewport:Rect2)->void:
 		_surface(Layout.rectangle(box.grow(-.22)),textures.soil,Color("736a49")*ambient())
 		for corner in [Vector2(-1,-1),Vector2(1,-1),Vector2(-1,1),Vector2(1,1)]:_sprite("flowers",Vector2(at[0],at[1])+corner,1,ambient())
 	for cliff in world.catalog.regions.home.layout.cliffs:
-		if not visible_cliff(cliff):
-			# Keep the unchanged World obstacle readable, without orphan rectangular stairs.
-			for stone in cliff_stones(cliff):_sprite("rock",stone,.32,ambient())
-			continue
-		_surface(Layout.points(cliff.polygon),textures.rock,Color("a5a38e")*ambient())
+		# The collision polygon is a straight strip. Render stone silhouettes
+		# along it instead of clipping a scenery texture to that rectangle.
+		for stone in cliff_stones(cliff):_sprite("rock",stone,.32,ambient())
+		if not visible_cliff(cliff):continue
 		var steps:Array=cliff.stairs
 		_surface(Layout.rectangle(Rect2(Vector2(steps[0][0],steps[0][1]),Vector2(steps[1][0]-steps[0][0],steps[1][1]-steps[0][1]))),boardwalk,ambient())
 	# Ponds/bridges are still driven by the same World layout used for walkability.
@@ -213,16 +218,26 @@ func decor_foreground(prop:Dictionary)->bool:
 	return world.actors.values().any(func(actor):return actor.region_id=="home" and at.y>world.point(actor).y and at.y-world.point(actor).y<6 and absf(at.x-world.point(actor).x)<3)
 func _extra_entries(entries:Array)->void:
 	if overview and decor_ready:draw_texture_rect(static_decor.get_texture(),Rect2(screen(Vector2.ZERO),Vector2(static_decor.size)*zoom),false)
+	var clip:=get_viewport_rect().grow(280*zoom)
 	for bed in world.catalog.regions.home.layout.get("plaza_planters",[]):
 		var at:Array=world.map_anchor(bed.anchor)
-		entries.append({"type":"v3_prop","value":{"kind":"asset","asset":bed.tree_asset,"position":at},"y":at[1]})
+		var point:=Vector2(at[0],at[1])
+		if clip.has_point(screen(point)):
+			entries.append({"type":"v3_prop","value":{"kind":"asset","asset":bed.tree_asset,"position":at},"y":at[1],"point":point})
 	for prop in world.catalog.regions.home.layout.art_props:
-		if overview and decor_ready and prop_point(prop).x>=0 and not decor_dynamic(prop) and not decor_foreground(prop):continue
-		var at:=prop_point(prop);entries.append({"type":"v3_prop","value":prop,"y":at.y})
+		if not visible_prop(prop):continue
+		var at:=prop_point(prop)
+		if not clip.has_point(screen(at)):continue
+		if overview and decor_ready and at.x>=0 and not decor_dynamic(prop) and not decor_foreground(prop):continue
+		entries.append({"type":"v3_prop","value":prop,"y":at.y,"point":at})
 func _draw_extra_entry(entry:Dictionary)->bool:
 	if entry.type!="v3_prop":return false
-	if not visible_prop(entry.value):return true
-	var prop:Dictionary=entry.value;var at:=prop_point(prop);var p:=screen(at)
+	var prop:Dictionary=entry.value
+	var at:Vector2=entry.get("point",Vector2.INF)
+	if not at.is_finite():
+		if not visible_prop(prop):return true
+		at=prop_point(prop)
+	var p:=screen(at)
 	if not get_viewport_rect().grow(280*zoom).has_point(p):return true
 	var texture:Texture2D;var anchor:Vector2
 	match str(prop.kind):
@@ -261,11 +276,23 @@ func _shadow(p:Vector2,width:float)->void:
 func _draw_resident_labels()->void:
 	if ambience_enabled:atmosphere.draw_foreground(self)
 	fishing_renderer.overlay(self)
+	var clip:=get_viewport_rect().grow(400)
+	var label_size:int=preload("res://scripts/ui_scale.gd").pixels(12)
 	for actor in world.actors.values():
 		if actor.id=="human" or actor.region_id!=region_id:continue
-		var p:Vector2=screen(world.point(actor))+Vector2(-12,15)
-		draw_string_outline(font,p,LocalText.resident(world,str(actor.id)),HORIZONTAL_ALIGNMENT_LEFT,-1,preload("res://scripts/ui_scale.gd").pixels(12),3,Color("24392f"))
-		draw_string(font,p,LocalText.resident(world,str(actor.id)),HORIZONTAL_ALIGNMENT_LEFT,-1,preload("res://scripts/ui_scale.gd").pixels(12),Color("fff4db"))
+		var at:Vector2=screen(world.point(actor))
+		if not clip.has_point(at):continue
+		var p:=at+Vector2(-12,15)
+		var label:=LocalText.resident(world,str(actor.id))
+		draw_string_outline(font,p,label,HORIZONTAL_ALIGNMENT_LEFT,-1,label_size,3,Color("24392f"))
+		draw_string(font,p,label,HORIZONTAL_ALIGNMENT_LEFT,-1,label_size,Color("fff4db"))
+		if actor.has("world_door_client"):
+			var client:String=actor.world_door_client
+			var client_size:int=maxi(14,label_size)
+			var bounds:=font.get_string_size(client,HORIZONTAL_ALIGNMENT_LEFT,-1,client_size)
+			var label_at:=at+Vector2(-bounds.x*.5,-(_resident_head_height(actor)+12)*zoom-8)
+			draw_rect(Rect2(label_at+Vector2(-5,-font.get_ascent(client_size)-3),bounds+Vector2(10,6)),Color("24392fe8"))
+			draw_string(font,label_at,client,HORIZONTAL_ALIGNMENT_LEFT,-1,client_size,Color("fff4db"))
 	for entry in speech_layout():
 		draw_line(entry.anchor,entry.box.get_center(),Color(.95,.93,.8,.6),1,true)
 		draw_style_box(_bubble(),entry.box)
@@ -290,8 +317,11 @@ func initialize_static_cache()->void:
 		var area:Rect2=world.catalog.rectangle(farm.rect).grow(1.5)
 		farm_cache_rect=area if farm_cache_rect.size==Vector2.ZERO else farm_cache_rect.merge(area)
 	static_farms=make_bake("farms",farm_cache_rect);refresh_farm_cache()
+	RenderingServer.frame_post_draw.connect(func():ground_ready=true;farms_ready=true;queue_redraw(),CONNECT_ONE_SHOT)
+func initialize_decor_cache()->void:
+	var size:Array=world.catalog.regions.home.layout.get("mainland_size",world.catalog.regions.home.size)
 	static_decor=make_bake("decor",Rect2(Vector2.ZERO,Vector2(size[0],size[1])));decor_bakes+=1
-	RenderingServer.frame_post_draw.connect(func():ground_ready=true;farms_ready=true;decor_ready=true;queue_redraw(),CONNECT_ONE_SHOT)
+	RenderingServer.frame_post_draw.connect(func():decor_ready=true;queue_redraw(),CONNECT_ONE_SHOT)
 func refresh_farm_cache()->void:
 	var state:Array=[]
 	for farm in world.farms.farms.values():state.append([farm.id,farm.rect,farm.flowers,world.farms.ready(farm.id)])

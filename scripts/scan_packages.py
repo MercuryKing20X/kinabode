@@ -40,7 +40,7 @@ for package in a.packages:
      findings.extend(scan(decoded,path+'::'+name+'::decoded_tokens'))
     count+=1;packed_names.add(name)
  assert count>0,'No PCK entries found'
- for needed in ['content/about/about.md','content/about/about.en.md','content/i18n/release.csv','bridge/file_transport.py']:
+ for needed in ['content/about/about.md','content/about/about.en.md','content/i18n/release.csv','bridge/file_transport.py','content/release/island_thinker.py']:
   assert needed in packed_names,('Missing runtime raw text',needed)
  records.append({'package':package.name,'zip_files':members,'pck_entries_verified':count})
 a.output.write_text(json.dumps({'packages':records,'findings':findings,'values_redacted':True},indent=2)+'\n')

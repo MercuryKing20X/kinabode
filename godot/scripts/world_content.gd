@@ -25,7 +25,7 @@ func read(name:String)->Dictionary:
 			"fishing":
 				value.pens=[]
 				for pen in layout.fisheries:
-					var copy:Dictionary=pen.duplicate(true);copy["region_id"]="home";value.pens.append(copy)
+					var copy:Dictionary=pen.duplicate(true);copy.erase("capacity");copy["region_id"]="home";value.pens.append(copy)
 				for sea in value.seas:
 					sea.anchor=layout.water_anchors[str(sea.id).get_slice(".",2)].duplicate();sea.legacy_spots=[]
 			"map-locations":

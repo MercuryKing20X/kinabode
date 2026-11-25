@@ -8,7 +8,7 @@ func run()->void:
 		root.size=dimensions;await frames();game.island_hud.layout_primary_actions();await frames()
 		check(not game.chat.visible,"collapsed default "+str(dimensions))
 		var buttons:Array=game.watch_ui.bar.get_children().filter(func(n):return n is Button and n.visible)
-		check(buttons==[game.dialogue_button,game.journey.map_button,game.watch_ui.toggle,game.gathering_button],"exactly ordered four buttons")
+		check(buttons==[game.dialogue_button,game.journey.map_button,game.island_hud.watch_button,game.gathering_button],"exactly ordered four buttons")
 		check(absf(game.watch_ui.bar.get_global_rect().get_center().x-dimensions.x/2.0)<3,"centered")
 		await capture("closed-"+str(dimensions.x))
 		check(await UI.click(self,game.dialogue_button),"real open click")

@@ -18,6 +18,9 @@ func run()->void:
 		OS.set_environment("HABITAT_OPENING","legacy" if mode=="showcase" else "standard")
 		var w:=World.new("res://content/home-v3/world.json");w.residents.provision(w);w.library=Library.new();w.library.configure(temp.path_join(mode));assert(Opening.apply(w,w.library,mode).ok);w.intelligence.activate_presets();w.hunger.start()
 		var game:Node=load("res://scenes/main_v3.tscn").instantiate();game.world=w;root.add_child(game);game.save_enabled=false;game.set_process(false);game.view.set_process(false);game.view.sound_enabled=false;game.island_hud.set_process(false);game.chat.hide();await process_frame;await process_frame
+		# The approach is still a real player route. Keep otherwise unsolicited
+		# gathering from filling the invitees' hands before this fishing probe.
+		w.director.set_all_enabled(false)
 		await create_timer(.25).timeout
 		for layout_frame in range(6):await process_frame
 		var hud:Node=game.island_hud

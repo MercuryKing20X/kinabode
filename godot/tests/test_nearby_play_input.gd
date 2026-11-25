@@ -7,11 +7,12 @@ func run()->void:
 	var work:Dictionary=game.world.host_text_command("companion-2",{"intent":"gather_wood","tree_count":1})
 	check(work.get("ok",false) and game.world.work.jobs.has("companion-2"),"real labor accepted before play")
 	var job:Dictionary=game.world.work.jobs.get("companion-2",{}).duplicate(true)
-	var offered:Dictionary=game.playground.start("eagle")
+	var offered:Dictionary=game.playground.start("hide")
 	check(offered.get("ok",false) and "companion-2" not in game.playground.members,"busy worker excluded from play")
 	check(game.world.work.jobs.get("companion-2",{})==job,"play does not interrupt worker")
 	game.playground.stop();game.world.command("companion-2",{"intent":"stop"})
-	for kind in ["eagle","handkerchief","hide","fireflies","circle","shuttlecock","rope"]:
+	# B: DIRECTION 2026-11-18「保留捉迷藏、踢毽子、跳绳和夜里节目」。
+	for kind in ["hide","fireflies","circle","shuttlecock","rope"]:
 		if not game.chat.visible:await UI.click(self,game.dialogue_button)
 		await UI.tab(self,game.action_dock.action_tabs,1)
 		var entries:Array=UI.descendants(game.watch_ui.menu_column).filter(func(n):return n is Button and n.text==preload("res://scripts/localization.gd").text("play.choose"))
@@ -21,12 +22,12 @@ func run()->void:
 		var cards:Array=game.get_children().filter(func(n):return n.has_meta("play_selector"))
 		check(cards.size()==1,"selector shown")
 		var controls:Array=UI.descendants(cards[0])
-		if kind=="eagle":
+		if kind=="hide":
 			var join:Array=controls.filter(func(n):return n.has_meta("play_join"));check(await UI.click(self,join[0]),"real join choice")
 		var buttons:Array=controls.filter(func(n):return n.get_meta("play_kind","")==kind)
 		check(await UI.click(self,buttons[0]),"real game choice "+kind);await frames()
 		check(game.playground.kind==kind,"game accepted "+kind)
-		if kind=="eagle":check("human" in game.playground.members,"human joins only explicit UI")
+		if kind=="hide":check("human" in game.playground.members,"human joins only explicit UI")
 		game.chat.hide();game.view.follow_player=false;game.view.center=game.playground.anchor;game.view.zoom=.8
 		for tick in range(2400):
 			game.world.advance(.1);game.playground.tick(.1)

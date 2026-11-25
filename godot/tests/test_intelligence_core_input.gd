@@ -25,6 +25,8 @@ func run()->void:
 	await text_input("全部去种菜")
 	await picture("group-started")
 	check(not is_instance_valid(game.local_host_commands.card),"no card for ordinary group instruction")
+	if w.farms.orders.size()!=4:
+		print("GROUP_FARM_DIAGNOSTIC ",game.local_host_commands.last_execution," actors=",w.actors.keys()," jobs=",w.work.jobs," preview=",w.farms.preview_host_orders(w.director.routines.keys(),"plant"))
 	check(w.farms.orders.size()==4,"native exact user phrase starts four actual farm orders")
 	for tick in range(6000):
 		game._process(.1)

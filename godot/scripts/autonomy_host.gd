@@ -9,12 +9,17 @@ var pending: Array=[]
 var manual_usage: Dictionary={}
 var complete_usage: Dictionary={}
 var quiet_until: Dictionary={}
+var meetings:RefCounted
 var notice_until:=0.0
 func setup(owner_node: Node,prefs: RefCounted) -> void:
 	_owner=weakref(owner_node)
+	meetings=preload("res://scripts/heart_meetings.gd").new(owner_node)
 	scheduler=preload("res://scripts/autonomy_scheduler.gd").new()
 	refresh_support()
 	scheduler.setup(game.world,prefs,dispatch,can_send,recent)
+	scheduler.company_fireside=func(id):return game.company!=null and game.company.fireside_model_ready(id)
+	scheduler.company_ready=func(id):return game.company!=null and game.company.model_ready(id)
+	scheduler.company_progress=func(id,reason):game.company.scheduler_state(id,"waiting",reason)
 	scheduler.codex_high=func(id):return game._valid_link(game.links,id) and game.links[id].get_script()==preload("res://scripts/companion_link.gd")
 	prefs.preference_changed.connect(changed)
 	scheduler.ultra_notice.connect(show_notice)
@@ -27,26 +32,38 @@ func refresh_support() -> void:
 		var supported: bool=is_instance_valid(connection) and connection.has_method("autonomy_capabilities") and connection.autonomy_capabilities().supported and game.world.director.model_controlled(id) and not game.resident_connections.preferences.failure_state(id).get("unavailable",false)
 		game.resident_connections.preferences.runtime_supported[id]=supported
 func can_send(id: String) -> bool:
+	if meetings.reserved_guest(id):return false
+	if native_heart(id) and meetings.incoming(id).is_empty() and not game.world.director.brains[id].intention.due() and (game.company==null or not game.company.model_ready(id)):return false
 	if not pending.is_empty() or game.next_chat.has(id):return false
-	if game.steward!=null and game.steward.active:return false
 	# Input focus suppresses fresh autonomous inference independently of body/follow holds.
 	if game.chat.visible and game.chat_input.has_focus() and (game.group_chat or game.chat_actor==id):return false
 	return (game.intentions==null or not game.intentions.plans.has(id)) and bool(game.resident_connections.preferences.runtime_supported.get(id,false)) and game._valid_link(game.links,id) and not game.links[id].is_busy() and not game.questions.has(id) and not game.group_questions.has(id) and not (game._valid_link(game.group_links,id) and game.group_links[id].is_busy()) and scheduler.now()>=float(quiet_until.get(id,0))
 func dispatch(id: String,data: Dictionary,policy: Dictionary,key: String) -> bool:
 	if not can_send(id):return false
-	if game.links[id].has_method("uses_intents") and game.links[id].uses_intents():
+	if native_heart(id) or (game.links[id].has_method("uses_intents") and game.links[id].uses_intents()):
 		game.links[id].helper_filename="intent_companion.py"
 		game.immediate_turns[id]={"turn_key":key,"command":true,"text":"","result":{},"memory_sources":[],"memory_request":{},"autonomy":true}
 	var context:Dictionary=data.duplicate(true)
-	if game.steward!=null and game.steward.authorized(id):
-		context.management=true;context.companions=game.steward.Pool.IDS.duplicate()
-		if JSON.stringify(context).to_utf8_buffer().size()>4096:return false
-	if scheduler.preferences.preference(id).level=="lifeblood":
+	if native_heart(id):
+		var fireside:bool=game.company!=null and game.company.fireside_model_ready(id)
+		var invite:Dictionary={} if fireside or (game.company!=null and game.company.model_ready(id)) else meetings.prompt(id,key)
+		var company:Dictionary=game.company.model_card(id,key) if invite.is_empty() and game.company!=null else {}
+		if fireside and company.is_empty():return false
+		var card:Dictionary={"company_request":company} if not company.is_empty() else heart_card(id) if invite.is_empty() else {"peer_request":invite}
+		context["heart_card"]=card
+		game.immediate_turns[id]["heart"]=true
+		if not company.is_empty():game.immediate_turns[id]["company"]=true
+		elif invite.is_empty():game.world.director.brains[id].intention.requested()
+		else:game.immediate_turns[id]["peer_invitation"]=invite.id
+	elif scheduler.preferences.preference(id).level=="lifeblood":
 		if game.life_archive!=null:game.life_archive.observe_context(id,key)
 		var card:Dictionary=game._intent_card(id,{"dialogue":{"channel_id":"direct:"+id,"recipient_ids":[id]}},"direct:"+id)
 		context["lifeblood_memory"]=card
 		game.immediate_turns[id].memory_sources=card.memory_sources.map(func(e):return e.id)
-	var sent:bool=game.links[id].send_autonomy(context,scheduler.preferences.preference(id).level,{"tools":int(policy.tools),"turn_tokens":int(game.steward.pool.turn_limit(id))},key)
+	var sent:bool=game.links[id].send_autonomy(context,scheduler.preferences.preference(id).level,{"tools":int(policy.tools),"turn_tokens":int(game.connection_pool.turn_limit(id))},key)
+	if game.immediate_turns.get(id,{}).get("company",false):
+		if sent:game.company.scheduler_state(id,"sent")
+		else:game.company.model_failed(id,"transport_rejected")
 	if not sent and game.life_archive!=null:game.life_archive.reject_before_inference(id,key)
 	return sent
 func player_input() -> void:
@@ -68,11 +85,24 @@ func interrupted(id: String) -> void:
 	scheduler.queues.erase(id)
 func tick(delta: float) -> void:
 	refresh_support()
+	if delta>0:meetings.tick()
 	if game.autonomy_notice!=null:game.autonomy_notice.visible=scheduler.now()<notice_until
 	for id in scheduler.active.keys():
 		if not owns_turn(id):
 			scheduler.finish(id,false);continue
-		if not scheduler.enabled(id) or game.world.activities.members.has(id) or game.world.activities.gathering.get("failures",{}).has(id) or game.world.shared_activity.holds(id) or game.questions.has(id) or game.group_questions.has(id):cancel(id)
+		var bound_night:bool=game.company!=null and game.company.fireside_model_bound(id,str(scheduler.active[id].id))
+		var offered:Dictionary=game.company.model_pending.get(id,{}) if game.company!=null else {}
+		var lost_night:bool=offered.get("turn","")==scheduler.active[id].id and offered.get("kind","") in ["story","question"] and not bound_night
+		if not scheduler.enabled(id) or game.world.activities.members.has(id) or game.world.activities.gathering.get("failures",{}).has(id) or (game.world.shared_activity.holds(id) and not bound_night) or lost_night or game.questions.has(id) or game.group_questions.has(id):cancel(id)
+	for id in game.world.director.brains:
+		var brain:RefCounted=game.world.director.brains[id]
+		brain.intention.settled=func(row):remember_intention(id,row)
+		brain.intention.outings.meetings=meetings
+		if not scheduler.enabled(id) or scheduler.active.has(id) or not can_send(id):continue
+		if not native_heart(id):continue
+		var invite:Dictionary=meetings.incoming(id)
+		if not invite.is_empty():scheduler.enqueue(id,"heart-peer:"+str(invite.id),"reflection","A companion invited you. Answer this invitation only.")
+		elif brain.intention.due():scheduler.enqueue(id,"heart:"+str(brain.intention.revision),"reflection","Choose a current intention from the host list.")
 	scheduler.advance(delta,game.world.activities.held)
 func defer_chat(text: String,scope: String,id: String) -> bool:
 	var targets: Array=game._group_recipients() if scope=="group" else [id]
@@ -109,6 +139,8 @@ func event(value: Dictionary,id: String,scope: String) -> void:
 			if manual_usage.size()>128:manual_usage.erase(manual_usage.keys()[0])
 		if value.get("complete",false):complete_usage[key]=true
 	if value.get("kind")=="state" and value.get("state") in ["ready","cancelled","error","disconnected"] and value.get("turnComplete",true):
+		if game.company!=null and game.company.model_pending.get(id,{}).get("turn","")==key and not key.is_empty():
+			game.company.model_failed(id,"no_valid_reply" if value.state=="ready" else str(value.state))
 		if not key.is_empty() and scheduler.active.get(id,{}).get("id")==key:
 			scheduler.finish(id,complete_usage.has(key))
 		elif value.get("state")=="ready" and not value.get("autonomy",false):scheduler.dialogue_finished(id)
@@ -120,6 +152,7 @@ func event(value: Dictionary,id: String,scope: String) -> void:
 		if not scheduler.preferences.failure_state(id).get("unavailable",false):game.links[id].capability_error=""
 		cancel(id);return
 	if value.get("kind")=="error" and scheduler.active.has(id):
+		if native_heart(id):game.world.director.brains[id].intention.feedback("","reply_invalid")
 		# Keep the generation barrier up even if the helper reports an error first.
 		cancel(id)
 func status(id: String) -> Dictionary:
@@ -135,6 +168,8 @@ func dispose() -> void:
 	if scheduler==null:return
 	if scheduler.preferences.preference_changed.is_connected(changed):scheduler.preferences.preference_changed.disconnect(changed)
 	scheduler.dispatch=Callable();scheduler.available=Callable();scheduler.histories=Callable();scheduler.codex_high=Callable()
+	scheduler.company_fireside=Callable()
+	scheduler.company_ready=Callable();scheduler.company_progress=Callable()
 	if scheduler.ultra_notice.is_connected(show_notice):scheduler.ultra_notice.disconnect(show_notice)
 	if game.world.promises.execution_started.is_connected(scheduler.note_model_action):game.world.promises.execution_started.disconnect(scheduler.note_model_action)
 	if game.world.promises.settled.is_connected(scheduler.dialogue_finished):game.world.promises.settled.disconnect(scheduler.dialogue_finished)
@@ -148,3 +183,29 @@ func show_notice(id: String,estimate: int) -> void:
 	var reference: String=preload("res://scripts/autonomy_estimate.gd").usage_reference(scheduler.config)
 	game.autonomy_notice.text=LocalText.resident(game.world,id)+LocalText.text("system.autonomy_host.today_s_first_ultra_autonomous_turn")+(reference if not reference.is_empty() else LocalText.text("system.autonomy_host.up_to_about_d_tokens_hour_estimate")%estimate)+LocalText.text("system.autonomy_host.no_unit_price_is_configured_you_can_turn_this")
 	notice_until=scheduler.now()+float(scheduler.config.get("notice_seconds",10));game.autonomy_notice.show()
+
+func heart_card(id:String)->Dictionary:
+	var brain:RefCounted=game.world.director.brains[id]
+	var card:Dictionary={"heart_request":brain.intention.card(),"memory":game.memory_books.card(id,"","direct:"+id,scheduler.preferences.preference(id).level)}
+	card.heart_request["basic_plan"]=brain.intention.basic.card()
+	var facts:Array=game.memory_books.list_for(id,"facts").filter(func(entry):return entry.world_id==game.world.world_id and entry.source=="game")
+	card.heart_request.situation["new_shared_facts"]=facts.slice(-3).map(func(entry):return {"summary":game.memory_books.render(entry).left(120),"kind":str(entry.params.get("legacy",{}).get("kind","fact"))})
+	card.heart_request.situation["no_new_fact"]=facts.is_empty()
+	card.heart_request.situation["player_can_approach"]=brain.distance()<=20
+	# Keep complete identity in the separate fixed persona; bound only memory summaries.
+	if JSON.stringify(card).to_utf8_buffer().size()>int(brain.config.ai_intention.card_bytes):
+		var compact:Dictionary={"abridged":true}
+		for section in card.memory:
+			if not card.memory[section] is Array:continue
+			compact[section]=card.memory[section].slice(0,2).map(func(entry):return {"id":entry.id,"text":str(entry.text).left(120)})
+		card.memory=compact
+	if JSON.stringify(card).to_utf8_buffer().size()>int(brain.config.ai_intention.card_bytes):card.memory={"abridged":true}
+	return card
+func remember_intention(id:String,row:Dictionary)->void:
+	var en:bool=TranslationServer.get_locale().begins_with("en")
+	var brain:RefCounted=game.world.director.brains[id]
+	var line:String=("My intention: " if en else "我的打算：")+brain.action_name(row.activity)+(". Outcome: " if en else "。结局：")+brain.text(row.outcome)+(". " if en else "。")+str(row.detail)
+	game.memory_books.add(id,str(row.get("world_id",game.world.world_id)),"intention:"+str(row.get("id",id+":"+str(row.at))),"feelings",line,{"kind":"intention_outcome","activity":row.activity,"outcome":row.outcome},int(row.get("day",game.world.days.day())),"game",[id],float(row.at))
+
+func native_heart(id:String)->bool:
+	return game._valid_link(game.links,id) and is_instance_valid(game.links[id].get("direct_api"))

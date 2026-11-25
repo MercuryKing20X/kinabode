@@ -21,7 +21,7 @@ func rain(world: RefCounted) -> void:
 		world.weather.weather_seed=candidate
 		if world.weather.current().id=="rain":return
 func enable(world: RefCounted) -> void:
-	world.days.config.greeting_after=world.days.day_seconds+1;world.days.config.small_after=world.days.day_seconds+1;world.wishes.config.first_after=86400
+	world.days.config.greeting_after=world.days.day_seconds+1;world.days.config.small_after=world.days.day_seconds+1
 	for r in world.director.routines.values():
 		world.activities.default_follow_excluded[r.ID]=true # Isolate authored reaction selection from following.
 		r.set_enabled(true);r.set_chatter(true)

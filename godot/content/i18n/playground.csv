@@ -2,20 +2,15 @@ keys,zh,en
 play.choose,一起玩,Play together
 play.join,我也玩,Join in
 play.watch,我看着,Just watch
-play.eagle,老鹰捉小鸡,Eagle and chicks
-play.handkerchief,丢手绢,Drop the handkerchief
 play.hide,捉迷藏,Hide and seek
 play.fireflies,追萤火虫,Chase fireflies
 play.circle,拉圈圈唱歌,Circle song
-playground.start.eagle,我们来玩老鹰捉小鸡吧～,Let’s play eagle and chicks!
-playground.start.handkerchief,围成圈，来丢手绢吧～,Make a circle for the handkerchief!
 playground.start.hide,捂好眼睛，我开始数啦。,"Eyes closed, I’m counting."
 playground.start.fireflies,一起去追萤火虫吧～,Let’s follow the fireflies!
 playground.start.circle,拉成圈，唱首歌吧～,Let’s circle up and sing!
-playground.round,换个人当老鹰，再来一次～,"A new eagle, one more round!"
+playground.round,再来一轮吧。,Shall we go another round?
 playground.hush,嘘……,Shh…
 playground.found,……找到了。,…Found you.
-playground.lyrics,丢手绢，丢手绢，轻轻地放在小朋友的后面～,"Drop the handkerchief, gently behind a friend～"
 playground.notes,♪ ♫ ♪,♪ ♫ ♪
 playground.end,今天一起玩得好开心呀～,That was a lovely time together!
 playground.count.1,1,1
@@ -35,102 +30,6 @@ playground.memory.fireflies,我们一起玩了追萤火虫。,We played chase fi
 playground.memory.circle,我们一起玩了拉圈圈唱歌。,We played circle song together.
 play.turn_limit,单回合上限,Per-turn limit
 play.unlimited_hint,0＝不限,0 = Unlimited
-playground.voice.eagle.gentle.round.0,呵呵，慢慢跑就好。,"Hehe, take your time."
-playground.voice.eagle.gentle.round.1,我蹲下来歇一会儿～,I’ll crouch and catch my breath～
-playground.voice.eagle.gentle.round.2,别摔着，我在这里呢。,"Careful, I’m right here."
-playground.voice.eagle.gentle.round.3,再陪你们一轮吧。,Let’s have one more round.
-playground.voice.eagle.gentle.found.0,呵呵，慢慢跑就好。,"Hehe, take your time."
-playground.voice.eagle.gentle.found.1,我蹲下来歇一会儿～,I’ll crouch and catch my breath～
-playground.voice.eagle.gentle.found.2,别摔着，我在这里呢。,"Careful, I’m right here."
-playground.voice.eagle.gentle.found.3,再陪你们一轮吧。,Let’s have one more round.
-playground.voice.eagle.gentle.end.0,呵呵，慢慢跑就好。,"Hehe, take your time."
-playground.voice.eagle.gentle.end.1,我蹲下来歇一会儿～,I’ll crouch and catch my breath～
-playground.voice.eagle.gentle.end.2,别摔着，我在这里呢。,"Careful, I’m right here."
-playground.voice.eagle.gentle.end.3,再陪你们一轮吧。,Let’s have one more round.
-playground.voice.eagle.lively.round.0,呀——甩出去啦！,Aah—we’re swinging out!
-playground.voice.eagle.lively.round.1,我忍不住探头看啦！,I can’t help peeking!
-playground.voice.eagle.lively.round.2,再来再来，哈哈哈！,"Again, again! Hahaha!"
-playground.voice.eagle.lively.round.3,追不上我吧，嘿嘿！,"Can’t catch me, hehe!"
-playground.voice.eagle.lively.found.0,呀——甩出去啦！,Aah—we’re swinging out!
-playground.voice.eagle.lively.found.1,我忍不住探头看啦！,I can’t help peeking!
-playground.voice.eagle.lively.found.2,再来再来，哈哈哈！,"Again, again! Hahaha!"
-playground.voice.eagle.lively.found.3,追不上我吧，嘿嘿！,"Can’t catch me, hehe!"
-playground.voice.eagle.lively.end.0,呀——甩出去啦！,Aah—we’re swinging out!
-playground.voice.eagle.lively.end.1,我忍不住探头看啦！,I can’t help peeking!
-playground.voice.eagle.lively.end.2,再来再来，哈哈哈！,"Again, again! Hahaha!"
-playground.voice.eagle.lively.end.3,追不上我吧，嘿嘿！,"Can’t catch me, hehe!"
-playground.voice.eagle.laborious.round.0,不许偷看！,No peeking!
-playground.voice.eagle.laborious.round.1,排好队，一个接一个。,"Line up, one after another."
-playground.voice.eagle.laborious.round.2,这次要按规则来哦。,Let’s follow the rules this time.
-playground.voice.eagle.laborious.round.3,还没喊开始呢！,We haven’t said go yet!
-playground.voice.eagle.laborious.found.0,不许偷看！,No peeking!
-playground.voice.eagle.laborious.found.1,排好队，一个接一个。,"Line up, one after another."
-playground.voice.eagle.laborious.found.2,这次要按规则来哦。,Let’s follow the rules this time.
-playground.voice.eagle.laborious.found.3,还没喊开始呢！,We haven’t said go yet!
-playground.voice.eagle.laborious.end.0,不许偷看！,No peeking!
-playground.voice.eagle.laborious.end.1,排好队，一个接一个。,"Line up, one after another."
-playground.voice.eagle.laborious.end.2,这次要按规则来哦。,Let’s follow the rules this time.
-playground.voice.eagle.laborious.end.3,还没喊开始呢！,We haven’t said go yet!
-playground.voice.eagle.quiet.round.0,……找到了。,…Found you.
-playground.voice.eagle.quiet.round.1,……我陪你们。,…I’ll play along.
-playground.voice.eagle.quiet.round.2,别跑太远。,Don’t run too far.
-playground.voice.eagle.quiet.round.3,……嗯，再一轮。,"…Mm, one more round."
-playground.voice.eagle.quiet.found.0,……找到了。,…Found you.
-playground.voice.eagle.quiet.found.1,……我陪你们。,…I’ll play along.
-playground.voice.eagle.quiet.found.2,别跑太远。,Don’t run too far.
-playground.voice.eagle.quiet.found.3,……嗯，再一轮。,"…Mm, one more round."
-playground.voice.eagle.quiet.end.0,……找到了。,…Found you.
-playground.voice.eagle.quiet.end.1,……我陪你们。,…I’ll play along.
-playground.voice.eagle.quiet.end.2,别跑太远。,Don’t run too far.
-playground.voice.eagle.quiet.end.3,……嗯，再一轮。,"…Mm, one more round."
-playground.voice.handkerchief.gentle.round.0,呵呵，慢慢跑就好。,"Hehe, take your time."
-playground.voice.handkerchief.gentle.round.1,我蹲下来歇一会儿～,I’ll crouch and catch my breath～
-playground.voice.handkerchief.gentle.round.2,别摔着，我在这里呢。,"Careful, I’m right here."
-playground.voice.handkerchief.gentle.round.3,再陪你们一轮吧。,Let’s have one more round.
-playground.voice.handkerchief.gentle.found.0,呵呵，慢慢跑就好。,"Hehe, take your time."
-playground.voice.handkerchief.gentle.found.1,我蹲下来歇一会儿～,I’ll crouch and catch my breath～
-playground.voice.handkerchief.gentle.found.2,别摔着，我在这里呢。,"Careful, I’m right here."
-playground.voice.handkerchief.gentle.found.3,再陪你们一轮吧。,Let’s have one more round.
-playground.voice.handkerchief.gentle.end.0,呵呵，慢慢跑就好。,"Hehe, take your time."
-playground.voice.handkerchief.gentle.end.1,我蹲下来歇一会儿～,I’ll crouch and catch my breath～
-playground.voice.handkerchief.gentle.end.2,别摔着，我在这里呢。,"Careful, I’m right here."
-playground.voice.handkerchief.gentle.end.3,再陪你们一轮吧。,Let’s have one more round.
-playground.voice.handkerchief.lively.round.0,呀——甩出去啦！,Aah—we’re swinging out!
-playground.voice.handkerchief.lively.round.1,我忍不住探头看啦！,I can’t help peeking!
-playground.voice.handkerchief.lively.round.2,再来再来，哈哈哈！,"Again, again! Hahaha!"
-playground.voice.handkerchief.lively.round.3,追不上我吧，嘿嘿！,"Can’t catch me, hehe!"
-playground.voice.handkerchief.lively.found.0,呀——甩出去啦！,Aah—we’re swinging out!
-playground.voice.handkerchief.lively.found.1,我忍不住探头看啦！,I can’t help peeking!
-playground.voice.handkerchief.lively.found.2,再来再来，哈哈哈！,"Again, again! Hahaha!"
-playground.voice.handkerchief.lively.found.3,追不上我吧，嘿嘿！,"Can’t catch me, hehe!"
-playground.voice.handkerchief.lively.end.0,呀——甩出去啦！,Aah—we’re swinging out!
-playground.voice.handkerchief.lively.end.1,我忍不住探头看啦！,I can’t help peeking!
-playground.voice.handkerchief.lively.end.2,再来再来，哈哈哈！,"Again, again! Hahaha!"
-playground.voice.handkerchief.lively.end.3,追不上我吧，嘿嘿！,"Can’t catch me, hehe!"
-playground.voice.handkerchief.laborious.round.0,不许偷看！,No peeking!
-playground.voice.handkerchief.laborious.round.1,排好队，一个接一个。,"Line up, one after another."
-playground.voice.handkerchief.laborious.round.2,这次要按规则来哦。,Let’s follow the rules this time.
-playground.voice.handkerchief.laborious.round.3,还没喊开始呢！,We haven’t said go yet!
-playground.voice.handkerchief.laborious.found.0,不许偷看！,No peeking!
-playground.voice.handkerchief.laborious.found.1,排好队，一个接一个。,"Line up, one after another."
-playground.voice.handkerchief.laborious.found.2,这次要按规则来哦。,Let’s follow the rules this time.
-playground.voice.handkerchief.laborious.found.3,还没喊开始呢！,We haven’t said go yet!
-playground.voice.handkerchief.laborious.end.0,不许偷看！,No peeking!
-playground.voice.handkerchief.laborious.end.1,排好队，一个接一个。,"Line up, one after another."
-playground.voice.handkerchief.laborious.end.2,这次要按规则来哦。,Let’s follow the rules this time.
-playground.voice.handkerchief.laborious.end.3,还没喊开始呢！,We haven’t said go yet!
-playground.voice.handkerchief.quiet.round.0,……找到了。,…Found you.
-playground.voice.handkerchief.quiet.round.1,……我陪你们。,…I’ll play along.
-playground.voice.handkerchief.quiet.round.2,别跑太远。,Don’t run too far.
-playground.voice.handkerchief.quiet.round.3,……嗯，再一轮。,"…Mm, one more round."
-playground.voice.handkerchief.quiet.found.0,……找到了。,…Found you.
-playground.voice.handkerchief.quiet.found.1,……我陪你们。,…I’ll play along.
-playground.voice.handkerchief.quiet.found.2,别跑太远。,Don’t run too far.
-playground.voice.handkerchief.quiet.found.3,……嗯，再一轮。,"…Mm, one more round."
-playground.voice.handkerchief.quiet.end.0,……找到了。,…Found you.
-playground.voice.handkerchief.quiet.end.1,……我陪你们。,…I’ll play along.
-playground.voice.handkerchief.quiet.end.2,别跑太远。,Don’t run too far.
-playground.voice.handkerchief.quiet.end.3,……嗯，再一轮。,"…Mm, one more round."
 playground.voice.hide.gentle.round.0,呵呵，慢慢跑就好。,"Hehe, take your time."
 playground.voice.hide.gentle.round.1,我蹲下来歇一会儿～,I’ll crouch and catch my breath～
 playground.voice.hide.gentle.round.2,别摔着，我在这里呢。,"Careful, I’m right here."
@@ -279,38 +178,6 @@ play.unavailable,等大家忙完吃饱再一起玩吧。,Let everyone finish wor
 playground.ai_cue,请按游戏卡片，用你的口吻说一句主持台词，只说话。,Use the game card to say one short host line in your own voice. Speech only.
 playground.release,一起松开手，让小光点飞回夜里吧～,Let’s open our hands and let the lights fly into the night～
 playground.rest,唱完啦，坐下歇一会儿吧～,Our song is done. Let’s sit and rest～
-playground.voice.eagle.gentle.start.0,老鹰捉小鸡，呵呵，慢慢跑就好。,"eagle and chicks. Hehe, take your time."
-playground.voice.eagle.gentle.start.1,老鹰捉小鸡，我蹲下来歇一会儿～,eagle and chicks. I’ll crouch and catch my breath～
-playground.voice.eagle.gentle.start.2,老鹰捉小鸡，别摔着，我在这里呢。,"eagle and chicks. Careful, I’m right here."
-playground.voice.eagle.gentle.start.3,老鹰捉小鸡，再陪你们一轮吧。,eagle and chicks. Let’s have one more round.
-playground.voice.eagle.lively.start.0,老鹰捉小鸡，呀——甩出去啦！,eagle and chicks. Aah—we’re swinging out!
-playground.voice.eagle.lively.start.1,老鹰捉小鸡，我忍不住探头看啦！,eagle and chicks. I can’t help peeking!
-playground.voice.eagle.lively.start.2,老鹰捉小鸡，再来再来，哈哈哈！,"eagle and chicks. Again, again! Hahaha!"
-playground.voice.eagle.lively.start.3,老鹰捉小鸡，追不上我吧，嘿嘿！,"eagle and chicks. Can’t catch me, hehe!"
-playground.voice.eagle.laborious.start.0,老鹰捉小鸡，不许偷看！,eagle and chicks. No peeking!
-playground.voice.eagle.laborious.start.1,老鹰捉小鸡，排好队，一个接一个。,"eagle and chicks. Line up, one after another."
-playground.voice.eagle.laborious.start.2,老鹰捉小鸡，这次要按规则来哦。,eagle and chicks. Let’s follow the rules this time.
-playground.voice.eagle.laborious.start.3,老鹰捉小鸡，还没喊开始呢！,eagle and chicks. We haven’t said go yet!
-playground.voice.eagle.quiet.start.0,老鹰捉小鸡，……找到了。,eagle and chicks. …Found you.
-playground.voice.eagle.quiet.start.1,老鹰捉小鸡，……我陪你们。,eagle and chicks. …I’ll play along.
-playground.voice.eagle.quiet.start.2,老鹰捉小鸡，别跑太远。,eagle and chicks. Don’t run too far.
-playground.voice.eagle.quiet.start.3,老鹰捉小鸡，……嗯，再一轮。,"eagle and chicks. …Mm, one more round."
-playground.voice.handkerchief.gentle.start.0,丢手绢，呵呵，慢慢跑就好。,"drop the handkerchief. Hehe, take your time."
-playground.voice.handkerchief.gentle.start.1,丢手绢，我蹲下来歇一会儿～,drop the handkerchief. I’ll crouch and catch my breath～
-playground.voice.handkerchief.gentle.start.2,丢手绢，别摔着，我在这里呢。,"drop the handkerchief. Careful, I’m right here."
-playground.voice.handkerchief.gentle.start.3,丢手绢，再陪你们一轮吧。,drop the handkerchief. Let’s have one more round.
-playground.voice.handkerchief.lively.start.0,丢手绢，呀——甩出去啦！,drop the handkerchief. Aah—we’re swinging out!
-playground.voice.handkerchief.lively.start.1,丢手绢，我忍不住探头看啦！,drop the handkerchief. I can’t help peeking!
-playground.voice.handkerchief.lively.start.2,丢手绢，再来再来，哈哈哈！,"drop the handkerchief. Again, again! Hahaha!"
-playground.voice.handkerchief.lively.start.3,丢手绢，追不上我吧，嘿嘿！,"drop the handkerchief. Can’t catch me, hehe!"
-playground.voice.handkerchief.laborious.start.0,丢手绢，不许偷看！,drop the handkerchief. No peeking!
-playground.voice.handkerchief.laborious.start.1,丢手绢，排好队，一个接一个。,"drop the handkerchief. Line up, one after another."
-playground.voice.handkerchief.laborious.start.2,丢手绢，这次要按规则来哦。,drop the handkerchief. Let’s follow the rules this time.
-playground.voice.handkerchief.laborious.start.3,丢手绢，还没喊开始呢！,drop the handkerchief. We haven’t said go yet!
-playground.voice.handkerchief.quiet.start.0,丢手绢，……找到了。,drop the handkerchief. …Found you.
-playground.voice.handkerchief.quiet.start.1,丢手绢，……我陪你们。,drop the handkerchief. …I’ll play along.
-playground.voice.handkerchief.quiet.start.2,丢手绢，别跑太远。,drop the handkerchief. Don’t run too far.
-playground.voice.handkerchief.quiet.start.3,丢手绢，……嗯，再一轮。,"drop the handkerchief. …Mm, one more round."
 playground.voice.hide.gentle.start.0,捉迷藏，呵呵，慢慢跑就好。,"hide and seek. Hehe, take your time."
 playground.voice.hide.gentle.start.1,捉迷藏，我蹲下来歇一会儿～,hide and seek. I’ll crouch and catch my breath～
 playground.voice.hide.gentle.start.2,捉迷藏，别摔着，我在这里呢。,"hide and seek. Careful, I’m right here."

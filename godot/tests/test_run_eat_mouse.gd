@@ -53,6 +53,7 @@ func screenshot(name:String)->void:
 func clickable_ground(at:Vector2)->bool:
 	var pixel:Vector2=game.view.screen(at)
 	if not game.view.hit(pixel).is_empty():return false
+	if not game.view.care_hit(pixel).is_empty():return false
 	# IslandView handles need bubbles BEFORE ordinary world hit testing.
 	for entry in game.view.speech_layout():
 		var context:String=str(game.view.speech_by_actor.get(entry.actor_id,{}).get("context",""))
@@ -89,32 +90,22 @@ func prepare_visible_rush_origin(life:RefCounted)->bool:
 	if not wait_route() or w.point(w.actors.human).distance_to(at)>.1:return rush_origin_failure("stage 24",life,at)
 	var hud:Node=game.island_hud
 	hud.refresh();await process_frame;await process_frame
-	if not await WardrobeUI.click(self,hud.manage_connections):return rush_origin_failure("stage 27",life,at)
-	# This fixture freezes HUD processing; explicitly refresh presentation after opening a panel.
-	hud.refresh();await process_frame;await process_frame
-	var panel:Control=game.resident_connections
-	var blue_index:int=panel.resident_ids.find("companion-2")
-	if blue_index<0:return rush_origin_failure("stage 32",life,at)
-	await mouse(panel.residents.get_global_rect().position+panel.residents.get_item_rect(blue_index).get_center())
-	if panel.selected_id!="companion-2":return rush_origin_failure("stage 34",life,at)
-	await mouse(panel.tabs.get_global_rect().position+panel.tabs.get_tab_rect(1).get_center())
-	if panel.tabs.current_tab!=1 or not game.daily_controls.is_visible_in_tree():return rush_origin_failure("stage 36",life,at)
+	if not await WardrobeUI.click(self,hud.resident_menus["companion-2"]):return rush_origin_failure("resident menu",life,at)
+	var panel:Control=hud.resident_card
+	var scroll:ScrollContainer=hud.card_scroll
+	if not panel.visible or hud.card_id!="companion-2":return rush_origin_failure("blue resident card",life,at)
 	var call_button:Button;var call_count:=0
-	for node in WardrobeUI.descendants(game.daily_controls):
-		if node is Button and node.text=="过来陪我":call_button=node;call_count+=1
+	for node in WardrobeUI.descendants(panel):
+		if node is Button and node.text==preload("res://scripts/localization.gd").text("hud.come_here"):call_button=node;call_count+=1
 	if call_count!=1:return rush_origin_failure("stage 40",life,at)
-	for attempt in range(40):
-		if panel.details_scroll.get_global_rect().encloses(call_button.get_global_rect()):break
-		var scroll_at:Vector2=panel.details_scroll.get_global_rect().get_center()
-		var motion:=InputEventMouseMotion.new();motion.position=scroll_at;motion.global_position=scroll_at;root.push_input(motion,true)
-		for pressed in [true,false]:
-			var wheel:=InputEventMouseButton.new();wheel.button_index=MOUSE_BUTTON_WHEEL_DOWN;wheel.pressed=pressed;wheel.button_mask=0;wheel.position=scroll_at;wheel.global_position=scroll_at;root.push_input(wheel,true);await process_frame
+	var scroll_attempts:=0
+	while not scroll.get_global_rect().encloses(call_button.get_global_rect()) and scroll_attempts<40:
+		await scroll_down(scroll)
+		scroll_attempts+=1
 	if not await WardrobeUI.click(self,call_button):return rush_origin_failure("stage 47",life,at)
 	var actual_job:String=str(w.work.jobs.get("companion-2",{}).get("id",""))
 	if actual_job.is_empty() or w.work.jobs["companion-2"].get("intent")!="come_near":return rush_origin_failure("stage 49",life,at)
-	for pressed in [true,false]:
-		var escape:=InputEventKey.new();escape.keycode=KEY_ESCAPE;escape.pressed=pressed;root.push_input(escape,true);await process_frame
-	if panel.visible:return rush_origin_failure("stage 52",life,at)
+	if not await WardrobeUI.click(self,hud.card_close) or panel.visible:return rush_origin_failure("close resident card",life,at)
 	hud.refresh();await process_frame;await process_frame
 	for frame in range(3000):
 		advance()
@@ -125,6 +116,11 @@ func prepare_visible_rush_origin(life:RefCounted)->bool:
 	for seat in life.seats():
 		if w.point(seat).distance_to(w.point(w.actors["companion-2"]))<=3:return rush_origin_failure("stage 61",life,at)
 	return true
+func scroll_down(scroll:ScrollContainer)->void:
+	var at:=scroll.get_global_rect().get_center()
+	var motion:=InputEventMouseMotion.new();motion.position=at;motion.global_position=at;root.push_input(motion,true)
+	for pressed in [true,false]:
+		var wheel:=InputEventMouseButton.new();wheel.button_index=MOUSE_BUTTON_WHEEL_DOWN;wheel.pressed=pressed;wheel.button_mask=0;wheel.position=at;wheel.global_position=at;root.push_input(wheel,true);await process_frame
 func modes()->Array:
 	return [OS.get_environment("HABITAT_MOTION_CASE")] if not OS.get_environment("HABITAT_MOTION_CASE").is_empty() else ["standard","showcase"]
 func run()->void:
@@ -172,6 +168,9 @@ func run()->void:
 				var confirm:Array=WardrobeUI.descendants(wardrobe).filter(func(n):return n is Button and n.text=="确定")
 				check(confirm.size()==1 and await WardrobeUI.click(self,confirm[0]) and w.actors[actor_id].appearance_id==assignments[actor_id],mode+" actual confirm changes selected appearance "+actor_id)
 			if mode=="standard":
+				# The fake controllers leave the human as the sole builder; no prior
+				# autonomous job may put materials into the test runner's backpack.
+				for id in w.director.routines:w.director.set_controller(id,"model")
 				stage(station_id+" construction begins")
 				var required:int=ConstructionUI.required_wood(w,station_id)
 				for chop in range(ceili(float(maxi(0,required-w.storage.count("wood")))/float(w.forest.settings.normal_wood))+1):
@@ -209,6 +208,7 @@ func run()->void:
 			stage(station_id+" hunger advance begins")
 			# Advance actual elapsed time without changing hunger parameters or inventory.
 			for elapsed in range(1200):game._process(.5);game.view._process(.5)
+			check(w.hunger.rank("companion-2")>=2,mode+" blue has genuinely reached the rush threshold")
 			stage(station_id+" rush origin begins")
 			var life:RefCounted=w.barbecues[station_id];var center:Vector2=w.point(life.station)
 			check(await prepare_visible_rush_origin(life),mode+" "+station_id+" actual mouse call establishes blue away from every dining seat")
@@ -275,6 +275,7 @@ func run()->void:
 			menu.scroll.ensure_control_visible(mushroom_button);await process_frame;await process_frame
 			check(await click_button(mushroom_button),"native selects exact real mushroom")
 			check(await click_button(menu.start_button),mode+" "+station_id+" actual mouse roasts")
+			var rush_start:Dictionary={"rank":w.hunger.rank("companion-2"),"invited":life.fireside.state.get("invited",[]).duplicate(),"can_follow":w.hunger.can_follow("companion-2",station_id),"job":w.work.jobs.get("companion-2",{}).duplicate(true),"rush":w.hunger.rushes.get("companion-2",{}).duplicate(true),"pending":w.hunger.pending_invites.get("companion-2",{}).duplicate(true),"loaded":w.loaded("companion-2"),"holds":w.director.routines["companion-2"].held}
 			var run_columns:Dictionary={}
 			var captured:=false;var rush_seen:bool=w.hunger.rushing("companion-2")
 			for tick in range(3000):
@@ -287,6 +288,7 @@ func run()->void:
 						await screenshot(mode+"-"+station_id+"-eating-"+str(dimensions.x))
 					root.size=Vector2i(1280,800)
 				if life.fireside.state.current.get("eaten",0)>=5:break
+			if not rush_seen:print("RUSH_AT_CONFIRM ",mode," ",station_id," ",rush_start)
 			check(rush_seen,mode+" hungry invited blue uses real rush route")
 			check(run_columns.size()>1,mode+" rushing uses changing run atlas columns")
 			check(life.fireside.state.current.get("eaten",0)==5,mode+" "+station_id+" five actual eaters")

@@ -10,6 +10,8 @@ func fresh_title(index:int)->void:
 	OS.set_environment("HABITAT_DATA_DIR",base_directory.path_join("run-"+str(index)))
 	OS.set_environment("HABITAT_BRAIN_SEED","701")
 	OS.set_environment("HABITAT_TEST_SEED",str(JSON.parse_string(FileAccess.get_file_as_string("res://content/brain.json")).developer_report.world_seed))
+	# DIRECTION / 开放的小世界：“新正式开局默认真正随机；测试仍可指定种子。”
+	OS.set_environment("HABITAT_WORLD_SEED",OS.get_environment("HABITAT_TEST_SEED"))
 	OS.set_environment("HABITAT_OPENING","standard")
 	preload("res://tests/deterministic_environment.gd").streams.clear()
 	var title:Node=load("res://scenes/title.tscn").instantiate();root.add_child(title);current_scene=title
@@ -33,7 +35,7 @@ func sample(index:int)->Dictionary:
 	var plots:Dictionary=w.farms.plots.duplicate(true)
 	var interactions:Dictionary={};var interaction_seq:Array=[];var delivered_lines:Dictionary={};var approached:Dictionary={}
 	var counts:Dictionary={};var distance:Dictionary={};var idle:Dictionary={};var max_idle:Dictionary={};var seq:Array=[];var timeline:Array=[]
-	var telemetry:=preload("res://scripts/brain_report.gd").new()
+	var telemetry:=preload("res://tests/fixture_brain_report.gd").new()
 	var no_labor:=true;var conserved:=true
 	for id in w.director.brains:interactions[id]=0;approached[id]=0;counts[id]={};distance[id]=0.0;idle[id]=0.0;max_idle[id]=0.0
 	for tick in 7200:
@@ -99,7 +101,8 @@ func sample(index:int)->Dictionary:
 			seq.append({"actor":row.actor,"at":row.at,"choice":row.choice,"reasons":row.reasons})
 	for id in w.director.brains:
 		var b:RefCounted=w.director.brains[id]
-		check(int(interactions[id])>=5,"at least five delivered host interactions "+id)
+		# DIRECTION: “30 分钟内每人至少有一次与伙伴的互动、且不是由节奏导演推动”.
+		check(day_report.trace.any(func(row):return row.actor==id and row.get("event")=="social_episode" and row.get("outcome")=="completed" and row.get("reasons",[])==["brain_social"]),"at least one organic partner interaction "+id)
 		check(float(max_idle[id])<=15,"idle gap <=15 seconds "+id)
 		check(counts[id].size()>=8,"at least eight distinct actions "+id)
 		check(float(distance[id])/1800>=2 and float(distance[id])/1800<=8,"follow average 2..8 "+id)

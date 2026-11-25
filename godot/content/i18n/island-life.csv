@@ -1,0 +1,56 @@
+keys,zh,en
+door.daily_limit,每日上限（token）,Daily token limit
+door.turn_limit,今天先按熟悉的节奏过吧～,Let’s keep a familiar rhythm today.
+watch.expand,展开,Expand
+watch.all,所有人,Everyone
+watch.common,常用,Frequent
+watch.everyone,大家,Everyone
+watch.myself,我自己,Myself
+watch.ask,问问,Ask
+watch.chop,派活：砍树,Chop trees
+watch.harvest,派活：收菜,Harvest
+watch.gather,集合,Gather
+watch.follow,跟随,Follow
+watch.unfollow,不跟随,Stop following
+watch.doing,在干嘛,What’s up
+watch.hungry,饿不饿,Hungry
+watch.stock,仓库,Storage
+watch.summary,第 %s 天的小结,Day %s in review
+watch.wood_receipt,%s 砍了 %d 棵树，%d 木材已入库,%s chopped %d trees; %d wood stored
+watch.reason,她的心里话：,Her thoughts:
+watch.follow_options,跟随,Follow
+watch.missing,东西还差一点，先等等吧。,We need a few more things. Let’s wait.
+watch.blocked,这会儿办不到，我换个安排吧。,That won’t work right now. Let me rethink it.
+watch.material_confirm,这段安排预计最多用到 %d 份材料。现在交给她们吗？,This plan may use up to %d materials. Go ahead?
+intent.action.assemble,集合,Gather
+watch.mail_short,信 %d,Mail %d
+watch.log,日志,Today’s log
+world.command.chop,大家去砍树,Everyone chop trees
+world.command.harvest,大家去收菜,Everyone harvest
+world.command.assemble,到营火集合,Gather at campfire
+world.command.follow,都跟着我,Follow me
+world.command.unfollow,别跟了自由活动,Stop following
+world.command.doing,大家在干嘛,What is everyone doing
+world.command.hungry,大家饿不饿,Is anyone hungry
+world.command.stock,仓库有什么,What is in storage
+repair.connecting,正在连接中,Connecting
+repair.disconnected,没连接 AI,AI is not connected
+repair.no_authority,没开管事权,Management permission is off
+repair.accepted,交给我吧～,Leave it to me!
+repair.offer,要我来照看大家吗？,Shall I look after everyone?
+repair.yes,好,Yes
+repair.later,先不用,Not now
+repair.ask_authority,我还没有管事权呢，要交给我吗？,May I have permission to manage everyone?
+repair.tasks,任务,Tasks
+repair.suggestion,今日建议,Today’s suggestion
+repair.wood,木材不多了，去砍树吧,Wood is low. Chop some trees
+repair.food,有人饿了，生火烧烤吧,Someone is hungry. Have a barbecue
+repair.harvest,田熟了，去收菜吧,Crops are ready. Harvest them
+repair.fish,去钓鱼吧,Go fishing
+reliable.persona,她的设定,Her persona
+reliable.default,恢复默认,Restore default
+reliable.save,保存,Save
+reliable.next_connection,保存后下次连接生效；已连接时请重连。,Saved changes apply on the next connection. Reconnect to apply now.
+reliable.reconnect,一键重连,Reconnect
+reliable.reconnected,刚才走神了～我回来啦。,Mm… I drifted for a moment. I’m back.
+watch.dialogue_commands,对话/指令,Chat / Commands

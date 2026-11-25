@@ -2,7 +2,11 @@ extends SceneTree
 func _initialize()->void:
 	var w:=preload("res://scripts/world_state.gd").new("res://content/home-v3/world.json");w.residents.provision(w)
 	var parser:=preload("res://scripts/farm_commands.gd").new()
-	var rows:Array=JSON.parse_string(FileAccess.get_file_as_string("res://../production/evidence/2026-11-05-智能一句话与跟随/coverage-cases.json"))
+	var source:Variant=JSON.parse_string(FileAccess.get_file_as_string("res://../production/evidence/2026-11-05-智能一句话与跟随/coverage-cases.json"))
+	if not source is Array or source.is_empty():
+		push_error("Missing or invalid command-coverage fixture; set HABITAT_PRIVATE_TEST_FIXTURES for this suite")
+		quit(2);return
+	var rows:Array=source
 	var counts:Dictionary={};var failures:Array=[]
 	for row in rows:
 		var result:Dictionary=parser.parse_command(w,row.text)

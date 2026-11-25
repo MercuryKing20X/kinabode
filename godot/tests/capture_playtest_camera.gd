@@ -43,9 +43,12 @@ func far_visit(game:Node,opening:String)->void:
 	var w:RefCounted=game.world
 	w.activities.set_followers([]) # Explicit host dismissal before measuring free residents returning.
 	# Match the existing follow-picker deselection: this scene measures free social return visits.
-	for id in w.director.routines:w.activities.default_follow_excluded[id]=true
+	for id in w.director.routines:
+		w.activities.default_follow_excluded[id]=true
 	var start:Vector2=w.point(w.actors.human);var target:=Vector2.INF
-	for radius in [36.0,44.0,52.0]:
+	# Avoid treating the first short radial step as isolation when it lands in
+	# the forest residents are actively using. Prefer the more distant route.
+	for radius in [72.0,60.0,52.0,44.0,36.0]:
 		for index in range(24):
 			var point:Vector2=start+Vector2.from_angle(TAU*index/24)*radius
 			if w.actors.values().filter(func(actor):return actor.id!="human").all(func(actor):return w.point(actor).distance_to(point)>=32) and w.walkable("home",point) and not w.find_route("human",point).is_empty():
@@ -58,12 +61,21 @@ func far_visit(game:Node,opening:String)->void:
 	for down in [true,false]:
 		var event:=InputEventMouseButton.new();event.position=at;event.global_position=at;event.button_index=MOUSE_BUTTON_LEFT;event.pressed=down;event.button_mask=MOUSE_BUTTON_MASK_LEFT if down else 0;root.push_input(event,true);await process_frame
 	check(w._routes.has("human"),"far mouse click starts original route")
-	for frame in range(2600):game._process(.1);game.view._process(.1)
+	var autonomous_work:=false
+	for frame in range(2600):
+		game._process(.1);game.view._process(.1)
+		autonomous_work=autonomous_work or w.director.brains.values().any(func(brain):return brain.owns_local_job())
+	check(autonomous_work,"background work remains active during the trip "+opening)
 	check(w.point(w.actors.human).distance_to(target)<.1,"human reaches clicked far destination")
 	var arrivals:Dictionary={};var total:=0
 	for id in w.director.routines:
 		arrivals[id]=w.director.routines[id].return_visit.arrivals.duplicate(true);total+=arrivals[id].size()
-	check(total>0,"idle residents return after real far-away player route")
+	if total==0:
+		print("RETURN_VISIT target=",target)
+		for id in w.director.routines:
+			var routine:RefCounted=w.director.routines[id]
+			print("RETURN_VISIT ",id," time=",routine.time," last_seen=",routine.return_visit.last_seen," due=",routine.return_visit.due," attempts=",routine.return_visit.diagnostics," current=",w.director.brains[id].current," job=",w.work.jobs.get(id,{}))
+	check(total>0,"idle residents return after real far-away player route "+opening)
 	records.append({"opening":opening,"far_input_target":[target.x,target.y],"seconds_advanced":260,"return_arrivals":arrivals})
 func run()->void:
 	assert(OS.get_environment("HABITAT_DATA_DIR").contains("youqi-test-"));output=OS.get_environment("HABITAT_PLAYTEST_CAPTURE")

@@ -21,7 +21,6 @@ func run()->void:
 	check(w.work.jobs.get("companion-2",{}).get("id","")==job,"named planting preserves unrelated chop job")
 	var link:Node=game.links.codex
 	var key:String=link.turn_key
-	game.steward.pool.set_management("codex",true)
 	game.connection_ui_states["codex:direct"]="ready"
 	var words:Array=["你好呀","今天真舒服","你在想什么","我看着呢","去种菜","慢慢来","让他们去种菜","种地去","大家去种菜","谢谢小白"]
 	for phrase in words:

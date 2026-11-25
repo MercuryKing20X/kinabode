@@ -6,8 +6,11 @@ static func reason(f:RefCounted,id:String)->String:
 	if not w.actors.has(id):return "unknown_resident"
 	if w.resort!=null and w.resort.vacation(id):return w.resort.line()
 	if w.actors[id].region_id!="home" or w.actors.human.region_id!="home":return "different_region"
-	if id!="human" and w.hunger!=null and w.hunger.rank(id)>=2:return "very_hungry" if w.hunger.rank(id)>=3 else "hungry"
-	if f.active(id) or w.work.jobs.has(id) or w.deliveries.active(id) or w.projects.active(id) or w.homestead.active(id):return "busy"
+	if not w.open_life and id!="human" and w.hunger!=null and w.hunger.rank(id)>=2:return "very_hungry" if w.hunger.rank(id)>=3 else "hungry"
+	var brain:RefCounted=w.director.brains.get(id)
+	var local_job:bool=brain!=null and brain.owns_local_job() and not w.actors[id].has("world_door_client")
+	if f.active(id) or (not local_job and (w.work.jobs.has(id) or w.deliveries.active(id))) or w.projects.active(id) or w.homestead.active(id):return "busy"
+	if w.actors[id].has("world_door_client"):return "busy"
 	if not str(w.actors[id].get("furniture_id","")).is_empty():return "hands_full"
 	if w.gomoku.active(id) or w.shared_activity.contains(id) or w.activities.blocked(id,false):return "busy"
 	if not w.fishing.held(id).is_empty():return "hands_full"

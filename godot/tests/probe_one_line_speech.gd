@@ -10,7 +10,7 @@ func _initialize()->void:
 				if baseline:r.config=r.config.duplicate(true);r.config.speech_interval=[32.0,55.0]
 			if baseline:w.director.moods.config=w.director.moods.config.duplicate(true);w.director.moods.config.village_gap=14.0
 			if baseline:
-				for observer in [w.hunger,w.days,w.personality,w.relationships,w.wishes,w.fishing.life]:
+				for observer in [w.hunger,w.days,w.personality,w.relationships,w.fishing.life]:
 					observer.config=observer.config.duplicate(true)
 					for key in ["personal_gap","village_gap"]:
 						if observer.config.has(key):observer.config[key]=float(observer.config[key])*2

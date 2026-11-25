@@ -57,9 +57,10 @@ func autonomy_capabilities() -> Dictionary:
 
 func send_autonomy(context: Dictionary,level: String,limits: Dictionary,key: String) -> bool:
 	if is_busy() or level not in ["medium","high","ultra","lifeblood"] or not autonomy_capabilities().supported:return false
-	var bounded:Dictionary=context.duplicate(true);bounded.erase("lifeblood_memory")
+	var bounded:Dictionary=context.duplicate(true);bounded.erase("lifeblood_memory");bounded.erase("heart_card")
 	if JSON.stringify(bounded).to_utf8_buffer().size()>4096:return false
 	if context.has("lifeblood_memory") and (level!="lifeblood" or JSON.stringify(context.lifeblood_memory).to_utf8_buffer().size()>80000):return false
+	if context.has("heart_card") and (not _is_direct_api() or JSON.stringify(context.heart_card).to_utf8_buffer().size()>10000):return false
 	if _daily_quota_reached():return false
 	if _is_direct_api():
 		turn_kind="autonomy_event";turn_key=key;_generation+=1;_busy=true
@@ -174,7 +175,7 @@ func send_message(text: String, world: Dictionary) -> void:
 	if text.strip_edges().is_empty():
 		return
 	if _daily_quota_reached():
-		_error(LocalText.text("steward.limit"));return
+		_error(LocalText.text("door.turn_limit"));return
 	if _is_direct_api():
 		_generation+=1;turn_kind="chat";turn_key=_new_token();_busy=true
 		if not _direct().send({"kind":"chat","text":text.left(4000),"world":world.duplicate(true),"level":world.get("intelligence_level","low"),"turn_key":turn_key},persona_card):_busy=false

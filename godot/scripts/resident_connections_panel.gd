@@ -24,6 +24,7 @@ const Preferences = preload("res://scripts/resident_intelligence_preferences.gd"
 var world: RefCounted
 var library: RefCounted
 var status_provider: Callable
+var daily_firsts:Callable
 var preferences := Preferences.new()
 var selected_id := ""
 var resident_ids: Array[String] = []
@@ -31,6 +32,7 @@ var residents: ItemList
 var portrait: TextureRect
 var heading: Label
 var origin: Label
+var decision_origin: Label
 var activity: Label
 var capability: Label
 var controls_host: VBoxContainer
@@ -47,7 +49,6 @@ var personality_label: Label
 var address_edit: LineEdit
 var our_days: RichTextLabel
 var relationship_actions: HFlowContainer
-var wish_label: Label
 var relationship_label: Label
 var details_scroll: ScrollContainer
 var intelligence: VBoxContainer
@@ -103,6 +104,7 @@ func setup(source: RefCounted, art_library: RefCounted, directory: String, provi
 	portrait.custom_minimum_size=Vector2(48,64);portrait.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;portrait.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED;person.add_child(portrait)
 	var identity:=VBoxContainer.new();identity.size_flags_horizontal=Control.SIZE_EXPAND_FILL;person.add_child(identity)
 	heading=label(identity,"");heading.add_theme_font_size_override("font_size",19);origin=label(identity,"",true)
+	decision_origin=label(identity,"",true)
 	connect_button=button(details,T("simple.connect"),func():connect_requested.emit(selected_id))
 	connect_button.custom_minimum_size.y=44
 	activity=label(details,"");capability=label(details,"",true)
@@ -132,7 +134,6 @@ func setup(source: RefCounted, art_library: RefCounted, directory: String, provi
 	heart=preload("res://scripts/life_panel.gd").new();details.add_child(heart);heart.setup()
 	notice=label(details,"",true)
 	relationship_label=label(life_host,"",true)
-	wish_label=label(life_host,"",true)
 	personality_label=label(life_host,"",true)
 	label(life_host,T("panels.what_she_calls_you_once_familiar"))
 	address_edit=LineEdit.new();address_edit.max_length=12;life_host.add_child(address_edit)
@@ -199,6 +200,8 @@ func refresh() -> void:
 	var actor: Dictionary=world.actors[selected_id];var state: Dictionary=status_provider.call(selected_id)
 	heading.text=LocalText.resident(world,actor.id);portrait.texture=library.texture(actor.appearance_id,"down_0")
 	origin.text=state.origin+"\n"+state.connection
+	var deciding:bool=world.director.model_controlled(selected_id) and state.get("light_state","")=="ready"
+	decision_origin.text=(("她的打算由 AI 决定，本地保底" if deciding else "她的打算由本地决定") if TranslationServer.get_locale().begins_with("zh") else ("AI decides her plans; local fallback" if deciding else "Local brain decides her plans"))
 	connect_button.text=T("simple.disconnect") if state.get("light_state","") in ["ready","connecting"] else T("simple.connect")
 	activity.text=T("panels.current_activity")+state.activity
 	capability.text=T("panels.can_work_and_socialize") if "work" in world.residents.capabilities(actor) else T("panels.can_socialize_an_optional_model_adds_no_work_permissions")
@@ -215,16 +218,16 @@ func refresh() -> void:
 	if not model and not pending_id.is_empty():_cancel_ultra()
 	var relation: Dictionary=world.relationships.summary(selected_id)
 	relationship_label.text=T("panels.relationship")+LocalText.content(relation.name)+T("panels.nrecently_shared")+("、".join(relation.recent.map(func(value):return LocalText.content(str(value)))) if not relation.recent.is_empty() else T("panels.no_records_yet_take_your_time"))
-	var wish: Dictionary=world.wishes.summary(selected_id)
-	wish_label.text=T("panels.a_small_wish")+(LocalText.content(str(wish.text))+"\n"+LocalText.content(str(wish.hint)) if wish.active else T("panels.nothing_particular_in_mind_right_now"))
 	personality_label.text=T("panels.personality")+LocalText.content(str(world.personality.summary(selected_id).name))+T("panels.local")
 	address_edit.editable=world.relationships.index(selected_id)>=1
 	if not address_edit.has_focus() and not locale_changed and not _preserve_locale_draft and (str(address_edit.get_meta("actor_id",""))!=selected_id or address_edit.text.is_empty() or address_edit.text==world.relationships.address(selected_id)):address_edit.set_meta("actor_id",selected_id);address_edit.text=world.relationships.address(selected_id)
 	relationship_actions.visible=world.relationships.index(selected_id)>=2
-	our_days.visible=world.relationships.index(selected_id)>=4
+	var firsts:Array=daily_firsts.call(selected_id) if daily_firsts.is_valid() else []
+	our_days.visible=world.relationships.index(selected_id)>=4 or not firsts.is_empty()
 	if our_days.visible:
 		var entries: Array=world.relationships.book(selected_id)
 		var days_text:String=T("panels.our_days_real_shared_memories_n")+"\n".join(entries.map(func(entry):return Time.get_datetime_string_from_unix_time(int(entry.occurred_at)).replace("T"," ")+"  "+str(entry.summary)))
+		if not firsts.is_empty():days_text+="\n"+"\n".join(firsts)
 		if our_days.text!=days_text:our_days.text=days_text
 	var promised: Array=world.promises.own(selected_id)
 	var next_promises: String=selected_id+LocalText.revision()+JSON.stringify(promised)
@@ -233,7 +236,9 @@ func refresh() -> void:
 		for child in promise_rows.get_children():promise_rows.remove_child(child);child.queue_free()
 		if promised.is_empty():label(promise_rows,T("panels.no_pending_promises"),true)
 		for entry in promised:
-			label(promise_rows,T("panels.day_d_s_s_s")%[int(entry.day),LocalText.content(entry.phase),LocalText.content(world.promises.config.actions[entry.action_type].name),T("panels.running") if entry.status=="running" else T("panels.scheduled")],true)
+			var name_key:String={"social_sunrise":"company.sunrise","social_fireside":"company.fireside"}.get(entry.action_type,"")
+			var action_name:String=T(name_key) if not name_key.is_empty() else LocalText.content(str(world.promises.config.actions.get(entry.action_type,{}).get("name",entry.action_type)))
+			label(promise_rows,T("panels.day_d_s_s_s")%[int(entry.day),LocalText.content(entry.phase),action_name,T("panels.running") if entry.status=="running" else T("panels.scheduled")],true)
 			button(promise_rows,T("panels.cancel_this_promise"),func():promise_cancel_requested.emit(selected_id,entry.id))
 	var chosen: Dictionary=preferences.preference(selected_id);level_picker.select(Preferences.LEVELS.find(chosen.level))
 	downgrade.visible=chosen.level=="lifeblood"

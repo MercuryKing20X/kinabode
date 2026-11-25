@@ -4,6 +4,7 @@ signal shared_catch(actor_id:String,fish_id:String,others:Array)
 const LocalText=preload("res://scripts/localization.gd")
 ## Engine-owned fish instances. Rendering and cards never grant catches.
 const ACTIONS := ["fish", "stock_fish", "release_fish"]
+const DISPLAY_FISH_LIMIT := 4
 var _owner: WeakRef
 var world: RefCounted:
 	get: return _owner.get_ref()
@@ -16,6 +17,11 @@ var coast_points: Array=[]
 var probe_cache: Dictionary={}
 var life: RefCounted
 var fish: Dictionary={}
+var _pen_counts: Dictionary={}
+var _pen_display: Dictionary={}
+var _pending_by_owner: Dictionary={}
+var _unplaced: Dictionary={}
+var population_revision:=0
 var waters: Dictionary={}
 var memories: Array=[]
 var clock:=0.0
@@ -46,7 +52,7 @@ func valid_rules(data: Dictionary) -> bool:
 	for key in ["cast_seconds","reel_seconds","bite_seconds","cast_min","cast_max","job_timeout","regrow_seconds","shore_reach","shore_spacing"]:
 		if not world.catalog._number(data.get(key)) or data[key]<=0 or data[key]>3600:return false
 	if data.cast_min<3 or data.cast_max<data.cast_min or data.cast_max>16 or not world.catalog._pair(data.get("nibble_delay")) or data.nibble_delay[0]<3 or data.nibble_delay[1]<data.nibble_delay[0]:return false
-	if not count(data.get("max_fish"),10000) or data.max_fish<64 or data.get("pending_limit")!=1:return false
+	if data.get("pending_limit")!=1:return false
 	for key in ["species","colors","sizes","waits"]:
 		if not data.get(key) is Array or data[key].is_empty() or data[key].size()>64:return false
 		var total:=0;var seen: Dictionary={}
@@ -65,7 +71,6 @@ func valid_rules(data: Dictionary) -> bool:
 	var ids: Dictionary={};var occupied: Array[Rect2]=[]
 	for pen in data.pens:
 		if not pen is Dictionary or not pen.get("id") is String or pen.id.is_empty() or ids.has(pen.id) or not pen.get("name") is String or not world.catalog.regions.has(pen.get("region_id","")) or not world.catalog._rect(pen.get("rect")):return false
-		if not count(pen.get("capacity"),128) or pen.capacity<1 :return false
 		ids[pen.id]=true
 		var rect: Rect2=world.catalog.rectangle(pen.rect)
 		var origin: Array=world.catalog.regions[pen.region_id].origin
@@ -90,9 +95,51 @@ func valid_rules(data: Dictionary) -> bool:
 	return true
 
 func pending(actor_id: String) -> Array:
-	return fish.values().filter(func(entry):return entry.owner_id==actor_id and entry.location=="pending")
+	var entry:=held(actor_id)
+	return [entry] if not entry.is_empty() else []
 func residents_fish(pen_id: String) -> Array:
 	return fish.values().filter(func(entry):return entry.location==pen_id)
+func pen_count(pen_id:String)->int:return int(_pen_counts.get(pen_id,0))
+func display_fish(pen_id:String)->Array:return _pen_display.get(pen_id,[])
+func unplaced_fish()->Array:return _unplaced.values()
+func has_pending()->bool:return not _pending_by_owner.is_empty()
+func _index_add(entry:Dictionary)->void:
+	var location:String=entry.location
+	if location in ["pending","storage"]:_unplaced[entry.id]=entry
+	if location=="pending":_pending_by_owner[entry.owner_id]=entry.id
+	if not pens.has(location):return
+	_pen_counts[location]=pen_count(location)+1
+	var display:Array=_pen_display.get_or_add(location,[])
+	if display.size()<DISPLAY_FISH_LIMIT:display.append(entry)
+func _index_remove(entry:Dictionary)->void:
+	var location:String=entry.location
+	_unplaced.erase(entry.id)
+	if location=="pending":_pending_by_owner.erase(entry.owner_id)
+	if not pens.has(location):return
+	_pen_counts[location]=pen_count(location)-1
+	var display:Array=_pen_display.get(location,[])
+	if not display.has(entry):return
+	display.erase(entry)
+	if display.size()>=pen_count(location):return
+	for candidate in fish.values():
+		if candidate.location==location and candidate.id!=entry.id and not display.has(candidate):
+			display.append(candidate);break
+func move_fish(entry:Dictionary,location:String,owner:String="")->void:
+	_index_remove(entry)
+	entry.location=location
+	if not owner.is_empty():entry.owner_id=owner
+	_index_add(entry)
+	population_revision+=1
+func erase_fish(id:String)->void:
+	if not fish.has(id):return
+	var entry:Dictionary=fish[id]
+	fish.erase(id)
+	_index_remove(entry)
+	population_revision+=1
+func add_fish(entry:Dictionary)->void:
+	fish[entry.id]=entry
+	_index_add(entry)
+	population_revision+=1
 func _pick(entries: Array) -> Dictionary:
 	var value:=rng.randi_range(1,100)
 	for entry in entries:
@@ -196,37 +243,37 @@ func _build_coast_points() -> void:
 				for direction in [Vector2.LEFT,Vector2.RIGHT,Vector2.UP,Vector2.DOWN]:
 					var found:Dictionary=probe_position(region_id,contour[i]+direction*2.2)
 					if not found.is_empty():coast_points.append(found);break
-# Session-only reservations from the host's single stewardship director.
 var team_shores:Dictionary={}
-func contiguous_shores(leader:String,ids:Array)->Dictionary:
-	var region:String=world.actors[leader].region_id
-	for anchor in nearby_shores(leader,128):
-		var origin:=Vector2(anchor.position[0],anchor.position[1])
-		var normal:Vector2=(Vector2(anchor.hook[0],anchor.hook[1])-origin).normalized()
-		var tangent:=Vector2(-normal.y,normal.x)
-		var selected:Dictionary={}
-		for index in ids.size():
-			var id:String=ids[index]
-			var point:Vector2=origin+tangent*(index-(ids.size()-1)/2.0)*maxf(2.1,float(rules.shore_spacing))
-			var candidate:Dictionary=probe_position(region,point)
-			if candidate.is_empty() or candidate.water_id!=anchor.water_id or not world.walkable(region,point):break
-			if world.work.jobs.values().any(func(job):return job.get("intent")=="fish" and job.get("region_id")==region and point.distance_to(Vector2(job.position[0],job.position[1]))<maxf(2.0,float(rules.shore_spacing))):break
-			if world.point(world.actors[id]).distance_to(point)>.1 and world.find_route(id,point).is_empty():break
-			selected[id]=candidate
-		if selected.size()==ids.size() and int(waters[anchor.water_id].available)>=ids.size():return selected
-	return {}
 func nearby_shores(actor_id: String, limit:=12) -> Array:
 	var point: Vector2=world.point(world.actors[actor_id])
 	var options: Array=coast_points.filter(func(entry):return entry.region_id==world.actors[actor_id].region_id and world.walkable(entry.region_id,Vector2(entry.position[0],entry.position[1])))
 	options.sort_custom(func(a,b):return point.distance_squared_to(Vector2(a.position[0],a.position[1]))<point.distance_squared_to(Vector2(b.position[0],b.position[1])))
 	return options.slice(0,limit).duplicate(true)
+
+# Called only for the host's empty-ground click. Use the same cast proof as
+# start(), and leave the movement itself to the ordinary World command.
+func clicked_shore(region:String, at:Vector2) -> Vector2:
+	if not world.catalog.regions.has(region) or _sea_for(region,at).is_empty():return Vector2.INF
+	var reach:float=float(rules.shore_reach)
+	if world.walkable(region,at):
+		return at if not probe_position(region,at).is_empty() else Vector2.INF
+	if not _ocean(region,at):return Vector2.INF
+	var cells:Array[Vector2]=[]
+	var base:=at.floor()+Vector2(.5,.5)
+	for y in range(-ceili(reach),ceili(reach)+1):
+		for x in range(-ceili(reach),ceili(reach)+1):
+			var site:=base+Vector2(x,y)
+			if site.distance_squared_to(at)<=reach*reach and world.walkable(region,site):cells.append(site)
+	cells.sort_custom(func(a,b):return at.distance_squared_to(a)<at.distance_squared_to(b))
+	for site in cells:
+		if not probe_position(region,site).is_empty() and not world.find_route("human",site).is_empty():return site
+	return Vector2.INF
 func held(actor_id: String) -> Dictionary:
-	var entries:=pending(actor_id)
-	return entries[0] if not entries.is_empty() else {}
+	return fish.get(_pending_by_owner.get(actor_id,""),{})
 func snapshot(actor_id: String) -> Dictionary:
 	var listed: Array=[];var ocean: Array=[]
 	for pen in pens.values():
-		var entry: Dictionary=pen.duplicate(true);entry["fish_count"]=residents_fish(pen.id).size();listed.append(entry)
+		var entry: Dictionary=pen.duplicate(true);entry["fish_count"]=pen_count(pen.id);listed.append(entry)
 	for sea in seas.values():
 		var reserved: int=world.work.jobs.values().filter(func(job):return job.get("intent")=="fish" and job.get("water_id")==sea.id).size()
 		ocean.append({"id":sea.id,"name":sea.name,"region_id":sea.region_id,"available":waters[sea.id].available,"reserved":reserved})
@@ -246,16 +293,15 @@ func command(actor_id: String, args: Dictionary) -> Dictionary:
 	if action=="fish":return start(actor_id,str(args.get("target_id","")))
 	var id:=str(args.get("fish_id",""));var entry: Dictionary=fish.get(id,{})
 	if entry.is_empty() or entry.owner_id!=actor_id:return world._error("fish_not_owned")
+	if entry.location=="doorstep":return world._error("fish_already_placed")
 	if entry.location=="cooking":return world.work.fail("fish_in_preparation",LocalText.text("system.fishing_system.this_fish_is_being_prepared_for_cooking_it"))
 	if world.work.jobs.has(actor_id):return world.work.fail("busy",LocalText.text("system.fishing_system.put_away_your_fishing_rod_before_placing_the"))
 	if action=="stock_fish":
 		var pen_id:=str(args.get("pen_id",""))
-		if world.standard!=null and not world.standard.ready(pen_id):return world.work.fail("unbuilt_fishery",LocalText.text("system.fishing_system.build_the_fish_pen_first_you_keep_the"))
 		if not pens.has(pen_id):return world._error("unknown_fishery")
 		if entry.location not in ["pending","storage"]:return world._error("fish_already_placed")
-		if residents_fish(pen_id).size()>=int(pens[pen_id].capacity):return world.work.fail("fishery_full",LocalText.text("system.fishing_system.this_pen_is_full_your_fish_stays_with"))
-		entry.location=pen_id;world.revision+=1;life.trigger(actor_id,"stock")
-		return {"ok":true,"status":"completed","fish_id":id,"message":LocalText.text("system.fishing_system.the_fish_has_entered")+str(pens[pen_id].name)+LocalText.text("system.fishing_system.you_do_not_need_to_walk_there")}
+		move_fish(entry,pen_id);world.revision+=1;life.trigger(actor_id,"stock")
+		return {"ok":true,"status":"completed","fish_id":id,"message":LocalText.text("system.fishing_system.the_fish_has_entered")+LocalText.content(str(pens[pen_id].name))+LocalText.text("system.fishing_system.you_do_not_need_to_walk_there")}
 	if action=="release_fish":
 		var coast: Dictionary=shore(actor_id) if entry.location in ["pending","storage"] else {}
 		if entry.location in ["pending","storage"] and coast.is_empty():return world.work.fail("release_needs_sea",LocalText.text("system.fishing_system.bring_the_fish_to_the_coast_to_release"))
@@ -263,7 +309,7 @@ func command(actor_id: String, args: Dictionary) -> Dictionary:
 		if pens.has(entry.location):at=[float(at[0])+float(pens[entry.location].rect[2])/2,float(at[1])+float(pens[entry.location].rect[3])/2]
 		world.work.visual_event("fish_release",{"id":id,"position":at,"region_id":seas[sea_id(entry.source_id)].region_id},actor_id)
 		world.work.visual_events[-1]["fish"]=entry.duplicate(true)
-		fish.erase(id);world.revision+=1;life.trigger(actor_id,"release")
+		erase_fish(id);world.revision+=1;life.trigger(actor_id,"release")
 		# Releases do not refund a second catch or replenish a different water.
 		return {"ok":true,"status":"completed","message":LocalText.text("system.fishing_system.the_fish_swam_back_to_sea")}
 	return world._error("unsupported_action")
@@ -283,10 +329,11 @@ func host_stock_nearest(fish_id:String)->Dictionary:
 	if entry.is_empty() or entry.get("location") not in ["pending","storage"] or (entry.get("location")=="storage" and entry.get("owner_id")!="human") or not world.actors.has(entry.get("owner_id","")):return world._error("fish_not_owned")
 	var actor:Dictionary=world.actors[entry.owner_id];var candidates:Array=[]
 	for pen in pens.values():
-		if pen.region_id!=actor.region_id or (world.standard!=null and not world.standard.ready(pen.id)) or residents_fish(pen.id).size()>=int(pen.capacity):continue
+		if pen.region_id!=actor.region_id:continue
 		candidates.append(pen)
 	candidates.sort_custom(func(a,b):return world.catalog.rectangle(a.rect).get_center().distance_squared_to(world.point(actor))<world.catalog.rectangle(b.rect).get_center().distance_squared_to(world.point(actor)))
-	if candidates.is_empty():return world.work.fail("fishery_full",LocalText.text("system.fishing_system.all_usable_pens_are_full_or_unbuilt_you"))
+	if candidates.is_empty():candidates=pens.values()
+	if candidates.is_empty():return world._error("unknown_fishery")
 	return host_pending_action(fish_id,"stock_fish",str(candidates[0].id))
 
 func start(actor_id: String, target_id: String="") -> Dictionary:
@@ -295,7 +342,6 @@ func start(actor_id: String, target_id: String="") -> Dictionary:
 	if work.jobs.has(actor_id) or world._routes.has(actor_id):return work.fail("busy",LocalText.text("system.fishing_system.finish_or_stop_your_current_action_before_fishing"))
 	if world.loaded(actor_id):return work.fail("hands_full",LocalText.text("system.fishing_system.put_away_your_materials_before_taking_the_fishing"))
 	if not pending(actor_id).is_empty():return work.fail("pending_fish",LocalText.text("system.fishing_system.place_the_fish_you_are_holding_in_a"))
-	if fish.size()>=int(rules.max_fish):return work.fail("fish_limit",LocalText.text("system.fishing_system.place_or_release_your_current_fish_first"))
 	var spot:=shore(actor_id)
 	if spot.is_empty():return work.fail("not_near_sea",LocalText.text("system.fishing_system.go_to_the_coast_before_trying_to_fish"))
 	for other_id in work.jobs:
@@ -322,14 +368,18 @@ func invite_host(ids: Array) -> Dictionary:
 	var tangent:=Vector2(-normal.y,normal.x)
 	for id in ids:
 		if not id is String or id=="human" or id in accepted or not world.actors.has(id) or not world.residents.supports(world.actors[id],"move"):skipped.append(id);continue
-		if world.hunger.rank(id)>=3:skipped.append(id);continue
+		if not world.open_life and world.hunger.rank(id)>=3:skipped.append(id);continue
 		if world.actors[id].region_id!=anchor.region_id or world.projects.active(id) or world.farms.active(id) or world.activities.members.has(id) or world.shared_activity.holds(id) or world.loaded(id) or not pending(id).is_empty():skipped.append(id);continue
 		var current: Dictionary=world.work.jobs.get(id,{})
 		var routine:RefCounted=world.director.routines.get(id)
-		if world.activities.following.has(id) and (routine==null or not routine.held) and current.is_empty():world.activities.release_follow(id)
 		if routine==null or routine.held or world.activities.blocked(id):skipped.append(id);continue
-		var owned_local:bool=routine.owns_job()
-		if (not current.is_empty() and not owned_local) or (world._routes.has(id) and not routine.owns_route and not owned_local):skipped.append(id);continue
+		var brain:RefCounted=world.director.brains.get(id)
+		var brain_job:bool=brain!=null and brain.owns_local_job()
+		var brain_route:bool=brain!=null and brain.owns_local_route()
+		var owned_local:bool=routine.owns_job() or brain_job
+		var follow:Dictionary=world.hunger.owned_routes.get(id,{})
+		var follow_route:bool=follow.has("route") and is_same(follow.route,world._routes.get(id))
+		if (not current.is_empty() and not owned_local) or (world._routes.has(id) and not routine.owns_route and not owned_local and not brain_route and not follow_route):skipped.append(id);continue
 		var chosen: Dictionary={}
 		for index in range(1,world.residents.capacity+1):
 			var offset: float=ceilf(index/2.0)*(maxf(2.0,float(rules.shore_spacing))+.6)*(1 if index%2 else -1)
@@ -343,6 +393,8 @@ func invite_host(ids: Array) -> Dictionary:
 			if world.find_route(id,point).is_empty() and world.point(world.actors[id]).distance_to(point)>.05:continue
 			chosen=candidate;break
 		if chosen.is_empty():skipped.append(id);continue
+		if brain_job or brain_route:brain.finish("interrupted","host_fishing")
+		if follow_route:world.hunger.clear_follow(id)
 		world.director.command_received(id,"fish")
 		if not world.route_to(id,Vector2(chosen.position[0],chosen.position[1])):skipped.append(id);continue
 		_accept(id,chosen,true);accepted.append(id);life.trigger(id,"invited")
@@ -387,12 +439,12 @@ func tick_job(actor_id: String, job: Dictionary, delta: float) -> void:
 			if job.time>=float(rules.bite_seconds):job.phase="fish_reel";job.time=0.0
 		"fish_reel":
 			if job.time<float(rules.reel_seconds):return
-			if int(waters[job.water_id].available)<=0 or fish.size()>=int(rules.max_fish):world.work._finish(actor_id,LocalText.text("system.fishing_system.the_sea_has_quieted_down_putting_the_rod"),false);return
+			if int(waters[job.water_id].available)<=0:world.work._finish(actor_id,LocalText.text("system.fishing_system.the_sea_has_quieted_down_putting_the_rod"),false);return
 			var species:=pick_species(actor.region_id,world.point(actor));var color:=_pick(rules.colors);var size:=_pick(rules.sizes)
 			if species.id=="tuna":size=rules.sizes.filter(func(option):return option.id=="giant")[0]
 			var id: String="fish-"+Crypto.new().generate_random_bytes(12).hex_encode()
 			var entry: Dictionary={"id":id,"owner_id":actor_id,"source_id":job.water_id,"spot_id":job.target_id,"species_id":species.id,"color_id":color.id,"size_id":size.id,"scale":snappedf(rng.randf_range(size.min,size.max),.01),"location":"storage" if actor_id=="human" else "pending","caught_at":Time.get_unix_time_from_system(),"caught_day":world.days.day()}
-			fish[id]=entry;waters[job.water_id].available-=1;job.caught=true
+			add_fish(entry);waters[job.water_id].available-=1;job.caught=true
 			if actor_id=="human":world.ingredients.note_obtained("fish")
 			var discovery: bool=world.journal.record_catch(id)
 			world.days.queue_catch(id)
@@ -411,7 +463,7 @@ func tick_job(actor_id: String, job: Dictionary, delta: float) -> void:
 			world.work.visual_event("fish_caught_shadow",{"id":id,"position":job.hook,"region_id":actor.region_id},actor_id)
 			world.work.visual_events[-1]["fish"]=entry.duplicate(true)
 			life.trigger(actor_id,"giant" if entry.scale>=7 else "catch",discovery)
-			world.work._finish(actor_id,LocalText.text("system.fishing_system.caught_a_s_times_life_size_s_choose")%[entry.scale,species.name]+(LocalText.text("system.fishing_system.a_new_page_in_the_discovery_book") if discovery else ""))
+			world.work._finish(actor_id,LocalText.text("system.fishing_system.caught_a_s_times_life_size_s_choose")%[entry.scale,LocalText.content(species.name)]+(LocalText.text("system.fishing_system.a_new_page_in_the_discovery_book") if discovery else ""))
 
 func advance(delta: float) -> void:
 	clock+=delta
@@ -431,21 +483,24 @@ func saved() -> Dictionary:
 func restore(data: Dictionary) -> void:
 	if data.is_empty():return
 	clock=float(data.clock);fish=data.fish.duplicate(true);memories=data.memories.duplicate(true)
+	_pending_by_owner.clear();_unplaced.clear();_pen_counts.clear();_pen_display.clear()
+	for entry in fish.values():_index_add(entry)
+	population_revision+=1
 	for id in waters:
 		if seas[id].get("optional_legacy",false) and not data.waters.has(id):waters[id]={"available":0,"next_at":float(data.clock)+float(rules.regrow_seconds)}
 	for id in data.waters:waters[sea_id(id)]=data.waters[id].duplicate(true)
 	var offline: float=clampf(Time.get_unix_time_from_system()-float(data.saved_at),0,float(rules.regrow_seconds)*256)
 	advance(offline)
 func valid_saved(data: Variant, actors: Dictionary) -> bool:
-	if not data is Dictionary or (data.get("version")!=1 and data.get("version")!=2) or not data.get("fish") is Dictionary or data.fish.size()>int(rules.max_fish) or not data.get("waters") is Dictionary or not valid_water_keys(data) or not data.get("memories") is Array or data.memories.size()>32:return false
+	if not data is Dictionary or (data.get("version")!=1 and data.get("version")!=2) or not data.get("fish") is Dictionary or not data.get("waters") is Dictionary or not valid_water_keys(data) or not data.get("memories") is Array or data.memories.size()>32:return false
 	for key in ["clock","saved_at"]:
 		if not world.catalog._number(data.get(key)) or data[key]<0 or data[key]>253402300799:return false
-	var pending_counts: Dictionary={};var counts: Dictionary={}
+	var pending_counts: Dictionary={}
 	for id in data.fish:
 		var entry: Variant=data.fish[id]
 		if not entry is Dictionary or entry.size() not in [10,11] or entry.keys().any(func(key):return key not in ["id","owner_id","source_id","spot_id","species_id","color_id","size_id","scale","location","caught_at","caught_day"]) or entry.get("id")!=id or not id is String or not id.begins_with("fish-") or id.length()!=29 or not id.substr(5).is_valid_hex_number(false) or not actors.has(entry.get("owner_id","")) or not entry.get("source_id") is String or not known_water(entry.source_id) or not entry.get("spot_id") is String or not _valid_source(entry):return false
 		if entry.has("caught_day") and (not count(entry.caught_day,1000000) or int(entry.caught_day)<1):return false
-		if not entry.get("location") is String or (entry.location not in ["pending","storage","cooking"] and not pens.has(entry.location)):return false
+		if not entry.get("location") is String or (entry.location not in ["pending","storage","cooking","doorstep"] and not pens.has(entry.location)):return false
 		if entry.location=="storage" and entry.owner_id!="human":return false
 		for pair in [["species","species_id"],["colors","color_id"],["sizes","size_id"]]:
 			if not entry.get(pair[1]) is String or not rules[pair[0]].any(func(option):return option.id==entry[pair[1]]):return false
@@ -455,9 +510,6 @@ func valid_saved(data: Variant, actors: Dictionary) -> bool:
 		if entry.location=="pending":
 			pending_counts[entry.owner_id]=int(pending_counts.get(entry.owner_id,0))+1
 			if pending_counts[entry.owner_id]>1:return false
-		elif entry.location not in ["cooking","storage"]:
-			counts[entry.location]=int(counts.get(entry.location,0))+1
-			if counts[entry.location]>int(pens[entry.location].capacity):return false
 	for id in data.waters:
 		var stock: Variant=data.waters[id]
 		if not known_water(id) or (data.version==1 and not aliases.has(id)) or (data.version==2 and not seas.has(id)) or not stock is Dictionary or stock.size()!=2 or not count(stock.get("available"),int(seas[sea_id(id)].stock_capacity)) or not world.catalog._number(stock.get("next_at")) or stock.next_at<data.clock or stock.next_at>data.clock+float(rules.regrow_seconds)*2:return false
@@ -479,11 +531,11 @@ func _valid_source(entry: Dictionary) -> bool:
 
 # Explicit host text may invite residents from inland; only their validated
 # natural shore routes are issued. The host actor never moves implicitly.
-func invite_from_host_text(ids:Array,use_host_anchor:bool=true)->Dictionary:
+func invite_from_host_text(ids:Array,use_host_anchor:bool=true,own_native_job:bool=false)->Dictionary:
 	if use_host_anchor and not shore("human").is_empty():return invite_host(ids)
 	var accepted:Array=[];var skipped:Array=[]
 	for id in ids:
-		if id=="human" or not world.actors.has(id) or (use_host_anchor and world.actors[id].region_id!=world.actors.human.region_id) or world.hunger.rank(id)>=3 or world.loaded(id) or not pending(id).is_empty() or world.work.jobs.has(id) or world.farms.active(id) or world.projects.active(id) or world.activities.blocked(id):skipped.append(id);continue
+		if id=="human" or not world.actors.has(id) or (use_host_anchor and world.actors[id].region_id!=world.actors.human.region_id) or (not own_native_job and world.hunger.rank(id)>=3) or world.loaded(id) or not pending(id).is_empty() or world.work.jobs.has(id) or world.farms.active(id) or world.projects.active(id) or world.activities.blocked(id):skipped.append(id);continue
 		var chosen:Dictionary={}
 		var assigned:Dictionary=team_shores.get(id,{})
 		team_shores.erase(id)

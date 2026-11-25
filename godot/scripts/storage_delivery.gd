@@ -67,6 +67,8 @@ func advance(delta:float)->void:
 	# Old carried goods and hunger-follow gifts are handed over only while idle.
 	for id in world.actors:
 		if id=="human" or CarryRetention.unprotected(world.actors[id]).is_empty() or pending.has(id):continue
+		var brain:RefCounted=world.director.brains.get(id)
+		if brain!=null and not brain.paused_wood.is_empty():continue
 		var due:bool=world.work.carry_space(id)==0 or world.activities.following.has(id) or world.hunger.rank(id)>=3
 		if due and not world.work.jobs.has(id) and not world.actors[id].has("furniture_id") and world.homestead.plans.get(id,{}).get("receipt",{}).is_empty():request(id)
 	for id in pending.keys():

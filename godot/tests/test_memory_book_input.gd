@@ -32,11 +32,13 @@ func run()->void:
 	while Time.get_ticks_msec()<deadline and (not is_instance_valid(current_scene) or current_scene.get_script()!=load("res://scripts/main.gd")):await process_frame
 	var game:Node=current_scene;assert(game.get("memory_books")!=null);assert(game.memory_books.list_for("companion-2").size()>=3)
 	game.set_process(false)
-	var heard:=false
-	for i in 2000:
+	# B: DIRECTION 2026-11-10「没接 AI 时：……本地伙伴不再主动提起记忆」。
+	# Keep cross-world entries, but a fresh formal local companion has no generic AI reunion event.
+	assert(not game.world.director.model_controlled("companion-2"))
+	for i in 300:
 		game._process(.1)
-		if game.view.speech_by_actor.get("companion-2",{}).get("text","").contains("又见面"):
-			heard=true;break
-	assert(heard);await shot("reunion")
-	print("MEMORY_UI_PASS four tabs/new world persistence/reunion/HTML")
+	assert(not game.memory_books.list_for("companion-2","facts").any(func(row):return row.world_id==game.world.world_id and row.event_id=="reunion"))
+	assert(game.memory_books.list_for("companion-2","about_you").any(func(row):return row.world_id=="old-world"))
+	await shot("new-world-memory")
+	print("MEMORY_UI_PASS tabs/new world persistence/local reunion gate/HTML")
 	game.queue_free();await process_frame;quit()

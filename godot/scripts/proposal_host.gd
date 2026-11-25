@@ -23,6 +23,12 @@ func start(card: Dictionary) -> Dictionary:
 			if not invited.ok:return invited
 			var human: Dictionary=world.command("human",{"intent":"fish"})
 			if not human.ok:world.command(id,{"intent":"stop"});return human
+			var companion:String=card.get("companion_id","")
+			if companion!=id and companion!="human" and world.director.brains.has(companion) and not game.questions.has(companion) and not game.group_questions.has(companion):
+				var together:Dictionary=world.fishing.invite_host([companion])
+				invited.accepted.append_array(together.get("accepted",[]))
+				invited.skipped.append_array(together.get("skipped",[]))
+				invited.message=world.fishing.invitation_message(invited.skipped)
 			return invited
 		"cook_together":
 			var camp:RefCounted=world.nearest_barbecue("human",3)

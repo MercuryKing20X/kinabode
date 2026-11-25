@@ -8,8 +8,6 @@ var DURATION:=22500.0
 var timelines: Dictionary={}
 var near_seconds: Dictionary={}
 var speech_opportunities:Dictionary={}
-var wish_results: Array=[]
-var last_wishes: Dictionary={}
 var stage_saved: Dictionary={}
 var world: RefCounted
 var elapsed:=0.0
@@ -67,12 +65,6 @@ func frame() -> bool:
 		var stage_dir: String=OS.get_environment("HABITAT_LIFE2_STAGE_SAVES")
 		if not stage_dir.is_empty() and id=="codex" and level>0 and not stage_saved.has(level):
 			stage_saved[level]=true;check(preload("res://scripts/save_store.gd").save_world(world,stage_dir.path_join("stage"+str(level))),"save genuinely earned stage checkpoint")
-		var wish: Dictionary=world.wishes.active(id)
-		var prior: Dictionary=last_wishes.get(id,{})
-		if not prior.is_empty() and (wish.is_empty() or wish.id!=prior.id):
-			var completed: bool=world.memories.records.any(func(entry):return entry.kind=="wish_completed" and entry.facts.wish_id==prior.id)
-			wish_results.append({"actor_id":id,"wish_id":prior.id,"template_id":prior.template_id,"day":world.days.day(),"outcome":"completed" if completed else "expired","reason":"actually_completed" if completed else world.wishes.statistics.outcomes.get(prior.id,"conditions_unobserved")})
-		last_wishes[id]=wish.duplicate(true)
 	for event in world.director.events:
 		if event.serial<=serial:continue
 		serial=event.serial;speech.append(event.duplicate(true))
@@ -100,11 +92,6 @@ func go_near(id: String) -> bool:
 		var target: Vector2=p+offset
 		if world.walkable(world.actors[id].region_id,target) and job("human",{"intent":"move","x":target.x,"y":target.y}):return true
 	return false
-func expiry_reasons(id: String) -> Dictionary:
-	var reasons: Dictionary={}
-	for result in wish_results:
-		if result.actor_id==id and result.outcome=="expired":reasons[result.reason]=int(reasons.get(result.reason,0))+1
-	return reasons
 func report() -> Dictionary:
 	var residents: Dictionary={};var occurrences: Dictionary={};var max_repeat:=0;var repeated:=0
 	for id in world.director.routines:
@@ -117,14 +104,14 @@ func report() -> Dictionary:
 			actor_max=maxi(actor_max,recent)
 			if stamps.size()>1:repeated+=1;actor_repeated+=1
 		var starts: int=world.schedules.statistics.started.get(id,0);var arrivals: int=world.schedules.statistics.arrived.get(id,0)
-		residents[id]={"name":world.actors[id].name,"controller":world.actors[id].controller,"personality":world.personality.summary(id),"speech_count":lines.size(),"speech_contexts":contexts,"speech_opportunities":speech_opportunities.get(id,{}),"behavior_seconds":behavior[id],"relationship":world.relationships.summary(id),"credited_true_event_counts":world.relationships.states.get(id,{}).get("counts",{}).duplicate(true),"wishes_generated":world.wishes.statistics.generated.get(id,0),"wishes_completed":world.wishes.statistics.completed.get(id,0),"wishes_expired":world.wishes.statistics.expired.get(id,0),"wish_expiry_reasons":expiry_reasons(id),"repeated_utterances":actor_repeated,"max_same_line_in_any_hour":actor_max,"true_task_interruptions":interruptions.filter(func(event):return event.get("actor")==id).size(),"wishes_active":world.wishes.summary(id),"schedule_started":starts,"schedule_arrived":arrivals,"schedule_hit_rate":float(arrivals)/starts if starts>0 else 0.0,"relationship_timeline":timelines[id],"within8_fraction":float(near_seconds.get(id,0))/DURATION,"default_follow_distance":float(default_follow_distance.get(id,0))}
+		residents[id]={"name":world.actors[id].name,"controller":world.actors[id].controller,"personality":world.personality.summary(id),"speech_count":lines.size(),"speech_contexts":contexts,"speech_opportunities":speech_opportunities.get(id,{}),"behavior_seconds":behavior[id],"relationship":world.relationships.summary(id),"credited_true_event_counts":world.relationships.states.get(id,{}).get("counts",{}).duplicate(true),"repeated_utterances":actor_repeated,"max_same_line_in_any_hour":actor_max,"true_task_interruptions":interruptions.filter(func(event):return event.get("actor")==id).size(),"schedule_started":starts,"schedule_arrived":arrivals,"schedule_hit_rate":float(arrivals)/starts if starts>0 else 0.0,"relationship_timeline":timelines[id],"within8_fraction":float(near_seconds.get(id,0))/DURATION,"default_follow_distance":float(default_follow_distance.get(id,0))}
 	var wood:=0
 	for chest in [{"id":"storage","items":world.storage.saved().items,"capacity":9007199254740991,"kind":"storage"}]:wood+=int(chest.items.get("wood",0))
 	for actor in world.actors.values():wood+=int(actor.carry.get("wood",0))
 	for drop in world.drops.values():wood+=int(drop.wood)
 	wood+=int(world.homestead.site.delivered.get("wood",0))
 	for life in world.barbecues.values():wood+=int(life.station.fuel_used)
-	return {"seconds":elapsed,"advance_frames":int(elapsed/.5),"delta":.5,"calendar_start":1,"calendar_end":world.days.day(),"real_model_calls":0,"scripted_human_actions":actions,"residents":residents,"utterances":speech,"utterance_total":speech.size(),"repeated_utterances":repeated,"max_same_line_in_any_hour":max_repeat,"true_task_interruptions":interruptions,"genuinely_blocked_jobs":failed_jobs,"homestead_completed":world.homestead.completed(),"physical_wood_from_three_trees":wood,"turnip_left":F.amount(world,"turnip"),"fish_instances":world.fishing.fish.size(),"shared_meals":world.memories.records.filter(func(entry):return entry.kind=="shared_barbecue"),"weather_days":[world.weather.for_day(1).name,world.weather.for_day(2).name,world.weather.for_day(3).name],"model_scheduler_instantiated":false,"wish_results":wish_results}
+	return {"seconds":elapsed,"advance_frames":int(elapsed/.5),"delta":.5,"calendar_start":1,"calendar_end":world.days.day(),"real_model_calls":0,"scripted_human_actions":actions,"residents":residents,"utterances":speech,"utterance_total":speech.size(),"repeated_utterances":repeated,"max_same_line_in_any_hour":max_repeat,"true_task_interruptions":interruptions,"genuinely_blocked_jobs":failed_jobs,"homestead_completed":world.homestead.completed(),"physical_wood_from_three_trees":wood,"turnip_left":F.amount(world,"turnip"),"fish_instances":world.fishing.fish.size(),"shared_meals":world.memories.records.filter(func(entry):return entry.kind=="shared_barbecue"),"weather_days":[world.weather.for_day(1).name,world.weather.for_day(2).name,world.weather.for_day(3).name],"model_scheduler_instantiated":false}
 func run() -> void:
 	if not OS.get_environment("HABITAT_DATA_DIR").contains("youqi-test-"):quit(1);return
 	if OS.get_environment("HABITAT_LIFE2_EXTENDED")=="1":DURATION=33000
@@ -155,8 +142,6 @@ func run() -> void:
 	while plots.any(func(plot):return world.farms.stage(plot)!="mature") and elapsed<2000:frame()
 	for plot in plots:check(job("human",{"intent":"harvest","target_id":plot.id}),"human harvests mature crop into real box "+plot.id)
 	var guests: Array=["human","codex","npc.mira"]
-	for id in world.director.routines:
-		if world.wishes.active(id).get("template_id")=="soup" and id!="codex":guests=["human","codex",id];break
 	input();var cooked:Dictionary=BBQ.start(world,"recipe:turnip-soup",guests,"home.barbecue",frame)
 	actions.append({"at":elapsed,"host_barbecue_recipe":cooked.duplicate(true),"invited":guests.duplicate()})
 	check(cooked.ok and BBQ.ready(world,"home.barbecue",frame),"actual crop-funded soup served on real fire")

@@ -3,7 +3,8 @@ const SaveFollow=preload("res://scripts/save_store.gd")
 func run()->void:
 	await fresh()
 	var w:RefCounted=game.world
-	check(w.activities.following.size()==4,"new standard follows all four")
+	# DIRECTION: “开局见面缩短、每个新档不同（谁先来，说什么，一开始想做什么由随机＋性格决定）”.
+	check(w.open_life and w.activities.following.is_empty(),"new standard does not automatically enlist followers")
 	await capture("standard-follow")
 	var human:Array=w.actors.human.position.duplicate()
 	var phrases:Array=["别跟了","自由活动","大家散了","你们不跟了","所有人自由活动","大家别跟着我","你们别跟","全部自由活动","所有伙伴散了","大家自由活动吧","你们别跟了吧","全部别跟了","stop following","everyone unfollow","all of you free time"]
@@ -16,28 +17,22 @@ func run()->void:
 		check(w.activities.following.size()==4,"native follow "+returns[i])
 		check(not is_instance_valid(game.local_host_commands.card),"no confirmation for follow")
 		for tick in 10:game._process(.1)
-	# Explicit host commands must take over real routes, with or without a
-	# steward lease. Name selection must never silently widen to the village.
-	for managing in [false,true]:
-		for phrase in ["所有人跟我来","全部跟过来","大家跟我走","小蓝跟我来","别跟了"]:
-			w.activities.set_followers([])
-			if managing:check(game.steward.start("codex"),"start isolated local steward before "+phrase)
-			var actor:String="companion-2"
-			var at:Vector2=w.point(w.actors[actor])
-			var destination:Vector2=Vector2.INF
-			for offset in [Vector2(3,0),Vector2(-3,0),Vector2(0,3),Vector2(0,-3)]:
-				if w.walkable(w.actors[actor].region_id,at+offset) and not w.find_route(actor,at+offset).is_empty():destination=at+offset;break
-			check(destination.is_finite() and w.host_command(actor,{"intent":"move","x":destination.x,"y":destination.y}).get("ok",false),"actual existing World route before "+phrase)
-			var previous:Variant=w._routes.get(actor)
-			await text_input(phrase)
-			var expected:int=0 if phrase=="别跟了" else 1 if phrase=="小蓝跟我来" else 4
-			check(w.activities.following.size()==expected,"exact recipients with steward="+str(managing)+" "+phrase)
-			if expected>0:
-				check(w.activities.following.has(actor),"named/whole follow includes actual selected resident")
-				check(not is_same(previous,w._routes.get(actor)),"explicit follow hands over previous World route")
-			if managing:
-				check(not game.steward.active and w.activities.squad_leader.is_empty() and w.activities.suspended_follow.is_empty(),"player formation releases steward movement lease")
-			if game.steward.active:game.steward.stop()
+	# Name selection must never silently widen to the village.
+	for phrase in ["所有人跟我来","全部跟过来","大家跟我走","小蓝跟我来","别跟了"]:
+		w.activities.set_followers([])
+		var actor:String="companion-2"
+		var at:Vector2=w.point(w.actors[actor])
+		var destination:Vector2=Vector2.INF
+		for offset in [Vector2(3,0),Vector2(-3,0),Vector2(0,3),Vector2(0,-3)]:
+			if w.walkable(w.actors[actor].region_id,at+offset) and not w.find_route(actor,at+offset).is_empty():destination=at+offset;break
+		check(destination.is_finite() and w.host_command(actor,{"intent":"move","x":destination.x,"y":destination.y}).get("ok",false),"actual existing World route before "+phrase)
+		var previous:Variant=w._routes.get(actor)
+		await text_input(phrase)
+		var expected:int=0 if phrase=="别跟了" else 1 if phrase=="小蓝跟我来" else 4
+		check(w.activities.following.size()==expected,"exact recipients for "+phrase)
+		if expected>0:
+			check(w.activities.following.has(actor),"named/whole follow includes actual selected resident")
+			check(not is_same(previous,w._routes.get(actor)),"explicit follow hands over previous World route")
 	w.activities.set_followers(w.actors.keys().filter(func(id):return id!="human"))
 	check(w.actors.human.position==human,"host text never moves human")
 	var directory:String=OS.get_environment("HABITAT_DATA_DIR").path_join("follow-roundtrip")

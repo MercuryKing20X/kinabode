@@ -145,7 +145,8 @@ func open_invite(start_host:=false) -> void:
 	for actor in world.actors.values():
 		if actor.id=="human" or not world.residents.supports(actor,"move"):continue
 		var choice:=CheckButton.new();choice.focus_mode=Control.FOCUS_NONE;choice.text=LocalText.resident(world,actor.id);choice.set_meta("actor_id",actor.id);choices.add_child(choice)
-		if world.work.jobs.get(actor.id,{}).get("intent")=="fish":
+		var brain:RefCounted=world.director.brains.get(actor.id)
+		if world.work.jobs.get(actor.id,{}).get("intent")=="fish" and (brain==null or not brain.owns_local_job()):
 			choice.disabled=true;choice.text+=" · "+(T("activities.approaching") if world._routes.has(actor.id) else T("activities.fishing"))
 		boxes.append(choice)
 	InvitationCommon.bind_all(all_fishers,boxes)

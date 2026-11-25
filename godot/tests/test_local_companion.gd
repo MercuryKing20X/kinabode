@@ -15,7 +15,7 @@ func run() -> void:
 	# The ambient unit probe owns a fixed scene; daily/wish/personality events are tested separately.
 	world.world_id="00000000-0000-4000-8000-000000000192";world.weather.weather_seed=1027
 	world.days.config.greeting_after=world.days.day_seconds+1;world.days.config.small_after=world.days.day_seconds+1
-	world.wishes.config.first_after=86400;world.personality.config.fact_events_enabled=false
+	world.personality.config.fact_events_enabled=false
 	world.activities.release_follow("codex");world.activities.default_follow_excluded["codex"]=true
 	world.director.local_dialogue.next_check=INF
 	var life: RefCounted = world.local_companion

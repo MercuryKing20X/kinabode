@@ -100,8 +100,11 @@ func host_order(actor_id: String, farm_id: String, crop_id: String, mode: String
 	var args := {"intent":"manage_farm","farm_id":farm_id,"crop_id":crop_id if mode == "plant" else "","mode":mode}
 	if actor_id == "human" and plot_ids.is_empty(): return world.command("human", args)
 	# Same gate world.command applies to direct field work; manage_farm itself is not in that list.
-	if actor_id!="human" and world.hunger != null and world.hunger.rank(actor_id) >= 2: return world.work.fail("hungry", LocalText.text("system.farm_system.you_are_hungry_have_something_to_eat_before"))
-	if active(actor_id) or world.work.jobs.has(actor_id):return world._error("busy")
+	if not world.open_life and actor_id!="human" and world.hunger != null and world.hunger.rank(actor_id) >= 2: return world.work.fail("hungry", LocalText.text("system.farm_system.you_are_hungry_have_something_to_eat_before"))
+	if active(actor_id) or world.actors[actor_id].has("world_door_client"):return world._error("busy")
+	var brain:RefCounted=world.director.brains.get(actor_id)
+	if world.work.jobs.has(actor_id) and (brain==null or not brain.owns_local_job()):return world._error("busy")
+	if brain!=null:brain.pause_for_player()
 	host_grants[actor_id] = {"farm_id":farm_id,"issuing":true,"plot_ids":plot_ids.duplicate(),"crop_by_plot":crop_by_plot.duplicate(true)}
 	var result: Dictionary = world.command(actor_id, args)
 	# An accepted explicit host task replaces only this actor's following, never others.

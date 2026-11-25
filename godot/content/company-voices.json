@@ -1,0 +1,1325 @@
+{
+ "care": {
+  "gentle": {
+   "openings": [
+    [
+     "嗯……",
+     "Mm…"
+    ],
+    [
+     "好暖。",
+     "That feels warm."
+    ],
+    [
+     "可以再待一会儿吗？",
+     "Could you stay a little longer?"
+    ],
+    [
+     "你来啦。",
+     "There you are."
+    ]
+   ],
+   "acts": [
+    [
+     "这样摸就好，我有点害羞。",
+     "Like that is nice. I get a little shy."
+    ],
+    [
+     "我给你腾一点位置。",
+     "Here, I’ll make room."
+    ],
+    [
+     "我慢慢尝一口。",
+     "I’ll have a little taste."
+    ],
+    [
+     "谢谢你愿意听。",
+     "Thank you for listening."
+    ]
+   ],
+   "returns": [
+    [
+     "欢迎回来。",
+     "Welcome back."
+    ],
+    [
+     "回来了呀。我有点想你。",
+     "I missed you a little."
+    ],
+    [
+     "这回走得有点远呢。",
+     "You were far away this time."
+    ],
+    [
+     "你回来了。我还愿意在这里等一小会儿。",
+     "You’re back. I still want to spend a little time here with you."
+    ]
+   ],
+   "conditions": [
+    [
+     "我今天心里亮堂堂的。",
+     "I feel light today."
+    ],
+    [
+     "刚才有点难过。",
+     "I was feeling a little sad."
+    ],
+    [
+     "刚才我以为你忘了我。",
+     "I thought you might have forgotten me."
+    ],
+    [
+     "摸头不顶饱呀，我好饿。",
+     "Head pats don’t fill a tummy. I’m really hungry."
+    ],
+    [
+     "又来呀？头发要乱了。",
+     "Again? My hair will be all over the place."
+    ]
+   ]
+  },
+  "lively": {
+   "openings": [
+    [
+     "嘿！",
+     "Hey!"
+    ],
+    [
+     "我来啦！",
+     "Here I come!"
+    ],
+    [
+     "看这里！",
+     "Over here!"
+    ],
+    [
+     "啊，抓到你了！",
+     "Aha, caught you!"
+    ]
+   ],
+   "acts": [
+    [
+     "我蹭一下就好！",
+     "Let me lean in for a sec!"
+    ],
+    [
+     "挨着我坐，我保证不乱跑。",
+     "Sit by me. I promise I won’t run off."
+    ],
+    [
+     "好耶，我先尝一小口！",
+     "Yes! Just a tiny taste first."
+    ],
+    [
+     "那我把不开心分给你一点。",
+     "Then you can have a little of my bad mood."
+    ]
+   ],
+   "returns": [
+    [
+     "你去哪啦！",
+     "Where’d you go!"
+    ],
+    [
+     "你可算回来啦！",
+     "You’re finally back!"
+    ],
+    [
+     "我攒了好多话要说！",
+     "I saved up so much to tell you!"
+    ],
+    [
+     "你怎么这么久才回来！先陪我一下。",
+     "That took forever! Come sit with me for a bit."
+    ]
+   ],
+   "conditions": [
+    [
+     "我今天可高兴啦。",
+     "I’m in such a good mood today."
+    ],
+    [
+     "我刚才真的不高兴。",
+     "I really was upset a minute ago."
+    ],
+    [
+     "你刚刚都没看见我！",
+     "You didn’t even see me before!"
+    ],
+    [
+     "我的肚子比我还会叫！",
+     "My stomach’s louder than I am!"
+    ],
+    [
+     "又摸！要变成鸡窝头啦。",
+     "Another pat? My hair’s going to look like a nest."
+    ]
+   ]
+  },
+  "laborious": {
+   "openings": [
+    [
+     "干嘛啦。",
+     "What are you doing?"
+    ],
+    [
+     "咳，没事。",
+     "Ahem. I’m fine."
+    ],
+    [
+     "先说好哦。",
+     "Just so we’re clear."
+    ],
+    [
+     "我没在等你。",
+     "I wasn’t waiting for you."
+    ]
+   ],
+   "acts": [
+    [
+     "别把头发弄乱了。",
+     "Don’t mess up my hair."
+    ],
+    [
+     "坐吧，不过我只歇一下。",
+     "Sit, then. I’m only taking a short break."
+    ],
+    [
+     "行，我尝尝。",
+     "Fine, I’ll try some."
+    ],
+    [
+     "好啦，我听到了。",
+     "All right. I heard you."
+    ]
+   ],
+   "returns": [
+    [
+     "还知道回来。",
+     "So you do know the way back."
+    ],
+    [
+     "还知道回来。说好下次早点。",
+     "You made it. A little sooner next time, okay?"
+    ],
+    [
+     "我都把袖子挽起来好几回了。",
+     "I rolled up my sleeves to look for you more than once."
+    ],
+    [
+     "还知道回来！……回来就好。",
+     "So you do know the way back! …I’m glad."
+    ]
+   ],
+   "conditions": [
+    [
+     "正好，今天挺顺利。",
+     "Good timing. Today’s been going my way."
+    ],
+    [
+     "我不是委屈。就是刚才有点闷。",
+     "I wasn’t sulking. I was just a bit low."
+    ],
+    [
+     "我还以为你忙得忘了。",
+     "I figured you got busy and forgot."
+    ],
+    [
+     "先讲正事：我饿得很。",
+     "First things first: I’m starving."
+    ],
+    [
+     "又来？这头发可是刚理过的。",
+     "Again? I’d just fixed my hair."
+    ]
+   ]
+  },
+  "quiet": {
+   "openings": [
+    [
+     "……嗯。",
+     "…Mm."
+    ],
+    [
+     "我在听。",
+     "I’m listening."
+    ],
+    [
+     "就一会儿。",
+     "Just a minute."
+    ],
+    [
+     "不用赶。",
+     "No rush."
+    ]
+   ],
+   "acts": [
+    [
+     "我偏一下头。没躲。",
+     "I tilted my head. I didn’t pull away."
+    ],
+    [
+     "就这样坐着吧。",
+     "Let’s sit here just like this."
+    ],
+    [
+     "留一点香味就好。",
+     "A little taste is enough."
+    ],
+    [
+     "好多了。谢谢。",
+     "Better now. Thanks."
+    ]
+   ],
+   "returns": [
+    [
+     "……嗯，回来了。",
+     "…Mm. You’re back."
+    ],
+    [
+     "回来了。坐一会儿？",
+     "You’re back. Sit awhile?"
+    ],
+    [
+     "比我想的久。",
+     "Longer than I thought."
+    ],
+    [
+     "……好久了。认得路就好。",
+     "…It’s been a while. Glad you remembered the way."
+    ]
+   ],
+   "conditions": [
+    [
+     "今天很安静。我喜欢。",
+     "It’s quiet today. I like that."
+    ],
+    [
+     "刚才心里沉了一点。",
+     "Things felt a little heavy."
+    ],
+    [
+     "刚才我没叫你。",
+     "I didn’t call out before."
+    ],
+    [
+     "摸头不能填肚子。",
+     "A pat won’t fill my stomach."
+    ],
+    [
+     "又摸。……慢点。",
+     "Again. …Gently."
+    ]
+   ]
+  }
+ },
+ "actions": [
+  "pat",
+  "sit",
+  "snack",
+  "comfort"
+ ],
+ "conditions": [
+  "joy",
+  "hurt",
+  "neglect",
+  "hungry",
+  "repeat"
+ ],
+ "stories": {
+  "gentle": [
+   [
+    [
+     "我想讲个很小的故事。",
+     "要是浪能装进口袋呢？",
+     "我会装最轻的那一个。",
+     "等你觉得屋子太静，就把它放出来。"
+    ],
+    [
+     "Here’s a very small story.",
+     "What if a wave could fit in a pocket?",
+     "I’d take the quietest one.",
+     "When the house felt too still, you could let it out."
+    ]
+   ],
+   [
+    [
+     "我想讲个很小的故事。",
+     "我想象有条路能走到月亮后面。",
+     "那边也许没有路灯。",
+     "我们就把脚步放轻，一块慢慢走。"
+    ],
+    [
+     "Here’s a very small story.",
+     "I picture a path behind the moon.",
+     "There might not be any lights.",
+     "We could walk it together, nice and slow."
+    ]
+   ],
+   [
+    [
+     "我想讲个很小的故事。",
+     "一颗小石头以为自己是座岛。",
+     "水在它周围转啊转。",
+     "后来它才发现，小也可以是一个家。"
+    ],
+    [
+     "Here’s a very small story.",
+     "A pebble thought it was an island.",
+     "Water went around and around it.",
+     "Then it found out a home can be very small."
+    ]
+   ],
+   [
+    [
+     "我想讲个很小的故事。",
+     "如果窗沿上长出一片海呢？",
+     "雨点落进去，溅起一个小码头。",
+     "我们就坐在旁边听，今天哪里都不用去。"
+    ],
+    [
+     "Here’s a very small story.",
+     "What if a sea grew on the windowsill?",
+     "A raindrop might splash up a little dock.",
+     "We could sit beside it and stay right where we are."
+    ]
+   ],
+   [
+    [
+     "我想讲个很小的故事。",
+     "梦里每棵树都有一盏灯。",
+     "最小的一盏照到两双鞋子。",
+     "光不大，够我们走到火边。"
+    ],
+    [
+     "Here’s a very small story.",
+     "In a dream, each tree had a lantern.",
+     "The smallest one lit two pairs of shoes.",
+     "It wasn’t much, but it could get us to the fire."
+    ]
+   ],
+   [
+    [
+     "我想讲个很小的故事。",
+     "我想给风编一张椅子。",
+     "它平时总在跑。",
+     "如果它坐下来，我们就能一起听火。"
+    ],
+    [
+     "Here’s a very small story.",
+     "I’d like to weave a chair for the wind.",
+     "It spends all its time running.",
+     "If it sat down, we could both listen to the fire."
+    ]
+   ]
+  ],
+  "lively": [
+   [
+    [
+     "来猜接下来会怎样！",
+     "要是浪能装进口袋呢？",
+     "我会装最轻的那一个。",
+     "等你觉得屋子太静，就把它放出来。"
+    ],
+    [
+     "Guess what happens next!",
+     "What if a wave could fit in a pocket?",
+     "I’d take the quietest one.",
+     "When the house felt too still, you could let it out."
+    ]
+   ],
+   [
+    [
+     "来猜接下来会怎样！",
+     "我想象有条路能走到月亮后面。",
+     "那边也许没有路灯。",
+     "我们就把脚步放轻，一块慢慢走。"
+    ],
+    [
+     "Guess what happens next!",
+     "I picture a path behind the moon.",
+     "There might not be any lights.",
+     "We could walk it together, nice and slow."
+    ]
+   ],
+   [
+    [
+     "来猜接下来会怎样！",
+     "一颗小石头以为自己是座岛。",
+     "水在它周围转啊转。",
+     "后来它才发现，小也可以是一个家。"
+    ],
+    [
+     "Guess what happens next!",
+     "A pebble thought it was an island.",
+     "Water went around and around it.",
+     "Then it found out a home can be very small."
+    ]
+   ],
+   [
+    [
+     "来猜接下来会怎样！",
+     "如果窗沿上长出一片海呢？",
+     "雨点落进去，溅起一个小码头。",
+     "我们就坐在旁边听，今天哪里都不用去。"
+    ],
+    [
+     "Guess what happens next!",
+     "What if a sea grew on the windowsill?",
+     "A raindrop might splash up a little dock.",
+     "We could sit beside it and stay right where we are."
+    ]
+   ],
+   [
+    [
+     "来猜接下来会怎样！",
+     "梦里每棵树都有一盏灯。",
+     "最小的一盏照到两双鞋子。",
+     "光不大，够我们走到火边。"
+    ],
+    [
+     "Guess what happens next!",
+     "In a dream, each tree had a lantern.",
+     "The smallest one lit two pairs of shoes.",
+     "It wasn’t much, but it could get us to the fire."
+    ]
+   ],
+   [
+    [
+     "来猜接下来会怎样！",
+     "我想给风编一张椅子。",
+     "它平时总在跑。",
+     "如果它坐下来，我们就能一起听火。"
+    ],
+    [
+     "Guess what happens next!",
+     "I’d like to weave a chair for the wind.",
+     "It spends all its time running.",
+     "If it sat down, we could both listen to the fire."
+    ]
+   ]
+  ],
+  "laborious": [
+   [
+    [
+     "我还没讲完，先听一会儿。",
+     "要是浪能装进口袋呢？",
+     "我会装最轻的那一个。",
+     "等你觉得屋子太静，就把它放出来。"
+    ],
+    [
+     "Hold on. Let me tell it in order.",
+     "What if a wave could fit in a pocket?",
+     "I’d take the quietest one.",
+     "When the house felt too still, you could let it out."
+    ]
+   ],
+   [
+    [
+     "我还没讲完，先听一会儿。",
+     "我想象有条路能走到月亮后面。",
+     "那边也许没有路灯。",
+     "我们就把脚步放轻，一块慢慢走。"
+    ],
+    [
+     "Hold on. Let me tell it in order.",
+     "I picture a path behind the moon.",
+     "There might not be any lights.",
+     "We could walk it together, nice and slow."
+    ]
+   ],
+   [
+    [
+     "我还没讲完，先听一会儿。",
+     "一颗小石头以为自己是座岛。",
+     "水在它周围转啊转。",
+     "后来它才发现，小也可以是一个家。"
+    ],
+    [
+     "Hold on. Let me tell it in order.",
+     "A pebble thought it was an island.",
+     "Water went around and around it.",
+     "Then it found out a home can be very small."
+    ]
+   ],
+   [
+    [
+     "我还没讲完，先听一会儿。",
+     "如果窗沿上长出一片海呢？",
+     "雨点落进去，溅起一个小码头。",
+     "我们就坐在旁边听，今天哪里都不用去。"
+    ],
+    [
+     "Hold on. Let me tell it in order.",
+     "What if a sea grew on the windowsill?",
+     "A raindrop might splash up a little dock.",
+     "We could sit beside it and stay right where we are."
+    ]
+   ],
+   [
+    [
+     "我还没讲完，先听一会儿。",
+     "梦里每棵树都有一盏灯。",
+     "最小的一盏照到两双鞋子。",
+     "光不大，够我们走到火边。"
+    ],
+    [
+     "Hold on. Let me tell it in order.",
+     "In a dream, each tree had a lantern.",
+     "The smallest one lit two pairs of shoes.",
+     "It wasn’t much, but it could get us to the fire."
+    ]
+   ],
+   [
+    [
+     "我还没讲完，先听一会儿。",
+     "我想给风编一张椅子。",
+     "它平时总在跑。",
+     "如果它坐下来，我们就能一起听火。"
+    ],
+    [
+     "Hold on. Let me tell it in order.",
+     "I’d like to weave a chair for the wind.",
+     "It spends all its time running.",
+     "If it sat down, we could both listen to the fire."
+    ]
+   ]
+  ],
+  "quiet": [
+   [
+    [
+     "想象一下。",
+     "要是浪能装进口袋呢？",
+     "我会装最轻的那一个。",
+     "等你觉得屋子太静，就把它放出来。"
+    ],
+    [
+     "Picture this.",
+     "What if a wave could fit in a pocket?",
+     "I’d take the quietest one.",
+     "When the house felt too still, you could let it out."
+    ]
+   ],
+   [
+    [
+     "想象一下。",
+     "我想象有条路能走到月亮后面。",
+     "那边也许没有路灯。",
+     "我们就把脚步放轻，一块慢慢走。"
+    ],
+    [
+     "Picture this.",
+     "I picture a path behind the moon.",
+     "There might not be any lights.",
+     "We could walk it together, nice and slow."
+    ]
+   ],
+   [
+    [
+     "想象一下。",
+     "一颗小石头以为自己是座岛。",
+     "水在它周围转啊转。",
+     "后来它才发现，小也可以是一个家。"
+    ],
+    [
+     "Picture this.",
+     "A pebble thought it was an island.",
+     "Water went around and around it.",
+     "Then it found out a home can be very small."
+    ]
+   ],
+   [
+    [
+     "想象一下。",
+     "如果窗沿上长出一片海呢？",
+     "雨点落进去，溅起一个小码头。",
+     "我们就坐在旁边听，今天哪里都不用去。"
+    ],
+    [
+     "Picture this.",
+     "What if a sea grew on the windowsill?",
+     "A raindrop might splash up a little dock.",
+     "We could sit beside it and stay right where we are."
+    ]
+   ],
+   [
+    [
+     "想象一下。",
+     "梦里每棵树都有一盏灯。",
+     "最小的一盏照到两双鞋子。",
+     "光不大，够我们走到火边。"
+    ],
+    [
+     "Picture this.",
+     "In a dream, each tree had a lantern.",
+     "The smallest one lit two pairs of shoes.",
+     "It wasn’t much, but it could get us to the fire."
+    ]
+   ],
+   [
+    [
+     "想象一下。",
+     "我想给风编一张椅子。",
+     "它平时总在跑。",
+     "如果它坐下来，我们就能一起听火。"
+    ],
+    [
+     "Picture this.",
+     "I’d like to weave a chair for the wind.",
+     "It spends all its time running.",
+     "If it sat down, we could both listen to the fire."
+    ]
+   ]
+  ]
+ },
+ "questions": {
+  "gentle": [
+   {
+    "ask": [
+     "我可以问个小问题吗？下雨天你喜欢什么？",
+     "May I ask you something? What do you like about rainy days?"
+    ],
+    "options": [
+     [
+      "听雨",
+      "Listening to the rain"
+     ],
+     [
+      "去走走",
+      "Walking in it"
+     ]
+    ]
+   },
+   {
+    "ask": [
+     "我可以问个小问题吗？小时候你怕黑吗？",
+     "May I ask you something? Were you afraid of the dark as a child?"
+    ],
+    "options": [
+     [
+      "有一点",
+      "A little"
+     ],
+     [
+      "不怕",
+      "I wasn’t"
+     ]
+    ]
+   },
+   {
+    "ask": [
+     "我可以问个小问题吗？你喜欢先看海还是看天？",
+     "May I ask you something? Do you look at the sea or the sky first?"
+    ],
+    "options": [
+     [
+      "海",
+      "The sea"
+     ],
+     [
+      "天",
+      "The sky"
+     ]
+    ]
+   },
+   {
+    "ask": [
+     "我可以问个小问题吗？什么最适合清早？",
+     "May I ask you something? What goes best with an early morning?"
+    ],
+    "options": [
+     [
+      "散步",
+      "A walk"
+     ],
+     [
+      "再坐一会儿",
+      "Sitting awhile"
+     ]
+    ]
+   },
+   {
+    "ask": [
+     "我可以问个小问题吗？累了你喜欢怎样歇？",
+     "May I ask you something? What helps you rest when you’re tired?"
+    ],
+    "options": [
+     [
+      "自己安静一下",
+      "Some quiet"
+     ],
+     [
+      "有人陪着",
+      "A little company"
+     ]
+    ]
+   },
+   {
+    "ask": [
+     "我可以问个小问题吗？你喜欢听火还是听雨？",
+     "May I ask you something? Would you rather listen to fire or rain?"
+    ],
+    "options": [
+     [
+      "火声",
+      "A crackling fire"
+     ],
+     [
+      "雨声",
+      "Rain"
+     ]
+    ]
+   },
+   {
+    "ask": [
+     "我可以问个小问题吗？想收到怎样的小礼物？",
+     "May I ask you something? What kind of little gift would you like?"
+    ],
+    "options": [
+     [
+      "一朵花",
+      "A flower"
+     ],
+     [
+      "一张纸条",
+      "A note"
+     ]
+    ]
+   },
+   {
+    "ask": [
+     "我可以问个小问题吗？你更喜欢哪个时段？",
+     "May I ask you something? Which part of the day is yours?"
+    ],
+    "options": [
+     [
+      "清晨",
+      "Early morning"
+     ],
+     [
+      "傍晚",
+      "Dusk"
+     ]
+    ]
+   },
+   {
+    "ask": [
+     "我可以问个小问题吗？海边你喜欢哪一刻？",
+     "May I ask you something? When do you like the shore best?"
+    ],
+    "options": [
+     [
+      "涨潮",
+      "High tide"
+     ],
+     [
+      "退潮",
+      "Low tide"
+     ]
+    ]
+   },
+   {
+    "ask": [
+     "我可以问个小问题吗？想和我做点什么？",
+     "May I ask you something? What would you like to do with me?"
+    ],
+    "options": [
+     [
+      "并排坐坐",
+      "Sit together"
+     ],
+     [
+      "一块走走",
+      "Take a walk"
+     ]
+    ]
+   }
+  ],
+  "lively": [
+   {
+    "ask": [
+     "快说快说！下雨天你喜欢什么？",
+     "All right, tell me this! What do you like about rainy days?"
+    ],
+    "options": [
+     [
+      "听雨",
+      "Listening to the rain"
+     ],
+     [
+      "去走走",
+      "Walking in it"
+     ]
+    ]
+   },
+   {
+    "ask": [
+     "快说快说！小时候你怕黑吗？",
+     "All right, tell me this! Were you afraid of the dark as a child?"
+    ],
+    "options": [
+     [
+      "有一点",
+      "A little"
+     ],
+     [
+      "不怕",
+      "I wasn’t"
+     ]
+    ]
+   },
+   {
+    "ask": [
+     "快说快说！你喜欢先看海还是看天？",
+     "All right, tell me this! Do you look at the sea or the sky first?"
+    ],
+    "options": [
+     [
+      "海",
+      "The sea"
+     ],
+     [
+      "天",
+      "The sky"
+     ]
+    ]
+   },
+   {
+    "ask": [
+     "快说快说！什么最适合清早？",
+     "All right, tell me this! What goes best with an early morning?"
+    ],
+    "options": [
+     [
+      "散步",
+      "A walk"
+     ],
+     [
+      "再坐一会儿",
+      "Sitting awhile"
+     ]
+    ]
+   },
+   {
+    "ask": [
+     "快说快说！累了你喜欢怎样歇？",
+     "All right, tell me this! What helps you rest when you’re tired?"
+    ],
+    "options": [
+     [
+      "自己安静一下",
+      "Some quiet"
+     ],
+     [
+      "有人陪着",
+      "A little company"
+     ]
+    ]
+   },
+   {
+    "ask": [
+     "快说快说！你喜欢听火还是听雨？",
+     "All right, tell me this! Would you rather listen to fire or rain?"
+    ],
+    "options": [
+     [
+      "火声",
+      "A crackling fire"
+     ],
+     [
+      "雨声",
+      "Rain"
+     ]
+    ]
+   },
+   {
+    "ask": [
+     "快说快说！想收到怎样的小礼物？",
+     "All right, tell me this! What kind of little gift would you like?"
+    ],
+    "options": [
+     [
+      "一朵花",
+      "A flower"
+     ],
+     [
+      "一张纸条",
+      "A note"
+     ]
+    ]
+   },
+   {
+    "ask": [
+     "快说快说！你更喜欢哪个时段？",
+     "All right, tell me this! Which part of the day is yours?"
+    ],
+    "options": [
+     [
+      "清晨",
+      "Early morning"
+     ],
+     [
+      "傍晚",
+      "Dusk"
+     ]
+    ]
+   },
+   {
+    "ask": [
+     "快说快说！海边你喜欢哪一刻？",
+     "All right, tell me this! When do you like the shore best?"
+    ],
+    "options": [
+     [
+      "涨潮",
+      "High tide"
+     ],
+     [
+      "退潮",
+      "Low tide"
+     ]
+    ]
+   },
+   {
+    "ask": [
+     "快说快说！想和我做点什么？",
+     "All right, tell me this! What would you like to do with me?"
+    ],
+    "options": [
+     [
+      "并排坐坐",
+      "Sit together"
+     ],
+     [
+      "一块走走",
+      "Take a walk"
+     ]
+    ]
+   }
+  ],
+  "laborious": [
+   {
+    "ask": [
+     "我认真问一句。下雨天你喜欢什么？",
+     "A serious question, for once. What do you like about rainy days?"
+    ],
+    "options": [
+     [
+      "听雨",
+      "Listening to the rain"
+     ],
+     [
+      "去走走",
+      "Walking in it"
+     ]
+    ]
+   },
+   {
+    "ask": [
+     "我认真问一句。小时候你怕黑吗？",
+     "A serious question, for once. Were you afraid of the dark as a child?"
+    ],
+    "options": [
+     [
+      "有一点",
+      "A little"
+     ],
+     [
+      "不怕",
+      "I wasn’t"
+     ]
+    ]
+   },
+   {
+    "ask": [
+     "我认真问一句。你喜欢先看海还是看天？",
+     "A serious question, for once. Do you look at the sea or the sky first?"
+    ],
+    "options": [
+     [
+      "海",
+      "The sea"
+     ],
+     [
+      "天",
+      "The sky"
+     ]
+    ]
+   },
+   {
+    "ask": [
+     "我认真问一句。什么最适合清早？",
+     "A serious question, for once. What goes best with an early morning?"
+    ],
+    "options": [
+     [
+      "散步",
+      "A walk"
+     ],
+     [
+      "再坐一会儿",
+      "Sitting awhile"
+     ]
+    ]
+   },
+   {
+    "ask": [
+     "我认真问一句。累了你喜欢怎样歇？",
+     "A serious question, for once. What helps you rest when you’re tired?"
+    ],
+    "options": [
+     [
+      "自己安静一下",
+      "Some quiet"
+     ],
+     [
+      "有人陪着",
+      "A little company"
+     ]
+    ]
+   },
+   {
+    "ask": [
+     "我认真问一句。你喜欢听火还是听雨？",
+     "A serious question, for once. Would you rather listen to fire or rain?"
+    ],
+    "options": [
+     [
+      "火声",
+      "A crackling fire"
+     ],
+     [
+      "雨声",
+      "Rain"
+     ]
+    ]
+   },
+   {
+    "ask": [
+     "我认真问一句。想收到怎样的小礼物？",
+     "A serious question, for once. What kind of little gift would you like?"
+    ],
+    "options": [
+     [
+      "一朵花",
+      "A flower"
+     ],
+     [
+      "一张纸条",
+      "A note"
+     ]
+    ]
+   },
+   {
+    "ask": [
+     "我认真问一句。你更喜欢哪个时段？",
+     "A serious question, for once. Which part of the day is yours?"
+    ],
+    "options": [
+     [
+      "清晨",
+      "Early morning"
+     ],
+     [
+      "傍晚",
+      "Dusk"
+     ]
+    ]
+   },
+   {
+    "ask": [
+     "我认真问一句。海边你喜欢哪一刻？",
+     "A serious question, for once. When do you like the shore best?"
+    ],
+    "options": [
+     [
+      "涨潮",
+      "High tide"
+     ],
+     [
+      "退潮",
+      "Low tide"
+     ]
+    ]
+   },
+   {
+    "ask": [
+     "我认真问一句。想和我做点什么？",
+     "A serious question, for once. What would you like to do with me?"
+    ],
+    "options": [
+     [
+      "并排坐坐",
+      "Sit together"
+     ],
+     [
+      "一块走走",
+      "Take a walk"
+     ]
+    ]
+   }
+  ],
+  "quiet": [
+   {
+    "ask": [
+     "……问你一句。下雨天你喜欢什么？",
+     "…One question. What do you like about rainy days?"
+    ],
+    "options": [
+     [
+      "听雨",
+      "Listening to the rain"
+     ],
+     [
+      "去走走",
+      "Walking in it"
+     ]
+    ]
+   },
+   {
+    "ask": [
+     "……问你一句。小时候你怕黑吗？",
+     "…One question. Were you afraid of the dark as a child?"
+    ],
+    "options": [
+     [
+      "有一点",
+      "A little"
+     ],
+     [
+      "不怕",
+      "I wasn’t"
+     ]
+    ]
+   },
+   {
+    "ask": [
+     "……问你一句。你喜欢先看海还是看天？",
+     "…One question. Do you look at the sea or the sky first?"
+    ],
+    "options": [
+     [
+      "海",
+      "The sea"
+     ],
+     [
+      "天",
+      "The sky"
+     ]
+    ]
+   },
+   {
+    "ask": [
+     "……问你一句。什么最适合清早？",
+     "…One question. What goes best with an early morning?"
+    ],
+    "options": [
+     [
+      "散步",
+      "A walk"
+     ],
+     [
+      "再坐一会儿",
+      "Sitting awhile"
+     ]
+    ]
+   },
+   {
+    "ask": [
+     "……问你一句。累了你喜欢怎样歇？",
+     "…One question. What helps you rest when you’re tired?"
+    ],
+    "options": [
+     [
+      "自己安静一下",
+      "Some quiet"
+     ],
+     [
+      "有人陪着",
+      "A little company"
+     ]
+    ]
+   },
+   {
+    "ask": [
+     "……问你一句。你喜欢听火还是听雨？",
+     "…One question. Would you rather listen to fire or rain?"
+    ],
+    "options": [
+     [
+      "火声",
+      "A crackling fire"
+     ],
+     [
+      "雨声",
+      "Rain"
+     ]
+    ]
+   },
+   {
+    "ask": [
+     "……问你一句。想收到怎样的小礼物？",
+     "…One question. What kind of little gift would you like?"
+    ],
+    "options": [
+     [
+      "一朵花",
+      "A flower"
+     ],
+     [
+      "一张纸条",
+      "A note"
+     ]
+    ]
+   },
+   {
+    "ask": [
+     "……问你一句。你更喜欢哪个时段？",
+     "…One question. Which part of the day is yours?"
+    ],
+    "options": [
+     [
+      "清晨",
+      "Early morning"
+     ],
+     [
+      "傍晚",
+      "Dusk"
+     ]
+    ]
+   },
+   {
+    "ask": [
+     "……问你一句。海边你喜欢哪一刻？",
+     "…One question. When do you like the shore best?"
+    ],
+    "options": [
+     [
+      "涨潮",
+      "High tide"
+     ],
+     [
+      "退潮",
+      "Low tide"
+     ]
+    ]
+   },
+   {
+    "ask": [
+     "……问你一句。想和我做点什么？",
+     "…One question. What would you like to do with me?"
+    ],
+    "options": [
+     [
+      "并排坐坐",
+      "Sit together"
+     ],
+     [
+      "一块走走",
+      "Take a walk"
+     ]
+    ]
+   }
+  ]
+ }
+}

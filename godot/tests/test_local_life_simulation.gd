@@ -69,7 +69,7 @@ func report() -> Dictionary:
 			var recent: int=stamps.filter(func(stamp):return float(event.time)-float(stamp)<3600).size();max_repeat=maxi(max_repeat,recent)
 			if stamps.size()>1:repeated+=1
 		var starts: int=world.schedules.statistics.started.get(id,0);var arrivals: int=world.schedules.statistics.arrived.get(id,0)
-		residents[id]={"name":world.actors[id].name,"controller":world.actors[id].controller,"personality":world.personality.summary(id),"speech_count":lines.size(),"speech_contexts":contexts,"behavior_seconds":behavior[id],"relationship":world.relationships.summary(id),"credited_true_event_counts":world.relationships.states.get(id,{}).get("counts",{}).duplicate(true),"wishes_generated":world.wishes.statistics.generated.get(id,0),"wishes_completed":world.wishes.statistics.completed.get(id,0),"wishes_active":world.wishes.summary(id),"schedule_started":starts,"schedule_arrived":arrivals,"schedule_hit_rate":float(arrivals)/starts if starts>0 else 0.0}
+		residents[id]={"name":world.actors[id].name,"controller":world.actors[id].controller,"personality":world.personality.summary(id),"speech_count":lines.size(),"speech_contexts":contexts,"behavior_seconds":behavior[id],"relationship":world.relationships.summary(id),"credited_true_event_counts":world.relationships.states.get(id,{}).get("counts",{}).duplicate(true),"schedule_started":starts,"schedule_arrived":arrivals,"schedule_hit_rate":float(arrivals)/starts if starts>0 else 0.0}
 	var wood:=0
 	for chest in [{"id":"storage","items":world.storage.saved().items,"capacity":9007199254740991,"kind":"storage"}]:wood+=int(chest.items.get("wood",0))
 	for actor in world.actors.values():wood+=int(actor.carry.get("wood",0))
@@ -105,8 +105,6 @@ func run() -> void:
 	while plots.any(func(plot):return world.farms.stage(plot)!="mature") and elapsed<2000:frame()
 	for plot in plots:check(job("human",{"intent":"harvest","target_id":plot.id}),"human harvests mature crop into real box "+plot.id)
 	var guests: Array=["human","codex","npc.mira"]
-	for id in world.director.routines:
-		if world.wishes.active(id).get("template_id")=="soup" and id!="codex":guests=["human","codex",id];break
 	input();var cooked:Dictionary=BBQ.start(world,"recipe:turnip-soup",guests,"home.barbecue",frame)
 	actions.append({"at":elapsed,"host_barbecue_recipe":cooked.duplicate(true),"invited":guests.duplicate()})
 	check(cooked.ok and BBQ.ready(world,"home.barbecue",frame),"actual crop-funded soup served on real fire")

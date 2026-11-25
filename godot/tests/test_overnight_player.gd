@@ -240,6 +240,10 @@ func run()->void:
 			await process_frame;await process_frame;game.chat.hide()
 			await create_timer(.25).timeout
 			for layout_frame in range(6):await process_frame
+			# Isolate the host-led meal from independently lit local meals and
+			# local harvesting. These residents can still follow, eat and show
+			# hunger through their ordinary engine systems. Their adapter is fake.
+			for id in w.director.routines:w.director.set_controller(id,"model")
 			game._open_audio_settings();await process_frame
 			check(WardrobeUI.descendants(game.audio_dialog).any(func(n):return n is Label and n.text==preload("res://scripts/localization.gd").text("ui.audio.music_ready")),"actual settings displays ready licensed music")
 			check(WardrobeUI.descendants(game.audio_dialog).any(func(n):return n is Button and n.text==preload("res://scripts/localization.gd").text("ui.music.preview")),"actual settings exposes music preview and sources")
@@ -441,8 +445,11 @@ func fishing_and_call(mode:String,station_id:String)->void:
 	check(not fish.is_empty(),mode+" actual catch")
 	if fish.is_empty():return
 	game.island_hud.notices_signature="";game.island_hud.refresh();await process_frame;await process_frame
-	var grills:Array=WardrobeUI.descendants(game.island_hud.notifications).filter(func(n):return n is Button and n.text=="直接烧烤")
-	check(not grills.is_empty() and await click_button(grills[0]),mode+" fish card grill")
+	var grills:Array=WardrobeUI.descendants(game.island_hud.notifications).filter(func(n):return n is Button and n.get_meta("fish_id","")==fish.id)
+	var clicked_grill:bool=not grills.is_empty() and await WardrobeUI.click(self,grills[0])
+	if not clicked_grill:
+		print("OVERNIGHT_FISH_CARD ",{"fish":fish.id,"view":game.view.region_id,"visible":game.island_hud.notifications.is_visible_in_tree(),"collapsed":game.island_hud.notices_collapsed,"expanded":game.island_hud.expanded_notice,"candidate":grills.size(),"rect":grills[0].get_global_rect() if not grills.is_empty() and is_instance_valid(grills[0]) else Rect2()})
+	check(clicked_grill,mode+" fish card grill")
 	var choices:Array=game.get_children().filter(func(n):return n is ConfirmationDialog and n.title=="选择营火" and n.visible)
 	check(choices.size()==1,mode+" fire picker")
 	if choices.is_empty():return

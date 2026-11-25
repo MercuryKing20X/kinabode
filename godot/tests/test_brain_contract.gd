@@ -38,7 +38,9 @@ func run()->void:
 	check(accepted,"available recipient receives candidate invitation")
 	check(receiver.invitation.get("from")=="codex","invitation bound to exact sender")
 	w.hunger.ensure("codex");w.hunger.states.codex.elapsed=float(w.hunger.config.thresholds[3])
-	check(b.candidates().all(func(c):return c.action=="food"),"very hungry restricts entire candidate set")
+	# DIRECTION 〇·一 replaces the old scored candidates; real self-cooking is
+	# exercised end to end in test_world_self_meal, separate from this idle fixture.
+	check(w.hunger.rank("codex")==3,"real hunger state remains observable without the old scored food candidate")
 	for tick in 100:w.advance(.25)
 	check(w.storage.saved()==original,"utility and invitations conserve every warehouse item")
 	check(w.work.jobs.values().all(func(job):return not str(job.get("intent","")).contains("chop")),"no unsolicited labor")

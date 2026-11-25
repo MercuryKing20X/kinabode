@@ -36,11 +36,15 @@ func run()->void:
 	check(save.load_world(w,directory).ok,"resident roles and conserved fish meal reload")
 	game._process(.1)
 	check(not game.intentions.plans.has("codex"),"reload never resumes queued future intentions")
-	queued=game.intentions.submit("codex",[{"action":"wander"},{"action":"fish"}],"direct:codex")
-	check(queued.ok,"fresh sequence for original hunger interruption")
 	w.advance(1501);game._process(.1)
-	check(w.hunger.rank("codex")>=3 and not game.intentions.plans.has("codex") and game.intentions.last_failure.get("codex")=="very_hungry","actual advance preserves hunger priority and stops future work")
-	check(w.fishing.held("codex").is_empty(),"interrupted future fishing creates no fish")
+	check(w.hunger.rank("codex")>=3,"real elapsed time reaches very hungry")
+	var fish_before:Array=w.fishing.fish.keys()
+	queued=game.intentions.submit("codex",[{"action":"wander"},{"action":"fish"}],"direct:codex")
+	check(queued.ok,"very hungry does not prevent a fresh own sequence")
+	for tick in 4000:
+		game._process(.1)
+		if not game.intentions.plans.has("codex"):break
+	check(w.fishing.fish.values().filter(func(fish):return fish.owner_id=="codex" and fish.id not in fish_before).size()==1,"one actual new catch with no hunger cancellation")
 	game.queue_free();await process_frame
 	print("RESIDENT_INTENTIONS ",checks," failed=",failed);quit(1 if failed else 0)
 

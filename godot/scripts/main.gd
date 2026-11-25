@@ -68,7 +68,6 @@ var jieqi_panel: Control
 var chess_choice: Control
 var gomoku_panel: Control
 var participant_picker: ConfirmationDialog
-var wish_panel: PanelContainer
 var gift_panel: PanelContainer
 var proposal_panel: PanelContainer
 var proposal_host: RefCounted
@@ -87,7 +86,7 @@ var flower_actor_ids:Array=[]
 var playground:Node
 var watch_ui:Node
 var brain_panel:Control
-var steward:Node
+var company:Node
 var action_dock: Control
 var actions_button: Button
 var fishing_panel: Control
@@ -158,11 +157,19 @@ var dialogue_button: Button
 var assign := false
 var selected_id := ""
 var pending_camp: Dictionary = {}
+var shore_click_target:=Vector2.INF
 var pending_chess: Dictionary = {}
 var chess_ui_visibility:Dictionary={}
 var direct_grill_fish_id := ""
 var pending_question := ""
 var data_dir := ""
+var world_door: Node
+var island_ai:Node
+var world_door_dialog: Control
+var world_placement:Control
+var world_checkpoints:RefCounted
+var world_checkpoints_panel:AcceptDialog
+var island_change_panel: AcceptDialog
 var snapshot_path := ""
 var scenario := ""
 var autosave := 0.0
@@ -185,6 +192,7 @@ var shared_button: Button
 signal opening_chosen(id:String)
 var opening_dialog:ConfirmationDialog
 var opening_picker:OptionButton
+var opening_connection_greetings:=false
 var ui_font:Font
 var language:="zh"
 func choose_opening(archive:bool=false)->void:
@@ -208,8 +216,13 @@ func choose_opening(archive:bool=false)->void:
 	opening_dialog.popup_centered(Vector2i(590,200))
 
 var dark_ui:Node
+var close_pending:=false
+var owns_window_close:=false
 
 func _ready() -> void:
+	if get_parent()==get_tree().root and (get_tree().current_scene==self or get_tree().current_scene==null):
+		owns_window_close=true
+		get_tree().auto_accept_quit=false
 	get_tree().node_added.connect(func(node):
 		if node is Window and is_ancestor_of(node):node.window_input.connect(func(event):
 			var focused:Control=node.gui_get_focus_owner()
@@ -222,7 +235,7 @@ func _ready() -> void:
 		var layer:=CanvasLayer.new();layer.layer=120;add_child(layer)
 		var curtain:=ColorRect.new();curtain.color=Color.BLACK;curtain.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);curtain.mouse_filter=Control.MOUSE_FILTER_IGNORE;layer.add_child(curtain)
 		var transition:=create_tween();transition.tween_property(curtain,"color:a",0.0,.25);transition.tween_callback(layer.queue_free)
-	if showcase_default and not Opening.v3(world) and "--opening=legacy" not in OS.get_cmdline_user_args() and OS.get_environment("HABITAT_OPENING")!="legacy":world=World.new("res://content/home-v3/world.json")
+	if showcase_default and not Opening.v3(world) and "--opening=legacy" not in OS.get_cmdline_user_args() and (OS.get_environment("HABITAT_OPENING")!="legacy" or get_tree().has_meta("title_opening")):world=World.new("res://content/home-v3/world.json")
 	if Opening.v3(world):get_window().content_scale_size=Vector2i.ZERO
 	var opening_choice:String="showcase" if OS.get_environment("HABITAT_OPENING") in ["legacy","showcase"] else "standard"
 	for value in OS.get_cmdline_user_args():
@@ -249,12 +262,18 @@ func _ready() -> void:
 	for i in range(1, readers): world.add_companion("companion-%s" % (i + 1), world.residents.name_for("companion-%s" % (i+1)) if i == 1 else LocalText.source("ui.main.companion_s") % (i + 1))
 	data_dir = OS.get_environment("HABITAT_DATA_DIR")
 	if data_dir.is_empty(): data_dir = ProjectSettings.globalize_path("user://")
+	if not preload("res://scripts/world_upgrade.gd").prepare(data_dir):
+		save_enabled=false
+		push_error("Could not back up the island before upgrading.")
+		get_tree().quit(1)
+		return
 	if not get_tree().has_meta("title_opening") and Opening.v3(world) and (fresh_world or not FileAccess.file_exists(data_dir.path_join("island-v2.json"))) and snapshot_path.is_empty() and OS.get_environment("HABITAT_OPENING").is_empty() and not Array(OS.get_cmdline_user_args()).any(func(arg):return arg.begins_with("--opening=")) and DisplayServer.get_name()!="headless":
 		save_enabled=false;set_process(false);choose_opening();opening_choice=await opening_chosen;save_enabled=true;set_process(true)
 	if fresh_world and snapshot_path.is_empty():preserved_identity=Save.read_identity(data_dir)
 	if fresh_world and snapshot_path.is_empty() and not Save.archive_progress(data_dir):
 		push_error(T("ui.main.couldn_t_restart_your_existing_progress_is_safe")); get_tree().quit(1); return
 	get_tree().remove_meta("title_fresh")
+	get_tree().remove_meta("title_new_intro")
 	get_tree().remove_meta("title_opening")
 	var loaded: Dictionary = Save.load_world(world, data_dir)
 	if not loaded.ok and loaded.get("error")=="world_template_mismatch":
@@ -311,14 +330,25 @@ func _ready() -> void:
 	if Opening.v3(world) and not loaded.get("loaded",false):
 		var initial:Dictionary=Opening.apply(world,library,opening_choice)
 		if not initial.ok:save_enabled=false;push_error(str(initial));get_tree().quit(1);return
-	world.director.brain_trace_directory=data_dir.path_join("brain-traces")
+	if OS.get_environment("HABITAT_BRAIN_TRACE")=="1" or OS.get_environment("HABITAT_DETERMINISTIC_TESTS")=="1":
+		world.director.brain_trace_directory=data_dir.path_join("brain-traces")
 	for brain in world.director.brains.values():brain.trace_directory=world.director.brain_trace_directory
 	world.activities.persist_follow=true
+	opening_connection_greetings=world.opening_id=="standard" and not loaded.get("loaded",false) and snapshot_path.is_empty()
 	local_settings.load(data_dir.path_join("local-life.cfg"))
 	world.intelligence.setup(data_dir.path_join("intelligence-preferences.cfg"))
 	world.intelligence.activate_presets()
 	world.hunger.start()
 	if world.standard.active():world.standard.install_sites(library)
+	if world.standard.active():
+		world.open_life=true
+		var fixed:String=OS.get_environment("HABITAT_WORLD_SEED")
+		world.life_seed=int(fixed) if fixed.is_valid_int() else int(world.world_id.hash())
+		if not loaded.get("loaded",false):
+			world.weather.weather_seed=abs(("weather:"+str(world.life_seed)).hash())
+			for id in world.director.routines:
+				world.director.routines[id].rng.seed=hash("routine:"+str(world.life_seed)+":"+id)
+				world.director.brains[id].seed_life()
 	world.director.memory_reminders.setup(local_settings,data_dir.path_join("local-life.cfg"))
 	world.relationships.setup_preferences(local_settings,data_dir.path_join("local-life.cfg"))
 	for id in world.director.routines:
@@ -326,8 +356,10 @@ func _ready() -> void:
 		var section:="resident:"+str(id)
 		routine.chatter=bool(local_settings.get_value(section,"chatter",local_settings.get_value("life","chatter",true)))
 		routine.set_enabled(bool(local_settings.get_value(section,"enabled",local_settings.get_value("life","enabled",true) if id=="codex" else true)) and snapshot_path.is_empty())
-	if not loaded.get("loaded",false) and Opening.v3(world) and (OS.get_environment("HABITAT_OPENING")!="legacy" or "--opening=standard" in OS.get_cmdline_user_args() or "--opening=showcase" in OS.get_cmdline_user_args()) and bool(local_settings.get_value("follow","enabled",true)):
-		world.activities.set_followers(world.actors.keys().filter(func(id):return id!="human"))
+	if not loaded.get("loaded",false) and Opening.v3(world):
+		var follow_default:bool=world.opening_id=="showcase" and bool(local_settings.get_value("follow","enabled",true))
+		world.activities.set_followers(world.director.routines.keys() if follow_default else [],[],false)
+		world.activities.explicit_selected.clear()
 	world.residents.apply_names(world)
 	for id in world.actors:
 		var appearance: String=world.residents.appearance_for(id,"")
@@ -356,7 +388,10 @@ func _ready() -> void:
 		if atlas.navigation_mode:journey.go(region,point)
 		elif region=="home":
 			_toggle_atlas(false);view.show_region("home");view.follow_player=false;view.center=point)
+	var resident_choice:Dictionary=preload("res://scripts/island_ai.gd").choice(data_dir)
 	for id in world.actors:
+		if world.director.model_controlled(id) and id in resident_choice.residents and preload("res://scripts/island_ai.gd").PROVIDERS.has(resident_choice.provider):
+			world.director.set_controller(id,"local")
 		if world.director.model_controlled(id):_ensure_link(id)
 	# Compatibility alias for existing controller tests; it never starts inference.
 	_ensure_link("codex");link=links.codex
@@ -397,15 +432,13 @@ func _ready() -> void:
 	handbook_menu=MenuButton.new();handbook_menu.text=navigation.handbook_title;handbook_menu.flat=false;top.add_child(handbook_menu)
 	for index in range(navigation.entries.size()):
 		handbook_menu.get_popup().add_item(navigation.entries[index].label,index);handbook_menu.get_popup().set_item_metadata(index,navigation.entries[index].id)
-	if world.standard.active():
-		var goal_index:int=handbook_menu.get_popup().item_count
-		handbook_menu.get_popup().add_item(T("theirs.goals"),goal_index);handbook_menu.get_popup().set_item_metadata(goal_index,"opening_board")
 	handbook_menu.get_popup().id_pressed.connect(func(index):_handbook_selected(str(handbook_menu.get_popup().get_item_metadata(index))))
 	# Compatibility reference for existing controller/editor probes; the visible entry is the handbook.
 	resident_connections_button=handbook_menu
 	var settings_menu:=MenuButton.new();settings_menu.text=T("ui.main.settings");settings_menu.flat=false;top.add_child(settings_menu)
 	settings_menu.get_popup().add_item(T("title.return"),101)
 	settings_menu.get_popup().add_item(T("ui.main.fullscreen_window"),0);settings_menu.get_popup().add_item(T("ui.main.sound_backups"),1)
+	settings_menu.get_popup().add_item(preload("res://scripts/world_door_panel.gd").title_text(),103)
 	if Opening.v3(world):
 		settings_menu.get_popup().add_item(T("ui.main.new_game_archive_and_restart"),99)
 	settings_menu.get_popup().id_pressed.connect(func(id):
@@ -414,7 +447,8 @@ func _ready() -> void:
 		elif id==99:choose_opening(true))
 	settings_menu.get_popup().id_pressed.connect(func(id):
 		if id==0:_toggle_fullscreen()
-		elif id==1:_open_audio_settings())
+		elif id==1:_open_audio_settings()
+		elif id==103:_toggle_resident_connections())
 	stock=Label.new();root.add_child(stock);stock.set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT);stock.offset_left=28;stock.offset_right=380;stock.offset_top=54;stock.horizontal_alignment=HORIZONTAL_ALIGNMENT_LEFT;stock.mouse_filter=Control.MOUSE_FILTER_IGNORE
 	status=Label.new();status.set_meta("ui_message_key","ui.main.movement_hint");status.position=Vector2(28,78);status.size=Vector2(650,24);status.clip_text=true;status.add_theme_font_size_override("font_size",14);status.text=T("ui.main.movement_hint");root.add_child(status)
 	order_bar = VBoxContainer.new(); order_bar.position = Vector2(28, 100); order_bar.add_theme_constant_override("separation", 12); root.add_child(order_bar)
@@ -454,6 +488,7 @@ func _ready() -> void:
 	book_panel=preload("res://scripts/memory_book_panel.gd").new();root.add_child(book_panel);book_panel.setup(memory_books,world)
 	memory_life=preload("res://scripts/memory_life.gd").new();add_child(memory_life);memory_life.setup(self)
 	life_archive=preload("res://scripts/life_archive.gd").new();add_child(life_archive);life_archive.setup(self)
+	world.director.heart_speech_window=_deliver_heart_replies
 	memory_books.life_archive_ref=weakref(life_archive)
 	if world.director.local_dialogue!=null:world.director.local_dialogue.mood_provider=func(id):return life_archive.snapshot(id).get("mood",{}) if life_archive.enabled(id) else {}
 	_setup_connection_overview.call_deferred()
@@ -531,11 +566,8 @@ func _ready() -> void:
 	farm_commands = preload("res://scripts/farm_commands.gd").new()
 	local_host_commands=preload("res://scripts/local_host_commands.gd").new(self);add_child(local_host_commands)
 	intentions=preload("res://scripts/resident_intentions.gd").new();add_child(intentions);intentions.setup(self)
-	steward=preload("res://scripts/steward_host.gd").new();add_child(steward);steward.setup(self)
-	world.flower_creation.trade_authority=func(id):return steward!=null and steward.authorized(id)
 	brain_panel=preload("res://scripts/brain_panel.gd").new();root.add_child(brain_panel);brain_panel.setup(world,library)
 	view.mind_clicked.connect(func(id):brain_panel.open(id))
-	endpoint.resident_context=func(id):return {"management":steward.authorized(id),"managed_by":steward.manager if steward.active else "","work_options":steward.work_context() if steward.authorized(id) else []}
 	local_host_commands.feedback.connect(_local_command_feedback)
 	local_host_commands.completed.connect(_local_command_feedback)
 	local_host_commands.actor_reply.connect(func(id:String,line:String,channel:String):_record_chat(channel,id,line,"local") if channel!="command" else null)
@@ -563,11 +595,14 @@ func _ready() -> void:
 	if world.actors.human.region_id != "home": view.show_region(world.actors.human.region_id)
 	if not loaded.ok: status.text = T("ui.main.couldn_t_read_the_old_progress_file_the_original_is_safe_for_reco")
 	playground=preload("res://scripts/playground.gd").new();add_child(playground);playground.setup(self)
+	world.play_invite=playground.invite
 	if Opening.v3(world):
 		island_hud=preload("res://scripts/island_hud.gd").new();root.add_child(island_hud);island_hud.setup(self,root,top,settings_menu)
 		watch_ui=preload("res://scripts/watch_ui.gd").new();add_child(watch_ui);watch_ui.setup.call_deferred(self)
 		ui_scale=preload("res://scripts/ui_scale.gd").new();add_child(ui_scale);ui_scale.setup(self,root,data_dir)
-	for panel_node in [farm_panel,journal_panel,memory_panel,book_panel,fishing_panel,resident_connections,house_panel,interior_panel,leisure_panel,homestead_panel,proposal_panel,wish_panel,editor,action_dock.menu,island_hud.wardrobe if island_hud!=null else null]:
+		company=preload("res://scripts/companion_company.gd").new();add_child(company);company.setup(self,loaded)
+		view.care_clicked.connect(company.show_care)
+	for panel_node in [farm_panel,journal_panel,memory_panel,book_panel,fishing_panel,resident_connections,house_panel,interior_panel,leisure_panel,homestead_panel,proposal_panel,editor,action_dock.menu,island_hud.wardrobe if island_hud!=null else null]:
 		if panel_node==null:continue
 		var overlay:Control=panel_node
 		overlay.visibility_changed.connect(func():_present_overlay(overlay))
@@ -640,13 +675,24 @@ func _toggle_fullscreen() -> void:
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED if fullscreen else DisplayServer.WINDOW_MODE_FULLSCREEN)
 
 func _input(event: InputEvent) -> void:
+	if is_instance_valid(world_placement) and world_placement.visible and event.is_pressed() and ((event is InputEventKey and event.keycode==KEY_ESCAPE) or (event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_RIGHT)):
+		world_placement.cancel()
+		get_viewport().set_input_as_handled();return
+	if is_instance_valid(island_change_panel) and island_change_panel.input(event):
+		get_viewport().set_input_as_handled();return
+	if is_instance_valid(island_hud):
+		island_hud.watch_input(event)
+		var focus:=get_viewport().gui_get_focus_owner()
+		if event is InputEventKey and event.pressed and not event.echo and event.keycode==KEY_H and not (focus is LineEdit or focus is TextEdit) and not island_hud.watch_blocked():
+			island_hud.watch_toggle()
+			get_viewport().set_input_as_handled()
+			return
 	if not flower_placement.is_empty() and event is InputEventKey and event.pressed and event.keycode==KEY_ESCAPE:
 		flower_placement.clear();flower_actor_ids.clear();status.text="";get_viewport().set_input_as_handled();return
 	if view!=null and not view.follow_player and (event is InputEventMouseButton or event is InputEventMouseMotion):view.peek_elapsed=0
 	var typing:Control=get_viewport().gui_get_focus_owner()
 	if event is InputEventKey and event.pressed and event.keycode==KEY_SPACE and not (typing is LineEdit or typing is TextEdit):
 		_return_to_player();get_viewport().set_input_as_handled();return
-	if steward!=null and event is InputEventKey and event.pressed and event.keycode in [KEY_UP,KEY_DOWN,KEY_LEFT,KEY_RIGHT] and (chat_input==null or chat_input.text.is_empty()):steward.manual_camera=true
 	if chat_input!=null and chat.visible:
 		if event is InputEventMouseButton and event.pressed and not chat.get_global_rect().has_point(event.position):chat_input.release_focus()
 		if event is InputEventKey and event.pressed:
@@ -663,7 +709,9 @@ func _input(event: InputEvent) -> void:
 		var outside:bool=event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_LEFT and not island_hud.resident_card.get_global_rect().has_point(event.position)
 		var escape:bool=event is InputEventKey and event.pressed and not event.echo and event.keycode==KEY_ESCAPE
 		if outside or escape:
-			island_hud.resident_card.hide();get_viewport().set_input_as_handled();return
+			island_hud.resident_card.hide()
+			if not (outside and watch_ui!=null and watch_ui.hit_toggle(event.position)):
+				get_viewport().set_input_as_handled();return
 	if world!=null and ((event is InputEventMouseMotion and event.relative!=Vector2.ZERO) or event.is_pressed()):
 		world.director.moods.player_input()
 		if event.is_pressed():
@@ -721,7 +769,6 @@ func _toggle_atlas(visible_now: bool,navigation:bool=false) -> void:
 
 func _return_to_player() -> void:
 	_toggle_atlas(false)
-	if steward!=null:steward.manual_camera=true
 	view.follow_actor="human"
 	view.center=world.point(world.actors.human)
 	view.follow_player = true
@@ -889,6 +936,11 @@ func _snapshot_for_chat(id: String, channel: String, recipients: Array, message_
 		snapshot["intent_card"]=_intent_card(id,snapshot,channel)
 	return snapshot
 
+func person_card_busy()->bool:
+	return company!=null and is_instance_valid(company.night.card)
+func person_outing_approaching()->bool:
+	return world.director.brains.values().any(func(brain):return brain.current.get("outing_job",{}).get("phase","") in ["player_approach","player_wait"])
+
 func _intent_card(id:String,snapshot:Dictionary,channel:String)->Dictionary:
 	var nearby:Array=[]
 	for object in world.objects.values():
@@ -900,8 +952,14 @@ func _intent_card(id:String,snapshot:Dictionary,channel:String)->Dictionary:
 	var recent:Array=[]
 	for row in dialogue.histories.get(channel,[]):
 		if row.sender_id=="human" and not _forgotten_quote(id,row.message_id):recent.append(str(row.text).left(400))
-	var result:Dictionary={"work_options":steward.work_context() if steward!=null and steward.authorized(id) else [],"management":steward.authorized(id) if steward!=null else false,"companions":world.actors.keys().filter(func(who):return who!="human"),"self":{"id":id,"persona_id":id,"personality":world.intelligence.tag(id),"hunger":world.hunger.summary(id).get("state",""),"activity":world.actors[id].activity},"nearby":nearby.slice(0,16),"stock":stock,"places":["farm","campfire","house","coast","human"],"human_recent":recent.slice(-6),"memory_goals":memory_life.goal_options() if memory_life!=null else [],"memory_sources":memory_books.ai_sources(id,world.world_id,0,channel),"memory":memory_books.card(id,recent[-1] if not recent.is_empty() else "",channel,resident_connections.preferences.preference(id).level),"forget_revision":JSON.stringify(memory_books.deleted).sha256_text(),"local_execution":immediate_turns.get(id,{}).get("result",{}),"dialogue":{"channel_id":snapshot.dialogue.channel_id,"recipient_ids":snapshot.dialogue.recipient_ids}}
+	var result:Dictionary={"companions":world.actors.keys().filter(func(who):return who!="human"),"self":{"id":id,"persona_id":id,"personality":world.intelligence.tag(id),"hunger":world.hunger.summary(id).get("state",""),"activity":world.actors[id].activity},"nearby":nearby.slice(0,16),"stock":stock,"places":["farm","campfire","house","coast","human"],"human_recent":recent.slice(-6),"memory_goals":memory_life.goal_options() if memory_life!=null else [],"memory_sources":memory_books.ai_sources(id,world.world_id,0,channel),"memory":memory_books.card(id,recent[-1] if not recent.is_empty() else "",channel,resident_connections.preferences.preference(id).level),"forget_revision":JSON.stringify(memory_books.deleted).sha256_text(),"local_execution":immediate_turns.get(id,{}).get("result",{}),"dialogue":{"channel_id":snapshot.dialogue.channel_id,"recipient_ids":snapshot.dialogue.recipient_ids}}
 	if life_archive!=null and life_archive.enabled(id):result.life_request=life_archive.request(id)
+	if autonomy!=null and world.director.brains.has(id):
+		result["heart_request"]=world.director.brains[id].intention.card()
+		result.heart_request["basic_plan"]=world.director.brains[id].intention.basic.card()
+		if world.open_life and is_instance_valid(world_door):
+			result["world_actions"]=world_door.look(id,"self")
+			result.world_actions["warehouse"]=world_door.look(id,"warehouse").storage
 	return result
 
 func _chat_is_composing()->bool:
@@ -940,6 +998,7 @@ func _local_barbecue_requested(station_id:String,ids:Array)->void:
 	status.text=LocalText.source("content.one_line.literal_13")
 
 func _submit_local_command(text:String,fallback_ids:Array,channel:String)->bool:
+	for id in fallback_ids:world.hearts.contact(id)
 	if local_host_commands==null:return false
 	chat_input.release_focus();_refresh_conversation_holds()
 	if intentions!=null and intentions.chat_only(text):
@@ -988,8 +1047,17 @@ func _send(text: String) -> void:
 	if _chat_is_composing() or _chat_ime_enter_frame==Engine.get_process_frames():
 		status.text=T("ui.chat.finish_composing");return
 	text = text.strip_edges()
+	if not text.is_empty() and _notify_world_door_chat(text):return
+	if company!=null and text.to_lower() in ["讲个故事吧","讲个故事","tell us a story","tell me a story","问我一个问题","ask me something"]:
+		_finish_chat_input()
+		chat.hide();chat_input.release_focus()
+		_refresh_conversation_holds()
+		company.night.start("question" if text.to_lower() in ["问我一个问题","ask me something"] else "story")
+		return
 	if pending_question.is_empty() and questions.is_empty() and group_questions.is_empty() and _flower_local_chat(text):return
-	var play_text:String=text.replace(LocalText.source("content.overnight.text.87c479f93e29ce"),LocalText.source("content.overnight.text.29f07ca1600fd9")).replace(LocalText.source("content.overnight.text.f1bf53c0148547"),LocalText.source("content.overnight.text.6adb4bfec2ff5b")).replace(LocalText.source("content.overnight.text.33f5a6f0f66c60"),LocalText.source("content.overnight.text.6adb4bfec2ff5b")).replace(LocalText.source("content.overnight.text.6f9543d8ee7fcd"),LocalText.source("content.overnight.text.6adb4bfec2ff5b"))
+	var play_text:String=text
+	if not intentions.negated(text) and ["老鹰捉小鸡","玩老鹰","丢手绢","eagle and chicks","handkerchief"].any(func(words):return words in text.to_lower()):
+		status.text=T("company.games");_finish_chat_input();return
 	if text.is_empty():
 		status.text=T("ui.chat.empty");chat_input.grab_focus();return
 	if not group_chat and world.director.brains.has(chat_actor) and (text.contains("陪我玩") or text.contains("一起散步") or text.contains("一起看星星") or text.to_lower() in ["play with me", "walk with me", "watch stars with me"]):
@@ -1003,19 +1071,13 @@ func _send(text: String) -> void:
 	if playground!=null:
 		if text.strip_edges() in [LocalText.source("content.overnight.text.16833aa2becf6e"),LocalText.source("content.overnight.text.312062aef6737d"),LocalText.source("content.overnight.text.cfb252a606cf13"),"stop","stop playing"] and not playground.kind.is_empty():
 			playground.finish();_finish_chat_input();return
-		for entry in [["eagle",LocalText.source("play.eagle")],["handkerchief",LocalText.source("play.handkerchief")],["hide",LocalText.source("play.hide")],["shuttlecock",LocalText.source("play.shuttlecock")],["rope",LocalText.source("play.rope")]]:
-			if not intentions.negated(text) and (str(entry[1]) in play_text or {"eagle":"eagle","handkerchief":"handkerchief","hide":"hide and seek","shuttlecock":"shuttlecock","rope":"jump rope"}[entry[0]] in play_text.to_lower()):
-				steward.player(text)
-				steward.queue.clear();steward.timeline.clear()
-				for who in intentions.plans.keys():
-					if intentions.plans[who].get("sponsor","")==steward.manager and not steward.manager.is_empty():intentions.cancel(who)
+		for entry in [["hide",LocalText.source("play.hide")],["shuttlecock",LocalText.source("play.shuttlecock")],["rope",LocalText.source("play.rope")],["circle",LocalText.source("play.circle")],["fireflies",LocalText.source("play.fireflies")]]:
+			if not intentions.negated(text) and (str(entry[1]) in play_text or {"hide":"hide and seek","shuttlecock":"shuttlecock","rope":"jump rope","circle":"sing in a circle","fireflies":"chase fireflies"}[entry[0]] in play_text.to_lower()):
 				var result:Dictionary=playground.start(entry[0]);status.text="" if result.get("ok",false) else T("play.unavailable")
 				_record_chat(_chat_channel(),"human",text)
 				var line:String=T("memory.ack."+world.intelligence.tag(chat_actor)) if result.get("ok",false) else T("play.unavailable")
 				_record_chat(_chat_channel(),chat_actor,line,"local");view.say(line,"local_rules",chat_actor)
 				_finish_chat_input();return
-	if steward!=null and world.director.model_controlled(chat_actor) and steward.permission_prompt(chat_actor,text):_finish_chat_input();return
-	if steward!=null and steward.player(text):_finish_chat_input();return
 	if text.begins_with(LocalText.source("memory.teach_prefix")) or text.begins_with("When I say "):
 		if not group_chat and world.actors.has(chat_actor):
 			if world.director.model_controlled(chat_actor):_send_direct(chat_actor,text)
@@ -1025,7 +1087,6 @@ func _send(text: String) -> void:
 					_record_chat(_chat_channel(),chat_actor,T("memory.learned"),"local");view.say(T("memory.learned"),"local_rules",chat_actor)
 				_finish_chat_input()
 		return
-	if steward!=null and not group_chat and steward.authorized(chat_actor):_send_direct(chat_actor,text);return
 	if command_page!=null and command_page.dispatch(text):return
 	if intentions!=null and pending_question.is_empty() and questions.is_empty() and group_questions.is_empty():
 		var lead:String=text.split(LocalText.source("content.intent.separator.call"))[0]
@@ -1057,6 +1118,22 @@ func _send(text: String) -> void:
 	if _submit_local_command(text,[chat_actor] if world.actors.has(chat_actor) and chat_actor!="human" else [],_chat_channel()):return
 	_send_direct(chat_actor,text)
 
+# A visitor receives player text through its lease, never through local orders.
+func _notify_world_door_chat(text:String)->bool:
+	if not is_instance_valid(world_door) or (world_door.owners.is_empty() and world_door.background.is_empty()):return false
+	var fallback:Array=command_page.selected.duplicate() if group_chat else [chat_actor]
+	if group_chat and fallback.is_empty():fallback=world.director.routines.keys()
+	var parsed:Dictionary=local_host_commands.parser.parse_command(world,text,fallback)
+	var recipients:Array=parsed.actor_ids if parsed.get("ok",false) else fallback
+	if not parsed.get("explicit_targets",false) and not group_chat and (world_door.owners.has(chat_actor) or world_door.background.has(chat_actor)):recipients=[chat_actor]
+	var delivered:Array=[]
+	for id in recipients:
+		if world_door.publish(id,"player_message",{"from":"human","text":text}):delivered.append(id)
+	if delivered.is_empty() or delivered.size()!=recipients.size():return false
+	_record_chat(_chat_channel(),"human",text)
+	_finish_chat_input()
+	return true
+
 func _instant_busy_reply(id:String,text:String)->void:
 	var began:int=Time.get_ticks_msec()
 	if not world._routes.has(id):world.director.routines[id]._face_human()
@@ -1069,6 +1146,12 @@ var next_chat:Dictionary={}
 var next_chat_due:Dictionary={}
 var next_chat_sources:Dictionary={}
 func _send_direct(actor_id: String,text: String,recorded_entry:Dictionary={}) -> void:
+	if is_instance_valid(world_door) and world_door.publish(actor_id,"player_message",{"from":"human","text":text}):
+		if recorded_entry.is_empty():_record_chat(Channels.direct(actor_id),"human",text)
+		_finish_chat_input()
+		return
+	world.hearts.contact(actor_id)
+	if world.director.brains.has(actor_id):world.director.brains[actor_id].intention.changed()
 	if gomoku_match_host!=null:
 		if gomoku_match_host.defer_direct(actor_id,text):return
 		gomoku_match_host.pause_target(actor_id)
@@ -1129,6 +1212,7 @@ func _send_direct(actor_id: String,text: String,recorded_entry:Dictionary={}) ->
 		var line:String=T("memory.ack."+world.intelligence.tag(actor_id)) if (parsed.get("ok",false) or not special.is_empty()) and local_host_commands.last_execution.get("ok",false) else _local_context_reply(actor_id)
 		_record_chat(Channels.direct(actor_id),actor_id,line,"local");view.say(line,"local_rules",actor_id)
 		immediate_turns[actor_id]={"text":text,"plan":not special.is_empty(),"command":(parsed.get("ok",false) and parsed.get("action")!="query_state") or intentions.is_request(text),"result":local_host_commands.last_execution.duplicate(true) if parsed.get("ok",false) or not special.is_empty() else {},"local_ms":Time.get_ticks_msec()-began,"first_visible_ms":Time.get_ticks_msec()-began,"sent_at_ms":began,"job_id":str(world.work.jobs.get(actor_id,{}).get("id","")),"farm_order_id":str(world.farms.orders.get(actor_id,{}).get("host_order_id",""))}
+		if not special.is_empty() and local_host_commands.last_execution.get("ok",false) and intentions.plans.has(actor_id):immediate_turns[actor_id]["native_plan_id"]=intentions.plans[actor_id].id
 		links[actor_id].helper_filename="intent_companion.py"
 	var previous_key:String=str(links[actor_id].get("turn_key")) if links[actor_id].get_property_list().any(func(p):return p.name=="turn_key") else ""
 	var message_snapshot:Dictionary=_snapshot_for_chat(actor_id, Channels.direct(actor_id), [actor_id], entry.message_id)
@@ -1157,6 +1241,8 @@ func _send_group(text: String,selected_models:Array=[],existing_entry:Dictionary
 	var recipients: Array = []
 	var unavailable: Array[String] = []
 	for id in (_group_recipients() if selected_models.is_empty() else selected_models.filter(func(id):return id in _group_recipients())):
+		world.hearts.contact(id)
+		world.director.brains[id].intention.changed()
 		if gomoku_match_host!=null:gomoku_match_host.pause_target(id)
 		_ensure_link(id)
 		if links[id].has_method("read_mailbox"):
@@ -1195,6 +1281,7 @@ func _send_group(text: String,selected_models:Array=[],existing_entry:Dictionary
 				local_host_commands.submit(phrase,[id],Channels.ALL,[id]);result=local_host_commands.last_execution.duplicate(true)
 			world.activities.held[id]=held
 			immediate_turns[id]={"scope":"group","text":text,"command":(parsed.get("ok",false) and parsed.get("action")!="query_state") or intentions.is_request(text),"plan":not special.is_empty(),"result":result,"job_id":str(world.work.jobs.get(id,{}).get("id","")),"farm_order_id":str(world.farms.orders.get(id,{}).get("host_order_id","")),"memory_sources":[]}
+			if not special.is_empty() and result.get("ok",false) and intentions.plans.has(id):immediate_turns[id]["native_plan_id"]=intentions.plans[id].id
 			group_links[id].helper_filename="intent_companion.py"
 		var snapshot:Dictionary=_snapshot_for_chat(id,Channels.ALL,recipients,entry.message_id)
 		if native:immediate_turns[id].memory_sources=snapshot.get("intent_card",{}).get("memory_sources",[]).map(func(row):return row.id)
@@ -1287,18 +1374,29 @@ func choose_direct_grill(fish_id:String)->void:
 		dialog.queue_free())
 	dialog.canceled.connect(dialog.queue_free);dialog.close_requested.connect(dialog.queue_free);dialog.popup_centered(Vector2i(380,150))
 
-func _show_opening_board()->void:
-	var dialog:=AcceptDialog.new();dialog.title=T("ui.main.noticeboard_island_life");dialog.theme=Theme.new();dialog.theme.default_font=view.font;dialog.theme.default_font_size=16;add_child(dialog)
-	var body:=VBoxContainer.new();dialog.add_child(body)
-	for entry in world.standard.board():
-		var row:=HBoxContainer.new();body.add_child(row)
-		var line:=RichTextLabel.new();line.bbcode_enabled=true;line.fit_content=true;line.custom_minimum_size.x=300;line.size_flags_horizontal=Control.SIZE_EXPAND_FILL;line.text=("✓ [s]"+entry.text+"[/s]") if entry.done else "· "+entry.text;line.modulate=Color("9ea995") if entry.done else Color("fff1ce");line.add_theme_font_size_override("normal_font_size",18);row.add_child(line)
-		var where:=Button.new();where.focus_mode=Control.FOCUS_NONE;where.text=T("ui.main.where_is_it");where.custom_minimum_size=Vector2(82,36);row.add_child(where)
-		where.pressed.connect(func():view.focus_location(world.standard.board_point(entry.target));dialog.hide();dialog.queue_free())
-	if world.standard.board().all(func(e):return e.done):
-		var quote:=Label.new();quote.text=world.standard.board_quote();body.add_child(quote)
-	dialog.confirmed.connect(dialog.queue_free);dialog.close_requested.connect(dialog.queue_free);dialog.popup_centered(Vector2i(480,260))
+var doorstep_pickup:Dictionary={}
+
 func _clicked(id: String, local: Vector2) -> void:
+	doorstep_pickup.clear()
+	if id.begins_with("island-note:"):
+		var row:Dictionary=world.island_notes.read_note(id,"human") if world.actors.human.region_id=="home" else {}
+		if not row.is_empty():
+			var note:=AcceptDialog.new()
+			note.title=LocalText.resident(world,row.author)
+			note.dialog_text=row.en if TranslationServer.get_locale().begins_with("en") and not row.en.is_empty() else row.text
+			note.get_label().autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+			note.confirmed.connect(note.queue_free)
+			note.canceled.connect(note.queue_free)
+			add_child(note);note.popup_centered(Vector2i(320,120))
+		return
+	if id.begins_with("island-gift:"):
+		if world.island_notes.collect(id):return
+		var row:Dictionary=world.island_notes.gifts.get(id,{})
+		if not row.is_empty() and world.actors.human.region_id=="home" and not world.work.jobs.has("human") and world.route_to("human",world.point(row)):
+			doorstep_pickup={"id":id,"route":world._routes["human"],"generation":world.session_generation}
+		return
+	var previous_shore:Vector2=shore_click_target
+	shore_click_target=Vector2.INF
 	if _flower_clicked(id,local):return
 	if id.begins_with("resort."):
 		get_node("ResortUI").show_target(id);return
@@ -1315,8 +1413,7 @@ func _clicked(id: String, local: Vector2) -> void:
 		if not entry.is_empty() and world.fishing.pens.has(entry.location):
 			fishing_panel.open(entry.location,entry.owner_id);fishing_panel.selected_fish=fish_id;fishing_panel.show_fish()
 		return
-	if world.standard.active() and id=="opening.board":_show_opening_board();return
-	if world.standard.active() and (world.fishing.pens.has(id) or world.barbecues.has(id)) and not world.standard.ready(id):leisure_panel.open_site(world.standard.site_for(id));return
+	if world.standard.active() and world.barbecues.has(id) and not world.standard.ready(id):leisure_panel.open_site(world.standard.site_for(id));return
 	if world.standard.active() and world.farms.plots.has(id) and not world.standard.ready(world.farms.plots[id].farm_id):leisure_panel.open_site(world.standard.site_for(world.farms.plots[id].farm_id));return
 	chat_input.release_focus()
 	if Opening.v3(world) and id=="human":_return_to_player();return
@@ -1379,9 +1476,15 @@ func _clicked(id: String, local: Vector2) -> void:
 			_: return
 	elif world.drops.has(id): command = {"intent": "collect", "target_id": id}
 	else:
+		var shore:Vector2=world.fishing.clicked_shore("home",local) if id.is_empty() else Vector2.INF
+		if shore.is_finite():
+			if previous_shore.is_finite() and previous_shore.distance_to(shore)<.25 and world.point(world.actors.human).distance_to(shore)<.35 and not world._routes.has("human") and not world.fishing.shore("human").is_empty():
+				if world.work.jobs.get("human",{}).get("intent")!="fish":action_dock.open_invite(true)
+				return
+			shore_click_target=shore
+			local=shore
 		world.command("human", {"intent": "stop"})
 		command = {"intent": "move", "region_id": "home", "x": local.x, "y": local.y}
-	if steward!=null:steward.player()
 	var result: Dictionary = world.command("human", command)
 	if result.ok and command.intent == "move" and id.is_empty() and view.run_click: world.force_human_run()
 	status.text = str(result.get("message", T("ui.main.on_the_way") if result.ok else T("ui.main.can_t_do_that_right_now") + str(result.get("error", ""))))
@@ -1444,8 +1547,6 @@ func _bound_companion_event(event: Dictionary, actor_id: String, scope := "direc
 		if external_residents.get(actor_id,false) and event.get("state")=="ready":connection_history.set_value("external",actor_id,Time.get_unix_time_from_system())
 		if event.get("state")=="ready":connection_history.set_value("connected",actor_id,Time.get_unix_time_from_system());connection_history.save(data_dir.path_join("connection-overview.cfg"))
 	elif event.get("kind")=="error":connection_ui_states[actor_id+":"+scope]="ready" if event.get("code")=="invalid_intent_reply" else "error"
-	if steward!=null and immediate_turns.get(actor_id,{}).get("steward",false) and event.get("kind")=="intent_result" and (steward.pending.is_empty() or steward.pending.get("key")!=event.get("turn_key")):return
-	if steward!=null and steward.result(actor_id,event):return
 	match str(event.get("kind", "")):
 		"usage":
 			if event.get("complete",false) and immediate_turns.has(actor_id):
@@ -1457,11 +1558,18 @@ func _bound_companion_event(event: Dictionary, actor_id: String, scope := "direc
 		"speech_partial":
 			var turn:Dictionary=immediate_turns.get(actor_id,{})
 			if turn.get("turn_key","")!=event.get("turn_key") or scope!=str(turn.get("scope","direct")):return
+			if turn.get("heart",false):return
 			if not turn.has("stream_first_ms"):turn["stream_first_ms"]=Time.get_ticks_msec()-int(turn.get("sent_at_ms",Time.get_ticks_msec()))
 			view.say(str(event.get("text","")).left(1000),"model",actor_id)
 		"intent_result":
 			var immediate:Dictionary=immediate_turns.get(actor_id,{})
 			if immediate.get("turn_key","")!=event.get("turn_key") or scope!=str(immediate.get("scope","direct")):return
+			if company!=null and immediate.get("company",false):
+				if autonomy.owns_turn(actor_id):company.model_result(actor_id,str(event.turn_key),event.get("company_reply"))
+				return
+			if immediate.has("peer_invitation"):
+				if autonomy.owns_turn(actor_id):autonomy.meetings.answer(actor_id,str(immediate.peer_invitation),str(event.turn_key),event.get("peer_reply"))
+				return
 			var supplied:Array=immediate.get("memory_sources",[])
 			if life_archive!=null:
 				life_archive.accept(actor_id,event,supplied,str(event.turn_key))
@@ -1469,6 +1577,12 @@ func _bound_companion_event(event: Dictionary, actor_id: String, scope := "direc
 			if memory_life!=null:memory_life.check_letter_reply(actor_id,event.get("memory",[]),immediate)
 			memory_books.accept_ai(actor_id,world.world_id,str(connection.get_meta("memory_provider","Codex")),event.get("memory",[]),supplied,world.days.day(),immediate.get("memory_request",{}))
 			if immediate.get("maintenance",false):return
+			if event.has("intention"):
+				if world.open_life and world.director.model_controlled(actor_id) and event.intention is Dictionary and event.intention.has("steps"):
+					world_door.act(actor_id,event.intention,"native_world")
+					return
+				world.director.brains[actor_id].intention.accept(event.intention)
+			if immediate.get("heart",false):return
 			var structured:Array=event.get("intents",[]).filter(func(step):return step is Dictionary and step.has("action"))
 			if not structured.is_empty() and immediate.get("command",false) and not immediate.get("plan",false) and not immediate.get("result",{}).get("ok",false):
 				var adopted:Dictionary={}
@@ -1476,7 +1590,15 @@ func _bound_companion_event(event: Dictionary, actor_id: String, scope := "direc
 					var original:Dictionary=local_host_commands.parser.parse_command(world,str(immediate.get("text","")),[actor_id])
 					if structured[0].action=={"ready":"harvest","forage":"gather","start_project":"build"}.get(original.get("action",""),original.get("action","")):adopted={"job_id":immediate.get("job_id",""),"farm_order_id":immediate.get("farm_order_id","")}
 				var permitted:bool=not event.get("autonomy",false) or (autonomy!=null and autonomy.scheduler.active.get(actor_id,{}).get("id")==event.get("turn_key") and structured.size()<=int(autonomy.scheduler.policy_for(actor_id).get("tools",0)))
+				var exact_autonomy:bool=permitted and event.get("autonomy",false) and scope=="direct" and not questions.has(actor_id) and not group_questions.has(actor_id) and not editor.visible and not (_valid_link(group_links,actor_id) and _link_holds_body(group_links[actor_id],actor_id,"group"))
+				var previously_held:bool=world.activities.held.get(actor_id,false)
+				if exact_autonomy:
+					world.activities.held[actor_id]=false;world.director.set_held(actor_id,false)
 				var result:Dictionary=intentions.submit(actor_id,structured,channel,adopted) if permitted else world._error("autonomy_tool_budget")
+				if exact_autonomy:
+					if result.ok and intentions.plans.has(actor_id):immediate_turns[actor_id]["native_plan_id"]=intentions.plans[actor_id].id
+					else:
+						world.activities.held[actor_id]=previously_held;world.director.set_held(actor_id,previously_held)
 				if result.ok and life_archive!=null:life_archive.bind_plan(actor_id,str(event.turn_key))
 				if result.ok and autonomy!=null:autonomy.scheduler.note_model_action(actor_id)
 				if not result.ok:_local_command_feedback(str(result.get("error","rejected")),channel)
@@ -1506,8 +1628,7 @@ func _bound_companion_event(event: Dictionary, actor_id: String, scope := "direc
 			if not str(event.get("speech","")).is_empty():
 				var spoken:String=_persona_speech(event.speech,actor_id)
 				memory_books.offer_ai_quote(actor_id,world.world_id,str(event.turn_key),spoken,str(connection.get_meta("memory_provider","Codex")),world.days.day(),channel)
-				if steward!=null and not world.gomoku.active(actor_id):steward.speak(actor_id,spoken,channel)
-				else:_record_chat(channel,actor_id,spoken);view.say(spoken,"model",actor_id)
+				_record_chat(channel,actor_id,spoken);view.say(spoken,"model",actor_id)
 		"observe": connection.reply(str(event.id), world.observe(actor_id, event.get("query", {})))
 		"read_work": connection.reply(str(event.id), library.read_work(event.query))
 		"edit_work":
@@ -1554,10 +1675,8 @@ func _bound_companion_event(event: Dictionary, actor_id: String, scope := "direc
 		"assistant":
 			event=event.duplicate(true);event.text=_persona_speech(str(event.text),actor_id)
 			var proactive: bool=bool(event.get("autonomy",false))
-			if steward!=null and not world.gomoku.active(actor_id):steward.speak(actor_id,str(event.text),channel,false,"autonomy" if proactive else "message")
-			else:
-				_record_chat(channel,actor_id,str(event.text),"autonomy" if proactive else "message")
-				if gomoku_dialogue==null or scope!="direct" or not gomoku_dialogue.assistant(actor_id,event):view.say(str(event.text),"autonomy" if proactive else "model",actor_id)
+			_record_chat(channel,actor_id,str(event.text),"autonomy" if proactive else "message")
+			if gomoku_dialogue==null or scope!="direct" or not gomoku_dialogue.assistant(actor_id,event):view.say(str(event.text),"autonomy" if proactive else "model",actor_id)
 		"queue": _set_channel_status(channel, name + T("ui.main.s_pending") % int(event.get("count", 0)))
 		"error":
 			# Transport diagnostics belong to the resident connection lamp/log only.
@@ -1574,6 +1693,7 @@ func _flush_autonomy_messages() -> void:
 	if autonomy!=null:autonomy.flush_pending()
 
 func _setup_dark_ui()->void:
+	if not is_instance_valid(view):return
 	if flower_panel==null and is_instance_valid(view):_setup_flowers_ui()
 	if not has_node("IngredientUI"):
 		var ingredient_ui=preload("res://scripts/island_ingredients_ui.gd").new();ingredient_ui.name="IngredientUI";add_child(ingredient_ui);ingredient_ui.setup(self)
@@ -1586,6 +1706,7 @@ func _setup_dark_ui()->void:
 func _chat_focus_holds(id:String)->bool:
 	if intentions!=null and intentions.plans.has(id):return false
 	if chat_input==null or not chat_input.has_focus():return false
+	if world.actors[id].has("world_door_client"):return false
 	if local_host_commands!=null and local_host_commands.pending.get("rows",[]).any(func(row):return row.actor_id==id):return false
 	# An editing caret is idle attention, never a pause order for accepted work
 	# or its physical delivery/follow route. Questions and model turns stay held.
@@ -1597,12 +1718,18 @@ func _chat_focus_holds(id:String)->bool:
 
 func _link_holds_body(connection:Variant,id:String="",scope:String="direct")->bool:
 	if not is_instance_valid(connection) or not connection.is_busy():return false
-	if steward!=null and not steward.pending.is_empty() and connection==links.get(steward.pending.get("id","")) and str(connection.get("turn_key"))==steward.pending.get("key",""):return false
+	# The resident can continue her current intention while her own next idea loads.
+	if scope=="direct" and autonomy!=null and connection==links.get(id) and autonomy.native_heart(id) and autonomy.owns_turn(id) and immediate_turns.get(id,{}).get("heart",false):return false
 	if not id.is_empty() and connection.get_property_list().any(func(property):return property.name=="turn_key") and _fallback_actions_revoked(id,scope,{"turn_key":str(connection.get("turn_key"))},connection):return false
 	# Startup/reconnect owns no model turn. Transport busy must not freeze life.
 	# Legacy/manual transports without turn keys retain their original gates.
 	if connection.get_property_list().any(func(property):return property.name=="turn_key"):
-		return not str(connection.get("turn_key")).is_empty()
+		var turn:String=str(connection.get("turn_key"))
+		var immediate:Dictionary=immediate_turns.get(id,{})
+		var plan:Dictionary=intentions.plans.get(id,{}) if intentions!=null else {}
+		if not turn.is_empty() and not plan.is_empty() and plan.generation==world.session_generation and immediate.get("native_plan_id")==plan.id and immediate.get("turn_key")==turn and immediate.get("scope","direct")==scope:
+			return false
+		return not turn.is_empty()
 	return true
 
 func _refresh_conversation_holds()->void:
@@ -1610,12 +1737,17 @@ func _refresh_conversation_holds()->void:
 	for resident_id in world.director.routines:
 		var held: bool=questions.has(resident_id) or group_questions.has(resident_id) or (_valid_link(links,resident_id) and _link_holds_body(links[resident_id],resident_id,"direct")) or (_valid_link(group_links,resident_id) and _link_holds_body(group_links[resident_id],resident_id,"group"))
 		held = held or (not group_chat and resident_id==chat_actor and (not pending_question.is_empty() or _chat_focus_holds(resident_id))) or (editor!=null and editor.visible)
+		if world.director.brains.has(resident_id):
+			world.director.brains[resident_id].hold_reason="scene_editor" if editor!=null and editor.visible else "player_question" if questions.has(resident_id) or group_questions.has(resident_id) or (resident_id==chat_actor and not pending_question.is_empty()) else "player_conversation" if held else ""
 		world.activities.held[resident_id]=held
 		world.director.set_held(resident_id,held)
 		if held and view!=null:view.clear_local_speech(resident_id)
 
 var camera_panels_open:=false
+func _deliver_heart_replies()->void:
+	if autonomy!=null:autonomy.meetings.deliver()
 func _process(delta: float) -> void:
+	if is_instance_valid(island_hud):island_hud.tick_watch(delta)
 	var panels_open:bool=[farm_panel,atlas,house_panel,interior_panel,homestead_panel,journal_panel,memory_panel,book_panel].any(func(panel):return is_instance_valid(panel) and panel.visible)
 	if camera_panels_open and not panels_open:_return_to_player()
 	camera_panels_open=panels_open
@@ -1640,8 +1772,6 @@ func _process(delta: float) -> void:
 		if not playground.kind.is_empty() and "human" not in playground.members:
 			for who in playground.members:
 				if world.director.brains.has(who) and world.director.brains[who].distance()<=8:world.director.brains[who].interactions.condition("watch_play",true,playground.elapsed)
-	if intentions!=null:intentions.advance(delta)
-	if steward!=null:steward.tick(delta)
 	if not world.pocket_notice.is_empty():status.text=world.pocket_notice;world.pocket_notice=""
 	for id in host_turn_grants.keys():
 		if not _grant_current(id,host_turn_grants[id]):host_turn_grants.erase(id)
@@ -1652,8 +1782,18 @@ func _process(delta: float) -> void:
 			model_fallback_requests.erase(id);_run_model_fallback(id,request.text,str(request.get("channel",Channels.direct(id))))
 	_setup_dark_ui()
 	_refresh_conversation_holds()
+	if company!=null and delta>0:company.prepare_return_speech()
 	if gomoku_match_host!=null:gomoku_match_host.prepare(delta)
 	world.advance(delta)
+	if intentions!=null:intentions.advance(delta)
+	if world_checkpoints!=null and save_enabled and snapshot_path.is_empty():
+		world_checkpoints.tick(_checkpoint_thumbnail)
+	if not doorstep_pickup.is_empty():
+		var route:Variant=world._routes.get("human")
+		if doorstep_pickup.generation!=world.session_generation or (route!=null and not is_same(route,doorstep_pickup.route)):doorstep_pickup.clear()
+		elif route==null:
+			world.island_notes.collect(doorstep_pickup.id);doorstep_pickup.clear()
+	if company!=null:company.tick(delta)
 	if game_audio!=null:game_audio.advance(delta)
 	if jieqi_panel!=null:jieqi_panel.tick_presentation(delta)
 	if gomoku_panel!=null:gomoku_panel.tick_presentation(delta)
@@ -1663,13 +1803,12 @@ func _process(delta: float) -> void:
 	if gomoku_match_host!=null:gomoku_match_host.tick(delta)
 	if autonomy!=null:autonomy.tick(delta)
 	if proposal_panel!=null:proposal_panel.refresh()
-	if wish_panel!=null:wish_panel.refresh(editor.visible or chat.visible or resident_connections.visible or gift_panel.visible or atlas.visible)
-	if day_label!=null:day_label.text=LocalText.text("title.name")+" · "+T("ui.main.day_d_s_s")%[world.days.day(),LocalText.content(world.days.phase().name),LocalText.content(world.weather.current().name)]
+	if day_label!=null and island_hud==null:day_label.text=LocalText.text("title.name")+" · "+T("ui.main.day_d_s_s")%[world.days.day(),LocalText.content(world.days.phase().name),LocalText.content(world.weather.current().name)]
 	for event in world.director.events:
 		if int(event.serial)<=local_seen_serial:continue
 		local_seen_serial=int(event.serial)
 		if world.director.routines[event.actor_id].held:continue
-		if view!=null:view.say(str(event.text),"local_rules",event.actor_id,str(event.get("context","")))
+		if view!=null:view.say(str(event.text),str(event.get("source","local_rules")),event.actor_id,str(event.get("context","")))
 		if event.explicit and chat_log!=null:_record_chat(Channels.direct(event.actor_id), event.actor_id, str(event.text), "local")
 	if stock == null: return
 	furniture_button.visible = view.region_id.begins_with("room.") and view.region_id == world.actors.human.region_id
@@ -1687,9 +1826,10 @@ func _process(delta: float) -> void:
 		_refresh_control_status()
 		_refresh_gathering()
 		stock.text = T("ui.main.wood_s_mushrooms_s") % [world.storage.count("wood"), world.storage.count("mushroom")]
+		var retained_work_events:Dictionary={}
 		for event in world.work.events:
+			retained_work_events[event.id]=true
 			if seen_events.has(event.id): continue
-			seen_events[event.id] = true
 			if event.has("shared_activity_id"): continue
 			if event.actor_id != "human" and world.actors.has(event.actor_id):
 				var channel: String = str(task_channels.get(event.actor_id, Channels.direct(event.actor_id)))
@@ -1702,6 +1842,7 @@ func _process(delta: float) -> void:
 					var message:String=status.text
 					get_tree().create_timer(4).timeout.connect(func():if is_instance_valid(status) and status.text==message:status.text="")
 				if str(event.message).begins_with("+"):view.say(str(event.message),"local_rules","human")
+		seen_events=retained_work_events
 	autosave += delta
 	if autosave >= autosave_interval:
 		autosave = 0
@@ -1716,6 +1857,16 @@ func _process(delta: float) -> void:
 	if save_enabled and snapshot_path.is_empty() and saved_revision==world.revision:backups.tick(world.days.day())
 
 func _exit_tree() -> void:
+	if owns_window_close:get_tree().auto_accept_quit=true
+	# An observed intention has a real interruption when this island session ends.
+	if world!=null and world.director!=null:
+		for brain in world.director.brains.values():
+			var actor_id:String=brain.id
+			if autonomy!=null:brain.intention.settled=func(row):autonomy.remember_intention(actor_id,row)
+			var why:String="I'll stop here for now." if TranslationServer.get_locale().begins_with("en") else "这次先停下。"
+			if brain.current.has("ai_plan"):brain.finish("interrupted",why)
+			if not brain.intention.pending.is_empty():
+				brain.intention.settle(brain.intention.pending.plan,"interrupted",why);brain.intention.pending.clear()
 	if is_instance_valid(life_archive):life_archive.flush()
 	if autonomy!=null:autonomy.dispose()
 	if world.proposals!=null:world.proposals.level_provider=Callable()
@@ -1888,18 +2039,16 @@ func _handbook_selected(entry: String) -> void:
 	match entry:
 		"recipes":
 			var book:=preload("res://scripts/recipe_book.gd").new();add_child(book);book.setup(world,ui_font)
-		"opening_board":_show_opening_board()
 		"map":_toggle_atlas(not atlas.visible)
 		"memory_books":
 			if book_panel.visible:book_panel.hide()
 			else:memory_books.migrate(world);book_panel.open()
 		"memories":_toggle_memories()
 		"workshop":_toggle_workshop()
-		"residents":_toggle_resident_connections()
+		"residents":
+			_toggle_resident_connections()
 		"autonomy_records":
-			if not resident_connections.visible:_toggle_resident_connections()
-			resident_connections.tabs.current_tab=2;resident_connections.records_host.show();resident_connections.refresh()
-			call_deferred("_scroll_autonomy_records")
+			_toggle_resident_connections()
 func _scroll_autonomy_records() -> void:
 	await get_tree().process_frame
 	await get_tree().process_frame
@@ -2013,7 +2162,6 @@ func _discuss_project(id: String) -> void:
 
 func _cancel_resident_turn(id: String) -> void:
 	next_chat.erase(id);next_chat_due.erase(id);next_chat_sources.erase(id)
-	if steward!=null:steward.bubbles=steward.bubbles.filter(func(entry):return entry.id!=id)
 	if intentions!=null:intentions.cancel(id)
 	if memory_life!=null:memory_life.cancel_pending(id)
 	host_turn_grants.erase(id)
@@ -2390,7 +2538,7 @@ func _refresh_control_ui() -> void:
 	elif resident_connections!=null and resident_connections.preferences.preference(id).runtime_active:source_label=T("ui.main.model_connection_messages_or_enabled_events")
 	controller_picker.set_item_text(0,source_label);controller_picker.set_item_text(1,T("simple.local"))
 	relay_button.visible=uses_conversation and world.director.model_controlled(id)
-	shared_button.visible=id=="codex";shared_button.text=T("ui.main.return_to_original_connection") if shared_test else T("ui.main.try_automatic_dialogue")
+	shared_button.visible=shared_test and id=="codex";shared_button.text=T("ui.main.return_to_original_connection")
 	activity_toggle.set_pressed_no_signal(world.director.routines[id].enabled)
 	chatter_toggle.set_pressed_no_signal(world.director.routines[id].chatter)
 	_refresh_control_status()
@@ -2434,6 +2582,29 @@ func _control_actor() -> String:
 func _build_resident_connections(root: Control) -> void:
 	resident_connections=preload("res://scripts/resident_connections_panel.gd").new();root.add_child(resident_connections)
 	resident_connections.setup(world,library,data_dir,_resident_connection_snapshot)
+	world_door=preload("res://scripts/world_door.gd").new()
+	add_child(world_door);world_door.setup(world,data_dir)
+	world_door.claimed.connect(_follow_world_door_resident)
+	world.flower_creation.creations.diary_writer=func(id:String,line:String,sequence:int):return memory_books.add(id,world.world_id,"world-diary:"+str(sequence),"daily",line,{},world.days.day(),"model" if world.director.model_controlled(id) or world.actors[id].has("world_door_client") else "local",[id],world.forest.clock)
+	world.director.world_speech.connect(func(actor:String,target:String,line:String):
+		if target=="human":_record_chat(Channels.direct(actor),actor,line,"model")
+		elif target!=actor:world_door.publish(target,"resident_message",{"from":actor,"text":line}))
+	island_ai=preload("res://scripts/island_ai.gd").new()
+	add_child(island_ai);island_ai.setup(self)
+	world_door_dialog=preload("res://scripts/world_door_panel.gd").install(root,self)
+	world_placement=preload("res://scripts/world_placement_panel.gd").new()
+	root.add_child(world_placement);world_placement.setup(self);view.world_placement=world_placement
+	if Opening.v3(world):
+		world_checkpoints=preload("res://scripts/world_checkpoints.gd").new(world,data_dir)
+		world.director.return_speech_window.connect(_speak_checkpoint_reaction)
+		world_checkpoints_panel=preload("res://scripts/world_checkpoints_panel.gd").new()
+		add_child(world_checkpoints_panel)
+		world_checkpoints_panel.setup(self)
+	island_change_panel=preload("res://scripts/island_change_panel.gd").new()
+	root.add_child(island_change_panel)
+	island_change_panel.setup(self)
+	if island_change_panel.unseen():island_change_panel.open.call_deferred(true)
+
 	resident_connections.life_archive_provider=func():return life_archive
 	autonomy_notice=Label.new();root.add_child(autonomy_notice);autonomy_notice.set_anchors_and_offsets_preset(Control.PRESET_TOP_WIDE);autonomy_notice.offset_left=26;autonomy_notice.offset_right=-26;autonomy_notice.offset_top=72;autonomy_notice.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;autonomy_notice.mouse_filter=Control.MOUSE_FILTER_IGNORE;autonomy_notice.add_theme_color_override("font_color",Color("ffe1a0"));autonomy_notice.hide()
 	autonomy=preload("res://scripts/autonomy_host.gd").new();autonomy.setup(self,resident_connections.preferences)
@@ -2441,7 +2612,6 @@ func _build_resident_connections(root: Control) -> void:
 	gift_panel=preload("res://scripts/gift_panel.gd").new();root.add_child(gift_panel);gift_panel.setup(world,func(args):
 		autonomy.player_input()
 		var result: Dictionary=world.command("human",args);status.text=str(result.get("message",result.get("error","")));return result)
-	wish_panel=preload("res://scripts/wish_panel.gd").new();resident_connections.get_parent().add_child(wish_panel);wish_panel.setup(world)
 	resident_connections.gift_requested.connect(func(id):resident_connections.close_panel();gift_panel.open(id))
 	resident_connections.promise_cancel_requested.connect(func(id,key):
 		var result: Dictionary=world.command(id,{"intent":"promise_cancel","promise_id":key})
@@ -2490,12 +2660,34 @@ func _build_resident_connections(root: Control) -> void:
 		ai_connect_panel.refresh())
 	_refresh_control_ui()
 
+func _follow_world_door_resident(id:String)->void:
+	if not is_instance_valid(view) or view.dragging or view.follow_actor!="human":return
+	view.follow_actor=id
+	view.follow_player=true
+
+func _speak_checkpoint_reaction()->void:
+	if world_checkpoints!=null and save_enabled and snapshot_path.is_empty():world_checkpoints.speak()
+
+func _checkpoint_thumbnail()->String:
+	if DisplayServer.get_name()=="headless":return ""
+	var image:=get_viewport().get_texture().get_image()
+	if image==null or image.is_empty():return ""
+	image.resize(144,90,Image.INTERPOLATE_LANCZOS)
+	return Marshalls.raw_to_base64(image.save_jpg_to_buffer(.75))
+
 func _toggle_resident_connections() -> void:
+	if world_door_dialog.visible:world_door_dialog.hide();return
+	resident_connections.close_panel()
+	world_placement.cancel()
+	world_door_dialog.move_to_front()
+	world_door_dialog.show()
+
+func _open_model_settings(id:String) -> void:
 	if resident_connections.visible:resident_connections.close_panel();return
 	action_dock.menu.hide();chat.hide();chat_input.release_focus()
 	if homestead_panel!=null:homestead_panel.hide()
 	house_panel.hide();farm_panel.hide();leisure_panel.hide();interior_panel.hide();memory_panel.hide();fishing_panel.hide();journal_panel.hide();gomoku_panel.card.hide()
-	resident_connections.open();_refresh_control_ui()
+	resident_connections.open(id);resident_connections.tabs.show();resident_connections.tabs.current_tab=0;_refresh_control_ui()
 
 func _resident_connection_snapshot(id: String) -> Dictionary:
 	var control: Dictionary=world.director.state(id)
@@ -2579,7 +2771,17 @@ func _apply_window_font(window:Window)->void:
 		owner=owner.get_parent()
 	var theme:Theme=window.theme.duplicate() if window.theme!=null else Theme.new();theme.default_font=font;theme.default_font_size=16;window.theme=theme
 func _notification(what:int)->void:
+	if what==NOTIFICATION_WM_CLOSE_REQUEST and owns_window_close:
+		if not close_pending:
+			close_pending=true
+			_finish_window_close.call_deferred()
 	if what==NOTIFICATION_PREDELETE and is_instance_valid(game_audio):game_audio.shutdown()
+
+func _finish_window_close()->void:
+	if is_instance_valid(game_audio):
+		game_audio.shutdown()
+		await get_tree().create_timer(.15).timeout
+	get_tree().quit()
 
 func refresh_locale()->void:
 	get_window().title=T("storage.window_title")
@@ -2596,7 +2798,7 @@ func refresh_locale()->void:
 	if gathering_button!=null:_refresh_gathering()
 	if order_label!=null:_update_order_bar()
 	if island_hud!=null:island_hud.refresh()
-	for overlay in [farm_panel,journal_panel,memory_panel,book_panel,fishing_panel,resident_connections,house_panel,interior_panel,leisure_panel,homestead_panel,proposal_panel,wish_panel,editor,action_dock.menu,island_hud.wardrobe if island_hud!=null else null]:
+	for overlay in [farm_panel,journal_panel,memory_panel,book_panel,fishing_panel,resident_connections,house_panel,interior_panel,leisure_panel,homestead_panel,proposal_panel,editor,action_dock.menu,island_hud.wardrobe if island_hud!=null else null]:
 		if overlay!=null:_present_overlay(overlay)
 
 func _present_overlay(overlay:Control)->void:
@@ -2604,7 +2806,12 @@ func _present_overlay(overlay:Control)->void:
 	if not overlay.visible:return
 	var target:Control=overlay
 	if overlay==action_dock.menu:target=action_dock
-	target.get_parent().move_child(target,-1)
+	if target.get_parent()!=null and target.get_index()!=target.get_parent().get_child_count()-1:
+		_raise_overlay.call_deferred(target)
+
+func _raise_overlay(target:Control)->void:
+	if is_instance_valid(target) and target.visible and target.get_parent()!=null:
+		target.get_parent().move_child(target,-1)
 
 func _fallback_action_key(id:String,scope:String,key:String,generation:int)->String:
 	return JSON.stringify([id,scope,key,generation])
@@ -2691,12 +2898,6 @@ func _execute_delegated_host_action(id:String,event:Dictionary,channel:String)->
 	if event.get("autonomy",false) or not host_turn_grants.has(id):return {"ok":false,"error":"explicit_host_instruction_required"}
 	var grant:Dictionary=host_turn_grants[id]
 	if grant.turn_key!=event.get("turn_key") or not _grant_current(id,grant):return {"ok":false,"error":"stale_host_instruction"}
-	if steward.authorized(id):
-		if event.command.keys().any(func(key):return key not in ["intent","actor_ids","target_id","crop_id","region_id","x","y"]):return world._error("invalid_intention")
-		var step:Dictionary=event.command.duplicate(true);var action:String=str(step.intent);step.erase("intent")
-		step.action={"gather_at":"assemble","start_project":"build","open_chess":"chess"}.get(action,action)
-		if action=="invite_barbecue":return steward.assign(id,[{"action":"roast","actor_ids":[id],"guest_ids":step.actor_ids},{"action":"invite","actor_ids":[id],"guest_ids":step.actor_ids}],channel)
-		return steward.assign(id,[step],channel)
 	if event.command.keys().any(func(key):return key not in ["intent","actor_ids"]):return {"ok":false,"error":"delegated_targets_derive_from_host_instruction"}
 	var ids:Variant=event.command.actor_ids
 	if not ids is Array or ids.is_empty() or ids.any(func(actor):return not actor is String or actor=="human" or not world.actors.has(actor)):return world._error("invalid_participant")
@@ -2776,10 +2977,6 @@ func _setup_connection_overview()->void:
 		model_fallback_requests.erase(id);host_turn_grants.erase(id)
 		if memory_life!=null:
 			memory_life.cancel_pending(id);memory_life.maintenance.erase(id);memory_life.attempts.erase(id)
-		if steward!=null and steward.manager==id:
-			steward.pending.clear();steward.reasons.clear();steward.local_only=true
-			# Preserve active task receipts and already committed meals; discard future AI assignments.
-			steward.queue.clear()
 		questions.erase(id);group_questions.erase(id);immediate_turns.erase(id)
 		world.actors[id].controller="local";connection_ui_states[id+":direct"]="local"
 		if first_notice:view.say(T("quota.exhausted"),"local_rules",id,"quota")
@@ -2788,8 +2985,9 @@ func _setup_connection_overview()->void:
 	connection_pool.usage_notice.connect(func(id):view.say(T("gpt.warning"),"local_rules",id,"usage"))
 	connection_history=connection_pool.history
 	connection_pool.ledger_world=world.world_id
-	connection_pool.start_saved()
+	connection_pool.start_saved(island_ai.residents if is_instance_valid(island_ai) else [])
 	for id in connection_pool.IDS:
+		if is_instance_valid(island_ai) and id in island_ai.residents:continue
 		if connection_pool.settings.get_value("enabled",id,false) and connection_pool.valid(id):
 			links.erase(id)
 			external_residents[id]=false;_ensure_link(id)
@@ -2799,6 +2997,7 @@ func _setup_connection_overview()->void:
 			if not connection_ui_states.has(id+":direct") and connection_pool.states.has(id):
 				connection_ui_states[id+":direct"]=str(connection_pool.states[id].get("state","unconnected"))
 			connection_greetings[id]=T("simple.hello."+id)
+			_approach_during_opening_connection(id)
 	connection_overview=preload("res://scripts/connection_overview.gd").new();book_panel.get_parent().add_child(connection_overview);connection_overview.setup(data_dir,_connection_rows,_simple_connection_action)
 	var connection_button:=Button.new();connection_button.focus_mode=Control.FOCUS_NONE;connection_button.text=T("memory.connections");resident_connections.connection_section.add_child(connection_button);connection_button.pressed.connect(connection_overview.open)
 func _connection_light(id:String)->Dictionary:
@@ -2827,6 +3026,16 @@ func _probe_resident_connection(id:String)->void:
 	_ensure_link(id)
 	if links[id].has_method("probe_connection"):links[id].probe_connection()
 
+func _approach_during_opening_connection(id:String)->void:
+	if not opening_connection_greetings or world.director.time>=10 or world._routes.has(id) or world.work.jobs.has(id) or world.activities.blocked(id,false):return
+	var resident:RefCounted=world.director.routines.get(id)
+	if resident==null or not resident.enabled or resident.held or _resident_chat_busy(id):return
+	if world.actors[id].region_id!=world.actors.human.region_id or world.point(world.actors[id]).distance_to(world.point(world.actors.human))<=4:return
+	var at:Vector2=world.deliveries.visit_slot(id)
+	if at.is_finite() and world.route_to(id,at):
+		resident.owns_route=true
+	world.deliveries.visits.erase(id)
+
 func _simple_connection_action(id:String,action:String="toggle")->void:
 	if action=="external":
 		world.director.set_controller(id,"model");_bind_external_ai(id,true,false)
@@ -2848,6 +3057,7 @@ func _simple_connection_action(id:String,action:String="toggle")->void:
 		if not is_instance_valid(connection):return
 		world.director.set_controller(id,"model")
 		_ensure_link(id)
+		_approach_during_opening_connection(id)
 		if id=="codex":link=connection
 	endpoint.sync_bindings();_refresh_control_ui();resident_connections.refresh()
 

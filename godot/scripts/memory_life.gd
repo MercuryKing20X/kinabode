@@ -1,5 +1,6 @@
 extends Node
 const Text=preload("res://scripts/localization.gd")
+var missed_wishes_provider:Callable
 var owner_ref:WeakRef
 var game:Node:
 	get:return owner_ref.get_ref()
@@ -35,14 +36,37 @@ func setup(host:Node)->void:
 	if previous is Dictionary:persistent=previous
 	if day_seen>1:
 		for id in world.director.routines:attempts[id]={"day":day_seen-1,"pending":true}
-	notice=Button.new();notice.position=Vector2(16,170);notice.pressed.connect(func():game.book_panel.open();game.book_panel.tabs.select(2);game.book_panel.refresh());game.add_child(notice)
+	notice=Button.new()
+	notice.name="MailboxNotice"
+	notice.position=Vector2(16,170)
+	notice.icon=mail_icon()
+	notice.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST
+	notice.hide()
+	notice.pressed.connect(func():game.book_panel.open();game.book_panel.tabs.select(2);game.book_panel.refresh())
+	game.add_child(notice)
+
+static func mail_icon()->Texture2D:
+	var image:=Image.create(20,16,false,Image.FORMAT_RGBA8)
+	var ink:=Color("e8d6aa")
+	for box in [Rect2i(1,2,18,2),Rect2i(1,12,18,2),Rect2i(1,2,2,12),Rect2i(17,2,2,12)]:
+		image.fill_rect(box,ink)
+	for offset in range(7):
+		var y:=4+offset/2
+		image.set_pixel(3+offset,y,ink)
+		image.set_pixel(16-offset,y,ink)
+	return ImageTexture.create_from_image(image)
+
 func idle(id:String)->bool:
 	return world.director.routines.has(id) and world.director.state(id).effective in ["idle","local_rules","following"] and not world.activities.blocked(id) and not world.work.jobs.has(id) and not world._routes.has(id) and not game.questions.has(id) and not game.group_questions.has(id)
 func _process(delta:float)->void:
 	elapsed+=delta
 	if elapsed<1:return
 	elapsed=0
-	notice.text=(Text.text("watch.mail_short")%books.entries.values().filter(func(e):return e.layer=="letters").size()) if notice.get_meta("compact_mail",false) else Text.text("memory.new_mail")+" · "+str(books.entries.values().filter(func(e):return e.layer=="letters").size());notice.visible=books.entries.values().any(func(e):return e.layer=="letters")
+	var letters:int=books.entries.values().filter(func(e):return e.layer=="letters").size()
+	notice.text=str(letters)
+	notice.tooltip_text=Text.text("memory.new_mail")
+	notice.accessibility_name=notice.tooltip_text+" "+notice.text
+	notice.visible=letters>0
 	for e in books.entries.values():
 		if photo_seen.has(e.id):continue
 		photo_seen[e.id]=true
@@ -163,7 +187,7 @@ func capture(id:String,play_photo:bool=false)->void:
 	for e in books.entries.values():
 		if e.world_id==world.world_id and e.day==entry.day and not e.photo_id.is_empty() and e.photo_id not in photos:photos.append(e.photo_id)
 	var first_rose:bool=entry.params.get("legacy",{}).get("kind","")=="gift_flower" and entry.params.get("legacy",{}).get("first",false)
-	if (photos.size()>=int(photo_config.photo_daily_limit) and not first_rose and not (play_photo and entry.text.begins_with("playground.memory."))) or not entry.photo_id.is_empty():return
+	if (photos.size()>=int(photo_config.photo_daily_limit) and not first_rose and entry.params.get("legacy",{}).get("kind","") not in ["story_chapter","heart_project"] and not (play_photo and entry.text.begins_with("playground.memory."))) or not entry.photo_id.is_empty():return
 	var actor:Dictionary=world.actors.get(entry.resident_id,{})
 	if actor.is_empty():return
 	photo_busy=true
@@ -264,6 +288,7 @@ func show_goal_card(entry_id:String)->void:
 func photo_subject(entry:Dictionary)->String:
 	var raw:Dictionary=entry.params.get("legacy",{});var facts:Dictionary=raw.get("facts",{})
 	var kind:String=str(raw.get("kind",""))
+	if kind=="story_chapter":return str(facts.get("chapter_id",""))
 	if kind=="fishing_catch":return str(facts.get("species_id",""))+":"+str(float(facts.get("scale",1))>=float(world.director.memory_reminders.config.large_fish_scale))
 	return kind
 
@@ -281,10 +306,11 @@ func write_evening_pages()->void:
 	var weather:Dictionary=world.weather.current()
 	var names:Dictionary={"sunny":["晴","clear"],"cloudy":["多云","cloudy"],"rain":["小雨","light rain"],"fog":["雾","foggy"]}
 	for id in world.director.routines:
+		var missed:Array=missed_wishes_provider.call(id) if missed_wishes_provider.is_valid() else []
 		var diary_id:String=(str(id)+"|"+world.world_id+"|diary-evening:"+str(day)+"|daily").sha256_text()
 		if books.deleted.has(diary_id):continue
 		var actual:Array=books.list_for(id,"facts").filter(func(e):return e.world_id==world.world_id and int(e.day)==day and (e.source=="game" or e.params.get("human_quote",false)))
 		if actual.is_empty():
 			var words:Array=names.get(weather.id,[str(weather.name),str(weather.id)])
 			books.add(id,world.world_id,"evening-observation:"+str(day),"facts","memory.localized_fact",{"localized":{"zh":"第 %s 天，已经是夜晚，天气是%s。"%[day,words[0]],"en":"Day %s: it is night, and the weather is %s."%[day,words[1]]},"legacy":{"kind":"evening_observation","day":day,"phase":"night","weather_id":weather.id},"channel":"direct:"+str(id)},day,"game",[id],world.forest.clock)
-		books.write_local_diary(id,world.world_id,day,world.forest.clock)
+		books.write_local_diary(id,world.world_id,day,world.forest.clock,missed)

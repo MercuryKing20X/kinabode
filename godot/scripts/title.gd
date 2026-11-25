@@ -17,6 +17,7 @@ var backups:=preload("res://scripts/save_backup.gd").new()
 var ui_scale:Node
 var menu:VBoxContainer
 var heading:Label
+var slogan:Label
 var languages:HBoxContainer
 var fade:ColorRect
 var elapsed:=0.0
@@ -28,6 +29,10 @@ func _ready()->void:
 		get_tree().change_scene_to_file.call_deferred("res://scenes/main_v3.tscn");return
 	data_dir=OS.get_environment("HABITAT_DATA_DIR")
 	if data_dir.is_empty():data_dir=ProjectSettings.globalize_path("user://")
+	if not preload("res://scripts/world_upgrade.gd").prepare(data_dir):
+		push_error("Could not back up the island before upgrading.")
+		get_tree().quit(1)
+		return
 	DirAccess.make_dir_recursive_absolute(data_dir)
 	language=Text.configure(data_dir);backups.setup(data_dir)
 	var theme_data:=Theme.new();theme_data.default_font=preload("res://assets/fonts/NotoSansSC.ttf");theme=theme_data
@@ -35,6 +40,7 @@ func _ready()->void:
 		var background:=TextureRect.new();background.texture=load("res://assets/title/night.png");background.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;background.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_COVERED;background.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);background.show_behind_parent=true;background.mouse_filter=Control.MOUSE_FILTER_IGNORE;add_child(background)
 	var veil:=ColorRect.new();veil.color=Color(0.015,0.035,0.07,.32);veil.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);veil.show_behind_parent=true;veil.mouse_filter=Control.MOUSE_FILTER_IGNORE;add_child(veil)
 	heading=Label.new();heading.set_meta("ui_font_base",52);heading.add_theme_font_override("font",preload("res://assets/fonts/NotoSerifSC-Black.ttf"));heading.add_theme_color_override("font_color",Color("ffdfa0"));heading.add_theme_color_override("font_outline_color",Color("251d30"));heading.add_theme_constant_override("outline_size",8);add_child(heading)
+	slogan=Label.new();slogan.mouse_filter=Control.MOUSE_FILTER_IGNORE;slogan.add_theme_color_override("font_color",Color("ffe8ba"));slogan.add_theme_color_override("font_outline_color",Color("251d30"));slogan.add_theme_constant_override("outline_size",4);add_child(slogan)
 	menu=VBoxContainer.new();menu.add_theme_constant_override("separation",14);add_child(menu)
 	languages=HBoxContainer.new();languages.add_theme_constant_override("separation",12);add_child(languages)
 	for locale in ["zh","en"]:
@@ -43,7 +49,7 @@ func _ready()->void:
 	Text.events.changed.connect(_refresh)
 	memory_books.setup(data_dir)
 	book_panel=preload("res://scripts/memory_book_panel.gd").new();add_child(book_panel);book_panel.setup(memory_books)
-	connection_panel=preload("res://scripts/connection_overview.gd").new();add_child(connection_panel);connection_panel.setup(data_dir)
+	connection_panel=preload("res://scripts/world_door_panel.gd").install(self,self)
 	about_panel=preload("res://scripts/about_panel.gd").new();add_child(about_panel)
 	version_label=Label.new();version_label.text=preload("res://scripts/game_version.gd").short_label();version_label.mouse_filter=Control.MOUSE_FILTER_IGNORE;add_child(version_label)
 	_refresh();resized.connect(_layout)
@@ -56,24 +62,26 @@ func _ready()->void:
 func _refresh()->void:
 	language="en" if Text.revision().begins_with("en") else "zh"
 	heading.text=Text.text("title.name")
+	slogan.text=Text.text("title.slogan")
 	for child in menu.get_children():menu.remove_child(child);child.queue_free()
 	if FileAccess.file_exists(data_dir.path_join("island-v2.json")):_button("continue",func():_enter())
-	_button("new",_new_game);_button("connections",func():connection_panel.open());_button("memory",func():book_panel.open());_button("about",func():about_panel.open());_button("settings",_open_audio_settings);_button("quit",func():get_tree().quit())
+	_button("new",_new_game);_button("connections",func():connection_panel.show());_button("memory",func():book_panel.open());_button("about",func():about_panel.open());_button("settings",_open_audio_settings);_button("quit",func():get_tree().quit())
 	for button in languages.get_children():button.modulate=Color("ffd482") if button.name==language else Color("8d9daa")
 	_layout()
-	menu.get_child(0).grab_focus()
 func _button(key:String,action:Callable)->void:
-	var button:=Button.new();button.focus_mode=Control.FOCUS_NONE;button.set_meta("ui_font_base",20);button.set_meta("ui_scale_min",Vector2(0,42));button.name=key;button.text=Text.text("title."+key);button.pressed.connect(action);menu.add_child(button)
+	var button:=Button.new();button.focus_mode=Control.FOCUS_NONE;button.set_meta("ui_font_base",20);button.set_meta("ui_scale_min",Vector2(0,42));button.name=key;button.text=preload("res://scripts/world_door_panel.gd").title_text() if key=="connections" else Text.text("title."+key);button.pressed.connect(action);menu.add_child(button)
 func _layout()->void:
 	if menu==null:return
 	var factor:float=preload("res://scripts/ui_scale.gd").factor()
 	heading.position=Vector2(size.x*.07,size.y*.12);heading.add_theme_font_size_override("font_size",int(52*factor))
+	slogan.add_theme_font_size_override("font_size",int(20*factor))
+	slogan.position=heading.position+Vector2(0,heading.get_combined_minimum_size().y+4)
 	var count:int=maxi(1,menu.get_child_count())
 	var available:float=size.y*.62-32
 	var gap:float=minf(14,available*.03)
 	menu.add_theme_constant_override("separation",int(gap))
 	var height:float=minf(42*factor,(available-gap*(count-1))/count)
-	menu.position=Vector2(size.x*.07,size.y*.32);menu.size=Vector2(minf(size.x*.3,320),0)
+	menu.position=Vector2(size.x*.07,maxf(size.y*.32,slogan.position.y+slogan.get_combined_minimum_size().y+12));menu.size=Vector2(minf(size.x*.3,320),0)
 	for button in menu.get_children():button.custom_minimum_size=Vector2(0,height);button.add_theme_font_size_override("font_size",mini(int(20*factor),int(height*.55)))
 	languages.position=Vector2(size.x-240,size.y-66)
 	if version_label!=null:version_label.position=Vector2(24,size.y-40)
@@ -87,6 +95,7 @@ func _new_game()->void:
 		dialog.popup_centered(Vector2i(560,180))
 	else:_start_standard()
 func _start_standard()->void:
+	get_tree().set_meta("title_new_intro",true)
 	get_tree().set_meta("title_fresh",true);get_tree().set_meta("title_opening","standard");_enter()
 func _pick_opening()->void:
 	var dialog:=AcceptDialog.new();dialog.title=Text.text("title.choose");add_child(dialog)

@@ -19,7 +19,7 @@ func run()->void:
 		if recipe.fish:
 			var species:String=str(w.recipes.metadata[recipe_id].get("fish_species",""))
 			if species.is_empty():species="eel"
-			w.fishing.fish["fish-000000000000000000000000"]={"id":"fish-000000000000000000000000","owner_id":"human","location":"pending","source_id":"home.sea.east","species_id":species,"size_id":"large","color_id":"cream","scale":2}
+			w.fishing.add_fish({"id":"fish-000000000000000000000000","owner_id":"human","location":"pending","source_id":"home.sea.east","species_id":species,"size_id":"large","color_id":"cream","scale":2})
 		check(BBQ.start(w,"recipe:"+recipe_id).ok and BBQ.ready(w),"original cook transaction "+recipe_id)
 		var life:Dictionary=w.life.state()
 		check(Save._valid_life(w,life,w.actors),"new recipe state strict save validation "+recipe_id)

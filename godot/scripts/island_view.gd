@@ -2,9 +2,12 @@ class_name IslandView
 extends Node2D
 signal need_clicked(actor_id:String,kind:String)
 signal mind_clicked(actor_id:String)
-var play_frames=preload("res://scripts/play_frames.gd").new()
+signal care_clicked(actor_id:String)
 var play_stage:Node
 var play_rendered:Dictionary={}
+var inspect_actor_frames:=false
+var submitted_actor_frames:Dictionary={}
+var photo_poses:Dictionary={}
 var cat_contact_art=preload("res://scripts/cat_contact_art.gd").new()
 const LocalText=preload("res://scripts/localization.gd")
 const Places = preload("res://scripts/map_locations.gd")
@@ -59,13 +62,34 @@ var speech_actor := "codex"
 var speech := ""
 var speech_source := "model"
 var speech_by_actor: Dictionary={}
+var consultation_sidebar:Control
 var speech_until := 0.0
 var hunger_symbols:Dictionary={}
+var heart_symbols:Array=[]
+var atmosphere=preload("res://scripts/island_ambience.gd").new()
+const Emotes=preload("res://scripts/pixel_emotes.gd")
+var face_overlays=preload("res://scripts/face_overlays.gd").new()
+const REACTION_MARK={"pat":"heart","happy":"spark","hurt":"rain","surprise":"alert","shy":"heart","sleep":"sleep","wince":"anger"}
+
+func visible_reaction(id:String)->Dictionary:
+	var event:Dictionary=world.hearts.reactions.get(id,{})
+	var age:float=world.director.time-float(event.get("at",-100))
+	if age>=0 and age<2.5:return {"cue":event.cue,"age":age}
+	var period:float=float(world.hearts.config.symbol_period)
+	age=fposmod(clock+float(abs(id.hash())%11),period)
+	if age>=2.5:return {}
+	var activity:String=world.actors[id].activity
+	var brain:RefCounted=world.director.brains.get(id)
+	if activity in ["local_rest","play_lie"] and brain!=null and brain.current.get("action")=="night_rest":return {"cue":"sleep","age":age}
+	if world.hunger.rank(id)>=2:return {"cue":"hungry","age":age}
+	if world.hearts.symbol(id,clock).is_empty():return {}
+	var axis:String=world.hearts.dominant(id)
+	return {"cue":{"joy":"happy","hurt":"hurt","tired":"sleep","curious":"surprise"}.get(axis,""),"mark":Emotes.MOODS[axis],"age":age}
 var gesture_symbols:Array=[]
 var gesture_symbol_bounds:Dictionary={}
 
 func _ready() -> void:
-	for kind in ["hit", "fall", "pickup", "deposit", "breeze", "fire", "moon_tide", "fish_splash", "fish_bite", "gomoku_stone"]:
+	for kind in (["hit", "fall", "pickup", "deposit", "breeze", "fire", "moon_tide", "fish_splash", "fish_bite", "gomoku_stone"] if sound_enabled else []):
 		var player := AudioStreamPlayer.new()
 		player.stream = load("res://assets/audio/%s.wav" % kind)
 		if kind in ["breeze", "fire", "moon_tide"]:
@@ -80,7 +104,9 @@ func _ready() -> void:
 		textures[name] = load("res://assets/island/%s.png" % name)
 	for i in range(6): textures["house_%s" % i] = load("res://assets/island/house_%s.png" % i)
 	textures["cooking-pot"]=load("res://assets/island/cooking-pot.png")
-	for name in textures: alpha_images[name] = textures[name].get_image()
+	if not memory_photo:
+		for name in ["oak","oak_small","birch","fir","stump"]:
+			alpha_images[name]=textures[name].get_image()
 	_prepare_scenery()
 
 func screen(point: Vector2) -> Vector2:
@@ -99,13 +125,22 @@ func _process(delta: float) -> void:
 		var movements:Dictionary={};var gaits:Dictionary={}
 		for id in world.actors:running[id]=world.display_running(id);movements[id]=world.motion_state(id);gaits[id]=world.intelligence.gait(id)
 		motion.advance(delta, world.actors, running,movements,gaits)
+		var nearby_actors:Array[Vector2]=[]
+		for actor in world.actors.values():
+			if actor.region_id==region_id:nearby_actors.append(world.point(actor))
+		var tree_clip:=get_viewport_rect().grow(400)
 		for object in world.objects.values():
-			if object.kind != "tree" or object.status != "mature": continue
+			if object.kind != "tree" or object.status != "mature" or object.region_id!=region_id:continue
+			var at:Vector2=world.point(object)
+			if not tree_clip.has_point(screen(at)):
+				foliage_alpha.erase(object.id)
+				continue
 			var target_alpha := 1.0
-			for actor in world.actors.values():
-				if actor.region_id != object.region_id: continue
-				var offset: Vector2 = world.point(object) - world.point(actor)
-				if offset.y > 0 and offset.y < 9 and absf(offset.x) < 3.7: target_alpha = .18
+			for actor_at in nearby_actors:
+				var offset:=at-actor_at
+				if offset.y > 0 and offset.y < 9 and absf(offset.x) < 3.7:
+					target_alpha=.18
+					break
 			foliage_alpha[object.id] = move_toward(float(foliage_alpha.get(object.id, 1.0)), target_alpha, delta * 4)
 
 		for event in world.work.visual_events:
@@ -114,6 +149,16 @@ func _process(delta: float) -> void:
 			var effect: Dictionary = event.duplicate(true)
 			effect["started"] = clock
 			effects.append(effect)
+			if event.kind=="fish_caught" and event.region_id=="home":
+				var fire:RefCounted=world.nearest_barbecue(event.actor_id)
+				if fire!=null and world.standard.ready(fire.station.id):atmosphere.leave_trace(self,"fish",world.point(fire.station)+Vector2(2,1))
+			if event.kind=="mushroom_gathered" and event.region_id=="home":
+				var site_id:=""
+				for home in world.objects.values():
+					if home.kind!="construction_site" or int(home.stage_index)!=5:continue
+					if home.get("owner_id","")=="human" and site_id.is_empty():site_id=home.id
+					if home.get("owner_id","")==event.actor_id:site_id=home.id;break
+				if not site_id.is_empty():atmosphere.leave_trace(self,"basket",world.interior.outside(world.interior.room_for(site_id))+Vector2(.8,0))
 			if sound_enabled and sounds.has(event.kind) and visible and event.get("region_id", "home") == region_id:
 				var distance: float = center.distance_to(Vector2(event.position[0], event.position[1]))
 				if distance < 20:
@@ -136,8 +181,7 @@ func _process(delta: float) -> void:
 func say(text: String, source: String = "model", actor_id: String = "codex", context:String="") -> void:
 	if not world.actors.has(actor_id):return
 	var previous: Dictionary=speech_by_actor.get(actor_id,{})
-	if source=="local_rules" and not context.begins_with("steward_") and str(previous.get("context","")).begins_with("steward_") and float(previous.get("until",0))>clock:return
-	if source=="local_rules" and not context.begins_with("steward_") and previous.get("source") in ["model","autonomy"] and float(previous.get("until",0))>clock:return
+	if source=="local_rules" and previous.get("source") in ["model","autonomy"] and float(previous.get("until",0))>clock:return
 	speech_actor = actor_id
 	speech_source = source
 	motion.attend()
@@ -146,13 +190,16 @@ func say(text: String, source: String = "model", actor_id: String = "codex", con
 	speech_by_actor[actor_id]={"text":speech,"source":source,"until":speech_until,"context":context}
 
 var run_click := false
+var world_placement:Control
 
 func _unhandled_input(event: InputEvent) -> void:
+	if is_instance_valid(world_placement) and world_placement.map_input(event):
+		get_viewport().set_input_as_handled();return
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index==MOUSE_BUTTON_RIGHT:
-			for actor in world.actors.values():
-				if actor.id!="human" and actor.region_id==region_id and Rect2(screen(world.point(actor))+Vector2(-22,-85)*zoom,Vector2(44,90)*zoom).has_point(event.position):
-					mind_clicked.emit(actor.id);get_viewport().set_input_as_handled();return
+			var resident:=care_hit(event.position)
+			if not resident.is_empty():
+				care_clicked.emit(resident);get_viewport().set_input_as_handled();return
 		if event.button_index in [MOUSE_BUTTON_RIGHT, MOUSE_BUTTON_MIDDLE]:
 			dragging = event.pressed
 			if dragging: peek_elapsed=0; follow_player = false; placement_recipe = ""
@@ -162,17 +209,56 @@ func _unhandled_input(event: InputEvent) -> void:
 			zoom = clampf(zoom * (1.12 if event.button_index == MOUSE_BUTTON_WHEEL_UP else 1 / 1.12), 0.42, 1.5)
 			center += before - local_point(event.position)
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+			var target:String=hit(event.position)
+			if target.begins_with("island-note:") or target.begins_with("island-gift:") or (world.barbecues.has(target) and world.standard.ready(target)):
+				selected_id=target
+				clicked.emit(target,local_point(event.position))
+				return
+			for actor in world.actors.values():
+				if actor.id!="human" and actor.region_id==region_id and Rect2(screen(world.point(actor))+Vector2(-22,-85)*zoom,Vector2(44,90)*zoom).has_point(event.position):
+					care_clicked.emit(actor.id);get_viewport().set_input_as_handled();return
 			for entry in speech_layout():
 				var context:String=str(speech_by_actor.get(entry.actor_id,{}).get("context",""))
 				if context.begins_with("need_") and entry.box.has_point(event.position):
 					need_clicked.emit(entry.actor_id,context.trim_prefix("need_"));get_viewport().set_input_as_handled();return
-			selected_id = hit(event.position)
+			selected_id = target
 			run_click = event.shift_pressed or event.double_click
 			clicked.emit(selected_id, local_point(event.position))
 			run_click = false
 	elif event is InputEventMouseMotion:
 		if dragging: center -= event.relative / (32.0 * zoom)
 		hover_id = hit(event.position)
+
+func note_rect(row:Dictionary,gift:bool)->Rect2:
+	var center:Vector2=screen(world.point(row))
+	var entries:Dictionary=world.island_notes.gifts if gift else world.island_notes.rows
+	var order:int=int(str(row.id).get_slice(":",1))
+	var slot:=0
+	for other in entries.values():
+		if other.position==row.position and int(str(other.id).get_slice(":",1))<order:slot+=1
+	var offset:=Vector2(float(slot%4)*14.0-25.0,float(slot/4)*14.0+(4.0 if gift else -47.0))
+	return Rect2(center+offset,Vector2(12,12))
+
+func care_hit(mouse:Vector2)->String:
+	var nearest:=""
+	var distance:=INF
+	for actor in world.actors.values():
+		if actor.id=="human" or actor.region_id!=region_id:continue
+		var bounds:=Rect2(screen(world.point(actor))+Vector2(-22,-85)*zoom,Vector2(44,90)*zoom)
+		if not bounds.has_point(mouse):continue
+		var next:=bounds.get_center().distance_squared_to(mouse)
+		if next<distance:
+			distance=next
+			nearest=actor.id
+	return nearest
+
+func note_hit(mouse:Vector2)->String:
+	if region_id!="home":return ""
+	for row in world.island_notes.rows.values():
+		if note_rect(row,false).has_point(mouse):return row.id
+	for row in world.island_notes.gifts.values():
+		if note_rect(row,true).has_point(mouse):return row.id
+	return ""
 
 func hit(mouse: Vector2) -> String:
 	if world.resort!=null and world.resort.enabled():
@@ -183,6 +269,8 @@ func hit(mouse: Vector2) -> String:
 	if not dark_hit.is_empty():return dark_hit
 	if region_id=="dark":return ""
 	if region_id != "home": return room_renderer.hit(self, mouse)
+	var paper:String=note_hit(mouse)
+	if not paper.is_empty():return paper
 	var fishing_hit: String=fishing_renderer.hit(self,mouse)
 	if not fishing_hit.is_empty():return fishing_hit
 	var farm_hit: String = farm_renderer.hit(self, mouse)
@@ -229,7 +317,7 @@ func _surface(points: PackedVector2Array, texture: Texture2D, color: Color = Col
 		uv.append(point * 32.0 / Vector2(texture.get_size()) + drift)
 	draw_polygon(visible_points, PackedColorArray([color]), uv, texture)
 
-func _path(points: PackedVector2Array, width: float) -> void:
+func _path_polygons(points:PackedVector2Array,width:float)->Array[PackedVector2Array]:
 	# Offset in pixels so small tile-unit radii retain round edges.
 	var pixels := PackedVector2Array()
 	pixels.append(points[0] * 32)
@@ -241,9 +329,15 @@ func _path(points: PackedVector2Array, width: float) -> void:
 			var t := step / 8.0
 			pixels.append((start * (1 - t) * (1 - t) + corner * 2 * (1 - t) * t + end * t * t) * 32)
 	pixels.append(points[-1] * 32)
+	var result:Array[PackedVector2Array]=[]
 	for polygon in Geometry2D.offset_polyline(pixels, width * 32, Geometry2D.JOIN_ROUND, Geometry2D.END_ROUND):
 		var tiles := PackedVector2Array()
 		for point in polygon: tiles.append(point / 32)
+		result.append(tiles)
+	return result
+
+func _path(points: PackedVector2Array, width: float) -> void:
+	for tiles in _path_polygons(points,width):
 		_surface(tiles, textures.sand, Color("d9cbaa"))
 
 func _sprite(name: String, point: Vector2, scale_value: float = 1.0, tint: Color = Color.WHITE, tilt: float = 0.0) -> void:
@@ -261,22 +355,29 @@ func _shadow(p: Vector2, width: float) -> void:
 
 func _draw() -> void:
 	if world == null or textures.is_empty(): return
-	gesture_symbols.clear()
-	if region_id=="dark":dark_renderer.draw(self);_draw_creation_flowers();return
+	gesture_symbols.clear();heart_symbols.clear()
+	if region_id=="dark":dark_renderer.draw(self);_draw_creation_flowers();_draw_social_gestures();return
 	if region_id != "home": room_renderer.draw(self); return
 	var viewport := get_viewport_rect()
+	var decor_clip:Rect2=viewport.grow(160)
+	var flower_clip:Rect2=viewport.grow(80)
+	var entry_clip:Rect2=viewport.grow(400)
 	_draw_ground(viewport)
+	_draw_world_creations()
+	atmosphere.draw_puddles(self)
 	if world.resort!=null and world.resort.enabled():preload("res://scripts/resort_renderer.gd").ground(self)
 	dark_renderer.boat(self)
 	for decor in scenery:
-		if not viewport.grow(160).has_point(screen(decor.point)): continue
+		if not decor_clip.has_point(screen(decor.point)): continue
 		var sway: float = Ambience.wind(clock, decor.point) * .035 if decor.name != "rock" else 0.0
 		_sprite(decor.name, decor.point, decor.scale, Color.WHITE, sway)
 	fishing_renderer.water(self)
 	for patch in world.flower_gifts.patches:
-		if viewport.grow(80).has_point(screen(patch.point)):
+		if flower_clip.has_point(screen(patch.point)):
 			_sprite("flowers", patch.point, .38, Color.WHITE, Ambience.wind(clock, patch.point) * .025)
 	_draw_creation_flowers()
+	atmosphere.observe_homes(self)
+	atmosphere.draw_traces(self)
 	# All farm surfaces and fences use one compact layout contract.
 	for site in world.objects.values():
 		if site.kind == "construction_site": _draw_courtyard(site)
@@ -298,6 +399,8 @@ func _draw() -> void:
 	for object in world.objects.values():
 		if object.kind=="construction_site" and int(object.get("stage_index",0))<5 and world.resort!=null and world.resort.retired(object):continue
 		if object.region_id == "home" and object.kind != "farm_plot":
+			# Resort structures use their own draw callback before the general clip.
+			if not str(object.id).begins_with("resort.villa.") and not entry_clip.has_point(screen(world.point(object))):continue
 			var depth: float = object.position[1] + (world.site_size(object).y / 2 if object.kind == "construction_site" else 0.0)
 			entries.append({"type": "object", "value": object, "y": depth})
 	for actor in world.actors.values():
@@ -322,7 +425,7 @@ func _draw() -> void:
 		var value: Dictionary = entry.value
 		var point: Vector2 = world.point(value)
 		var p := screen(point)
-		if not viewport.grow(400).has_point(p): continue
+		if not entry_clip.has_point(p): continue
 		if entry.type=="leisure":leisure_renderer.draw(self,value);continue
 		if entry.type in ["crop"]: farm_renderer.draw_entry(self, entry); continue
 		if entry.type == "fence": _fence_line(value.start, value.end); continue
@@ -377,8 +480,22 @@ func _draw() -> void:
 	_draw_work_effects()
 	preload("res://scripts/weather_renderer.gd").draw(self)
 	if not memory_photo:
+		_draw_notes()
 		_draw_social_gestures()
 		_draw_resident_labels()
+		if is_instance_valid(world_placement):world_placement.draw_preview(self)
+
+func _draw_notes()->void:
+	for row in world.island_notes.rows.values():
+		var rect:Rect2=note_rect(row,false)
+		draw_rect(rect,Color("#f7e7ac"))
+		draw_rect(rect,Color("#684a32"),false,1)
+		draw_line(rect.position+Vector2(3,4),rect.position+Vector2(rect.size.x-3,4),Color("#92765a"))
+	for row in world.island_notes.gifts.values():
+		var rect:Rect2=note_rect(row,true)
+		draw_rect(rect,Color("#cd6b78"))
+		draw_rect(rect,Color("#603942"),false,1)
+		draw_line(rect.get_center()-Vector2(0,5),rect.get_center()+Vector2(0,5),Color("#ffe6ae"),2)
 
 func _draw_resident_labels() -> void:
 	var viewport := get_viewport_rect()
@@ -472,6 +589,11 @@ func speech_layout() -> Array:
 		if actor.id=="human" or actor.region_id!=region_id:continue
 		var label_point:Vector2=screen(world.point(actor))+Vector2(-12,15) if world.locations.v3() else screen(world.point(actor))-Vector2(font.get_string_size(LocalText.resident(world,str(actor.id)),HORIZONTAL_ALIGNMENT_LEFT,-1,preload("res://scripts/ui_scale.gd").pixels(16)).x/2,(_resident_head_height(actor)+4)*zoom+10)
 		boxes.append(Rect2(label_point-Vector2(3,17),Vector2(font.get_string_size(LocalText.resident(world,str(actor.id)),HORIZONTAL_ALIGNMENT_LEFT,-1,preload("res://scripts/ui_scale.gd").pixels(16)).x+6,23)))
+		if world.locations.v3() and actor.has("world_door_client"):
+			var size:=maxi(14,preload("res://scripts/ui_scale.gd").pixels(12))
+			var bounds:=font.get_string_size(str(actor.world_door_client),HORIZONTAL_ALIGNMENT_LEFT,-1,size)
+			var badge:=screen(world.point(actor))+Vector2(-bounds.x*.5-5,-(_resident_head_height(actor)+12)*zoom-11-font.get_ascent(size))
+			boxes.append(Rect2(badge,bounds+Vector2(10,6)))
 	var visible_speech:Dictionary=speech_by_actor.duplicate(true)
 	if world.hunger!=null and world.hunger.has_method("visible_cue"):
 		for id in world.director.routines:
@@ -496,7 +618,7 @@ func speech_layout() -> Array:
 		var prefix:String="" if appetite_cue or fireside_cue or speech_state.source=="local_rules" else LocalText.text("ui.speech.autonomous") if speech_state.source=="autonomy" else LocalText.text("ui.speech.model") if speech_state.source=="model" else ""
 		var english:bool=LocalText.revision().begins_with("en")
 		var text:String=prefix+spoken.left(18)
-		if english:text=_wrap_speech(prefix+spoken,minf(290*preload("res://scripts/ui_scale.gd").factor(),viewport.size.x-40))
+		if english or str(speech_state.get("context","")) in ["opening"]:text=_wrap_speech(prefix+spoken,minf(290*preload("res://scripts/ui_scale.gd").factor(),viewport.size.x-40),not english)
 		elif spoken.length()>18:text+="…"
 		var lines:=text.split("\n");var width:=0.0
 		for line in lines:width=maxf(width,font.get_string_size(line,HORIZONTAL_ALIGNMENT_LEFT,-1,preload("res://scripts/ui_scale.gd").pixels(14)).x)
@@ -519,6 +641,9 @@ func _bubble() -> StyleBoxFlat:
 	return style
 
 func _actor(actor: Dictionary) -> void:
+	if photo_poses.has(actor.id):
+		actor=actor.merged(photo_poses[actor.id],true)
+		motion.play_poses.erase(actor.id)
 	var p := screen(world.point(actor))
 	_shadow(p, 22)
 	p+=leisure_renderer.actor_offset(self,actor)*zoom
@@ -542,10 +667,20 @@ func _actor(actor: Dictionary) -> void:
 		motion_gesture["routine_kind"]=routine.kind
 		motion_gesture["thinking_allowed"] = routine.enabled and not routine.held and not routine.blocked() and routine.time >= routine.visual_quiet_until and routine.kind.is_empty() and not world.work.jobs.has(actor.id) and not world._routes.has(actor.id)
 	var pose: Dictionary = motion.pose(actor, world.work.jobs.get(actor.id, {}), world.actors, motion_gesture)
+	var visible_cue:Dictionary=visible_reaction(actor.id) if actor.id!="human" else {}
+	var face:=""
 	if world.hunger!=null and world.hunger.rank(actor.id)>=2 and actor.activity in ["idle","local_look"] and not world.work.jobs.has(actor.id):
 		pose.frame="think_down_0" if world.hunger.rank(actor.id)>=3 or library.visual_appearance(actor)=="orange-sunflower-girl" else "pickup_down"
 		pose.fallback="down_0"
 	
+	if actor.id!="human" and world.get("hearts")!=null:
+		var feeling:Dictionary=world.hearts.mood(actor.id)
+		var emotion_pose:Dictionary=world.hearts.config.pose
+		if motion_gesture.motion.moving:
+			if float(feeling.joy)>float(emotion_pose.joy_threshold):pose.bob-=absf(sin(clock*7))*float(emotion_pose.joy_bounce_pixels)
+			if float(feeling.hurt)>float(emotion_pose.hurt_threshold):pose.scale.y*=float(emotion_pose.hurt_scale_y);pose.lean+=float(emotion_pose.hurt_lean)
+		elif not world.work.jobs.has(actor.id) and float(feeling.tired)>float(emotion_pose.tired_threshold):
+			pose.frame="rest_empty";pose.fallback=pose.facing+"_0"
 	var reaction:Dictionary=world.hunger.reaction(actor.id) if world.hunger!=null and world.hunger.has_method("reaction") else {}
 	if not reaction.is_empty():
 		var wave:float=sin((world.director.time-float(reaction.started))*9)
@@ -574,7 +709,43 @@ func _actor(actor: Dictionary) -> void:
 			for drop in range(5):
 				var age:float=fposmod(clock*2+drop*.21,1)
 				draw_circle(p+Vector2(sin(drop*2.4+clock)*(30 if pool else 9),-25-age*25)*zoom,(2 if pool else 1.2)*zoom,Color(.6,.95,1,1-age))
-	world.lively.apply(actor.id,pose)
+	if not motion.working(actor,world.work.jobs.get(actor.id,{})):world.lively.apply(actor.id,pose)
+	if actor.id!="human" and not motion_gesture.motion.moving and float(motion_gesture.motion.get("still_seconds",1))>=.3 and not world.work.jobs.has(actor.id) and actor.activity in ["idle","local_look","play_lie"]:
+		var here:Vector2=world.point(actor)
+		var host:Dictionary=world.actors.human
+		var aim:Vector2=world.point(host)-here if host.region_id==actor.region_id else Vector2.ZERO
+		var talking:Dictionary=speech_by_actor.get(actor.id,{})
+		var brain:RefCounted=world.director.brains.get(actor.id)
+		var peer:Dictionary=world.actors.get(brain.current.get("partner",""),{}) if brain!=null else {}
+		if not peer.is_empty() and peer.region_id==actor.region_id:aim=world.point(peer)-here
+		if aim.length_squared()>.04 and (aim.length_squared()<=9 or not peer.is_empty()):
+			pose.facing=motion.direction(aim)
+			pose.frame=pose.facing+"_0";pose.fallback=pose.frame
+		if float(talking.get("until",0))>clock:pose.lean+=sin(clock*5)*.04
+		if brain!=null and brain.current.get("action")=="social_banter" and not peer.is_empty():
+			if float(talking.get("until",0))>clock:pose.lean+=.075 if pose.facing=="left" else -.075
+			elif float(speech_by_actor.get(peer.id,{}).get("until",0))>clock and aim.length_squared()>.04:
+				pose.facing=motion.direction(aim.orthogonal());pose.frame=pose.facing+"_0";pose.fallback=pose.frame
+		var age:float=float(visible_cue.get("age",0))
+		var envelope:float=sin(clampf(age/2.5,0,1)*PI)
+		match visible_cue.get("cue",""):
+			"pat":
+				face="pat";pose.lean+=sin(age*5)*.085*envelope
+				pose.sway+=signf(aim.x)*absf(sin(age*PI/.7))*4*envelope
+			"happy":pose.bob-=absf(sin(clampf(age/1.25,0,1)*TAU))*11
+			"hurt":
+				face="tear";pose.bob+=envelope*5
+				if age>.45 and aim.length_squared()>.04:pose.facing=motion.direction(-aim)
+			"surprise":pose.bob-=sin(clampf(age/.65,0,1)*PI)*10
+			"shy":face="blush";pose.bob+=envelope*4
+			"sleep":face="mouth" if age<.9 else "blink"
+			"wake":
+				face="mouth" if age<.8 else ""
+				pose.scale.y*=1+envelope*.07
+				pose.bob-=envelope*5
+			"wince":face="anger";pose.lean-=envelope*.06
+		if not face.is_empty():
+			pose.frame=pose.facing+"_0";pose.fallback=pose.frame
 	var visual_id: String = library.visual_appearance(actor)
 	var art: Dictionary = library.artworks[visual_id]
 	var frame: String = pose.frame if art.frames.has(pose.frame) else pose.fallback
@@ -644,24 +815,24 @@ func _actor(actor: Dictionary) -> void:
 	elif holiday=="pool":pose.bob=18+sin(clock*2.2)*4
 	# The jump clock belongs to the activity, even when editable art rejects an atlas.
 	# Apply this after idle cosmetic poses so they cannot erase the accepted jump.
-	if pose.has("play_column"):
-		var play_texture:Texture2D=play_frames.texture(library,actor,int(pose.play_column))
-		if play_texture!=null:texture=play_texture
-		pose.scale=Vector2.ONE;pose.lean=0;pose.bob=float(pose.get("play_lift",0));pose.sway=0
+	if pose.has("play_style") and not motion.working(actor,world.work.jobs.get(actor.id,{})):
 		if float(pose.get("play_land",0))>0:
 			for i in range(3):draw_circle(p+Vector2((i-1)*12,0)*zoom,(1.5+float(pose.play_land)*2)*zoom,Color(.8,.72,.51,.35*float(pose.play_land)))
-	if pose.has("play_column"):
-		play_rendered[actor.id]={"lift":float(pose.bob),"column":int(pose.play_column),"phase":float(motion.play_phases.get(actor.id,0))}
+		play_rendered[actor.id]={"lift":float(pose.bob),"frame":frame,"phase":float(motion.play_phases.get(actor.id,0))}
 	else:play_rendered.erase(actor.id)
 	if visual_id=="suit-hulk":pose.scale*=1.18
 	draw_set_transform(p + Vector2(float(pose.get("sway",0)), float(pose.bob)) * zoom, float(pose.lean), pose.scale)
 	var food_hand:Dictionary=action_atlases.food_hand(library,actor,int(meal_pose.get("column",0))) if eat_texture!=null else {}
 	if not food_hand.is_empty() and not food_hand.front:_meal_food(actor,meal_pose,food_hand,art)
 	dark_renderer.held(self,actor,pose,art,false)
+	if inspect_actor_frames:
+		var atlas:=texture as AtlasTexture
+		submitted_actor_frames[actor.id]={"frame":frame if atlas==null else "", "asset":atlas.atlas.resource_path.get_file() if atlas!=null else visual_id, "sheet":atlas.atlas.resource_path.get_base_dir().get_file() if atlas!=null else "", "region":str(atlas.region) if atlas!=null else "", "play":pose.has("play_style"),"tilt":float(pose.lean),"height_scale":float(pose.scale.y)}
 	if holiday=="pool":
 		var part:=Rect2(0,0,texture.get_width(),texture.get_height()*.57)
 		draw_texture_rect_region(texture,Rect2(-Vector2(art.anchor[0],art.anchor[1])*zoom,Vector2(art.width,art.height*.57)*zoom),part)
 	else:draw_texture_rect(texture, Rect2(-Vector2(art.anchor[0], art.anchor[1]) * zoom, Vector2(art.width, art.height) * zoom), false)
+	if texture is not AtlasTexture and frame==pose.facing+"_0":face_overlays.draw(self,library,art,pose.facing,face)
 	if not food_hand.is_empty() and food_hand.front:_meal_food(actor,meal_pose,food_hand,art)
 	dark_renderer.held(self,actor,pose,art)
 	hungry_onlooker.draw_front(self,onlooker,art)
@@ -676,6 +847,8 @@ func _actor(actor: Dictionary) -> void:
 		draw_texture_rect(textures.mushrooms, Rect2(Vector2(-24, -50) * zoom, Vector2(48, 42) * zoom), false)
 	if not gesture.is_empty(): _flower_gesture(actor, gesture)
 	draw_set_transform(Vector2.ZERO)
+	if actor.id!="human" and world.get("hearts")!=null:
+		if not visible_cue.is_empty():heart_symbols.append({"actor":actor.id,"at":p+Vector2(0,-float(art.anchor[1])-5)*zoom,"cue":visible_cue})
 	world.lively.draw(self,actor,p)
 	if actor.activity in ["gesture_wave","gesture_stretch"] and not motion_gesture.motion.moving:gesture_symbols.append({"actor":actor,"point":p,"art":art,"frame":frame,"pose":pose})
 	fishing_renderer.held_front(self,actor)
@@ -700,6 +873,14 @@ func draw_hunger_symbols(canvas:Node2D)->void:
 		canvas.draw_string_outline(font,at,LocalText.text("ui.island_view.rumble"),HORIZONTAL_ALIGNMENT_LEFT,-1,18,3,Color(0,0,0,color.a))
 		canvas.draw_string(font,at,LocalText.text("ui.island_view.rumble"),HORIZONTAL_ALIGNMENT_LEFT,-1,18,color)
 func _draw_social_gestures()->void:
+	draw_set_transform(Vector2.ZERO)
+	for item in heart_symbols:
+		var cue:Dictionary=item.cue
+		var mark:String=cue.get("mark",REACTION_MARK.get(cue.cue,"sweat"))
+		var at:Vector2=item.at+Vector2(29 if float(speech_by_actor.get(item.actor,{}).get("until",0))>clock else 0,0)*zoom
+		if not get_viewport_rect().has_point(at):continue
+		Emotes.paint(self,at,mark,20*zoom,float(cue.age),2.5)
+		world.hearts.note_symbol(item.actor,clock)
 	if region_id!="dark":draw_hunger_symbols(self)
 	for item in gesture_symbols:_social_gesture_symbol(item.actor,item.point,item.art,item.frame,item.pose)
 func _social_gesture_symbol(actor:Dictionary,p:Vector2,art:Dictionary,frame:String,pose:Dictionary)->void:
@@ -878,7 +1059,7 @@ func _camp_smoke(point: Vector2, state: String) -> void:
 	for i in range(7):
 		var puff: Dictionary = Ambience.smoke(clock, i, point, heat)
 		var size := Vector2.ONE * float(puff.size) * zoom
-		draw_texture_rect(textures.smoke, Rect2(p + puff.offset * zoom - size / 2, size), false, Color(1, 1, 1, puff.alpha))
+		draw_texture_rect(textures.smoke, Rect2(p + puff.offset * zoom - size / 2, size), false, Color(1, 1, 1, puff.alpha*(.45 if world.weather.current().id=="rain" else 1.0)))
 	if heat < .5: return
 	for i in range(4):
 		var life := fposmod(clock * .55 + i * .27, 1)
@@ -979,12 +1160,16 @@ func _draw_house(site: Dictionary) -> void:
 		if selected_id == site.id and site.has("blueprint"): _work_sprite(site.blueprint.artwork, "stage_0", foot, size, Color(1, 1, 1, .3))
 	else:
 		if stage==5 and preload("res://scripts/house_appearance.gd").enabled(site):
-			var texture:Texture2D=preload("res://scripts/house_appearance.gd").texture(site,library,world.days.phase().id=="night")
+			var texture:Texture2D=preload("res://scripts/house_appearance.gd").texture(site,library,world.days.phase().id=="night" and atmosphere.occupied.has(site.id))
 			draw_texture_rect(texture,Rect2(screen(foot)-Vector2(size.x/2,size.y-8)*zoom,size*zoom),false)
 		elif site.has("blueprint"): _work_sprite(site.blueprint.artwork, "stage_%s" % (stage - 1), foot, size)
 		else:
 			var texture: Texture2D = preload("res://scripts/building_visual.gd").texture(site,library,stage)
 			draw_texture_rect(texture, Rect2(screen(foot) - Vector2(size.x / 2, size.y - 8) * zoom, size * zoom), false)
+	var door_age:float=clock-float(atmosphere.door_changes.get(site.id,-100))
+	if stage==5 and door_age<.65:
+		var at:=screen(world.interior.outside(world.interior.room_for(site.id)))
+		draw_rect(Rect2(at+Vector2(-8,-25)*zoom,Vector2(16*sin(door_age/.65*PI),18)*zoom),Color("493529"))
 	var worker: String = world.work.claims.get(site.id, "")
 	var job: Dictionary = world.work.jobs.get(worker, {})
 	if stage < 5 and job.get("phase") == "building" and site.has("blueprint"):
@@ -1021,29 +1206,52 @@ func show_region(id: String) -> void:
 		var entry: Array=Places.section("camera").room
 		center=Vector2(entry[0],entry[1]);zoom=default_zoom(id,center)
 
+var ground_catalog:WeakRef
+var ground_land:PackedVector2Array
+var ground_grass:Array[PackedVector2Array]=[]
+var ground_roads:Array[Dictionary]=[]
+var ground_ponds:Array[Dictionary]=[]
+func _ground_mesh()->void:
+	if ground_catalog!=null and ground_catalog.get_ref()==world.catalog:return
+	ground_catalog=weakref(world.catalog)
+	ground_land=world.catalog.polygon(world.catalog.regions.home)
+	ground_grass=Geometry2D.offset_polygon(ground_land,-1.9,Geometry2D.JOIN_ROUND)
+	ground_roads.clear();ground_ponds.clear()
+	var layout:Dictionary=world.catalog.regions.home.layout
+	for road in layout.roads:
+		for polygon in _path_polygons(Layout.points(road.points),float(road.width)):
+			var bounds:=Rect2(polygon[0],Vector2.ZERO)
+			for at in polygon:bounds=bounds.expand(at)
+			ground_roads.append({"points":polygon,"bounds":bounds})
+	for pond in layout.ponds:
+		var at:=Vector2(pond.center[0],pond.center[1])
+		var radius:=Vector2(pond.radius[0],pond.radius[1])
+		var shore:=Layout.pond_shape(pond)
+		ground_ponds.append({"at":at,"radius":radius,"shore":shore,"bounds":Rect2(at-radius,radius*2).grow(6),
+			"rim":Geometry2D.offset_polygon(shore,.65),"inner":Geometry2D.offset_polygon(shore,-.65)})
+
 func _draw_ground(viewport:Rect2)->void:
+	_ground_mesh()
+	var visible_tiles:=Rect2(local_point(viewport.position),viewport.size/(32*zoom))
 	var water_poly := PackedVector2Array([local_point(Vector2.ZERO), local_point(Vector2(viewport.size.x, 0)), local_point(viewport.size), local_point(Vector2(0, viewport.size.y))])
 	_surface(water_poly, textures.water, Color("80b3bd"), Vector2(clock * 0.005, sin(clock * .12) * .015))
-	var land: PackedVector2Array = world.catalog.polygon(world.catalog.regions.home)
 	var coast := PackedVector2Array()
-	for point in land: coast.append(screen(point))
+	for point in ground_land: coast.append(screen(point))
 	coast.append(coast[0])
 	draw_polyline(coast, Color(0.48, 0.83, 0.78, 0.42), 38 * zoom, true)
 	draw_polyline(coast, Color(0.81, 0.91, 0.74, 0.8), 13 * zoom, true)
-	_surface(land, textures.sand, Color("f0d8a5"))
-	for inner in Geometry2D.offset_polygon(land, -1.9, Geometry2D.JOIN_ROUND): _surface(inner, textures.grass, Color("a9ba9e"))
-	var layout: Dictionary = world.catalog.regions.home.layout
-	for road in layout.roads: _path(Layout.points(road.points), float(road.width))
-	for pond in layout.ponds:
-		var at := Vector2(pond.center[0], pond.center[1])
-		var radius := Vector2(pond.radius[0], pond.radius[1])
-		var shore: PackedVector2Array = Layout.pond_shape(pond)
-		for rim in Geometry2D.offset_polygon(shore, .65): _surface(rim, textures.sand, Color("c9bb91"))
-		_surface(shore, textures.water, Color("78c0bb"), Vector2(clock * .003, 0))
-		for inner in Geometry2D.offset_polygon(shore, -.65): _surface(inner, textures.water, Color("77aeb2"), Vector2(clock * .003, 0))
+	_surface(ground_land,textures.sand,Color("f0d8a5"))
+	for inner in ground_grass:_surface(inner,textures.grass,Color("a9ba9e"))
+	for road in ground_roads:
+		if visible_tiles.intersects(road.bounds):_surface(road.points,textures.sand,Color("d9cbaa"))
+	for pond in ground_ponds:
+		if not visible_tiles.intersects(pond.bounds):continue
+		for rim in pond.rim:_surface(rim,textures.sand,Color("c9bb91"))
+		_surface(pond.shore,textures.water,Color("78c0bb"),Vector2(clock*.003,0))
+		for inner in pond.inner:_surface(inner,textures.water,Color("77aeb2"),Vector2(clock*.003,0))
 		for i in range(11):
 			var angle := i * .57
-			var edge := at + Vector2(cos(angle), sin(angle)) * (radius + Vector2.ONE * .8)
+			var edge:Vector2=pond.at+Vector2(cos(angle),sin(angle))*(pond.radius+Vector2.ONE*.8)
 			_sprite("rock" if i % 3 == 0 else "grass_clump", edge, .42 if i % 3 == 0 else .6)
 
 func _add_house_fences(entries:Array)->void:
@@ -1054,10 +1262,11 @@ func _add_house_fences(entries:Array)->void:
 func _extra_entries(_entries:Array)->void:pass
 func _draw_extra_entry(_entry:Dictionary)->bool:return false
 
-func _wrap_speech(value:String,width:float)->String:
+func _wrap_speech(value:String,width:float,characters:bool=false)->String:
 	var lines:PackedStringArray=[];var current:=""
-	for word in value.split(" ",false):
-		var candidate:String=word if current.is_empty() else current+" "+word
+	var separator:String="" if characters else " "
+	for word in value.split(separator,false):
+		var candidate:String=word if current.is_empty() else current+separator+word
 		if not current.is_empty() and font.get_string_size(candidate,HORIZONTAL_ALIGNMENT_LEFT,-1,preload("res://scripts/ui_scale.gd").pixels(14)).x>width:lines.append(current);current=word
 		else:current=candidate
 	if not current.is_empty():lines.append(current)
@@ -1065,9 +1274,39 @@ func _wrap_speech(value:String,width:float)->String:
 
 func _draw_creation_flowers()->void:
 	if world.flower_creation==null:return
+	var visible:Rect2=get_viewport_rect().grow(20)
+	var offset:=Vector2(14,19)*zoom
+	var size:=Vector2(28,28)*zoom
+	var colors:Dictionary={}
 	for f in world.flower_creation.flowers.values():
 		if f.region_id!=region_id:continue
 		var at:Vector2=screen(Vector2(f.position[0],f.position[1]))
-		if not get_viewport_rect().grow(20).has_point(at):continue
-		var tex:Texture2D=preload("res://scripts/resort_renderer.gd").asset("rose-"+f.color)
-		if tex!=null:draw_texture_rect(tex,Rect2(at-Vector2(14,19)*zoom,Vector2(28,28)*zoom),false)
+		if not visible.has_point(at):continue
+		if not colors.has(f.color):colors[f.color]=preload("res://scripts/resort_renderer.gd").asset("rose-"+f.color)
+		var tex:Texture2D=colors[f.color]
+		if tex!=null:draw_texture_rect(tex,Rect2(at-offset,size),false)
+
+var creation_textures: Dictionary={}
+func _draw_world_creations()->void:
+	var layer: RefCounted=world.flower_creation.creations
+	var clip: Rect2=get_viewport_rect().grow(64)
+	var mouse:=get_local_mouse_position()
+	for row in layer.pieces.values():
+		if row.region!=region_id:continue
+		var at:=screen(world.point(row))
+		if not clip.has_point(at):continue
+		if not creation_textures.has(row.item):
+			creation_textures[row.item]=load(preload("res://scripts/world_creations.gd").Catalog[row.item].texture)
+		var texture: Texture2D=creation_textures[row.item]
+		if texture!=null:
+			var size:=Vector2(32,32)*zoom
+			var ground:bool=preload("res://scripts/world_creations.gd").Catalog[row.item].get("ground",false)
+			draw_texture_rect(texture,Rect2(at-size*(Vector2(.5,.5) if ground else Vector2(.5,.7)),size),false)
+		var hovered:=Rect2(at-Vector2(16,24)*zoom,Vector2(32,32)*zoom).has_point(mouse)
+		if not row.label.is_empty() and (row.item=="sign" or hovered):
+			draw_string_outline(font,at+Vector2(-12,-20),row.label,HORIZONTAL_ALIGNMENT_LEFT,-1,13,3,Color("24392f"))
+			draw_string(font,at+Vector2(-12,-20),row.label,HORIZONTAL_ALIGNMENT_LEFT,-1,13,Color("fff4db"))
+		if row.item=="sign" and hovered and not str(row.get("author","")).is_empty():
+			draw_string_outline(font,at+Vector2(-12,-37),row.author,HORIZONTAL_ALIGNMENT_LEFT,-1,13,3,Color("24392f"))
+			draw_string(font,at+Vector2(-12,-37),row.author,HORIZONTAL_ALIGNMENT_LEFT,-1,13,Color("fff4db"))
+		if row.created>layer.seen:draw_circle(at+Vector2(12,-12)*zoom,3,Color("fff0a0"))

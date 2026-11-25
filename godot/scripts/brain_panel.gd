@@ -7,6 +7,7 @@ var body:RichTextLabel
 var portrait:TextureRect
 var heading:Label
 var elapsed:=0.0
+var wish_rows:Callable
 func setup(w:RefCounted,art:RefCounted)->void:
 	world=w;library=art
 	var panel_theme:=Theme.new();panel_theme.default_font=preload("res://assets/fonts/NotoSansSC.ttf");theme=panel_theme
@@ -24,15 +25,25 @@ func open(id:String)->void:
 	if not world.director.brains.has(id):return
 	actor_id=id;refresh();show()
 func refresh()->void:
+	if not world.director.brains.has(actor_id):return
 	var brain:RefCounted=world.director.brains[actor_id]
 	var summary:Dictionary=brain.summary()
 	heading.text=Text.resident(world,actor_id)+" · "+brain.text("title")
 	portrait.texture=library.texture(world.actors[actor_id].appearance_id,"down_0")
 	var lines:Array=[summary.sentence]
+	if world.hearts!=null:
+		var heart:Dictionary=world.hearts.summary(actor_id)
+		lines.append(heart.name+" · "+heart.reason)
+	var project:String=world.flower_creation.creations.projects.get(actor_id,"")
+	if not project.is_empty():lines.append(project)
 	if not brain.interactions.receipts.is_empty():
 		var entry:Dictionary=brain.interactions.receipts.back()
 		var en:bool=TranslationServer.get_locale().begins_with("en")
 		lines.append("");lines.append(str(entry.en if en else entry.zh));lines.append(str(entry.reason[1 if en else 0]))
+	var agreements:Array=world.promises.social(actor_id)
+	if not agreements.is_empty():
+		lines.append("");lines.append(Text.text("company.promises"))
+		for row in agreements:lines.append(Text.text("company.promise_day")%[int(row.day),Text.text("company.sunrise" if row.action_type=="social_sunrise" else "company.fireside")])
 	lines.append("");lines.append(brain.text("needs"))
 	lines.append(" · ".join(summary.needs.values()))
 	lines.append("");lines.append(brain.text("recent"))

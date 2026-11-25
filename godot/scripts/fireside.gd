@@ -18,8 +18,6 @@ var away:=0.0
 var join_after:=0.0
 var circle_closed:=false
 # Exact host invitation consent, session-only; never restored with an old meal.
-var steward_human_authority:Callable
-var steward_human_join:=false
 var selected_guests:Array=[]
 var ignited_at:=-1000.0
 var loaded_meal:=false
@@ -30,8 +28,9 @@ func burning()->bool:return active() and state.remaining>0 and not state.suspend
 func near(id:String,radius:float)->bool:
 	return world.actors[id].region_id==life.station.region_id and world.point(world.actors[id]).distance_to(world.point(life.station))<=radius
 var host_authority:Callable
+var self_meal_actor:=""
 func host_ready(actor_id:String="human")->Dictionary:
-	if not world.actors.has(actor_id) or (actor_id!="human" and not world.director.model_controlled(actor_id) and not (host_authority.is_valid() and host_authority.call(actor_id))):return world._error("model_required")
+	if not world.actors.has(actor_id) or (actor_id!="human" and actor_id!=self_meal_actor and not world.director.model_controlled(actor_id) and not (host_authority.is_valid() and host_authority.call(actor_id))):return world._error("model_required")
 	if not world.standard.ready(life.station.id):return world.work.fail("unbuilt_camp",LocalText.text("system.fireside.build_the_campfire_first"))
 	if not near(actor_id,float(config.near_radius)):return world.work.fail("too_far",LocalText.text("system.fireside.walking_to_the_fire"))
 	if world.work.jobs.has(actor_id) and not jobs.has(actor_id):return world._error("busy")
@@ -95,14 +94,18 @@ func _put_direct_fish(fish:Dictionary,wood_sources:Dictionary)->Dictionary:
 	loaded_meal=false
 	state.roast_by=str(fish.owner_id)
 	state.current={"id":Crypto.new().generate_random_bytes(12).hex_encode(),"food_id":"fish","menu_id":"direct:"+fish.id,"name":LocalText.source("system.fireside.grilled_fish"),"category":"fish","receipt":{},"fish":fish.duplicate(true),"total":4,"eaten":0,"wasted":0,"sources":{"backpack":{},"storage":{}},"elapsed":0.0,"seconds":float(config.cook_seconds),"ready":false,"eaters":[],"direct_grill":true,"wait_elapsed":0.0,"wood_sources":wood_sources}
-	world.fishing.fish.erase(fish.id)
+	world.fishing.erase_fish(fish.id)
 	_start_meal_timer()
 	state.invited=[];state.consent=false;state.committed=false;circle_closed=false;away=0
 	life.station.portions=0;life.station.state="cooking";world.revision+=1
 	return {"ok":true,"sources":wood_sources,"fish_id":fish.id,"message":LocalText.text("system.fireside.the_fish_is_on_the_fire_invite_companions")}
 
+var prepared_batch:=""
+var prepared_until:=0.0
+func waiting_prepared()->bool:
+	return not prepared_batch.is_empty() and state.get("current",{}).get("id")==prepared_batch
 func waiting_meal()->bool:
-	return active() and not state.current.is_empty() and (loaded_meal or state.current.get("direct_grill",false)) and int(state.current.eaten)+int(state.current.wasted)<int(state.current.total)
+	return active() and not state.current.is_empty() and (loaded_meal or waiting_prepared() or state.current.get("direct_grill",false)) and int(state.current.eaten)+int(state.current.wasted)<int(state.current.total)
 func invite_direct(ids:Array)->Dictionary:
 	if not waiting_meal() or int(state.current.eaten)+int(state.current.wasted)>=int(state.current.total):return world._error("no_waiting_fish")
 	var added:Array=ids.filter(func(id):return id not in state.invited)
@@ -122,7 +125,7 @@ func direct_fish_available(fish:Dictionary,actor_id:String="human")->bool:
 func cooking_fish(actor_id:String="human")->Dictionary:
 	var held:Dictionary=world.fishing.held(actor_id)
 	if not held.is_empty():return held
-	var stored:Array=world.fishing.fish.values().filter(func(f):return f.get("owner_id")==actor_id and f.get("location")=="storage")
+	var stored:Array=world.fishing.unplaced_fish().filter(func(f):return f.get("owner_id")==actor_id and f.get("location")=="storage")
 	stored.sort_custom(func(a,b):return float(a.caught_at)<float(b.caught_at))
 	return stored[0] if not stored.is_empty() else {}
 func menu(actor_id:String="human")->Array:
@@ -140,7 +143,21 @@ func menu(actor_id:String="human")->Array:
 		if recipe.fish:ingredients["fish"]=1
 		items.append({"id":"recipe:"+recipe.id,"ingredient":recipe.ingredients.keys()[0],"ingredients":ingredients,"name":recipe.name,"category":"dish","maximum":0 if locked else maximum,"portions_per_unit":int(world.recipes.config.fish_portions[fish.size_id]) if recipe.fish and not fish.is_empty() else int(recipe.portions),"seconds":config.dish_seconds,"locked":locked})
 	return items
-func roast_host(key:String,actor_id:String="human")->Dictionary:
+func self_mushrooms(id: String) -> Dictionary:
+	if id=="human" or not world.director.brains.has(id) or not selected_guests.is_empty():return world._error("fire_busy")
+	if active() and not circle_closed and not state.current.is_empty():return world._error("fire_busy")
+	var check:Dictionary=can_invite([id])
+	if not check.ok:return check
+	self_meal_actor=id
+	var result:Dictionary={"ok":true}
+	if not burning() or state.remaining<3:result=light_host(true,id)
+	if result.ok:
+		selected_guests=[id]
+		result=roast_host("single:mushroom",id)
+		selected_guests.clear()
+	self_meal_actor=""
+	return result
+func roast_host(key:String,actor_id:String="human",prepare_only:bool=false)->Dictionary:
 	var ready:=host_ready(actor_id)
 	if not ready.ok:return ready
 	if not burning():return world.work.fail("no_fire",LocalText.text("system.fireside.light_the_fire_first"))
@@ -152,10 +169,9 @@ func roast_host(key:String,actor_id:String="human")->Dictionary:
 
 	var options:Array=menu(actor_id).filter(func(o):return o.id==key)
 	if options.is_empty() or int(options[0].maximum)<1:return world.work.fail("missing_food",LocalText.text("system.fireside.not_enough_ingredients_gather_some_first"))
-	var diners:Array=selected_guests.duplicate()
-	steward_human_join=steward_human_authority.is_valid() and steward_human_authority.call(actor_id)
-	if (actor_id=="human" or steward_human_join) and near("human",float(config.host_radius)):diners.push_front("human")
-	var units:int=mini(int(options[0].maximum),ceili(float(diners.size())/int(options[0].portions_per_unit)))
+	var diners:Array=[] if prepare_only else selected_guests.duplicate()
+	if (actor_id=="human") and near("human",float(config.host_radius)):diners.push_front("human")
+	var units:int=1+world.director.brains.size() if prepare_only else mini(int(options[0].maximum),ceili(float(diners.size())/int(options[0].portions_per_unit)))
 	if units<1:return world._error("no_diners")
 	var choice:Dictionary=options[0];var seconds:float=choice.seconds
 	if state.remaining<seconds:return world.work.fail("fire_needs_wood",LocalText.text("system.fireside.the_fire_is_fading_add_2_wood_first"))
@@ -177,17 +193,23 @@ func roast_host(key:String,actor_id:String="human")->Dictionary:
 	# Start a new explicitly chosen batch; unfinished prior food is honestly waste.
 	discard_remaining()
 	for old_id in jobs.keys():interrupt(old_id)
-	if not fish_facts.is_empty():world.fishing.fish.erase(fish_facts.id)
+	if not fish_facts.is_empty():world.fishing.erase_fish(fish_facts.id)
 	if state.committed:
 		state.id=Crypto.new().generate_random_bytes(12).hex_encode();state.ate={};state.attended=[]
 	loaded_meal=false
 	state.current={"id":Crypto.new().generate_random_bytes(12).hex_encode(),"food_id":("fish" if key.begins_with("fish:") else food_id),"menu_id":key,"name":choice.name,"category":choice.category,"receipt":receipt,"fish":fish_facts,"total":units*int(choice.portions_per_unit),"eaten":0,"wasted":maxi(0,units*int(choice.portions_per_unit)-diners.size()),"sources":debit_result.sources,"elapsed":0.0,"seconds":seconds,"ready":false,"eaters":[]}
 	_start_meal_timer()
+	if prepare_only:
+		state.current.erase("meal_remaining");state.current.erase("meal_duration")
+		state.current.wasted=0
+		selected_guests.clear()
+		state.invited=[];state.consent=false;state.suspended=false;state.roast_by=actor_id;state.committed=false;life.station.portions=0;life.station.state="cooking";circle_closed=false;world.revision+=1
+		return {"ok":true}
 	state.invited=selected_guests.duplicate();state.consent=true;state.suspended=false;state.roast_by=actor_id;state.committed=false;life.station.portions=0;life.station.state="cooking";suppressed.erase("human");circle_closed=false;world.revision+=1
 	for invited_id in state.invited:
 		suppressed.erase(invited_id)
 		world.director.routines[invited_id].interrupt(8)
-	world.hunger.invite_fireside(life.station.id,state.invited)
+	if self_meal_actor.is_empty():world.hunger.invite_fireside(life.station.id,state.invited)
 	return {"ok":true,"sources":debit_result.sources,"message":LocalText.text("system.fireside.food_is_on_the_grill_share_it_when")}
 func held(id:String)->bool:
 	if id=="human":return not state.get("consent",false)
@@ -210,11 +232,15 @@ func can_invite(ids:Array)->Dictionary:
 		if world.actors[id].region_id!=life.station.region_id and not (life.station.region_id=="home" and world.interior.rooms().has(str(world.actors[id].region_id))):return world.work.fail("different_region",LocalText.text("bbq.reason.region"))
 		if not world.fishing.held(id).is_empty() or world.actors[id].has("furniture_id"):return world.work.fail("hands_full",LocalText.text("bbq.reason.hands"))
 		var routine:RefCounted=world.director.routines.get(id)
-		var local_owned:bool=routine!=null and routine.owns_job()
+		var brain:RefCounted=world.director.brains.get(id)
+		var local_owned:bool=(routine!=null and routine.owns_job()) or (brain!=null and brain.owns_local_job())
 		if (world.work.jobs.has(id) and world.work.jobs[id].get("id")!=jobs.get(id) and not local_owned) or world.projects.active(id) or world.farms.active(id) or world.activities.members.has(id):return world.work.fail("busy",LocalText.text("bbq.reason.command"))
 	return {"ok":true,"participants":["human"]+ids}
 func join(id:String)->void:
 	if id!="human" and id not in state.get("invited",[]):return
+	if id!="human" and not held(id):
+		var brain:RefCounted=world.director.brains.get(id)
+		if brain!=null and (brain.owns_local_job() or brain.owns_local_route()):brain.finish("interrupted","host_meal")
 	if world.hunger.rushes.has(id) and not world.hunger.rushes[id].get("arrived",false):return
 	# A warehouse handover is idle-owned unless a real command owns its job.
 	if id!="human" and world.deliveries.active(id) and not world.work.jobs.has(id):
@@ -245,12 +271,15 @@ func join(id:String)->void:
 			return
 func tick(delta:float)->void:
 	if not active() or state.suspended:return
+	if waiting_prepared() and not state.consent and world.director.time>=prepared_until:
+		prepared_batch=""
+		end_circle(LocalText.text("meal.timer.finished"))
 	if not circle_closed and state.current.has("meal_remaining"):
 		state.current.meal_remaining=maxf(0,float(state.current.meal_remaining)-delta)
 		if state.current.meal_remaining<=0:
 			end_circle(LocalText.text("meal.timer.finished"));return
 	if state.remaining>0:state.remaining=maxf(0,state.remaining-delta)
-	if not circle_closed and not near(str(state.get("roast_by","human") if not state.current.is_empty() else state.get("light_by","human")),float(config.near_radius)):away+=delta
+	if not circle_closed and not (waiting_prepared()) and not near(str(state.get("roast_by","human") if not state.current.is_empty() else state.get("light_by","human")),float(config.near_radius)):away+=delta
 	else:away=0
 	if away>float(config.away_seconds):end_circle(LocalText.text("system.fireside.you_left_the_fireside"));away=0
 	for id in jobs.keys():
@@ -273,7 +302,7 @@ func tick(delta:float)->void:
 		join_after=world.director.time+1
 		for id in world.actors:
 			if world.director.time<float(suppressed.get(id,0)):continue
-			var eligible:bool=((state.get("roast_by","human")=="human" or steward_human_join) and not state.current.get("direct_grill",false) and near(id,float(config.near_radius)) and state.current.get("ready",false) and life.station.portions>0) if id=="human" else id in state.invited
+			var eligible:bool=((state.get("roast_by","human")=="human") and not state.current.get("direct_grill",false) and near(id,float(config.near_radius)) and state.current.get("ready",false) and life.station.portions>0) if id=="human" else id in state.invited
 			if eligible:join(id)
 	if state.consent and not circle_closed:dialogue.tick()
 	if state.remaining<=0:
@@ -322,13 +351,18 @@ func tick_job(id:String,job:Dictionary,delta:float)->void:
 		world.barbecue_tastes.by_actor[id]=tasted
 		if first and id!="human" and world.recipes.metadata.get(state.current.food_id,{}).get("signature_trait","")==world.intelligence.tag(id):
 			var witnesses:Array=[id]
-			if "human" in state.attended and world.actors.human.region_id==world.actors[id].region_id and world.point(world.actors.human).distance_to(world.point(world.actors[id]))<=12:witnesses.append("human")
+			if ("human" in state.attended or (state.current.get("direct_grill",false) and state.roast_by=="human")) and world.actors.human.region_id==world.actors[id].region_id and world.point(world.actors.human).distance_to(world.point(world.actors[id]))<=12:witnesses.append("human")
 			world.memories.record_event("signature_taste",id+":"+state.current.food_id,witnesses,{"actor_id":id,"recipe_id":state.current.food_id})
+		elif first and id!="human" and state.current.food_id!="mushroom" and dialogue.taste_kind(id,current_food(id))=="favorite":
+			var witnesses:Array=[id]
+			if ("human" in state.attended or (state.current.get("direct_grill",false) and state.roast_by=="human")) and world.actors.human.region_id==world.actors[id].region_id and world.point(world.actors.human).distance_to(world.point(world.actors[id]))<=12:witnesses.append("human")
+			world.memories.record_event("favorite_taste",id+":"+state.current.food_id,witnesses,{"actor_id":id,"food_id":state.current.food_id,"meal_id":state.current.id})
 		if not state.ate.has(id):state.ate[id]=[]
 		state.ate[id].append({"food_id":state.current.food_id,"name":state.current.name,"category":state.current.category,"first_time":first,"first_time_known":taste_history_known(state.current.food_id)})
 		var food:Dictionary=state.ate[id][-1].duplicate(true);food["fish"]=state.current.fish.duplicate(true)
 		job["meal_finished_at"]=world.director.time
 		world.hunger.ate(id,state.current.id+":"+id,"barbecue",life.station.id)
+		dialogue.finished(id,food)
 		job.phase="fire_sit";job.time=0;world.actors[id].activity="fire_sit";world.revision+=1
 func current_food(id:String)->Dictionary:
 	var tasted:Array=world.barbecue_tastes.by_actor.get(id,[])
@@ -370,6 +404,7 @@ func discard_remaining()->void:
 	life.station.portions=0
 
 func after_load()->void:
+	prepared_batch=""
 	jobs.clear();seats.clear();suppressed.clear();dialogue.clear();circle_closed=true;selected_guests=[]
 	if state.get("current",{}).has("meal_duration"):
 		var old_duration:float=float(state.current.meal_duration)

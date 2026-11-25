@@ -53,7 +53,8 @@ func run()->void:
 		hud.notices_signature="";hud.refresh();await process_frame;await process_frame
 		var stock:Array=UI.descendants(hud.notifications).filter(func(n):return n is Button and n.text=="放入渔场")
 		check(not stock.is_empty() and await UI.click(self,stock[0]),"standard real mouse requests quick placement")
-		check(w.fishing.fish.values().filter(func(f):return f.location in ["pending","storage"]).size()==5 and game.status.text.contains("尚未建好"),"unbuilt standard pens preserve all real fish and explain blocker")
+		# DIRECTION「用户试玩 1a4ebbc 与第八轮」：两种开局的渔场开局即建好。
+		check(w.fishing.unplaced_fish().size()==4 and w.fishing.fish.size()==5 and w.fishing.pens.values().any(func(p):return w.fishing.pen_count(p.id)==1),"standard stocks one exact caught fish on the first click without building")
 		var release:Array=UI.descendants(hud.notifications).filter(func(n):return n is Button and n.text=="放生")
 		check(not release.is_empty() and await UI.click(self,release[0]),"standard real mouse can release fish")
 		check(w.fishing.fish.size()==4,"standard release removes one real fish")

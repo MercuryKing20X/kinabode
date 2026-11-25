@@ -1,0 +1,56 @@
+keys,zh,en
+company.games,想一起玩的话：捉迷藏、踢毽子、跳绳；夜里还有追萤火虫和拉圈圈唱歌。,We can play hide and seek or shuttlecock or jump rope. At night we can chase fireflies or sing in a circle.
+company.pat,摸摸头,Pat her head
+company.care,照顾她,Spend time with her
+company.sit,陪她坐一会儿,Sit with her
+company.snack,递吃的,Offer a snack
+company.comfort,哄哄她,Comfort her
+company.no_snacks,仓库里没有能递的零嘴。,There’s nothing in the warehouse to offer as a snack.
+company.snack_pick,从仓库拿一样递给她,Pick a snack from the warehouse
+company.busy,她这会儿还抽不开身。,She can’t step away just now.
+company.unreachable,现在走不到她身边。,There’s no clear way to reach her right now.
+company.return,你不在的时候,While you were away
+company.absence_minutes,离开了 %d 分钟。,You were away for %d minutes.
+company.absence_hours,离开了 %d 小时。,You were away for %d hours.
+company.absence_days,离开了 %d 天。,You were away for %d days.
+company.absence_hunger,离线最多让原本不饿的伙伴变得有点饿。,Companions who weren’t hungry can get a little peckish while you’re away.
+company.absence_crops,%d 株已浇水的作物在这段时间里成熟了。,%d watered plants ripened.
+company.absence_no_crop,没有新成熟的作物；没有自动收成。,Nothing new ripened. Nothing was harvested.
+company.absence_diaries,上次留下的日记：%s。,Diary pages from before you left: %s.
+company.absence_no_diaries,没有留下新的离线日记。,No new diaries were written offline.
+company.absence_arrivals,回来后到了你身边：%s。,Came over after you returned: %s.
+company.absence_arranging,伙伴们还在各自的位置。,Everyone is still where you left them.
+company.absence_letters,信箱有回来的留言。,There’s a note for you in the mailbox.
+company.return_letter,我给你留了个位置。回来就好，其他事慢慢说。,I saved you a seat. I'm glad you're back. Everything else can wait.
+company.story,讲个故事吧,Tell us a story
+company.ask,问我一个问题,Ask me something
+company.night_unavailable,傍晚或夜里，和伙伴在围炉坐下再说吧。,Let’s talk when we’re sitting around the fire at dusk or after dark.
+company.night_used,今晚已经说过一回夜话了。,We’ve already had our fireside talk tonight.
+company.type,打字回答,Write my own answer
+company.send,记下来,Send answer
+company.pass,今晚先不答,Pass for tonight
+company.answer,%s 答：%s,My answer to “%s”: %s
+company.recall,那晚你说「%s」。我还记得。,That night you told me “%s.” I remember.
+company.listen,我也在听呢。,I’m listening too.
+company.promises,我们的约定,Our promises
+company.sunrise,明早去广场一起看日出,Watch the sunrise at the plaza tomorrow
+company.fireside,明晚一起去火边,Meet by the campfire tomorrow evening
+company.promise_question,要不要约好：%s？,Shall we make a plan? %s?
+company.promise_day,第 %d 天 · %s,Day %d · %s
+company.promise_yes,好呀,It’s a plan
+company.promise_no,下次吧,Another time
+company.promise_remind,到我们约好的时候啦。,It’s time for our little plan.
+company.promise_kept,你来了。我一直记着呢。,You came. I’d been looking forward to it.
+company.promise_missed,昨天没等到你。下回再一起吧。,I missed you yesterday. We can try again another time.
+company.camera,拍照,Camera
+company.shutter,快门,Take photo
+company.zoom_in,拉近,Zoom in
+company.zoom_out,拉远,Zoom out
+company.photo_folder,打开照片文件夹,Open photo folder
+company.photo_title,岛上随手拍,An island photograph
+company.photo_saved,照片已放进回忆册。,Photo added to the album.
+company.photo_failed,没能存下照片。,The photo couldn’t be saved.
+company.photo_where,%s · 第 %d 天 · %s,%s · Day %d · %s
+company.pat_first,第一次摸摸头。,Our first little pat on the head.
+company.comfort_first,你第一次把她哄好了。,The first time you helped her feel better.
+company.promise_first,我们第一次守住了约定。,The first time we kept a promise together.

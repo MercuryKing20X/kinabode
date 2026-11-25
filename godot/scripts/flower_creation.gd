@@ -13,7 +13,10 @@ var gifts:Dictionary={}
 var first_received:=false
 var serial:=0
 var next_auto:=0.0
-func _init(w:RefCounted)->void:owner=weakref(w)
+var creations: RefCounted
+func _init(w:RefCounted)->void:
+	owner=weakref(w)
+	creations=preload("res://scripts/world_creations.gd").new(self)
 func item(color:String)->String:return "rose_"+color
 func active(id:String)->bool:return jobs.has(id)
 func fail(reason:String)->Dictionary:
@@ -22,7 +25,6 @@ func fail(reason:String)->Dictionary:
 	return {"ok":false,"error":reason,"message":str(messages.get(reason,[reason,reason])[1 if en else 0])}
 func preflight(id:String)->Dictionary:
 	if not world.actors.has(id):return fail("unknown_resident")
-	if id!="human" and world.hunger.rank(id)>=3:return fail("very_hungry")
 	var r:RefCounted=world.director.routines.get(id)
 	if active(id) or world.shared_activity.contains(id) or world.work.jobs.has(id) or world.farms.active(id) or world.projects.active(id) or world.homestead.active(id) or not world.fishing.held(id).is_empty() or world.activities.members.has(id) or world.activities.held.get(id,false) or (r!=null and r.held):return fail("busy")
 	return {"ok":true}
@@ -32,7 +34,7 @@ func point(args:Dictionary)->Vector2:
 	return Vector2(roundf(pos[0]),roundf(pos[1]))
 func key(region:String,p:Vector2)->String:return region+":"+str(int(p.x))+":"+str(int(p.y))
 func space(region:String,p:Vector2)->bool:
-	if not is_finite(p.x) or not is_finite(p.y) or not world.walkable(region,p) or flowers.has(key(region,p)):return false
+	if not is_finite(p.x) or not is_finite(p.y) or not world.walkable(region,p) or flowers.has(key(region,p)) or creations.pieces.has(key(region,p)):return false
 	for job in jobs.values():
 		if job.region==region and job.points.has(p):return false
 	if region=="home":
@@ -90,12 +92,7 @@ func execute(id:String,args:Dictionary)->Dictionary:
 	if (args.has("position") or args.has("x") or args.has("y")) and not p.is_finite():return fail("invalid_position")
 	if region!=world.actors[id].region_id:return fail("different_region")
 	if action=="gift_flower":
-		if id=="human":return fail("resident_only")
-		if int(gifts.get(id,{}).get("day",0))==world.days.day() and int(gifts[id].count)>=int(config.gifts_per_day):return fail("daily_limit")
-		if not world.storage.has({item(color):1}):return fail("insufficient_materials")
-		if world.actors.human.region_id!=region:return fail("different_region")
-		p=world.nearest_walkable(region,world.point(world.actors.human)+Vector2(0,1.5))
-		return begin(id,{"action":action,"region":region,"points":[],"color":color,"target":p,"elapsed":0.0,"offered":false})
+		return begin_gift(id,"human",color,false)
 	if action=="pick_flower":
 		if not flowers.has(key(region,p)):return fail("no_flower")
 		return begin(id,{"action":action,"region":region,"points":[],"color":color,"target":p,"elapsed":0.0})
@@ -134,6 +131,16 @@ func execute(id:String,args:Dictionary)->Dictionary:
 	serial+=1
 	return begin(id,{"action":action,"region":region,"points":points,"color":color,"target":points[0],"elapsed":0.0,"pattern_id":"arrangement-"+str(serial),"label":str(args.get("text",args.get("pattern","single")))})
 var trade_authority:Callable
+func begin_gift(id:String,recipient:String,color:String,heart_project:bool)->Dictionary:
+	var check:Dictionary=preflight(id)
+	if not check.ok:return check
+	if id=="human" or id==recipient or not world.actors.has(recipient) or color not in config.colors:return fail("resident_only")
+	if not heart_project and int(gifts.get(id,{}).get("day",0))==world.days.day() and int(gifts[id].count)>=int(config.gifts_per_day):return fail("daily_limit")
+	if not world.storage.has({item(color):1}):return fail("insufficient_materials")
+	var region:String=world.actors[id].region_id
+	if world.actors[recipient].region_id!=region:return fail("different_region")
+	var at:Vector2=world.nearest_walkable(region,world.point(world.actors[recipient])+Vector2(0,1.5))
+	return begin(id,{"action":"gift_flower","region":region,"points":[],"color":color,"target":at,"elapsed":0.0,"offered":false,"recipient":recipient,"heart_project":heart_project})
 func begin(id:String,job:Dictionary)->Dictionary:
 	if not world.route_to(id,job.target):return fail("unreachable")
 	if job.action=="gift_flower":
@@ -153,6 +160,21 @@ func pick(k:String)->void:
 	var f:Dictionary=flowers[k]
 	if not world.storage.add({item(f.color):1}):return
 	flowers.erase(k);world.revision+=1
+func place_carried(id:String,item_id:String)->String:
+	var actor:Dictionary=world.actors[id]
+	var check:Dictionary=preflight(id)
+	if not check.ok:return check.error
+	var color:String=item_id.trim_prefix("rose_")
+	var p:Vector2=world.point(actor).round()+Vector2(0,1)
+	if item(color)!=item_id or color not in config.colors or int(actor.carry.get(item_id,0))<1:return "insufficient_owned_items"
+	if flowers.size()>=int(config.world_limit) or not space(actor.region_id,p):return "blocked_position"
+	preload("res://scripts/carry_retention.gd").consume(actor,item_id,1)
+	actor.carry[item_id]=int(actor.carry.get(item_id,0))-1
+	if actor.carry[item_id]==0:actor.carry.erase(item_id)
+	serial+=1
+	flowers[key(actor.region_id,p)]={"position":[int(p.x),int(p.y)],"region_id":actor.region_id,"color":color,"actor_id":id,"pattern_id":"arrangement-"+str(serial),"label":"single"}
+	world.revision+=1
+	return ""
 func finish(id:String)->void:
 	var job:Dictionary=jobs[id]
 	if id!="human" and world.actors.human.region_id==job.region and world.route_to(id,world.nearest_walkable(job.region,world.point(world.actors.human)+Vector2(1.5,0))):
@@ -162,7 +184,7 @@ func advance(delta:float)->void:
 	for id in jobs.keys():
 		var job:Dictionary=jobs[id];job.age+=delta
 		var r:RefCounted=world.director.routines.get(id)
-		if world.work.jobs.has(id) or world.farms.active(id) or world.projects.active(id) or world.activities.blocked(id,false) or job.age>float(config.timeout_seconds) or world.actors[id].region_id!=job.region or (id!="human" and (world.hunger.rank(id)>=3 or (r!=null and r.held))):cancel(id);continue
+		if world.work.jobs.has(id) or world.farms.active(id) or world.projects.active(id) or world.activities.blocked(id,false) or job.age>float(config.timeout_seconds) or world.actors[id].region_id!=job.region or (r!=null and r.held):cancel(id);continue
 		if world._routes.has(id):
 			if not is_same(job.route,world._routes[id]):cancel(id)
 			continue
@@ -170,14 +192,17 @@ func advance(delta:float)->void:
 		if world.point(world.actors[id]).distance_to(job.target)>.65:cancel(id);continue
 		job.elapsed+=delta
 		if job.action=="gift_flower":
-			if world.point(world.actors.human).distance_to(world.point(world.actors[id]))>2.8:cancel(id);continue
+			var recipient:String=job.get("recipient","human")
+			if world.actors[recipient].region_id!=job.region or world.point(world.actors[recipient]).distance_to(world.point(world.actors[id]))>2.8:cancel(id);continue
 			world.actors[id].activity="local_offer_flower"
 			if job.elapsed<1.5:continue
 			# The rose is received into the shared warehouse, never destroyed or copied.
 			world.storage.add({item(job.color):1});job.offered=false
 			var count:int=int(gifts.get(id,{}).get("count",0)) if int(gifts.get(id,{}).get("day",0))==world.days.day() else 0
 			gifts[id]={"day":world.days.day(),"count":count+1}
-			record(id,"gift_flower",job.color,not first_received);first_received=true
+			record(id,"gift_flower",job.color,not first_received and recipient=="human")
+			if recipient=="human":first_received=true
+			job["committed"]=true
 			var line:String="这朵玫瑰送给你。" if not TranslationServer.get_locale().begins_with("en") else "This rose is for you."
 			world.director.say_local(id,line,"flower_creation",30,14)
 			finish(id);continue
@@ -192,7 +217,7 @@ func advance(delta:float)->void:
 		if not space(job.region,p) or not world.storage.take({item(job.color):1}).ok:cancel(id);continue
 		flowers[key(job.region,p)]={"position":[int(p.x),int(p.y)],"region_id":job.region,"color":job.color,"actor_id":id,"pattern_id":job.pattern_id,"label":job.label}
 		world.revision+=1
-		if job.points.is_empty():record(id,"flower_arrangement",job.label,false);finish(id)
+		if job.points.is_empty():job["committed"]=true;record(id,"flower_arrangement",job.label,false);finish(id)
 		else:
 			job.target=job.points[0]
 			if not world.route_to(id,job.target):cancel(id)
@@ -201,18 +226,22 @@ func advance(delta:float)->void:
 		next_auto=world.forest.clock+30
 		for id in world.director.routines:
 			var r:RefCounted=world.director.routines[id]
+			if world.director.brains.has(id) and world.director.brains[id].current.has("basic_plan"):continue
 			if r.blocked() or not r.enabled or r.held or r.time<r.visual_quiet_until or world.director.model_controlled(id) or world._routes.has(id) or world.point(world.actors[id]).distance_to(world.point(world.actors.human))>6:continue
 			if int(gifts.get(id,{}).get("day",0))==world.days.day() or not preflight(id).ok:continue
 			for color in config.colors:
 				if world.storage.count(item(color))>0:
 					world.command(id,{"intent":"gift_flower","color":color});break
 func record(id:String,kind:String,label:String,first:bool)->void:
+	var job:Dictionary=jobs.get(id,{})
+	if world.get("hearts")!=null:
+		world.hearts.change(id,{"joy":10,"safe":8},"shared")
 	var book:RefCounted=world.memories.notebook
 	if book==null:return
 	var event:String="flowers:%s:%s:%s"%[id,world.days.day(),world.revision]
 	var zh:String="收到她送来的一朵%s玫瑰。"%label if kind=="gift_flower" else "摆好了玫瑰图案：%s。"%label
 	var en:String="Received her %s rose."%label if kind=="gift_flower" else "Arranged roses: %s."%label
-	book.add(id,world.world_id,event,"facts","memory.localized_fact",{"localized":{"zh":zh,"en":en},"legacy":{"kind":kind,"actor_id":id,"color":label,"first":first}},world.days.day(),"game",[id,"human"] if kind=="gift_flower" else [id],world.forest.clock)
+	book.add(id,world.world_id,event,"facts","memory.localized_fact",{"localized":{"zh":zh,"en":en},"legacy":{"kind":kind,"actor_id":id,"color":label,"first":first}},world.days.day(),"game",[id,job.get("recipient","human")] if kind=="gift_flower" else [id],world.forest.clock)
 func summary(id:String)->Dictionary:
 	var roses:Dictionary={}
 	for color in config.colors:roses[color]=world.storage.count(item(color))

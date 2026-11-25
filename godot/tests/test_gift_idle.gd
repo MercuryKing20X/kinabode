@@ -21,7 +21,7 @@ func configuration(w: RefCounted) -> void:
 	w.activities.release_follow("npc.mira");w.activities.default_follow_excluded["npc.mira"]=true
 	w.director.local_dialogue.next_check=INF
 	w.days.config.greeting_after=w.days.day_seconds+1;w.days.config.small_after=w.days.day_seconds+1
-	w.wishes.config.first_after=86400;w.relationships.config.stage_events_enabled=false;w.personality.config.fact_events_enabled=false
+	w.relationships.config.stage_events_enabled=false;w.personality.config.fact_events_enabled=false
 	var r: RefCounted=w.director.routines["npc.mira"];r.set_enabled(true);r.set_chatter(true);r.rng.seed=1027
 func simulate(w: RefCounted) -> Dictionary:
 	configuration(w)

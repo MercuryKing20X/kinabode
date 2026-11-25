@@ -21,6 +21,7 @@ os.environ.setdefault("HABITAT_TEST_SEED", "1027")
 # Offline is the suite default, including an accidentally unreplaced native
 # adapter. A test can still select its own explicit fake executable locally.
 os.environ.setdefault("HABITAT_CODEX", "habitat-offline-model-disabled")
+os.environ.setdefault("HABITAT_THINKER_FAKE_DIR", str(ROOT / "godot/.godot/no-live-thinker"))
 # The GPT bridge uses urllib. Deny external HTTP in this process tree while
 # retaining the local fake HTTP/WebSocket servers used by protocol tests.
 for proxy_name in ["HTTP_PROXY","HTTPS_PROXY","ALL_PROXY","http_proxy","https_proxy","all_proxy"]:
@@ -78,9 +79,19 @@ subprocess.run([sys.executable,str(ROOT / "scripts/generate_island_v3_palette.py
 # the existing import cache; never let the engine resolve the player's user://.
 shadow = runtime / "workspace"
 shadow.mkdir()
-for source in ROOT.iterdir():
-    if source.name != "godot": (shadow / source.name).symlink_to(source, target_is_directory=source.is_dir())
 private_fixtures = os.environ.get("HABITAT_PRIVATE_TEST_FIXTURES")
+fixture_root = Path(private_fixtures).resolve() if private_fixtures else ROOT
+fixture_requirements = {
+    "probe_one_line_execution.gd": ["production/evidence/2026-11-05-智能一句话与跟随/coverage-cases.json"],
+    "probe_one_line_coverage.gd": ["production/evidence/2026-11-05-智能一句话与跟随/coverage-cases.json"],
+    "test_character_face_directions.py": ["production/art/ai-girls-studies/import_studies.py", "production/art/ai-girls-studies/import_actions_v2.py"],
+    "test_autonomy_bridge.py": ["production/evidence/autonomy/native-tools-0.3.0.json"],
+    "test_overnight_prompt.py": ["production/evidence/overnight-2026-10-27/prompt-context.json", "production/evidence/autonomy/ultra-30min.json"],
+    "test_documentation_migration.py": ["production/evidence/2026-10-27-polish/documentation-map.json", "production/evidence/2026-10-27-polish/before/AGENTS.md", "docs/DEVELOPMENT_LOG.md"],
+}
+for source in ROOT.iterdir():
+    if source.name != "godot" and (source.name != "production" or not private_fixtures):
+        (shadow / source.name).symlink_to(source, target_is_directory=source.is_dir())
 if private_fixtures:
     fixture_root = Path(private_fixtures).resolve()
     if not (fixture_root / "production").is_dir(): parser.error("HABITAT_PRIVATE_TEST_FIXTURES must contain production/")
@@ -88,6 +99,9 @@ if private_fixtures:
     print("PRIVATE_TEST_FIXTURES enabled (read-only historical inputs; excluded from public source)", flush=True)
 project = shadow / "godot"
 project.mkdir()
+# The editor import runs in a case project; create the cache before making
+# case symlinks so the imported resources are visible to every fresh checkout.
+(ROOT / "godot/.godot").mkdir(exist_ok=True)
 for source in (ROOT / "godot").iterdir():
     if source.name not in {"project.godot", "scripts", "tests"}: (project / source.name).symlink_to(source, target_is_directory=source.is_dir())
 if os.environ["HABITAT_DETERMINISTIC_TESTS"] == "1":
@@ -127,14 +141,19 @@ def visible_session():
 def execute(item):
     command, env = item
     started = time.monotonic()
+    missing = [p for p in fixture_requirements.get(Path(command[-1]).name, []) if not (fixture_root / p).is_file()]
+    if missing:
+        record = {'command': command, 'passed': False, 'skipped': True, 'seconds': 0,
+                  'reason': 'Missing historical fixture: ' + ', '.join(missing)}
+        if env and 'HABITAT_COVERAGE_START' in env:
+            record['coverage_range'] = [int(env['HABITAT_COVERAGE_START']), int(env['HABITAT_COVERAGE_END'])]
+        return record, record['reason']
     timeout = 300 if 'tests/test_fish_v3_input.gd' in command or 'tests/test_life_archive.gd' in command or 'tests/test_local_dialogue.gd' in command or 'tests/test_orange_sunflower_input.gd' in command or 'tests/test_steward_day.gd' in command or 'tests/test_steward_long_host.gd' in command else 180 if 'tests/test_stuck_save_input.gd' in command or 'tests/test_island_recipe_save_contract.gd' in command or 'tests/test_island_recipe_meals_input.gd' in command or 'scripts/test_read_bridge.py' in command or 'tests/test_local_life_15d.gd' in command or 'tests/test_playtest_invitation_input.gd' in command or 'tests/test_their_island_story_input.gd' in command or 'tests/test_their_island_build_input.gd' in command else 90
-    if "tests/test_steward_director_long.gd" in command: timeout = 600
     if "tests/test_brain_30min.gd" in command: timeout = 1500
     if "tests/test_brain_input.gd" in command: timeout = 600
     if Path(command[-1]).name in {"test_one_line_follow_input.gd","test_resident_intentions.gd","test_follow_play_input.gd"}: timeout = 300
-    if "tests/probe_steward_squad.gd" in command: timeout = 300
     if "tests/probe_one_line_execution.gd" in command: timeout = 1800
-    if "tests/test_intention_catalog.gd" in command or "tests/test_steward_async.gd" in command: timeout = 300
+    if "tests/test_intention_catalog.gd" in command: timeout = 300
     with tempfile.TemporaryDirectory(prefix="youqi-check-", dir=runtime) as directory:
         # Give every engine process tree its own user:// as well as game data.
         # Source/imports are shared, writable user preferences are not.
@@ -179,10 +198,12 @@ def execute(item):
     if not record['passed']: record['failure_output'] = output
     return record, output
 
-for script in ["test_flower_group.gd", "test_flower_guards.gd", "test_creation_quiet_night.gd", "test_flower_creation.gd", "test_flower_isle_migration.gd", "test_flower_panel_input.gd", "test_flower_creation_input.gd", "test_creation_writing.gd", "test_creation_writing_input.gd", "test_brain_legacy_init.gd", "test_command_delivery_unit.gd", "test_follow_play_input.gd", "test_brain_30min.gd", "test_brain_input.gd", "test_brain_contract.gd", "test_v06_delivery_input.gd", "test_v06_wardrobe_input.gd", "test_orange_chop_v06.gd", "test_steward_director_long.gd", "probe_steward_squad.gd", "test_tutorial_goals.gd", "test_local_steward_entry.gd", "test_steward_90s_lease.gd", "test_steward_async.gd", "test_local_dialogue_clock.gd", "test_follow_selection_boundary.gd", "test_carry_retention.gd", "test_orange_talk_input.gd", "test_life_archive.gd", "test_daily_quota.gd", "test_local_dialogue.gd", "test_fish_v3_input.gd", "test_orange_sunflower_input.gd", "test_connection_ownership.gd", "test_opening_connecting_body.gd", "test_meal_timer_running.gd", "test_connection_idle_twenty.gd", "test_steward_long_host.gd", "test_steward_opening_input.gd", "test_steward_human_input.gd", "test_connection_cancel_input.gd", "test_camera_points_input.gd", "test_flexible_queue_input.gd", "test_playground_input.gd", "test_dialogue_bar_input.gd", "test_steward_repair_input.gd", "test_steward_connections.gd", "test_steward_day.gd", "test_steward.gd", "test_resident_recipe_guard.gd", "test_empowered_autonomy.gd", "test_intention_catalog.gd", "test_empowered_input.gd", "test_empowered_cat.gd", "test_resident_intentions.gd", "test_command_page_input.gd", "test_command_delivery_input.gd", "test_first_ai_stub.gd", "test_unified_dialogue_input.gd", "test_persona_guard.gd", "test_memory_books.gd", "test_memory_migration.gd", "test_intent_input.gd", "test_resort_revision_migration.gd", "test_two_villa_input.gd", "test_two_villa_migration.gd", "test_health_ai.gd", "test_health_ai_labor.gd", "test_chat_composition_input.gd", "test_intelligence_core_input.gd", "test_farm_host_plan.gd", "test_farm_helpers_1105.gd", "test_local_host_command_parse.gd", "test_local_command_card_input.gd", "test_local_command_main_input.gd", "test_ui_scale_preferences.gd", "test_standard_seed_sources_input.gd", "test_island_recipe_save_contract.gd", "test_music_preview.gd", "test_cultivated_beds.gd", "test_cultivated_beds_input.gd", "test_fish_drying_input.gd", "test_island_ingredients.gd", "test_ingredient_native_input.gd", "test_ingredient_south_input.gd", "test_island_recipe_contract.gd", "test_island_recipe_input.gd", "test_island_recipe_meals_input.gd", "test_cat_mainland_openings.gd", "test_south_roads_cat.gd", "test_home_island_visited.gd", "test_bbq_walk_matrix.gd", "test_home_island_render.gd", "test_home_island_migration.gd", "test_home_island_parse.gd", "test_host_build_all.gd", "test_home_island_input.gd", "capture_playtest_camera.gd", "test_playtest_invitation_input.gd", "test_playtest_gomoku_input.gd", "test_companion_return.gd", "test_speech_quiet.gd", "test_speech_quiet_input.gd", "test_playtest_fishing_invitation_input.gd", "test_garden_command.gd", "test_dark_island.gd", "test_dark_audio.gd", "test_dark_companions.gd", "test_dark_direct_grill.gd", "test_camera_defaults_1101.gd", "test_player_follow.gd"]:
+for script in ["test_flower_group.gd", "test_flower_guards.gd", "test_creation_quiet_night.gd", "test_flower_creation.gd", "test_flower_isle_migration.gd", "test_flower_panel_input.gd", "test_flower_creation_input.gd", "test_creation_writing.gd", "test_creation_writing_input.gd", "test_brain_legacy_init.gd", "test_command_delivery_unit.gd", "test_follow_play_input.gd", "test_brain_30min.gd", "test_brain_input.gd", "test_brain_contract.gd", "test_v06_delivery_input.gd", "test_v06_wardrobe_input.gd", "test_orange_chop_v06.gd", "test_local_dialogue_clock.gd", "test_follow_selection_boundary.gd", "test_carry_retention.gd", "test_orange_talk_input.gd", "test_life_archive.gd", "test_daily_quota.gd", "test_local_dialogue.gd", "test_fish_v3_input.gd", "test_orange_sunflower_input.gd", "test_connection_ownership.gd", "test_opening_connecting_body.gd", "test_meal_timer_running.gd", "test_connection_cancel_input.gd", "test_camera_points_input.gd", "test_flexible_queue_input.gd", "test_playground_input.gd", "test_dialogue_bar_input.gd", "test_resident_recipe_guard.gd", "test_empowered_autonomy.gd", "test_intention_catalog.gd", "test_empowered_input.gd", "test_empowered_cat.gd", "test_resident_intentions.gd", "test_command_page_input.gd", "test_command_delivery_input.gd", "test_first_ai_stub.gd", "test_unified_dialogue_input.gd", "test_persona_guard.gd", "test_memory_books.gd", "test_memory_migration.gd", "test_intent_input.gd", "test_resort_revision_migration.gd", "test_two_villa_input.gd", "test_two_villa_migration.gd", "test_health_ai.gd", "test_health_ai_labor.gd", "test_chat_composition_input.gd", "test_intelligence_core_input.gd", "test_farm_host_plan.gd", "test_farm_helpers_1105.gd", "test_local_host_command_parse.gd", "test_local_command_card_input.gd", "test_local_command_main_input.gd", "test_ui_scale_preferences.gd", "test_standard_seed_sources_input.gd", "test_island_recipe_save_contract.gd", "test_music_preview.gd", "test_cultivated_beds.gd", "test_cultivated_beds_input.gd", "test_fish_drying_input.gd", "test_island_ingredients.gd", "test_ingredient_native_input.gd", "test_ingredient_south_input.gd", "test_island_recipe_contract.gd", "test_island_recipe_input.gd", "test_island_recipe_meals_input.gd", "test_cat_mainland_openings.gd", "test_south_roads_cat.gd", "test_home_island_visited.gd", "test_bbq_walk_matrix.gd", "test_home_island_render.gd", "test_home_island_migration.gd", "test_home_island_parse.gd", "test_home_island_input.gd", "capture_playtest_camera.gd", "test_playtest_invitation_input.gd", "test_playtest_gomoku_input.gd", "test_companion_return.gd", "test_speech_quiet.gd", "test_speech_quiet_input.gd", "test_playtest_fishing_invitation_input.gd", "test_garden_command.gd", "test_dark_island.gd", "test_dark_audio.gd", "test_dark_companions.gd", "test_dark_direct_grill.gd", "test_camera_defaults_1101.gd", "test_player_follow.gd"]:
     if (ROOT / "godot/tests" / script).exists():
         with temporary_directory(prefix="youqi-test-") as directory:
             run([ENGINE]+([] if script=="test_meal_timer_running.gd" and os.environ.get("HABITAT_UI_EVIDENCE") else ["--headless"])+["--path","godot","--script","tests/"+script],dict(os.environ,HABITAT_DATA_DIR=directory))
+with temporary_directory(prefix="youqi-test-") as directory:
+    run([ENGINE, "--headless", "--path", "godot", "--script", "tests/test_player_order_priority.gd"], dict(os.environ, HABITAT_DATA_DIR=directory))
 with temporary_directory(prefix="youqi-test-") as directory:
     run([ENGINE]+([] if os.environ.get("STUCK_NATIVE") else ["--headless"])+["--path","godot","--script","tests/test_stuck_save_input.gd"],dict(os.environ,HABITAT_DATA_DIR=directory))
 with temporary_directory(prefix="youqi-test-") as directory:
@@ -238,7 +259,7 @@ with temporary_directory(prefix="youqi-test-") as directory:
 with temporary_directory(prefix="youqi-test-") as directory:
     run([ENGINE,"--headless","--path","godot","--script","tests/test_shared_memories.gd"],dict(os.environ,HABITAT_DATA_DIR=directory))
 
-for script in ["test_lifeblood_input.gd","test_lifeblood_memory.gd","test_memory_ai.gd","test_memory_life_input.gd","test_one_line_cloud_stub.gd","test_one_line_social_input.gd","test_one_line_water_input.gd","probe_one_line_coverage.gd","test_one_line_labor_input.gd","probe_one_line_speech.gd","test_one_line_follow_input.gd","test_fishing.gd","test_fishing_invite_v2.gd","test_fishing_invite_ui_v2.gd","test_fishing_animations_v2.gd","test_fishing_cards_ui_v2.gd","test_fishing_cards_standard_v2.gd","test_fishing_stock_capacity_v2.gd","test_fishing_speech_v2.gd","test_fishing_swim_v2.gd","test_fishing_outfit_ui_v2.gd","test_fishing_revision.gd","test_fishing_controller.gd","test_fishing_experience.gd","test_gomoku.gd","test_gomoku_controller.gd","test_cooking.gd","test_cooking_controller.gd","test_journal.gd","test_journal_controller.gd","test_days.gd","test_days_controller.gd","test_backpack.gd","test_backpack_controller.gd","test_resident_connections.gd","test_homestead.gd","test_homestead_controller.gd","test_memory_reminders.gd","test_memory_reminders_controller.gd","test_resident_moods.gd","test_resident_moods_controller.gd","test_autonomy_context.gd","test_autonomy_scheduler.gd","test_autonomy_controller.gd","test_autonomy_sources.gd","test_autonomy_simulation.gd","test_overnight_autonomy.gd","test_autonomy_records.gd","test_proposals.gd","test_promises.gd","test_gifts.gd","test_cooperation.gd","test_polish_fixes.gd","test_polish_usage.gd","test_polish_navigation.gd","test_relationships.gd","test_wishes.gd","test_wishes_controller.gd","test_schedules_weather.gd","test_weather_controller.gd","test_personality.gd","test_personality_controller.gd","test_local_life_simulation.gd","probe_relationship_pacing_compatibility.gd","test_local_life_15d.gd","test_relationship_rewards.gd","test_relationship_rewards_controller.gd","test_wish_feasibility.gd","test_personality_rhythm.gd","test_gift_idle.gd","test_gomoku_companion.gd","test_gomoku_dialogue.gd","test_gomoku_ai.gd","test_gomoku_match_host.gd","test_gomoku_ai_controller.gd","test_map_locations.gd","test_island_v3_style.gd","test_tile_terrain.gd","test_island_v3_sample.gd","test_polygon_study_ground.gd","test_art_plaza_layout.gd","test_study_house_works.gd","test_art_residential_layout.gd","test_art_study_scene.gd","test_art_comparison.gd","test_house_retrofits.gd","test_home_v3_data.gd","test_showcase_opening.gd","test_home_v3_systems.gd","test_home_v3_art.gd","test_home_v3_ui.gd","test_home_v3_simulation.gd","test_home_v3_conservation.gd","test_home_v3_distances.gd","test_home_v3_layout.gd","test_home_v3_polish.gd","test_home_v3_atmosphere.gd","test_home_v3_ui_polish.gd","test_resident_card_close_v2.gd"]:
+for script in ["test_lifeblood_input.gd","test_lifeblood_memory.gd","test_memory_ai.gd","test_memory_life_input.gd","test_one_line_cloud_stub.gd","test_one_line_social_input.gd","test_one_line_water_input.gd","probe_one_line_coverage.gd","test_one_line_labor_input.gd","probe_one_line_speech.gd","test_one_line_follow_input.gd","test_fishing.gd","test_fishing_invite_v2.gd","test_fishing_invite_ui_v2.gd","test_fishing_animations_v2.gd","test_fishing_cards_ui_v2.gd","test_fishing_cards_standard_v2.gd","test_fishing_stock_capacity_v2.gd","test_fishing_speech_v2.gd","test_fishing_swim_v2.gd","test_fishing_outfit_ui_v2.gd","test_fishing_revision.gd","test_fishing_controller.gd","test_fishing_experience.gd","test_gomoku.gd","test_gomoku_controller.gd","test_cooking.gd","test_cooking_controller.gd","test_journal.gd","test_journal_controller.gd","test_days.gd","test_days_controller.gd","test_backpack.gd","test_backpack_controller.gd","test_resident_connections.gd","test_homestead.gd","test_homestead_controller.gd","test_memory_reminders.gd","test_memory_reminders_controller.gd","test_resident_moods.gd","test_resident_moods_controller.gd","test_autonomy_context.gd","test_autonomy_scheduler.gd","test_autonomy_controller.gd","test_autonomy_sources.gd","test_autonomy_simulation.gd","test_overnight_autonomy.gd","test_autonomy_records.gd","test_proposals.gd","test_promises.gd","test_gifts.gd","test_cooperation.gd","test_polish_fixes.gd","test_polish_usage.gd","test_polish_navigation.gd","test_relationships.gd","test_schedules_weather.gd","test_weather_controller.gd","test_personality.gd","test_personality_controller.gd","test_local_life_simulation.gd","probe_relationship_pacing_compatibility.gd","test_local_life_15d.gd","test_relationship_rewards.gd","test_relationship_rewards_controller.gd","test_personality_rhythm.gd","test_gift_idle.gd","test_gomoku_companion.gd","test_gomoku_dialogue.gd","test_gomoku_ai.gd","test_gomoku_match_host.gd","test_gomoku_ai_controller.gd","test_map_locations.gd","test_island_v3_style.gd","test_tile_terrain.gd","test_island_v3_sample.gd","test_polygon_study_ground.gd","test_art_plaza_layout.gd","test_study_house_works.gd","test_art_residential_layout.gd","test_art_study_scene.gd","test_house_retrofits.gd","test_home_v3_data.gd","test_showcase_opening.gd","test_home_v3_systems.gd","test_home_v3_art.gd","test_home_v3_ui.gd","test_home_v3_simulation.gd","test_home_v3_conservation.gd","test_home_v3_distances.gd","test_home_v3_layout.gd","test_home_v3_polish.gd","test_home_v3_atmosphere.gd","test_home_v3_ui_polish.gd","test_resident_card_close_v2.gd"]:
     with temporary_directory(prefix="youqi-test-") as directory:
         run([ENGINE,"--headless","--path","godot","--script","tests/"+script],dict(os.environ,HABITAT_DATA_DIR=directory))
 
@@ -249,6 +270,11 @@ for script in ["test_moon_fishing_mouse.gd","test_rod_tip_binding.gd","test_run_
 for script in ["test_direct_grill.gd","test_direct_grill_mouse.gd","test_new_fish.gd","test_direct_grill_refuel.gd"]:
     with temporary_directory(prefix="youqi-test-") as directory:
         run([ENGINE,"--headless","--path","godot","--script","tests/"+script],dict(os.environ,HABITAT_DATA_DIR=directory))
+for script in ["test_world_door.gd","test_world_placement.gd","test_world_checkpoints.gd","test_world_catalog_r4.gd","test_world_actions_r4.gd"]:
+    with temporary_directory(prefix="youqi-test-") as directory:
+        run([ENGINE,"--headless","--path","godot","--script","tests/"+script],dict(os.environ,HABITAT_DATA_DIR=directory))
+with temporary_directory(prefix="youqi-test-") as directory:
+    run([ENGINE,"--headless","--path","godot","--script","tests/test_world_self_meal.gd"],dict(os.environ,HABITAT_DATA_DIR=directory))
 
 for script in ["test_game_audio.gd","test_audio_environment.gd","test_audio_music.gd","test_audio_v2.gd","test_gesture_motion_v2.gd","test_hungry_onlooker.gd","test_save_backup.gd","test_backup_main.gd"]:
     with temporary_directory(prefix="youqi-test-") as directory:
@@ -277,6 +303,8 @@ for script in ["test_overnight_player_standard_home.gd","test_overnight_player_s
 
 with temporary_directory(prefix="youqi-house-appearance-") as directory:
     run([ENGINE,"--headless","--path","godot","--script","tests/test_house_appearance.gd"],dict(os.environ,HABITAT_DATA_DIR=directory))
+for script in ["test_basic_plan.gd", "test_open_sentence_locale.gd"]:
+    run([ENGINE,"--headless","--path","godot","--script","tests/"+script])
 if "test_bbq_state_matrix.gd" in args.only:
     with temporary_directory(prefix="youqi-bbq-matrix-") as directory:
         run([ENGINE,"--headless","--path","godot","--script","tests/test_bbq_state_matrix.gd"],dict(os.environ,HABITAT_DATA_DIR=directory))
@@ -313,7 +341,8 @@ if args.resume:
 def completed(index, outcome):
     record, output = outcome
     results[index] = record
-    print(f"[{sum(r is not None for r in results)}/{len(pending)}] {record['command'][-1]}: {'PASS' if record['passed'] else 'FAIL'} ({record['seconds']}s)", flush=True)
+    verdict = 'SKIP' if record.get('skipped') else 'PASS' if record['passed'] else 'FAIL'
+    print(f"[{sum(r is not None for r in results)}/{len(pending)}] {record['command'][-1]}: {verdict} ({record['seconds']}s)", flush=True)
     if not record['passed'] or os.environ.get('HABITAT_TEST_VERBOSE') == '1': print(output, flush=True)
     report_path.parent.mkdir(parents=True, exist_ok=True)
     report_path.write_text(json.dumps([r for r in results if r is not None], ensure_ascii=False, indent=2) + '\n')
@@ -328,7 +357,7 @@ try:
     def needs_exclusive(c):
         measured_heavy = historical_weights.get(identity(c), 0) >= 40 and Path(c[-1]).name != 'probe_one_line_execution.gd'
         return ('--import' in c or c[0] != ENGINE or 'tests/test_moon_map.gd' in c
-                or measured_heavy or Path(c[-1]).name in {'test_brain_30min.gd','test_brain_input.gd','test_steward_director_long.gd','test_one_line_follow_input.gd','test_resident_intentions.gd','test_follow_play_input.gd','test_local_life_15d.gd','test_home_v3_simulation.gd','test_companion_return.gd','test_intention_catalog.gd','test_camp_click_approach.gd'}
+                or measured_heavy or Path(c[-1]).name in {'test_brain_30min.gd','test_brain_input.gd','test_one_line_follow_input.gd','test_resident_intentions.gd','test_follow_play_input.gd','test_local_life_15d.gd','test_home_v3_simulation.gd','test_companion_return.gd','test_intention_catalog.gd','test_camp_click_approach.gd','test_world_door.gd','test_world_placement.gd'}
                 or Path(c[-1]).name.startswith('test_overnight_player_'))
     exclusive = [i for i,(c,_) in enumerate(pending) if results[i] is None and needs_exclusive(c)]
     imports = [i for i in exclusive if '--import' in pending[i][0]]
@@ -347,7 +376,8 @@ try:
         for future in as_completed(futures): completed(futures[future], future.result())
 finally:
     stack.close()
-failed = [entry for entry in results if entry is not None and not entry['passed']]
-print(f"Complete suite: {len(results)} commands, {len(results)-len(failed)} passed, {len(failed)} failed; {time.monotonic()-suite_started:.1f}s; jobs={jobs}", flush=True)
+failed = [entry for entry in results if entry is not None and not entry['passed'] and not entry.get('skipped')]
+skipped = [entry for entry in results if entry is not None and entry.get('skipped')]
+print(f"Complete suite: {len(results)} commands, {len(results)-len(failed)-len(skipped)} passed, {len(failed)} failed, {len(skipped)} skipped; {time.monotonic()-suite_started:.1f}s; jobs={jobs}", flush=True)
 for entry in failed: print('FAILED:', ' '.join(entry['command']), flush=True)
 raise SystemExit(1 if failed else 0)

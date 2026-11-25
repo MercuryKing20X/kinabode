@@ -18,7 +18,7 @@ They get **hungry**, from comfortably full to very hungry. When hungry, they do 
 - **Woodcutting, gathering, and farming:** harvests go into storage. Fish stay with their catcher until you choose a fishery or take them to the fire. There is one shared store for the whole island, so you do not need to shuttle materials back and forth.
 - **Building:** barbecue stands, fields, fisheries, board-game tables… build them a little at a time.
 - **Fishing:** discover more than twenty kinds of fish. Some appear only at night, in rain, or on a particular island. Put your catch in a fishery or take it straight to the fire.
-- **Play:** Eagle and Chicks, Drop the Handkerchief, hide-and-seek, shuttlecock, and jump rope. Play Gomoku with a companion, or try covered-piece Chinese chess, where you only discover a piece when you reveal it and luck plays a big part.
+- **Play:** Hide-and-seek, shuttlecock, and jump rope. Play Gomoku with a companion, or try covered-piece Chinese chess, where you only discover a piece when you reveal it and luck plays a big part.
 - **Beginner goals:** the upper-left corner tells you what to try next, from your first tree and first meal to moon-watching on Crescent Island.
 
 ### The islands

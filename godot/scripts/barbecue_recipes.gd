@@ -39,6 +39,13 @@ func valid_recipe(value: Variant) -> bool:
 func sources(_id:String)->Array:
 	return []
 
+func display_name(id:String)->String:
+	if not recipe_catalog.has(id):return ""
+	if TranslationServer.get_locale().begins_with("en"):
+		var english:String=str(metadata.get(id,{}).get("name_en",""))
+		if not english.is_empty():return english
+	return LocalText.content(str(recipe_catalog[id].name))
+
 func ingredient_island(id:String)->String:
 	for item in world.ingredients.config.items:
 		if item.id==id:return str(item.island)

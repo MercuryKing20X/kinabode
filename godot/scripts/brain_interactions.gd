@@ -48,10 +48,11 @@ func condition(scene:String,on:bool,since:float)->void:
 	if not seen.has(key):enqueue(scene,key)
 func observe()->void:
 	while not event_queue.is_empty() and float(event_queue[0].until)<brain.clock:event_queue.pop_front()
+	if not pending.is_empty() and brain.clock>float(pending.until):pending.clear()
 	if not event_queue.is_empty() and pending.get("kind","")!="host_reply":pending=event_queue.pop_front()
 	if brain.clock<next_observe:return
 	next_observe=brain.clock+float(data.observation_seconds)
-	if not pending.is_empty() and brain.clock>float(pending.until):pending.clear()
+	if w.standard.first_company_day() and w.days.within_day()<float(w.standard.COMPANY_PACING.data.first_chat_after):return
 	var host:Dictionary=w.actors.human
 	var pos:Vector2=w.point(host)
 	var same:bool=host.region_id==w.actors[brain.id].region_id
@@ -106,12 +107,14 @@ func still_true(scene:String)->bool:
 		"far":return brain.distance()>float(data.far_distance)
 	return true
 func deliver_pending()->bool:
+	if pending.get("kind","")!="host_reply" and brain.moment_score()<0:return false
 	if not w.director.routines[brain.id].chatter or (w.dark!=null and w.dark.here()) or pending.is_empty() or (pending.get("kind","")!="host_reply" and brain.clock<next_delivery):return false
 	var fact:Dictionary=pending.duplicate(true)
 	if not still_true(fact.scene):pending.clear();return false
 	if not deliver(fact.scene,fact.proof,"human",str(fact.get("kind","interaction"))):return false
 	seen[fact.proof]=true;pending.clear()
-	if fact.get("kind","")!="host_reply":next_delivery=brain.clock+float(data.personal_seconds)
+	if fact.get("kind","")!="host_reply":
+		next_delivery=brain.clock+float(data.personal_seconds)
 	return true
 func candidate()->Dictionary:
 	# Admit ordinary speech only when its original gate opens by the next
@@ -146,6 +149,7 @@ func deliver_authored(row:Dictionary,scene:String,proof:String,listener:String,k
 	w.director.local_dialogue.persist_delivery(brain.id,{"id":"brain-line:"+str(row.zh).sha256_text()})
 	var entry:Dictionary={"actor":brain.id,"at":brain.clock,"day":w.days.day(),"event":kind,"choice":"host_interaction" if listener=='human' else 'peer_interaction',"source":"local","scene":scene,"reasons":["interaction_"+scene] if data.scenes.has(scene) else ["rhythm_"+str(w.days.phase().id)] if scene.begins_with("rhythm:") else ["brain_social"],"reason":reason,"proof":proof,"listener":listener,"zh":row.zh,"en":row.en,"outcome":"completed"}
 	receipts.append(entry.duplicate(true));if receipts.size()>256:receipts.pop_front()
+	if kind in ["interaction","peer_invite"]:brain.moment_observed(kind)
 	brain.trace(entry);brain.history.append(entry.duplicate(true));if brain.history.size()>int(brain.config.history_limit):brain.history.pop_front()
 	return true
 func tick_current()->void:
@@ -158,7 +162,7 @@ func tick_current()->void:
 	elif brain.clock-float(brain.current.start)>float(data.event_ttl):brain.finish('timeout','speech_gate')
 func social(action:String,from:String='human')->Dictionary:
 	if action not in ['play','chess','walk','stars','chat','back_to_back','sea_watch','sweep','pair_sea','pair_sweep','small_coop']:return {"ok":false,"error":"not_social"}
-	var reason:String='refuse_hunger' if w.hunger.rank(brain.id)>=2 else 'refuse_command' if brain.busy() or brain.current.get('source','') in ['command','steward'] else 'refuse_tired' if float(brain.needs.tired)>=float(brain.config.tired_refusal) else 'refuse' if brain.rng.randf()<float(data.refusal_chance.get(brain.tag(),.2)) else ''
+	var reason:String='refuse_hunger' if w.hunger.rank(brain.id)>=2 else 'refuse_command' if brain.busy() or brain.current.get('source','') in ['command'] else 'refuse_tired' if float(brain.needs.tired)>=float(brain.config.tired_refusal) else 'refuse' if brain.rng.randf()<float(data.refusal_chance.get(brain.tag(),.2)) else ''
 	if not reason.is_empty():
 		# Queue the full authored reason until the original speech gate can deliver it.
 		brain.refusal={"reason":reason,"from":from,"action":action,"until":brain.clock+float(data.event_ttl)}

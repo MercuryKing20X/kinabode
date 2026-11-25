@@ -41,6 +41,8 @@ func run()->void:
 	# Wood delivery is an independent fresh-world scenario, with original hunger values.
 	game.queue_free();await process_frame;await fresh();w=game.world;page=game.command_page
 	await text_input("大家砍树")
+	if w.work.jobs.values().filter(func(job):return job.intent=="gather_wood" and job.tree_count==3).size()!=4:
+		print("GROUP_WOOD_DIAGNOSTIC ",game.local_host_commands.last_execution," jobs=",w.work.jobs," dialogue=",game.dialogue.histories)
 	check(w.work.jobs.values().filter(func(job):return job.intent=="gather_wood" and job.tree_count==3).size()==4,"all four start three real trees")
 	await picture("four-chopping")
 	await step(300)

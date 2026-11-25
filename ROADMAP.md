@@ -1,12 +1,5 @@
 # Roadmap / 未来方向
 
-v0.7.0 combines the brain, connection and creation rounds. / v0.7.0 汇集大脑、连接与创造三轮成果。
-
-- **Next creation round:** data-driven content packs for dialogue, recipes and places; extended stewardship with nightly summaries. / **下一轮创造：**台词、菜谱与地点内容包，连续多日托管及每晚小结。
-- MCP visitor entry and local hosting for several AI companions; retain exact resident/turn permissions and budgets. / MCP 访客门、多 AI 本地主持，保留精确居民/回合权限及预算。
-- Investigate documented regressions without changing gameplay thresholds. / 修复已记录回归，不调整玩法底线。
-- Broaden operating-system/hardware testing; currently only MacBook M1 8GB has been tested by the author. / 扩大系统与硬件实测，目前作者只在 M1 8GB 测试。
-- Complete provenance and attribution, especially fan-derived appearances. / 补齐素材来源及同人外观署名。
-- Validate optional AI and Lifeblood over long sessions with explicit budgets. / 在明确预算内验证可选 AI 与生命孕育的长期稳定性。
-
-Offline play, real warehouse materials, hunger priority, player choice and host validation remain requirements. These are plans, not implemented features. / 本地完整可玩、仓库真物资、饥饿优先、玩家选择和宿主校验仍为底线。以上为计划，不冒称已实现。
+- **v0.8 AI 的世界 / The AI’s World**：自己的 AI 可以住进居民、自己行动和改造岛。 / Your own AI can move into a resident, act on its plans, and shape the island.
+- **下一步：记忆盒与生命孕育 / Next: Memory Boxes and Growth**：给每位伙伴一个本机记忆盒，让真实经历逐渐塑造她。 / Give each companion a local memory box so real experiences can shape who she becomes.
+- **之后：串门与联机 / Later: Visits and Multiplayer**：先让伙伴带着记忆串门，再探索共享岛屿。 / Start with companions visiting other islands with their memories, then explore shared worlds.

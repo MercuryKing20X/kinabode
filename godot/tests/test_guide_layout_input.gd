@@ -15,7 +15,7 @@ func run()->void:
 			root.size=dimensions
 			for index in range(4):
 				game.ui_scale.set_level(index);game.journey._process(.01);game.dark_ui._process(.01);game.island_hud.refresh();await process_frame;await process_frame
-				var controls:Array=[game.day_label,game.island_hud.stock_button,game.journey.bar,game.dark_ui.entry_button,game.island_hud.residents_panel]
+				var controls:Array=[game.day_label,game.handbook_menu,game.island_hud.find_child("WorldDoor",true,false),game.island_hud.find_child("WorldPlacement",true,false),game.island_hud.residents_panel]
 				for i in controls.size():
 					if not controls[i].is_visible_in_tree():continue
 					var rect:Rect2=controls[i].get_global_rect()
@@ -23,9 +23,5 @@ func run()->void:
 					for j in range(i+1,controls.size()):
 						if controls[j].is_visible_in_tree() and rect.intersects(controls[j].get_global_rect()):failures.append("overlap "+locale+str(dimensions)+str(index)+str([i,j]))
 				if not out.is_empty() and DisplayServer.get_name()!="headless":await RenderingServer.frame_post_draw;root.get_texture().get_image().save_png(out.path_join(locale+"-"+str(dimensions.x)+"-"+str(index)+".png"))
-	preload("res://scripts/localization.gd").select(dir,"zh");root.size=Vector2i(1280,800)
-	game.world.storage.add({"wood":10});game.journey._process(.1);game.journey._process(.1);await process_frame
-	if game.journey.delay<=0 or not game.journey.caption.text.contains("✓"):failures.append("completion celebration")
-	if not out.is_empty() and DisplayServer.get_name()!="headless":await RenderingServer.frame_post_draw;root.get_texture().get_image().save_png(out.path_join("celebration.png"))
 	print("GUIDE_LAYOUT failures=",failures)
 	game.queue_free();await process_frame;quit(1 if not failures.is_empty() else 0)

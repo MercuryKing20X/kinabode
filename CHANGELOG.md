@@ -1,5 +1,32 @@
 # Changelog / 更新记录
 
+## v0.8.0 — AI 的世界 / The AI's World
+
+- Let your Codex, Claude Code, or compatible model move into a resident. She makes plans, takes actions, and changes the island while you watch or play alongside her. / 让自己的 Codex、Claude Code 或兼容模型住进一位居民；她会自己打算、行动、改造岛，你可以旁观或一起玩。
+- Open **My AI** to choose a resident and provider, test the connection, and move in. The island status shows who is connected, their latest plan, and how to reconnect. / 在「我的 AI」选居民和来源、测试连接、住进来；岛上常驻状态显示谁住着、最新打算和重接入口。
+- Place and remove objects freely within island rules. See what's changed in the island log, or use **Return to yesterday** to restore a checkpoint. / 在岛上按规则自由摆放和拆除，从岛上日志看变化，也可以用「回到昨天」恢复快照。
+- Start fishing from the shore, and choose where a real catch goes. / 从岸边进入钓鱼，实钓的鱼由你选择去处。
+- Stewardship, labor approval, the tutorial board, story chapters, and daily wishes have been removed. / 移除托管、劳动审批、新手板、故事章节和今日心愿。
+- Compatible older saves keep their residents, progress and artwork. The first compatible upgrade without creation data writes a pre-upgrade copy; active tasks and AI plans don't resume. Keep that copy if returning to an older version. / 兼容旧档保留居民、进度和人物作品；首次升级不含创造数据的兼容旧档时会留升级前副本，不恢复进行中的任务或 AI 打算。回旧版请保留并使用副本。
+
+### Known issues / 已知问题
+
+- Claude Code requires signing in from a terminal before connecting in the game. / Claude Code 需先在终端登录，再回游戏连接。
+- On an Apple M1, a 600-frame desktop sample with four residents gathering wood measured 48.34 ms at the 95th percentile for Godot's main-loop monitor, above the 16.7 ms target. Frame interval P95 was 16.396 ms; the full test suite was running concurrently. / Apple M1 实窗四人伐木 600 帧样本中，Godot 主循环监视器 P95 为 48.34 ms，高于 16.7 ms 目标；帧间隔 P95 为 16.396 ms。测量时全套回归同时运行。
+
+The frozen suite passed **402/412**, with ten existing failures and no skips or new failures. / 冻结全套 **402/412** 通过，10 项为原有失败，没有跳过或新增失败。
+
+- `test_brain_30min`: Residents did not consistently complete the required banter or cooperation episodes. / 半小时内未稳定达到所需的拌嘴或合作次数。
+- `test_simple_connection_input`: The older connection-screen input scenario timed out. / 旧连接页输入用例超时。
+- `test_memory_life_input`: Natural rain did not trigger the expected retained-preference line. / 自然降雨未触发预期的已记住偏好台词。
+- `test_resident_connections`: The older drawer action and per-resident settings assertions still fail. / 旧连接抽屉操作及按居民保存的设置断言仍失败。
+- `test_resident_moods`: A tired resident did not deliver the expected idle line. / 疲倦居民空闲后未说出预期台词。
+- `test_resident_moods_controller`: The visible happy-mood speech did not match the expected authored pool. / 开心状态的可见气泡未匹配预期台词池。
+- `test_polish_navigation`: The older resident connection and reasoning records entries did not open as expected. / 旧住民连接和推理记录入口未按预期打开。
+- `test_personality_controller`: Shared rain did not produce the four expected personality reactions. / 同一场雨未产生预期的四条独立性格反应。
+- `test_home_v3_ui`: The older handbook records and resident selection assertions still fail. / 旧手册记录入口和居民选择断言仍失败。
+- `test_home_v3_ui_polish`: The older fixed panel title assertion still fails. / 旧固定面板标题断言仍失败。
+
 ## v0.7.0 — 2026-11-17
 
 - **Unified brains and interaction:** one resident decision system for needs, scored choices, inner thoughts, personality remarks, routines, banter, small cooperation and stewardship. / **统一大脑与互动：**需要、候选打分、心里话、吐槽、作息、拌嘴与小合作，以及托管并入同一决策入口。

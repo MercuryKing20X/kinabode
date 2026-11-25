@@ -12,6 +12,60 @@ var wave_builds:=0
 var reference_glass:Image
 var window_pixel_counts:Dictionary={}
 var lamp_glass:Texture2D
+var occupied:Dictionary={}
+var door_changes:Dictionary={}
+var traces:Array=[]
+var previous_actions:Dictionary={}
+var puddles:Array[Vector2]=[]
+var trace_config:Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://content/visible-life.json"))
+
+func observe_homes(view:Node2D)->void:
+	var current:Dictionary={}
+	for actor in view.world.actors.values():
+		if str(actor.region_id).begins_with("room."):current[str(actor.region_id).trim_prefix("room.")]=true
+	for id in occupied.keys()+current.keys():
+		if occupied.has(id)!=current.has(id):door_changes[id]=view.clock
+	occupied=current
+
+func leave_trace(view:Node2D,kind:String,point:Vector2)->void:
+	traces.append({"kind":kind,"point":point,"until":view.world.forest.clock+view.world.days.day_seconds*float(trace_config.lifetime_days)})
+	if traces.size()>int(trace_config.max_traces):traces.pop_front()
+
+func draw_traces(view:Node2D)->void:
+	var w:RefCounted=view.world
+	while not traces.is_empty() and float(traces[0].until)<=w.forest.clock:traces.pop_front()
+	for id in w.director.brains:
+		var actor:Dictionary=w.actors[id]
+		var plan:Dictionary=w.director.brains[id].current
+		var action:String=str(plan.get("action",""))
+		if action not in ["read","stars"] or actor.region_id!="home" or w._routes.has(id) or float(plan.get("arrived",-1))<0:continue
+		var stamp:float=float(plan.get("start",0))
+		if previous_actions.get(id,-1.0)==stamp:continue
+		previous_actions[id]=stamp
+		leave_trace(view,"book" if action=="read" else "mat",w.point(actor)+Vector2(.55,.23))
+	for entry in traces:
+		if not visible(view,entry.point,25):continue
+		var p:Vector2=view.screen(entry.point).round();var z:float=view.zoom
+		match entry.kind:
+			"book":
+				view.draw_rect(Rect2(p,Vector2(19,12)*z),Color("694850"))
+				for x in [2,10]:view.draw_rect(Rect2(p+Vector2(x,1)*z,Vector2(7,9)*z),Color("f4dfb4"))
+			"mat":
+				view.draw_rect(Rect2(p,Vector2(34,18)*z),Color("59788c"))
+				for x in [3,27]:view.draw_rect(Rect2(p+Vector2(x,0)*z,Vector2(4,18)*z),Color("a2b9ac"))
+			"fish":
+				for x in [0,24]:view.draw_rect(Rect2(p+Vector2(x,-20)*z,Vector2(3,20)*z),Color("825a43"))
+				view.draw_rect(Rect2(p+Vector2(0,-20)*z,Vector2(27,3)*z),Color("825a43"))
+				view.draw_rect(Rect2(p+Vector2(11,-17)*z,Vector2(5,11)*z),Color("89afba"))
+				view.draw_rect(Rect2(p+Vector2(10,-8)*z,Vector2(7,3)*z),Color("607f97"))
+			"basket":
+				view.draw_rect(Rect2(p,Vector2(16,8)*z),Color("916244"))
+				for x in [2,7,12]:view.draw_rect(Rect2(p+Vector2(x,2)*z,Vector2(2,6)*z),Color("d4a368"))
+				view.draw_arc(p+Vector2(8,0)*z,6*z,PI,TAU,8,Color("916244"),2*z)
+			"rope":view.draw_arc(p,7*z,.2,TAU-.2,12,Color("d1a072"),2*z)
+			"shuttlecock":
+				view.draw_rect(Rect2(p,Vector2(6,3)*z),Color("714554"))
+				view.draw_line(p+Vector2(5,1)*z,p+Vector2(12,-5)*z,Color("f3c991"),3*z)
 func sample(world:RefCounted)->Dictionary:
 	var phases:Array=world.days.config.phases;var fraction:float=world.days.within_day()/world.days.day_seconds
 	var index:=0
@@ -23,7 +77,7 @@ func sample(world:RefCounted)->Dictionary:
 	var blend:float=smoothstep(0,1,clampf(1-(end-fraction)*world.days.day_seconds/transition,0,1))
 	return {"tint":Color(current.tint).lerp(Color(following.tint),blend),"light":lerpf(current.light,following.light,blend),"mist":lerpf(current.mist,following.mist,blend)}
 func prepare(view:Node2D)->void:
-	rng.seed=int(config.seed);waves.clear();particles.clear()
+	rng.seed=int(config.seed);waves.clear();particles.clear();puddles.clear()
 	var original:Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://content/works/cottage.json"))
 	reference_glass=view.library.render(original,"stage_4")
 	var lamp_image:Image=view.props.textures.lamp.get_image();var lamp_mask:=Image.create(lamp_image.get_width(),lamp_image.get_height(),false,Image.FORMAT_RGBA8);lamp_mask.fill(Color.TRANSPARENT)
@@ -62,7 +116,22 @@ func prepare(view:Node2D)->void:
 			for item in values.slice(0,mini(4,values.size())):
 				var at:Array=view.world.map_anchor("moon.lookout");item.point=Vector2(at[0],at[1])+Vector2(rng.randf_range(-8,8),rng.randf_range(-8,8))
 		particles[kind]=values
+	for key in config.butterfly_anchors:
+		var at:Array=view.world.map_anchor(key)
+		var point:=Vector2(at[0],at[1])+Vector2(.5,.4)
+		if view.world.walkable("home",point):puddles.append(point)
 	wave_builds+=1;refresh_houses(view,true)
+
+func draw_puddles(view:Node2D)->void:
+	if view.world.weather.current().id!="rain":return
+	for point in puddles:
+		if not visible(view,point,20):continue
+		var p:Vector2=view.screen(point);var z:float=view.zoom
+		view.draw_set_transform(p,0,Vector2(1,.38))
+		view.draw_circle(Vector2.ZERO,12*z,Color(.28,.48,.49,.24))
+		view.draw_circle(Vector2(-3,-1)*z,6*z,Color(.68,.83,.79,.16))
+		view.draw_set_transform(Vector2.ZERO)
+		view.draw_line(p+Vector2(-5,-1)*z,p+Vector2(1,-1)*z,Color(.85,.93,.91,.25),maxf(1,z))
 func refresh_houses(view:Node2D,force:bool=false)->void:
 	if not force and view.clock<next_house_refresh:return
 	next_house_refresh=view.clock+float(config.limits.house_refresh_seconds)
@@ -104,8 +173,9 @@ func draw_foreground(view:Node2D)->void:
 	var state:=sample(view.world);var light:float=state.light;var t:float=view.clock
 	if float(state.mist)>0:view.draw_rect(view.get_viewport_rect(),Color(.95,.92,.82,state.mist))
 	var smoke_count:=0
+	var weather:Dictionary=view.world.weather.current()
 	for house in houses:
-		if not visible(view,house.foot):continue
+		if not visible(view,house.foot) or not occupied.has(house.site_id):continue
 		for chimney in house.chimneys:
 			var anchor:Vector2=house.foot*32+Vector2(chimney[0]-house.art.anchor[0],chimney[1]-house.art.anchor[1])
 			for i in range(int(config.limits.smoke_per_chimney)):
@@ -114,18 +184,33 @@ func draw_foreground(view:Node2D)->void:
 				var age:float=fposmod(t*.16+i/float(config.limits.smoke_per_chimney),1)
 				var point:Vector2=anchor/32+Vector2(Motion.wind(t,house.foot)*age*.35+age*.4,-age*1.8)
 				var p:Vector2=view.screen(point);var size:Vector2=Vector2(5+floor(age*5),4+floor(age*4))*view.zoom
-				view.draw_rect(Rect2(p.round()-size/2,size),Color(.77,.77,.72,sin(age*PI)*.22))
-	var weather:Dictionary=view.world.weather.current()
+				view.draw_rect(Rect2(p.round()-size/2,size),Color(.77,.77,.72,sin(age*PI)*(.10 if weather.id=="rain" else .32)))
 	var daylight:float=(1-light)*(0.2 if weather.id=="rain" else 1.0)
+	var moving:Array[Vector2]=[]
+	for id in view.world.actors:
+		var actor:Dictionary=view.world.actors[id]
+		if actor.region_id==view.region_id and view.world.motion_state(id).get("moving",false):moving.append(view.world.point(actor))
 	for kind in ["birds","butterflies","fireflies"]:
 		var alpha:float=light if kind=="fireflies" else daylight
 		if alpha<.02:continue
 		for particle in particles[kind]:
 			var point:Vector2=particle.point+Vector2(sin(t*particle.speed*.17+particle.phase)*2,cos(t*.22+particle.phase)*.7)
 			if not visible(view,point,20):continue
+			var perched:bool=kind=="birds" and fposmod(t+particle.phase,12)<6
+			if perched:point=particle.point-Vector2(0,.7)
+			if kind!="fireflies":
+				for walker in moving:
+					var away:Vector2=point-walker
+					if away.length_squared()<3.24:
+						point+=away.normalized()*(1.8-away.length())+Vector2(0,-.7)
+						perched=false;break
 			var p:Vector2=view.screen(point);var flap:float=round(sin(t*(6 if kind=="birds" else 9)+particle.phase)*2)*view.zoom
 			if kind=="birds":
-				view.draw_line(p-Vector2(5,flap),p,Color(.27,.31,.29,alpha*.75),maxf(1,view.zoom));view.draw_line(p,p+Vector2(5,-flap),Color(.27,.31,.29,alpha*.75),maxf(1,view.zoom))
+				if perched:
+					view.draw_rect(Rect2(p,Vector2(5,3)*view.zoom),Color(.27,.31,.29,alpha*.85))
+					view.draw_rect(Rect2(p+Vector2(4,-1)*view.zoom,Vector2(2,2)*view.zoom),Color(.43,.37,.27,alpha*.85))
+				else:
+					view.draw_line(p-Vector2(5,flap),p,Color(.27,.31,.29,alpha*.75),maxf(1,view.zoom));view.draw_line(p,p+Vector2(5,-flap),Color(.27,.31,.29,alpha*.75),maxf(1,view.zoom))
 			elif kind=="butterflies":
 				view.draw_rect(Rect2(p+Vector2(-3,flap),Vector2(3,2)*view.zoom),Color(.94,.73,.51,alpha*.85));view.draw_rect(Rect2(p+Vector2(1,-flap),Vector2(3,2)*view.zoom),Color(.9,.77,.61,alpha*.85))
 			else:view.draw_rect(Rect2(p,Vector2(2,2)*view.zoom),Color(1,.92,.48,alpha*(.4+.5*absf(sin(t+particle.phase)))))
@@ -151,9 +236,11 @@ func draw_lights(view:Node2D,canvas:Node2D)->void:
 		canvas.draw_texture_rect(texture,Rect2(pos-view.props.anchors.light*view.zoom,texture.get_size()*view.zoom),false,Color(1,.84,.56,strength*.8*float(config.get("ground_light_gain",1.8))))
 		canvas.draw_texture_rect(lamp_glass,Rect2(pos-view.props.anchors.lamp*view.zoom,lamp_glass.get_size()*view.zoom),false,Color(1,1,1,strength*.7))
 	for house in houses:
-		if not visible(view,house.foot):continue
+		if not visible(view,house.foot) or not occupied.has(house.site_id):continue
+		if preload("res://scripts/house_appearance.gd").enabled(view.world.objects[house.site_id]):continue
 		var mask:Texture2D=window_cache[house.key];var art:Dictionary=house.art
-		canvas.draw_texture_rect(mask,Rect2(view.screen(house.foot)-Vector2(art.anchor[0],art.anchor[1])*view.zoom,mask.get_size()*view.zoom),false,Color(1,1,1,strength*float(config.get("window_strength",1.0))))
+		var size:Vector2=view._house_size(view.world.objects[house.site_id])*view.zoom
+		canvas.draw_texture_rect(mask,Rect2(view.screen(house.foot)-Vector2(art.anchor[0],art.anchor[1])/mask.get_size()*size,size),false,Color(1,1,1,strength*float(config.get("window_strength",1.0))))
 	# Reuse the existing fire-state truth; cold/empty stations never gain a fire glow.
 	for barbecue in view.world.barbecues.values():
 		if barbecue.fireside.active() and not barbecue.fireside.burning():continue

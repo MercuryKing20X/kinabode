@@ -1,0 +1,9 @@
+{
+  "first_chat_after": 135,
+  "first_chat_gap": 180,
+  "first_promise_after": 235,
+  "first_invite_after": 350,
+  "invite_gap": 255,
+  "invite_retry": 25,
+  "first_night_after_dusk": 28
+}

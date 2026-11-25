@@ -1,0 +1,51 @@
+keys,zh,en
+open.greet.gentle.rain,雨落下来啦。你可以站近一点，这里不太淋。,Come a little closer. The rain barely reaches this spot.
+open.greet.gentle.fog,雾把海藏起来了。慢慢走，我认得脚下这条路。,"The sea’s tucked away in the fog. I know the path, if you need me."
+open.greet.gentle.morning,早呀。你听，连海都是慢慢醒的。,Good morning. Even the sea takes its time waking up.
+open.greet.gentle.dusk,你来得正好，夕阳刚落到水面上。,Stay a moment. The sunset has just reached the water.
+open.greet.gentle.night,晚上好。等眼睛适应了，就能看到海了。,Hello. Give your eyes a moment. The sea’s still there.
+open.greet.gentle.joy,见到你真好。我刚才还在看那丛小花。,"Oh, hello! I was just admiring those little flowers."
+open.greet.gentle.hurt,我今天话有点少。你在这儿坐会儿也好。,I’m a little quiet today. Sitting together would be nice.
+open.greet.gentle.safe,你好呀。要是累了，就先站在这儿听会儿海。,Hello there. You can stop here and listen to the sea a while.
+open.greet.lively.rain,下雨了！你也挑小水坑跳吗？,Rain! Are you a puddle jumper too?
+open.greet.lively.fog,雾这么大！我还以为海偷偷跑掉了。,"Whoa, fog! I thought the sea had made a run for it."
+open.greet.lively.morning,早！等会儿我要第一个跑到海边。,Morning! Bet I can beat you to the shore.
+open.greet.lively.dusk,快看海上那道光！再慢一点就要没啦。,"Look at that stripe of light! Quick, before it goes!"
+open.greet.lively.night,你也还没困？等会儿去找亮亮的小虫吧。,Still awake? Good! Let’s look for little lights.
+open.greet.lively.joy,新朋友！我正想找人一起到处看看。,New friend! Excellent. I was looking for someone to explore with.
+open.greet.lively.hurt,你来啦。先别问我，我这会儿想吹吹风。,"Hey. Give me a minute, okay? I need some sea air."
+open.greet.lively.safe,嗨！站在这儿能闻到海，你闻闻！,Hi! Sniff the air right here. That’s the sea!
+open.greet.laborious.rain,路湿了，拐弯那块石头滑。你从这边过。,The stone at the bend gets slick. Take this side.
+open.greet.laborious.fog,雾厚的时候，沿着路走最稳。我刚从那边过来。,Stick to the path in fog like this. I just came that way.
+open.greet.laborious.morning,早啊。趁太阳还不晒，先看看这附近有什么。,"Morning. This is a good time to look around, before it gets hot."
+open.greet.laborious.dusk,天快黑了。要记路的话，趁现在看看哪边通海。,Light’s going. Take a look at which way leads to the sea while you can.
+open.greet.laborious.night,这边路平，天黑也好走。慢点就行。,This stretch is flat. No need to hurry in the dark.
+open.greet.laborious.joy,来啦！我刚看到一片好地方，等会儿去看看。,Hi! I spotted a promising spot. I’ll go have a look in a bit.
+open.greet.laborious.hurt,我想先自己理理头绪。等会儿再聊，行吗？,Need to get my thoughts in order. Can we talk in a bit?
+open.greet.laborious.safe,你好。你慢慢看，我先去转一圈。,Hello. Take your time. I’m going to make a round.
+open.greet.quiet.rain,下雨。站屋檐下面。,Rain. Stand under the eaves.
+open.greet.quiet.fog,雾。别往声音大的地方走，那边是海。,Fog. Don’t follow the noise. That’s the sea.
+open.greet.quiet.morning,早。……你醒得挺早。,Morning. You’re up early.
+open.greet.quiet.dusk,太阳快下去了。这里看得清。,Sun’s going down. Good spot to see it.
+open.greet.quiet.night,晚上好。这里夜里不吵。,Evening. It’s quiet here after dark.
+open.greet.quiet.joy,来了啊。……正好。,You’re here. Good.
+open.greet.quiet.hurt,我今天不想讲太多。你随意。,Not much to say today. Make yourself at home.
+open.greet.quiet.safe,嗯。你好。,Mm. Hello.
+open.greet.quiet.distant,……来了个人。,… Someone’s here.
+open.meeting,第一次见面：岛上有人向你打了招呼。,Our first hello: someone on the island greeted you.
+open.need.meal,张罗一顿饭,get a meal going
+open.need.harvest,把熟菜收进箱子,bring the ripe crops in
+open.need.camp,把烧烤摊建起来,build the barbecue
+open.need.field,开一块菜地,set up a garden
+open.need.help,帮忙凑点木头,help gather the wood someone needs
+open.need.wood,补一点木头,top up our wood supply
+open.need.plant,菜地还空着，种些有种子的菜,plant the empty beds with the seeds we have
+open.coordination.retry,%s，你现在有空吗？我们还得%s。,"%s, do you have a minute? We still need to %s."
+open.coordination.gentle.suggest,%s，你愿不愿意%s？手头有事就等一等。,"%s, would you mind helping us %s? Only if you’re free."
+open.coordination.lively.suggest,%s，一起想个办法%s吧！有空接这件事吗？,%s! Could you %s? Give me a shout if you’re busy.
+open.coordination.laborious.suggest,%s，有空的话麻烦%s。我来看看还缺什么。,"%s, could you %s? I’ll check what else we need."
+open.coordination.quiet.suggest,%s，能%s吗？忙就算了。,%s. Can you %s? Leave it if you’re busy.
+open.coordination.gentle.meal,有人饿了。方便的话，来火边吃点热的。,"If you’re hungry, come warm up by the fire. We can eat together."
+open.coordination.lively.meal,肚子响的来集合！火边有热的。,"Rumbling stomachs, over here! Time for something hot."
+open.coordination.laborious.meal,该吃饭了。手头忙完的先来火边坐。,Time to eat. Come sit by the fire when you’re done.
+open.coordination.quiet.meal,饿了就过来。要开烤了。,Hungry? Come over. I’m putting food on the fire.

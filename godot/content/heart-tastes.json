@@ -1,0 +1,332 @@
+{
+  "version": 1,
+  "joy": {
+    "mushroom": 2,
+    "ordinary": 10,
+    "favorite": 25
+  },
+  "favorite_reaction_seconds": 12,
+  "lines": {
+    "gentle": {
+      "mushroom": [
+        {
+          "zh": "又是蘑菇呀……我会好好吃的。",
+          "en": "Mushrooms again... I will eat them, promise."
+        },
+        {
+          "zh": "这味道，好像刚刚才吃过呢。",
+          "en": "This tastes rather familiar, doesn’t it?"
+        },
+        {
+          "zh": "第三回见面了，小蘑菇……",
+          "en": "Our third meeting, little mushroom..."
+        },
+        {
+          "zh": "我的碗快要长出蘑菇了吧。",
+          "en": "I think my bowl is turning into a mushroom patch."
+        },
+        {
+          "zh": "下次……可以有一点甜的吗？",
+          "en": "Could there be something sweet next time...?"
+        },
+        {
+          "zh": "蘑菇也很好，只是有一点想念水果。",
+          "en": "They are nice. I just miss fruit a little."
+        }
+      ],
+      "ordinary": [
+        {
+          "zh": "热热的，慢慢吃。",
+          "en": "Still warm. Little bites."
+        },
+        {
+          "zh": "谢谢你记得叫我吃饭。",
+          "en": "Thank you for saving me a place."
+        },
+        {
+          "zh": "今天这一口，很踏实。",
+          "en": "This is a comforting little bite."
+        },
+        {
+          "zh": "吹凉一点就刚好了。",
+          "en": "One little puff, and it is just right."
+        },
+        {
+          "zh": "坐在这里吃，味道也暖了。",
+          "en": "It tastes warmer with us all here."
+        },
+        {
+          "zh": "嗯，我有好好吃饭。",
+          "en": "Mm. I’m eating properly, see?"
+        }
+      ],
+      "favorite": [
+        {
+          "zh": "是我喜欢的甜味……你记得呀。",
+          "en": "My favourite sweetness... you remembered."
+        },
+        {
+          "zh": "这一口，我想慢慢留着。",
+          "en": "I want to make this little bite last."
+        },
+        {
+          "zh": "嘴角藏不住了呢。",
+          "en": "I can’t hide my smile, can I?"
+        },
+        {
+          "zh": "水果的香气，像个小拥抱。",
+          "en": "That fruity scent feels like a tiny hug."
+        },
+        {
+          "zh": "好开心……还能再闻一下吗？",
+          "en": "Oh, lovely... may I breathe it in once more?"
+        },
+        {
+          "zh": "今天的碗里，装着我的最爱。",
+          "en": "My favourite thing, right here in my bowl."
+        }
+      ]
+    },
+    "lively": {
+      "mushroom": [
+        {
+          "zh": "又是蘑菇！肚子说行，嘴巴说等等！",
+          "en": "Mushrooms again! Tummy says yes. Taste buds request a meeting!"
+        },
+        {
+          "zh": "蘑菇怎么又抢到菜单第一名啦？",
+          "en": "How did mushrooms win the menu AGAIN?"
+        },
+        {
+          "zh": "第三顿！我快变成小蘑菇啦！",
+          "en": "Round three! I’m growing a mushroom hat!"
+        },
+        {
+          "zh": "下次烤鱼！我先替嘴巴报名！",
+          "en": "Fish next time! My mouth has volunteered!"
+        },
+        {
+          "zh": "饱是饱啦，惊喜跑哪儿去啦？",
+          "en": "Full, yes! But where did the surprise go?"
+        },
+        {
+          "zh": "蘑菇蘑菇……我会背菜单啦！",
+          "en": "Mushroom, mushroom... I know this menu by heart!"
+        }
+      ],
+      "ordinary": [
+        {
+          "zh": "开动开动！第一口归我啦！",
+          "en": "Dig in! First bite is mine!"
+        },
+        {
+          "zh": "好香！我有坐好哦！",
+          "en": "Smells good! Look, I’m sitting properly!"
+        },
+        {
+          "zh": "嚼嚼……嗯，可以可以！",
+          "en": "Munch munch... yep, this works!"
+        },
+        {
+          "zh": "围着火吃就是开心！",
+          "en": "Everything tastes fun round a fire!"
+        },
+        {
+          "zh": "我的碗已经准备好啦！",
+          "en": "Bowl reporting for dinner!"
+        },
+        {
+          "zh": "慢点吃？我正在努力啦！",
+          "en": "Slow down? I’m TRYING!"
+        }
+      ],
+      "favorite": [
+        {
+          "zh": "是鱼！今天的饭赢啦！",
+          "en": "FISH! Dinner wins today!"
+        },
+        {
+          "zh": "这一口也太棒啦！",
+          "en": "That bite is ridiculously good!"
+        },
+        {
+          "zh": "先别说话，让我开心地嚼完！",
+          "en": "Hold that thought! I need to finish this happy bite!"
+        },
+        {
+          "zh": "我的最爱！想抱住盘子！",
+          "en": "My favourite! I could hug this plate!"
+        },
+        {
+          "zh": "嘿嘿，我连香气都舍不得放跑！",
+          "en": "Hehe! Even the smell isn’t getting away!"
+        },
+        {
+          "zh": "鱼鱼鱼！这一顿要记住！",
+          "en": "Fish fish fish! This dinner goes in the book!"
+        }
+      ]
+    },
+    "laborious": {
+      "mushroom": [
+        {
+          "zh": "又是蘑菇。行，先吃饱。",
+          "en": "Mushrooms again. Fine. Fuel first."
+        },
+        {
+          "zh": "这菜单，倒是很稳定。",
+          "en": "A very consistent menu."
+        },
+        {
+          "zh": "第三顿了。蘑菇出勤比我还稳。",
+          "en": "Third serving. These mushrooms have perfect attendance."
+        },
+        {
+          "zh": "下回换道菜吧，我认真建议。",
+          "en": "A different dish next time. A formal recommendation."
+        },
+        {
+          "zh": "肚子没意见，舌头有一点。",
+          "en": "Stomach approves. Tongue has a small objection."
+        },
+        {
+          "zh": "吃完了。蘑菇专项训练完成。",
+          "en": "Finished. Mushroom training complete."
+        }
+      ],
+      "ordinary": [
+        {
+          "zh": "坐稳，趁热吃。",
+          "en": "Sit properly. Eat while it’s warm."
+        },
+        {
+          "zh": "这一顿做得挺实在。",
+          "en": "A solid meal."
+        },
+        {
+          "zh": "先把饭吃好，别忙。",
+          "en": "Dinner first. Everything else can wait."
+        },
+        {
+          "zh": "味道不错，不用急。",
+          "en": "Good flavour. No rush."
+        },
+        {
+          "zh": "嗯，这口火候可以。",
+          "en": "Mm. Nicely cooked."
+        },
+        {
+          "zh": "大家都有饭就好。",
+          "en": "Good. Everybody has something to eat."
+        }
+      ],
+      "favorite": [
+        {
+          "zh": "这才叫一顿好饭。",
+          "en": "Now that is a proper meal."
+        },
+        {
+          "zh": "这锅做得好，我认真夸你。",
+          "en": "Excellent pot of food. That is genuine praise."
+        },
+        {
+          "zh": "喜欢。不是客气话。",
+          "en": "I like it. That isn’t politeness."
+        },
+        {
+          "zh": "这一口，值得坐下来慢慢吃。",
+          "en": "Worth sitting down and taking my time over."
+        },
+        {
+          "zh": "锅里都是好东西，没白等。",
+          "en": "A pot full of good things. Worth the wait."
+        },
+        {
+          "zh": "今天不急着做事，先尝好这一碗。",
+          "en": "Work can wait. This bowl deserves my attention."
+        }
+      ]
+    },
+    "quiet": {
+      "mushroom": [
+        {
+          "zh": "……又是蘑菇。",
+          "en": "...Mushrooms again."
+        },
+        {
+          "zh": "嗯。熟悉得过头了。",
+          "en": "Mm. Too familiar."
+        },
+        {
+          "zh": "……第三回。蘑菇也该歇了。",
+          "en": "...Third time. Even mushrooms need a day off."
+        },
+        {
+          "zh": "喜欢蘑菇。也不能一直是它。",
+          "en": "I like mushrooms. A little variety, though."
+        },
+        {
+          "zh": "……烤焦一点，假装换了菜。",
+          "en": "...Char it a little. We can pretend it’s different."
+        },
+        {
+          "zh": "蘑菇。它大概也认得我了。",
+          "en": "Mushrooms. They probably recognise me by now."
+        }
+      ],
+      "ordinary": [
+        {
+          "zh": "……嗯。热的。",
+          "en": "...Mm. Warm."
+        },
+        {
+          "zh": "这口不错。",
+          "en": "Good bite."
+        },
+        {
+          "zh": "慢慢吃。",
+          "en": "Take your time."
+        },
+        {
+          "zh": "坐这儿挺好。",
+          "en": "Good place to sit."
+        },
+        {
+          "zh": "……不用说话，也能吃得好。",
+          "en": "...No need to talk. Still a good dinner."
+        },
+        {
+          "zh": "火候刚好。",
+          "en": "Cooked just right."
+        }
+      ],
+      "favorite": [
+        {
+          "zh": "……这个。喜欢。",
+          "en": "...This. I like this."
+        },
+        {
+          "zh": "嗯。值得抬头的一碗。",
+          "en": "Mm. A bowl worth looking up for."
+        },
+        {
+          "zh": "……别急，让香气多待会儿。",
+          "en": "...Wait. Let the scent stay a little."
+        },
+        {
+          "zh": "黑暗里，也有这么好的味道。",
+          "en": "Even the dark has flavours like this."
+        },
+        {
+          "zh": "记住这一口了。",
+          "en": "I’ll remember this bite."
+        },
+        {
+          "zh": "……嘴角？没什么。好吃而已。",
+          "en": "...My smile? Nothing. Just good food."
+        }
+      ]
+    }
+  },
+  "favorite_satisfied_seconds": 4
+}

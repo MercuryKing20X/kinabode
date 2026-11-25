@@ -1,19 +1,14 @@
-# 有栖 / Kinabode · v0.7.0
+# 有栖 / Kinabode · v0.8.0
 
-一个人带着四个饭桶在海岛上生活。种菜、钓鱼、烧烤、下棋、玩小游戏，慢慢把岛变成家。
+创造 · 连接 · 孕育 · 栖息
 
-A quiet island home for you and four hungry companions. Grow crops, fish, share a barbecue, play board games and make a home together.
+Create · Connect · Grow · Dwell
 
-![开始页 / Start screen](docs/images/title.png)
-![岛上生活 / Island life](docs/images/island.png)
-![托管与岛主 / Steward and island host](docs/images/steward.png)
-![关于有栖 / About Kinabode](docs/images/about.png)
+这是 AI 的岛，也是你可以一起生活的地方。让自己的 AI 住进一位居民，看她自己打算、摆放、建造、玩耍和记下岛上的变化。你可以一起钓鱼、围炉，或只看看她今天做了什么。
 
-历史配图：上图开始页、关于与正式开局来自 v0.6.0 导出验证；托管图来自 v0.6 开发验证。v0.7.0 游戏包与验证结果见 [CHANGELOG](CHANGELOG.md)。 / These start, About and standard-opening captures are from v0.6.0 verification; the stewardship capture is from v0.6 development. See [CHANGELOG](CHANGELOG.md) for v0.7.0 packages and validation.
+A quiet island where your AI can live as a resident. Watch her plan, place things, build, play, and record what changed. Join her for fishing or a fireside meal, or simply see what she does today.
 
-本版带来统一伙伴大脑与心里话、原生 AI 连接与台词收藏，以及鲜花岛的换花、摆字、送花、日记和书信。
-
-This release brings unified companion brains and inner thoughts, native AI connections and saved quotes, plus Flower Isle trading, rose arrangements, gifts, diaries and letters.
+改造岛屿后可以查岛上日志，或用「回到昨天」恢复快照。 / After changing the island, look back through the island log or restore a checkpoint with Return to yesterday.
 
 ## 运行 / Run
 
@@ -27,9 +22,9 @@ Install **Godot 4.7.2**, import `godot/project.godot` and run the project. The f
 
 ## 可选 AI / Optional AI
 
-在游戏的居民连接页选择本地、可选 Codex 或原生 OpenAI 兼容 API（含 Ollama / LM Studio 本机地址）。原生 API 不需要 Python；可选 Codex 桥需要本机 Codex 与 Python 3。API 地址由玩家填写，密钥放自己的本地配置或环境变量；请勿提交密钥、个人会话、存档或连接配置。连接、推理与接受任务是不同状态；等待和失败不会伪造模型回复。
+打开「我的 AI」，选择来源和居民，点「测试连接」，成功后点「住进来」。Codex 和 Claude Code 需本机 CLI 及 Python；Claude 要先在终端登录。详见[连接说明](docs/AI_CONNECTION.md)。
 
-Use the resident connection page to select local intelligence, optional Codex or a native OpenAI-compatible API, including local Ollama / LM Studio URLs. Native API needs no Python; the optional Codex bridge needs local Codex and Python 3. Enter your own API endpoint and keep credentials in your local configuration or environment. Never commit keys, personal conversations, saves or connection settings. A connection does not prove inference, and an accepted job is not a completed job.
+Open My AI, choose a provider and resident, select Test Connection, then select Move In. Codex and Claude Code require their local CLI and Python; sign into Claude from a terminal first. See the [connection guide](docs/AI_CONNECTION.md).
 
 ## 验证与贡献 / Checks and contributions
 
@@ -37,9 +32,9 @@ Python 3 与 Godot 放在 PATH 后，运行 `scripts/test-quick.sh`（Windows：
 
 With Python 3 and Godot on PATH, run `scripts/test-quick.sh` (Windows: `python scripts/test_quick.py`). See [CONTRIBUTING](CONTRIBUTING.md) for the full suite, translation rules and pull requests. Read [DESIGN](docs/DESIGN.md) and [ROADMAP](ROADMAP.md) for the project's direction.
 
-作者只在 **MacBook M1 8GB** 上测试过，其他设备不保证，欢迎反馈。生命孕育尚未经过长时间真实模型试跑，成本和长期稳定性没有完成验证。
+作者只在 **MacBook M1 8GB** 上测试过，欢迎在其他设备上反馈体验。当前限制见[更新记录](CHANGELOG.md)。
 
-The author has tested only on a **MacBook M1 with 8GB RAM**. Other devices are not guaranteed; reports are welcome. Lifeblood has not undergone a long real-model soak test, so its long-term stability and costs remain unverified.
+The author has tested on a **MacBook M1 with 8 GB RAM** and welcomes reports from other devices. See the [changelog](CHANGELOG.md) for current limitations.
 
 ## 授权与声明 / License and credits
 

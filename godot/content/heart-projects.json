@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "proofs": {
+    "camp": "completed construction site for the home campfire",
+    "wood": "ten available real warehouse logs",
+    "kitchen_seat": "registered outdoor seating site committed by construction",
+    "kitchen_shelter": "registered shelter site committed by construction",
+    "ingredients": "real harvest stew entry available in the fireside menu",
+    "feast": "resident credited as cook and two or more diners actually ate the signature dish",
+    "shore": "resident stood at a validated shore",
+    "catch": "committed fish instance in the journal",
+    "record": "new committed catch strictly exceeds the previous island maximum",
+    "fish_invite": "accepted project invitation from the shared peer queue",
+    "fish_match": "both authorized entrants land a fish from their registered contest jobs",
+    "garden_site": "resident reached a workable flower layout",
+    "roses": "real roses are available in the warehouse",
+    "garden": "the exact authorized arrangement job committed its final rose",
+    "give_first": "one committed handover to a distinct recipient",
+    "give_all": "one committed rose handover to each other companion and the player",
+    "beacon_invite": "resident joined the player's confirmed crossing party",
+    "dark_arrival": "player and resident both arrived in the Dark Isle region",
+    "beacon": "canonical beacon light event with both physically present",
+    "stars_arrive": "resident reached the mapped stargazing point",
+    "stars_night": "resident present there early in clear night",
+    "stars_dawn": "resident remained in that area through the next morning"
+  },
+  "projects": {
+    "kitchen": {"trait":"laborious","title":["小厨房","A kitchen by the fire"],"steps":["camp","wood","kitchen_seat","kitchen_shelter"],"setbacks":["rain","materials","refused"]},
+    "feast": {"trait":"laborious","title":["一顿整道大菜","A proper island feast"],"steps":["camp","ingredients","feast"],"setbacks":["rain","materials","refused"]},
+    "record_fish": {"trait":"lively","title":["全岛最大的鱼","The island’s biggest fish"],"steps":["shore","catch","record"],"setbacks":["small_fish","refused"]},
+    "fishing_day": {"trait":"lively","title":["一起比钓鱼","A fishing contest"],"steps":["shore","fish_invite","fish_match"],"setbacks":["small_fish","refused"]},
+    "garden": {"trait":"gentle","title":["我的花园","A garden of my own"],"steps":["garden_site","roses","garden"],"setbacks":["rain","materials","refused"]},
+    "flowers": {"trait":"gentle","title":["给每人一朵花","A flower for everyone"],"steps":["roses","give_first","give_all"],"setbacks":["rain","materials","refused"]},
+    "beacon": {"trait":"quiet","title":["点亮一座旧灯台","Light an old beacon"],"steps":["beacon_invite","dark_arrival","beacon"],"setbacks":["rain","materials","refused"]},
+    "stars": {"trait":"quiet","title":["看一整晚星星","Stars until morning"],"steps":["stars_arrive","stars_night","stars_dawn"],"setbacks":["rain","materials","refused"]}
+  }
+}

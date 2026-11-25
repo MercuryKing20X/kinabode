@@ -1,0 +1,29 @@
+{
+  "touch_distance": 3.2,
+  "approach_timeout": 18,
+  "sit_seconds": 9,
+  "gesture_seconds": 3,
+  "repeat_seconds": 100,
+  "repeat_factor": 0.5,
+  "comfort_hurt": 30,
+  "joy_threshold": 68,
+  "absence_seconds": [300, 10800, 86400, 259200],
+  "absence_route_tiles": 30,
+  "letter_min_band": 1,
+  "offer_after": 85,
+  "offer_distance": 8,
+  "answer_seconds": 15,
+  "model_wait_seconds": 32,
+  "night_line_seconds": 4,
+  "recall_days": 1,
+  "photo_radius": 12,
+  "snacks": ["blueberry", "apple", "tomato", "mushroom"],
+  "effects": {
+    "pat": {"joy": 5, "safe": 4, "hurt": -2},
+    "sit": {"joy": 3, "safe": 6, "hurt": -3},
+    "snack": {"joy": 4, "safe": 2},
+    "comfort": {"joy": 3, "safe": 6, "hurt": -9},
+    "promise_kept": {"joy": 6, "safe": 4},
+    "promise_missed": {"hurt": 4}
+  }
+}

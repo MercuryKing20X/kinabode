@@ -2,6 +2,7 @@ extends "res://tests/test_host_journey_input.gd"
 func run()->void:
 	await fresh()
 	var w:RefCounted=game.world
+	check(w.director.routines.values().all(func(routine):return routine.enabled),"background life stays enabled")
 	game.journey._process(0)
 	check(await UI.click(self,game.journey.map_button),"map opens shortcuts")
 	game.journey._process(0);await process_frame
@@ -26,8 +27,10 @@ func run()->void:
 	category.select(2);category.item_selected.emit(2)
 	await process_frame;await picture("commands-zh")
 	check(await UI.click(self,game.command_page.buttons.cmd7),"plant native click")
+	if w.farms.orders.size()!=4:print("FARM DISPATCH ",game.local_host_commands.last_execution," preview=",w.farms.preview_host_orders(w.director.routines.keys(),"plant","", "mixed")," jobs=",w.work.jobs)
 	check(w.farms.orders.size()==4,"four real farm orders")
 	await advance(600)
+	check(w.farms.orders.size()==4 and w.farms.orders.values().all(func(order):return order.status=="completed"),"all four farm orders reach completion with background life on")
 	check(w.farms.plots.values().any(func(p):return not str(p.crop_id).is_empty()),"real seedlings")
 	await picture("seedlings")
 	game.command_page.category=5;game.command_page.rebuild()

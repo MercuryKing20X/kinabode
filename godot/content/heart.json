@@ -1,0 +1,225 @@
+{
+  "version": 1,
+  "axes": [
+    "joy",
+    "tired",
+    "missing",
+    "curious",
+    "hurt",
+    "safe"
+  ],
+  "baseline": {
+    "joy": 50,
+    "tired": 20,
+    "missing": 20,
+    "curious": 50,
+    "hurt": 10,
+    "safe": 50
+  },
+  "decay_per_second": 0.015,
+  "near_distance": 8,
+  "missing_near_per_second": -0.05,
+  "missing_far_per_second": 0.025,
+  "safe_near_per_second": 0.01,
+  "work_tired_per_second": 0.02,
+  "rest_tired_per_second": -0.05,
+  "neglect_seconds": 1500,
+  "neglect_hurt_per_second": 0.025,
+  "max_event_delta": 25,
+  "max_ai_delta": 8,
+  "symbol_period": 14,
+  "symbol_seconds": 4,
+  "weather_changes": {
+    "rain": {
+      "safe": -3,
+      "tired": 3
+    },
+    "clear": {
+      "curious": 3
+    },
+    "fog": {
+      "curious": 4
+    }
+  },
+  "event_changes": {
+    "shared_barbecue": {
+      "safe": 6
+    },
+    "gomoku_match": {
+      "joy": 9,
+      "curious": 6
+    },
+    "jieqi_match": {
+      "joy": 9,
+      "curious": 6
+    },
+    "flower_gift": {
+      "joy": 15,
+      "safe": 10
+    },
+    "work_completed": {
+      "safe": 6,
+      "tired": 8
+    },
+    "social_refusal": {
+      "hurt": 8
+    },
+    "shared_flower": {
+      "joy": 10,
+      "safe": 8
+    },
+    "jieqi_result": {
+      "joy": 9,
+      "curious": 6
+    },
+    "gift": {
+      "joy": 10,
+      "safe": 8
+    }
+  },
+  "labels": {
+    "joy": [
+      "开心",
+      "happy"
+    ],
+    "tired": [
+      "累了",
+      "tired"
+    ],
+    "missing": [
+      "想你了",
+      "missing you"
+    ],
+    "curious": [
+      "好奇",
+      "curious"
+    ],
+    "hurt": [
+      "有点委屈",
+      "feeling hurt"
+    ],
+    "safe": [
+      "安心",
+      "safe"
+    ]
+  },
+  "reasons": {
+    "settled": [
+      "平静地过日子",
+      "Taking the day as it comes"
+    ],
+    "near": [
+      "你就在身边",
+      "You are nearby"
+    ],
+    "apart": [
+      "想和你待一会儿",
+      "I miss spending time with you"
+    ],
+    "rest": [
+      "刚刚歇了一会儿",
+      "A little rest helped"
+    ],
+    "work": [
+      "刚刚做了事，想歇歇",
+      "I have been busy and could use a rest"
+    ],
+    "neglect": [
+      "今天还没和你好好说话",
+      "We have not had a moment together today"
+    ],
+    "weather": [
+      "眼前的天气让我有些感触",
+      "The weather has me feeling things"
+    ],
+    "shared": [
+      "刚刚一起度过的真实片刻",
+      "A real moment we shared"
+    ],
+    "rejected": [
+      "刚刚的邀请没有成行",
+      "That invitation did not work out"
+    ],
+    "mushroom": [
+      "这顿又是蘑菇呀",
+      "Mushrooms again this time"
+    ],
+    "favorite": [
+      "吃到了喜欢的料理",
+      "You made something I love"
+    ],
+    "ordinary": [
+      "一起吃了热乎的饭",
+      "We had something warm together"
+    ],
+    "meal_mushroom": [
+      "这顿又是蘑菇呀",
+      "Mushrooms again this time"
+    ],
+    "meal_ordinary": [
+      "一起吃了热乎的饭",
+      "We had something warm together"
+    ],
+    "meal_favorite": [
+      "吃到了喜欢的料理",
+      "You made something I love"
+    ],
+    "talk": [
+      "刚刚和你说了话",
+      "We just had a little chat"
+    ],
+    "ai_intention": [
+      "刚刚想好了一件想做的事",
+      "I have just chosen something I want to do"
+    ]
+  },
+  "choice": {
+    "joy_near": 40,
+    "hurt_near": -60,
+    "hurt_solitude": 45,
+    "tired_rest": 50,
+    "curious_explore": 24,
+    "near_actions": [
+      "follow",
+      "chat",
+      "wave",
+      "back_to_back",
+      "host_interaction"
+    ],
+    "solitude_actions": [
+      "sea_watch",
+      "read",
+      "daydream",
+      "cloud_watch",
+      "wander"
+    ],
+    "rest_actions": [
+      "local_sit",
+      "night_rest",
+      "play_lie",
+      "rest"
+    ],
+    "explore_actions": [
+      "butterfly",
+      "flower_scent",
+      "sea_watch",
+      "stars"
+    ]
+  },
+  "symbol_rise_threshold": 8,
+  "pose": {
+    "joy_threshold": 65,
+    "hurt_threshold": 35,
+    "tired_threshold": 65,
+    "joy_bounce_pixels": 2,
+    "hurt_scale_y": 0.96,
+    "hurt_lean": 0.025
+  },
+  "proximity": {
+    "joy_inner": 2,
+    "joy_outer": 4,
+    "hurt_inner": 5,
+    "hurt_outer": 8,
+    "threshold": 20
+  }
+}

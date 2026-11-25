@@ -5,6 +5,7 @@ func _initialize()->void:call_deferred("run")
 func run()->void:
 	game=UI.init_game(self);await process_frame;await process_frame
 	var w:RefCounted=game.world;var center:Vector2=w.point(w.life.station)
+	w.activities.set_followers([],[],false)
 	var index:=0
 	for id in w.actors:
 		var goal:Vector2=center+Vector2(index*2-4,8)

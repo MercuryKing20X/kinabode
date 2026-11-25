@@ -25,7 +25,7 @@ func run()->void:
 	await click_at(game.view.screen(w.point(w.objects["home.house.01"])))
 	check(game.house_panel.visible,"native house panel opens")
 	check(not UI.descendants(game.house_panel).any(func(n):return n is Button and n.text.contains("一键建好")),"retired build-all is absent from player UI")
-	check(preload("res://scripts/host_build_all.gd").apply(w).ok,"explicit test-only completed-site fixture")
+	check(preload("res://tests/fixture_host_build_all.gd").apply(w).ok,"explicit test-only completed-site fixture")
 	game.house_panel.hide()
 	var target:Dictionary={}
 	for spot in w.fishing.nearby_shores("human",32):
@@ -48,6 +48,11 @@ func run()->void:
 	var stored:Array=w.fishing.fish.values().filter(func(f):return f.owner_id=="human" and f.location=="storage")
 	var fish:Dictionary=stored[0].duplicate(true) if not stored.is_empty() else {};check(not fish.is_empty(),"one real stored catch")
 	if fish.is_empty():quit(1);return
+	# The shared ledger is measured around one host operation. Freeze separate
+	# idle fishing plans here; the two explicit meal invitations still run.
+	for brain in w.director.brains.values():
+		if brain.owns_local_job() or brain.owns_local_route():brain.finish("interrupted","fixture")
+	w.director.set_all_enabled(false)
 	var journal:Dictionary=w.journal.saved().duplicate(true);var fish_count:int=w.fishing.fish.size()
 	check(w.journal.summary("human").discovered>0,"actual first catch appears in journal")
 	game.island_hud.notices_signature="";game.island_hud.refresh();await process_frame;await process_frame

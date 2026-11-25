@@ -27,7 +27,6 @@ func _initialize()->void:
 	var cliff:Dictionary=w.catalog.regions.home.layout.cliffs[0]
 	check(not w.walkable("home",Vector2(cliff.polygon[0][0]+1,cliff.polygon[0][1]+.5)),"authored cliff blocks route")
 	check(w.walkable("home",Vector2(cliff.stairs[0][0]+.5,cliff.stairs[0][1]+.5)),"authored stairs remain connected")
-	check(w.wishes.crop_potential("turnip")>0 and w.wishes.meal_possible("turnip-soup"),"wishes read real canonical shared seeds on v3")
 	var before:int=wood(w)
 	check(w.command("codex",{"intent":"chop","target_id":tree.id}).ok,"first real resident claims a tree")
 	w.advance(.1)

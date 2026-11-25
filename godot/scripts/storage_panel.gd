@@ -15,7 +15,7 @@ var refresh_revision:=-1
 var inventory_signature:=0
 func _process(_delta:float)->void:
 	if visible and world!=null:
-		var signature:int=hash([world.actors.human.carry,world.storage.saved(),world.fishing.fish])
+		var signature:int=hash([world.actors.human.carry,world.storage.saved(),world.fishing.population_revision])
 		if signature!=inventory_signature:refresh()
 var quantities:Dictionary={}
 func setup(source:RefCounted)->void:
@@ -55,7 +55,7 @@ static func item_name(source:RefCounted,item:String)->String:
 	return LocalText.text("storage.seed_name")%name if item.begins_with("seed.") else name
 func refresh()->void:
 	if world==null or rows==null:return
-	inventory_signature=hash([world.actors.human.carry,world.storage.saved(),world.fishing.fish])
+	inventory_signature=hash([world.actors.human.carry,world.storage.saved(),world.fishing.population_revision])
 	title.text=LocalText.text("storage.title");stock_title.text=LocalText.text("storage.stock");close_button.tooltip_text=LocalText.text("hud.close")
 	var carried:Array=[];var carry:Dictionary=world.actors.human.carry
 	var amount:=0
@@ -65,7 +65,7 @@ func refresh()->void:
 	deposit_button.text=LocalText.text("storage.deposit_all");deposit_button.disabled=amount==0
 	for child in rows.get_children():rows.remove_child(child);child.queue_free()
 	var items:Dictionary=world.storage.saved().items;var keys:=items.keys();keys.sort()
-	var fish:Array=world.fishing.fish.values().filter(func(entry):return entry.owner_id=="human" and entry.location=="storage")
+	var fish:Array=world.fishing.unplaced_fish().filter(func(entry):return entry.owner_id=="human" and entry.location=="storage")
 	if keys.is_empty() and fish.is_empty():var empty:=Label.new();empty.text=LocalText.text("storage.empty");rows.add_child(empty)
 	for item in keys:
 		if int(items[item])<=0:continue

@@ -31,7 +31,7 @@ func choose(world:RefCounted,id:String)->Dictionary:
 	if world.hunger.rank(id)>0:
 		for food in world.recipes.metadata:
 			if world.recipes.metadata[food].get("signature_trait","")==tag:
-				favorite=preload("res://scripts/localization.gd").content(world.recipes.metadata[food].get("name",food));break
+				favorite=world.recipes.display_name(food);break
 		if not favorite.is_empty():kinds.append("favorite")
 	if time>180:
 		kinds.append("fish")

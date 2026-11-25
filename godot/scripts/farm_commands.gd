@@ -111,7 +111,7 @@ func parse(world: RefCounted, text: String) -> Dictionary:
 func closest_local(world:RefCounted)->String:
 	var nearest:="";var distance:=INF
 	for id in world.actors:
-		if id=="human" or world.director.model_controlled(id) or world.actors[id].region_id!=world.actors.human.region_id:continue
+		if id=="human" or world.director.model_controlled(id) or world.actors[id].has("world_door_client") or world.actors[id].region_id!=world.actors.human.region_id:continue
 		var d:float=world.point(world.actors[id]).distance_squared_to(world.point(world.actors.human))
 		if d<distance:nearest=id;distance=d
 	return nearest

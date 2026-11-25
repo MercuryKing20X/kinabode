@@ -1027,6 +1027,14 @@
     "interaction_host_appearance": [
       "你刚明确换上了另一套外观",
       "you just explicitly changed your appearance"
+    ],
+    "ai_intention": [
+      "这是我刚刚想好的打算",
+      "this is the intention I have just chosen"
+    ],
+    "emotion": [
+      "我现在的心情",
+      "how I feel right now"
     ]
   },
   "voices": {
@@ -1604,6 +1612,9 @@
     "night_home_radius": 48
   },
   "social_scenes": {
+    "chat_village_hour_limit": 10,
+    "chat_actor_hour_limit": 4,
+    "chat_pair_cooldown_seconds": 480,
     "first_after": 45,
     "cooldown_seconds": 145,
     "session_seconds": 180,
@@ -1699,5 +1710,13 @@
     ],
     "host_activity_quiet_seconds": 60,
     "return_score": 220
+  },
+  "ai_intention": {
+    "rethink_seconds": 90,
+    "timeout_seconds": 120,
+    "score": 10000,
+    "max_mood_delta": 8,
+    "recent_limit": 5,
+    "card_bytes": 10000
   }
 }

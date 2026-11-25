@@ -14,6 +14,8 @@ func check(condition: bool, message: String) -> void:
 	checks += 1
 	if not condition: failed = true; push_error(message)
 func _initialize() -> void:
+	run.call_deferred()
+func run() -> void:
 	if not OS.get_environment("HABITAT_DATA_DIR").contains("youqi-test-"): quit(1); return
 	var world := World.new()
 	var start: Vector2 = world.point(world.actors.human)

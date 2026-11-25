@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://caw7suklg3pnu"
+
+[deps]
+
+files=["res://content/i18n/island-life.zh.translation", "res://content/i18n/island-life.en.translation"]
+
+source_file="res://content/i18n/island-life.csv"
+dest_files=["res://content/i18n/island-life.zh.translation", "res://content/i18n/island-life.en.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

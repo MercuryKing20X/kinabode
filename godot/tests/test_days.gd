@@ -145,7 +145,7 @@ func offline_tests() -> void:
 	var data: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(directory.path_join("offline/island-v2.json")))
 	# Simulate a real elapsed absence only in this disposable saved timestamps, never stock.
 	var absence:=10000.0
-	data.forest_clock-=absence;data.day_cycle.origin-=absence;data.farming.clock-=absence
+	data.forest_saved_wall-=absence;data.farming.clock-=absence
 	for plot in data.farming.plots.values():
 		if plot.planted_at>0:plot.planted_at-=absence
 	Fish.write_json(directory.path_join("offline/island-v2.json"),data)

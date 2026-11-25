@@ -6,6 +6,7 @@ var fire:RefCounted:
 	get:return _fire.get_ref()
 var world:RefCounted:
 	get:return fire.world
+var taste_config:Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://content/heart-tastes.json"))
 var pending:Array=[]
 var reactions:Dictionary={}
 var visible:Dictionary={}
@@ -49,6 +50,7 @@ func selection(id:String,food:Dictionary,rank:int)->Dictionary:
 	var favorite:bool=food.food_id in foods or food.category in foods or (not food.get("fish",{}).is_empty() and "fish" in foods) or trait_id(id) in world.recipes.metadata.get(food.food_id,{}).get("favorite_traits",[])
 	var contexts:Array=["food_"+str(food.food_id).replace("-","_"),"category_"+food.category]
 	var extras:Array=[]
+	if food.food_id=="mushroom" and trait_id(id)!="quiet":favorite=false # Raven genuinely loves mushrooms; other companions treat them as the staple.
 	if favorite:extras.append("special_favorite")
 	if food.get("first_time",false):extras.append("special_first")
 	var fish:Dictionary=food.get("fish",{})
@@ -59,9 +61,34 @@ func selection(id:String,food:Dictionary,rank:int)->Dictionary:
 	for context in contexts:
 		if world.intelligence.catalog.speech.has(pool(id,context)):selected=pool(id,context);break
 	return {"pool":selected,"favorite":favorite,"first_time":bool(food.get("first_time",false)),"extra":extras.map(func(c):return pool(id,c)),"dish":food.category=="dish"}
+func taste_kind(id:String,food:Dictionary,rank:int=0)->String:
+	return "mushroom" if food.food_id=="mushroom" and trait_id(id)!="quiet" else "favorite" if selection(id,food,rank).favorite else "ordinary"
+func mushroom_count(id:String)->int:
+	var extras:Dictionary=world.hearts.profile(id).extras
+	var daily:Dictionary=extras.get("mushrooms",{})
+	return int(daily.get("count",0)) if int(daily.get("day",0))==world.days.day() else 0
+func taste_line(id:String,kind:String,number:int,language:String="")->String:
+	var tag:String=trait_id(id)
+	if not taste_config.lines.has(tag):tag="gentle"
+	var rows:Array=taste_config.lines[tag][kind]
+	var index:int=clampi(number-1,0,2) if kind=="mushroom" else posmod(world.days.day()+number,rows.size())
+	if kind=="mushroom" and number>3:index=3+posmod(number-4,3)
+	var lang:String=language if not language.is_empty() else ("en" if TranslationServer.get_locale().begins_with("en") else "zh")
+	return str(rows[index][lang])
+func finished(id:String,food:Dictionary)->void:
+	if id=="human":return
+	var kind:String=taste_kind(id,food)
+	var extras:Dictionary=world.hearts.profile(id).extras
+	if kind=="mushroom":extras["mushrooms"]={"day":world.days.day(),"count":mini(1000000,mushroom_count(id)+1)}
+	world.hearts.change(id,{"joy":float(taste_config.joy[kind])},"meal_"+kind)
+	if kind=="favorite":reactions[id]={"until":world.director.time+float(taste_config.favorite_reaction_seconds),"kind":"happy"}
 func ate(id:String,food:Dictionary,previous_rank:int)->void:
 	if id=="human":return
 	var selected:=selection(id,food,previous_rank)
+	var kind:String=taste_kind(id,food,previous_rank)
+	var number:int=mushroom_count(id)+1 if kind=="mushroom" else fire.state.get("ate",{}).get(id,[]).size()+1
+	pending.append({"actor_id":id,"text":taste_line(id,kind,number),"speech_scene":"heart_"+kind+"_"+str(number),"proof":fire.state.current.id,"expires":world.director.time+180})
+	if kind=="mushroom":return
 	var species:String=str(food.get("fish",{}).get("species_id",""))
 	var special:Dictionary=world.recipes.metadata.get(food.food_id,{})
 	if special.get("signature_trait","")==trait_id(id) and special.has("signature_line"):
@@ -114,6 +141,8 @@ func scene_key(id:String,scene:String)->String:return str(fire.state.current.get
 func scene_done(id:String,scene:String)->bool:return scene_deliveries.has(scene_key(id,scene))
 func delivered(id:String,line:String,context:String)->void:
 	note_line(id,line,context)
+	if context.begins_with("heart_mushroom_") and world.director.moment_pacing!=null:
+		world.director.moment_pacing.observe("mushroom")
 	scene_deliveries[scene_key(id,context)]=true
 	recent.append(line)
 	if recent.size()>24:recent.pop_front()

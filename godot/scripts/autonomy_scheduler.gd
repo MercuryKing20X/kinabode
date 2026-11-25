@@ -10,6 +10,9 @@ var dispatch: Callable
 var available: Callable
 var codex_high: Callable
 var histories: Callable
+var company_fireside:Callable
+var company_ready:Callable
+var company_progress:Callable
 var queues: Dictionary={}
 var active: Dictionary={}
 var causal: Dictionary={}
@@ -170,21 +173,24 @@ func advance(_delta: float,held: Dictionary={}) -> void:
 			if life_clock>=float(life_due[id]):
 				enqueue(id,"lifeblood:"+str(serial),"reflection","Observe your surroundings and feelings; talk to someone nearby, do a small permitted activity, or write grounded feelings/about_you memory. Player instructions, hunger and management take priority.")
 				serial+=1;life_due[id]=life_clock+30.0
-		if held.get(id,false) or world.activities.blocked(id) or active.has(id) or not idle(id):records.gate(id,"busy",now());continue
-		if not input_seen or now()-last_input>config.presence_seconds:records.gate(id,"not_present",now());continue
-		if not available.is_valid() or not available.call(id):records.gate(id,"unavailable",now());continue
+		var company_only:bool=company_fireside.is_valid() and company_fireside.call(id)
+		var companion_event:bool=company_ready.is_valid() and company_ready.call(id)
+		if held.get(id,false) or active.has(id) or (not company_only and (world.activities.blocked(id) or not idle(id))):gate(id,"busy",companion_event);continue
+		if not input_seen or now()-last_input>config.presence_seconds:gate(id,"not_present",companion_event);continue
+		if not available.is_valid() or not available.call(id):gate(id,"unavailable",companion_event);continue
 		if pref.level=="ultra" and now()>=float(reflection_after.get(id,now()+policy.reflection_seconds)):
 			enqueue(id,"reflection:"+str(serial),"reflection",LocalText.text("system.autonomy_scheduler.idle_reflection_decide_whether_an_action_is_needed_from"))
 			serial+=1;reflection_after[id]=now()+policy.reflection_seconds
 		elif not reflection_after.has(id):reflection_after[id]=now()+policy.reflection_seconds
 		queue=queues.get(id,[])
+		if companion_event:queue=[{"id":"company","kind":"reflection","text":"","at":now(),"score":config.threshold}]
 		var score:=0
 		for entry in queue:score+=int(entry.score)
 		if queue.is_empty() or score<config.threshold:records.gate(id,"waiting_event",now());continue
-		if pref.level!="lifeblood" and now()-queue[0].at<config.settling_seconds:records.gate(id,"settling",now());continue
+		if not companion_event and pref.level!="lifeblood" and now()-queue[0].at<config.settling_seconds:records.gate(id,"settling",now());continue
 		var ledger: Dictionary=usage(id)
-		if pref.level!="lifeblood" and now()-float(ledger.last_at)<policy.cooldown:records.gate(id,"cooldown",now());continue
-		if ledger.times.size()>=policy.hourly or ledger.calls>=policy.daily or (int(policy.daily_tokens)>0 and int(ledger.tokens)+int(ledger.reserved)+int(policy.turn_tokens)>int(policy.daily_tokens)):records.gate(id,"budget",now());continue
+		if pref.level!="lifeblood" and now()-float(ledger.last_at)<policy.cooldown:gate(id,"cooldown",companion_event);continue
+		if ledger.times.size()>=policy.hourly or ledger.calls>=policy.daily or (int(policy.daily_tokens)>0 and int(ledger.tokens)+int(ledger.reserved)+int(policy.turn_tokens)>int(policy.daily_tokens)):gate(id,"budget",companion_event);continue
 		var previous_last_at: float=float(ledger.last_at)
 		var charged_at: float=now()
 		ledger.calls+=1;ledger.last_at=charged_at;ledger.times.append(charged_at);ledger.reserved+=int(policy.turn_tokens)
@@ -193,13 +199,17 @@ func advance(_delta: float,held: Dictionary={}) -> void:
 		var token: String="autonomy-%d-%d"%[int(now()*1000),serial]
 		active[id]={"id":token,"day":day_key(),"tokens":0,"input":0,"output":0,"reserve":int(policy.turn_tokens),"charged_at":charged_at,"previous_last_at":previous_last_at}
 		var context: Dictionary=world.autonomy_context(id,queue,histories.call(id) if histories.is_valid() else [])
-		queues.erase(id);reflection_after[id]=now()+policy.reflection_seconds
+		if not companion_event:queues.erase(id)
+		reflection_after[id]=now()+policy.reflection_seconds
 		if not context.get("ok",false) or JSON.stringify(context).to_utf8_buffer().size()>4096:
 			reject(id,"context_rejected");continue
 		var estimate: int=preload("res://scripts/autonomy_estimate.gd").tokens(config,context)
 		records.start(id,token,queue,now(),estimate)
 		if pref.level=="ultra" and records.notice_once(id,day_key()):ultra_notice.emit(id,estimate*int(policy.hourly))
 		if not dispatch.call(id,context,policy.duplicate(true),token):reject(id,"dispatch_rejected")
+func gate(id:String,reason:String,companion_event:bool)->void:
+	records.gate(id,reason,now())
+	if companion_event and company_progress.is_valid():company_progress.call(id,reason)
 func record_usage(id: String,total: int,input: int,output: int) -> bool:
 	if not active.has(id) or total<0 or input<0 or output<0 or total<input+output:return false
 	var turn: Dictionary=active[id]

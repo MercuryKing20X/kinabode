@@ -24,6 +24,15 @@ func options(r:RefCounted)->Dictionary:
 	var main_trait:String=str(r.world.intelligence.preset(r.ID).get("main_trait",""))
 	result.merge(r.world.intelligence.catalog.traits.get(main_trait,{}).get("return_visit",{}),true)
 	return result
+
+func observe(r:RefCounted,distance:float,idle_contact:bool=true)->void:
+	var now:float=r.time
+	if due<0:
+		var cfg:=options(r)
+		var index:int=r.world.director.routines.keys().find(r.ID)
+		due=now+float(cfg.interval_seconds)+index*float(cfg.stagger_seconds);last_seen=now
+	if idle_contact and distance<=8:last_seen=now
+
 func tick(r:RefCounted,delta:float)->bool:
 	if delta<=0:return false
 	var w:RefCounted=r.world
@@ -34,10 +43,7 @@ func tick(r:RefCounted,delta:float)->bool:
 	var actor:Dictionary=w.actors[r.ID];var human:Dictionary=w.actors.human
 	var same:bool=actor.region_id==human.region_id
 	var distance:float=w.point(actor).distance_to(w.point(human)) if same else INF
-	if due<0:
-		var index:int=w.director.routines.keys().find(r.ID)
-		due=now+float(cfg.interval_seconds)+index*float(cfg.stagger_seconds);last_seen=now
-	if distance<=8:last_seen=now
+	observe(r,distance)
 	if r.kind=="return_visit":
 		r.elapsed+=delta
 		if r.owns_route and w._routes.has(r.ID):

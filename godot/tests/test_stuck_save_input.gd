@@ -51,7 +51,7 @@ func run()->void:
 	var initial=preload("res://scripts/world_state.gd").new("res://content/home-v3/world.json");initial.residents.provision(initial)
 	initial.library=preload("res://scripts/character_library.gd").new();initial.library.configure(dir)
 	check(preload("res://scripts/world_opening.gd").apply(initial,initial.library,"standard").ok,"standard opening")
-	check(preload("res://scripts/host_build_all.gd").apply(initial).ok,"fixture host completed")
+	check(preload("res://tests/fixture_host_build_all.gd").apply(initial).ok,"fixture host completed")
 	initial.intelligence.activate_presets();initial.hunger.start()
 	initial.activities.set_followers(IDS)
 	for pair in [["human","suit-hulk"],["codex","ai-gpt"],["companion-2","ai-deepseek"],["npc.mira","ai-claude"],["npc.nora","black-scarf-girl"]]:initial.actors[pair[0]].appearance_id=pair[1]
@@ -71,6 +71,7 @@ func run()->void:
 	check(near.size()>=2,"walkable positions near player save location")
 	if near.size()>=2:
 		data.actors.codex.position=[100.540412902832,46.4340438842773];data.actors["npc.mira"].position=[102.34041595459,47.4340438842773]
+	data["wishes"]={"version":1,"states":{}}
 	data.wishes.states["codex"]={"active":{"id":"wish-0123456789abcdef01234567","resident_id":"codex","template_id":"flowerbed","target_id":initial.homestead.config.site.id,"created_day":1,"expires_day":3,"announced":false,"baseline":[],"proof_id":""},"last_created_day":1,"next_day":3,"history":["flowerbed"]}
 	data.storage.items["wood"]=24;data.storage.items["mushroom"]=12
 	var f:=FileAccess.open(path,FileAccess.WRITE);f.store_string(JSON.stringify(data));f.close()
@@ -85,12 +86,9 @@ func run()->void:
 		check(w.walkable("home",w.point(w.actors[id])),"loaded resident leaves obstacle "+id)
 	await capture("rescued")
 	check(w.homestead.site.get("host_completion_source")=="unstarted" and not w.homestead.site.completion.get("id","").is_empty(),"legacy completion repaired on load")
-	check(w.wishes.active("codex").get("template_id","")=="flowerbed","unfinished homestead wish restored")
-	check(w.wishes.proofs(w.wishes.active("codex")).is_empty(),"host-built site has no real construction proof")
 	check(IDS.all(func(id):return w.activities.following.has(id)),"four followers restored")
 	check(w.hunger.rank("codex")==3 and w.hunger.rank("npc.mira")==3,"both very hungry after load")
 	for i in range(30):tick()
-	check(w.wishes.active("codex").get("proof_id","").is_empty(),"host-built site is not a real construction proof")
 	var start:Dictionary={};for id in IDS:start[id]=w.point(w.actors[id]);distances[id]=0.0;last[id]=start[id]
 	game.view.follow_player=false;game.view.zoom=1;game.view.center=w.point(w.actors.human);await process_frame
 	var goal:=Vector2.INF

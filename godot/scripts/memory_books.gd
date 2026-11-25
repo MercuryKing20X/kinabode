@@ -96,7 +96,10 @@ func render(entry:Dictionary)->String:
 			if entries.has(id):snippets.append(render(entries[id]).left(180))
 		var events:String=" / ".join(snippets)
 		if entry.params.writing_template=="letter":return ("Dear you, I wanted to keep this little moment with you: " if english else "给你：想把今天这件小事留给你：")+events+(". From, "+display_name(entry.resident_id) if english else "。——"+display_name(entry.resident_id))
-		return ("Day "+str(int(entry.day))+" · Tonight\n" if english else "第 "+str(int(entry.day))+" 天 · 今夜\n")+(("Today I want to remember: " if english else "今天想记下：")+events if not events.is_empty() else ("No new shared moments were recorded today. I leave this page quiet." if english else "今天没有记下新的共同经历，就留一页安静。"))
+		var result:String=("Day "+str(int(entry.day))+" · Tonight\n" if english else "第 "+str(int(entry.day))+" 天 · 今夜\n")+(("Today I want to remember: " if english else "今天想记下：")+events if not events.is_empty() else ("No new shared moments were recorded today. I leave this page quiet." if english else "今天没有记下新的共同经历，就留一页安静。"))
+		for pair in entry.params.get("missed_wishes",[]):
+			if pair is Array and pair.size()==2 and pair.all(func(item):return item is String):result+="\n"+pair[1 if english else 0]
+		return result
 	if entry.text=="memory.localized_fact":return str(entry.params.localized.get("en" if Text.revision().begins_with("en") else "zh",""))
 	if entry.params.get("archive_summary",false):
 		var quotes:Array=entry.params.quotes.values().map(func(value):return str(value))
@@ -176,6 +179,7 @@ func ingest(world:RefCounted,raw:Dictionary,legacy:bool=true)->int:
 	var count:=0
 	var described:Dictionary=world.memories._describe(raw)
 	var params:Dictionary={"legacy":raw.duplicate(true)}
+	if raw.kind=="story_chapter":params["source_ids"]=raw.facts.source_ids.duplicate()
 	if not legacy:params["localized"]={"zh":world.memories._describe(raw,"zh").summary,"en":world.memories._describe(raw,"en").summary}
 	for actor in raw.participants:
 		if actor=="human":continue
@@ -227,7 +231,7 @@ func export_html(path:String,include_quotes:bool=true)->bool:
 				if page_day>=0:html+="</section>"
 				page_day=int(e.day);html+="<section class=page><h2>Day "+str(page_day)+"</h2>"
 			if not include_quotes and (e.params.get("human_quote",false) or e.params.get("archive_summary",false) or e.text=="memory.chat_summary"):continue
-			html+="<article class='"+("letter" if e.layer=="letters" else "entry")+"'><small>"+("✦ " if e.event_id.begins_with("anniversary:") else "")+Time.get_datetime_string_from_unix_time(int(e.at))+" · "+str(e.layer).xml_escape()+"</small><p>"+render(e).xml_escape()+"</p>"+photo_html(str(e.get("photo_id","")))+photo_html(str(e.params.get("attachment","")))+"</article>"
+			html+="<article class='"+("letter" if e.layer=="letters" else "entry")+"'><small>"+("* " if e.event_id.begins_with("anniversary:") else "")+Time.get_datetime_string_from_unix_time(int(e.at))+" · "+str(e.layer).xml_escape()+"</small><p>"+render(e).xml_escape()+"</p>"+photo_html(str(e.get("photo_id","")))+photo_html(str(e.params.get("attachment","")))+"</article>"
 		if page_day>=0:html+="</section>"
 	return atomic_text(path,html)
 func atomic_text(path:String,text:String)->bool:
@@ -377,6 +381,36 @@ func resolve(resident:String,text:String)->String:
 func photo_path(relative:String)->String:
 	var regex:=RegEx.new();regex.compile("^photos/[0-9]+/[a-f0-9]{64}\\.png$")
 	return directory.path_join(relative) if regex.search(relative)!=null else ""
+func player_photo(world_id:String,shot:String,image:Image,day:int,at:float,metadata:Dictionary)->String:
+	var photo_id:String=(world_id+"|photo|"+shot).sha256_text()
+	var relative:String="photos/"+str(maxi(0,int((day-1)/30)))+"/"+photo_id+".png"
+	var preview:Image=image.duplicate();preview.resize(320,200,Image.INTERPOLATE_LANCZOS)
+	var album_path:String=photo_path(relative)
+	var share_dir:String=directory.get_base_dir().path_join("photos")
+	var export:String=share_dir.path_join(photo_id+".png")
+	if DirAccess.make_dir_recursive_absolute(album_path.get_base_dir())!=OK or DirAccess.make_dir_recursive_absolute(share_dir)!=OK:return ""
+	if image.save_png(export+".tmp")!=OK or preview.save_png(album_path+".tmp")!=OK:return ""
+	if DirAccess.rename_absolute(album_path+".tmp",album_path)!=OK or DirAccess.rename_absolute(export+".tmp",export)!=OK:return ""
+	var participants:Array=metadata.people
+	var residents:Array=participants.filter(func(id):return id!="human")
+	if residents.is_empty():residents=["codex"]
+	Text.ensure()
+	var title:Dictionary={}
+	for locale in ["zh","en"]:
+		var read:=func(value:String)->String:return str(Text.entries.get(Text.content_keys.get(value,""),{}).get(locale,value))
+		var names:Array=metadata.get("names_"+locale,metadata.names)
+		var pattern:String="岛上随手拍 · %s · 第 %d 天 %s\n%s" if locale=="zh" else "An island photograph · %s · Day %d, %s\n%s"
+		title[locale]=pattern%[read.call(metadata.place),day,read.call(metadata.phase_label),", ".join(names)]
+	var successes:=0
+	for resident in residents:
+		var event_id:String="player-photo:"+shot
+		if not add(resident,world_id,event_id,"facts","memory.localized_fact",{"kind":"player_photo","localized":title,"photo":metadata.duplicate(true)},day,"game",participants,at):continue
+		var key:String=(resident+"|"+world_id+"|"+event_id+"|facts").sha256_text()
+		var entry:Dictionary=entries[key].duplicate(true);entry.photo_id=relative
+		if atomic(directory.path_join(key+".entry.json"),entry):
+			entries[key]=entry;successes+=1
+	return export if successes>0 else ""
+
 func photo_html(relative:String)->String:
 	var path:String=photo_path(relative)
 	if path.is_empty() or not FileAccess.file_exists(path):return ""
@@ -419,11 +453,16 @@ func quote_label(entry:Dictionary)->String:
 
 # Creation writing stays beside the memory books; never in a world snapshot.
 # A stable event ID also honours deletion across reloads without recreating a page.
-func write_local_diary(resident:String,world_id:String,day:int,at:float=0.0)->bool:
+func write_local_diary(resident:String,world_id:String,day:int,at:float=0.0,missed_wishes:Array=[])->bool:
 	if resident.is_empty() or resident=="human" or world_id.is_empty() or day<1:return false
-	if list_for(resident,"daily").any(func(e):return e.world_id==world_id and int(e.day)==day and not e.params.get("archive_summary",false)):return false
+	for page in list_for(resident,"daily"):
+		if page.world_id!=world_id or int(page.day)!=day or page.params.get("archive_summary",false):continue
+		if not missed_wishes.is_empty() and page.params.get("writing_template")=="diary" and entries.has(page.id):
+			page.params["missed_wishes"]=missed_wishes.duplicate(true)
+			if atomic(directory.path_join(page.id+".entry.json"),page):entries[page.id]=page
+		return false
 	var actual:Array=list_for(resident,"facts").filter(func(e):return e.world_id==world_id and int(e.day)==day and (e.source=="game" or e.params.get("human_quote",false))).slice(-5)
-	return add(resident,world_id,"diary-evening:"+str(day),"daily","",{"writing_template":"diary","source_ids":actual.map(func(e):return e.id),"human_quote":actual.any(func(e):return e.params.get("human_quote",false)),"channel":"direct:"+resident},day,"local",[resident],at)
+	return add(resident,world_id,"diary-evening:"+str(day),"daily","",{"writing_template":"diary","source_ids":actual.map(func(e):return e.id),"human_quote":actual.any(func(e):return e.params.get("human_quote",false)),"channel":"direct:"+resident,"missed_wishes":missed_wishes.duplicate(true)},day,"local",[resident],at)
 
 func write_local_letter(resident:String,world_id:String,day:int,at:float=0.0)->bool:
 	if resident.is_empty() or resident=="human" or world_id.is_empty() or day<1:return false

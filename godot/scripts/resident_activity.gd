@@ -6,7 +6,7 @@ var world: RefCounted:
 	get: return _owner.get_ref()
 var gathering: Dictionary = {}
 var following:Dictionary={}
-var squad_leader:=""
+var opening_party:Array=[]
 # Session-only authority of an explicit selection; automatic proximity is not a lock.
 var explicit_selected:Dictionary={}
 var command_busy:Callable
@@ -47,7 +47,7 @@ func release_follow(id:String)->void:
 	if not following.has(id):return
 	world.hunger.clear_follow(id);following.erase(id);world.revision+=1
 	if world.director.brains.has(id):world.director.brains[id].preference_changed(false)
-func set_followers(ids:Array,selection_scope:Array=[])->Dictionary:
+func set_followers(ids:Array,selection_scope:Array=[],start_routes:bool=true)->Dictionary:
 	if ids.any(func(id):return id=="human" or not world.actors.has(id) or not world.residents.supports(world.actors[id],"move")):return world._error("invalid_participant")
 	# A full host selection is authoritative. A resident's own follow/unfollow
 	# may change only that resident's opt-out, never the rest of the village.
@@ -74,9 +74,11 @@ func set_followers(ids:Array,selection_scope:Array=[])->Dictionary:
 		if id in ids:explicit_selected[id]=true
 		else:explicit_selected.erase(id)
 	for id in ids:
+		if not selection_scope.is_empty() and id not in selection_scope:continue
 		if world.director.brains.has(id):world.director.brains[id].preference_changed(true)
 	for id in added:
-		world.hunger.follow_after.erase(id);world.hunger.follow(id)
+		world.hunger.follow_after.erase(id)
+		if start_routes:world.hunger.follow(id)
 	world.revision+=1
 	return {"ok":true,"message":LocalText.text("system.resident_activity.selected_companions_will_come_along_the_path_and") if not following.is_empty() else LocalText.text("system.resident_activity.following_canceled")}
 func gather() -> Dictionary:
@@ -133,10 +135,10 @@ func tick(id: String,job: Dictionary,delta: float) -> void:
 	job.time+=delta
 	if job.time>= (20 if job.step=="dance" else 2):world.work._finish(id,LocalText.text("system.resident_activity.activity_ended"))
 func advance(delta: float) -> void:
-	var followers:Array=following.keys() if squad_leader.is_empty() else []
+	var followers:Array=following.keys()
 	for id in followers:
 		if not world.actors.has(id):following.erase(id);continue
-		if id==squad_leader:continue
+		if id in opening_party and world.hunger.rank(id)<3:continue
 		if (world.flower_creation!=null and world.flower_creation.active(id)) or (command_busy.is_valid() and command_busy.call(id)):continue
 		if suspended_follow.has(id) or blocked(id,false) or world.work.jobs.has(id) or world.farms.active(id) or world.hunger.rushes.has(id):
 			world.hunger.clear_follow(id);continue

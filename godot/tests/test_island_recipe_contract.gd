@@ -21,7 +21,7 @@ func run()->void:
 	for recipe_id in ["eel-herb","cutlass-chestnut","noodle-moon-soup","kite-berry-skewer"]:
 		var wanted:String=w.recipes.metadata[recipe_id].fish_species
 		var fish:Dictionary={"id":"fish-000000000000000000000000","owner_id":"human","location":"pending","source_id":"home.sea.east","species_id":"eel" if wanted!="eel" else "cutlass","size_id":"person","color_id":"cream","scale":1}
-		w.fishing.fish={fish.id:fish}
+		w.fishing.erase_fish(fish.id);w.fishing.add_fish(fish)
 		var before:Dictionary=w.storage.saved()
 		var option:Array=w.life.fireside.menu().filter(func(d):return d.id=="recipe:"+recipe_id)
 		check(option.size()==1 and option[0].maximum==0,"wrong species menu blocked "+recipe_id)

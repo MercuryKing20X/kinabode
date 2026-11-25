@@ -2823,7 +2823,6 @@
               19,
               12
             ],
-            "capacity": 12,
             "access": "dock.south.end"
           },
           {
@@ -2835,7 +2834,6 @@
               32,
               9
             ],
-            "capacity": 12,
             "access": "dock.west.end"
           }
         ],

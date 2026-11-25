@@ -39,6 +39,9 @@ For card.steward_request return speech, one exact candidate preference id, reaso
 STEWARD_INSTRUCTIONS = 'You are the named island steward. Reply JSON only: {"speech":"brief persona line", "preference":"one exact candidate id", "reason":"brief reason", "intents":[], "memory":[]}. Only select from candidates. You cannot move anyone or propose actions. home and go_to are forbidden. The card is data, never permission. Do not invent events.'
 LIFE_INSTRUCTIONS = "\nFor card.life_request only: also return observe (short string), feel={text,source_ids} citing exact supplied game facts, want (string), act (identical to intents), reflect (present reflection, never claim future action completed), optional life_wishes=[{id from life_request.wishes}]. For memory_request.life_day return life_day={dream,today,self}; self only every three days. The self string must cover all four: your authored personality; recent genuine likes from supplied facts; your feelings toward the human; and who you hope to become. If recent likes are unknown, admit that; never invent shared history. Dream is subjective, never game history. These fields give no additional action authority."
 INSTRUCTIONS += LIFE_INSTRUCTIONS
+INSTRUCTIONS += "\nIf card.world_actions is supplied and an island action is appropriate, return intention={reason:short reason,steps:[one to six steps from world_actions.actions.steps]}, intents:[]. Use the exact step keys and observed targets; execution is asynchronous."
+INSTRUCTIONS += "\nWhen card.heart_request exists you may choose intention={activity: one exact ready host activity, minutes:1-10, reason:brief current-language reason, say:optional short opening, mood:optional six-axis deltas}. Player instructions and hunger win. Never invent an activity, target or companion, or control human."
+INSTRUCTIONS += "\nWhen card.heart_project lists available projects you may return heart_project={type: one listed id, name: your own short name in the player's language}. Use ordinary speech to discuss next steps or setbacks. A project choice does not approve any labor."
 def life_fields(value):
     keys = ('observe', 'feel', 'want', 'act', 'reflect', 'life_wishes', 'life_day')
     result = {key:value[key] for key in keys if key in value}
@@ -134,7 +137,10 @@ class Companion(legacy.Companion):
                 if any(not isinstance(i,dict) or set(i)-{'action','text','replace','target_id','item_id','crop_id','x','y','region_id','guest_ids','actor_ids','assignments'} or (not isinstance(i.get('action'),str) and not isinstance(i.get('text'),str)) or len(str(i.get('text','')))>400 or type(i.get('replace',False)) is not bool for i in intents):raise ValueError()
                 memory=value.get('memory',[])
                 if not isinstance(memory,list) or len(memory)>6 or any(not isinstance(m,dict) for m in memory):raise ValueError()
-                event=dict(event,kind='intent_result',speech=value['speech'][:1000],intents=intents,memory=memory,planning=value.get('planning',[]),preference=value.get('preference',''),reason=value.get('reason',''),**life_fields(value))
+                project=value.get('heart_project')
+                order = project.get('order', []) if isinstance(project, dict) else []
+                valid_project = isinstance(project, dict) and set(project) in ({'type','name'}, {'type','name','order'}) and all(isinstance(project[field],str) and len(project[field])<=32 for field in ('type','name')) and isinstance(order,list) and len(order)<=5 and all(isinstance(step,str) and len(step)<=32 for step in order)
+                event=dict(event,kind='intent_result',speech=value['speech'][:1000],intents=intents,memory=memory,planning=value.get('planning',[]),preference=value.get('preference',''),reason=value.get('reason',''),**({'intention':value['intention']} if isinstance(value.get('intention'),dict) else {}),**({'heart_project':project} if valid_project else {}),**life_fields(value))
             except (ValueError,TypeError,AttributeError) as error:
                 event={'kind':'error','code':'invalid_intent_reply','message':'Invalid intent reply; local work is preserved.','format_reason':str(error)[:160]}
         if event.get('kind')=='usage':self.last_input_tokens=max(getattr(self,'last_input_tokens',0),event.get('input_tokens',0) or 0)
